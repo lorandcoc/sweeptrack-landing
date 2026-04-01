@@ -47,7 +47,7 @@ export default function HowItWorks() {
         <div className="text-center mb-16">
           <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">How It Works</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Three Steps to <span className="text-accent accent-underline">Better Hunts</span>
+            Three Steps to <span className="text-accent">Better Hunts</span>
           </h2>
         </div>
 
@@ -80,7 +80,7 @@ export default function HowItWorks() {
               >
                 {/* Step circle */}
                 <div className="relative mb-5">
-                  <div className="w-[104px] h-[104px] rounded-full bg-surface border border-accent/20 flex items-center justify-center text-accent step-glow">
+                  <div className="w-[104px] h-[104px] rounded-full bg-surface border border-accent/20 flex items-center justify-center text-accent">
                     {step.icon}
                   </div>
                   <span className="absolute -top-2 -right-2 text-[11px] font-bold text-accent bg-accent/15 border border-accent/30 px-2 py-0.5 rounded-full">

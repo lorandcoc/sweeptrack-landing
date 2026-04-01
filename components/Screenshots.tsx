@@ -78,7 +78,7 @@ export default function Screenshots() {
           <div className="text-center mb-14">
             <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Screenshots</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              See It in <span className="text-accent accent-underline">Action</span>
+              See It in <span className="text-accent">Action</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               A sleek dark interface designed for outdoor use. Every screen

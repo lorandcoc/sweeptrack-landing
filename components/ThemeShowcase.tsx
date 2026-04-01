@@ -38,15 +38,13 @@ export default function ThemeShowcase() {
           {themes.map((theme, i) => (
             <div key={theme.name} className="group flex flex-col items-center gap-2.5">
               <div
-                className={`relative w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl group-hover:scale-110 cursor-default swatch-enter swatch-bob ${visible ? "visible" : ""}`}
+                className={`relative w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl group-hover:scale-110 cursor-default swatch-enter ${visible ? "visible" : ""}`}
                 style={{
                   background: `radial-gradient(circle at 30% 30%, ${theme.accent}50, ${theme.accent}18 60%, #141428)`,
                   border: `1.5px solid ${theme.accent}40`,
                   transitionDelay: visible ? `${i * 100}ms` : "0ms",
                   boxShadow: visible ? `0 0 20px ${theme.accent}30, inset 0 0 15px ${theme.accent}15` : "none",
-                  "--bob-dur": `${3.5 + (i % 4) * 0.5}s`,
-                  animationDelay: `${i * 200}ms`,
-                } as React.CSSProperties}
+                }}
               >
                 {theme.free && (
                   <span className="absolute -top-1.5 -right-2 text-[9px] font-bold bg-accent text-[#0A0A1A] px-1.5 py-0.5 rounded-full shadow-sm">

@@ -82,7 +82,7 @@ export default function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-accent stat-pulse mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-accent stat-glow mb-1">
                   <AnimatedCounter target={stat.value} />
                 </div>
                 <div className="text-sm text-muted font-medium tracking-wide uppercase">

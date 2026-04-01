@@ -188,7 +188,7 @@ export default function Features() {
             <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Features</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Everything You Need to{" "}
-              <span className="text-accent accent-underline">Detect Smarter</span>
+              <span className="text-accent">Detect Smarter</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               Professional-grade tools packed into one app. From GPS tracking to
@@ -231,7 +231,7 @@ export default function Features() {
               <StaggerCard key={feature.title} index={i}>
                 <div className="feature-card spotlight-target rounded-xl p-5 bg-surface/60 border border-white/[0.04] hover:border-accent/20 h-full">
                   <div className="flex items-start gap-4">
-                    <div className="icon-bg w-9 h-9 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5 transition-all">
+                    <div className="w-9 h-9 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5">
                       {feature.icon}
                     </div>
                     <div>
