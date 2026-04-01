@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -10,29 +10,43 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close menu on scroll
+  useEffect(() => {
+    if (!menuOpen) return;
+    const close = () => setMenuOpen(false);
+    window.addEventListener("scroll", close, { passive: true });
+    return () => window.removeEventListener("scroll", close);
+  }, [menuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-xl bg-[#0A0A1A]/80">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#0A0A1A]/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center group-hover:bg-accent/25 transition-colors">
             <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-accent"
+              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"
             >
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
               <circle cx="12" cy="9" r="2.5" />
             </svg>
           </div>
-          <span className="font-bold text-lg tracking-tight">
+          <span className="font-bold text-[17px] tracking-tight">
             Sweep Track <span className="text-accent">Pro</span>
           </span>
         </a>
@@ -50,7 +64,7 @@ export default function Header() {
           ))}
           <a
             href="#download"
-            className="text-sm font-medium px-4 py-2 rounded-xl bg-accent text-[#0A0A1A] hover:bg-accent-dim transition-colors"
+            className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#0A0A1A] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
             Download
           </a>
@@ -58,7 +72,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-muted"
+          className="md:hidden text-muted hover:text-foreground transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -73,29 +87,31 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden border-t border-white/5 bg-[#0A0A1A]/95 backdrop-blur-xl">
-          <nav className="flex flex-col px-6 py-4 gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-muted hover:text-foreground transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          menuOpen ? "max-h-60 border-t border-white/5" : "max-h-0"
+        } bg-[#0A0A1A]/95 backdrop-blur-xl`}
+      >
+        <nav className="flex flex-col px-6 py-4 gap-4">
+          {navLinks.map((link) => (
             <a
-              href="#download"
-              className="font-medium px-4 py-2 rounded-xl bg-accent text-[#0A0A1A] text-center hover:bg-accent-dim transition-colors"
+              key={link.href}
+              href={link.href}
+              className="text-muted hover:text-foreground transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              Download
+              {link.label}
             </a>
-          </nav>
-        </div>
-      )}
+          ))}
+          <a
+            href="#download"
+            className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#0A0A1A] text-center hover:bg-accent-dim transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Download
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }

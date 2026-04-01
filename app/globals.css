@@ -30,44 +30,129 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Glow effects */
-.glow-accent {
-  box-shadow: 0 0 30px rgba(0, 255, 106, 0.2), 0 0 60px rgba(0, 255, 106, 0.1);
-}
-
-.glow-text {
-  text-shadow: 0 0 20px rgba(0, 255, 106, 0.5), 0 0 40px rgba(0, 255, 106, 0.2);
-}
-
-.aurora-bg {
-  background: radial-gradient(ellipse at 20% 50%, rgba(0, 255, 106, 0.06) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 20%, rgba(0, 204, 255, 0.04) 0%, transparent 50%),
-              radial-gradient(ellipse at 50% 80%, rgba(180, 74, 255, 0.03) 0%, transparent 50%),
-              var(--background);
-}
-
-/* Phone mockup */
-.phone-frame {
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 255, 106, 0.1);
-}
-
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Feature card hover */
-.feature-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 255, 106, 0.1);
+/* ── Aurora background ── */
+.aurora-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 255, 106, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 204, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(180, 74, 255, 0.03) 0%, transparent 50%),
+    var(--background);
 }
 
-/* Screenshot gallery */
+/* ── Glow effects ── */
+.glow-accent {
+  box-shadow: 0 0 30px rgba(0, 255, 106, 0.25), 0 0 60px rgba(0, 255, 106, 0.1);
+}
+.glow-text {
+  text-shadow: 0 0 30px rgba(0, 255, 106, 0.5), 0 0 60px rgba(0, 255, 106, 0.15);
+}
+
+/* ── Scroll-triggered animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+.animate-scale-in {
+  animation: scaleIn 0.7s ease-out both;
+}
+.animate-slide-left {
+  animation: slideInLeft 0.7s ease-out both;
+}
+.animate-slide-right {
+  animation: slideInRight 0.7s ease-out both;
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+
+/* Intersection observer: hidden until in view */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Phone mockup ── */
+.phone-frame {
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 40px rgba(0, 255, 106, 0.08);
+}
+
+/* Mask off status bar (top 6%) and nav bar (bottom 5%) from screenshots */
+.screenshot-crop {
+  display: block;
+  width: 100%;
+  height: auto;
+  clip-path: inset(6% 0 5% 0 round 0);
+}
+
+/* ── Feature cards ── */
+.feature-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 255, 106, 0.12);
+}
+
+/* Spotlight card (larger hero features) */
+.spotlight-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.spotlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 50px rgba(0, 255, 106, 0.15);
+}
+
+/* ── Screenshot gallery ── */
 .screenshot-scroll {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -76,7 +161,7 @@ html {
   display: none;
 }
 
-/* Gradient border */
+/* ── Gradient border ── */
 .gradient-border {
   position: relative;
 }
@@ -86,9 +171,30 @@ html {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 255, 106, 0.3), rgba(0, 204, 255, 0.1), rgba(180, 74, 255, 0.1));
+  background: linear-gradient(135deg, rgba(0, 255, 106, 0.3), rgba(0, 204, 255, 0.15), rgba(180, 74, 255, 0.1));
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
   pointer-events: none;
+}
+
+/* ── Stat counter glow ── */
+.stat-glow {
+  text-shadow: 0 0 20px rgba(0, 255, 106, 0.6);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 106, 0.15), transparent);
+}
+
+/* ── Dot indicators ── */
+.dot-indicator {
+  transition: all 0.3s ease;
+}
+.dot-indicator.active {
+  background-color: var(--accent);
+  width: 24px;
+  border-radius: 6px;
 }
