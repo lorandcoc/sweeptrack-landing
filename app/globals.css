@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0A0A1A;
+  --surface: #141428;
+  --surface-variant: #1E1E38;
+  --foreground: #E8E8F0;
+  --muted: #8888AA;
+  --accent: #00FF6A;
+  --accent-dim: #00CC55;
+  --accent-glow: rgba(0, 255, 106, 0.15);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-accent-glow: var(--accent-glow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 30px rgba(0, 255, 106, 0.2), 0 0 60px rgba(0, 255, 106, 0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 255, 106, 0.5), 0 0 40px rgba(0, 255, 106, 0.2);
+}
+
+.aurora-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(0, 255, 106, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(0, 204, 255, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(180, 74, 255, 0.03) 0%, transparent 50%),
+              var(--background);
+}
+
+/* Phone mockup */
+.phone-frame {
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 255, 106, 0.1);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Feature card hover */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 255, 106, 0.1);
+}
+
+/* Screenshot gallery */
+.screenshot-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.screenshot-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0, 255, 106, 0.3), rgba(0, 204, 255, 0.1), rgba(180, 74, 255, 0.1));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
 }
