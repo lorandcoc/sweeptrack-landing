@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Sweep Track Pro",
+  title: "Privacy Policy — SweepTrack Pro",
   description:
-    "Privacy Policy for Sweep Track Pro, the GPS tracking app for metal detecting.",
+    "Privacy Policy for SweepTrack Pro, the GPS tracking app for metal detecting.",
 };
 
 export default function PrivacyPolicy() {
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
               1. Data Collection
             </h2>
             <p>
-              Sweep Track Pro collects GPS location data, session recordings,
+              SweepTrack Pro collects GPS location data, session recordings,
               and find logs only when you actively use the tracking features.
               This data is stored locally on your device. We do not collect,
               transmit, or store your personal data on our servers.
@@ -149,7 +149,7 @@ export default function PrivacyPolicy() {
               8. Children&apos;s Privacy
             </h2>
             <p>
-              Sweep Track Pro is not intended for children under 13. We do not
+              SweepTrack Pro is not intended for children under 13. We do not
               knowingly collect personal information from children.
             </p>
           </section>
@@ -181,7 +181,7 @@ export default function PrivacyPolicy() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-surface-variant text-center text-muted text-xs">
-          &copy; {new Date().getFullYear()} Sweep Track Pro by Loriba. All
+          &copy; {new Date().getFullYear()} SweepTrack Pro by Loriba. All
           rights reserved.
         </div>
       </article>

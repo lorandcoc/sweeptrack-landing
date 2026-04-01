@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Sweep Track Pro",
+  title: "Terms of Service — SweepTrack Pro",
   description:
-    "Terms of Service for Sweep Track Pro, the GPS tracking app for metal detecting.",
+    "Terms of Service for SweepTrack Pro, the GPS tracking app for metal detecting.",
 };
 
 export default function TermsOfService() {
@@ -27,7 +27,7 @@ export default function TermsOfService() {
               1. Acceptance
             </h2>
             <p>
-              By downloading, installing, or using Sweep Track Pro, you agree to
+              By downloading, installing, or using SweepTrack Pro, you agree to
               be bound by these Terms of Service. If you do not agree to these
               terms, do not use the app.
             </p>
@@ -38,7 +38,7 @@ export default function TermsOfService() {
               2. Service Description
             </h2>
             <p>
-              Sweep Track Pro is a GPS tracking and field companion app for
+              SweepTrack Pro is a GPS tracking and field companion app for
               metal detecting. Features include session recording, find logging,
               heatmaps, grid search mode, weather forecasts, tide tables,
               detector preset management, permission vault, and offline maps.
@@ -88,7 +88,7 @@ export default function TermsOfService() {
               5. Limitation of Liability
             </h2>
             <p className="mb-2">
-              Sweep Track Pro is provided &ldquo;as is&rdquo; without warranty
+              SweepTrack Pro is provided &ldquo;as is&rdquo; without warranty
               of any kind. To the fullest extent permitted by law, we are not
               responsible for:
             </p>
@@ -170,7 +170,7 @@ export default function TermsOfService() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-surface-variant text-center text-muted text-xs">
-          &copy; {new Date().getFullYear()} Sweep Track Pro by Loriba. All
+          &copy; {new Date().getFullYear()} SweepTrack Pro by Loriba. All
           rights reserved.
         </div>
       </article>

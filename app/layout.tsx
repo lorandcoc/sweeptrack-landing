@@ -13,7 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sweep Track Pro — GPS Tracking for Metal Detecting",
+  title: "SweepTrack Pro — GPS Tracking for Metal Detecting",
   description:
     "The ultimate Android app for metal detecting. GPS tracking, heatmaps, grid search, 55 detector presets, offline maps, and more. Track every sweep, find every treasure.",
   keywords: [
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
     "offline maps",
   ],
   openGraph: {
-    title: "Sweep Track Pro — GPS Tracking for Metal Detecting",
+    title: "SweepTrack Pro — GPS Tracking for Metal Detecting",
     description:
       "The ultimate Android app for metal detecting. Track every sweep, find every treasure.",
     url: "https://sweeptrack.pro",
-    siteName: "Sweep Track Pro",
+    siteName: "SweepTrack Pro",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sweep Track Pro",
+    title: "SweepTrack Pro",
     description:
       "The ultimate Android app for metal detecting. GPS tracking, heatmaps, and more.",
   },
