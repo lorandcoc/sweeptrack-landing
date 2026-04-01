@@ -30,10 +30,18 @@ export default function Hero() {
               Now Available on Android
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 animate-fade-up delay-100">
-              Track Every Sweep.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
+              {["Track", "Every", "Sweep."].map((word, i) => (
+                <span key={word} className="word-reveal inline-block mr-[0.3em]" style={{ animationDelay: `${i * 150 + 200}ms` }}>
+                  {word}
+                </span>
+              ))}
               <br />
-              <span className="shimmer-text glow-text">Find Every Treasure.</span>
+              {["Find", "Every", "Treasure."].map((word, i) => (
+                <span key={word} className="word-reveal inline-block mr-[0.3em] shimmer-text glow-text" style={{ animationDelay: `${i * 150 + 700}ms` }}>
+                  {word}
+                </span>
+              ))}
             </h1>
 
             <p className="text-lg text-muted max-w-lg mb-8 md:mx-0 mx-auto leading-relaxed animate-fade-up delay-200">

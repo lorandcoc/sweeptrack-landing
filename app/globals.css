@@ -412,3 +412,156 @@ html {
   opacity: 1;
   transform: scale(1);
 }
+
+/* ══════════════════════════════════════════════
+   NEXT-LEVEL OVERHAUL — NEW EFFECTS
+   ══════════════════════════════════════════════ */
+
+/* ── Text reveal (word-by-word clip-path) ── */
+@keyframes wordReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+.word-reveal {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  animation: wordReveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ── Rotating conic gradient border ── */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes rotateBorder {
+  to { --angle: 360deg; }
+}
+.rotating-border {
+  position: relative;
+}
+.rotating-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle),
+    rgba(0, 255, 106, 0.4),
+    rgba(0, 204, 255, 0.2),
+    rgba(180, 74, 255, 0.15),
+    rgba(0, 255, 106, 0.05),
+    rgba(0, 255, 106, 0.4)
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  animation: rotateBorder 4s linear infinite;
+}
+
+/* ── Cursor spotlight on feature grid ── */
+.spotlight-grid {
+  --spotlight-x: -999px;
+  --spotlight-y: -999px;
+}
+.spotlight-grid .spotlight-target {
+  background: radial-gradient(
+    circle 250px at var(--spotlight-x) var(--spotlight-y),
+    rgba(0, 255, 106, 0.06),
+    transparent
+  );
+}
+
+/* ── 3D tilt card ── */
+.tilt-card {
+  perspective: 800px;
+}
+.tilt-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+}
+.tilt-card-inner .tilt-content {
+  transform: translateZ(20px);
+}
+
+/* ── Scroll progress bar ── */
+.scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(0, 255, 106, 0.5);
+  transition: width 0.1s linear;
+  z-index: 60;
+}
+
+/* ── How It Works ── */
+.step-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+.step-line.drawn {
+  stroke-dashoffset: 0;
+}
+.step-circle {
+  transition: all 0.5s ease-out;
+  opacity: 0;
+  transform: scale(0.5);
+}
+.step-circle.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Marquee / ticker ── */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  animation: marqueeScroll 35s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+.marquee-container {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+/* ── Bento grid ── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.bento-grid .bento-hero {
+  grid-column: span 2;
+}
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-grid .bento-hero {
+    grid-column: span 1;
+  }
+}
