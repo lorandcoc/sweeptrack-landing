@@ -181,7 +181,7 @@ function SpotlightGrid({ children }: { children: React.ReactNode }) {
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 md:py-28">
+    <section id="features" className="py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-6">
         <RevealSection>
           <div className="text-center mb-16">

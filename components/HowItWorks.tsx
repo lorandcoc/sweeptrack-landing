@@ -42,7 +42,7 @@ export default function HowItWorks() {
   const { ref, visible } = useReveal(0.2);
 
   return (
-    <section className="py-20 md:py-28 relative">
+    <section className="py-16 md:py-20 relative">
       <div ref={ref} className={`max-w-5xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-16">
           <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">How It Works</p>

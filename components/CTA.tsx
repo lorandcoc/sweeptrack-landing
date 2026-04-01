@@ -6,7 +6,7 @@ export default function CTA() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="download" className="py-20 md:py-28">
+    <section id="download" className="py-16 md:py-20">
       <div ref={ref} className={`max-w-4xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="relative rounded-3xl overflow-hidden">
           {/* Animated background gradient */}

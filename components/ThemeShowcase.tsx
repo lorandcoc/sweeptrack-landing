@@ -21,7 +21,7 @@ export default function ThemeShowcase() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="themes" className="py-20 md:py-28">
+    <section id="themes" className="py-16 md:py-20">
       <div ref={ref} className={`max-w-6xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-14">
           <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Personalize</p>
@@ -34,7 +34,7 @@ export default function ThemeShowcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-5 md:gap-6 justify-items-center">
+        <div className="flex flex-wrap justify-center gap-5 md:gap-6">
           {themes.map((theme, i) => (
             <div key={theme.name} className="group flex flex-col items-center gap-2.5">
               <div

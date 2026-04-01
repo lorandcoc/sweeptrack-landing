@@ -44,8 +44,9 @@ export default function Marquee() {
   const { ref, visible } = useReveal();
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-10 md:py-14">
       <div ref={ref} className={`reveal ${visible ? "visible" : ""}`}>
+        <p className="text-center text-muted text-xs font-medium tracking-widest uppercase mb-4">Packed with Features</p>
         <MarqueeRow />
         <MarqueeRow reverse />
       </div>

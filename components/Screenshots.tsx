@@ -69,7 +69,7 @@ export default function Screenshots() {
   }, [paused, scrollTo]);
 
   return (
-    <section id="screenshots" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="screenshots" className="py-16 md:py-20 relative overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-transparent" />
 

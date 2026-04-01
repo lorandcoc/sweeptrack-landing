@@ -126,12 +126,24 @@ html {
     0 0 40px rgba(0, 255, 106, 0.08);
 }
 
-/* Mask off status bar (top 6%) and nav bar (bottom 5%) from screenshots */
+/* Mask off status bar (top 7%) and nav bar (bottom 6%) from screenshots */
 .screenshot-crop {
   display: block;
   width: 100%;
   height: auto;
-  clip-path: inset(6% 0 5% 0 round 0);
+  clip-path: inset(7% 0 6% 0 round 0);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .marquee-track { animation: none !important; }
+  .animate-float { animation: none !important; }
+  .bg-orbs::before, .bg-orbs::after, .bg-orb-3 { animation: none !important; }
 }
 
 /* ── Feature cards ── */
@@ -386,20 +398,20 @@ html {
   transform-style: preserve-3d;
 }
 .screenshot-3d.is-before {
-  transform: scale(0.9) rotateY(5deg);
-  opacity: 0.45;
+  transform: scale(0.92) rotateY(4deg);
+  opacity: 0.6;
 }
 .screenshot-3d.is-after {
-  transform: scale(0.9) rotateY(-5deg);
-  opacity: 0.45;
+  transform: scale(0.92) rotateY(-4deg);
+  opacity: 0.6;
 }
 .screenshot-3d.is-active {
   transform: scale(1) rotateY(0deg);
   opacity: 1;
 }
 .screenshot-3d.is-far {
-  transform: scale(0.85) rotateY(0deg);
-  opacity: 0.3;
+  transform: scale(0.88) rotateY(0deg);
+  opacity: 0.4;
 }
 
 /* ── 9. Theme swatch wave ── */
