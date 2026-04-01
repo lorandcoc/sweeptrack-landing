@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { useReveal } from "./useReveal";
 
 const screenshots = [
@@ -12,11 +12,34 @@ const screenshots = [
   { src: "/screenshots/history.png", alt: "Session History with Calendar Heatmap", label: "Session History" },
 ];
 
+function get3DClass(index: number, active: number) {
+  const diff = index - active;
+  if (diff === 0) return "is-active";
+  if (diff === -1) return "is-before";
+  if (diff === 1) return "is-after";
+  return "is-far";
+}
+
 export default function Screenshots() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const { ref: sectionRef, visible } = useReveal();
+  const activeRef = useRef(activeIndex);
 
+  // Keep ref in sync
+  useEffect(() => {
+    activeRef.current = activeIndex;
+  }, [activeIndex]);
+
+  const scrollTo = useCallback((index: number) => {
+    const el = scrollRef.current;
+    if (!el || !el.firstElementChild) return;
+    const itemWidth = (el.firstElementChild as HTMLElement).offsetWidth + 24;
+    el.scrollTo({ left: itemWidth * index, behavior: "smooth" });
+  }, []);
+
+  // Track scroll position
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -33,12 +56,17 @@ export default function Screenshots() {
     return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTo = (index: number) => {
-    const el = scrollRef.current;
-    if (!el || !el.firstElementChild) return;
-    const itemWidth = (el.firstElementChild as HTMLElement).offsetWidth + 24;
-    el.scrollTo({ left: itemWidth * index, behavior: "smooth" });
-  };
+  // Auto-play
+  useEffect(() => {
+    if (paused) return;
+
+    const timer = setInterval(() => {
+      const next = (activeRef.current + 1) % screenshots.length;
+      scrollTo(next);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [paused, scrollTo]);
 
   return (
     <section id="screenshots" className="py-20 md:py-28 relative overflow-hidden">
@@ -59,18 +87,23 @@ export default function Screenshots() {
           </div>
         </div>
 
-        {/* Screenshot carousel */}
+        {/* Screenshot carousel with 3D perspective */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[max(1.5rem,calc((100vw-1100px)/2))]"
+          className="screenshot-perspective flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[max(1.5rem,calc((100vw-1100px)/2))]"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={() => {
+            // Resume after a short delay on touch
+            setTimeout(() => setPaused(false), 3000);
+          }}
         >
           {screenshots.map((shot, i) => (
             <button
               key={shot.label}
               onClick={() => scrollTo(i)}
-              className={`flex-shrink-0 snap-center flex flex-col items-center gap-3 transition-all duration-300 ${
-                activeIndex === i ? "scale-100 opacity-100" : "scale-[0.94] opacity-60"
-              }`}
+              className={`flex-shrink-0 snap-center flex flex-col items-center gap-3 screenshot-3d ${get3DClass(i, activeIndex)}`}
             >
               <div className="phone-frame w-[220px] md:w-[250px]">
                 <Image

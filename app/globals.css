@@ -198,3 +198,217 @@ html {
   width: 24px;
   border-radius: 6px;
 }
+
+/* ══════════════════════════════════════════════
+   PREMIUM VISUAL ENHANCEMENTS
+   ══════════════════════════════════════════════ */
+
+/* ── 1. Floating gradient orbs ── */
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(120px, -80px) scale(1.1); }
+  66% { transform: translate(-60px, 60px) scale(0.95); }
+}
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-100px, 100px) scale(1.05); }
+  66% { transform: translate(80px, -40px) scale(0.9); }
+}
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 80px) scale(1.08); }
+  66% { transform: translate(-90px, -60px) scale(0.92); }
+}
+
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bg-orbs::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 106, 0.07) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: orbFloat1 25s ease-in-out infinite;
+}
+.bg-orbs::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 74, 255, 0.05) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: orbFloat2 30s ease-in-out infinite;
+}
+.bg-orb-3 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 204, 255, 0.04) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: orbFloat3 35s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .bg-orbs::before { width: 350px; height: 350px; }
+  .bg-orbs::after { width: 300px; height: 300px; }
+  .bg-orb-3 { width: 280px; height: 280px; }
+}
+
+/* ── 2. Noise texture overlay ── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ── 3. Shimmer gradient headline ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #00FF6A 0%,
+    #66FFB2 25%,
+    #00DDFF 50%,
+    #66FFB2 75%,
+    #00FF6A 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* ── 4. Parallax phone ── */
+.parallax-phone {
+  --px: 0px;
+  --py: 0px;
+  transform: translate(var(--px), var(--py));
+  transition: transform 0.15s ease-out;
+}
+
+/* ── 5. Star field ── */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.7; }
+}
+@keyframes drift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+.star-field {
+  position: absolute;
+  inset: -40px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.star-field span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.2;
+  animation:
+    twinkle var(--dur, 3s) ease-in-out infinite,
+    drift var(--drift, 8s) ease-in-out infinite alternate;
+}
+
+/* ── 6. CTA pulse ring ── */
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0.4), 0 0 30px rgba(0, 255, 106, 0.25); }
+  70% { box-shadow: 0 0 0 16px rgba(0, 255, 106, 0), 0 0 30px rgba(0, 255, 106, 0.25); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0), 0 0 30px rgba(0, 255, 106, 0.25); }
+}
+.cta-pulse {
+  animation: pulseRing 2.5s ease-out infinite;
+}
+
+/* CTA background gradient shift */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.cta-bg-shift {
+  background: linear-gradient(135deg, rgba(0, 255, 106, 0.08), rgba(180, 74, 255, 0.05), rgba(0, 204, 255, 0.06), rgba(0, 255, 106, 0.08));
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+/* ── 7. Spotlight icon pulse on hover ── */
+@keyframes iconPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0.3); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 255, 106, 0); }
+}
+.spotlight-card:hover .icon-pulse {
+  animation: iconPulse 1.5s ease-in-out infinite;
+}
+
+/* Staggered feature card entrance */
+.stagger-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.stagger-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 8. Screenshot 3D perspective ── */
+.screenshot-perspective {
+  perspective: 1200px;
+}
+.screenshot-3d {
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  transform-style: preserve-3d;
+}
+.screenshot-3d.is-before {
+  transform: scale(0.9) rotateY(5deg);
+  opacity: 0.45;
+}
+.screenshot-3d.is-after {
+  transform: scale(0.9) rotateY(-5deg);
+  opacity: 0.45;
+}
+.screenshot-3d.is-active {
+  transform: scale(1) rotateY(0deg);
+  opacity: 1;
+}
+.screenshot-3d.is-far {
+  transform: scale(0.85) rotateY(0deg);
+  opacity: 0.3;
+}
+
+/* ── 9. Theme swatch wave ── */
+.swatch-enter {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.6s ease-out;
+}
+.swatch-enter.visible {
+  opacity: 1;
+  transform: scale(1);
+}

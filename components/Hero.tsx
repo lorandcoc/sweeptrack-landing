@@ -1,10 +1,11 @@
-import Image from "next/image";
+import AnimatedCounter from "./AnimatedCounter";
+import ParallaxPhone from "./ParallaxPhone";
 
 const stats = [
-  { value: "55", label: "Detector Presets" },
-  { value: "12", label: "Color Themes" },
-  { value: "4", label: "Map Sources" },
-  { value: "2", label: "Languages" },
+  { value: 55, label: "Detector Presets" },
+  { value: 12, label: "Color Themes" },
+  { value: 4, label: "Map Sources" },
+  { value: 2, label: "Languages" },
 ];
 
 export default function Hero() {
@@ -32,7 +33,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 animate-fade-up delay-100">
               Track Every Sweep.
               <br />
-              <span className="text-accent glow-text">Find Every Treasure.</span>
+              <span className="shimmer-text glow-text">Find Every Treasure.</span>
             </h1>
 
             <p className="text-lg text-muted max-w-lg mb-8 md:mx-0 mx-auto leading-relaxed animate-fade-up delay-200">
@@ -63,33 +64,18 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Phone Mockup */}
-          <div className="flex justify-center md:justify-end animate-slide-right delay-200">
-            <div className="relative animate-float">
-              {/* Glow behind phone */}
-              <div className="absolute -inset-12 bg-accent/8 blur-[60px] rounded-full" />
-              <div className="relative phone-frame w-[260px] md:w-[300px]">
-                <Image
-                  src="/screenshots/home.png"
-                  alt="SweepTrack Pro - GPS Map View"
-                  width={300}
-                  height={650}
-                  className="w-full h-auto screenshot-crop"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
+          {/* Phone Mockup with Parallax + Stars */}
+          <ParallaxPhone />
         </div>
 
-        {/* Stats Bar */}
+        {/* Stats Bar with Animated Counters */}
         <div className="mt-16 md:mt-24 animate-fade-up delay-500">
           <div className="section-divider mb-10" />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-accent stat-glow mb-1">
-                  {stat.value}
+                  <AnimatedCounter target={stat.value} />
                 </div>
                 <div className="text-sm text-muted font-medium tracking-wide uppercase">
                   {stat.label}

@@ -9,8 +9,8 @@ export default function CTA() {
     <section id="download" className="py-20 md:py-28">
       <div ref={ref} className={`max-w-4xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="relative rounded-3xl overflow-hidden">
-          {/* Background glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/8 via-transparent to-[#B44AFF]/5" />
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 cta-bg-shift rounded-3xl" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-accent/8 blur-[100px] rounded-full" />
 
           <div className="relative border border-white/8 rounded-3xl p-10 md:p-16 text-center bg-surface/70 backdrop-blur-xl">
@@ -28,7 +28,7 @@ export default function CTA() {
               href="https://play.google.com/store"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-accent text-[#0A0A1A] font-semibold hover:bg-accent-dim transition-all text-lg glow-accent hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-accent text-[#0A0A1A] font-semibold hover:bg-accent-dim transition-all text-lg cta-pulse hover:scale-[1.02] active:scale-[0.98]"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 010 1.732l-2.807 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z" />

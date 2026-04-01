@@ -34,15 +34,16 @@ export default function ThemeShowcase() {
           </p>
         </div>
 
-        {/* Theme grid — 6 columns desktop, 4 tablet, 3 mobile */}
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-5 md:gap-6 justify-items-center">
-          {themes.map((theme) => (
+          {themes.map((theme, i) => (
             <div key={theme.name} className="group flex flex-col items-center gap-2.5">
               <div
-                className="relative w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg cursor-default"
+                className={`relative w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl group-hover:scale-110 cursor-default swatch-enter ${visible ? "visible" : ""}`}
                 style={{
                   background: `radial-gradient(circle at 30% 30%, ${theme.accent}50, ${theme.accent}18 60%, #141428)`,
                   border: `1.5px solid ${theme.accent}40`,
+                  transitionDelay: visible ? `${i * 100}ms` : "0ms",
+                  boxShadow: visible ? `0 0 20px ${theme.accent}30, inset 0 0 15px ${theme.accent}15` : "none",
                 }}
               >
                 {theme.free && (
@@ -60,10 +61,11 @@ export default function ThemeShowcase() {
           {/* Night Vision */}
           <div className="group flex flex-col items-center gap-2.5">
             <div
-              className="w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl transition-all duration-300 group-hover:scale-110 bg-black flex items-center justify-center cursor-default"
+              className={`w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl group-hover:scale-110 bg-black flex items-center justify-center cursor-default swatch-enter ${visible ? "visible" : ""}`}
               style={{
                 border: "1.5px solid rgba(255, 0, 0, 0.4)",
-                boxShadow: "inset 0 0 20px rgba(255, 0, 0, 0.15)",
+                transitionDelay: visible ? `${themes.length * 100}ms` : "0ms",
+                boxShadow: visible ? "inset 0 0 20px rgba(255, 0, 0, 0.15), 0 0 20px rgba(255, 0, 0, 0.2)" : "inset 0 0 20px rgba(255, 0, 0, 0.15)",
               }}
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF0000" strokeWidth="1.5">

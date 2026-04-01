@@ -142,6 +142,19 @@ function RevealSection({ children, className = "" }: { children: React.ReactNode
   );
 }
 
+function StaggerCard({ children, index }: { children: React.ReactNode; index: number }) {
+  const { ref, visible } = useReveal(0.1);
+  return (
+    <div
+      ref={ref}
+      className={`stagger-card ${visible ? "visible" : ""}`}
+      style={{ transitionDelay: visible ? `${index * 80}ms` : "0ms" }}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function Features() {
   return (
     <section id="features" className="py-20 md:py-28">
@@ -172,7 +185,7 @@ export default function Features() {
                 <div className="absolute -top-12 -right-12 w-32 h-32 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors" />
                 <div className="relative">
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                    <div className="icon-pulse w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
                       {feature.icon}
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-widest text-accent/70 bg-accent/8 px-2.5 py-1 rounded-full">
@@ -189,14 +202,11 @@ export default function Features() {
           </div>
         </RevealSection>
 
-        {/* Remaining features — compact grid */}
-        <RevealSection>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="feature-card rounded-xl p-5 bg-surface/60 border border-white/[0.04] hover:border-accent/20"
-              >
+        {/* Remaining features — staggered compact grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {features.map((feature, i) => (
+            <StaggerCard key={feature.title} index={i}>
+              <div className="feature-card rounded-xl p-5 bg-surface/60 border border-white/[0.04] hover:border-accent/20 h-full">
                 <div className="flex items-start gap-4">
                   <div className="w-9 h-9 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5">
                     {feature.icon}
@@ -209,9 +219,9 @@ export default function Features() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </RevealSection>
+            </StaggerCard>
+          ))}
+        </div>
       </div>
     </section>
   );

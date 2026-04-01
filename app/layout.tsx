@@ -52,7 +52,16 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col aurora-bg">{children}</body>
+      <body className="min-h-full aurora-bg">
+        {/* Floating gradient orbs */}
+        <div className="bg-orbs" aria-hidden="true">
+          <span className="bg-orb-3" />
+        </div>
+        {/* Noise texture grain */}
+        <div className="noise-overlay" aria-hidden="true" />
+        {/* Page content above orbs */}
+        <div className="relative z-10 flex flex-col min-h-full">{children}</div>
+      </body>
     </html>
   );
 }
