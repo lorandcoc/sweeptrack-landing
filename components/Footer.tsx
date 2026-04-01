@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
             <div>
               <span className="font-semibold">
-                Sweep Track <span className="text-accent">Pro</span>
+                SweepTrack <span className="text-accent">Pro</span>
               </span>
               <span className="text-muted text-sm ml-2">by Loriba</span>
             </div>

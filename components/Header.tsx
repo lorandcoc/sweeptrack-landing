@@ -47,7 +47,7 @@ export default function Header() {
             </svg>
           </div>
           <span className="font-bold text-[17px] tracking-tight">
-            Sweep Track <span className="text-accent">Pro</span>
+            SweepTrack <span className="text-accent">Pro</span>
           </span>
         </a>
 

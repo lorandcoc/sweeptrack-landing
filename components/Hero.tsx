@@ -71,7 +71,7 @@ export default function Hero() {
               <div className="relative phone-frame w-[260px] md:w-[300px]">
                 <Image
                   src="/screenshots/home.png"
-                  alt="Sweep Track Pro - GPS Map View"
+                  alt="SweepTrack Pro - GPS Map View"
                   width={300}
                   height={650}
                   className="w-full h-auto screenshot-crop"
