@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useReveal } from "./useReveal";
 
 const showcaseFeatures = [
   {
@@ -67,14 +64,12 @@ function FeatureRow({
   feature: (typeof showcaseFeatures)[0];
   index: number;
 }) {
-  const { ref, visible } = useReveal(0.15);
   const isLeft = feature.side === "left";
 
   return (
     <div
-      ref={ref}
-      className={`reveal ${visible ? "visible" : ""} grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
-        index > 0 ? "mt-16 md:mt-20" : ""
+      className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
+        index > 0 ? "mt-12 md:mt-16" : ""
       }`}
     >
       {/* Text */}
