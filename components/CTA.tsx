@@ -18,13 +18,15 @@ export default function CTA() {
               Your Next Find Is{" "}
               <span className="text-accent glow-text">Waiting</span>
             </h2>
-            <p className="text-muted text-lg max-w-lg mx-auto mb-4">
-              7-day free trial. No credit card. Cancel anytime.
-              Every feature unlocked from day one.
+            <p className="text-muted text-lg max-w-lg mx-auto mb-2">
+              7-day free trial with every feature unlocked.
+            </p>
+            <p className="text-accent/80 text-sm font-medium mb-6">
+              Then $2.99/month or $19.99/year &middot; Cancel anytime
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 text-xs text-muted mb-8">
-              {["GPS Tracking", "Detecting Forecast", "Offline Maps", "57 Presets", "Cloud Backup", "Night Vision", "Permission Vault"].map((f) => (
+              {["GPS Tracking", "Detecting Forecast", "Offline Maps", "Cloud Backup", "Night Vision", "Permission Vault", "Session Analytics"].map((f) => (
                 <span key={f} className="px-3 py-1 rounded-full border border-white/8 bg-white/[0.03]">{f}</span>
               ))}
             </div>

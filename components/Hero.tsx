@@ -2,10 +2,10 @@ import AnimatedCounter from "./AnimatedCounter";
 import ParallaxPhone from "./ParallaxPhone";
 
 const stats = [
-  { value: 57, label: "Detectors Supported" },
-  { value: 12, label: "Brands Covered" },
+  { value: 57, label: "Detector Presets" },
+  { value: 12, label: "Color Themes" },
   { value: 4, label: "Offline Map Sources" },
-  { value: 96, label: "Max Detect Score", suffix: "%" },
+  { value: 3, label: "Export Formats" },
 ];
 
 export default function Hero() {
@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium mb-6 animate-fade-up">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              Free on Android &middot; No Credit Card Required
+              7-Day Free Trial &middot; Then $2.99/mo or $19.99/yr
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
@@ -44,7 +44,7 @@ export default function Hero() {
 
             <p className="text-lg text-muted max-w-lg mb-8 md:mx-0 mx-auto leading-relaxed animate-fade-up delay-200">
               GPS tracking, weather-based detecting forecast, historical maps,
-              57 detector presets, offline maps — the only app built
+              offline maps, cloud backup — the only app built
               specifically for metal detectorists who are serious about their hunts.
             </p>
 
@@ -80,7 +80,7 @@ export default function Hero() {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-accent stat-glow mb-1">
-                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                  <AnimatedCounter target={stat.value} />
                 </div>
                 <div className="text-xs text-muted font-medium tracking-wide uppercase">
                   {stat.label}

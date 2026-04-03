@@ -33,11 +33,11 @@ const showcaseFeatures = [
   },
   {
     tag: "Arsenal",
-    title: "57 Detectors. 12 Brands. Your Settings.",
-    description: "Minelab, Garrett, XP, Nokta, Fisher, and 7 more brands — every model pre-configured. Save up to 10 custom presets for instant field switching. Share via QR code.",
+    title: "Your Detector Settings. Organized.",
+    description: "Save, organize, and share your detector presets across 57 models from 12 brands. Keep up to 10 configurations ready and share them with hunting buddies via QR code. Never forget your sweet settings again.",
     screenshot: "/screenshots/presets.png",
-    alt: "Machine Presets showing 57 models from 12 brands",
-    highlight: "57 Models",
+    alt: "Machine Presets for organizing detector settings",
+    highlight: "12 Brands",
     side: "left" as const,
   },
   {
