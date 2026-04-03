@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
+import FeatureShowcase from "@/components/FeatureShowcase";
 import HowItWorks from "@/components/HowItWorks";
 import Screenshots from "@/components/Screenshots";
 import Marquee from "@/components/Marquee";
@@ -14,8 +14,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Features />
         <HowItWorks />
+        <FeatureShowcase />
         <Screenshots />
         <Marquee />
         <ThemeShowcase />
