@@ -235,13 +235,13 @@ export default function FeaturesAll() {
         {/* Section header */}
         <RevealSection>
           <div className="text-center mb-14">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Complete Feature Set</p>
+            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">What&apos;s Inside</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Built for the{" "}
-              <span className="text-accent">Field. Not a Desk.</span>
+              Tools You&apos;ll Actually{" "}
+              <span className="text-accent">Use in the Field</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
-              Every feature was designed in response to real detecting problems. No filler. No bloat. If it&apos;s here, a detectorist asked for it.
+              We detect too. Every feature here exists because we needed it on a hunt. Nothing was added just to pad a list.
             </p>
           </div>
         </RevealSection>
@@ -341,8 +341,8 @@ export default function FeaturesAll() {
 
         {/* ── Secondary features: compact grid ── */}
         <div className="text-center mb-8">
-          <p className="text-muted text-sm uppercase tracking-widest font-semibold">And much more</p>
-          <h3 className="text-xl font-bold mt-2">Every tool a detectorist needs</h3>
+          <p className="text-muted text-sm uppercase tracking-widest font-semibold">Plus</p>
+          <h3 className="text-xl font-bold mt-2">All the little things that make a big difference</h3>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">

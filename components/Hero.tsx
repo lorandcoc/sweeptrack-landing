@@ -43,9 +43,9 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-muted max-w-lg mb-8 md:mx-0 mx-auto leading-relaxed animate-fade-up delay-200">
-              GPS tracking, weather-based detecting forecast, historical maps,
-              offline maps, cloud backup — the only app built
-              specifically for metal detectorists who are serious about their hunts.
+              GPS tracking, detecting forecast, historical map overlays,
+              offline maps, cloud backup — everything you wish you had
+              on your last hunt. Ad-free. Always.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-up delay-300">

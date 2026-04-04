@@ -42,10 +42,10 @@ export default function Tutorials() {
               <Play className="w-4 h-4 fill-accent" /> SweepTrack Academy
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Master Every <span className="text-accent">Feature</span>
+              Learn the App in <span className="text-accent">60 Seconds</span>
             </h2>
             <p className="text-muted text-lg max-w-xl mx-auto">
-              Quick 60-second shorts showing exactly how to get the most out of every tool.
+              Short videos walking you through each feature. No fluff, just what you need to know.
             </p>
           </div>
 

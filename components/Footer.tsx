@@ -50,7 +50,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-sm mb-5">
-              GPS tracking app built by detectorists, for detectorists. Track every sweep, analyze every session, find every treasure.
+              The metal detecting companion app. GPS tracking, offline maps, cloud backup, and way more than we can fit in this footer.
             </p>
 
             {/* Social Icons */}
@@ -84,8 +84,8 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-foreground">Stay Updated</h4>
-            <p className="text-muted text-sm mb-3">Get notified about new features and detecting tips.</p>
+            <h4 className="text-sm font-semibold mb-4 text-foreground">Don&apos;t Miss Out</h4>
+            <p className="text-muted text-sm mb-3">New features, detecting tips, and the occasional treasure story.</p>
             <form
               className="flex gap-2"
               onSubmit={(e) => e.preventDefault()}

@@ -46,7 +46,7 @@ export default function Marquee() {
   return (
     <section className="py-10 md:py-14">
       <div ref={ref} className={`reveal ${visible ? "visible" : ""}`}>
-        <p className="text-center text-muted text-xs font-medium tracking-widest uppercase mb-4">Packed with Features</p>
+        <p className="text-center text-muted text-xs font-medium tracking-widest uppercase mb-4">All in One App &middot; Ad-Free</p>
         <MarqueeRow />
         <MarqueeRow reverse />
       </div>

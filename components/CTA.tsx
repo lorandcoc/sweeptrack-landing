@@ -13,7 +13,7 @@ export default function CTA() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-accent/8 blur-[100px] rounded-full" />
 
           <div className="relative border border-white/8 rounded-3xl p-10 md:p-16 text-center bg-surface/70 backdrop-blur-xl">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-4">Start Free Today</p>
+            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-4">Ready?</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Your Next Find Is{" "}
               <span className="text-accent glow-text">Waiting</span>

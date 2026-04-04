@@ -101,7 +101,7 @@ export default function CommunityLinks() {
             Join The <span className="shimmer-text">Hunt</span>
           </h2>
           <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto">
-            SweepTrack isn't just an app — it's built by detectorists, for detectorists. Connect with the community, share your latest hoard, and master your machine.
+            Share your finds, swap tips, and see what other hunters are digging up. We&apos;re all in this together.
           </p>
         </div>
 
