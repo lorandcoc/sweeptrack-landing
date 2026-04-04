@@ -30,6 +30,12 @@ export default function Screenshots() {
   const { ref: sectionRef, visible } = useReveal();
   const activeRef = useRef(activeIndex);
 
+  // Drag to scroll refs
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+  const hasDragged = useRef(false);
+
   useEffect(() => { activeRef.current = activeIndex; }, [activeIndex]);
 
   const scrollTo = useCallback((index: number) => {
@@ -43,10 +49,13 @@ export default function Screenshots() {
     const el = scrollRef.current;
     if (!el) return;
     const handleScroll = () => {
-      const scrollLeft = el.scrollLeft;
+      // Don't update active index if we're actively dragging, 
+      // let it settle visually or calculate dynamically if needed.
+      // But it's usually fine since the UI indicator updates.
+      const scrollPos = el.scrollLeft;
       const itemWidth = el.firstElementChild
         ? (el.firstElementChild as HTMLElement).offsetWidth + 24 : 280;
-      setActiveIndex(Math.round(scrollLeft / itemWidth));
+      setActiveIndex(Math.round(scrollPos / itemWidth));
     };
     el.addEventListener("scroll", handleScroll, { passive: true });
     return () => el.removeEventListener("scroll", handleScroll);
@@ -60,6 +69,38 @@ export default function Screenshots() {
     }, 4000);
     return () => clearInterval(timer);
   }, [paused, scrollTo]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    hasDragged.current = false;
+    if (scrollRef.current) {
+      startX.current = e.pageX - scrollRef.current.offsetLeft;
+      scrollLeft.current = scrollRef.current.scrollLeft;
+      scrollRef.current.style.scrollSnapType = 'none'; // Prevent jitter when dragging
+      scrollRef.current.style.cursor = 'grabbing';
+    }
+    setPaused(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    if (Math.abs(walk) > 5) {
+      hasDragged.current = true;
+    }
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    isDragging.current = false;
+    setPaused(false);
+    if (scrollRef.current) {
+      scrollRef.current.style.scrollSnapType = ''; // Re-enable snap
+      scrollRef.current.style.cursor = '';
+    }
+  };
 
   return (
     <section id="screenshots" className="py-16 md:py-20 relative overflow-hidden">
@@ -81,22 +122,26 @@ export default function Screenshots() {
 
         <div
           ref={scrollRef}
-          className="screenshot-perspective flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[max(1.5rem,calc((100vw-1100px)/2))]"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          className="screenshot-perspective flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[max(1.5rem,calc((100vw-1100px)/2))] cursor-grab active:cursor-grabbing"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
           onTouchStart={() => setPaused(true)}
           onTouchEnd={() => setTimeout(() => setPaused(false), 3000)}
         >
           {screenshots.map((shot, i) => (
             <button
               key={shot.label}
-              onClick={() => scrollTo(i)}
+              onClick={() => {
+                if (!hasDragged.current) scrollTo(i);
+              }}
               className={`flex-shrink-0 snap-center flex flex-col items-center gap-3 screenshot-3d ${get3DClass(i, activeIndex)}`}
             >
-              <div className="phone-frame w-[200px] md:w-[230px]">
+              <div className="phone-frame w-[200px] md:w-[230px] pointer-events-none">
                 <Image src={shot.src} alt={shot.alt} width={230} height={498} className="w-full h-auto screenshot-crop" />
               </div>
-              <span className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"}`}>
+              <span className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"} pointer-events-none`}>
                 {shot.label}
               </span>
             </button>
