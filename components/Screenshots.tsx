@@ -122,7 +122,7 @@ export default function Screenshots() {
 
         <div
           ref={scrollRef}
-          className="screenshot-perspective flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[max(1.5rem,calc((100vw-1100px)/2))] cursor-grab active:cursor-grabbing"
+          className="screenshot-perspective flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[calc(50%-100px)] md:px-[calc(50%-115px)] cursor-grab active:cursor-grabbing"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
