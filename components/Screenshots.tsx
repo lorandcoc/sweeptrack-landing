@@ -122,7 +122,7 @@ export default function Screenshots() {
 
         <div
           ref={scrollRef}
-          className="screenshot-perspective flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[calc(50%-100px)] md:px-[calc(50%-115px)] cursor-grab active:cursor-grabbing"
+          className="screenshot-perspective flex gap-6 overflow-x-auto pb-8 screenshot-scroll snap-x snap-mandatory px-[calc(50%-130px)] md:px-[calc(50%-160px)] cursor-grab active:cursor-grabbing"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
@@ -138,8 +138,8 @@ export default function Screenshots() {
               }}
               className={`flex-shrink-0 snap-center flex flex-col items-center gap-3 screenshot-3d ${get3DClass(i, activeIndex)}`}
             >
-              <div className="phone-frame w-[200px] md:w-[230px] pointer-events-none">
-                <Image src={shot.src} alt={shot.alt} width={230} height={498} className="w-full h-auto screenshot-crop" />
+              <div className="phone-frame w-[260px] md:w-[320px] pointer-events-none">
+                <Image src={shot.src} alt={shot.alt} width={320} height={693} className="w-full h-auto screenshot-crop" />
               </div>
               <span className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"} pointer-events-none`}>
                 {shot.label}
