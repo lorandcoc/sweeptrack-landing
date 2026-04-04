@@ -398,8 +398,10 @@ html {
   opacity: 0.6;
 }
 .screenshot-3d.is-active {
-  transform: scale(1) rotateY(0deg);
+  transform: scale(1.35) rotateY(0deg);
   opacity: 1;
+  position: relative;
+  z-index: 10;
 }
 .screenshot-3d.is-far {
   transform: scale(0.88) rotateY(0deg);
