@@ -1,11 +1,18 @@
 import AnimatedCounter from "./AnimatedCounter";
 import ParallaxPhone from "./ParallaxPhone";
 
-const stats = [
+const numberStats = [
   { value: 7, label: "Tracks Overlaid at Once" },
   { value: 4, label: "Offline Map Sources" },
-  { label: "USGS Historical Maps" },
-  { label: "Permission Vault" },
+  { value: 14, label: "Day Tide Forecast" },
+  { value: 10, label: "Detector Preset Slots" },
+];
+
+const checkStats = [
+  "USGS Historical Maps",
+  "Permission Vault",
+  "Perimeter Guard",
+  "Cloud Backup",
 ];
 
 export default function Hero() {
@@ -73,27 +80,36 @@ export default function Hero() {
           <ParallaxPhone />
         </div>
 
-        {/* Stats Bar */}
+        {/* Stats Bar — 4x2 grid: numbers top, checkmarks bottom */}
         <div className="mt-16 md:mt-20 animate-fade-up delay-500">
           <div className="section-divider mb-8" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat) => (
+
+          {/* Row 1: Numbers */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+            {numberStats.map((stat) => (
               <div key={stat.label} className="text-center">
-                {"value" in stat && stat.value ? (
-                  <div className="text-3xl md:text-4xl font-bold text-accent stat-glow mb-1">
-                    <AnimatedCounter target={stat.value} />
-                  </div>
-                ) : (
-                  <div className="text-lg md:text-xl font-bold text-accent stat-glow mb-1">
-                    &#10003;
-                  </div>
-                )}
+                <div className="text-3xl md:text-4xl font-bold text-accent stat-glow mb-1">
+                  <AnimatedCounter target={stat.value} />
+                </div>
                 <div className="text-xs text-muted font-medium tracking-wide uppercase">
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Row 2: Checkmarks */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {checkStats.map((label) => (
+              <div key={label} className="flex items-center justify-center gap-2 py-2 rounded-lg bg-accent/5 border border-accent/10">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00FF6A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span className="text-xs font-medium text-white/80 uppercase tracking-wide">{label}</span>
+              </div>
+            ))}
+          </div>
+
           <div className="section-divider mt-8" />
         </div>
       </div>
