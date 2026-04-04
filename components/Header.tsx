@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "Features", href: "#features" },
+  { label: "Tutorials", href: "#tutorials" },
   { label: "Screenshots", href: "#screenshots" },
   { label: "Themes", href: "#themes" },
+  { label: "Community", href: "#community" },
 ];
 
 export default function Header() {

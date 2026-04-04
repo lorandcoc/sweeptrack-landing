@@ -2,10 +2,10 @@ import AnimatedCounter from "./AnimatedCounter";
 import ParallaxPhone from "./ParallaxPhone";
 
 const stats = [
-  { value: 57, label: "Detector Presets" },
-  { value: 12, label: "Color Themes" },
-  { value: 4, label: "Offline Map Sources" },
-  { value: 3, label: "Export Formats" },
+  { value: 4, label: "Offline Map Types" },
+  { value: 7, label: "Day Tide Forecast" },
+  { value: 10, label: "Detector Preset Slots" },
+  { value: 100, suffix: "%", label: "Detecting Score" },
 ];
 
 export default function Hero() {
@@ -80,7 +80,7 @@ export default function Hero() {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-accent stat-glow mb-1">
-                  <AnimatedCounter target={stat.value} />
+                  <AnimatedCounter target={stat.value} suffix={"suffix" in stat ? (stat as { suffix: string }).suffix : ""} />
                 </div>
                 <div className="text-xs text-muted font-medium tracking-wide uppercase">
                   {stat.label}
