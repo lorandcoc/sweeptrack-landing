@@ -211,7 +211,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .screenshot-scroll, .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  touch-action: pan-y;
 }
 .screenshot-scroll::-webkit-scrollbar, .no-scrollbar::-webkit-scrollbar {
   display: none;

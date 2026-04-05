@@ -122,8 +122,7 @@ export default function Screenshots() {
 
         <div
           ref={scrollRef}
-          className="screenshot-perspective flex gap-6 overflow-x-auto py-8 md:py-24 screenshot-scroll snap-x snap-mandatory px-[calc(50%-100px)] md:px-[calc(50%-115px)] cursor-grab active:cursor-grabbing"
-          style={{ touchAction: 'pan-y' }}
+          className="screenshot-perspective flex gap-6 overflow-x-auto py-16 md:py-24 screenshot-scroll snap-x snap-mandatory px-[calc(50%-100px)] md:px-[calc(50%-115px)] cursor-grab active:cursor-grabbing"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
