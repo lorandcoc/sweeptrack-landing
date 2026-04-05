@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useReveal } from "./useReveal";
+import TiltCard from "./TiltCard";
 
 /* ─── FEATURED CARD WITH REAL SCREENSHOT ─── */
 
@@ -34,41 +35,43 @@ function FeaturedWithScreenshot({
   const c = colors[tagColor] || colors.accent;
 
   return (
-    <div className="featured-card rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/5 hover:border-white/10 transition-colors">
-      <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-10" style={{ background: c }} />
-      <div className="relative z-10 flex-1 flex flex-col">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${c}18` }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 8v4l2 2" />
-              </svg>
+    <TiltCard className="h-full">
+      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/5 transition-colors">
+        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-10" style={{ background: c }} />
+        <div className="relative z-10 flex-1 flex flex-col">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${c}18` }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4l2 2" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-base leading-tight">{title}</h3>
+                <p className="text-muted text-[11px]">{subtitle}</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-bold text-base leading-tight">{title}</h3>
-              <p className="text-muted text-[11px]">{subtitle}</p>
-            </div>
+            <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
+              style={{ color: `${c}cc`, background: `${c}15` }}>{tag}</span>
           </div>
-          <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-            style={{ color: `${c}cc`, background: `${c}15` }}>{tag}</span>
-        </div>
 
-        {/* Real screenshot */}
-        <div className="rounded-xl overflow-hidden border border-white/8 flex-1 min-h-[160px] relative bg-black">
-          <Image
-            src={screenshot}
-            alt={alt}
-            fill
-            className="object-cover object-top screenshot-crop"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
+          {/* Real screenshot */}
+          <div className="rounded-xl overflow-hidden border border-white/8 flex-1 min-h-[160px] relative bg-black">
+            <Image
+              src={screenshot}
+              alt={alt}
+              fill
+              className="object-cover object-top screenshot-crop"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+          </div>
 
-        <p className="text-muted text-xs mt-3 leading-relaxed">{description}</p>
-        {children}
+          <p className="text-muted text-xs mt-3 leading-relaxed">{description}</p>
+          {children}
+        </div>
       </div>
-    </div>
+    </TiltCard>
   );
 }
 
@@ -99,38 +102,40 @@ function FeaturedTextCard({
   const c = colors[tagColor] || colors.accent;
 
   return (
-    <div className="featured-card rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/5 hover:border-white/10 transition-colors">
-      <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-10" style={{ background: c }} />
-      <div className="relative z-10 flex-1 flex flex-col">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${c}18` }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 8v4l2 2" />
-              </svg>
+    <TiltCard className="h-full">
+      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/5 transition-colors">
+        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-10" style={{ background: c }} />
+        <div className="relative z-10 flex-1 flex flex-col">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${c}18` }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4l2 2" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-base leading-tight">{title}</h3>
+                <p className="text-muted text-[11px]">{subtitle}</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-bold text-base leading-tight">{title}</h3>
-              <p className="text-muted text-[11px]">{subtitle}</p>
-            </div>
+            <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
+              style={{ color: `${c}cc`, background: `${c}15` }}>{tag}</span>
           </div>
-          <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-            style={{ color: `${c}cc`, background: `${c}15` }}>{tag}</span>
-        </div>
 
-        <p className="text-muted text-sm leading-relaxed mb-4">{description}</p>
+          <p className="text-muted text-sm leading-relaxed mb-4">{description}</p>
 
-        <div className="space-y-2 flex-1">
-          {bullets.map((b, i) => (
-            <div key={i} className="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-black/20 border border-white/[0.04]">
-              <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: c }} />
-              <span className="text-xs text-white/70 leading-relaxed">{b}</span>
-            </div>
-          ))}
+          <div className="space-y-2 flex-1">
+            {bullets.map((b, i) => (
+              <div key={i} className="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-black/20 border border-white/[0.04]">
+                <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: c }} />
+                <span className="text-xs text-white/70 leading-relaxed">{b}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </TiltCard>
   );
 }
 
@@ -216,10 +221,10 @@ const secondaryFeatures = [
 
 /* ─── Section helpers ─── */
 
-function RevealSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function RevealSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const { ref, visible } = useReveal();
   return (
-    <div ref={ref} className={`reveal ${visible ? "visible" : ""} ${className}`}>
+    <div ref={ref} className={`reveal ${visible ? "visible" : ""} ${className}`} style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}>
       {children}
     </div>
   );
@@ -248,7 +253,7 @@ export default function FeaturesAll() {
 
         {/* ── Row 1 — GPS (large) + Cloud Backup ── */}
         <div className="grid md:grid-cols-5 gap-4 mb-4">
-          <div className="md:col-span-3 min-h-[320px]">
+          <RevealSection delay={0} className="md:col-span-3 min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title="GPS Tracking"
               subtitle="4 map types · Real-time HUD"
@@ -257,8 +262,8 @@ export default function FeaturesAll() {
               alt="GPS satellite map view with tracking HUD"
               description="Real-time satellite map with heading, altitude, speed, and distance overlay. Switch between Satellite, Terrain, Topographic, and Street views."
             />
-          </div>
-          <div className="md:col-span-2 min-h-[320px]">
+          </RevealSection>
+          <RevealSection delay={150} className="md:col-span-2 min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title="Cloud Backup"
               subtitle="Google Drive · One-tap restore"
@@ -268,42 +273,46 @@ export default function FeaturesAll() {
               alt="Cloud backup connected to Google Drive"
               description="One-tap Google Drive backup for all sessions, presets, permits, and settings. Lost phone? Restore everything on any device."
             />
-          </div>
+          </RevealSection>
         </div>
 
         {/* ── Row 2 — Track Overlay + Perimeter Guard ── */}
         <div className="grid md:grid-cols-2 gap-4 mb-4">
-          <FeaturedTextCard
-            title="Track Overlay"
-            subtitle="Up to 7 past tracks simultaneously"
-            tag="Field"
-            tagColor="cyan"
-            description="Overlay up to 7 past tracks on the same map to see exactly which patches you missed. Each track gets its own color so coverage gaps are instantly visible."
-            bullets={[
-              "7 color-coded tracks overlaid simultaneously",
-              "Toggle individual tracks on/off",
-              "See uncovered patches at a glance",
-              "Works with all 4 map types",
-            ]}
-          />
-          <FeaturedTextCard
-            title="Perimeter Guard"
-            subtitle="Vibration + audio boundary alerts"
-            tag="Safety"
-            tagColor="orange"
-            description="Draw any boundary polygon on the map. Get haptic vibration when approaching and an audio signal when you step outside. Stay within your permitted zone."
-            bullets={[
-              "Draw custom boundary polygons on map",
-              "Haptic vibration near the edge",
-              "Audio alarm when outside perimeter",
-              "Links to Permission Manager sites",
-            ]}
-          />
+          <RevealSection delay={0} className="h-full">
+            <FeaturedTextCard
+              title="Track Overlay"
+              subtitle="Up to 7 past tracks simultaneously"
+              tag="Field"
+              tagColor="cyan"
+              description="Overlay up to 7 past tracks on the same map to see exactly which patches you missed. Each track gets its own color so coverage gaps are instantly visible."
+              bullets={[
+                "7 color-coded tracks overlaid simultaneously",
+                "Toggle individual tracks on/off",
+                "See uncovered patches at a glance",
+                "Works with all 4 map types",
+              ]}
+            />
+          </RevealSection>
+          <RevealSection delay={150} className="h-full">
+            <FeaturedTextCard
+              title="Perimeter Guard"
+              subtitle="Vibration + audio boundary alerts"
+              tag="Safety"
+              tagColor="orange"
+              description="Draw any boundary polygon on the map. Get haptic vibration when approaching and an audio signal when you step outside. Stay within your permitted zone."
+              bullets={[
+                "Draw custom boundary polygons on map",
+                "Haptic vibration near the edge",
+                "Audio alarm when outside perimeter",
+                "Links to Permission Manager sites",
+              ]}
+            />
+          </RevealSection>
         </div>
 
         {/* ── Row 3 — Permission Manager + Old Map + Offline Maps ── */}
         <div className="grid md:grid-cols-3 gap-4 mb-14">
-          <div className="min-h-[320px]">
+          <RevealSection delay={0} className="min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title="Permission Manager"
               subtitle="Boundaries · Calendar · PDF letter"
@@ -312,21 +321,23 @@ export default function FeaturesAll() {
               alt="Permission manager with approved and expiring permits"
               description="Track landowner permissions with approval status, expiry alerts to your calendar, site boundaries, and automatic PDF permission letters."
             />
-          </div>
-          <FeaturedTextCard
-            title="U.S. Old Map Overlay"
-            subtitle="USGS Historical Topographic Collection"
-            tag="Research"
-            tagColor="amber"
-            description="Overlay genuine USGS historical topographic maps from the ArcGIS collection onto your modern map. Find old roads, buildings, and settlements that no longer exist."
-            bullets={[
-              "Real USGS historical topo tiles",
-              "Adjustable overlay opacity",
-              "Spot old structures & roads",
-              "Available across the U.S.",
-            ]}
-          />
-          <div className="min-h-[320px]">
+          </RevealSection>
+          <RevealSection delay={150} className="h-full">
+            <FeaturedTextCard
+              title="U.S. Old Map Overlay"
+              subtitle="USGS Historical Topographic Collection"
+              tag="Research"
+              tagColor="amber"
+              description="Overlay genuine USGS historical topographic maps from the ArcGIS collection onto your modern map. Find old roads, buildings, and settlements that no longer exist."
+              bullets={[
+                "Real USGS historical topo tiles",
+                "Adjustable overlay opacity",
+                "Spot old structures & roads",
+                "Available across the U.S.",
+              ]}
+            />
+          </RevealSection>
+          <RevealSection delay={300} className="min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title="Offline Maps"
               subtitle="4 tile sources · No cell needed"
@@ -336,7 +347,7 @@ export default function FeaturesAll() {
               alt="Offline maps download interface with 4 tile types"
               description="Download map tiles for offline use. Street, Satellite, Terrain, and Historical Topo. Hunt confidently with zero cell coverage."
             />
-          </div>
+          </RevealSection>
         </div>
 
         {/* ── Secondary features: compact grid ── */}
@@ -346,19 +357,20 @@ export default function FeaturesAll() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-          {secondaryFeatures.map((feature) => (
-            <div key={feature.title}
-              className="h-full px-4 py-4 rounded-xl bg-surface/50 border border-white/[0.05] hover:border-accent/20 hover:bg-surface/80 transition-all duration-300 group">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5 group-hover:bg-accent/15 transition-colors">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-sm mb-1 text-white/90 group-hover:text-white transition-colors">{feature.title}</h3>
-                  <p className="text-muted text-xs leading-relaxed">{feature.description}</p>
+          {secondaryFeatures.map((feature, i) => (
+            <RevealSection key={feature.title} delay={(i % 4) * 100} className="h-full">
+              <div className="h-full px-4 py-4 rounded-xl bg-surface/50 border border-transparent hover-radar hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group cursor-default">
+                <div className="flex items-start gap-3 relative z-10">
+                  <div className="w-8 h-8 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5 group-hover:bg-accent/15 transition-colors">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm mb-1 text-white/90 group-hover:text-white transition-colors">{feature.title}</h3>
+                    <p className="text-muted text-xs leading-relaxed">{feature.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </RevealSection>
           ))}
         </div>
       </div>

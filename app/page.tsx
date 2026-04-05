@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import FeaturesAll from "@/components/FeaturesAll";
 import HowItWorks from "@/components/HowItWorks";
 import Screenshots from "@/components/Screenshots";
+import MapCompareSlider from "@/components/MapCompareSlider";
 import Tutorials from "@/components/Tutorials";
 import Marquee from "@/components/Marquee";
 import CommunityLinks from "@/components/CommunityLinks";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <FeaturesAll />
         <HowItWorks />
+        <MapCompareSlider />
         <Screenshots />
         <Tutorials />
         <Marquee />

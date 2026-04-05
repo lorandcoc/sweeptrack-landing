@@ -32,10 +32,10 @@ export default function TiltCard({
   };
 
   return (
-    <div className={`tilt-card ${className}`}>
+    <div className={`tilt-card w-full h-full ${className}`}>
       <div
         ref={cardRef}
-        className="tilt-card-inner"
+        className="tilt-card-inner w-full h-full"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >

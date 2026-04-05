@@ -474,7 +474,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .rotating-border {
   position: relative;
 }
-.rotating-border::before {
+.rotating-border::before, .hover-radar::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -493,6 +493,20 @@ input[type="range"]::-webkit-slider-thumb:hover {
   -webkit-mask-composite: xor;
   pointer-events: none;
   animation: rotateBorder 4s linear infinite;
+}
+
+.hover-radar::before {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.hover-radar:hover::before {
+  opacity: 1;
+}
+
+/* ── Button click press ── */
+.active-press:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.1s ease;
 }
 
 /* ── Cursor spotlight on feature grid ── */
