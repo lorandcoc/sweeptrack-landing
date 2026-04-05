@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} Loriba. All rights reserved.
+            &copy; {new Date().getFullYear()} SweepTrack Pro. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted">
             <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
