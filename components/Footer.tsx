@@ -30,7 +30,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 pt-14 pb-8">
+    <footer className="border-t border-white/5 pt-14 pb-8 overflow-hidden"> (33)
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand + Description */}

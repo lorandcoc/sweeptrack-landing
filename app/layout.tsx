@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,11 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "SweepTrack Pro — GPS Tracking for Metal Detecting",
@@ -50,9 +55,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full aurora-bg">
+      <body className="min-h-full aurora-bg overflow-x-hidden">
         {/* Floating gradient orbs */}
         <div className="bg-orbs" aria-hidden="true">
           <span className="bg-orb-3" />
@@ -60,7 +65,7 @@ export default function RootLayout({
         {/* Noise texture grain */}
         <div className="noise-overlay" aria-hidden="true" />
         {/* Page content above orbs */}
-        <div className="relative z-10 flex flex-col min-h-full">{children}</div>
+        <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
       </body>
     </html>
   );

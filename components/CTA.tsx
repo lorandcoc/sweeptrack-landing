@@ -6,7 +6,7 @@ export default function CTA() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="download" className="py-16 md:py-20">
+    <section id="download" className="py-16 md:py-20 overflow-hidden">
       <div ref={ref} className={`max-w-4xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="relative rounded-3xl overflow-hidden">
           <div className="absolute inset-0 cta-bg-shift rounded-3xl" />

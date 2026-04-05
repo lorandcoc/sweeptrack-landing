@@ -74,7 +74,7 @@ export default function CommunityLinks() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="community" className="py-20 md:py-32 relative">
+    <section id="community" className="py-20 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-surface via-background to-background" />
       
       {/* Background Starfield effect */}

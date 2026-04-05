@@ -44,7 +44,7 @@ export default function Marquee() {
   const { ref, visible } = useReveal();
 
   return (
-    <section className="py-10 md:py-14">
+    <section className="py-10 md:py-14 overflow-hidden">
       <div ref={ref} className={`reveal ${visible ? "visible" : ""}`}>
         <p className="text-center text-muted text-xs font-medium tracking-widest uppercase mb-4">All in One App &middot; Ad-Free</p>
         <MarqueeRow />

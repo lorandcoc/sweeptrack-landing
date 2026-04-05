@@ -33,7 +33,7 @@ export default function Tutorials() {
   );
 
   return (
-    <section id="tutorials" className="py-16 md:py-20 relative">
+    <section id="tutorials" className="py-16 md:py-20 relative overflow-hidden">
       <div ref={sectionRef} className={`relative z-10 reveal ${visible ? "visible" : ""}`}>
         <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
