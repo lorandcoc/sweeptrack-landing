@@ -1,5 +1,6 @@
 import AnimatedCounter from "./AnimatedCounter";
 import ParallaxPhone from "./ParallaxPhone";
+import ComingSoonButton from "./ComingSoonButton";
 
 const numberStats = [
   { value: 7, label: "Tracks Overlaid at Once" },
@@ -32,7 +33,7 @@ export default function Hero() {
           <div className="text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium mb-6 animate-fade-up">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              7-Day Free Trial &middot; Then $2.99/mo or $19.99/yr
+              Free to Use &middot; Pro Features Available
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
@@ -56,15 +57,7 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-up delay-300">
-              <a
-                href="#download"
-                className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-accent text-[#0A0A1A] font-semibold hover:bg-accent-dim transition-all text-base cta-pulse hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 010 1.732l-2.807 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z" />
-                </svg>
-                Try Free for 7 Days
-              </a>
+              <ComingSoonButton />
               <a
                 href="#features"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-white/10 text-foreground hover:border-accent/30 hover:bg-accent/5 transition-all text-base hover:scale-[1.02] active:scale-[0.98]"
