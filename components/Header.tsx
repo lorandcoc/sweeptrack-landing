@@ -73,7 +73,7 @@ export default function Header() {
             href="#download"
             className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#0A0A1A] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
-            Download
+            Coming Soon
           </a>
         </nav>
 
@@ -115,7 +115,7 @@ export default function Header() {
             className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#0A0A1A] text-center hover:bg-accent-dim transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            Download
+            Coming Soon
           </a>
         </nav>
       </div>
