@@ -161,10 +161,20 @@ export default function PrivacyPolicy() {
               <li><strong>Objection</strong> — stop any feature at any time</li>
               <li><strong>Withdraw Consent</strong> — at any time without affecting prior processing</li>
             </UL>
-            <H3>California Residents (CCPA)</H3>
-            <P>We do <strong>not</strong> sell any personal information. You have rights to know, delete, and non-discrimination.</P>
+            <H3>United Kingdom (UK GDPR)</H3>
+            <P>Your rights under the UK GDPR and Data Protection Act 2018 are equivalent to the GDPR rights above. You may contact the <a href="https://ico.org.uk" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">ICO</a>.</P>
+            <H3>Australia (Privacy Act 1988)</H3>
+            <P>You have rights under the Australian Privacy Principles (APPs) including access and correction. You may contact the <a href="https://www.oaic.gov.au" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">OAIC</a>.</P>
+            <H3>Canada (PIPEDA)</H3>
+            <P>You have rights under PIPEDA and applicable provincial privacy legislation including access, correction, and consent withdrawal. You may contact the <a href="https://www.priv.gc.ca" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Office of the Privacy Commissioner of Canada</a>.</P>
+            <H3>California Residents (CCPA/CPRA)</H3>
+            <P>We do <strong>not</strong> sell or share any personal information. We do not use data for cross-context behavioral advertising. You have rights to know, delete, limit sensitive data use, and non-discrimination.</P>
             <H3>Brazilian Residents (LGPD)</H3>
-            <P>Equivalent rights under the Lei Geral de Protecao de Dados apply. The same self-service mechanisms described above apply.</P>
+            <P>Equivalent rights under the Lei Geral de Protecao de Dados apply. You may contact the <a href="https://www.gov.br/anpd" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">ANPD</a>.</P>
+            <H3>New Zealand (Privacy Act 2020)</H3>
+            <P>You have rights under the Privacy Act 2020 including access and correction. You may contact the <a href="https://www.privacy.org.nz" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">NZ Privacy Commissioner</a>.</P>
+            <H3>Other Jurisdictions</H3>
+            <P>Regardless of your location, you have full control over your data through the App. Where local law grants additional privacy rights that cannot be waived by contract, those rights apply.</P>
           </section>
 
           <section>

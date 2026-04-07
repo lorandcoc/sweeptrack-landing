@@ -215,7 +215,12 @@ export default function TermsOfService() {
           <section>
             <H2>16. Governing Law and Dispute Resolution</H2>
             <P>These Terms are governed by the laws of Romania. Any dispute shall first be attempted to be resolved through good-faith negotiation. If not resolved within 30 days, disputes shall be submitted to the competent courts of Romania.</P>
-            <P>EU consumers may also have recourse to the European Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>.</P>
+            <P><strong>EU Consumers:</strong> You may also have recourse to the European Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>.</P>
+            <P><strong>United Kingdom:</strong> These Terms are subject to the UK GDPR and the Data Protection Act 2018. Your statutory consumer rights under UK law are not affected. You may contact the <a href="https://ico.org.uk" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">ICO</a>.</P>
+            <P><strong>Australia:</strong> Nothing in these Terms excludes or modifies any consumer guarantee or right under the Australian Consumer Law. You may contact the <a href="https://www.oaic.gov.au" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">OAIC</a>.</P>
+            <P><strong>Canada:</strong> Your use is subject to PIPEDA and applicable provincial privacy legislation. You may contact the <a href="https://www.priv.gc.ca" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Office of the Privacy Commissioner of Canada</a>.</P>
+            <P><strong>New Zealand:</strong> Your rights under the Consumer Guarantees Act 1993 and Privacy Act 2020 are not limited. You may contact the <a href="https://www.privacy.org.nz" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">NZ Privacy Commissioner</a>.</P>
+            <P><strong>Other jurisdictions:</strong> Your local mandatory consumer protection and data protection rights are not affected by these Terms. Where local law grants rights that cannot be waived by contract, those rights apply.</P>
           </section>
 
           <section>
