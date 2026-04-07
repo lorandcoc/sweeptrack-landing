@@ -117,22 +117,37 @@ export default function CommunityLinks() {
           </p>
         </div>
 
-        {/* Social pills */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* Social cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {communities.map((comm) => (
             <a
               key={comm.title}
               href={comm.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-surface/50 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${comm.bg} ${comm.border}`}
+              className={`group relative overflow-hidden rounded-2xl border border-white/5 bg-surface/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${comm.bg} ${comm.border}`}
             >
-              <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
-                {comm.icon}
-              </div>
-              <div className="min-w-0">
-                <div className="text-sm font-semibold text-foreground group-hover:text-white transition-colors">{comm.title}</div>
-                <div className="text-xs text-muted group-hover:text-white/60 transition-colors truncate">{comm.desc}</div>
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${comm.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full`} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    {comm.icon}
+                  </div>
+                  {comm.badge && (
+                    <span className="text-[10px] uppercase tracking-wider font-bold text-white bg-accent/20 border border-accent/30 px-2 py-1 rounded-full">
+                      {comm.badge}
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-white transition-colors">
+                  {comm.title}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed mb-4 flex-grow group-hover:text-white/80 transition-colors">
+                  {comm.desc}
+                </p>
+                <div className="text-xs font-semibold text-white/40 uppercase tracking-widest group-hover:text-white/80 transition-colors flex items-center gap-2">
+                  Connect <span>&rarr;</span>
+                </div>
               </div>
             </a>
           ))}
