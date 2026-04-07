@@ -2,10 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — SweepTrack Pro",
+  title: "Privacy Policy",
   description:
-    "Privacy Policy for SweepTrack Pro, the GPS tracking app for metal detecting.",
+    "Privacy Policy for SweepTrack Pro. Privacy-first: all data stored locally, no analytics, no ads, no tracking.",
 };
+
+const H2 = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="text-lg font-semibold text-accent mb-3">{children}</h2>
+);
+const H3 = ({ children }: { children: React.ReactNode }) => (
+  <h3 className="text-base font-semibold text-foreground/90 mb-2 mt-4">{children}</h3>
+);
+const P = ({ children }: { children: React.ReactNode }) => (
+  <p className="mb-3">{children}</p>
+);
+const UL = ({ children }: { children: React.ReactNode }) => (
+  <ul className="list-disc list-inside space-y-1.5 ml-2 mb-3">{children}</ul>
+);
 
 export default function PrivacyPolicy() {
   return (
@@ -18,171 +31,210 @@ export default function PrivacyPolicy() {
           &larr; Back to home
         </Link>
 
-        <h1 className="text-3xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-muted text-sm mb-10">Last updated: April 2026</p>
+        <h1 className="text-3xl font-bold mb-1">Privacy Policy</h1>
+        <p className="text-muted text-sm mb-1"><strong>SweepTrack Pro</strong> — GPS Tracking Application for Metal Detecting</p>
+        <p className="text-muted text-sm mb-1">Effective Date: April 7, 2026 &middot; Last Updated: April 7, 2026</p>
+        <p className="text-muted text-sm mb-1">Operated by: Coc Lorand P.F.A., trading as &ldquo;Loriba&rdquo;</p>
+        <p className="text-muted text-sm mb-1">CUI: 41299288 &middot; Reg. F24/646/2019</p>
+        <p className="text-muted text-sm mb-10">Website: sweeptrack.pro</p>
 
-        <div className="space-y-8 text-foreground/90 leading-relaxed">
+        <div className="space-y-8 text-foreground/90 leading-relaxed text-sm">
+
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              1. Data Collection
-            </h2>
-            <p>
-              SweepTrack Pro collects GPS location data, session recordings,
-              and find logs only when you actively use the tracking features.
-              This data is stored locally on your device. We do not collect,
-              transmit, or store your personal data on our servers.
-            </p>
+            <H2>1. Introduction</H2>
+            <P>This Privacy Policy explains how SweepTrack Pro (&ldquo;the App&rdquo;) collects, uses, stores, and protects your information. We are committed to protecting your privacy and ensuring transparency about our data practices.</P>
+            <P>SweepTrack Pro is designed with a <strong>privacy-first architecture</strong>: all data is stored locally on your device, we do not operate backend servers, and we do not collect, transmit, or sell your personal data.</P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              2. Cloud Backup
-            </h2>
-            <p>
-              If you enable Google Drive backup, your session data is uploaded to{" "}
-              <strong>your personal Google Drive account</strong>. We do not have
-              access to your Google Drive data. The backup is controlled entirely
-              by you and can be deleted at any time from your Drive.
-            </p>
+            <H2>2. Data Controller</H2>
+            <P>For the purposes of the EU General Data Protection Regulation (GDPR) and Romanian data protection law (Law 190/2018), the data controller is:</P>
+            <P><strong>Coc Lorand P.F.A.</strong> (trading as Loriba)<br />CUI: 41299288 &middot; Reg. F24/646/2019<br />Email: <a href="mailto:support@sweeptrack.pro" className="text-accent hover:underline">support@sweeptrack.pro</a></P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              3. Location Data
-            </h2>
-            <p>
-              GPS coordinates are used solely for tracking your detecting
-              sessions, displaying maps, and providing weather, tide, and nearby
-              site information. Location data is never shared with third
-              parties. Location tracking only runs when you explicitly start a
-              session.
-            </p>
+            <H2>3. Data We Collect</H2>
+
+            <H3>3.1 Data Stored Locally on Your Device</H3>
+            <P>The following data is created by you and stored <strong>exclusively on your device</strong>. We never have access to this data unless you explicitly share it.</P>
+            <P><strong>Location and Session Data:</strong></P>
+            <UL>
+              <li>GPS coordinates (latitude, longitude) during active tracking sessions</li>
+              <li>Speed, altitude, heading, and accuracy readings from device sensors</li>
+              <li>Session metadata: name, date, start/end time, duration, distance, tags</li>
+              <li>Path coordinates with timestamps</li>
+              <li>Location names (obtained via reverse geocoding)</li>
+            </UL>
+            <P><strong>Find and Discovery Records:</strong></P>
+            <UL>
+              <li>Find type (Treasure, Gold, Coin, Relic, Jewelry, Trash)</li>
+              <li>Find location (GPS coordinates at time of logging)</li>
+              <li>Optional metadata: name, notes, depth, estimated value, weight</li>
+              <li>Media attachments: photographs, video recordings, audio recordings</li>
+            </UL>
+            <P><strong>Permission Vault Data:</strong></P>
+            <UL>
+              <li>Site names and locations</li>
+              <li>Landowner names and contact information</li>
+              <li>Permit numbers, issue dates, expiry dates</li>
+              <li>Site boundary coordinates (polygon)</li>
+              <li>Digital signatures (SVG format)</li>
+              <li>Custom tags and notes</li>
+            </UL>
+            <P><strong>Other Local Data:</strong> Detector preset configurations, app preferences (theme, units, language, map settings), challenge/achievement progress, weather snapshots associated with sessions.</P>
+
+            <H3>3.2 Data Processed Temporarily (Not Stored)</H3>
+            <P>The following data is sent to third-party APIs for real-time functionality and is <strong>not stored by us or by these services beyond the immediate request</strong>:</P>
+            <UL>
+              <li>Approximate GPS coordinates sent to Open-Meteo for weather forecasts and elevation data</li>
+              <li>Approximate GPS coordinates sent to OpenStreetMap/Nominatim for address lookup</li>
+              <li>Approximate GPS coordinates sent to Overpass API for nearby historical POI discovery</li>
+              <li>Approximate GPS coordinates sent to Wikipedia API for nearby article geosearch</li>
+              <li>Tide station identifiers sent to NOAA for tide predictions</li>
+              <li>Location search queries sent to Open-Meteo Geocoding for place name search</li>
+            </UL>
+
+            <H3>3.3 Data Processed by Third-Party Services</H3>
+            <P><strong>Google Maps SDK:</strong> Your device&apos;s location is processed by Google Maps for map display. Subject to <a href="https://policies.google.com/privacy" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Google&apos;s Privacy Policy</a>.</P>
+            <P><strong>Google Sign-In and Google Drive (Optional):</strong> If you enable Google Drive backup, your Google account email is stored locally to identify the authenticated account. Backup data is uploaded to your own Google Drive account. We do not have access to your Google Drive.</P>
+            <P><strong>RevenueCat (Subscription Management):</strong> An anonymous, randomly generated app user identifier is used for subscription verification. No personal information is shared. Subject to <a href="https://www.revenuecat.com/privacy" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">RevenueCat&apos;s Privacy Policy</a>.</P>
+
+            <H3>3.4 Data We Do NOT Collect</H3>
+            <UL>
+              <li>We do <strong>not</strong> collect your name, email, phone number, or any personal identifiers</li>
+              <li>We do <strong>not</strong> use analytics, crash reporting, or behavioral tracking SDKs</li>
+              <li>We do <strong>not</strong> use advertising frameworks or ad identifiers</li>
+              <li>We do <strong>not</strong> track usage patterns, session frequency, or feature usage</li>
+              <li>We do <strong>not</strong> create user profiles or behavioral fingerprints</li>
+              <li>We do <strong>not</strong> share, sell, rent, or trade any data with third parties</li>
+              <li>We do <strong>not</strong> operate any servers that receive, process, or store your data</li>
+            </UL>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              4. Analytics &amp; Subscriptions
-            </h2>
-            <p>
-              We use RevenueCat for subscription management. RevenueCat may
-              collect anonymous usage statistics related to purchase events. No
-              personal detecting data, GPS coordinates, or session content is
-              shared with RevenueCat or any other analytics provider.
-            </p>
+            <H2>4. Legal Basis for Processing (GDPR)</H2>
+            <UL>
+              <li><strong>GPS/session data, find records, vault entries:</strong> Consent (Art. 6(1)(a)) — you actively initiate these actions</li>
+              <li><strong>API calls (weather, geocoding):</strong> Legitimate interest (Art. 6(1)(f)) — necessary for core functionality</li>
+              <li><strong>Google Drive backup:</strong> Consent (Art. 6(1)(a)) — you explicitly enable and authenticate</li>
+              <li><strong>Subscription verification:</strong> Contract performance (Art. 6(1)(b)) — necessary to provide paid features</li>
+            </UL>
+            <P>You may withdraw consent at any time by stopping the relevant activity or by uninstalling the App.</P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              5. Third-Party Services
-            </h2>
-            <ul className="list-disc list-inside space-y-1 ml-2">
-              <li>
-                <strong>Google Maps</strong> &mdash; Map display (
-                <a
-                  href="https://policies.google.com/privacy"
-                  className="text-accent hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Google&apos;s privacy policy
-                </a>{" "}
-                applies)
-              </li>
-              <li>
-                <strong>Open-Meteo</strong> &mdash; Weather data (anonymous
-                requests, no API key)
-              </li>
-              <li>
-                <strong>OpenStreetMap</strong> &mdash; Offline map tiles
-                (anonymous requests)
-              </li>
-              <li>
-                <strong>NOAA</strong> &mdash; Tide data (anonymous requests)
-              </li>
-              <li>
-                <strong>Supabase</strong> &mdash; Optional leaderboard and
-                challenges (device-based ID only, no personal information)
-              </li>
-            </ul>
+            <H2>5. How We Use Your Data</H2>
+            <P>All data processing occurs <strong>locally on your device</strong>. We use your data exclusively to provide the App&apos;s features: map display, session tracking, find logging, permission management, weather/tide data, exports, backup, and subscription verification.</P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              6. Data Retention
-            </h2>
-            <p>
-              All session data remains on your device until you delete it. Cloud
-              backups remain in your Google Drive until you delete them. We do
-              not retain any user data on our infrastructure.
-            </p>
+            <H2>6. Data Storage and Security</H2>
+            <UL>
+              <li>Session and find data stored in an encrypted Room database on your device</li>
+              <li>Sensitive preferences use Android&apos;s EncryptedSharedPreferences (AES-256)</li>
+              <li>Media files stored in the App&apos;s private internal storage, inaccessible to other apps</li>
+              <li>Android cloud backup <strong>disabled</strong> (<code>android:allowBackup=&quot;false&quot;</code>) to prevent unintended data exposure</li>
+              <li>Google Drive backups use Google&apos;s encrypted APIs (HTTPS/TLS) and exist solely in your account</li>
+            </UL>
+            <P>We do not operate any servers, databases, or cloud infrastructure.</P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              7. Permissions
-            </h2>
-            <ul className="list-disc list-inside space-y-1 ml-2">
-              <li>
-                <strong>Location</strong> &mdash; Required for GPS tracking and
-                map features
-              </li>
-              <li>
-                <strong>Calendar</strong> &mdash; Optional, for permit expiry
-                reminders
-              </li>
-              <li>
-                <strong>Storage</strong> &mdash; For exporting sessions and
-                offline maps
-              </li>
-              <li>
-                <strong>Camera/Microphone</strong> &mdash; Optional, for
-                documenting finds
-              </li>
-              <li>
-                <strong>Vibration</strong> &mdash; For perimeter guard alerts
-              </li>
-            </ul>
+            <H2>7. Data Retention</H2>
+            <P>Local data is retained until you choose to delete it. You can delete individual items within the App, clear all data via Android Settings, or uninstall the App. Google Drive backups persist until you manually delete them from your account.</P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              8. Children&apos;s Privacy
-            </h2>
-            <p>
-              SweepTrack Pro is not intended for children under 13. We do not
-              knowingly collect personal information from children.
-            </p>
+            <H2>8. Data Sharing and Disclosure</H2>
+            <P>We do not share, sell, rent, or disclose your personal data to any third party. You may choose to share data through exports (GPX, KML, CSV, JSON), QR codes, session cards, or Google Drive backup — all user-initiated.</P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              9. Changes to This Policy
-            </h2>
-            <p>
-              We may update this privacy policy from time to time. Changes will
-              be reflected on this page with an updated date.
-            </p>
+            <H2>9. Your Rights (GDPR and International)</H2>
+            <H3>GDPR Rights (EU/EEA Residents)</H3>
+            <UL>
+              <li><strong>Access</strong> — your data is fully accessible on your device</li>
+              <li><strong>Rectification</strong> — edit all records directly in the App</li>
+              <li><strong>Erasure</strong> — delete via in-app deletion or uninstalling</li>
+              <li><strong>Restriction</strong> — control all processing by starting/stopping features</li>
+              <li><strong>Data Portability</strong> — export via GPX, KML, CSV, JSON</li>
+              <li><strong>Objection</strong> — stop any feature at any time</li>
+              <li><strong>Withdraw Consent</strong> — at any time without affecting prior processing</li>
+            </UL>
+            <H3>California Residents (CCPA)</H3>
+            <P>We do <strong>not</strong> sell any personal information. You have rights to know, delete, and non-discrimination.</P>
+            <H3>Brazilian Residents (LGPD)</H3>
+            <P>Equivalent rights under the Lei Geral de Protecao de Dados apply. The same self-service mechanisms described above apply.</P>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-accent mb-2">
-              10. Contact
-            </h2>
-            <p>
-              For privacy concerns, contact us at{" "}
-              <a
-                href="mailto:privacy@sweeptrack.pro"
-                className="text-accent hover:underline"
-              >
-                privacy@sweeptrack.pro
-              </a>
-            </p>
+            <H2>10. Children&apos;s Privacy</H2>
+            <P>The App is not directed at children under 16. We do not knowingly collect personal information from children under 16. If you believe a child has used the App, you can delete their data by clearing App data or uninstalling.</P>
+          </section>
+
+          <section>
+            <H2>11. Permissions Explained</H2>
+            <UL>
+              <li><strong>ACCESS_FINE_LOCATION</strong> — GPS for path tracking during sessions</li>
+              <li><strong>ACCESS_BACKGROUND_LOCATION</strong> — continue tracking when screen is off</li>
+              <li><strong>CAMERA</strong> — capture photos for find logging</li>
+              <li><strong>RECORD_AUDIO</strong> — record audio notes for finds</li>
+              <li><strong>READ/WRITE_CALENDAR</strong> — permission vault expiry reminders</li>
+              <li><strong>INTERNET</strong> — weather, geocoding, tides, maps, subscriptions</li>
+              <li><strong>POST_NOTIFICATIONS</strong> — GPS tracking notification</li>
+              <li><strong>VIBRATE</strong> — perimeter guard boundary alerts</li>
+            </UL>
+            <P>You may revoke any permission at any time through Android Settings.</P>
+          </section>
+
+          <section>
+            <H2>12. Cookies and Tracking</H2>
+            <P>The App does not use cookies, web beacons, pixel tags, device fingerprinting, or any other tracking technologies.</P>
+          </section>
+
+          <section>
+            <H2>13. International Data Transfers</H2>
+            <P>Since all data is stored locally on your device, no international data transfers occur under our control. Third-party API calls may be processed in jurisdictions where those services operate.</P>
+          </section>
+
+          <section>
+            <H2>14. Data Breach Notification</H2>
+            <P>Since we do not store your data on any server, a data breach on our end is not possible. If we become aware of a vulnerability in the App, we will issue an update and notify users through the App or website.</P>
+          </section>
+
+          <section>
+            <H2>15. Changes to This Policy</H2>
+            <P>We may update this Privacy Policy to reflect changes in functionality or applicable laws. The &ldquo;Last Updated&rdquo; date will be revised. Material changes will be communicated via the App or website.</P>
+          </section>
+
+          <section>
+            <H2>16. Third-Party Privacy Policies</H2>
+            <UL>
+              <li><a href="https://policies.google.com/privacy" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Google (Maps, Drive, Sign-In)</a></li>
+              <li><a href="https://www.revenuecat.com/privacy" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">RevenueCat</a></li>
+              <li><a href="https://open-meteo.com/en/terms" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Open-Meteo</a></li>
+              <li><a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></li>
+              <li><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Wikipedia</a></li>
+              <li><a href="https://www.noaa.gov/privacy-policy" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">NOAA</a></li>
+            </UL>
+          </section>
+
+          <section>
+            <H2>17. Contact Us</H2>
+            <P>
+              <strong>Coc Lorand P.F.A.</strong> (trading as Loriba)<br />
+              CUI: 41299288 &middot; Reg. F24/646/2019<br />
+              Email: <a href="mailto:support@sweeptrack.pro" className="text-accent hover:underline">support@sweeptrack.pro</a><br />
+              Website: <a href="https://sweeptrack.pro" className="text-accent hover:underline">https://sweeptrack.pro</a>
+            </P>
+            <P>For GDPR-related inquiries, you may also contact ANSPDCP (Autoritatea Nationala de Supraveghere a Prelucrarii Datelor cu Caracter Personal) at <a href="https://www.dataprotection.ro" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">dataprotection.ro</a>.</P>
           </section>
         </div>
 
         <div className="mt-12 pt-8 border-t border-surface-variant text-center text-muted text-xs">
-          &copy; {new Date().getFullYear()} SweepTrack Pro by Loriba. All
-          rights reserved.
+          This Privacy Policy is effective as of April 7, 2026 and applies to all versions of SweepTrack Pro.
+          <br />
+          &copy; {new Date().getFullYear()} Coc Lorand P.F.A. All rights reserved.
         </div>
       </article>
     </main>
