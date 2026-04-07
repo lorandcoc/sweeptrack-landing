@@ -35,13 +35,15 @@ export default function TermsOfService() {
         <h1 className="text-3xl font-bold mb-1">Terms of Service</h1>
         <p className="text-muted text-sm mb-1"><strong>SweepTrack Pro</strong> — GPS Tracking Application for Metal Detecting</p>
         <p className="text-muted text-sm mb-1">Effective Date: April 7, 2026 &middot; Last Updated: April 7, 2026</p>
-        <p className="text-muted text-sm mb-10">Operated by: Loriba &middot; Website: sweeptrack.pro</p>
+        <p className="text-muted text-sm mb-1">Operated by: Coc Lorand P.F.A., trading as &ldquo;Loriba&rdquo;</p>
+        <p className="text-muted text-sm mb-1">CUI: 41299288 &middot; Reg. F24/646/2019</p>
+        <p className="text-muted text-sm mb-10">Website: sweeptrack.pro</p>
 
         <div className="space-y-8 text-foreground/90 leading-relaxed text-sm">
 
           <section>
             <H2>1. Acceptance of Terms</H2>
-            <P>By downloading, installing, accessing, or using SweepTrack Pro (&ldquo;the App&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you do not agree to these Terms, do not use the App.</P>
+            <P>By downloading, installing, accessing, or using SweepTrack Pro (&ldquo;the App&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you do not agree to these Terms, do not use the App. &ldquo;We,&rdquo; &ldquo;us,&rdquo; and &ldquo;our&rdquo; refer to Coc Lorand P.F.A., trading as Loriba.</P>
             <P>We reserve the right to modify these Terms at any time. Continued use of the App after changes constitutes acceptance. Material changes will be communicated via the App or our website.</P>
           </section>
 
@@ -230,7 +232,8 @@ export default function TermsOfService() {
             <H2>19. Contact</H2>
             <P>For questions about these Terms, please contact:</P>
             <P>
-              <strong>Loriba</strong><br />
+              <strong>Coc Lorand P.F.A.</strong> (trading as Loriba)<br />
+              CUI: 41299288 &middot; Reg. F24/646/2019<br />
               Email: <a href="mailto:support@sweeptrack.pro" className="text-accent hover:underline">support@sweeptrack.pro</a><br />
               Website: <a href="https://sweeptrack.pro" className="text-accent hover:underline">https://sweeptrack.pro</a>
             </P>
