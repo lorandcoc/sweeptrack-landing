@@ -164,24 +164,35 @@ export default function TermsOfService() {
           <section>
             <H2>8. Metal Detecting and Legal Compliance</H2>
             <H3>8.1 Your Responsibility</H3>
-            <P>Metal detecting is subject to laws and regulations that vary by country, state, province, and municipality. <strong>You are solely responsible</strong> for obtaining proper permissions, complying with all applicable laws, adhering to cultural heritage and antiquities laws, and reporting finds as required by local law.</P>
-            <H3>8.2 Permission Vault Disclaimer</H3>
-            <P>The Permission Vault feature is a personal organizational tool. It does <strong>not</strong> constitute legal proof of permission, does not create any legal agreement between you and landowners, and does not replace any legally required written consent or permits.</P>
-            <H3>8.3 No Legal Advice</H3>
-            <P>Nothing in the App, including the Permission Vault, weather scoring, or detecting tips, constitutes legal advice.</P>
+            <P>Metal detecting is subject to laws and regulations that vary by country, state, province, and municipality. <strong>You are solely responsible</strong> for obtaining proper permissions, complying with all applicable laws, adhering to cultural heritage and antiquities laws, reporting finds as required by local law, and verifying that detecting is permitted at any location before beginning a session.</P>
+            <H3>8.2 Country-Specific Legal Notices</H3>
+            <P><strong>UK:</strong> Under the Treasure Act 1996, you must report certain finds to your local coroner within 14 days. The App&apos;s find logging does not constitute a legal report. You must separately report through the Portable Antiquities Scheme (PAS).</P>
+            <P><strong>US:</strong> Metal detecting is prohibited on most federal public land under ARPA (1979), including National Parks, National Forests, and BLM land. Violations can result in fines up to $100,000 and imprisonment. The App does not indicate whether detecting is legal at any location.</P>
+            <P><strong>EU:</strong> Many EU countries require government permits for metal detecting. In some countries, detecting without a permit is illegal regardless of land ownership. The App does not determine legal classification of finds under national cultural property law.</P>
+            <P><strong>Romania:</strong> Under OG 43/2000, unauthorized use of metal detectors on archaeological sites or protected areas is a criminal offense.</P>
+            <P><strong>Australia:</strong> Detecting on Crown land, national parks, Aboriginal heritage sites, and registered heritage places is generally prohibited.</P>
+            <P><strong>Canada:</strong> Provincial heritage acts and the Canada National Parks Act restrict or prohibit detecting in various contexts.</P>
+            <H3>8.3 Permission Vault Disclaimer</H3>
+            <P>The Permission Vault is a personal organizational tool. It does <strong>not</strong> constitute legal proof of permission, does not create any legal agreement, and does not replace any legally required written consent or permits. Digital signatures are for personal record-keeping only. The PDF letter generator creates a template document only — it has no legal effect unless both parties independently agree to its contents.</P>
+            <H3>8.4 Find Classification Disclaimer</H3>
+            <P>Find categories in the App (Treasure, Gold, Coin, etc.) are for personal organization only. The App does <strong>not</strong> determine legal classification, archaeological significance, value, or reporting obligations. The Coin Caliper identifies coins by diameter only and should not be relied upon for authentication, valuation, or legal reporting.</P>
+            <H3>8.5 No Legal Advice</H3>
+            <P>Nothing in the App — including the Permission Vault, weather scoring, detecting forecast, nearby sites, historical map overlays, find categorization, or any text — constitutes legal, financial, archaeological, or professional advice of any kind.</P>
           </section>
 
           <section>
             <H2>9. GPS, Location, and Safety</H2>
-            <P>GPS accuracy depends on your device hardware, satellite availability, atmospheric conditions, terrain, and surrounding structures. The App provides location data on an &ldquo;as-is&rdquo; basis. We do not guarantee accuracy of GPS data, distance measurements, altitude readings, or speed calculations.</P>
-            <P>When a session is active, the App uses a foreground service to track your location in the background. A persistent notification is displayed. You may stop tracking at any time.</P>
-            <P>Do not operate the App in a manner that endangers yourself or others. The perimeter guard feature is an approximate tool and should not be relied upon as a precise boundary indicator.</P>
+            <P>GPS accuracy depends on your device hardware, satellite availability, atmospheric conditions, terrain, and surrounding structures. The App provides location data on an &ldquo;as-is&rdquo; basis. We do not guarantee accuracy.</P>
+            <P>The perimeter guard is an approximate tool and should not be relied upon as a precise boundary indicator or legal property line. The road back indicator shows straight-line distance, not a safe walking route.</P>
+            <P><strong>Beach detecting safety:</strong> The tide table provides predictions, not guarantees. Tides can be affected by weather, wind, and local geography in ways not reflected in predictions. Always allow a safety margin and have an escape route. Never rely solely on the App&apos;s tide data for safety decisions.</P>
+            <P>Track overlay and heatmap visualizations are approximate. GPS drift and signal loss may cause tracks to appear offset from actual positions. Gaps may not reflect actual detecting patterns.</P>
           </section>
 
           <section>
             <H2>10. Third-Party Services and Content</H2>
-            <P>The App uses map data from Google Maps, OpenStreetMap, Esri, OpenTopoMap, and USGS. Weather data from Open-Meteo. Tide predictions from NOAA. Historical POI data from OpenStreetMap and Wikipedia. All subject to their respective terms and licenses.</P>
-            <P>We do not guarantee the accuracy, completeness, or currency of any third-party data.</P>
+            <P>The App uses data from Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA, and Wikipedia. Map data should <strong>never</strong> be used to determine legal property boundaries or access rights.</P>
+            <P><strong>USGS Historical Map Overlay:</strong> Historical maps depict conditions from decades or centuries ago. Features shown may no longer exist or may be on different property. Historical maps do not reflect current boundaries, ownership, or access rights. The presence of a historical feature does not authorize detecting.</P>
+            <P><strong>Tide predictions</strong> may not account for storm surge, wind, or local anomalies. <strong>Nearby sites</strong> data is community-contributed and may be inaccurate — the presence of a marker does not authorize detecting. <strong>Offline maps</strong> may become outdated. <strong>Detector presets</strong> are organizational tools, not endorsed by manufacturers.</P>
           </section>
 
           <section>
@@ -198,7 +209,7 @@ export default function TermsOfService() {
 
           <section>
             <H2>13. Limitation of Liability</H2>
-            <p className="uppercase text-xs tracking-wide mb-3">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LORIBA SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, ANY LOSS OF PROFITS, DATA, USE, OR GOODWILL, OR DAMAGES ARISING FROM GPS INACCURACY, RELIANCE ON WEATHER OR TIDE DATA, LOSS OF DATA, UNAUTHORIZED ACCESS, OR LEGAL CONSEQUENCES OF METAL DETECTING ACTIVITIES.</p>
+            <p className="uppercase text-xs tracking-wide mb-3">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, COC LORAND P.F.A. (TRADING AS LORIBA) SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO: DAMAGES FROM GPS INACCURACY, PROPERTY BOUNDARY DISPUTES, OR TRESPASSING CLAIMS; DAMAGES FROM RELIANCE ON WEATHER, TIDE, OR ENVIRONMENTAL DATA; TIDAL CONDITIONS INCLUDING INJURY OR DROWNING; LEGAL CONSEQUENCES OF DETECTING ACTIVITIES INCLUDING FINES, PROSECUTION, OR CONFISCATION; FAILURE TO COMPLY WITH THE TREASURE ACT 1996, ARPA, OR ANY CULTURAL HERITAGE LAW; RELIANCE ON HISTORICAL MAP OVERLAYS, NEARBY SITES, PERMISSION VAULT, PDF LETTERS, DIGITAL SIGNATURES, COIN CALIPER, OR FIND IDENTIFICATION; PERIMETER GUARD, TRACK OVERLAY, OR HEATMAP INACCURACY; OUTDATED OFFLINE MAPS OR DETECTOR PRESETS; PERSONAL INJURY, DEATH, OR PROPERTY DAMAGE DURING DETECTING ACTIVITIES; OR INTERACTIONS WITH LANDOWNERS, LAW ENFORCEMENT, OR THIRD PARTIES.</p>
             <P>In no event shall our total liability exceed the amount you paid for the App in the twelve (12) months preceding the claim.</P>
           </section>
 
