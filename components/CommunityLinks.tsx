@@ -117,52 +117,44 @@ export default function CommunityLinks() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Social pills */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
           {communities.map((comm) => (
             <a
               key={comm.title}
               href={comm.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative overflow-hidden rounded-2xl border border-white/5 bg-surface/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${comm.bg} ${comm.border}`}
+              className={`group flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-surface/50 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${comm.bg} ${comm.border}`}
             >
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${comm.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full`} />
-              
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    {comm.icon}
-                  </div>
-                  {comm.badge && (
-                    <span className="text-[10px] uppercase tracking-wider font-bold text-white bg-accent/20 border border-accent/30 px-2 py-1 rounded-full">
-                      {comm.badge}
-                    </span>
-                  )}
-                </div>
-                
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-white transition-colors">
-                  {comm.title}
-                </h3>
-                <p className="text-muted text-sm leading-relaxed mb-4 flex-grow group-hover:text-white/80 transition-colors">
-                  {comm.desc}
-                </p>
-                
-                <div className="text-xs font-semibold text-white/40 uppercase tracking-widest group-hover:text-white/80 transition-colors flex items-center gap-2">
-                  Connect <span>→</span>
-                </div>
+              <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
+                {comm.icon}
+              </div>
+              <div className="min-w-0">
+                <div className="text-sm font-semibold text-foreground group-hover:text-white transition-colors">{comm.title}</div>
+                <div className="text-xs text-muted group-hover:text-white/60 transition-colors truncate">{comm.desc}</div>
               </div>
             </a>
           ))}
-          
-          {/* Join Discord / Newsletter CTA Card (Span 1 on lg, span 2 on md) */}
-          <div className="group relative overflow-hidden rounded-2xl border border-accent/20 bg-accent/5 p-6 backdrop-blur-sm cursor-pointer hover:bg-accent/10 transition-colors lg:col-span-1 md:col-span-2 cta-bg-shift">
-             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center py-8">
-               <h3 className="text-2xl font-bold text-white mb-2">Want App Updates?</h3>
-               <p className="text-muted text-sm mb-6">Be the first to know when SweepTrack drops its next major feature.</p>
-               <button className="px-6 py-2 rounded-full bg-white text-black font-bold text-sm hover:scale-105 transition-transform">
-                 Join Newsletter
-               </button>
-             </div>
+        </div>
+
+        {/* Newsletter — full width */}
+        <div className="relative overflow-hidden rounded-2xl border border-accent/20 cta-bg-shift">
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg font-bold text-white mb-1">Want app updates and detecting tips?</h3>
+              <p className="text-muted text-sm">Be the first to know when SweepTrack drops its next feature.</p>
+            </div>
+            <form className="flex gap-2 shrink-0" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-[200px]"
+              />
+              <button type="submit" className="px-5 py-2.5 rounded-xl bg-accent text-[#0A0A1A] text-sm font-semibold hover:bg-accent-dim transition-colors shrink-0">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </div>
