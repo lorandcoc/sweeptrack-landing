@@ -109,13 +109,13 @@ export default function Screenshots() {
       <div ref={sectionRef} className={`relative reveal ${visible ? "visible" : ""}`}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Take a Look</p>
+            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">The App</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              This Is What You&apos;re <span className="text-accent accent-underline">Getting</span>
+              Real Screens. <span className="text-accent accent-underline">No Mockups.</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
-              Dark theme that works in bright sunlight. Night Vision mode for
-              dawn and dusk. No ads. No clutter. Just your data.
+              Detecting forecast, offline maps, permission vault, track overlay,
+              cloud backup — swipe through to see how it actually looks.
             </p>
           </div>
         </div>

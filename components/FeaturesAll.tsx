@@ -246,7 +246,7 @@ export default function FeaturesAll() {
               <span className="text-accent">Use in the Field</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
-              We detect too. Every feature here exists because we needed it on a hunt. Nothing was added just to pad a list.
+              Every feature exists because it was needed on a real hunt. Nothing here was added to pad a list.
             </p>
           </div>
         </RevealSection>

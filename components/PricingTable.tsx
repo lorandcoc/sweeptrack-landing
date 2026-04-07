@@ -4,7 +4,7 @@ import { useReveal } from "./useReveal";
 import ComingSoonButton from "./ComingSoonButton";
 
 const features = [
-  { name: "GPS Tracking (4 map types)", free: true, pro: true },
+  { name: "GPS Tracking", free: "3 map types", pro: "4 map types (+ USGS Historical)" },
   { name: "Session Recording & History", free: "10 sessions", pro: "Unlimited" },
   { name: "Find Logging (photo, video, audio)", free: "5 finds", pro: "Unlimited" },
   { name: "Detector Presets", free: "1 slot", pro: "10 slots + QR sharing" },

@@ -118,7 +118,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-xs text-muted">
             <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-foreground transition-colors">Terms of Service</a>
-            <span className="text-white/20">by Loriba</span>
+            <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/40 transition-colors">by Loriba</a>
           </div>
         </div>
       </div>
