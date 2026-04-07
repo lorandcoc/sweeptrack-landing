@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
   { label: "Tutorials", href: "#tutorials" },
-  { label: "Screenshots", href: "#screenshots" },
-  { label: "Themes", href: "#themes" },
+  { label: "FAQ", href: "#faq" },
   { label: "Community", href: "#community" },
 ];
 
@@ -53,9 +53,12 @@ export default function Header() {
               <circle cx="12" cy="9" r="2.5" />
             </svg>
           </div>
-          <span className="font-bold text-[17px] tracking-tight">
-            SweepTrack <span className="text-accent">Pro</span>
-          </span>
+          <div>
+            <span className="font-bold text-[17px] tracking-tight block leading-tight">
+              SweepTrack <span className="text-accent">Pro</span>
+            </span>
+            <span className="text-[10px] text-muted tracking-wide hidden sm:block">Metal Detecting Companion</span>
+          </div>
         </a>
 
         {/* Desktop Nav */}

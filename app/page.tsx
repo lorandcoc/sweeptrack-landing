@@ -4,9 +4,12 @@ import FeaturesAll from "@/components/FeaturesAll";
 import HowItWorks from "@/components/HowItWorks";
 import Screenshots from "@/components/Screenshots";
 import MapCompareSlider from "@/components/MapCompareSlider";
+import PricingTable from "@/components/PricingTable";
 import Tutorials from "@/components/Tutorials";
 import Marquee from "@/components/Marquee";
+import FounderNote from "@/components/FounderNote";
 import CommunityLinks from "@/components/CommunityLinks";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -22,14 +25,7 @@ const jsonLd = {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "7-day free trial, then $2.99/month or $19.99/year",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    ratingCount: "1",
-    bestRating: "5",
-    worstRating: "1",
+    description: "Free to use, Pro upgrade $2.99/month or $19.99/year",
   },
   featureList: [
     "GPS tracking with 4 map types",
@@ -71,9 +67,12 @@ export default function Home() {
         <HowItWorks />
         <MapCompareSlider />
         <Screenshots />
+        <PricingTable />
         <Tutorials />
         <Marquee />
+        <FounderNote />
         <CommunityLinks />
+        <FAQ />
         <CTA />
       </main>
       <Footer />
