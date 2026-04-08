@@ -10,6 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/how-to-use-old-maps-for-metal-detecting`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/blog/best-weather-conditions-for-metal-detecting`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/blog/metal-detecting-permission-letter-template`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/beach-metal-detecting-tide-timing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/how-to-track-metal-detecting-sessions-gps`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/metal-detecting-for-beginners`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/organize-metal-detector-presets-settings`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
     { url: `${base}/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
   ];

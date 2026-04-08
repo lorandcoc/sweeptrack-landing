@@ -69,6 +69,14 @@ export default function Post() {
               {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
             </p>
           </div>
+
+          <div className="mt-8 pt-8 border-t border-white/5">
+            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
+            <div className="space-y-3">
+              <Link href="/blog/how-to-track-metal-detecting-sessions-gps" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Track Your Sessions with GPS &rarr;</Link>
+              <Link href="/blog/metal-detecting-permission-letter-template" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Permission Letter Template &rarr;</Link>
+            </div>
+          </div>
         </div>
       </article>
     </main>

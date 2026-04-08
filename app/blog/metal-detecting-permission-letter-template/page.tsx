@@ -84,6 +84,14 @@ export default function Post() {
               {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
             </p>
           </div>
+
+          <div className="mt-8 pt-8 border-t border-white/5">
+            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
+            <div className="space-y-3">
+              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Detecting &rarr;</Link>
+              <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
+            </div>
+          </div>
         </div>
       </article>
     </main>

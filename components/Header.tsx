@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Screenshots", href: "#screenshots" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-  { label: "Blog", href: "/blog" },
+  { label: "Guides", href: "/blog" },
 ];
 
 export default function Header() {

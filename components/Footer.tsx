@@ -84,7 +84,7 @@ export default function Footer() {
               <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
               <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
               <a href="#community" className="hover:text-foreground transition-colors">Community</a>
-              <a href="/blog" className="hover:text-foreground transition-colors">Blog</a>
+              <a href="/blog" className="hover:text-foreground transition-colors">Guides & Tips</a>
             </div>
           </div>
         </div>
