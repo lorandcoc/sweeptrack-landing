@@ -127,7 +127,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "google-site-verification": "",
+    "google-site-verification": "NxYPPcarbhOOTS89dkKan0TTRaaK3DZlT_hAcxbaMLU",
   },
 };
 
