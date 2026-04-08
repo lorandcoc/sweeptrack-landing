@@ -21,7 +21,7 @@ export default function FounderNote() {
             </div>
           </div>
           <p className="text-sm text-muted leading-relaxed">
-            I&apos;m a detectorist and a designer who picked up coding along the way. I wanted an app that felt like it was made for detecting — not a hiking tracker with a new coat of paint. So I started building one for myself. Figured if I like using it, someone else might too.
+            I&apos;m a detectorist and a designer who picked up coding along the way. I got tired of coming home after a 4-hour session with no record of what I covered, no way to check old maps before a hunt, and no app that understood what detecting actually needs. Everything out there was a hiking tracker in disguise. So I started building what I wished existed — and I haven&apos;t stopped since.
           </p>
         </div>
       </div>
