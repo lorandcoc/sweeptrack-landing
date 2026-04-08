@@ -53,8 +53,8 @@ export default function PricingTable() {
           <div className="rounded-2xl border border-accent/30 bg-accent/5 p-6 relative">
             <span className="absolute -top-3 right-4 text-[10px] font-bold uppercase tracking-wider bg-accent text-[#0A0A1A] px-3 py-1 rounded-full">Recommended</span>
             <div className="text-sm font-semibold text-accent uppercase tracking-wider mb-1">Pro</div>
-            <div className="text-3xl font-bold mb-1">$2.99<span className="text-base font-normal text-muted">/mo</span></div>
-            <div className="text-xs text-muted mb-4">or $19.99/year (save 44%). 7-day free trial.</div>
+            <div className="text-3xl font-bold mb-1">$19.99<span className="text-base font-normal text-muted">/year</span></div>
+            <div className="text-xs text-muted mb-4">or $2.99/month. 7-day free trial.</div>
             <div className="text-sm text-muted">Everything. Unlimited. No ads. No limits.</div>
           </div>
         </div>
