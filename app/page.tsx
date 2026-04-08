@@ -2,15 +2,13 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturesAll from "@/components/FeaturesAll";
 import HowItWorks from "@/components/HowItWorks";
-import Screenshots from "@/components/Screenshots";
 import MapCompareSlider from "@/components/MapCompareSlider";
-import PricingTable from "@/components/PricingTable";
-import Tutorials from "@/components/Tutorials";
-import Marquee from "@/components/Marquee";
+import Screenshots from "@/components/Screenshots";
 import FounderNote from "@/components/FounderNote";
-import CommunityLinks from "@/components/CommunityLinks";
+import PricingTable from "@/components/PricingTable";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import CommunityLinks from "@/components/CommunityLinks";
 import Footer from "@/components/Footer";
 
 const jsonLd = {
@@ -67,14 +65,12 @@ export default function Home() {
         <HowItWorks />
         <MapCompareSlider />
         <Screenshots />
-        <PricingTable />
-        <Tutorials />
-        <Marquee />
         <FounderNote />
-        <CommunityLinks />
+        <PricingTable />
         <FAQ />
         <CTA />
       </main>
+      <CommunityLinks />
       <Footer />
     </>
   );
