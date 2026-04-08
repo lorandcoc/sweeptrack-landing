@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useReveal } from "./useReveal";
 import TiltCard from "./TiltCard";
@@ -350,30 +351,53 @@ export default function FeaturesAll() {
           </RevealSection>
         </div>
 
-        {/* ── Secondary features: compact grid ── */}
+        {/* ── Secondary features: compact grid with expand ── */}
         <div className="text-center mb-8">
           <p className="text-muted text-sm uppercase tracking-widest font-semibold">Plus</p>
           <h3 className="text-xl font-bold mt-2">All the little things that make a big difference</h3>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-          {secondaryFeatures.map((feature, i) => (
-            <RevealSection key={feature.title} delay={(i % 4) * 100} className="h-full">
-              <div className="h-full px-4 py-4 rounded-xl bg-surface/50 border border-transparent hover-radar hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group cursor-default">
-                <div className="flex items-start gap-3 relative z-10">
-                  <div className="w-8 h-8 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5 group-hover:bg-accent/15 transition-colors">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-sm mb-1 text-white/90 group-hover:text-white transition-colors">{feature.title}</h3>
-                    <p className="text-muted text-xs leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-              </div>
-            </RevealSection>
-          ))}
-        </div>
+        <SecondaryFeaturesGrid features={secondaryFeatures} />
       </div>
     </section>
+  );
+}
+
+function SecondaryFeaturesGrid({ features }: { features: typeof secondaryFeatures }) {
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? features : features.slice(0, 8);
+
+  return (
+    <>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+        {visible.map((feature) => (
+          <div key={feature.title} className="h-full px-4 py-4 rounded-xl bg-surface/50 border border-transparent hover-radar hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group cursor-default">
+            <div className="flex items-start gap-3 relative z-10">
+              <div className="w-8 h-8 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5 group-hover:bg-accent/15 transition-colors">
+                {feature.icon}
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm mb-1 text-white/90 group-hover:text-white transition-colors">{feature.title}</h3>
+                <p className="text-muted text-xs leading-relaxed">{feature.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {features.length > 8 && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="text-sm text-accent font-medium hover:text-accent-dim transition-colors flex items-center gap-1.5"
+          >
+            {expanded ? "Show less" : `Show all ${features.length} features`}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+              className={`transition-transform ${expanded ? "rotate-180" : ""}`}>
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      )}
+    </>
   );
 }

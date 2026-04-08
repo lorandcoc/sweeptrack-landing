@@ -69,8 +69,8 @@ export default function Home() {
         <PricingTable />
         <FAQ />
         <CTA />
+        <CommunityLinks />
       </main>
-      <CommunityLinks />
       <Footer />
     </>
   );

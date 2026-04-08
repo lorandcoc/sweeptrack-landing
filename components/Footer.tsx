@@ -37,7 +37,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 pt-14 pb-8 overflow-hidden"> (33)
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-3 gap-10 mb-12">
           {/* Brand + Description */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
@@ -81,32 +81,10 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-sm text-muted">
               <a href="#features" className="hover:text-foreground transition-colors">Features</a>
               <a href="#screenshots" className="hover:text-foreground transition-colors">Screenshots</a>
-              <a href="#tutorials" className="hover:text-foreground transition-colors">Tutorials</a>
-              <a href="#themes" className="hover:text-foreground transition-colors">Themes</a>
-              <a href="#download" className="hover:text-foreground transition-colors">Download</a>
+              <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+              <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
+              <a href="#community" className="hover:text-foreground transition-colors">Community</a>
             </div>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-sm font-semibold mb-4 text-foreground">Don&apos;t Miss Out</h4>
-            <p className="text-muted text-sm mb-3">New features, detecting tips, and the occasional treasure story.</p>
-            <form
-              className="flex gap-2"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-surface border border-white/10 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent/40 transition-colors"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-lg bg-accent text-[#0A0A1A] text-sm font-semibold hover:bg-accent-dim transition-colors shrink-0"
-              >
-                Join
-              </button>
-            </form>
           </div>
         </div>
 
