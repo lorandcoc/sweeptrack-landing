@@ -78,7 +78,7 @@ export default function ParallaxPhone() {
           <div className="relative phone-frame w-[260px] md:w-[300px]">
             <Image
               src="/screenshots/home.png"
-              alt="SweepTrack Pro - GPS Map View"
+              alt="SweepTrack Pro metal detecting app showing GPS satellite map with real-time tracking"
               width={300}
               height={650}
               className="w-full h-auto screenshot-crop"

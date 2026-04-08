@@ -5,14 +5,14 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { useReveal } from "./useReveal";
 
 const screenshots = [
-  { src: "/screenshots/home.png", alt: "Satellite Map with GPS Tracking", label: "Live Map & GPS" },
-  { src: "/screenshots/forecast.png", alt: "Detecting Forecast Score", label: "Detecting Forecast" },
-  { src: "/screenshots/offline_maps.png", alt: "Offline Maps Download", label: "Offline Maps" },
-  { src: "/screenshots/presets.png", alt: "57 Detector Presets", label: "Detector Presets" },
-  { src: "/screenshots/stats.png", alt: "Session Statistics", label: "Statistics" },
-  { src: "/screenshots/night_vision.png", alt: "Night Vision Mode", label: "Night Vision" },
-  { src: "/screenshots/permission_vault.png", alt: "Permission Vault", label: "Permission Vault" },
-  { src: "/screenshots/cloud_backup.png", alt: "Cloud Backup", label: "Cloud Backup" },
+  { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", label: "Live Map & GPS" },
+  { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture and weather conditions with hunt score", label: "Detecting Forecast" },
+  { src: "/screenshots/offline_maps.png", alt: "Download offline maps for metal detecting with 4 tile sources", label: "Offline Maps" },
+  { src: "/screenshots/presets.png", alt: "Metal detector presets for Minelab Garrett XP Nokta Fisher and 7 more brands", label: "Detector Presets" },
+  { src: "/screenshots/stats.png", alt: "Metal detecting session statistics with distance finds duration and personal bests", label: "Statistics" },
+  { src: "/screenshots/night_vision.png", alt: "Metal detecting app night vision mode with red display for dawn and dusk hunts", label: "Night Vision" },
+  { src: "/screenshots/permission_vault.png", alt: "Metal detecting permission vault tracking landowner approvals and site boundaries", label: "Permission Vault" },
+  { src: "/screenshots/cloud_backup.png", alt: "Metal detecting cloud backup to Google Drive with one-tap restore", label: "Cloud Backup" },
 ];
 
 function get3DClass(index: number, active: number) {

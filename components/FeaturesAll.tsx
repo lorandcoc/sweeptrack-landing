@@ -260,7 +260,7 @@ export default function FeaturesAll() {
               subtitle="4 map types · Real-time HUD"
               tag="Core"
               screenshot="/screenshots/home.png"
-              alt="GPS satellite map view with tracking HUD"
+              alt="Metal detecting GPS tracking app with satellite map view and real-time HUD overlay"
               description="Real-time satellite map with heading, altitude, speed, and distance overlay. Switch between Satellite, Terrain, Topographic, and Street views."
             />
           </RevealSection>
@@ -271,7 +271,7 @@ export default function FeaturesAll() {
               tag="Safety"
               tagColor="blue"
               screenshot="/screenshots/cloud_backup.png"
-              alt="Cloud backup connected to Google Drive"
+              alt="Metal detecting cloud backup to Google Drive — sessions, finds, presets, and permissions"
               description="One-tap Google Drive backup for all sessions, presets, permits, and settings. Lost phone? Restore everything on any device."
             />
           </RevealSection>
@@ -319,7 +319,7 @@ export default function FeaturesAll() {
               subtitle="Boundaries · Calendar · PDF letter"
               tag="Legal"
               screenshot="/screenshots/permission_vault.png"
-              alt="Permission manager with approved and expiring permits"
+              alt="Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries"
               description="Track landowner permissions with approval status, expiry alerts to your calendar, site boundaries, and automatic PDF permission letters."
             />
           </RevealSection>
@@ -345,7 +345,7 @@ export default function FeaturesAll() {
               tag="Field"
               tagColor="cyan"
               screenshot="/screenshots/offline_maps.png"
-              alt="Offline maps download interface with 4 tile types"
+              alt="Download offline maps for metal detecting — Street, Satellite, Terrain, and Historical Topographic tiles"
               description="Download map tiles for offline use. Street, Satellite, Terrain, and Historical Topo. Hunt confidently with zero cell coverage."
             />
           </RevealSection>
