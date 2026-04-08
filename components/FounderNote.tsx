@@ -21,7 +21,7 @@ export default function FounderNote() {
             </div>
           </div>
           <p className="text-sm text-muted leading-relaxed">
-            I built SweepTrack because nothing like it existed. Every detecting app was a repurposed hiking tracker. This one was designed around how we actually hunt — scouting with old maps, tracking coverage, managing permissions, backing up finds. If a feature is in here, it&apos;s because I needed it in the field.
+            I&apos;m a detectorist and a designer who picked up coding along the way. I wanted an app that felt like it was made for detecting — not a hiking tracker with a new coat of paint. So I started building one for myself. Figured if I like using it, someone else might too.
           </p>
         </div>
       </div>
