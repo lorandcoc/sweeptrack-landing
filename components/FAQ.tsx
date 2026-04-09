@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "What's the difference between Free and Pro?",
-    a: "Free gives you core GPS tracking, 10 sessions, 5 finds, 1 preset, and basic features. Pro unlocks everything: unlimited sessions and finds, 10 presets, track overlay, heatmap, perimeter guard, permission vault, historical maps, offline maps, detecting forecast, tide table, cloud backup, night vision, session comparison, coin caliper, and all 12 themes.",
+    a: "Free gives you core GPS tracking, 10 sessions, 5 finds, 1 preset, and basic features. Pro unlocks everything: unlimited sessions and finds, 10 presets, track overlay, heatmap, perimeter guard, permission vault, historical maps, offline maps, detecting forecast, tide table, cloud backup, night vision, map comparison, coin caliper, and all 12 themes.",
   },
   {
     q: "Can I export my data?",

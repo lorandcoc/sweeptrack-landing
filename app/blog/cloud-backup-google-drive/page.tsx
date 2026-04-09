@@ -32,7 +32,7 @@ export default function Post() {
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Creating a Backup</h2>
-          <p>Tap the backup button to create a snapshot right now. The backup file is compressed and uploaded to your Google Drive. You can see the date and size of your latest backup on the settings screen. It takes just a few seconds for most data sets.</p>
+          <p>You have two options: &ldquo;Create Backup&rdquo; uploads directly to your connected Google Drive. &ldquo;Export to File&rdquo; saves the backup to your phone so you can store it wherever you want. Either way, the backup file contains your full detecting history and takes just a few seconds to create.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Restoring on a New Device</h2>
           <p>Install the app on your new phone, connect the same Google account, and tap Restore. It downloads the latest backup and rebuilds your entire detecting history. All your sessions, finds, presets, and permissions appear exactly as they were.</p>

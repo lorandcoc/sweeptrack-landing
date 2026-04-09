@@ -119,8 +119,8 @@ const features = [
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
-    title: "Session Comparison",
-    description: "Overlay and side-by-side modes to track progress over time.",
+    title: "Map Comparison",
+    description: "Overlay up to 4 sessions or split view 2 side by side to track progress.",
   },
   {
     icon: (
