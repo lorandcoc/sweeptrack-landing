@@ -15,6 +15,7 @@ function FeaturedWithScreenshot({
   screenshot,
   alt,
   description,
+  guide,
   children,
 }: {
   title: string;
@@ -24,6 +25,7 @@ function FeaturedWithScreenshot({
   screenshot: string;
   alt: string;
   description: string;
+  guide?: string;
   children?: React.ReactNode;
 }) {
   const colors: Record<string, string> = {
@@ -69,6 +71,11 @@ function FeaturedWithScreenshot({
           </div>
 
           <p className="text-muted text-xs mt-3 leading-relaxed">{description}</p>
+          {guide && (
+            <a href={guide} className="text-accent text-xs font-medium mt-2 inline-flex items-center gap-1 hover:underline">
+              Learn more &rarr;
+            </a>
+          )}
           {children}
         </div>
       </div>
@@ -85,6 +92,7 @@ function FeaturedTextCard({
   tagColor = "accent",
   description,
   bullets,
+  guide,
 }: {
   title: string;
   subtitle: string;
@@ -92,6 +100,7 @@ function FeaturedTextCard({
   tagColor?: string;
   description: string;
   bullets: string[];
+  guide?: string;
 }) {
   const colors: Record<string, string> = {
     accent: "#00FF6A",
@@ -134,6 +143,11 @@ function FeaturedTextCard({
               </div>
             ))}
           </div>
+          {guide && (
+            <a href={guide} className="text-xs font-medium mt-3 inline-flex items-center gap-1 hover:underline" style={{ color: `${c}cc` }}>
+              Learn more &rarr;
+            </a>
+          )}
         </div>
       </div>
     </TiltCard>
@@ -262,6 +276,7 @@ export default function FeaturesAll() {
               screenshot="/screenshots/home.png"
               alt="Metal detecting GPS tracking app with satellite map view and real-time HUD overlay"
               description="Real-time satellite map with heading, altitude, speed, and distance overlay. Switch between Satellite, Terrain, Topographic, and Street views."
+              guide="/blog/how-to-track-metal-detecting-sessions-gps"
             />
           </RevealSection>
           <RevealSection delay={150} className="md:col-span-2 min-h-[320px] h-full">
@@ -273,6 +288,7 @@ export default function FeaturesAll() {
               screenshot="/screenshots/cloud_backup.png"
               alt="Metal detecting cloud backup to Google Drive — sessions, finds, presets, and permissions"
               description="One-tap Google Drive backup for all sessions, presets, permits, and settings. Lost phone? Restore everything on any device."
+              guide="/blog/cloud-backup-google-drive"
             />
           </RevealSection>
         </div>
@@ -292,6 +308,7 @@ export default function FeaturesAll() {
                 "See uncovered patches at a glance",
                 "Works with all 4 map types",
               ]}
+              guide="/blog/using-track-overlay"
             />
           </RevealSection>
           <RevealSection delay={150} className="h-full">
@@ -307,6 +324,7 @@ export default function FeaturesAll() {
                 "Audio alarm when outside perimeter",
                 "Links to Permission Manager sites",
               ]}
+              guide="/blog/setting-up-perimeter-guard"
             />
           </RevealSection>
         </div>
@@ -321,6 +339,7 @@ export default function FeaturesAll() {
               screenshot="/screenshots/permission_vault.png"
               alt="Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries"
               description="Track landowner permissions with approval status, expiry alerts to your calendar, site boundaries, and automatic PDF permission letters."
+              guide="/blog/using-the-permission-vault"
             />
           </RevealSection>
           <RevealSection delay={150} className="h-full">
@@ -336,6 +355,7 @@ export default function FeaturesAll() {
                 "Spot old structures & roads",
                 "Available across the U.S.",
               ]}
+              guide="/blog/how-to-use-old-maps-for-metal-detecting"
             />
           </RevealSection>
           <RevealSection delay={300} className="min-h-[320px] h-full">
@@ -347,6 +367,7 @@ export default function FeaturesAll() {
               screenshot="/screenshots/offline_maps.png"
               alt="Download offline maps for metal detecting — Street, Satellite, Terrain, and Historical Topographic tiles"
               description="Download map tiles for offline use. Street, Satellite, Terrain, and Historical Topo. Hunt confidently with zero cell coverage."
+              guide="/blog/downloading-offline-maps"
             />
           </RevealSection>
         </div>
