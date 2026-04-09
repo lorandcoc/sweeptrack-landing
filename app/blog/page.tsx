@@ -32,6 +32,20 @@ const posts = [
   { slug: "comparing-sessions-overlay-split", title: "Comparing Sessions: Overlay and Split View", excerpt: "Stack up to 4 sessions or compare 2 side by side to track your progress over time.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/stats.png" },
   { slug: "exporting-sessions-gpx-kml-csv", title: "Exporting Sessions as GPX, KML, or CSV", excerpt: "Full Google Earth support. Export individual or multiple sessions in the format you need.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/cloud_backup.png" },
   { slug: "understanding-session-statistics", title: "Understanding Your Session Statistics and Personal Bests", excerpt: "Distance, finds, duration, averages, personal bests, top sessions, and weather insights.", tag: "Tutorial", category: "tutorials", readTime: "4 min", thumbnail: "/screenshots/stats.png" },
+
+  // ── LOCATION ──
+  { slug: "best-places-to-metal-detect-in-texas", title: "Best Places to Metal Detect in Texas", excerpt: "Gulf Coast beaches, Spanish mission areas, river beds, ghost towns, and ranches. Texas detecting rules explained.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/nearby.png" },
+  { slug: "best-places-to-metal-detect-in-florida", title: "Best Places to Metal Detect in Florida", excerpt: "Treasure Coast beaches, old Spanish shipwreck areas, freshwater holes, and state forest rules.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/nearby.png" },
+  { slug: "best-places-to-metal-detect-in-ohio", title: "Best Places to Metal Detect in Ohio", excerpt: "Civil War sites, canal towpaths, Lake Erie beaches, farmland, and old schoolhouse locations.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/nearby.png" },
+  { slug: "best-places-to-metal-detect-in-virginia", title: "Best Places to Metal Detect in Virginia", excerpt: "Colonial homesteads, river fords, and tavern sites. ARPA warnings for federal battlefield areas.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/nearby.png" },
+  { slug: "best-places-to-metal-detect-in-california", title: "Best Places to Metal Detect in California", excerpt: "Gold Rush sites, SoCal and NorCal beaches, mining towns, desert ghost towns, and BLM land rules.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/nearby.png" },
+  { slug: "metal-detecting-laws-in-the-uk", title: "Metal Detecting Laws in the UK", excerpt: "Treasure Act 1996, Portable Antiquities Scheme, Scheduled Monuments, and the Code of Practice explained.", tag: "Location", category: "location", readTime: "6 min", thumbnail: "/screenshots/permission_vault.png" },
+  { slug: "metal-detecting-laws-in-the-us", title: "Metal Detecting Laws in the US", excerpt: "ARPA, National Parks, BLM land, state parks, beaches, and the state-by-state patchwork explained.", tag: "Location", category: "location", readTime: "6 min", thumbnail: "/screenshots/permission_vault.png" },
+  { slug: "metal-detecting-laws-in-australia", title: "Metal Detecting Laws in Australia", excerpt: "State heritage acts, Aboriginal heritage protection, Crown land rules, and gold prospecting overlap.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/permission_vault.png" },
+  { slug: "where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me", excerpt: "How to find detecting spots anywhere: old maps, school yards, churches, fairgrounds, river access, and more.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/offline_maps.png" },
+
+  // ── GEAR ──
+  { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026", excerpt: "Nokta Simplex+, Minelab Vanquish, Garrett Ace 400, XP ORX, Fisher F44, and Nokta Legend compared.", tag: "Gear", category: "gear", readTime: "7 min", thumbnail: "/screenshots/presets.png" },
 ];
 
 const categories = [
@@ -39,8 +53,10 @@ const categories = [
   { id: "tutorials", label: "App Tutorials" },
   { id: "guides", label: "Guides" },
   { id: "tips", label: "Tips" },
+  { id: "location", label: "Locations & Laws" },
   { id: "beach", label: "Beach" },
   { id: "beginners", label: "Beginners" },
+  { id: "gear", label: "Gear" },
 ];
 
 export default function GuidesIndex() {

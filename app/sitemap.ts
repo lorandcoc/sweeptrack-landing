@@ -5,13 +5,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
 
   const blogSlugs = [
+    // Guides
     "how-to-use-old-maps-for-metal-detecting",
     "metal-detecting-permission-letter-template",
-    "best-weather-conditions-for-metal-detecting",
-    "beach-metal-detecting-tide-timing",
     "how-to-track-metal-detecting-sessions-gps",
     "metal-detecting-for-beginners",
+    // Tips
+    "best-weather-conditions-for-metal-detecting",
     "organize-metal-detector-presets-settings",
+    // Beach
+    "beach-metal-detecting-tide-timing",
+    // App Tutorials
     "how-to-use-detecting-forecast",
     "setting-up-perimeter-guard",
     "using-the-permission-vault",
@@ -25,6 +29,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "comparing-sessions-overlay-split",
     "exporting-sessions-gpx-kml-csv",
     "understanding-session-statistics",
+    // Location & Laws
+    "best-places-to-metal-detect-in-texas",
+    "best-places-to-metal-detect-in-florida",
+    "best-places-to-metal-detect-in-ohio",
+    "best-places-to-metal-detect-in-virginia",
+    "best-places-to-metal-detect-in-california",
+    "metal-detecting-laws-in-the-uk",
+    "metal-detecting-laws-in-the-us",
+    "metal-detecting-laws-in-australia",
+    "where-to-metal-detect-near-me",
+    // Gear
+    "best-metal-detectors-under-500",
   ];
 
   return [
