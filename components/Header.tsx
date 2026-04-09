@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Screenshots", href: "#screenshots" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "Screenshots", href: "/#screenshots" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Guides", href: "/blog" },
 ];
 
@@ -43,7 +43,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
+        <a href="/" className="flex items-center gap-2.5 group">
           <div className="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center group-hover:bg-accent/25 transition-colors">
             <svg
               width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -73,7 +73,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#download"
+            href="/#download"
             className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#0A0A1A] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
             Coming Soon
@@ -114,7 +114,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#download"
+            href="/#download"
             className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#0A0A1A] text-center hover:bg-accent-dim transition-colors"
             onClick={() => setMenuOpen(false)}
           >

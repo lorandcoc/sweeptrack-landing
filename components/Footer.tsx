@@ -79,11 +79,11 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4 text-foreground">Product</h4>
             <div className="flex flex-col gap-2.5 text-sm text-muted">
-              <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-              <a href="#screenshots" className="hover:text-foreground transition-colors">Screenshots</a>
-              <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-              <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
-              <a href="#community" className="hover:text-foreground transition-colors">Community</a>
+              <a href="/#features" className="hover:text-foreground transition-colors">Features</a>
+              <a href="/#screenshots" className="hover:text-foreground transition-colors">Screenshots</a>
+              <a href="/#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+              <a href="/#faq" className="hover:text-foreground transition-colors">FAQ</a>
+              <a href="/#community" className="hover:text-foreground transition-colors">Community</a>
               <a href="/blog" className="hover:text-foreground transition-colors">Guides & Tips</a>
             </div>
           </div>
