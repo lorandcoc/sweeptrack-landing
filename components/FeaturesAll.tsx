@@ -245,6 +245,54 @@ const secondaryFeatures = [
     description: "Per-session and overall career stats. Distance, finds, duration, averages, and personal bests.",
     guide: "/blog/understanding-session-statistics",
   },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2" fill="currentColor" opacity="0.5" /></svg>,
+    title: "Find Heatmap",
+    description: "Gold-amber heatmap showing where your finds cluster. Filter by type — treasure, gold, coin, relic, jewelry.",
+    guide: "/blog/find-heatmap",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20V10" /><path d="M18 20V4" /><path d="M6 20v-4" /></svg>,
+    title: "Find-to-Preset Intelligence",
+    description: "Every find is tagged with the preset that found it. See which settings find the most gold, coins, or relics.",
+    guide: "/blog/find-to-preset-intelligence",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" /><rect x="9" y="3" width="6" height="4" rx="1" /><path d="M9 14l2 2 4-4" /></svg>,
+    title: "Hunt Planner",
+    description: "Go/No-Go briefing before every hunt. Weather, soil, tides, moon phase, permits, and detector preset — all in one screen.",
+    guide: "/blog/hunt-planner-wizard",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>,
+    title: "Signal Diary",
+    description: "Log the VDI number and signal strength with every find. Learn what your detector sounds like on real targets.",
+    guide: "/blog/signal-diary",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4" /><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.3" /></svg>,
+    title: "Site Productivity Heatmap",
+    description: "Map overlay of ALL finds across ALL sessions. See your most productive ground at a glance. Filter by find type.",
+    guide: "/blog/site-productivity-heatmap",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><circle cx="9" cy="13" r="2" /><circle cx="15" cy="8" r="2" /><circle cx="12" cy="16" r="2" /></svg>,
+    title: "Depth Chart",
+    description: "Scatter plot of find depths per site over time. Spot trends — are your finds getting deeper or shallower?",
+    guide: "/blog/depth-chart",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22 6 12 13 2 6" /></svg>,
+    title: "Request & Thank-You Letters",
+    description: "Generate a permission request letter or a thank-you note for landowners. Copy or share as PDF.",
+    guide: "/blog/permission-request-thank-you-letters",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" /></svg>,
+    title: "Share Card",
+    description: "Instagram-ready session summary card (1080×1920). Path map, stats, find breakdown, weather, and detector info.",
+    guide: "/blog/share-card",
+  },
 ];
 
 /* ─── Section helpers ─── */
