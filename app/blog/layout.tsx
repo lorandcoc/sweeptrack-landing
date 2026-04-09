@@ -1,3 +1,6 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
   const articleSchema = {
     "@context": "https://schema.org",
@@ -23,7 +26,9 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      {children}
+      <Header />
+      <div className="pt-16">{children}</div>
+      <Footer />
     </>
   );
 }
