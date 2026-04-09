@@ -68,7 +68,7 @@ export default function MapCompareSlider() {
 
         <div 
           ref={containerRef}
-          className="relative w-full aspect-[4/3] sm:aspect-video rounded-2xl overflow-hidden cursor-ew-resize select-none border border-white/10 shadow-2xl group ring-1 ring-white/5"
+          className="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-2xl overflow-hidden cursor-ew-resize select-none border border-white/10 shadow-2xl group ring-1 ring-white/5"
           onMouseDown={(e) => {
             setIsDragging(true);
             handleMove(e.clientX);
@@ -83,7 +83,7 @@ export default function MapCompareSlider() {
           {/* Base Image (Old Map) */}
           <div className="absolute inset-0 w-full h-full bg-surface">
             <Image 
-              src="/maps/old_map.png"
+              src="/maps/old_map.jpg"
               alt="Historical Map View"
               fill
               className="object-cover pointer-events-none opacity-90"
@@ -100,7 +100,7 @@ export default function MapCompareSlider() {
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
             <Image 
-              src="/maps/satellite_map.png"
+              src="/maps/satellite_map.jpg"
               alt="Modern Satellite View"
               fill
               className="object-cover pointer-events-none"
