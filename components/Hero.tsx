@@ -1,19 +1,27 @@
-import AnimatedCounter from "./AnimatedCounter";
 import ParallaxPhone from "./ParallaxPhone";
 import ComingSoonButton from "./ComingSoonButton";
 
-const numberStats = [
-  { value: 4, label: "Offline Map Sources" },
-  { value: 7, label: "Day Detecting Forecast" },
-  { value: 12, label: "Color Themes" },
-  { value: 5, label: "Compared Sessions" },
-];
-
-const checkStats = [
-  "USGS Historical Maps",
-  "Permission Vault",
-  "Perimeter Guard",
-  "Cloud Backup",
+/**
+ * "Built because…" pain → fix pairs.
+ * Every fix below maps to a real, shipped feature verified in the Kotlin source.
+ */
+const builtBecause = [
+  {
+    pain: "Walked this row already?",
+    fix: "Coverage heatmap + past-track overlay",
+  },
+  {
+    pain: "Lost on the way back to the car?",
+    fix: "Compass with return-bearing arrow",
+  },
+  {
+    pain: "Rained-out hunt, wasted drive?",
+    fix: "Detecting Forecast for any location",
+  },
+  {
+    pain: "Phone died, session gone?",
+    fix: "One-tap Google Drive backup",
+  },
 ];
 
 export default function Hero() {
@@ -73,37 +81,59 @@ export default function Hero() {
           <ParallaxPhone />
         </div>
 
-        {/* Stats Bar — 4x2 grid: numbers top, checkmarks bottom */}
+        {/* Built Because — pain → fix grid, replaces the dry stats bar */}
         <div className="mt-16 md:mt-20 animate-fade-up delay-500">
-          <div className="section-divider mb-8" />
+          <div className="section-divider mb-10" />
 
-          {/* Row 1: Numbers */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-            {numberStats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-accent stat-glow mb-1">
-                  <AnimatedCounter target={stat.value} />
-                </div>
-                <div className="text-xs text-muted font-medium tracking-wide uppercase">
-                  {stat.label}
+          <div className="text-center mb-6">
+            <p className="text-accent text-[11px] font-bold tracking-[0.25em] uppercase">
+              Built because a detectorist got tired of&hellip;
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {builtBecause.map((item, i) => (
+              <div
+                key={item.pain}
+                className="relative rounded-2xl border border-white/8 bg-surface/60 px-5 py-4 overflow-hidden transition-all hover:border-accent/30 hover:bg-surface/80 animate-fade-up"
+                style={{ animationDelay: `${600 + i * 80}ms` }}
+              >
+                {/* Left edge accent bar */}
+                <div className="absolute inset-y-0 left-0 w-[3px] bg-accent/60" />
+                <div className="flex items-start gap-3 pl-1">
+                  <span
+                    className="text-white/35 font-black text-xl leading-none select-none mt-0.5"
+                    aria-hidden
+                  >
+                    &times;
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-white/60 line-through decoration-white/20 decoration-1">
+                      {item.pain}
+                    </p>
+                    <p className="text-sm font-semibold text-accent mt-1.5 flex items-center gap-1.5">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="shrink-0"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>{item.fix}</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Row 2: Checkmarks */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {checkStats.map((label) => (
-              <div key={label} className="flex items-center justify-center gap-2 py-2 rounded-lg bg-accent/5 border border-accent/10">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00FF6A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span className="text-xs font-medium text-white/80 uppercase tracking-wide">{label}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="section-divider mt-8" />
+          <div className="section-divider mt-10" />
         </div>
       </div>
     </section>
