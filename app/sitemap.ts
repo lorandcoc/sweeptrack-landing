@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Beach
     "beach-metal-detecting-tide-timing",
     // App Tutorials
-    "how-to-use-detecting-forecast",
+    "detecting-forecast-guide",
     "setting-up-perimeter-guard",
     "using-the-permission-vault",
     "downloading-offline-maps",
@@ -31,7 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "understanding-session-statistics",
     "find-heatmap",
     "find-to-preset-intelligence",
-    "hunt-planner-wizard",
     "signal-diary",
     "site-productivity-heatmap",
     "depth-chart",

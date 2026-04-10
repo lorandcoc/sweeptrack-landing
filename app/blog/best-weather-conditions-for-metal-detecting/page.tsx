@@ -58,22 +58,23 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">How a Detecting Forecast Works</h2>
           <p>
-            A detecting forecast takes all these variables — soil moisture, temperature, wind speed, humidity, precipitation, barometric pressure, and UV index — and combines them into a single score from 0 to 100.
+            A detecting forecast takes the variables that matter most — soil moisture, temperature, wind speed, humidity, and precipitation — and combines them into a single Detecting Score from 0 to 100.
           </p>
           <p>
-            A score above 80 means conditions are excellent for detecting. Between 50-80 is good. Below 50, you might want to save your time for a better day.
+            A score above 80 is Excellent. 60&ndash;79 is Good, 40&ndash;59 is Fair, 20&ndash;39 is Poor, and below 20 is Bad. It&apos;s a one-number read on whether today is worth loading the truck.
           </p>
 
           <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
             <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> includes a built-in Detecting Forecast that shows your hunt score, soil moisture percentage, hourly conditions, and a 7-day outlook.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
+              <strong className="text-foreground">SweepTrack Pro</strong> includes a built-in Detecting Forecast with a 0-100 Detecting Score, soil moisture, wind, temperature, humidity, contextual tips, and a 7-day outlook for any location you search.
+              {" "}<Link href="/blog/detecting-forecast-guide" className="text-accent hover:underline">Full guide &rarr;</Link>
             </p>
           </div>
 
           <div className="mt-8 pt-8 border-t border-white/5">
             <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
             <div className="space-y-3">
+              <Link href="/blog/detecting-forecast-guide" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Detecting Forecast: Plan Every Hunt by the Numbers &rarr;</Link>
               <Link href="/blog/beach-metal-detecting-tide-timing" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Beach Detecting: Tide Timing &rarr;</Link>
               <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
             </div>

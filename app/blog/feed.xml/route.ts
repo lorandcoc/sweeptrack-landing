@@ -6,7 +6,7 @@ const posts = [
   { slug: "how-to-track-metal-detecting-sessions-gps", title: "How to Track Your Detecting Sessions with GPS" },
   { slug: "metal-detecting-for-beginners", title: "Metal Detecting for Beginners: What You Need to Know" },
   { slug: "organize-metal-detector-presets-settings", title: "How to Organize Your Detector Settings and Presets" },
-  { slug: "how-to-use-detecting-forecast", title: "How to Use the Detecting Forecast Before Every Hunt" },
+  { slug: "detecting-forecast-guide", title: "Detecting Forecast: Plan Every Hunt by the Numbers" },
   { slug: "setting-up-perimeter-guard", title: "Setting Up Perimeter Guard: Stay Within Your Zone" },
   { slug: "using-the-permission-vault", title: "Using the Permission Vault to Manage Permissions" },
   { slug: "downloading-offline-maps", title: "Downloading Offline Maps for Areas Without Cell Service" },

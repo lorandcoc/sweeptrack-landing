@@ -80,7 +80,7 @@ const jsonLdGraph = [
       "Track overlay — see up to 7 past sessions on the same map",
       "Perimeter guard with vibration and audio boundary alerts",
       "Permission vault with site boundaries, expiry alerts, and PDF letter generator",
-      "Weather-based detecting forecast with soil moisture and hunt score 0-100",
+      "Detecting Forecast with 0-100 score, 7-day outlook, soil moisture, wind, temperature and humidity for any location",
       "Tide table with up to 14-day predictions for beach detecting",
       "Cloud backup and restore to Google Drive",
       "10 detector preset slots with QR code sharing for 57 models from 12 brands",

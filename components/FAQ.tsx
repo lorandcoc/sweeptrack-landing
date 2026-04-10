@@ -37,8 +37,8 @@ const faqs = [
     a: "It overlays real USGS Historical Topographic Maps from the ArcGIS collection onto your modern map. You can see where old roads, buildings, settlements, and landmarks used to be — perfect for finding productive detecting spots that no longer exist on modern maps.",
   },
   {
-    q: "How does the detecting forecast work?",
-    a: "It analyzes soil moisture, temperature, wind speed, humidity, barometric pressure, and precipitation to generate a detecting score from 0-100. High soil moisture + low wind + moderate temperature = excellent conditions. It also shows hourly and 7-day forecasts.",
+    q: "How does the Detecting Forecast work?",
+    a: "It analyzes soil moisture, wind speed, temperature, humidity, and precipitation to generate a Detecting Score from 0-100 with a one-word verdict (Excellent, Good, Fair, Poor, or Bad). Pick any day up to a week ahead, or search any location on Earth. High soil moisture + low wind + moderate temperature = excellent conditions. Contextual tips appear based on what the weather actually looks like.",
   },
   {
     q: "Is there an iOS version?",

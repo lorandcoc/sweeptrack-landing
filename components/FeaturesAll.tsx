@@ -202,7 +202,7 @@ const secondaryFeatures = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2" /><path d="M16.24 7.76a6 6 0 010 8.49M7.76 16.24a6 6 0 010-8.49M20.49 3.51a12 12 0 010 16.97M3.51 20.49a12 12 0 010-16.97" /></svg>,
     title: "On-Screen Compass",
-    description: "Live magnetic compass overlay. Know your heading without taking your eyes off the ground.",
+    description: "Live magnetic compass with a pointer back to your start point. Know your heading and follow the arrow home.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>,
@@ -212,8 +212,8 @@ const secondaryFeatures = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 16.1A5 5 0 015.9 20M2 12.05A9 9 0 019.95 19M2 8V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2h-6" /><line x1="2" y1="20" x2="2.01" y2="20" /></svg>,
     title: "Detecting Forecast",
-    description: "Weather-based hunt score. Soil moisture, temp, wind — all into one go/no-go indicator.",
-    guide: "/blog/how-to-use-detecting-forecast",
+    description: "0-100 Detecting Score for any location, any day up to a week ahead. Soil moisture, wind, temp, humidity, and smart tips in one screen.",
+    guide: "/blog/detecting-forecast-guide",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 19h20L12 2z" /><line x1="12" y1="9" x2="12" y2="13" /><circle cx="12" cy="16" r="0.5" fill="currentColor" /></svg>,
@@ -258,12 +258,6 @@ const secondaryFeatures = [
     guide: "/blog/find-to-preset-intelligence",
   },
   {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" /><rect x="9" y="3" width="6" height="4" rx="1" /><path d="M9 14l2 2 4-4" /></svg>,
-    title: "Hunt Planner",
-    description: "Go/No-Go briefing before every hunt. Weather, soil, tides, moon phase, permits, and detector preset — all in one screen.",
-    guide: "/blog/hunt-planner-wizard",
-  },
-  {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>,
     title: "Signal Diary",
     description: "Log the VDI number and signal strength with every find. Learn what your detector sounds like on real targets.",
@@ -292,6 +286,136 @@ const secondaryFeatures = [
     title: "Share Card",
     description: "Instagram-ready session summary card (1080×1920). Path map, stats, find breakdown, weather, and detector info.",
     guide: "/blog/share-card",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" /><polyline points="17 21 17 13 7 13 7 21" /><polyline points="7 3 7 8 15 8" /></svg>,
+    title: "Crash-Proof Autosave",
+    description: "Your session is saved continuously in the background. Phone dies or app crashes — pick up exactly where you left off.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20" /><path d="M4 8l4 4-4 4" /><path d="M20 8l-4 4 4 4" /></svg>,
+    title: "Find Depth Tracking",
+    description: "Log every recovery depth in cm or inches. See how deep your site is producing and when shallow targets are hunted out.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="7" cy="7" r="3" /><circle cx="17" cy="7" r="3" /><circle cx="7" cy="17" r="3" /><circle cx="17" cy="17" r="3" /></svg>,
+    title: "Color-Coded Find Markers",
+    description: "Finds drop as pins color-coded by type — gold, treasure, coin, relic, jewelry, trash. Your productive zones at a glance.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="9" x2="3" y2="15" /><line x1="7" y1="10" x2="7" y2="14" /><line x1="11" y1="10" x2="11" y2="14" /><line x1="15" y1="10" x2="15" y2="14" /><line x1="19" y1="9" x2="19" y2="15" /><line x1="21" y1="9" x2="21" y2="15" /></svg>,
+    title: "Live Scale Bar",
+    description: "Dynamic scale bar updates as you zoom and pan. Metric or imperial. Instantly see the size of your search area.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3" /><path d="M12 8v8M8 12h8" /></svg>,
+    title: "Session Merging",
+    description: "Combine multiple hunts on the same site into a single unified record with consolidated stats.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>,
+    title: "Full-Text Find Search",
+    description: "Search every find you've ever logged by name, notes, type, or session.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 17 9 11 13 15 21 7" /><polyline points="15 7 21 7 21 13" /></svg>,
+    title: "Elevation Profile",
+    description: "See the terrain profile of every hunt — slopes, ridges, valleys — per session.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><circle cx="12" cy="15" r="1.5" fill="currentColor" /></svg>,
+    title: "Calendar Sync for Permits",
+    description: "Permit expiration dates auto-sync to your phone's calendar. Never get caught with expired permission.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>,
+    title: "Photo Gallery",
+    description: "Browse every find photo you've ever taken in a visual grid with filters and quick-view.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" /></svg>,
+    title: "Top Sessions Ranking",
+    description: "Your best hunts ranked by find count, distance, or duration. Tap to jump to any session.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" /><path d="M8 10h8M12 6v8" /></svg>,
+    title: "Top Locations Ranking",
+    description: "Which sites produce the most finds — your personal hot-spot leaderboard.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6-6 6 6M6 15l6 6 6-6" /><circle cx="12" cy="12" r="1" fill="currentColor" /></svg>,
+    title: "Detector Titles",
+    description: "Earn automatic titles based on your hunting activity — up to Master Detectorist at 100+ sessions.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="3" height="3" /><rect x="18" y="14" width="3" height="3" /><rect x="14" y="18" width="3" height="3" /></svg>,
+    title: "QR Code Sharing",
+    description: "Share sessions, presets, or permits as QR codes. Scan to transfer — no cloud, no accounts needed.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /></svg>,
+    title: "Weather Snapshot",
+    description: "Weather at the start and end of every hunt is captured automatically and stored with the session.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" /><circle cx="12" cy="10" r="3" /></svg>,
+    title: "Reverse Geocoded Names",
+    description: "Sessions are auto-named with human-readable location labels instead of raw coordinates.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" /><path d="M18.5 2.5a2.12 2.12 0 013 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>,
+    title: "Session Rename",
+    description: "Override auto-generated session names with your own descriptive titles.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4 12.5-12.5z" /></svg>,
+    title: "Edit Finds Later",
+    description: "Forgot a note? Wrong type? Every field on every find is editable forever.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><path d="M11 8v6M8 11h6" /></svg>,
+    title: "Location Picker",
+    description: "Plan hunts for any location on Earth in Planner or Forecast. Search any city, address, or coordinates.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M9 9h.01M15 9h.01M8 14s1.5 2 4 2 4-2 4-2" /></svg>,
+    title: "Interactive Onboarding",
+    description: "A friendly 5-slide walkthrough of key features for first-time users.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>,
+    title: "Romanian Translations",
+    description: "Full Romanian localization — rare in detecting apps. Switch on the fly.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="8" width="20" height="8" rx="4" /><circle cx="16" cy="12" r="3" fill="currentColor" /></svg>,
+    title: "Metric / Imperial Toggle",
+    description: "Switch between cm/inches, km/miles, °C/°F anywhere. Everything updates instantly.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" /><circle cx="12" cy="13" r="4" /></svg>,
+    title: "Camera Follow Toggle",
+    description: "Lock the map camera to your position, or let it roam while you review the map.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="8" r="1.5" fill="currentColor" /><circle cx="6" cy="8" r="1.5" fill="currentColor" /><circle cx="18" cy="16" r="1.5" fill="currentColor" /><circle cx="6" cy="16" r="1.5" fill="currentColor" /></svg>,
+    title: "12 Color Themes",
+    description: "Tactical, Amber, Cobalt, Coral, Fuchsia, Slate, Navy, Operator and more. Pick your vibe.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg>,
+    title: "61 Detector Reference Library",
+    description: "Pre-loaded specs and settings for 61 detector models across 12 major brands — Minelab, XP, Nokta, Garrett, Fisher and more.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>,
+    title: "About & Credits",
+    description: "App version, credits, and licensing info in one place.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>,
+    title: "In-App Feedback",
+    description: "Send bug reports and feature requests directly from the app.",
   },
 ];
 
