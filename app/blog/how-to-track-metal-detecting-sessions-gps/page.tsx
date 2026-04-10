@@ -23,7 +23,7 @@ export default function Post() {
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li>Shows your walked path on a satellite map as you detect</li>
             <li>Records distance, time, speed, and altitude for every session</li>
-            <li>Lets you overlay up to 7 past tracks on the same map so you can see gaps</li>
+            <li>Lets you overlay past tracks on the same map so you can see gaps</li>
             <li>Marks find locations with GPS coordinates so you can return to productive spots</li>
             <li>Exports your path as GPX for Google Earth or KML for other mapping software</li>
           </ul>
@@ -46,7 +46,7 @@ export default function Post() {
 
           <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
             <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> tracks your GPS path on 4 map types, overlays up to 7 past sessions simultaneously, and shows find pins on the map. Works offline with downloaded tiles.
+              <strong className="text-foreground">SweepTrack Pro</strong> tracks your GPS path on 4 map types, overlays past sessions on the same map, and shows find pins. Works offline with downloaded tiles.
               {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
             </p>
           </div>

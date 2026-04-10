@@ -15,6 +15,38 @@ const nextConfig: NextConfig = {
         destination: "/blog/detecting-forecast-guide",
         permanent: true,
       },
+      // Removed blog posts that described features the app doesn't actually have.
+      // Redirect to the blog index so old backlinks don't 404.
+      {
+        source: "/blog/find-heatmap",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/find-to-preset-intelligence",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/signal-diary",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/site-productivity-heatmap",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/depth-chart",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/permission-request-thank-you-letters",
+        destination: "/blog/metal-detecting-permission-letter-template",
+        permanent: true,
+      },
     ];
   },
 };

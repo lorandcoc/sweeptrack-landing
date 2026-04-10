@@ -6,7 +6,7 @@ import { useReveal } from "./useReveal";
 
 const screenshots = [
   { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", label: "Live Map & GPS" },
-  { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture and weather conditions with hunt score", label: "Detecting Forecast" },
+  { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture and weather conditions with Detecting Score", label: "Detecting Forecast" },
   { src: "/screenshots/offline_maps.png", alt: "Download offline maps for metal detecting with 4 tile sources", label: "Offline Maps" },
   { src: "/screenshots/presets.png", alt: "Metal detector presets for Minelab Garrett XP Nokta Fisher and 7 more brands", label: "Detector Presets" },
   { src: "/screenshots/stats.png", alt: "Metal detecting session statistics with distance finds duration and personal bests", label: "Statistics" },

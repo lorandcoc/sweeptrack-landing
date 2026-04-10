@@ -33,8 +33,8 @@ export default function Post() {
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Sharing Settings with Others</h2>
-          <p>When a hunting buddy asks &ldquo;what settings are you running?&rdquo; — instead of reading numbers off your screen, share the whole configuration. QR codes make this instant: they scan it, the preset loads, done. No typos, no miscommunication.</p>
-          <p>You can also export presets as files for sharing in detecting forums and Facebook groups.</p>
+          <p>When a hunting buddy asks &ldquo;what settings are you running?&rdquo; — instead of reading numbers off your screen, export the preset as a small JSON file. Send it over chat or email and they import it in one tap. No typos, no miscommunication.</p>
+          <p>The exported JSON contains the model name and every field value, so anything forum-friendly works too.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">When to Update Your Presets</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
@@ -46,7 +46,7 @@ export default function Post() {
 
           <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
             <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> gives you 10 detector preset slots with templates for 57 models across 12 brands. Save, name, and share presets via QR code or file export.
+              <strong className="text-foreground">SweepTrack Pro</strong> gives you 10 detector preset slots with templates for 57 models across 12 brands. Save, name, and share presets as JSON files.
               {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
             </p>
           </div>

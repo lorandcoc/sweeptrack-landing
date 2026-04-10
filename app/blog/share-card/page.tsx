@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Share Card: Show Off Your Session on Social Media",
+  title: "Share Card: A Printable Summary of Your Session",
   description:
-    "Learn how to generate a shareable 1080x1920 session summary image in SweepTrack Pro, complete with map, stats, find breakdown, and weather data for Instagram and other platforms.",
+    "Generate a shareable 800×500 PNG session card in SweepTrack Pro with your name, date, stats, find breakdown, and score. One tap to share via any app that accepts images.",
 };
 
 export default function Post() {
@@ -13,50 +13,43 @@ export default function Post() {
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Share Card: Show Off Your Session on Social Media</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
+        <h1 className="text-3xl font-bold mb-4">Share Card: A Printable Summary of Your Session</h1>
+        <p className="text-muted text-sm mb-10">April 2026 &middot; 2 min read</p>
 
         <div className="space-y-6 text-foreground/90 leading-relaxed">
-          <p>You just wrapped a killer session &mdash; good finds, solid coverage, great weather. Now you want to share it. Instead of screenshotting your stats and cropping awkwardly, the Share Card generates a polished, purpose-built image that looks like it belongs on Instagram.</p>
+          <p>When you want to show a hunting buddy what happened today without screenshotting five different screens, the Share Card is a single 800&times;500 PNG image that sums the whole session up.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">What&apos;s on the Card</h2>
-          <p>The Share Card is a 1080 x 1920 pixel image (Instagram story format) that packs your entire session summary into one graphic:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Session name and date</strong> &mdash; the title and when you detected</li>
-            <li><strong>Location</strong> &mdash; general area (not your exact GPS coordinates)</li>
-            <li><strong>Minimap</strong> &mdash; a satellite view of your walked path with find markers plotted on it</li>
-            <li><strong>Hero stats</strong> &mdash; distance walked, total finds, and session duration in large, readable numbers</li>
-            <li><strong>Find breakdown chart</strong> &mdash; visual breakdown of your finds by type</li>
-            <li><strong>Weather conditions</strong> &mdash; what the weather was like during your hunt</li>
-            <li><strong>Detector preset</strong> &mdash; which settings you were running</li>
-            <li><strong>SweepTrack branding</strong> &mdash; subtle app branding at the bottom</li>
+            <li><strong>SweepTrack Pro header</strong> — bright accent-green title across the top</li>
+            <li><strong>Session name</strong> — whatever you named it, or the auto-generated place label</li>
+            <li><strong>Date</strong> — muted line under the name</li>
+            <li><strong>Four stats</strong> — Distance, Finds, Duration, and Score in large monospaced figures</li>
+            <li><strong>Finds breakdown</strong> — color-coded chips for Treasure (amber), Gold (yellow), and Trash (grey) with counts</li>
+            <li><strong>Footer</strong> — <em>by Loriba &middot; sweeptrack.app</em></li>
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">How to Generate One</h2>
           <ol className="list-decimal list-inside space-y-2 ml-2">
-            <li>Finish a session and view its summary (or open any past session from History)</li>
-            <li>Tap the <strong>Share</strong> button on the session summary screen</li>
-            <li>The card generates in a few seconds</li>
-            <li>Share it directly to Instagram, Facebook, WhatsApp, Discord &mdash; or any app that accepts images</li>
+            <li>Finish a session (or open an older one from History).</li>
+            <li>Tap the <strong>Share</strong> action on the summary.</li>
+            <li>The card is rendered as a PNG in a split second.</li>
+            <li>Send it via your system share sheet — WhatsApp, Telegram, Discord, email, or anywhere else that accepts images.</li>
           </ol>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Designed for Social Media</h2>
-          <p>The 1080 x 1920 format is specifically sized for Instagram Stories, but it works well as a standard post on most platforms too. The layout prioritizes readability &mdash; stats are large enough to read on a phone screen, and the minimap gives context without revealing your exact honey hole.</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Why 800&times;500</h2>
+          <p>The card is sized for chat and forum posts — it looks clean in a Discord message, fits nicely on Reddit, and drops straight into Telegram or WhatsApp without extra cropping. Not every share is an Instagram Story.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Tips for Great Share Cards</h2>
+          <h2 className="text-xl font-semibold text-accent mt-8">Tips</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Name your sessions</strong> &mdash; &ldquo;Farmer Jones Pasture #3&rdquo; looks better than &ldquo;Session 47&rdquo;</li>
-            <li><strong>Log your finds</strong> &mdash; the breakdown chart is only useful if you actually logged what you dug</li>
-            <li><strong>Have a preset active</strong> &mdash; the card shows which detector settings you used, which other detectorists appreciate seeing</li>
-            <li><strong>Share after every good session</strong> &mdash; it takes 10 seconds and builds your detecting journal on social media</li>
+            <li><strong>Name your sessions</strong> — a descriptive name reads much better than &ldquo;Session 47&rdquo;.</li>
+            <li><strong>Log your finds by type</strong> — the breakdown chips only show counts if you actually tagged finds as Treasure, Gold, or Trash.</li>
+            <li><strong>Double-check privacy</strong> — the card doesn&apos;t show your exact GPS, but the session name might. Edit it first if you&apos;re sharing publicly.</li>
           </ul>
-
-          <h2 className="text-xl font-semibold text-accent mt-8">Privacy Consideration</h2>
-          <p>The minimap shows your path shape but uses a zoomed-out satellite view. It gives a sense of the terrain without pinpointing the exact field. If you&apos;re still concerned about revealing a site, you can always crop the card before sharing.</p>
 
           <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
             <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> generates Instagram-ready session summary cards with your path, stats, finds, and weather &mdash; one tap from any session summary.
+              <strong className="text-foreground">SweepTrack Pro</strong> generates the share card directly from session data — one tap from any session summary.
               {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
             </p>
           </div>

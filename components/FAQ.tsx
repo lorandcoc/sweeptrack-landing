@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "Can I export my data?",
-    a: "Yes. Export individual or multiple sessions as GPX (for Google Earth, Garmin), KML, CSV, or SweepTrack JSON (full data with finds, weather, and stats). You can also share detector presets via QR code or file export.",
+    a: "Yes. Export individual or multiple sessions as GPX (for Google Earth, Garmin), KML, CSV, or SweepTrack JSON (full data with finds, weather, and stats). Detector presets can be exported and imported as JSON.",
   },
   {
     q: "What's the historical map overlay?",

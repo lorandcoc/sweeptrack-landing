@@ -53,11 +53,11 @@ export default function TermsOfService() {
             <UL>
               <li>Real-time GPS tracking and path recording</li>
               <li>Session logging with distance, speed, altitude, and duration metrics</li>
-              <li>Find/discovery logging with photo, video, and audio attachments</li>
+              <li>Find/discovery logging with photo and audio attachments</li>
               <li>Weather forecasting and detecting condition scoring</li>
               <li>Tide table predictions (U.S. coastal stations via NOAA)</li>
               <li>Nearby historical and archaeological point-of-interest discovery</li>
-              <li>Detector preset management for 60+ metal detector models</li>
+              <li>Detector preset management for 57 metal detector models</li>
               <li>Permission vault for managing landowner permissions and site access</li>
               <li>Perimeter guard with boundary alerts</li>
               <li>Offline map downloads</li>
@@ -116,7 +116,7 @@ export default function TermsOfService() {
               <li>GPS coordinates, speed, altitude, and heading during active tracking sessions</li>
               <li>Session metadata (name, date, duration, distance, tags)</li>
               <li>Find/discovery records (type, location, name, notes, depth, value, weight)</li>
-              <li>Media files (photos, videos, audio recordings) captured within the App</li>
+              <li>Media files (photos and audio recordings) captured within the App</li>
               <li>Permission vault entries (site names, landowner names, contact information, permit details, boundary coordinates, signatures)</li>
               <li>Detector preset configurations</li>
               <li>Weather snapshots associated with sessions</li>

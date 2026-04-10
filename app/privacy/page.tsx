@@ -67,10 +67,10 @@ export default function PrivacyPolicy() {
             </UL>
             <P><strong>Find and Discovery Records:</strong></P>
             <UL>
-              <li>Find type (Treasure, Gold, Coin, Relic, Jewelry, Trash)</li>
+              <li>Find type (Treasure, Gold, Trash, Void)</li>
               <li>Find location (GPS coordinates at time of logging)</li>
               <li>Optional metadata: name, notes, depth, estimated value, weight</li>
-              <li>Media attachments: photographs, video recordings, audio recordings</li>
+              <li>Media attachments: photographs and audio recordings</li>
             </UL>
             <P><strong>Permission Vault Data:</strong></P>
             <UL>
@@ -146,7 +146,7 @@ export default function PrivacyPolicy() {
 
           <section>
             <H2>8. Data Sharing and Disclosure</H2>
-            <P>We do not share, sell, rent, or disclose your personal data to any third party. You may choose to share data through exports (GPX, KML, CSV, JSON), QR codes, session cards, or Google Drive backup — all user-initiated.</P>
+            <P>We do not share, sell, rent, or disclose your personal data to any third party. You may choose to share data through exports (GPX, KML, CSV, JSON), session share cards, or Google Drive backup — all user-initiated.</P>
           </section>
 
           <section>

@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     "Fisher F75 app",
     "metal detector presets",
     "metal detector settings app",
-    "share metal detector settings QR code",
+    "metal detector preset import export",
     // Activity searches
     "metal detecting tips",
     "metal detecting for beginners",

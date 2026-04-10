@@ -32,7 +32,7 @@ export default function Post() {
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Find Breakdown</h2>
-          <p>Below the hero stats, a breakdown shows your finds by category: Treasure, Gold, Coin, Relic, Jewelry, and Trash. Each category has a count and a percentage of your total finds. This tells you what kind of targets you&apos;re recovering. A high trash percentage is normal, especially on new sites &mdash; it means you&apos;re digging everything and not missing good signals.</p>
+          <p>Below the hero stats, a stacked bar breaks your total finds down by type: Treasure (amber), Gold (yellow), Trash (grey), and Void (dark). Each segment is proportional to its share of the total. This tells you what kind of targets you&apos;re recovering. A high trash percentage is normal, especially on new sites — it means you&apos;re digging everything and not missing good signals.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Averages</h2>
           <p>The averages section tells you what a typical session looks like: average finds per session, average distance per session, and average duration. These are useful benchmarks. If your average finds per session suddenly drops, maybe you need to try a new site or adjust your detector settings.</p>

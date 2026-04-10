@@ -29,12 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "comparing-sessions-overlay-split",
     "exporting-sessions-gpx-kml-csv",
     "understanding-session-statistics",
-    "find-heatmap",
-    "find-to-preset-intelligence",
-    "signal-diary",
-    "site-productivity-heatmap",
-    "depth-chart",
-    "permission-request-thank-you-letters",
     "share-card",
     // Location & Laws
     "best-places-to-metal-detect-in-texas",
