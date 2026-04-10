@@ -3,10 +3,10 @@ import ParallaxPhone from "./ParallaxPhone";
 import ComingSoonButton from "./ComingSoonButton";
 
 const numberStats = [
-  { value: 57, label: "Detector Models" },
   { value: 4, label: "Offline Map Sources" },
-  { value: 14, label: "Day Tide Forecast" },
-  { value: 10, label: "Detector Preset Slots" },
+  { value: 7, label: "Day Detecting Forecast" },
+  { value: 12, label: "Color Themes" },
+  { value: 5, label: "Compared Sessions" },
 ];
 
 const checkStats = [

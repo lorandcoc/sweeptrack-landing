@@ -6,31 +6,19 @@ import { useReveal } from "./useReveal";
 const faqs = [
   {
     q: "Does SweepTrack work offline?",
-    a: "Yes. You can download offline maps (Street, Satellite, Terrain, and Historical Topo) for any area. GPS tracking works without cell service. Weather, tide, and nearby sites features need an internet connection.",
+    a: "Yes. You can download offline map tiles (Street, Satellite, Terrain, and USGS Historical) for any area, and GPS tracking works with zero cell service. The weather forecast and Nearby Sites features need an internet connection.",
   },
   {
     q: "Does it drain my battery?",
     a: "SweepTrack uses Android's efficient foreground location service. On most phones you'll lose around 10-15% battery per hour of active tracking, similar to Google Maps navigation. Night Vision mode helps save battery on OLED screens.",
   },
   {
-    q: "What metal detectors are supported?",
-    a: "The app has 57 preset templates across 12 brands: Minelab, XP, Nokta, Garrett, Fisher, Teknetics, Bounty Hunter, Quest, White's, Tesoro, Detech, and Rutus. You can also create custom presets for any detector.",
-  },
-  {
     q: "Is my data private?",
-    a: "All data is stored locally on your device. We don't operate any servers, don't collect analytics, don't show ads, and don't track your behavior. Optional Google Drive backup puts an encrypted copy in your own Drive account. We never see your data.",
+    a: "All data is stored locally on your device. We don't operate any servers, don't collect analytics, don't show ads, and don't track your behavior. Optional Google Drive backup puts a copy in your own Drive account. We never see your data.",
   },
   {
     q: "Can I use it outside the US?",
-    a: "Absolutely. GPS tracking, offline maps, cloud backup, presets, and most features work worldwide. The USGS Historical Map overlay is US-only. Tide tables cover US coastal stations via NOAA. The detecting forecast works globally via Open-Meteo.",
-  },
-  {
-    q: "What's the difference between Free and Pro?",
-    a: "Free gives you core GPS tracking, 10 sessions, 5 finds, 1 preset, and basic features. Pro unlocks everything: unlimited sessions and finds, 10 presets, track overlay, heatmap, perimeter guard, permission vault, historical maps, offline maps, detecting forecast, tide table, cloud backup, night vision, map comparison, coin caliper, and all 12 themes.",
-  },
-  {
-    q: "Can I export my data?",
-    a: "Yes. Export individual or multiple sessions as GPX (for Google Earth, Garmin), KML, CSV, or SweepTrack JSON (full data with finds, weather, and stats). Detector presets can be exported and imported as JSON.",
+    a: "Yes. GPS tracking, offline maps, cloud backup, the Detecting Forecast, and most features work worldwide. The USGS Historical Map overlay is US-only, and tide tables cover US coastal stations via NOAA.",
   },
   {
     q: "What's the historical map overlay?",
@@ -38,7 +26,19 @@ const faqs = [
   },
   {
     q: "How does the Detecting Forecast work?",
-    a: "It analyzes soil moisture, wind speed, temperature, humidity, and precipitation to generate a Detecting Score from 0-100 with a one-word verdict (Excellent, Good, Fair, Poor, or Bad). Pick any day up to a week ahead, or search any location on Earth. High soil moisture + low wind + moderate temperature = excellent conditions. Contextual tips appear based on what the weather actually looks like.",
+    a: "It analyzes soil moisture, wind speed, temperature, humidity, and precipitation to generate a Detecting Score from 0-100 with a one-word verdict (Excellent, Good, Fair, Poor, or Bad). Pick any day up to a week ahead, or search any location on Earth. Contextual tips appear based on what the weather actually looks like.",
+  },
+  {
+    q: "Can I export my data?",
+    a: "Yes. Export individual or multiple sessions as GPX (for Google Earth, Garmin), KML, CSV, or SweepTrack JSON (full data with finds and weather).",
+  },
+  {
+    q: "What's the difference between Free and Pro?",
+    a: "Free gives you core GPS tracking, 10 sessions, 5 finds, and the basics. Pro unlocks everything: unlimited sessions and finds, track overlay, heatmap, perimeter guard, permission vault, historical maps, offline maps, the Detecting Forecast, Google Drive backup, night vision, session comparison, coin caliper, and all 12 themes.",
+  },
+  {
+    q: "Do I need a specific metal detector?",
+    a: "No. SweepTrack is a GPS tracker, find logger, and field toolkit — it doesn't touch the detector itself, so it works with any brand and any model. As a bonus, there are optional preset templates for 57 popular models across 12 brands (Minelab, XP, Nokta, Garrett, Fisher and more), but they're a nice-to-have, not a requirement.",
   },
   {
     q: "Is there an iOS version?",

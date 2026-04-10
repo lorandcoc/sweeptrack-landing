@@ -13,9 +13,9 @@ const features = [
   { name: "Permission Vault + PDF", free: false, pro: true },
   { name: "Historical Map Overlay", free: false, pro: true },
   { name: "Offline Maps (4 sources)", free: false, pro: true },
-  { name: "Detecting Forecast + Tides", free: false, pro: true },
+  { name: "Detecting Forecast", free: false, pro: true },
   { name: "Cloud Backup", free: false, pro: true },
-  { name: "Export, Heatmap, Night Vision, and more", free: false, pro: true },
+  { name: "Heatmap, Night Vision, Tides, and more", free: false, pro: true },
 ];
 
 function Cell({ value }: { value: boolean | string }) {
