@@ -1,6 +1,5 @@
 import ParallaxPhone from "./ParallaxPhone";
 import ComingSoonButton from "./ComingSoonButton";
-import LiveSessionWidget from "./LiveSessionWidget";
 
 export default function Hero() {
   return (
@@ -59,22 +58,6 @@ export default function Hero() {
           <ParallaxPhone />
         </div>
 
-        {/* HUD sample — mirrors the layout of the in-app TacticalHUD */}
-        <div className="mt-16 md:mt-20 animate-fade-up delay-500">
-          <div className="section-divider mb-10" />
-
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-accent text-[10px] font-bold tracking-[0.3em] uppercase mb-5">
-              The Field HUD
-            </p>
-            <LiveSessionWidget />
-            <p className="text-white/35 text-[10px] font-mono tracking-[0.15em] mt-5 max-w-md mx-auto">
-              Sample session values — see the real thing in the screenshots below.
-            </p>
-          </div>
-
-          <div className="section-divider mt-10" />
-        </div>
       </div>
     </section>
   );

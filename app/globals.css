@@ -152,38 +152,6 @@ body {
   height: auto;
 }
 
-/* ── HUD sample widget (Hero) ──
-   Matches the translucent GlassCard styling of the in-app TacticalHUD.
-   No scanlines, no corner brackets — those were never in the app. */
-.hud-glass {
-  background: rgba(10, 10, 26, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 255, 106, 0.18);
-  box-shadow:
-    0 25px 80px rgba(0, 0, 0, 0.55),
-    0 0 40px rgba(0, 255, 106, 0.06);
-}
-
-.hud-rec-dot {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #ff3b4a;
-  box-shadow: 0 0 8px rgba(255, 59, 74, 0.8);
-  animation: hud-rec-pulse 0.9s ease-in-out infinite alternate;
-  flex-shrink: 0;
-}
-
-@keyframes hud-rec-pulse {
-  from { opacity: 1;   transform: scale(1); }
-  to   { opacity: 0.3; transform: scale(0.85); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hud-rec-dot { animation: none; }
-}
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
