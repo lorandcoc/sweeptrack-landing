@@ -126,22 +126,30 @@ body {
 
 /* Step circles */
 
-/* ── Phone mockup ── */
+/* ── Phone mockup — Samsung S25-inspired frame ── */
 .phone-frame {
-  border-radius: 40px;
+  position: relative;
+  border-radius: 48px;
   overflow: hidden;
+  background: #000;
+  /* Thin inner bezel that sits flush against the screenshot */
   box-shadow:
+    /* outer drop shadow */
     0 25px 80px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 0 40px rgba(0, 255, 106, 0.08);
+    /* subtle accent glow */
+    0 0 40px rgba(0, 255, 106, 0.08),
+    /* rim highlight for the outer edge of the phone body */
+    0 0 0 1.5px rgba(255, 255, 255, 0.12),
+    /* soft inner bezel */
+    inset 0 0 0 2px rgba(255, 255, 255, 0.04);
 }
 
-/* Mask off status bar (top 7%) and nav bar (bottom 6%) from screenshots */
+/* Screenshots fill the frame edge-to-edge — no clipping.
+   Screenshots captured in-app already omit system chrome. */
 .screenshot-crop {
   display: block;
   width: 100%;
   height: auto;
-  clip-path: inset(7% 0 6% 0 round 0);
 }
 
 /* ── Reduced motion ── */
