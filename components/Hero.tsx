@@ -59,22 +59,17 @@ export default function Hero() {
           <ParallaxPhone />
         </div>
 
-        {/* Live Session Widget — a running tactical HUD, not a feature list */}
+        {/* HUD sample — mirrors the layout of the in-app TacticalHUD */}
         <div className="mt-16 md:mt-20 animate-fade-up delay-500">
           <div className="section-divider mb-10" />
 
-          <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-between mb-3 px-1">
-              <p className="text-white/30 text-[9px] font-mono font-bold tracking-[0.25em] uppercase">
-                {"// Live Readout"}
-              </p>
-              <p className="text-white/30 text-[9px] font-mono tracking-[0.2em] uppercase">
-                Baia Mare · Pasture #3
-              </p>
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-accent text-[10px] font-bold tracking-[0.3em] uppercase mb-5">
+              The Field HUD
+            </p>
             <LiveSessionWidget />
-            <p className="text-center text-white/30 text-[10px] font-mono tracking-[0.2em] uppercase mt-4">
-              This is what your screen looks like in the field.
+            <p className="text-white/35 text-[10px] font-mono tracking-[0.15em] mt-5 max-w-md mx-auto">
+              Sample session values — see the real thing in the screenshots below.
             </p>
           </div>
 

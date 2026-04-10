@@ -152,69 +152,37 @@ body {
   height: auto;
 }
 
-/* ── Tactical HUD widget (Hero) ── */
-.hud-widget {
-  background:
-    radial-gradient(120% 120% at 50% 0%, rgba(0, 255, 106, 0.06) 0%, transparent 60%),
-    rgba(10, 10, 26, 0.92);
-  backdrop-filter: blur(10px);
+/* ── HUD sample widget (Hero) ──
+   Matches the translucent GlassCard styling of the in-app TacticalHUD.
+   No scanlines, no corner brackets — those were never in the app. */
+.hud-glass {
+  background: rgba(10, 10, 26, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 106, 0.18);
   box-shadow:
-    0 25px 80px rgba(0, 0, 0, 0.6),
-    0 0 60px rgba(0, 255, 106, 0.07),
-    inset 0 0 0 1px rgba(0, 255, 106, 0.12);
+    0 25px 80px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(0, 255, 106, 0.06);
 }
-
-.hud-scanlines {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0px,
-    transparent 2px,
-    rgba(0, 255, 106, 0.03) 2px,
-    rgba(0, 255, 106, 0.03) 3px
-  );
-  mix-blend-mode: overlay;
-}
-
-.hud-corner {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid rgba(0, 255, 106, 0.55);
-  z-index: 20;
-  pointer-events: none;
-}
-.hud-corner-tl { top: 6px; left: 6px;  border-right: none; border-bottom: none; }
-.hud-corner-tr { top: 6px; right: 6px; border-left:  none; border-bottom: none; }
-.hud-corner-bl { bottom: 6px; left: 6px;  border-right: none; border-top: none; }
-.hud-corner-br { bottom: 6px; right: 6px; border-left:  none; border-top: none; }
 
 .hud-rec-dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: #ff4444;
-  box-shadow: 0 0 8px rgba(255, 68, 68, 0.8);
-  animation: hud-rec-pulse 1.4s ease-in-out infinite;
+  background: #ff3b4a;
+  box-shadow: 0 0 8px rgba(255, 59, 74, 0.8);
+  animation: hud-rec-pulse 0.9s ease-in-out infinite alternate;
+  flex-shrink: 0;
 }
 
 @keyframes hud-rec-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.45; transform: scale(0.82); }
-}
-
-.hud-bar-fill {
-  box-shadow: 0 0 10px rgba(0, 255, 106, 0.45);
-  animation: hud-bar-shimmer 3s ease-in-out infinite;
-}
-
-@keyframes hud-bar-shimmer {
-  0%, 100% { opacity: 0.85; }
-  50%      { opacity: 1; }
+  from { opacity: 1;   transform: scale(1); }
+  to   { opacity: 0.3; transform: scale(0.85); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hud-rec-dot, .hud-bar-fill { animation: none; }
+  .hud-rec-dot { animation: none; }
 }
 
 /* ── Reduced motion ── */
