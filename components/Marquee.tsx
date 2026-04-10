@@ -3,10 +3,10 @@
 import { useReveal } from "./useReveal";
 
 const items = [
-  "55 Detector Presets",
+  "61 Detector Presets",
   "Live GPS Tracking",
   "Heatmap Visualization",
-  "Grid Search Mode",
+  "Historical Map Overlay",
   "Offline Maps",
   "Cloud Backup",
   "Session Analytics",
@@ -17,6 +17,7 @@ const items = [
   "Weather & Tides",
   "Historic Sites",
   "QR Sharing",
+  "Coin Caliper",
 ];
 
 function MarqueeRow({ reverse = false }: { reverse?: boolean }) {

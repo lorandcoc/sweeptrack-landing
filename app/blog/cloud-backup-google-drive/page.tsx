@@ -28,7 +28,7 @@ export default function Post() {
             <li><strong>All sessions</strong> &mdash; GPS tracks, finds, timestamps, statistics</li>
             <li><strong>Detector presets</strong> &mdash; your saved detector models and custom settings</li>
             <li><strong>Permission Vault</strong> &mdash; all permission entries with boundaries and contact details</li>
-            <li><strong>App settings</strong> &mdash; theme, units, map preferences, challenge progress</li>
+            <li><strong>App settings</strong> &mdash; theme, units, language, and map preferences</li>
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Creating a Backup</h2>

@@ -32,7 +32,7 @@ const steps = [
   {
     num: "03",
     title: "Review",
-    description: "Load past tracks on the live map to see exactly where you missed. Compare up to 5 sessions side by side. Export your data. Back everything up to Google Drive.",
+    description: "Load past tracks on the live map to see exactly where you missed. Compare past sessions side by side. Export your data. Back everything up to Google Drive.",
     bullets: ["Track Overlay", "Session Compare", "GPX/KML/CSV Export", "Cloud Backup"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

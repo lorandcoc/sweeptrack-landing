@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Logging Finds with Photos and Audio Notes",
   description:
-    "Log your metal detecting finds in SweepTrack Pro with GPS location, one of 4 types (Treasure, Gold, Trash, Void), depth, value, weight, notes, a photo, and an audio recording.",
+    "Log your metal detecting finds in SweepTrack Pro with GPS location, one of 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), depth, value, weight, notes, a photo, and an audio recording.",
 };
 
 export default function Post() {
@@ -19,13 +19,15 @@ export default function Post() {
         <div className="space-y-6 text-foreground/90 leading-relaxed">
           <p>A find without a record is just a thing in a bag. Six months later you won&apos;t remember what field it came from, how deep it was, or what signal it gave. Logging your finds as you go builds a complete detecting journal that makes your hobby more rewarding and your data more useful.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">The 4 Find Types</h2>
-          <p>When you log a find you pick one of four types. Each one gets its own color on the map and its own tally in your stats:</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">The 6 Find Types</h2>
+          <p>When you log a find you pick one of six types. Each one gets its own color on the map and its own tally in your stats:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Treasure</strong> — the catch-all for valuable or interesting finds (coins, relics, jewelry — anything worth keeping)</li>
-            <li><strong>Gold</strong> — gold rings, gold coins, anything precious. Scored with a bonus XP multiplier.</li>
+            <li><strong>Treasure</strong> — the catch-all for valuable or interesting finds you can&apos;t neatly slot elsewhere</li>
+            <li><strong>Gold</strong> — gold rings, gold coins, anything precious</li>
+            <li><strong>Coin</strong> — modern and historic coinage of any metal</li>
+            <li><strong>Relic</strong> — buttons, buckles, military brass, tools, and other old iron/copper finds</li>
+            <li><strong>Jewelry</strong> — rings, pendants, chains, and other wearables</li>
             <li><strong>Trash</strong> — pull tabs, foil, bottle caps. Worth logging to track site condition.</li>
-            <li><strong>Void</strong> — a recovered target that turned out to be nothing. Useful for tracking dig-to-keeper ratio.</li>
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Quick Pin Drop</h2>
@@ -51,8 +53,8 @@ export default function Post() {
           <h2 className="text-xl font-semibold text-accent mt-8">Edit Anything Later</h2>
           <p>Every field on every find stays editable. Wrong type? Change it. Forgot a note? Add it. Re-shot the photo after cleaning? Replace it. The find detail screen has a mini-map to show the exact recovery spot, plus audio playback and edit buttons.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Why Bother Logging Trash or Voids?</h2>
-          <p>It might seem pointless, but logging trash and voids tells you about a site. If one corner of a field has 30 pull tabs and zero treasure, that area was probably a picnic spot with modern litter. The opposite corner with fewer signals might be untouched historical ground. Trash data shapes your strategy.</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Why Bother Logging Trash?</h2>
+          <p>It might seem pointless, but logging trash tells you about a site. If one corner of a field has 30 pull tabs and zero treasure, that area was probably a picnic spot with modern litter. The opposite corner with fewer signals might be untouched historical ground. Trash data shapes your strategy.</p>
 
           <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
             <p className="text-sm text-muted">

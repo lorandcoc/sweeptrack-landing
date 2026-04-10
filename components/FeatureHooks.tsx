@@ -6,11 +6,11 @@ import { useReveal } from "./useReveal";
 
 const themes = [
   { id: "tactical", name: "Tactical", color: "#00FF6A" },
-  { id: "amber", name: "Amber", color: "#FFB000" },
-  { id: "cobalt", name: "Cobalt", color: "#0088FF" },
-  { id: "coral", name: "Coral", color: "#FF4444" },
-  { id: "violet", name: "Violet", color: "#8A2BE2" },
-  { id: "fuchsia", name: "Fuchsia", color: "#FF00FF" },
+  { id: "amber", name: "Amber", color: "#FFD000" },
+  { id: "cobalt", name: "Cobalt", color: "#00DDFF" },
+  { id: "coral", name: "Coral", color: "#FF6B4A" },
+  { id: "fuchsia", name: "Fuchsia", color: "#FF22BB" },
+  { id: "neon_toxic", name: "Neon Toxic", color: "#39FF14" },
 ];
 
 const brands = ["Minelab", "XP", "Nokta", "Garrett", "Fisher", "Quest", "Bounty Hunter"];
@@ -125,10 +125,10 @@ export default function FeatureHooks() {
               </div>
               <div className="flex items-center gap-3 mb-6 relative z-10">
                 <CheckCircle2 className="w-6 h-6 text-accent" />
-                <h3 className="text-xl font-bold">55 Auto-Presets</h3>
+                <h3 className="text-xl font-bold">61 Auto-Presets</h3>
               </div>
               <p className="text-muted text-sm mb-8 relative z-10">
-                SweepTrack comes pre-loaded with custom setups for 55 metal detectors out of the box. Check if yours is ready.
+                SweepTrack comes pre-loaded with custom setups for 61 metal detectors out of the box. Check if yours is ready.
               </p>
 
               <div className="relative z-10 max-w-sm mt-4">
@@ -214,7 +214,7 @@ export default function FeatureHooks() {
               <div className="relative z-20 max-w-lg">
                 <div className="flex items-center gap-3 mb-4">
                   <Map className="w-6 h-6 text-[#FFB000]" />
-                  <h3 className="text-2xl font-bold">Heatmap & Grid Search</h3>
+                  <h3 className="text-2xl font-bold">Coverage Heatmap</h3>
                 </div>
                 <p className="text-muted text-sm md:text-base mb-6">
                   Never miss an inch of ground. SweepTrack generates a live colored heatmap based on your walking density, ensuring you thoroughly cover every permission.

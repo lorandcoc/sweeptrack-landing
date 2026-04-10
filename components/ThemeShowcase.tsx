@@ -3,18 +3,18 @@
 import { useReveal } from "./useReveal";
 
 const themes = [
-  { name: "Tactical", accent: "#00FF6A", free: true },
-  { name: "Fuchsia", accent: "#FF22BB", free: true },
-  { name: "Gunmetal", accent: "#FF8833", free: true },
-  { name: "Amber", accent: "#FFB833", free: false },
+  { name: "Tactical", accent: "#00FF6A", free: false },
+  { name: "Amber", accent: "#FFD000", free: false },
   { name: "Cobalt", accent: "#00DDFF", free: false },
   { name: "Coral", accent: "#FF6B4A", free: false },
-  { name: "Violet", accent: "#B44AFF", free: false },
+  { name: "Fuchsia", accent: "#FF22BB", free: true },
   { name: "Slate", accent: "#6B9FD4", free: false },
-  { name: "Bronze", accent: "#CD8032", free: false },
   { name: "Navy", accent: "#4488DD", free: false },
   { name: "Operator", accent: "#BBDD00", free: false },
-  { name: "Ironside", accent: "#DD8833", free: false },
+  { name: "Monochrome", accent: "#FFFFFF", free: true },
+  { name: "Neon Plasma", accent: "#BF00FF", free: false },
+  { name: "Neon Toxic", accent: "#39FF14", free: false },
+  { name: "Neon Laser", accent: "#FF003C", free: false },
 ];
 
 export default function ThemeShowcase() {
@@ -30,7 +30,7 @@ export default function ThemeShowcase() {
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
             Make it yours. Every theme transforms the entire interface with its
-            own aurora personality. 3 free, 9 with Pro.
+            own aurora personality. 2 free, 10 with Pro.
           </p>
         </div>
 

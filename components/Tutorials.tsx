@@ -6,7 +6,7 @@ import { Play } from "lucide-react";
 
 const shortsData = [
   { id: "1", category: "tracking", title: "Master the Tactical HUD", thumb: "/screenshots/home.png", duration: "0:58" },
-  { id: "2", category: "tracking", title: "Heatmap Grid Search Tricks", thumb: "/screenshots/stats.png", duration: "1:12" },
+  { id: "2", category: "tracking", title: "Coverage Heatmap Tricks", thumb: "/screenshots/stats.png", duration: "1:12" },
   { id: "3", category: "tools", title: "Downloading Offline Maps", thumb: "/screenshots/offline_maps.png", duration: "0:45" },
   { id: "4", category: "tools", title: "How to Use Tide Tables", thumb: "/screenshots/forecast.png", duration: "0:52" },
   { id: "5", category: "vault", title: "Drawing Permission Boundaries", thumb: "/screenshots/permission_vault.png", duration: "1:05" },

@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "Do I need a specific metal detector?",
-    a: "No. SweepTrack is a GPS tracker, find logger, and field toolkit — it doesn't touch the detector itself, so it works with any brand and any model. As a bonus, there are optional preset templates for 57 popular models across 12 brands (Minelab, XP, Nokta, Garrett, Fisher and more), but they're a nice-to-have, not a requirement.",
+    a: "No. SweepTrack is a GPS tracker, find logger, and field toolkit — it doesn't touch the detector itself, so it works with any brand and any model. As a bonus, there are optional preset templates for 61 popular models across 12 brands (Minelab, XP, Nokta, Garrett, Fisher and more), but they're a nice-to-have, not a requirement.",
   },
   {
     q: "Is there an iOS version?",

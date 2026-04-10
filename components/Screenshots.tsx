@@ -7,7 +7,7 @@ import { useReveal } from "./useReveal";
 const screenshots = [
   { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", label: "Live Map & GPS" },
   { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture, wind, temperature and humidity with Detecting Score", label: "Detecting Forecast" },
-  { src: "/screenshots/history.png", alt: "Metal detecting session history with calendar heatmap and monthly session list", label: "Session History" },
+  { src: "/screenshots/history.png", alt: "Metal detecting session history with monthly session list and batch actions", label: "Session History" },
   { src: "/screenshots/stats.png", alt: "Metal detecting session statistics with distance, finds, duration, averages and personal bests", label: "Career Stats" },
   { src: "/screenshots/offline_maps.png", alt: "Download offline metal detecting maps from 4 tile sources for areas with no cell coverage", label: "Offline Maps" },
   { src: "/screenshots/permission_vault.png", alt: "Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries", label: "Permission Vault" },
@@ -16,10 +16,9 @@ const screenshots = [
   { src: "/screenshots/caliper.png", alt: "On-screen coin caliper measuring a coin by diameter against a built-in coin database", label: "Coin Caliper" },
   { src: "/screenshots/cloud_backup.png", alt: "Metal detecting cloud backup to Google Drive with one-tap restore", label: "Cloud Backup" },
   { src: "/screenshots/night_vision.png", alt: "Metal detecting app night vision mode with red monochromatic display for dawn and dusk hunts", label: "Night Vision" },
-  { src: "/screenshots/challenges.png", alt: "Personal metal detecting challenges with progress bars and XP rewards", label: "Challenges" },
   { src: "/screenshots/tide.png", alt: "NOAA tide table predictions for metal detecting beach hunters with 3, 7, or 14 day ranges", label: "Tide Table" },
   { src: "/screenshots/presets.png", alt: "Machine presets for Minelab, XP, Nokta, Garrett, Fisher and more metal detectors", label: "Machine Presets" },
-  { src: "/screenshots/detector_list.png", alt: "Metal detector reference library with 57 models across 12 brands", label: "Detector Library" },
+  { src: "/screenshots/detector_list.png", alt: "Metal detector reference library with 61 models across 12 brands", label: "Detector Library" },
   { src: "/screenshots/settings.png", alt: "SweepTrack Pro settings screen with 12 color themes, night vision, and language toggle", label: "Settings & Themes" },
   { src: "/screenshots/more_menu.png", alt: "More menu hub with all SweepTrack Pro tools grouped by category", label: "More Menu" },
 ];

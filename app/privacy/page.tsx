@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
             </UL>
             <P><strong>Find and Discovery Records:</strong></P>
             <UL>
-              <li>Find type (Treasure, Gold, Trash, Void)</li>
+              <li>Find type (Treasure, Gold, Coin, Relic, Jewelry, Trash)</li>
               <li>Find location (GPS coordinates at time of logging)</li>
               <li>Optional metadata: name, notes, depth, estimated value, weight</li>
               <li>Media attachments: photographs and audio recordings</li>
@@ -81,7 +81,7 @@ export default function PrivacyPolicy() {
               <li>Digital signatures (SVG format)</li>
               <li>Custom tags and notes</li>
             </UL>
-            <P><strong>Other Local Data:</strong> Detector preset configurations, app preferences (theme, units, language, map settings), challenge/achievement progress, weather snapshots associated with sessions.</P>
+            <P><strong>Other Local Data:</strong> Detector preset configurations, app preferences (theme, units, language, map settings), and weather snapshots associated with sessions.</P>
 
             <H3>3.2 Data Processed Temporarily (Not Stored)</H3>
             <P>The following data is sent to third-party APIs for real-time functionality and is <strong>not stored by us or by these services beyond the immediate request</strong>:</P>

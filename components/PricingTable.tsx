@@ -32,29 +32,25 @@ const features: FeatureRow[] = [
 
 /**
  * Shown when "See all features" is expanded.
- * Pro-only claims below are sourced directly from PaywallScreen.kt:
- *   Historical Map Overlay, Perimeter Guard, Offline Map Packs,
- *   Multi Detector Presets, Cloud Backup, Night Vision Mode,
- *   Advanced Statistics, Artifact Caliper (Coin Caliper),
- *   Unlimited Finds, All 12 Themes, GPX & KML Export,
- *   Full Session History, Audio Recording, Photo Gallery
- * Everything else below is confirmed present in the Kotlin source
- * and is available in both Free and Pro.
+ * Every row below has been verified against the Kotlin source at
+ * O:/REACT APPS/SweepTrack-1apr-DND/ — do NOT add a row unless you
+ * can point to the file:line that implements it. Unimplemented features
+ * (challenges, avatars, XP ranks, achievements, streaks, leaderboard,
+ * grid search mode, session replay, calendar heatmap on history,
+ * camera follow toggle) have been removed — do not re-add them.
  */
 const extraFeatures: FeatureRow[] = [
   // Map & field overlays
   { name: "Coverage Heatmap Overlay", free: false, pro: true },
   { name: "Night Vision Mode", free: false, pro: true },
-  { name: "Grid Search Mode (2/5/10 m cells)", free: true, pro: true },
   { name: "On-Screen Compass + Return Bearing", free: true, pro: true },
   { name: "On-Screen Ruler (10 cm / 4 in)", free: true, pro: true },
   { name: "Back-to-Start Line", free: true, pro: true },
-  { name: "Camera Follow Toggle", free: true, pro: true },
   { name: "Metric / Imperial Toggle", free: true, pro: true },
   { name: "Tactical HUD (time, dist, speed, alt, finds)", free: true, pro: true },
 
   // Finds
-  { name: "4 Find Types (Treasure / Gold / Trash / Void)", free: true, pro: true },
+  { name: "6 Find Types (Treasure / Gold / Coin / Relic / Jewelry / Trash)", free: true, pro: true },
   { name: "Quick Pin Drop", free: true, pro: true },
   { name: "Depth Logging (0–40 cm)", free: true, pro: true },
   { name: "Photo on Finds", free: false, pro: true },
@@ -66,22 +62,20 @@ const extraFeatures: FeatureRow[] = [
   // Research & intel
   { name: "NOAA Tide Table (3 / 7 / 14 day)", free: false, pro: true },
   { name: "Nearby Sites (POI + Wikipedia)", free: true, pro: true },
-  { name: "Coin Caliper (71 coins, 9 regions)", free: false, pro: true },
-  { name: "57 Detector Reference Library", free: true, pro: true },
+  { name: "Coin Caliper (131 coins, 9 regions)", free: false, pro: true },
+  { name: "61 Detector Reference Library", free: true, pro: true },
   { name: "Location Search Worldwide", free: true, pro: true },
 
   // Analysis & history
-  { name: "Session Comparison (up to 5)", free: true, pro: true },
-  { name: "Session Replay (0.5× / 1× / 2× / 4×)", free: true, pro: true },
+  { name: "Session Comparison (overlay + side-by-side)", free: true, pro: true },
   { name: "Session Merging", free: true, pro: true },
   { name: "Session Rename & Batch Actions", free: true, pro: true },
   { name: "Elevation Profile per Session", free: true, pro: true },
   { name: "Advanced Statistics", free: false, pro: true },
   { name: "Session Summary + Animated Score", free: true, pro: true },
-  { name: "Share Card (800×500 PNG)", free: true, pro: true },
+  { name: "Share Card (1080×1920 PNG)", free: true, pro: true },
   { name: "Weather Snapshot per Session", free: true, pro: true },
   { name: "Auto-Named Sessions (reverse geocode)", free: true, pro: true },
-  { name: "Calendar Heatmap on History", free: true, pro: true },
 
   // Export
   { name: "GPX / KML / CSV / JSON Export", free: false, pro: true },
@@ -89,13 +83,6 @@ const extraFeatures: FeatureRow[] = [
   // Permissions
   { name: "Permit Expiry Calendar Reminder", free: false, pro: true },
   { name: "Permission Letter Generator", free: false, pro: true },
-
-  // Profile & progression
-  { name: "Profile (12 avatars)", free: true, pro: true },
-  { name: "5-Rank XP System (Rookie → Legend)", free: true, pro: true },
-  { name: "Achievements (Bronze / Silver / Gold)", free: true, pro: true },
-  { name: "5 Personal Challenges", free: true, pro: true },
-  { name: "Streaks, Leaderboard, This Day in History", free: true, pro: true },
 
   // Polish
   { name: "Color Themes", free: "2 themes", pro: "All 12 themes" },

@@ -20,7 +20,7 @@ export default function Post() {
           <p>When you detect the same site over multiple visits, comparing sessions shows you how your coverage, finds, and strategy evolved. Session comparison gives you two ways to do this: overlay mode and split view.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Selecting Sessions to Compare</h2>
-          <p>Open Map Comparison from the More tab. Browse your past sessions and tap the ones you want to compare — you can select up to 5 total. For split view, the first two selected sessions are placed side by side.</p>
+          <p>Open Map Comparison from the More tab. Browse your past sessions and tap the ones you want to compare. For split view, the first two selected sessions are placed side by side.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Overlay Mode</h2>
           <p>Overlay stacks all selected sessions onto a single map. Each session&apos;s path gets a distinct colour so you can tell them apart. Find pins appear in the matching colour. This view is ideal for:</p>

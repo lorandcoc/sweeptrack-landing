@@ -31,7 +31,7 @@ const showcaseFeatures = [
   {
     tag: "Arsenal",
     title: "Your Detector Settings. Organized.",
-    description: "Save, organize, and share your detector presets across 57 models from 12 brands. Keep up to 10 configurations ready and share them with hunting buddies via QR code. Never forget your sweet settings again.",
+    description: "Save, organize, and share your detector presets across 61 models from 12 brands. Keep up to 10 configurations ready and share them with hunting buddies via QR code. Never forget your sweet settings again.",
     screenshot: "/screenshots/presets.png",
     alt: "Machine Presets for organizing detector settings",
     highlight: "12 Brands",

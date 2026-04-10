@@ -160,7 +160,7 @@ const secondaryFeatures = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2" /></svg>,
     title: "Find Logger with Photo & Audio",
-    description: "Log every find with name, one of 4 types (Treasure, Gold, Trash, Void), depth (0-40 cm slider), value, weight, notes, a photo, and an audio recording.",
+    description: "Log every find with name, one of 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), depth (0-40 cm slider), value, weight, notes, a photo, and an audio recording.",
     guide: "/blog/logging-finds-photo-video-audio",
   },
   {
@@ -178,7 +178,7 @@ const secondaryFeatures = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 3v18" /></svg>,
     title: "Session Comparison",
-    description: "Pick up to 5 past sessions and compare them — overlay mode with a blend slider, or split view side by side.",
+    description: "Pick past sessions and compare them — overlay mode with a blend slider, or split view side by side.",
     guide: "/blog/comparing-sessions-overlay-split",
   },
   {
@@ -224,7 +224,7 @@ const secondaryFeatures = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>,
     title: "Coin Caliper",
-    description: "On-screen measuring ring with DPI calibration. Matches against a built-in database of 71 coins across 9 regions — US, UK, Europe, Romania, Kreuzer, Asia, MEA, LATAM, Oceania.",
+    description: "On-screen measuring ring with DPI calibration. Matches against a built-in database of 131 coins across 9 regions — US, UK, Europe, Romania, Kreuzer, Asia, MEA, LATAM, Oceania.",
     guide: "/blog/using-coin-caliper",
   },
   {
@@ -246,21 +246,6 @@ const secondaryFeatures = [
     guide: "/blog/understanding-session-statistics",
   },
   {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="1" /><path d="M3 9h18M3 15h18M9 3v18M15 3v18" /></svg>,
-    title: "Grid Search Mode",
-    description: "Overlay a tactical search grid with 2 m, 5 m, or 10 m cells. HUD tracks your coverage percentage as you walk.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>,
-    title: "History Calendar Heatmap",
-    description: "Activity heatmap on the History screen. Tap a date to see the sessions you recorded that day.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>,
-    title: "Session Replay",
-    description: "Play back any past session on the map at 0.5×, 1×, 2×, or 4× speed with a progress scrubber. Toggle Satellite or Normal base map.",
-  },
-  {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22 6 12 13 2 6" /></svg>,
     title: "Permission Letter Generator",
     description: "Fill in your name and pick a permission entry — the app drafts a polite permission request letter to the landowner that you can copy or share.",
@@ -275,12 +260,12 @@ const secondaryFeatures = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" /></svg>,
     title: "Session Summary Score",
-    description: "Every session ends with an animated 0-to-score counter, XP award with Gold/Treasure bonus multipliers, path preview, and the weather snapshot captured during the hunt.",
+    description: "Every session ends with an animated 0-to-score counter, path preview, and the weather snapshot captured during the hunt.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="7" cy="7" r="3" /><circle cx="17" cy="7" r="3" /><circle cx="7" cy="17" r="3" /><circle cx="17" cy="17" r="3" /></svg>,
     title: "Color-Coded Find Pins",
-    description: "Find markers are color-coded by type on the map: Treasure (amber), Gold (yellow), Trash (grey), Void (dark).",
+    description: "Find markers are color-coded by type on the map: Treasure (amber), Gold (yellow), Coin (blue), Relic (brown), Jewelry (magenta), Trash (grey).",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3" /><path d="M12 8v8M8 12h8" /></svg>,
@@ -290,7 +275,7 @@ const secondaryFeatures = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>,
     title: "Find Search",
-    description: "Text search across every find you've logged by name, notes, type, or session. Filter chips for Treasure, Gold, Trash, and Void.",
+    description: "Text search across every find you've logged by name, notes, type, or session. Filter chips for all 6 find types.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 17 9 11 13 15 21 7" /><polyline points="15 7 21 7 21 13" /></svg>,
@@ -306,26 +291,6 @@ const secondaryFeatures = [
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>,
     title: "Photo Gallery",
     description: "3-column grid of every find photo you've taken. Tap for a full-screen viewer with find name and type.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6-6 6 6M6 15l6 6 6-6" /><circle cx="12" cy="12" r="1" fill="currentColor" /></svg>,
-    title: "5-Rank XP System",
-    description: "Earn XP from sessions, finds, and challenges. Climb five ranks: Rookie → Scout → Prospector → Veteran → Legend.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg>,
-    title: "Achievements",
-    description: "Unlockable achievements grouped by category with Bronze, Silver, and Gold tiers. Each unlock grants XP toward your rank.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" /><rect x="9" y="3" width="6" height="4" rx="1" /><path d="M9 14l2 2 4-4" /></svg>,
-    title: "5 Personal Challenges",
-    description: "Five built-in challenges — find 10 items, walk 5 km, detect 3 days, find gold, run a 2-hour session. Track progress and earn XP.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 10-16 0" /></svg>,
-    title: "Profile & Leaderboard",
-    description: "12 avatar icons, editable name, career stats, daily and weekly streaks, This Day in History from past years, and a global top-10 leaderboard by XP.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /></svg>,
@@ -368,19 +333,14 @@ const secondaryFeatures = [
     description: "Switch distance, speed, altitude, and depth between metric (m/km/km/h/cm) and imperial (ft/mi/mph/in) from the home screen.",
   },
   {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" /><circle cx="12" cy="13" r="4" /></svg>,
-    title: "Camera Follow Toggle",
-    description: "Lock the map camera to your current position, or release it to pan and review while you walk.",
-  },
-  {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="8" r="1.5" fill="currentColor" /><circle cx="6" cy="8" r="1.5" fill="currentColor" /><circle cx="18" cy="16" r="1.5" fill="currentColor" /><circle cx="6" cy="16" r="1.5" fill="currentColor" /></svg>,
     title: "12 Color Themes",
-    description: "Tactical, Amber, Cobalt, Coral, Violet, Fuchsia, Slate, Bronze, Navy, Operator, Gunmetal, and Ironside — grouped into Neutral, Feminine, and Masculine palettes.",
+    description: "Tactical, Amber, Cobalt, Coral, Fuchsia, Slate, Navy, Operator, Monochrome, Neon Plasma, Neon Toxic, and Neon Laser — grouped into Neutral, Feminine, Masculine, and Neon palettes.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg>,
-    title: "57 Detector Reference Library",
-    description: "Built-in templates for 57 detector models across 12 brands — Minelab, XP, Nokta, Garrett, Fisher, Teknetics, Bounty Hunter, Quest, White's, Tesoro, Detech, Rutus.",
+    title: "61 Detector Reference Library",
+    description: "Built-in templates for 61 detector models across 12 brands — Minelab, XP, Nokta, Garrett, Fisher, Teknetics, Bounty Hunter, Quest, White's, Tesoro, Detech, Rutus.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>,

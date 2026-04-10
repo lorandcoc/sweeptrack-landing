@@ -32,14 +32,14 @@ const spotlightFeatures = [
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <path d="M3 9h18M9 3v18" />
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" />
+        <circle cx="12" cy="10" r="3" />
       </svg>
     ),
-    title: "Grid Search Mode",
+    title: "Historical Map Overlay",
     description:
-      "Systematic search grid overlay ensures complete ground coverage. Never miss a spot in your hunting area.",
-    tag: "Core",
+      "Genuine USGS historical topographic tiles layered onto your modern map. Spot vanished roads, buildings, and settlements.",
+    tag: "Pro",
   },
 ];
 
@@ -50,8 +50,8 @@ const features = [
         <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
       </svg>
     ),
-    title: "55 Detector Presets",
-    description: "Pre-configured settings for 55 detectors across 12 major brands.",
+    title: "61 Detector Presets",
+    description: "Pre-configured settings for 61 detectors across 12 major brands.",
   },
   {
     icon: (
@@ -80,7 +80,7 @@ const features = [
       </svg>
     ),
     title: "Session Analytics",
-    description: "Distance, duration, finds per session, calendar heatmap of activity.",
+    description: "Distance, duration, finds per session, plus career stats and personal bests.",
   },
   {
     icon: (
@@ -120,7 +120,7 @@ const features = [
       </svg>
     ),
     title: "Map Comparison",
-    description: "Overlay up to 4 sessions or split view 2 side by side to track progress.",
+    description: "Overlay past sessions or split view side by side to track progress.",
   },
   {
     icon: (
