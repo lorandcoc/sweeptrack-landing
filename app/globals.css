@@ -129,7 +129,7 @@ body {
 /* ── Phone mockup — Samsung S25-inspired frame ── */
 .phone-frame {
   position: relative;
-  border-radius: 48px;
+  border-radius: 22px;
   overflow: hidden;
   background: #000;
   /* Thin inner bezel that sits flush against the screenshot */
