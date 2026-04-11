@@ -75,6 +75,7 @@ const jsonLdGraph = [
     ],
     featureList: [
       "GPS tracking with 4 map types — Normal, Satellite, Terrain, and USGS Historical Topographic overlay",
+      "Measure tool — distance polylines with per-segment labels, or closed-polygon area in hectares/acres using real spherical geometry; save to library or convert to perimeter guard with one tap",
       "Offline maps from 4 tile sources — OpenStreetMap, Esri Satellite, OpenTopoMap, USGS Topo",
       "Track overlay — load past sessions on the live map with color-coded paths",
       "Perimeter guard with draw-on-map boundary and leave-zone alerts",

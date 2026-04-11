@@ -21,6 +21,7 @@ const features: FeatureRow[] = [
   { name: "Sessions", free: "10", pro: "Unlimited" },
   { name: "Find Logging", free: "5 finds", pro: "Unlimited" },
   { name: "Detector Presets", free: "1 slot", pro: "10 slots + JSON import/export" },
+  { name: "Measure Tool (distance + area, save, convert to guard)", free: true, pro: true },
   { name: "Track Overlay", free: false, pro: true },
   { name: "Perimeter Guard", free: false, pro: true },
   { name: "Permission Vault + PDF Letter", free: false, pro: true },

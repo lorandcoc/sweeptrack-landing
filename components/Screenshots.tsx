@@ -6,6 +6,7 @@ import { useReveal } from "./useReveal";
 
 const screenshots = [
   { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", label: "Live Map & GPS" },
+  { src: "/screenshots/measure2.jpg", alt: "Metal detecting measure tool showing a closed polygon with perimeter 606 m and area 2.14 ha on a satellite view of a field", label: "Measure Tool" },
   { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture, wind, temperature and humidity with Detecting Score", label: "Detecting Forecast" },
   { src: "/screenshots/history.png", alt: "Metal detecting session history with monthly session list and batch actions", label: "Session History" },
   { src: "/screenshots/stats.png", alt: "Metal detecting session statistics with distance, finds, duration, averages and personal bests", label: "Career Stats" },

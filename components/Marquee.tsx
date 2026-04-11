@@ -3,6 +3,7 @@
 import { useReveal } from "./useReveal";
 
 const items = [
+  "Measure Tool (NEW)",
   "61 Detector Presets",
   "Live GPS Tracking",
   "Heatmap Visualization",

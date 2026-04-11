@@ -413,6 +413,74 @@ export default function FeaturesAll() {
           </RevealSection>
         </div>
 
+        {/* ── Row 1.5 — Measure Tool (new killer feature) ── */}
+        <RevealSection delay={0}>
+          <div className="mb-4 rounded-3xl border border-accent/25 bg-accent/[0.035] p-5 md:p-8 relative overflow-hidden group">
+            {/* Accent glow */}
+            <div className="absolute -top-16 -right-16 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Header */}
+            <div className="relative z-10 flex items-start justify-between gap-4 mb-5">
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-xl bg-accent/15 flex items-center justify-center text-accent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21.3 8.7L15.3 2.7a1 1 0 00-1.4 0L2.7 13.9a1 1 0 000 1.4l6 6a1 1 0 001.4 0L21.3 10.1a1 1 0 000-1.4z" />
+                      <path d="M7 17l-3-3M10 14l-3-3M13 11l-3-3M16 8l-3-3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xl md:text-2xl leading-tight">Measure</h3>
+                    <p className="text-muted text-xs md:text-sm">Distance &middot; Area &middot; Save &middot; Guard</p>
+                  </div>
+                </div>
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-accent text-[#0A0A1A] shadow-[0_0_16px_rgba(0,255,106,0.4)] whitespace-nowrap">
+                New
+              </span>
+            </div>
+
+            {/* Description */}
+            <p className="relative z-10 text-white/80 text-sm md:text-base leading-relaxed mb-6 max-w-3xl">
+              Tap the map or drop a point at your GPS position to lay out a line. Tap point 1 again to close it into a polygon &mdash; perimeter and area are calculated instantly using real spherical geometry, not flat math.
+            </p>
+
+            {/* 3 screenshots side by side */}
+            <div className="relative z-10 grid grid-cols-3 gap-2 md:gap-4 mb-6">
+              {[
+                { src: "/screenshots/measure1.jpg", caption: "Distance mode", alt: "Metal detecting measure tool in distance mode showing a 423 m polyline with per-segment labels 195 m and 228 m" },
+                { src: "/screenshots/measure2.jpg", caption: "Area mode", alt: "Metal detecting measure tool in area mode showing a closed polygon with perimeter 606 m and area 2.14 ha" },
+                { src: "/screenshots/measure3.jpg", caption: "Save &amp; Guard", alt: "Metal detecting measure tool showing a rectangular area of 1.28 ha with perimeter 458 m ready to save or convert to perimeter guard" },
+              ].map((s) => (
+                <div key={s.src} className="flex flex-col">
+                  <div className="relative aspect-[9/19] rounded-xl overflow-hidden border border-white/10 bg-black">
+                    <Image src={s.src} alt={s.alt} fill className="object-cover" sizes="(max-width: 768px) 33vw, 280px" />
+                  </div>
+                  <p className="text-center text-[10px] md:text-xs text-muted font-semibold uppercase tracking-widest mt-2" dangerouslySetInnerHTML={{ __html: s.caption }} />
+                </div>
+              ))}
+            </div>
+
+            {/* Bullets */}
+            <div className="relative z-10 grid sm:grid-cols-2 gap-2.5">
+              {[
+                "Distance mode — running total with per-segment labels on every line",
+                "Area mode — perimeter + area in hectares (metric) or acres (imperial)",
+                "Drag vertices to edit, tap a segment to insert a new point",
+                "On-map toolbar: Drop, Center, Undo, Clear, Save, Guard, Share",
+                "Save to Library with a reverse-geocoded name and reopen any time",
+                "Convert to Perimeter Guard in one tap — measured shape becomes a haptic + audio fence",
+              ].map((b) => (
+                <div key={b} className="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-black/25 border border-white/[0.05]">
+                  <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-accent" />
+                  <span className="text-xs md:text-sm text-white/75 leading-relaxed">{b}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </RevealSection>
+
         {/* ── Row 2 — Track Overlay + Perimeter Guard ── */}
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <RevealSection delay={0} className="h-full">
