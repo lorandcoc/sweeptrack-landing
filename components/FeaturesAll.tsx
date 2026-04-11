@@ -413,36 +413,6 @@ export default function FeaturesAll() {
           </RevealSection>
         </div>
 
-        {/* ── Row 1.5 — Measure Tool (new killer feature) ── */}
-        <div className="grid md:grid-cols-5 gap-4 mb-4">
-          <RevealSection delay={0} className="md:col-span-3 min-h-[320px] h-full">
-            <FeaturedWithScreenshot
-              title="Measure"
-              subtitle="Distance · Area · Live labels"
-              tag="New"
-              screenshot="/screenshots/measure2.jpg"
-              alt="Metal detecting measure tool in area mode showing a closed polygon with perimeter 606 m and area 2.14 ha on a satellite view of a field"
-              description="Tap the map or drop a point at your GPS position to lay out a line. Tap point 1 again to close it into a polygon — perimeter and area are calculated instantly in hectares or acres using real spherical geometry. Drag any vertex to edit, tap a segment to insert a point, and undo or clear without leaving the map."
-            />
-          </RevealSection>
-          <RevealSection delay={150} className="md:col-span-2 h-full">
-            <FeaturedTextCard
-              title="Save & Guard"
-              subtitle="Library · Haptic/audio fence"
-              tag="Reuse"
-              tagColor="orange"
-              description="Save any measurement to the Library with a reverse-geocoded location name, or turn the drawn polygon into a Perimeter Guard in one tap — the measured shape becomes a haptic and audio fence while you detect."
-              bullets={[
-                "Save with reverse-geocoded location",
-                "Reopen and edit any measurement",
-                "One tap → Perimeter Guard",
-                "Haptic vibration near the edge",
-                "Audio alarm when outside the zone",
-              ]}
-            />
-          </RevealSection>
-        </div>
-
         {/* ── Row 2 — Track Overlay + Perimeter Guard ── */}
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <RevealSection delay={0} className="h-full">
@@ -475,6 +445,36 @@ export default function FeaturesAll() {
                 "Links to Permission Manager sites",
               ]}
               guide="/blog/setting-up-perimeter-guard"
+            />
+          </RevealSection>
+        </div>
+
+        {/* ── Row 2.5 — Measure Tool (new killer feature) ── */}
+        <div className="grid md:grid-cols-5 gap-4 mb-4">
+          <RevealSection delay={0} className="md:col-span-3 min-h-[320px] h-full">
+            <FeaturedWithScreenshot
+              title="Measure"
+              subtitle="Distance · Area · Live labels"
+              tag="New"
+              screenshot="/screenshots/measure2.jpg"
+              alt="Metal detecting measure tool in area mode showing a closed polygon with perimeter 606 m and area 2.14 ha on a satellite view of a field"
+              description="Tap the map or drop a point at your GPS position to lay out a line. Tap point 1 again to close it into a polygon — perimeter and area are calculated instantly in hectares or acres using real spherical geometry. Drag any vertex to edit, tap a segment to insert a point, and undo or clear without leaving the map."
+            />
+          </RevealSection>
+          <RevealSection delay={150} className="md:col-span-2 h-full">
+            <FeaturedTextCard
+              title="Save & Guard"
+              subtitle="Library · Haptic/audio fence"
+              tag="Reuse"
+              tagColor="orange"
+              description="Save any measurement to the Library with a reverse-geocoded location name, or turn the drawn polygon into a Perimeter Guard in one tap — the measured shape becomes a haptic and audio fence while you detect."
+              bullets={[
+                "Save with reverse-geocoded location",
+                "Reopen and edit any measurement",
+                "One tap → Perimeter Guard",
+                "Haptic vibration near the edge",
+                "Audio alarm when outside the zone",
+              ]}
             />
           </RevealSection>
         </div>
