@@ -1,7 +1,80 @@
 "use client";
 
+import { useState } from "react";
 import { useReveal } from "./useReveal";
 import { Users } from "lucide-react";
+
+const SUPABASE_URL = "https://vntuabtcrllroulgqhwf.supabase.co";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZudHVhYnRjcmxscm91bGdxaHdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMjYwNTIsImV4cCI6MjA4ODkwMjA1Mn0.WXVRYyUqt98tMe8g_yiFkP7puJUNyaQiQsz6SySKor4";
+
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "duplicate" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || status === "sending") return;
+    setStatus("sending");
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({ email: email.trim().toLowerCase() }),
+      });
+      if (res.ok) setStatus("ok");
+      else if (res.status === 409) setStatus("duplicate");
+      else setStatus("error");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const done = status === "ok" || status === "duplicate";
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-accent/[0.03]">
+      <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
+        <div className="text-center sm:text-left">
+          <h3 className="text-lg font-bold text-white mb-1">Want app updates and detecting tips?</h3>
+          <p className="text-muted text-sm">Be the first to know when SweepTrack launches.</p>
+        </div>
+        {done ? (
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-semibold shrink-0">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            {status === "ok" ? "You're on the list!" : "Already signed up!"}
+          </div>
+        ) : (
+          <form className="flex gap-2 shrink-0" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              disabled={status === "sending"}
+              className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-[200px] disabled:opacity-50"
+            />
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="px-5 py-2.5 rounded-xl bg-accent text-[#050510] text-sm font-semibold hover:bg-accent-dim transition-colors shrink-0 disabled:opacity-50"
+            >
+              {status === "sending" ? "..." : status === "error" ? "Retry" : "Subscribe"}
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
 
 // Brand icons (lucide doesn't include social/brand icons)
 const FacebookIcon = () => (
@@ -139,24 +212,7 @@ export default function CommunityLinks() {
         </div>
 
         {/* Newsletter — full width */}
-        <div className="relative overflow-hidden rounded-2xl border border-accent/20 cta-bg-shift">
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
-            <div className="text-center sm:text-left">
-              <h3 className="text-lg font-bold text-white mb-1">Want app updates and detecting tips?</h3>
-              <p className="text-muted text-sm">Be the first to know when SweepTrack drops its next feature.</p>
-            </div>
-            <form className="flex gap-2 shrink-0" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-[200px]"
-              />
-              <button type="submit" className="px-5 py-2.5 rounded-xl bg-accent text-[#0A0A1A] text-sm font-semibold hover:bg-accent-dim transition-colors shrink-0">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
+        <NewsletterForm />
       </div>
     </section>
   );
