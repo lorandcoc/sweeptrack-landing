@@ -39,28 +39,19 @@ function FeaturedWithScreenshot({
 
   return (
     <TiltCard className="h-full">
-      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/[0.08] transition-colors">
-        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: c }} />
+      <div className="featured-card rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/[0.08] hover:border-white/[0.14] transition-colors">
         <div className="relative z-10 flex-1 flex flex-col">
           <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${c}18` }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 8v4l2 2" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-bold text-base leading-tight">{title}</h3>
-                <p className="text-muted text-[11px]">{subtitle}</p>
-              </div>
+            <div>
+              <h3 className="font-bold text-base leading-tight">{title}</h3>
+              <p className="text-muted text-[11px]">{subtitle}</p>
             </div>
-            <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-              style={{ color: `${c}cc`, background: `${c}15` }}>{tag}</span>
+            <span className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border"
+              style={{ color: `${c}cc`, background: `${c}0a`, borderColor: `${c}25` }}>{tag}</span>
           </div>
 
           {/* Real screenshot */}
-          <div className="rounded-xl overflow-hidden border border-white/8 flex-1 min-h-[160px] relative bg-black">
+          <div className="rounded-xl overflow-hidden border border-white/[0.06] flex-1 min-h-[160px] relative bg-black">
             <Image
               src={screenshot}
               alt={alt}
@@ -113,33 +104,24 @@ function FeaturedTextCard({
 
   return (
     <TiltCard className="h-full">
-      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/[0.08] transition-colors">
-        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: c }} />
+      <div className="featured-card rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/[0.08] hover:border-white/[0.14] transition-colors">
         <div className="relative z-10 flex-1 flex flex-col">
           <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${c}18` }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 8v4l2 2" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-bold text-base leading-tight">{title}</h3>
-                <p className="text-muted text-[11px]">{subtitle}</p>
-              </div>
+            <div>
+              <h3 className="font-bold text-base leading-tight">{title}</h3>
+              <p className="text-muted text-[11px]">{subtitle}</p>
             </div>
-            <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-              style={{ color: `${c}cc`, background: `${c}15` }}>{tag}</span>
+            <span className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border"
+              style={{ color: `${c}cc`, background: `${c}0a`, borderColor: `${c}25` }}>{tag}</span>
           </div>
 
           <p className="text-muted text-sm leading-relaxed mb-4">{description}</p>
 
           <div className="space-y-2 flex-1">
             {bullets.map((b, i) => (
-              <div key={i} className="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-black/20 border border-white/[0.04]">
-                <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: c }} />
-                <span className="text-xs text-white/70 leading-relaxed">{b}</span>
+              <div key={i} className="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+                <span className="w-1 h-1 rounded-full mt-1.5 shrink-0" style={{ background: c }} />
+                <span className="text-xs text-white/65 leading-relaxed">{b}</span>
               </div>
             ))}
           </div>
@@ -543,7 +525,7 @@ function SecondaryFeaturesGrid({ features }: { features: typeof secondaryFeature
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {visible.map((feature) => {
           const inner = (
-            <div className="h-full px-4 py-4 rounded-xl bg-surface/50 border border-transparent hover-radar hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">
+            <div className="h-full px-4 py-4 rounded-xl bg-surface/50 border border-white/[0.05] hover:border-white/[0.12] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">
               <div className="flex items-start gap-3 relative z-10">
                 <div className="w-8 h-8 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5 group-hover:bg-accent/15 transition-colors">
                   {feature.icon}

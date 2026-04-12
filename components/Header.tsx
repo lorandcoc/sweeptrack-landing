@@ -37,7 +37,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0A0A1A]/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
+          ? "bg-[#050510]/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
     >
@@ -74,7 +74,7 @@ export default function Header() {
           ))}
           <a
             href="/#download"
-            className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#0A0A1A] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
+            className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#050510] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
             Coming Soon
           </a>
@@ -100,7 +100,7 @@ export default function Header() {
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-60 border-t border-white/5" : "max-h-0"
-        } bg-[#0A0A1A]/95 backdrop-blur-xl`}
+        } bg-[#050510]/95 backdrop-blur-xl`}
       >
         <nav className="flex flex-col px-6 py-4 gap-4">
           {navLinks.map((link) => (
@@ -115,7 +115,7 @@ export default function Header() {
           ))}
           <a
             href="/#download"
-            className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#0A0A1A] text-center hover:bg-accent-dim transition-colors"
+            className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#050510] text-center hover:bg-accent-dim transition-colors"
             onClick={() => setMenuOpen(false)}
           >
             Coming Soon

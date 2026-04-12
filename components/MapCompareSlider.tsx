@@ -89,7 +89,7 @@ export default function MapCompareSlider() {
               className="object-cover pointer-events-none opacity-90"
               priority
             />
-            <div className="absolute bottom-4 right-4 bg-[#0A0A1A]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
+            <div className="absolute bottom-4 right-4 bg-[#050510]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
               1880s Survey Map
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function MapCompareSlider() {
               className="object-cover pointer-events-none"
               priority
             />
-            <div className="absolute bottom-4 left-4 bg-[#0A0A1A]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
+            <div className="absolute bottom-4 left-4 bg-[#050510]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
               Modern Satellite View
             </div>
           </div>
@@ -116,8 +116,8 @@ export default function MapCompareSlider() {
             className="absolute top-0 bottom-0 w-1 bg-accent/80 cursor-ew-resize transition-opacity"
             style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-accent rounded-full border-4 border-[#0A0A1A] flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A1A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-accent rounded-full border-4 border-[#050510] flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#050510" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 18l-6-6 6-6" />
                 <path d="M9 18l6-6-6-6" className="rotate-180 origin-center" />
               </svg>
