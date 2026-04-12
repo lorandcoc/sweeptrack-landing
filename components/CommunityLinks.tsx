@@ -86,31 +86,16 @@ export default function CommunityLinks() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="community" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="community" className="py-20 md:py-28 relative">
       <div className="absolute inset-0 bg-gradient-to-t from-surface via-background to-background" />
-      
-      {/* Background Starfield effect */}
-      <div className="star-field" aria-hidden="true" style={{ opacity: 0.5 }}>
-        {Array.from({ length: 20 }).map((_, i) => (
-          <span
-            key={i}
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              "--dur": `${3 + Math.random() * 4}s`,
-              "--drift": `${5 + Math.random() * 10}s`,
-            } as React.CSSProperties}
-          />
-        ))}
-      </div>
 
       <div ref={ref} className={`relative z-10 max-w-6xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-4 rounded-full bg-accent/10 mb-6 glow-accent">
+          <div className="inline-flex items-center justify-center p-4 rounded-full bg-accent/8 mb-6">
             <Users className="w-8 h-8 text-accent" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Join The <span className="shimmer-text">Hunt</span>
+          <h2 className="font-display text-4xl md:text-5xl mb-6">
+            Join the <span className="text-accent">hunt</span>
           </h2>
           <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto">
             Share your finds, swap tips, and see what other hunters are digging up. We&apos;re all in this together.

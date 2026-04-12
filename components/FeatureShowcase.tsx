@@ -106,8 +106,8 @@ export default function FeatureShowcase() {
     <section id="features" className="py-16 md:py-20">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Why Detectorists Love It</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Why Detectorists Love It</p>
+          <h2 className="font-display text-3xl md:text-4xl mb-4">
             Tools That Actually{" "}
             <span className="text-accent accent-underline">Find More</span>
           </h2>

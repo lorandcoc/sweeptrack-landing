@@ -22,6 +22,7 @@
   --color-accent-glow: var(--accent-glow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
 }
 
 html, body {
@@ -47,111 +48,71 @@ body {
   min-height: 100vh;
 }
 
-/* ── Aurora background ── */
+/* ── Display headings — serif contrast ── */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* ── Subtle page gradient — NOT aurora, just depth ── */
 .aurora-bg {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(0, 255, 106, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(0, 204, 255, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(180, 74, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 25% 0%, rgba(0, 255, 106, 0.03) 0%, transparent 60%),
     var(--background);
 }
 
-/* ── Glow effects ── */
-.glow-accent {
-  box-shadow: 0 0 30px rgba(0, 255, 106, 0.25), 0 0 60px rgba(0, 255, 106, 0.1);
-}
-.glow-text {
-  text-shadow: 0 0 30px rgba(0, 255, 106, 0.5), 0 0 60px rgba(0, 255, 106, 0.15);
-}
-
-/* ── Scroll-triggered animations ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.92); }
-  to { opacity: 1; transform: scale(1); }
-}
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-.animate-fade-up {
-  animation: fadeUp 0.7s ease-out both;
-}
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out both;
-}
-.animate-scale-in {
-  animation: scaleIn 0.7s ease-out both;
-}
-.animate-slide-left {
-  animation: slideInLeft 0.7s ease-out both;
-}
-.animate-slide-right {
-  animation: slideInRight 0.7s ease-out both;
-}
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Stagger delays */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
-
-/* Intersection observer: fade-in on scroll */
+/* ── Scroll-triggered reveal — opacity only, no slide ── */
 .reveal {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* Step circles */
+/* ── Cards ── */
+.featured-card {
+  transition: border-color 0.3s ease;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+.featured-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
 
-/* ── Phone mockup — Samsung S25-inspired frame ── */
+.spotlight-card {
+  transition: border-color 0.3s ease;
+}
+.spotlight-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.feature-card {
+  transition: border-color 0.25s ease;
+}
+.feature-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ── Phone mockup frame ── */
 .phone-frame {
   position: relative;
   border-radius: 22px;
   overflow: hidden;
   background: #000;
-  /* Thin inner bezel that sits flush against the screenshot */
   box-shadow:
-    /* outer drop shadow */
     0 25px 80px rgba(0, 0, 0, 0.6),
-    /* subtle accent glow */
-    0 0 40px rgba(0, 255, 106, 0.08),
-    /* rim highlight for the outer edge of the phone body */
     0 0 0 1.5px rgba(255, 255, 255, 0.12),
-    /* soft inner bezel */
     inset 0 0 0 2px rgba(255, 255, 255, 0.04);
 }
 
-/* Screenshots fill the frame edge-to-edge — no clipping.
-   Screenshots captured in-app already omit system chrome. */
 .screenshot-crop {
   display: block;
   width: 100%;
   height: auto;
 }
 
+/* ── Phone parallax ── */
+.parallax-phone {
+  --px: 0px;
+  --py: 0px;
+  transform: translate(var(--px), var(--py));
+  transition: transform 0.15s ease-out;
+}
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
@@ -161,39 +122,9 @@ body {
     transition-duration: 0.01ms !important;
   }
   .marquee-track { animation: none !important; }
-  .animate-float { animation: none !important; }
-  .bg-orbs::before, .bg-orbs::after, .bg-orb-3 { animation: none !important; }
 }
 
-/* ── Feature cards ── */
-.feature-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0, 255, 106, 0.12);
-}
-
-/* Spotlight card (larger hero features) */
-.spotlight-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.spotlight-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 50px rgba(0, 255, 106, 0.15);
-}
-
-/* ── Featured bento cards ── */
-.featured-card {
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-}
-.featured-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
-}
-
-/* Range input base reset */
+/* ── Range input ── */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -217,7 +148,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.2);
 }
 
-/* ── Screenshot gallery ── */
+/* ── Scrollbar hide ── */
 .screenshot-scroll, .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -226,32 +157,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
   display: none;
 }
 
-/* ── Gradient border ── */
-.gradient-border {
-  position: relative;
-}
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 255, 106, 0.3), rgba(0, 204, 255, 0.15), rgba(180, 74, 255, 0.1));
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
-  pointer-events: none;
-}
-
-/* ── Stat counter glow ── */
-.stat-glow {
-  text-shadow: 0 0 20px rgba(0, 255, 106, 0.6);
-}
-
 /* ── Section divider ── */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 106, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
 }
 
 /* ── Dot indicators ── */
@@ -264,180 +173,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   border-radius: 6px;
 }
 
-/* ══════════════════════════════════════════════
-   PREMIUM VISUAL ENHANCEMENTS
-   ══════════════════════════════════════════════ */
-
-/* ── 1. Floating gradient orbs ── */
-@keyframes orbFloat1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(120px, -80px) scale(1.1); }
-  66% { transform: translate(-60px, 60px) scale(0.95); }
-}
-@keyframes orbFloat2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-100px, 100px) scale(1.05); }
-  66% { transform: translate(80px, -40px) scale(0.9); }
-}
-@keyframes orbFloat3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(60px, 80px) scale(1.08); }
-  66% { transform: translate(-90px, -60px) scale(0.92); }
-}
-
-.bg-orbs {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-.bg-orbs::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  left: -5%;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 255, 106, 0.07) 0%, transparent 70%);
-  filter: blur(80px);
-  animation: orbFloat1 25s ease-in-out infinite;
-}
-.bg-orbs::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  right: -5%;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(180, 74, 255, 0.05) 0%, transparent 70%);
-  filter: blur(80px);
-  animation: orbFloat2 30s ease-in-out infinite;
-}
-.bg-orb-3 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 204, 255, 0.04) 0%, transparent 70%);
-  filter: blur(80px);
-  animation: orbFloat3 35s ease-in-out infinite;
-}
-
-@media (max-width: 768px) {
-  .bg-orbs::before { width: 80%; height: 80%; }
-  .bg-orbs::after { width: 70%; height: 70%; }
-  .bg-orb-3 { width: 60%; height: 60%; }
-}
-
-/* ── 2. Noise texture overlay ── */
-.noise-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 45;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-}
-
-/* ── 3. Shimmer gradient headline ── */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.shimmer-text {
-  background: linear-gradient(
-    90deg,
-    #00FF6A 0%,
-    #66FFB2 25%,
-    #00DDFF 50%,
-    #66FFB2 75%,
-    #00FF6A 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 6s linear infinite;
-}
-
-/* ── 4. Parallax phone ── */
-.parallax-phone {
-  --px: 0px;
-  --py: 0px;
-  transform: translate(var(--px), var(--py));
-  transition: transform 0.15s ease-out;
-}
-
-/* ── 5. Star field ── */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.7; }
-}
-@keyframes drift {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-15px); }
-}
-.star-field {
-  position: absolute;
-  inset: -40px;
-  overflow: hidden;
-  pointer-events: none;
-}
-.star-field span {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.2;
-  animation:
-    twinkle var(--dur, 3s) ease-in-out infinite,
-    drift var(--drift, 8s) ease-in-out infinite alternate;
-}
-
-/* ── 6. CTA pulse ring ── */
-@keyframes pulseRing {
-  0% { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0.4), 0 0 30px rgba(0, 255, 106, 0.25); }
-  70% { box-shadow: 0 0 0 16px rgba(0, 255, 106, 0), 0 0 30px rgba(0, 255, 106, 0.25); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0), 0 0 30px rgba(0, 255, 106, 0.25); }
-}
-.cta-pulse {
-  animation: pulseRing 2.5s ease-out infinite;
-}
-
-/* CTA background gradient shift */
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-.cta-bg-shift {
-  background: linear-gradient(135deg, rgba(0, 255, 106, 0.08), rgba(180, 74, 255, 0.05), rgba(0, 204, 255, 0.06), rgba(0, 255, 106, 0.08));
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease-in-out infinite;
-}
-
-/* ── 7. Spotlight icon pulse on hover ── */
-@keyframes iconPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0.3); }
-  50% { box-shadow: 0 0 0 10px rgba(0, 255, 106, 0); }
-}
-.spotlight-card:hover .icon-pulse {
-  animation: iconPulse 1.5s ease-in-out infinite;
-}
-
-/* Staggered feature card entrance */
-.stagger-card {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── 8. Screenshot 3D perspective ── */
+/* ── Screenshot 3D carousel ── */
 .screenshot-perspective {
   perspective: 1200px;
 }
@@ -464,83 +200,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   opacity: 0.4;
 }
 
-/* ── 9. Theme swatch wave ── */
-.swatch-enter {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ══════════════════════════════════════════════
-   NEXT-LEVEL OVERHAUL — NEW EFFECTS
-   ══════════════════════════════════════════════ */
-
-/* ── Text reveal (word-by-word clip-path) ── */
-@keyframes wordReveal {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
-}
-.word-reveal {
-  display: inline-block;
-  clip-path: inset(0 100% 0 0);
-  animation: wordReveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* ── Rotating conic gradient border ── */
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-@keyframes rotateBorder {
-  to { --angle: 360deg; }
-}
-.rotating-border {
-  position: relative;
-}
-.rotating-border::before, .hover-radar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: conic-gradient(
-    from var(--angle),
-    rgba(0, 255, 106, 0.4),
-    rgba(0, 204, 255, 0.2),
-    rgba(180, 74, 255, 0.15),
-    rgba(0, 255, 106, 0.05),
-    rgba(0, 255, 106, 0.4)
-  );
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
-  pointer-events: none;
-  animation: rotateBorder 4s linear infinite;
-}
-
-.hover-radar::before {
-  display: none;
-}
-
-/* ── Button click press ── */
-.active-press:active {
-  transform: scale(0.96) !important;
-  transition: transform 0.1s ease;
-}
-
-/* ── Cursor spotlight on feature grid ── */
-.spotlight-grid {
-  --spotlight-x: -999px;
-  --spotlight-y: -999px;
-}
-.spotlight-grid .spotlight-target {
-  background: radial-gradient(
-    circle 250px at var(--spotlight-x) var(--spotlight-y),
-    rgba(0, 255, 106, 0.06),
-    transparent
-  );
-}
-
 /* ── 3D tilt card ── */
 .tilt-card {
   perspective: 800px;
@@ -549,8 +208,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transform-style: preserve-3d;
   transition: transform 0.15s ease-out;
 }
-.tilt-card-inner .tilt-content {
-  transform: translateZ(20px);
+
+/* ── Button press ── */
+.active-press:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.1s ease;
 }
 
 /* ── Scroll progress bar ── */
@@ -560,12 +222,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
   left: 0;
   height: 2px;
   background: var(--accent);
-  box-shadow: 0 0 8px rgba(0, 255, 106, 0.5);
   transition: width 0.1s linear;
   z-index: 60;
 }
 
-/* ── How It Works ── */
+/* ── How It Works step line ── */
 .step-line {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -574,12 +235,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .step-line.drawn {
   stroke-dashoffset: 0;
 }
-.step-circle {
-  opacity: 1;
-  transform: scale(1);
-}
 
-/* ── Marquee / ticker ── */
+/* ── Marquee ── */
 @keyframes marqueeScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -626,4 +283,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
   .bento-grid .bento-hero {
     grid-column: span 1;
   }
+}
+
+/* ── Stat counter ── */
+.stat-glow {
+  text-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
 }

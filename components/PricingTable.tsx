@@ -109,8 +109,8 @@ export default function PricingTable() {
     <section id="pricing" className="py-16 md:py-20">
       <div ref={ref} className={`max-w-3xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-12">
-          <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Pricing</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Pricing</p>
+          <h2 className="font-display text-3xl md:text-4xl mb-4">
             Free to Start. <span className="text-accent">Pro When You&apos;re Ready.</span>
           </h2>
           <p className="text-muted text-lg max-w-xl mx-auto">

@@ -118,8 +118,8 @@ export default function Screenshots() {
       <div ref={sectionRef} className={`relative reveal ${visible ? "visible" : ""}`}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">The App</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">The App</p>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
               Real Screens. <span className="text-accent accent-underline">No Mockups.</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">

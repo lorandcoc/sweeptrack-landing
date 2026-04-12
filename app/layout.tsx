@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,6 +10,12 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const viewport: Viewport = {
@@ -139,17 +145,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} antialiased overflow-x-hidden`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} antialiased overflow-x-hidden`}
     >
       <body className="min-h-full aurora-bg overflow-x-hidden">
-        {/* Floating gradient orbs */}
-        <div className="bg-orbs" aria-hidden="true">
-          <span className="bg-orb-3" />
-        </div>
-        {/* Noise texture grain */}
-        <div className="noise-overlay" aria-hidden="true" />
-        {/* Page content above orbs */}
-        <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
+        <div className="flex flex-col min-h-full w-full">{children}</div>
       </body>
     </html>
   );

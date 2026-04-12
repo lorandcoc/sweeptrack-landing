@@ -24,8 +24,8 @@ export default function ThemeShowcase() {
     <section id="themes" className="py-16 md:py-20">
       <div ref={ref} className={`max-w-6xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-14">
-          <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Personalize</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Personalize</p>
+          <h2 className="font-display text-3xl md:text-4xl mb-4">
             <span className="text-accent">12 Color Themes</span> + Night Vision
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">

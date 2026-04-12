@@ -51,8 +51,8 @@ export default function HowItWorks() {
     <section className="py-16 md:py-20 relative">
       <div ref={ref} className={`max-w-5xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-14">
-          <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Your Workflow</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Your Workflow</p>
+          <h2 className="font-display text-3xl md:text-4xl mb-4">
             Before, During, and <span className="text-accent">After the Hunt</span>
           </h2>
           <p className="text-muted text-lg max-w-xl mx-auto">

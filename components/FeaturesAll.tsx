@@ -357,8 +357,8 @@ export default function FeaturesAll() {
         {/* Section header */}
         <RevealSection>
           <div className="text-center mb-14">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">What&apos;s Inside</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">What&apos;s Inside</p>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
               Tools You&apos;ll Actually{" "}
               <span className="text-accent">Use in the Field</span>
             </h2>

@@ -38,10 +38,10 @@ export default function Tutorials() {
         <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-10">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3 inline-flex items-center gap-2">
+            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3 inline-flex items-center gap-2">
               <Play className="w-4 h-4 fill-accent" /> SweepTrack Academy
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
               Learn the App in <span className="text-accent">60 Seconds</span>
             </h2>
             <p className="text-muted text-lg max-w-xl mx-auto">

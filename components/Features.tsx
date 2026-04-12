@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import { useReveal } from "./useReveal";
 import TiltCard from "./TiltCard";
 
@@ -144,51 +143,16 @@ function RevealSection({ children, className = "" }: { children: React.ReactNode
   );
 }
 
-function StaggerCard({ children, index }: { children: React.ReactNode; index: number }) {
-  const { ref, visible } = useReveal(0.1);
-  return (
-    <div
-      ref={ref}
-      className={`stagger-card ${visible ? "visible" : ""}`}
-      style={{ transitionDelay: visible ? `${index * 80}ms` : "0ms" }}
-    >
-      {children}
-    </div>
-  );
-}
-
-function SpotlightGrid({ children }: { children: React.ReactNode }) {
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    setIsDesktop(window.matchMedia("(pointer: fine)").matches);
-  }, []);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDesktop || !gridRef.current) return;
-    const rect = gridRef.current.getBoundingClientRect();
-    gridRef.current.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
-    gridRef.current.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
-  };
-
-  return (
-    <div ref={gridRef} className="spotlight-grid" onMouseMove={handleMouseMove}>
-      {children}
-    </div>
-  );
-}
-
 export default function Features() {
   return (
-    <section id="features" className="py-16 md:py-20">
+    <section id="features" className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
         <RevealSection>
           <div className="text-center mb-16">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Features</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Everything You Need to{" "}
-              <span className="text-accent">Detect Smarter</span>
+            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Features</p>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Everything you need to{" "}
+              <span className="text-accent">detect smarter</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               Professional-grade tools packed into one app. From GPS tracking to
@@ -197,55 +161,50 @@ export default function Features() {
           </div>
         </RevealSection>
 
-        {/* Spotlight Features — bento grid with 3D tilt */}
+        {/* Spotlight Features — bento grid */}
         <RevealSection>
           <div className="bento-grid mb-6">
             {spotlightFeatures.map((feature, i) => (
               <TiltCard key={feature.title} className={i === 0 ? "bento-hero" : ""}>
-                <div className="spotlight-card rotating-border rounded-2xl p-7 bg-surface relative overflow-hidden group h-full">
-                  <div className="absolute -top-12 -right-12 w-32 h-32 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors" />
-                  <div className="relative">
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="icon-pulse w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
-                        {feature.icon}
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-accent/70 bg-accent/8 px-2.5 py-1 rounded-full">
-                        {feature.tag}
-                      </span>
+                <div className="spotlight-card rounded-2xl p-7 bg-surface border border-white/[0.06] hover:border-white/[0.14] h-full transition-colors">
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-accent/8 flex items-center justify-center text-accent">
+                      {feature.icon}
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                    <p className="text-muted text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-accent/60 border border-accent/15 px-2.5 py-1 rounded-full">
+                      {feature.tag}
+                    </span>
                   </div>
+                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </TiltCard>
             ))}
           </div>
         </RevealSection>
 
-        {/* Remaining features — spotlight cursor + staggered compact grid */}
-        <SpotlightGrid>
+        {/* Remaining features — clean grid */}
+        <RevealSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((feature, i) => (
-              <StaggerCard key={feature.title} index={i}>
-                <div className="feature-card spotlight-target rounded-xl p-5 bg-surface/60 border border-white/[0.04] hover:border-accent/20 h-full">
-                  <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-lg bg-accent/8 flex items-center justify-center text-accent shrink-0 mt-0.5">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-[15px] mb-1">{feature.title}</h3>
-                      <p className="text-muted text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
+            {features.map((feature) => (
+              <div key={feature.title} className="feature-card rounded-xl p-5 bg-surface/60 border border-white/[0.05] hover:border-white/[0.12] h-full transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className="w-9 h-9 rounded-lg bg-accent/6 flex items-center justify-center text-accent shrink-0 mt-0.5">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[15px] mb-1">{feature.title}</h3>
+                    <p className="text-muted text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
-              </StaggerCard>
+              </div>
             ))}
           </div>
-        </SpotlightGrid>
+        </RevealSection>
       </div>
     </section>
   );
