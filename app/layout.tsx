@@ -148,7 +148,7 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased overflow-x-hidden`}
     >
       <body className="min-h-full aurora-bg overflow-x-hidden">
-        <div className="flex flex-col min-h-full w-full">{children}</div>
+        <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
       </body>
     </html>
   );
