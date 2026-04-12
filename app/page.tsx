@@ -121,9 +121,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <FeaturesAll />
-        <HowItWorks />
         <MapCompareSlider />
+        <HowItWorks />
+        <FeaturesAll />
         <Screenshots />
         <FounderNote />
         <PricingTable />

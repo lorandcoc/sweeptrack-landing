@@ -14,7 +14,7 @@ const spotlightFeatures = [
     ),
     title: "Live GPS Tracking",
     description:
-      "Real-time satellite map with heading, altitude, speed, and distance overlay. Full TacticalHUD shows everything you need at a glance.",
+      "See exactly where you've swung and where you haven't. Real-time satellite view with distance, speed, and heading so you never retrace your steps.",
     tag: "Core",
   },
   {
@@ -25,7 +25,7 @@ const spotlightFeatures = [
     ),
     title: "Heatmap Visualization",
     description:
-      "Rainbow gradient density map shows exactly where you've spent time. Identify hot zones and untouched areas instantly.",
+      "Stop guessing which patches you missed. The coverage heatmap shows density by color — green means walked, red means hammered, empty means go back.",
     tag: "Pro",
   },
   {
@@ -37,7 +37,7 @@ const spotlightFeatures = [
     ),
     title: "Historical Map Overlay",
     description:
-      "Genuine USGS historical topographic tiles layered onto your modern map. Spot vanished roads, buildings, and settlements.",
+      "Find where the old homesteads, roads, and schools used to be. Genuine 1800s USGS survey tiles layered onto your modern satellite view.",
     tag: "Pro",
   },
 ];
@@ -50,7 +50,7 @@ const features = [
       </svg>
     ),
     title: "61 Detector Presets",
-    description: "Pre-configured settings for 61 detectors across 12 major brands.",
+    description: "Running a Deus II? Equinox 800? Simplex+? Load your machine's preset in one tap — 61 models across 12 brands, ready to go.",
   },
   {
     icon: (
@@ -60,7 +60,7 @@ const features = [
       </svg>
     ),
     title: "Offline Maps",
-    description: "4 tile sources: OSM, Satellite, Terrain, and Historical Topographic.",
+    description: "No signal in the field? Download tiles before you leave home. 4 sources: Street, Satellite, Terrain, and Historical Topo.",
   },
   {
     icon: (
@@ -69,7 +69,7 @@ const features = [
       </svg>
     ),
     title: "Perimeter Guard",
-    description: "Virtual boundary with vibration alerts when you leave your zone.",
+    description: "Draw the boundary of your permission on the map. Your phone vibrates when you're near the edge and alarms if you step outside.",
   },
   {
     icon: (
@@ -79,7 +79,7 @@ const features = [
       </svg>
     ),
     title: "Session Analytics",
-    description: "Distance, duration, finds per session, plus career stats and personal bests.",
+    description: "Know which sites produce and which don't. Distance, finds, duration, averages, and personal bests across all your hunts.",
   },
   {
     icon: (
@@ -90,7 +90,7 @@ const features = [
       </svg>
     ),
     title: "GPX / KML Export",
-    description: "Export in GPX, KML, or CSV. Share or import into Google Earth.",
+    description: "Take your data anywhere. Export sessions as GPX, KML, or CSV — open in Google Earth, share with your club, or archive to your PC.",
   },
   {
     icon: (
@@ -100,7 +100,7 @@ const features = [
       </svg>
     ),
     title: "Weather & Tides",
-    description: "Built-in forecast and tide tables. Plan hunts around optimal conditions.",
+    description: "Don't waste a trip. Check the Detecting Forecast before you drive — soil moisture, wind, and a 0-100 score tell you if it's worth going.",
   },
   {
     icon: (
@@ -110,7 +110,7 @@ const features = [
       </svg>
     ),
     title: "Historic Sites",
-    description: "Discover historically significant locations near your position.",
+    description: "Find your next honey hole. See churches, battlefields, old bridges, and Wikipedia landmarks around your position with distance and directions.",
   },
   {
     icon: (
@@ -119,7 +119,7 @@ const features = [
       </svg>
     ),
     title: "Map Comparison",
-    description: "Overlay past sessions or split view side by side to track progress.",
+    description: "Stack your last three visits to the same field and instantly see the gaps. Overlay mode or split-screen side by side.",
   },
   {
     icon: (
@@ -130,7 +130,7 @@ const features = [
       </svg>
     ),
     title: "Cloud Backup",
-    description: "Google Drive backup and restore. Never lose your detecting history.",
+    description: "Phone dies? Upgrade? One-tap Google Drive backup saves every session, find, preset, and permission. Restore it all on any device.",
   },
 ];
 
