@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://sweeptrack.pro";
-  const now = new Date().toISOString();
 
   const blogSlugs = [
     // Guides
@@ -45,15 +44,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [
-    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: base, lastModified: "2026-04-12", changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/blog`, lastModified: "2026-04-12", changeFrequency: "weekly", priority: 0.9 },
     ...blogSlugs.map((slug) => ({
       url: `${base}/blog/${slug}`,
-      lastModified: now,
+      lastModified: "2026-04-12" as string,
       changeFrequency: "monthly" as const,
-      priority: 0.9,
+      priority: 0.8,
     })),
-    { url: `${base}/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
-    { url: `${base}/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: "2026-04-12", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/terms`, lastModified: "2026-04-12", changeFrequency: "yearly", priority: 0.3 },
   ];
 }
