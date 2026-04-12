@@ -27,8 +27,14 @@ function NewsletterForm() {
         },
         body: JSON.stringify({ email: email.trim().toLowerCase() }),
       });
-      if (res.ok) setStatus("ok");
-      else if (res.status === 409) setStatus("duplicate");
+      if (res.ok) {
+        fetch("/api/notify-waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email.trim().toLowerCase() }),
+        }).catch(() => {});
+        setStatus("ok");
+      } else if (res.status === 409) setStatus("duplicate");
       else setStatus("error");
     } catch {
       setStatus("error");

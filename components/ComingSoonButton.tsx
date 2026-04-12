@@ -18,7 +18,15 @@ async function joinWaitlist(email: string): Promise<"ok" | "duplicate" | "error"
       },
       body: JSON.stringify({ email }),
     });
-    if (res.ok) return "ok";
+    if (res.ok) {
+      // Fire-and-forget notification — never blocks the user
+      fetch("/api/notify-waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      }).catch(() => {});
+      return "ok";
+    }
     if (res.status === 409) return "duplicate";
     return "error";
   } catch {
