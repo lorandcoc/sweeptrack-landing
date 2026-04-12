@@ -119,15 +119,17 @@ body {
   background: conic-gradient(
     from var(--sweep-angle),
     transparent 0%,
-    var(--accent) 2%,
-    transparent 4%,
+    rgba(0, 255, 106, 0.4) 3%,
+    var(--accent) 5%,
+    rgba(0, 255, 106, 0.4) 7%,
+    transparent 10%,
     transparent 100%
   );
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
   pointer-events: none;
-  animation: sweepOrbit 4s linear infinite;
+  animation: sweepOrbit 8s linear infinite;
 }
 /* Subtle static glow behind the ping card */
 .sweep-outline::after {
