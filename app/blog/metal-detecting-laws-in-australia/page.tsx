@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Metal Detecting Laws in Australia",
   description:
-    "Australian metal detecting laws vary dramatically by state. Here's what you need to know about heritage acts, Aboriginal heritage protection, and where you can legally detect.",
+    "Australian metal detecting laws vary by state. What you need to know about heritage acts, Aboriginal heritage protection, and where you can legally detect.",
 };
 
 export default function Post() {

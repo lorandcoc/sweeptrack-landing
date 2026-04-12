@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Share Card: A Printable Summary of Your Session",
   description:
-    "Generate a shareable 800×500 PNG session card in SweepTrack Pro with your name, date, stats, find breakdown, and score. One tap to share via any app that accepts images.",
+    "Generate a shareable PNG session card with your name, date, stats, find breakdown, and score. One tap to share via any app that accepts images.",
 };
 
 export default function Post() {

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Logging Finds with Photos and Audio Notes",
   description:
-    "Log your metal detecting finds in SweepTrack Pro with GPS location, one of 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), depth, value, weight, notes, a photo, and an audio recording.",
+    "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, and audio recordings. Six find categories in SweepTrack Pro.",
 };
 
 export default function Post() {

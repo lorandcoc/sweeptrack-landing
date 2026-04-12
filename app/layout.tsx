@@ -26,11 +26,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sweeptrack.pro"),
   title: {
-    default: "SweepTrack Pro — Best Metal Detecting App for Android | GPS Tracking, Old Maps, Offline Maps",
-    template: "%s | SweepTrack Pro — Metal Detecting App",
+    default: "SweepTrack Pro — Metal Detecting GPS App for Android",
+    template: "%s | SweepTrack Pro",
   },
   description:
-    "The #1 metal detecting app for Android. GPS tracking with 4 map types, USGS historical topographic map overlay to find old homesteads and roads, offline maps for areas with no cell service, track overlay to see where you already walked, perimeter guard with vibration alerts, permission vault with PDF letters, weather-based detecting forecast, tide tables for beach hunting, cloud backup to Google Drive, and detector presets for Minelab, Garrett, XP, Nokta, Fisher and more. Ad-free. Free to use.",
+    "GPS tracking app built for metal detectorists. Historical map overlays, offline maps, permission vault, detecting forecast, 61 detector presets, and cloud backup. Ad-free.",
   keywords: [
     // Primary searches
     "metal detecting app",
@@ -107,9 +107,9 @@ export const metadata: Metadata = {
     canonical: "https://sweeptrack.pro",
   },
   openGraph: {
-    title: "SweepTrack Pro — Best Metal Detecting App for Android",
+    title: "SweepTrack Pro — Metal Detecting GPS App for Android",
     description:
-      "GPS tracking, USGS historical map overlays, offline maps, track overlay, perimeter guard, permission vault, detecting forecast, tide tables, and cloud backup. The app that was actually built for metal detecting. Ad-free.",
+      "GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, and cloud backup. Built for detectorists. Ad-free.",
     url: "https://sweeptrack.pro",
     siteName: "SweepTrack Pro",
     type: "website",

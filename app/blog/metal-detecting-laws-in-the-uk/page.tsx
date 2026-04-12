@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Metal Detecting Laws in the UK",
   description:
-    "The UK has one of the best legal frameworks for metal detecting in the world. Here's what you need to know about the Treasure Act, PAS, and landowner permissions.",
+    "The UK has one of the best legal frameworks for metal detecting. What you need to know about the Treasure Act, PAS, and landowner permissions.",
 };
 
 export default function Post() {

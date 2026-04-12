@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Where to Metal Detect Near Me: Finding Good Spots Anywhere",
   description:
-    "A practical guide to finding productive metal detecting locations in any area — using old maps, local research, and common sense to identify high-potential spots.",
+    "A practical guide to finding productive metal detecting locations in any area using old maps, local research, and common sense to find great spots.",
 };
 
 export default function Post() {

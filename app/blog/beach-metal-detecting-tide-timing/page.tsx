@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Beach Metal Detecting: Tide Timing & Where to Search",
   description:
-    "Learn how to time your beach metal detecting hunts around low tide, where to search on the wet sand, and how tide charts help you find more gold, coins, and jewelry.",
+    "Learn how to time beach metal detecting hunts around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.",
 };
 
 export default function Post() {

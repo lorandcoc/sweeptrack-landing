@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to Track Your Metal Detecting Sessions with GPS",
   description:
-    "Learn how GPS tracking helps you cover more ground, avoid re-detecting the same areas, overlay past sessions, and build a complete history of your detecting hunts.",
+    "Learn how GPS tracking helps you cover more ground, avoid re-detecting areas, overlay past sessions, and build a complete history of your hunts.",
 };
 
 export default function Post() {

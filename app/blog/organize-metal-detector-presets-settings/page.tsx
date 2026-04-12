@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to Organize Your Metal Detector Settings and Presets",
   description:
-    "Learn how to save, name, and share your metal detector settings for different fields and conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.",
+    "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.",
 };
 
 export default function Post() {

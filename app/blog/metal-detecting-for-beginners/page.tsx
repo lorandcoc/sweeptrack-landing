@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Metal Detecting for Beginners: What You Need to Know",
   description:
-    "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and common beginner mistakes to avoid.",
+    "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and beginner mistakes to avoid.",
 };
 
 export default function Post() {

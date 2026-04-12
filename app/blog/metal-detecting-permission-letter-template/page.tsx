@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Metal Detecting Permission Letter: Free Template + What to Include",
   description:
-    "Get a free metal detecting permission letter template. Learn what to include, how to approach landowners, and how to organize and track your detecting permissions with expiry dates and site boundaries.",
+    "Free metal detecting permission letter template. Learn what to include, how to approach landowners, and how to track permissions with expiry dates.",
 };
 
 export default function Post() {

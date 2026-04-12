@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best Metal Detectors Under $500 in 2026",
   description:
-    "An honest look at the best beginner and mid-range metal detectors under $500 — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. What each does best and where it falls short.",
+    "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.",
 };
 
 export default function Post() {

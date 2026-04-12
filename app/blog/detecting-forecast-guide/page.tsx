@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Detecting Forecast: Plan Every Hunt by the Numbers",
   description:
-    "The SweepTrack Pro Detecting Forecast turns weather into a 0-100 Detecting Score. Check any location, pick a day up to a week ahead, and read soil moisture, wind, temperature, and humidity with contextual tips.",
+    "SweepTrack Pro turns weather into a 0-100 Detecting Score. Check any location up to a week ahead with soil moisture, wind, temperature, and humidity tips.",
   alternates: {
     canonical: "https://sweeptrack.pro/blog/detecting-forecast-guide",
   },

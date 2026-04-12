@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to Use Old Maps to Find Better Metal Detecting Spots",
   description:
-    "Learn how to use USGS historical topographic maps to find old homesteads, vanished roads, and forgotten settlements for metal detecting. Step-by-step guide with tips on reading old topo maps.",
+    "Use USGS historical topographic maps to find old homesteads, vanished roads, and forgotten settlements for metal detecting. Tips on reading old topo maps.",
 };
 
 export default function Post() {

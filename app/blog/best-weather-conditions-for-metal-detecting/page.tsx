@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best Weather Conditions for Metal Detecting (And When to Stay Home)",
   description:
-    "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting performance. Learn what weather conditions are best for detecting and how a detecting forecast score works.",
+    "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.",
 };
 
 export default function Post() {
