@@ -98,50 +98,45 @@ body {
   transform: translateX(0);
 }
 
-/* ── Detector sweep — ping travels along a scan line ── */
-@keyframes sweepPing {
-  0% { left: -4%; opacity: 0; }
-  5% { opacity: 1; }
-  95% { opacity: 1; }
-  100% { left: 104%; opacity: 0; }
+/* ── Sweep outline — accent ping orbiting a card border ── */
+@property --sweep-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
-@keyframes sweepTrail {
-  0% { width: 0; left: 0; }
-  50% { width: 50%; left: 0; }
-  100% { width: 0; left: 100%; }
+@keyframes sweepOrbit {
+  to { --sweep-angle: 360deg; }
 }
-.detector-sweep {
+.sweep-outline {
   position: relative;
-  height: 32px;
-  display: flex;
-  align-items: center;
 }
-.detector-sweep-line {
+.sweep-outline::before {
+  content: '';
   position: absolute;
-  left: 5%;
-  right: 5%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--sweep-angle),
+    transparent 0%,
+    var(--accent) 2%,
+    transparent 4%,
+    transparent 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  animation: sweepOrbit 4s linear infinite;
 }
-.detector-sweep-ping {
+/* Subtle static glow behind the ping card */
+.sweep-outline::after {
+  content: '';
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 12px var(--accent), 0 0 24px rgba(0, 255, 106, 0.3);
-  top: 50%;
-  transform: translateY(-50%);
-  animation: sweepPing 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-.detector-sweep-trail {
-  position: absolute;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  top: 50%;
-  transform: translateY(-50%);
-  animation: sweepTrail 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  opacity: 0.4;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(0, 255, 106, 0.12);
+  pointer-events: none;
 }
 
 /* ── Cards — top accent line on hover ── */
