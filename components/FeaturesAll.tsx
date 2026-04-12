@@ -39,8 +39,8 @@ function FeaturedWithScreenshot({
 
   return (
     <TiltCard className="h-full">
-      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/5 transition-colors">
-        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-10" style={{ background: c }} />
+      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/[0.08] transition-colors">
+        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: c }} />
         <div className="relative z-10 flex-1 flex flex-col">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -113,8 +113,8 @@ function FeaturedTextCard({
 
   return (
     <TiltCard className="h-full">
-      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/5 transition-colors">
-        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-10" style={{ background: c }} />
+      <div className="featured-card hover-radar rounded-2xl p-5 bg-surface relative overflow-hidden group h-full flex flex-col border border-white/[0.08] transition-colors">
+        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: c }} />
         <div className="relative z-10 flex-1 flex flex-col">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">

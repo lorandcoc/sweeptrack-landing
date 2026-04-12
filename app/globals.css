@@ -186,10 +186,11 @@ body {
 /* ── Featured bento cards ── */
 .featured-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 .featured-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 255, 106, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 255, 106, 0.12), 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 /* Range input base reset */
@@ -518,7 +519,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .hover-radar::before {
-  opacity: 0;
+  opacity: 0.12;
   transition: opacity 0.3s ease;
 }
 .hover-radar:hover::before {
