@@ -10,6 +10,7 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import CommunityLinks from "@/components/CommunityLinks";
 import Footer from "@/components/Footer";
+import Marquee from "@/components/Marquee";
 
 const jsonLdGraph = [
   {
@@ -121,6 +122,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <MapCompareSlider />
         <HowItWorks />
         <FeaturesAll />

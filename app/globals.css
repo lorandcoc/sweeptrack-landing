@@ -148,6 +148,24 @@ body {
   height: auto;
 }
 
+/* ── Hero entrance — staggered on page load ── */
+@keyframes enterUp {
+  from { opacity: 0; transform: translateY(24px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes enterRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.hero-enter {
+  opacity: 0;
+  animation: enterUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-enter-phone {
+  opacity: 0;
+  animation: enterRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
 /* ── Phone parallax ── */
 .parallax-phone {
   --px: 0px;

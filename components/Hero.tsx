@@ -13,12 +13,12 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium mb-6">
+            <div className="hero-enter inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium mb-6" style={{ animationDelay: "0.1s" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               Free to Use &middot; Ad-Free Forever
             </div>
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] mb-5">
+            <h1 className="hero-enter font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] mb-5" style={{ animationDelay: "0.2s" }}>
               Never miss a spot.
               <br />
               Never lose a find.
@@ -26,14 +26,14 @@ export default function Hero() {
               <span className="text-accent">Never trespass again.</span>
             </h1>
 
-            <p className="text-base md:text-lg text-muted max-w-lg mb-6 md:mx-0 mx-auto leading-relaxed">
+            <p className="hero-enter text-base md:text-lg text-muted max-w-lg mb-6 md:mx-0 mx-auto leading-relaxed" style={{ animationDelay: "0.35s" }}>
               The GPS field companion built by a detectorist, for detectorists.
               Track your sessions, map your coverage, log every find, and keep
               your permissions in order&nbsp;&mdash; all in one app.
             </p>
 
-            {/* Stat pills — instant specificity */}
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-8">
+            {/* Stat pills */}
+            <div className="hero-enter flex flex-wrap gap-3 justify-center md:justify-start mb-8" style={{ animationDelay: "0.45s" }}>
               {stats.map((s) => (
                 <div key={s.label} className="flex items-baseline gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                   <span className="font-mono text-sm font-semibold text-accent">{s.value}</span>
@@ -42,7 +42,7 @@ export default function Hero() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="hero-enter flex flex-col sm:flex-row gap-4 justify-center md:justify-start" style={{ animationDelay: "0.55s" }}>
               <ComingSoonButton />
               <a
                 href="#features"
@@ -56,7 +56,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <ParallaxPhone />
+          <div className="hero-enter-phone">
+            <ParallaxPhone />
+          </div>
         </div>
       </div>
     </section>
