@@ -48,24 +48,56 @@ body {
   min-height: 100vh;
 }
 
-/* ── Display headings — serif contrast ── */
+/* ── Display headings — bold geometric sans ── */
 .font-display {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
-/* ── Subtle page gradient — NOT aurora, just depth ── */
+/* ── Subtle page gradient ── */
 .aurora-bg {
   background:
     radial-gradient(ellipse at 25% 0%, rgba(0, 255, 106, 0.03) 0%, transparent 60%),
     var(--background);
 }
 
-/* ── Scroll-triggered reveal — opacity only, no slide ── */
+/* ── Scroll-triggered reveal — blur-to-sharp focus pull ── */
 .reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(6px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ── Cards — top accent line on hover ── */
+.featured-card, .spotlight-card, .feature-card {
+  position: relative;
+  overflow: hidden;
+}
+.featured-card::after, .spotlight-card::after, .feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.featured-card:hover::after, .spotlight-card:hover::after, .feature-card:hover::after {
   opacity: 1;
 }
 
-/* ── Cards ── */
 .featured-card {
   transition: border-color 0.3s ease;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
@@ -86,6 +118,18 @@ body {
 }
 .feature-card:hover {
   border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ── Accent rule — sweeps in on reveal ── */
+.accent-rule {
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+  margin: 0 auto 1.5rem;
+}
+.reveal.visible .accent-rule {
+  width: 48px;
 }
 
 /* ── Phone mockup frame ── */

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,10 +12,10 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const instrumentSerif = Instrument_Serif({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["500", "600", "700"],
 });
 
 export const viewport: Viewport = {
@@ -145,7 +145,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} antialiased overflow-x-hidden`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased overflow-x-hidden`}
     >
       <body className="min-h-full aurora-bg overflow-x-hidden">
         <div className="flex flex-col min-h-full w-full">{children}</div>

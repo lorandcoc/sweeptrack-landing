@@ -11,6 +11,7 @@ export default function CTA() {
       <div ref={ref} className={`max-w-4xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center bg-surface/50">
           <p className="text-muted text-sm font-medium tracking-wider uppercase mb-4">Almost There</p>
+          <div className="accent-rule" />
           <h2 className="font-display text-3xl md:text-4xl mb-4">
             Your next find is{" "}
             <span className="text-accent">waiting</span>

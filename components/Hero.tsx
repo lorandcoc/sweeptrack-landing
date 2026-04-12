@@ -1,5 +1,8 @@
+"use client";
+
 import ParallaxPhone from "./ParallaxPhone";
 import ComingSoonButton from "./ComingSoonButton";
+import ScrambleText from "./ScrambleText";
 
 export default function Hero() {
   return (
@@ -13,9 +16,11 @@ export default function Hero() {
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
-              Track Every Sweep.
+              <ScrambleText text="Track Every Sweep." delay={200} />
               <br />
-              <span className="text-accent">Find Every Treasure.</span>
+              <span className="text-accent">
+                <ScrambleText text="Find Every Treasure." delay={600} />
+              </span>
             </h1>
 
             <p className="text-lg text-muted max-w-lg mb-8 md:mx-0 mx-auto leading-relaxed">
