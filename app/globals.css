@@ -361,36 +361,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   stroke-dashoffset: 0;
 }
 
-/* ── Marquee ── */
-@keyframes marqueeScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.marquee-track {
-  display: flex;
-  animation: marqueeScroll 35s linear infinite;
-  will-change: transform;
-}
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-.marquee-container {
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
-  );
-}
 
 /* ── Bento grid ── */
 .bento-grid {

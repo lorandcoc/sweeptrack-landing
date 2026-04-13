@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | SweepTrack Pro",
   },
   description:
-    "GPS tracking app built for metal detectorists. Historical map overlays, offline maps, permission vault, detecting forecast, 61 detector presets, and cloud backup. Ad-free.",
+    "GPS tracking app for metal detectorists. Historical map overlays, offline maps, permission vault, detecting forecast, 61 detector presets, cloud backup. Ad-free.",
   keywords: [
     // Primary searches
     "metal detecting app",
@@ -105,6 +105,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://sweeptrack.pro",
+    types: {
+      "application/rss+xml": "https://sweeptrack.pro/blog/feed.xml",
+    },
   },
   openGraph: {
     title: "SweepTrack Pro — Metal Detecting GPS App for Android",

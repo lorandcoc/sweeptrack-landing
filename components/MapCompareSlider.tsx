@@ -82,10 +82,11 @@ export default function MapCompareSlider() {
         >
           {/* Base Image (Old Map) */}
           <div className="absolute inset-0 w-full h-full bg-surface">
-            <Image 
+            <Image
               src="/maps/old_map.jpg"
               alt="Historical Map View"
               fill
+              sizes="(max-width: 768px) 100vw, 960px"
               className="object-cover pointer-events-none opacity-90"
               priority
             />
@@ -99,10 +100,11 @@ export default function MapCompareSlider() {
             className="absolute inset-0 w-full h-full bg-surface"
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
-            <Image 
+            <Image
               src="/maps/satellite_map.jpg"
               alt="Modern Satellite View"
               fill
+              sizes="(max-width: 768px) 100vw, 960px"
               className="object-cover pointer-events-none"
               priority
             />

@@ -149,7 +149,7 @@ export default function Screenshots() {
               className={`flex-shrink-0 snap-center flex flex-col items-center gap-3 screenshot-3d ${get3DClass(i, activeIndex)}`}
             >
               <div className="phone-frame w-[200px] md:w-[230px] pointer-events-none">
-                <Image src={shot.src} alt={shot.alt} width={320} height={693} className="w-full h-auto screenshot-crop" />
+                <Image src={shot.src} alt={shot.alt} width={320} height={693} sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 280px" className="w-full h-auto screenshot-crop" />
               </div>
               <span className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"} pointer-events-none`}>
                 {shot.label}
