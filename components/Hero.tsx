@@ -13,9 +13,14 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
-            <div className="hero-enter inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium mb-6" style={{ animationDelay: "0.1s" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Free to Use &middot; Ad-Free Forever
+            <div className="hero-enter flex flex-wrap gap-2 mb-6" style={{ animationDelay: "0.1s" }}>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                Free to download and use. Pro upgrade unlocks everything.
+              </span>
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-muted text-xs font-medium">
+                Ad-Free Forever
+              </span>
             </div>
 
             <h1 className="hero-enter font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] mb-5" style={{ animationDelay: "0.2s" }}>

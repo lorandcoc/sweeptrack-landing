@@ -91,9 +91,11 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} SweepTrack Pro. All rights reserved.
-          </p>
+          <div className="flex items-center gap-3 text-xs text-muted">
+            <p>&copy; {new Date().getFullYear()} SweepTrack Pro</p>
+            <span className="text-white/10">&middot;</span>
+            <span className="text-accent/60">Ad-Free Forever</span>
+          </div>
           <div className="flex items-center gap-4 text-xs text-muted">
             <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-foreground transition-colors">Terms of Service</a>
