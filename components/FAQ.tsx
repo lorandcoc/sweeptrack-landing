@@ -5,44 +5,44 @@ import { useReveal } from "./useReveal";
 
 const faqs = [
   {
-    q: "Does SweepTrack work offline?",
-    a: "Yes. You can download offline map tiles (Street, Satellite, Terrain, and USGS Historical) for any area, and GPS tracking works with zero cell service. The weather forecast and Nearby Sites features need an internet connection.",
+    q: "How does the Permission Vault keep me from trespassing?",
+    a: "You add each landowner permission with their name, contact, approval status, expiry date, and the exact site boundary drawn on the map. The app shows which permissions are active, expiring, or expired. You can generate a PDF permission letter to share with landowners, and set calendar reminders before permits expire. Combined with Perimeter Guard, you get vibration and audio alerts if you wander outside your approved boundary.",
   },
   {
-    q: "Does it drain my battery?",
-    a: "SweepTrack uses Android's efficient foreground location service. On most phones you'll lose around 10-15% battery per hour of active tracking, similar to Google Maps navigation. Night Vision mode helps save battery on OLED screens.",
+    q: "How do historical maps help me find better spots?",
+    a: "The app overlays genuine USGS topographic survey maps from the 1800s onto your modern satellite view. You can see where old homesteads, schools, churches, roads, and settlements used to be — places that no longer exist on modern maps. These are prime detecting spots because people lived there, dropped things, and the sites are now empty fields. Adjust the overlay opacity to blend old and new.",
   },
   {
-    q: "Is my data private?",
-    a: "All data is stored locally on your device. We don't operate any servers, don't collect analytics, don't show ads, and don't track your behavior. Optional Google Drive backup puts a copy in your own Drive account. We never see your data.",
+    q: "What does the Detecting Forecast actually measure?",
+    a: "It pulls real-time weather data and generates a Detecting Score from 0 to 100 with a verdict: Excellent, Good, Fair, Poor, or Bad. The score factors in soil moisture (wet soil conducts signals deeper), wind speed, temperature, humidity, and precipitation. You can check any day up to a week ahead and search any location. Contextual tips explain why conditions are good or bad.",
   },
   {
-    q: "Can I use it outside the US?",
-    a: "Yes. GPS tracking, offline maps, cloud backup, the Detecting Forecast, and most features work worldwide. The USGS Historical Map overlay is US-only, and tide tables cover US coastal stations via NOAA.",
+    q: "How do I know if I've already covered an area?",
+    a: "Three ways. The coverage heatmap shows a color-coded density overlay of your current session — green means lightly walked, red means hammered, empty means you missed it. Track overlay lets you load past sessions onto the live map so you can see exactly which strips you covered on previous visits. And session comparison lets you stack multiple visits to the same field and spot the gaps instantly.",
   },
   {
-    q: "What's the historical map overlay?",
-    a: "It overlays real USGS Historical Topographic Maps from the ArcGIS collection onto your modern map. You can see where old roads, buildings, settlements, and landmarks used to be — perfect for finding productive detecting spots that no longer exist on modern maps.",
+    q: "What does the Measure tool do?",
+    a: "Tap the map to drop points and measure distance along a path with per-segment labels. Tap point 1 again to close it into a polygon — the app calculates perimeter and area in hectares or acres using real spherical geometry. You can drag vertices to edit, save measurements to the Library with a reverse-geocoded name, and convert any polygon into a Perimeter Guard boundary with one tap.",
   },
   {
-    q: "How does the Detecting Forecast work?",
-    a: "It analyzes soil moisture, wind speed, temperature, humidity, and precipitation to generate a Detecting Score from 0-100 with a one-word verdict (Excellent, Good, Fair, Poor, or Bad). Pick any day up to a week ahead, or search any location on Earth. Contextual tips appear based on what the weather actually looks like.",
+    q: "How does find logging work?",
+    a: "When you dig a target, tap the find button to drop a GPS-pinned marker. Pick one of 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), set the depth on a 0-40 cm slider, and optionally add a name, value, weight, notes, a photo, and an audio recording. Every find is editable later. The photo gallery shows all your find photos in a grid, and find search lets you filter across sessions by name, type, or notes.",
   },
   {
-    q: "Can I export my data?",
-    a: "Yes. Export individual or multiple sessions as GPX (for Google Earth, Garmin), KML, CSV, or SweepTrack JSON (full data with finds and weather).",
+    q: "Does the app support my specific detector?",
+    a: "SweepTrack works with any metal detector — it's a GPS tracker and field toolkit, not a detector controller. As a bonus, it includes 61 preset templates across 12 brands (Minelab, XP, Nokta, Garrett, Fisher, Teknetics, Bounty Hunter, Quest, White's, Tesoro, Detech, Rutus). Save up to 10 custom configurations and share them via JSON export or QR code.",
   },
   {
     q: "What's the difference between Free and Pro?",
-    a: "Free gives you core GPS tracking, 10 sessions, 5 finds, and the basics. Pro unlocks everything: unlimited sessions and finds, track overlay, heatmap, perimeter guard, permission vault, historical maps, offline maps, the Detecting Forecast, Google Drive backup, night vision, session comparison, coin caliper, and all 12 themes.",
+    a: "Free gives you GPS tracking on 3 map types, 10 sessions, 5 finds, 1 preset, and basic tools like the compass, ruler, and measure tool. Pro unlocks everything: unlimited sessions and finds, 10 presets, track overlay, heatmap, perimeter guard, permission vault, historical maps, offline maps, detecting forecast, tide tables, cloud backup, night vision, coin caliper, all 12 themes, and full export. $19.99/year or $2.99/month with a 7-day free trial.",
   },
   {
-    q: "Do I need a specific metal detector?",
-    a: "No. SweepTrack is a GPS tracker, find logger, and field toolkit — it doesn't touch the detector itself, so it works with any brand and any model. As a bonus, there are optional preset templates for 61 popular models across 12 brands (Minelab, XP, Nokta, Garrett, Fisher and more), but they're a nice-to-have, not a requirement.",
+    q: "Does it work when I have no cell service?",
+    a: "Yes. Download map tiles before you leave home — Street, Satellite, Terrain, and Historical Topo are all available for offline use. GPS tracking runs entirely on your phone's hardware with zero internet needed. The only features that require a connection are the weather forecast, tide tables, and nearby sites lookup.",
   },
   {
-    q: "Is there an iOS version?",
-    a: "Not yet. SweepTrack Pro is Android-only for now. An iOS version may come in the future depending on demand.",
+    q: "Is my detecting data private and safe?",
+    a: "All data lives on your device. No servers, no analytics, no ads, no tracking. Optional Google Drive backup stores an encrypted copy in your own Drive account — we never see it. Export your data as GPX, KML, CSV, or JSON anytime. You own everything.",
   },
 ];
 
