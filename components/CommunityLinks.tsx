@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { useReveal } from "./useReveal";
 import { Users } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 const SUPABASE_URL = "https://vntuabtcrllroulgqhwf.supabase.co";
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZudHVhYnRjcmxscm91bGdxaHdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMjYwNTIsImV4cCI6MjA4ODkwMjA1Mn0.WXVRYyUqt98tMe8g_yiFkP7puJUNyaQiQsz6SySKor4";
 
 function NewsletterForm() {
+  const { t } = useI18n();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "duplicate" | "error">("idle");
 
@@ -47,15 +49,15 @@ function NewsletterForm() {
     <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-accent/[0.03]">
       <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
         <div className="text-center sm:text-left">
-          <h3 className="text-lg font-bold text-white mb-1">Want app updates and detecting tips?</h3>
-          <p className="text-muted text-sm">Be the first to know when SweepTrack launches.</p>
+          <h3 className="text-lg font-bold text-white mb-1">{t("community.newsletter_heading")}</h3>
+          <p className="text-muted text-sm">{t("community.newsletter_description")}</p>
         </div>
         {done ? (
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-semibold shrink-0">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            {status === "ok" ? "You're on the list!" : "Already signed up!"}
+            {status === "ok" ? t("community.newsletter_success") : t("community.newsletter_duplicate")}
           </div>
         ) : (
           <form className="flex gap-2 shrink-0" onSubmit={handleSubmit}>
@@ -162,6 +164,7 @@ const communities = [
 ];
 
 export default function CommunityLinks() {
+  const { t } = useI18n();
   const { ref, visible } = useReveal();
 
   return (
@@ -174,10 +177,10 @@ export default function CommunityLinks() {
             <Users className="w-8 h-8 text-accent" />
           </div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Join the <span className="text-accent">hunt</span>
+            {t("community.heading_prefix")}<span className="text-accent">{t("community.heading_accent")}</span>
           </h2>
           <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto">
-            Share your finds, swap tips, and see what other hunters are digging up. We&apos;re all in this together.
+            {t("community.description")}
           </p>
         </div>
 

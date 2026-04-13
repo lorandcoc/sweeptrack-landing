@@ -1,62 +1,72 @@
 "use client";
 
 import { useReveal } from "./useReveal";
+import { useI18n } from "@/lib/i18n";
 
-const steps = [
-  {
-    num: "01",
-    title: "Scout",
-    description: "Check the detecting forecast for soil conditions. Pull up USGS historical maps to find old roads and buildings. Browse nearby sites for leads.",
-    bullets: ["Detecting Forecast", "Historical Map Overlay", "Nearby Sites", "Tide Table"],
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <path d="M21 21l-4.35-4.35" />
-      </svg>
-    ),
-    color: "#FFB000",
-  },
-  {
-    num: "02",
-    title: "Detect",
-    description: "GPS tracks your every step across 4 map types. Perimeter guard keeps you inside your permitted zone. Log finds with photos and notes as you go.",
-    bullets: ["GPS Tracking", "Perimeter Guard", "Find Logging", "Permission Vault"],
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-        <circle cx="12" cy="9" r="2.5" />
-      </svg>
-    ),
-    color: "#00FF6A",
-  },
-  {
-    num: "03",
-    title: "Review",
-    description: "Load past tracks on the live map to see exactly where you missed. Compare past sessions side by side. Export your data. Back everything up to Google Drive.",
-    bullets: ["Track Overlay", "Session Compare", "GPX/KML/CSV Export", "Cloud Backup"],
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
-      </svg>
-    ),
-    color: "#00DDFF",
-  },
+const stepIcons = [
+  (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <path d="M21 21l-4.35-4.35" />
+    </svg>
+  ),
+  (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+      <circle cx="12" cy="9" r="2.5" />
+    </svg>
+  ),
+  (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+      <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+    </svg>
+  ),
 ];
+
+const stepColors = ["#FFB000", "#00FF6A", "#00DDFF"];
 
 export default function HowItWorks() {
   const { ref, visible } = useReveal(0.2);
+  const { t } = useI18n();
+
+  const steps = [
+    {
+      num: "01",
+      title: t("howitworks.step1_title"),
+      description: t("howitworks.step1_description"),
+      bullets: ["Detecting Forecast", "Historical Map Overlay", "Nearby Sites", "Tide Table"],
+      icon: stepIcons[0],
+      color: stepColors[0],
+    },
+    {
+      num: "02",
+      title: t("howitworks.step2_title"),
+      description: t("howitworks.step2_description"),
+      bullets: ["GPS Tracking", "Perimeter Guard", "Find Logging", "Permission Vault"],
+      icon: stepIcons[1],
+      color: stepColors[1],
+    },
+    {
+      num: "03",
+      title: t("howitworks.step3_title"),
+      description: t("howitworks.step3_description"),
+      bullets: ["Track Overlay", "Session Compare", "GPX/KML/CSV Export", "Cloud Backup"],
+      icon: stepIcons[2],
+      color: stepColors[2],
+    },
+  ];
 
   return (
     <section className="py-16 md:py-20 relative">
       <div ref={ref} className={`max-w-5xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-14">
-          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Your Workflow</p>
+          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("howitworks.label")}</p>
           <h2 className="font-display text-3xl md:text-4xl mb-4">
-            Before, During, and <span className="text-accent">After the Hunt</span>
+            {t("howitworks.heading_prefix")}<span className="text-accent">{t("howitworks.heading_accent")}</span>
           </h2>
           <p className="text-muted text-lg max-w-xl mx-auto">
-            SweepTrack covers every phase — not just the tracking part.
+            {t("howitworks.description")}
           </p>
         </div>
 

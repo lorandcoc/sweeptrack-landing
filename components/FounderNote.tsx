@@ -1,9 +1,11 @@
 "use client";
 
 import { useReveal } from "./useReveal";
+import { useI18n } from "@/lib/i18n";
 
 export default function FounderNote() {
   const { ref, visible } = useReveal();
+  const { t } = useI18n();
 
   return (
     <section className="py-16 md:py-20">
@@ -21,7 +23,7 @@ export default function FounderNote() {
             </div>
           </div>
           <p className="text-sm text-muted leading-relaxed">
-            I&apos;m a detectorist and a designer who picked up coding along the way. I wanted an app that felt like it was made for detecting — not a hiking tracker with a new coat of paint. So I started building one for myself. Figured if I like using it, someone else might too.
+            {t("foundernote.quote")}
           </p>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useReveal } from "./useReveal";
+import { useI18n } from "@/lib/i18n";
 
 const screenshots = [
   { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", label: "Live Map & GPS" },
@@ -33,6 +34,7 @@ function get3DClass(index: number, active: number) {
 }
 
 export default function Screenshots() {
+  const { t } = useI18n();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);

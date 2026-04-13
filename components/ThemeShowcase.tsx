@@ -1,6 +1,7 @@
 "use client";
 
 import { useReveal } from "./useReveal";
+import { useI18n } from "@/lib/i18n";
 
 const themes = [
   { name: "Tactical", accent: "#00FF6A", free: false },
@@ -19,6 +20,7 @@ const themes = [
 
 export default function ThemeShowcase() {
   const { ref, visible } = useReveal();
+  const { t } = useI18n();
 
   return (
     <section id="themes" className="py-16 md:py-20">

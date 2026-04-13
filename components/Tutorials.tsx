@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useReveal } from "./useReveal";
 import { Play } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 const shortsData = [
   { id: "1", category: "tracking", title: "Master the Tactical HUD", thumb: "/screenshots/home.png", duration: "0:58" },
@@ -25,6 +26,7 @@ const categories = [
 ];
 
 export default function Tutorials() {
+  const { t } = useI18n();
   const [activeFilter, setActiveFilter] = useState("all");
   const { ref: sectionRef, visible } = useReveal();
 

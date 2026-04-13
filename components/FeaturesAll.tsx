@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useReveal } from "./useReveal";
 import TiltCard from "./TiltCard";
+import { useI18n } from "@/lib/i18n";
 
 /* ─── FEATURED CARD WITH REAL SCREENSHOT ─── */
 
@@ -350,6 +351,7 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 /* ─── Main export ─── */
 
 export default function FeaturesAll() {
+  const { t } = useI18n();
   return (
     <section id="features" className="py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-6">

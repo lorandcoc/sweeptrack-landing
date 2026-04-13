@@ -3,12 +3,14 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useReveal } from "./useReveal";
+import { useI18n } from "@/lib/i18n";
 
 export default function MapCompareSlider() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { ref, visible } = useReveal();
+  const { t } = useI18n();
 
   const handleMove = (clientX: number) => {
     if (!containerRef.current) return;
@@ -57,12 +59,12 @@ export default function MapCompareSlider() {
 
       <div ref={ref} className={`max-w-5xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-12">
-          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Interactive Views</p>
+          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("mapcompare.label")}</p>
           <h2 className="font-display text-3xl md:text-4xl mb-4">
-            See the Unseen with <span className="text-accent">Historical Maps</span>
+            {t("mapcompare.heading_prefix")}<span className="text-accent">{t("mapcompare.heading_accent")}</span>
           </h2>
           <p className="text-muted max-w-2xl mx-auto leading-relaxed">
-            Drag the slider to compare modern satellite imagery with historical surveyor maps. Spot the old homesteads, forgotten trails, and prime detecting spots hiding right in your backyard.
+            {t("mapcompare.description")}
           </p>
         </div>
 
@@ -91,7 +93,7 @@ export default function MapCompareSlider() {
               priority
             />
             <div className="absolute bottom-4 right-4 bg-[#050510]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
-              1880s Survey Map
+              {t("mapcompare.label_old")}
             </div>
           </div>
 
@@ -109,7 +111,7 @@ export default function MapCompareSlider() {
               priority
             />
             <div className="absolute bottom-4 left-4 bg-[#050510]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
-              Modern Satellite View
+              {t("mapcompare.label_modern")}
             </div>
           </div>
 
