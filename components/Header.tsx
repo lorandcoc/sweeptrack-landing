@@ -1,19 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-const navLinks = [
-  { label: "Features", href: "/#features" },
-  { label: "Screenshots", href: "/#screenshots" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Guides", href: "/blog" },
-];
+import { useI18n } from "@/lib/i18n";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
+  const { t } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const navLinks = [
+    { label: t("header.nav_features"), href: "/#features" },
+    { label: t("header.nav_screenshots"), href: "/#screenshots" },
+    { label: t("header.nav_pricing"), href: "/#pricing" },
+    { label: t("header.nav_faq"), href: "/#faq" },
+    { label: t("header.nav_guides"), href: "/blog" },
+  ];
 
   useEffect(() => {
     const onScroll = () => {
@@ -72,11 +75,12 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+          <LanguageToggle />
           <a
             href="/#download"
             className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#050510] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
-            Coming Soon
+            {t("comingsoon.button")}
           </a>
         </nav>
 

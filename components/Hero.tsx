@@ -1,13 +1,18 @@
+"use client";
+
 import ParallaxPhone from "./ParallaxPhone";
 import ComingSoonButton from "./ComingSoonButton";
+import { useI18n } from "@/lib/i18n";
 
 const stats = [
-  { value: "61", label: "Detector Presets" },
-  { value: "131", label: "Coins Catalogued" },
-  { value: "4", label: "Map Types" },
+  { value: "61", key: "hero.stat_presets" },
+  { value: "131", key: "hero.stat_coins" },
+  { value: "4", key: "hero.stat_maps" },
 ];
 
 export default function Hero() {
+  const { t } = useI18n();
+
   return (
     <section className="relative pt-28 pb-12 md:pt-36 md:pb-16">
       <div className="max-w-6xl mx-auto px-6 relative">
@@ -16,33 +21,30 @@ export default function Hero() {
             <div className="hero-enter flex flex-wrap gap-2 mb-6" style={{ animationDelay: "0.1s" }}>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                Free to download and use. Pro upgrade unlocks everything.
+                {t("hero.pill_free")}
               </span>
               <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-muted text-xs font-medium">
-                Ad-Free Forever
+                {t("hero.pill_adfree")}
               </span>
             </div>
 
             <h1 className="hero-enter font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] mb-5" style={{ animationDelay: "0.2s" }}>
-              Never miss a spot.
+              {t("hero.title_line1")}
               <br />
-              Never lose a find.
+              {t("hero.title_line2")}
               <br />
-              <span className="text-accent">Never trespass again.</span>
+              <span className="text-accent">{t("hero.title_line3")}</span>
             </h1>
 
             <p className="hero-enter text-base md:text-lg text-muted max-w-lg mb-6 md:mx-0 mx-auto leading-relaxed" style={{ animationDelay: "0.35s" }}>
-              The GPS field companion built by a detectorist, for detectorists.
-              Track your sessions, map your coverage, log every find, and keep
-              your permissions in order&nbsp;&mdash; all in one app.
+              {t("hero.subtitle")}
             </p>
 
-            {/* Stat pills */}
             <div className="hero-enter flex flex-wrap gap-3 justify-center md:justify-start mb-8" style={{ animationDelay: "0.45s" }}>
               {stats.map((s) => (
-                <div key={s.label} className="flex items-baseline gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                <div key={s.key} className="flex items-baseline gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                   <span className="font-mono text-sm font-semibold text-accent">{s.value}</span>
-                  <span className="text-xs text-muted">{s.label}</span>
+                  <span className="text-xs text-muted">{t(s.key)}</span>
                 </div>
               ))}
             </div>
@@ -53,7 +55,7 @@ export default function Hero() {
                 href="#features"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-white/10 text-foreground hover:border-white/20 transition-colors text-base"
               >
-                See What&apos;s Inside
+                {t("hero.cta_secondary")}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 5v14M19 12l-7 7-7-7" />
                 </svg>

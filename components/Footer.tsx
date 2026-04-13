@@ -1,5 +1,7 @@
 "use client";
 
+import { useI18n } from "@/lib/i18n";
+
 const socials = [
   {
     label: "Facebook",
@@ -34,6 +36,7 @@ const socials = [
 ];
 
 export default function Footer() {
+  const { t } = useI18n();
   return (
     <footer className="border-t border-white/5 pt-14 pb-8 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
@@ -55,7 +58,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-sm mb-5">
-              The metal detecting companion app. GPS tracking, offline maps, cloud backup, and way more than we can fit in this footer.
+              {t("footer.description")}
             </p>
 
             {/* Social Icons */}
@@ -77,14 +80,14 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-foreground">Product</h4>
+            <h4 className="text-sm font-semibold mb-4 text-foreground">{t("footer.product")}</h4>
             <div className="flex flex-col gap-2.5 text-sm text-muted">
-              <a href="/#features" className="hover:text-foreground transition-colors">Features</a>
-              <a href="/#screenshots" className="hover:text-foreground transition-colors">Screenshots</a>
-              <a href="/#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-              <a href="/#faq" className="hover:text-foreground transition-colors">FAQ</a>
-              <a href="/#community" className="hover:text-foreground transition-colors">Community</a>
-              <a href="/blog" className="hover:text-foreground transition-colors">Guides & Tips</a>
+              <a href="/#features" className="hover:text-foreground transition-colors">{t("footer.features")}</a>
+              <a href="/#screenshots" className="hover:text-foreground transition-colors">{t("footer.screenshots")}</a>
+              <a href="/#pricing" className="hover:text-foreground transition-colors">{t("footer.pricing")}</a>
+              <a href="/#faq" className="hover:text-foreground transition-colors">{t("footer.faq")}</a>
+              <a href="/#community" className="hover:text-foreground transition-colors">{t("footer.community")}</a>
+              <a href="/blog" className="hover:text-foreground transition-colors">{t("footer.guides")}</a>
             </div>
           </div>
         </div>
@@ -94,11 +97,11 @@ export default function Footer() {
           <div className="flex items-center gap-3 text-xs text-muted">
             <p>&copy; {new Date().getFullYear()} SweepTrack Pro</p>
             <span className="text-white/10">&middot;</span>
-            <span className="text-accent/60">Ad-Free Forever</span>
+            <span className="text-accent/60">{t("footer.adfree")}</span>
           </div>
           <div className="flex items-center gap-4 text-xs text-muted">
-            <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="/terms" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="/privacy" className="hover:text-foreground transition-colors">{t("footer.privacy")}</a>
+            <a href="/terms" className="hover:text-foreground transition-colors">{t("footer.terms")}</a>
             <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/40 transition-colors">by Loriba</a>
           </div>
         </div>

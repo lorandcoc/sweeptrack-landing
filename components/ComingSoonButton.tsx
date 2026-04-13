@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useI18n } from "@/lib/i18n";
 
 const SUPABASE_URL = "https://vntuabtcrllroulgqhwf.supabase.co";
 const SUPABASE_ANON_KEY =
@@ -41,6 +42,7 @@ export default function ComingSoonButton({
   className?: string;
   size?: "default" | "large";
 }) {
+  const { t } = useI18n();
   const [showEmail, setShowEmail] = useState(false);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "duplicate" | "error">("idle");
@@ -69,7 +71,7 @@ export default function ComingSoonButton({
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="20 6 9 17 4 12" />
         </svg>
-        You&apos;re on the list!
+        {t("comingsoon.success")}
       </div>
     );
   }
@@ -81,7 +83,7 @@ export default function ComingSoonButton({
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="20 6 9 17 4 12" />
         </svg>
-        Already on the list!
+        {t("comingsoon.duplicate")}
       </div>
     );
   }
@@ -95,7 +97,7 @@ export default function ComingSoonButton({
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="your@email.com"
+          placeholder={t("comingsoon.placeholder")}
           autoFocus
           disabled={status === "sending"}
           className="px-4 py-3 rounded-xl bg-surface border border-white/10 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent/40 transition-colors w-[220px] disabled:opacity-50"
@@ -105,7 +107,7 @@ export default function ComingSoonButton({
           disabled={status === "sending"}
           className="px-5 py-3 rounded-xl bg-accent text-[#050510] font-semibold text-sm hover:bg-accent-dim transition-colors shrink-0 disabled:opacity-50"
         >
-          {status === "sending" ? "Joining..." : "Join Waitlist"}
+          {status === "sending" ? t("comingsoon.joining") : t("comingsoon.join")}
         </button>
       </form>
     );
@@ -118,7 +120,7 @@ export default function ComingSoonButton({
         onClick={() => { setStatus("idle"); setShowEmail(true); }}
         className={`group inline-flex items-center justify-center gap-3 ${padClass} rounded-2xl bg-red-500/15 border border-red-500/30 text-red-400 font-semibold ${className}`}
       >
-        Something went wrong — tap to retry
+        {t("comingsoon.error")}
       </button>
     );
   }
@@ -133,7 +135,7 @@ export default function ComingSoonButton({
         <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
         <path d="M13.73 21a2 2 0 01-3.46 0" />
       </svg>
-      Get Notified at Launch
+      {t("comingsoon.button")}
     </button>
   );
 }

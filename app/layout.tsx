@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { I18nProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const inter = Inter({
@@ -151,7 +152,9 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased overflow-x-hidden`}
     >
       <body className="min-h-full aurora-bg overflow-x-hidden">
-        <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
+        <I18nProvider>
+          <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
+        </I18nProvider>
       </body>
     </html>
   );
