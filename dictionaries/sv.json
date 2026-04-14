@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Detektorinställningar",
   "screenshots.shot_detectorlib": "Detektorbibliotek",
   "screenshots.shot_settings": "Inställningar & Teman",
-  "screenshots.shot_moremenu": "Mer-meny"
+  "screenshots.shot_moremenu": "Mer-meny",
+  "screenshots.alt_livemap": "SweepTrack Pro metalldetekteringsapp med GPS-spårning på satellitkarta",
+  "screenshots.alt_measure": "Mätverktyg för metalldetektering med sluten polygon med omkrets och area på satellitvy",
+  "screenshots.alt_forecast": "Detekteringsprognos med markfuktighet, vind, temperatur och luftfuktighet med Detekteringspoäng",
+  "screenshots.alt_history": "Sessionshistorik för metalldetektering med månadslista och batchåtgärder",
+  "screenshots.alt_stats": "Statistik för metalldetekteringssessioner med avstånd, fynd, varaktighet, medelvärden och personbästa",
+  "screenshots.alt_offline": "Ladda ner offlinekartor för metalldetektering från 4 källor för områden utan täckning",
+  "screenshots.alt_permission": "Tillståndsvalv för metalldetektering med markägarens godkännanden, utgångsdatum och gränser",
+  "screenshots.alt_nearby": "Närliggande historiska platser och Wikipedia-landmärken för metalldetekteringsforskning",
+  "screenshots.alt_gallery": "Fotogalleri med metalldetekteringsfynd i rutnät",
+  "screenshots.alt_caliper": "Myntmätare på skärmen som mäter ett mynt efter diameter mot en databas",
+  "screenshots.alt_backup": "Molnbackup för metalldetektering till Google Drive med återställning med ett tryck",
+  "screenshots.alt_nightvision": "Mörkerseendeläge i appen med röd monokromatisk display för sessioner i gryning och skymning",
+  "screenshots.alt_tide": "NOAA tidvattentabell förutsägelser för metalldetektering med intervall på 3, 7 eller 14 dagar",
+  "screenshots.alt_presets": "Detektorinställningar för Minelab, XP, Nokta, Garrett, Fisher och fler metalldetektorer",
+  "screenshots.alt_detectorlib": "Referensbibliotek för metalldetektorer med 61 modeller från 12 märken",
+  "screenshots.alt_settings": "SweepTrack Pro inställningsskärm med 12 färgteman, mörkerseende och språkväxling",
+  "screenshots.alt_moremenu": "Mer-meny med alla SweepTrack Pro-verktyg grupperade efter kategori"
 }

@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Presetări Detector",
   "screenshots.shot_detectorlib": "Bibliotecă Detectoare",
   "screenshots.shot_settings": "Setări & Teme",
-  "screenshots.shot_moremenu": "Meniu Suplimentar"
+  "screenshots.shot_moremenu": "Meniu Suplimentar",
+  "screenshots.alt_livemap": "Aplicația SweepTrack Pro pentru detecția de metale cu urmărire GPS pe hartă satelit",
+  "screenshots.alt_measure": "Instrument de măsurare pentru detecția de metale cu un poligon închis cu perimetru și suprafață pe vedere satelit",
+  "screenshots.alt_forecast": "Prognoza detecției arătând umiditatea solului, vântul, temperatura și umiditatea cu Scorul de Detecție",
+  "screenshots.alt_history": "Istoric sesiuni de detecție cu lista lunară și acțiuni în lot",
+  "screenshots.alt_stats": "Statistici sesiuni de detecție cu distanță, descoperiri, durată, medii și recorduri personale",
+  "screenshots.alt_offline": "Descarcă hărți offline pentru detecția de metale din 4 surse pentru zone fără semnal",
+  "screenshots.alt_permission": "Seif permisiuni pentru detecția de metale cu aprobări proprietari, date expirare și granițe",
+  "screenshots.alt_nearby": "Situri istorice din apropiere și repere Wikipedia pentru cercetare în detecția de metale",
+  "screenshots.alt_gallery": "Galerie foto cu descoperirile din detecția de metale într-un aranjament tip grilă",
+  "screenshots.alt_caliper": "Șubler de monede pe ecran care măsoară o monedă după diametru față de o bază de date",
+  "screenshots.alt_backup": "Backup cloud pentru detecția de metale pe Google Drive cu restaurare dintr-o singură atingere",
+  "screenshots.alt_nightvision": "Modul viziune nocturnă cu afișaj monocromatic roșu pentru sesiuni la apus și răsărit",
+  "screenshots.alt_tide": "Predicții tabel maree NOAA pentru detecția de metale cu intervale de 3, 7 sau 14 zile",
+  "screenshots.alt_presets": "Presetări detector pentru Minelab, XP, Nokta, Garrett, Fisher și alte detectoare de metale",
+  "screenshots.alt_detectorlib": "Bibliotecă de referință detectoare de metale cu 61 de modele în 12 mărci",
+  "screenshots.alt_settings": "Ecran setări SweepTrack Pro cu 12 teme de culoare, viziune nocturnă și comutare limbă",
+  "screenshots.alt_moremenu": "Meniu suplimentar cu toate instrumentele SweepTrack Pro grupate pe categorie"
 }

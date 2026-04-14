@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Presety Detektora",
   "screenshots.shot_detectorlib": "Biblioteka Detektorów",
   "screenshots.shot_settings": "Ustawienia i Motywy",
-  "screenshots.shot_moremenu": "Menu Więcej"
+  "screenshots.shot_moremenu": "Menu Więcej",
+  "screenshots.alt_livemap": "Aplikacja SweepTrack Pro do wykrywania metali ze śledzeniem GPS na mapie satelitarnej",
+  "screenshots.alt_measure": "Narzędzie pomiarowe do wykrywania metali z zamkniętym wielokątem z obwodem i powierzchnią na widoku satelitarnym",
+  "screenshots.alt_forecast": "Prognoza wykrywania z wilgotnością gleby, wiatrem, temperaturą i wilgotnością z Wynikiem Wykrywania",
+  "screenshots.alt_history": "Historia sesji wykrywania metali z miesięczną listą i akcjami masowymi",
+  "screenshots.alt_stats": "Statystyki sesji wykrywania z dystansem, znaleziskami, czasem trwania, średnimi i rekordami osobistymi",
+  "screenshots.alt_offline": "Pobierz mapy offline do wykrywania metali z 4 źródeł dla obszarów bez zasięgu",
+  "screenshots.alt_permission": "Sejf pozwoleń do wykrywania metali ze zgodami właścicieli, datami wygaśnięcia i granicami",
+  "screenshots.alt_nearby": "Pobliskie miejsca historyczne i punkty Wikipedia do badań w wykrywaniu metali",
+  "screenshots.alt_gallery": "Galeria zdjęć znalezisk z wykrywania metali w układzie siatki",
+  "screenshots.alt_caliper": "Suwmiarka monet na ekranie mierząca monetę po średnicy w porównaniu z bazą danych",
+  "screenshots.alt_backup": "Kopia w chmurze do wykrywania metali na Google Drive z przywracaniem jednym dotknięciem",
+  "screenshots.alt_nightvision": "Tryb nocny aplikacji z czerwonym monochromatycznym wyświetlaczem dla sesji o świcie i zmierzchu",
+  "screenshots.alt_tide": "Prognozy tabeli pływów NOAA do wykrywania metali z zakresami 3, 7 lub 14 dni",
+  "screenshots.alt_presets": "Presety detektora dla Minelab, XP, Nokta, Garrett, Fisher i innych wykrywaczy metali",
+  "screenshots.alt_detectorlib": "Biblioteka referencyjna wykrywaczy metali z 61 modelami z 12 marek",
+  "screenshots.alt_settings": "Ekran ustawień SweepTrack Pro z 12 motywami kolorów, trybem nocnym i przełącznikiem języka",
+  "screenshots.alt_moremenu": "Menu z wszystkimi narzędziami SweepTrack Pro pogrupowanymi według kategorii"
 }

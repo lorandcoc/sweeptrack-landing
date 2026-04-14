@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Presets do Detector",
   "screenshots.shot_detectorlib": "Biblioteca de Detectores",
   "screenshots.shot_settings": "Configurações e Temas",
-  "screenshots.shot_moremenu": "Menu Mais"
+  "screenshots.shot_moremenu": "Menu Mais",
+  "screenshots.alt_livemap": "App SweepTrack Pro de deteção de metais com rastreamento GPS em mapa de satélite",
+  "screenshots.alt_measure": "Ferramenta de medição para deteção de metais com polígono fechado com perímetro e área em vista de satélite",
+  "screenshots.alt_forecast": "Previsão de deteção com humidade do solo, vento, temperatura e humidade com Pontuação de Deteção",
+  "screenshots.alt_history": "Histórico de sessões de deteção de metais com lista mensal e ações em lote",
+  "screenshots.alt_stats": "Estatísticas de sessões de deteção com distância, achados, duração, médias e recordes pessoais",
+  "screenshots.alt_offline": "Descarregar mapas offline para deteção de metais de 4 fontes para áreas sem cobertura",
+  "screenshots.alt_permission": "Cofre de permissões de deteção de metais com aprovações de proprietários, datas de validade e limites",
+  "screenshots.alt_nearby": "Locais históricos próximos e pontos Wikipedia para pesquisa em deteção de metais",
+  "screenshots.alt_gallery": "Galeria de fotos de achados de deteção de metais em grelha",
+  "screenshots.alt_caliper": "Paquímetro de moedas no ecrã medindo uma moeda por diâmetro contra uma base de dados",
+  "screenshots.alt_backup": "Backup na nuvem para deteção de metais no Google Drive com restauro de um toque",
+  "screenshots.alt_nightvision": "Modo visão noturna da app com ecrã monocromático vermelho para sessões ao amanhecer e anoitecer",
+  "screenshots.alt_tide": "Previsões de tabela de marés NOAA para deteção de metais com intervalos de 3, 7 ou 14 dias",
+  "screenshots.alt_presets": "Presets de detetor para Minelab, XP, Nokta, Garrett, Fisher e mais detetores de metais",
+  "screenshots.alt_detectorlib": "Biblioteca de referência de detetores de metais com 61 modelos de 12 marcas",
+  "screenshots.alt_settings": "Ecrã de configurações SweepTrack Pro com 12 temas de cor, visão noturna e alternância de idioma",
+  "screenshots.alt_moremenu": "Menu com todas as ferramentas SweepTrack Pro agrupadas por categoria"
 }

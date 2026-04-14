@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Preset Rilevatore",
   "screenshots.shot_detectorlib": "Libreria Rilevatori",
   "screenshots.shot_settings": "Impostazioni e Temi",
-  "screenshots.shot_moremenu": "Menu Altro"
+  "screenshots.shot_moremenu": "Menu Altro",
+  "screenshots.alt_livemap": "App SweepTrack Pro per metal detecting con tracciamento GPS su mappa satellitare",
+  "screenshots.alt_measure": "Strumento di misura per metal detecting con poligono chiuso con perimetro e area su vista satellitare",
+  "screenshots.alt_forecast": "Previsione di rilevamento con umidità del suolo, vento, temperatura e umidità con Punteggio di Rilevamento",
+  "screenshots.alt_history": "Cronologia sessioni di metal detecting con lista mensile e azioni in blocco",
+  "screenshots.alt_stats": "Statistiche sessioni di metal detecting con distanza, ritrovamenti, durata, medie e record personali",
+  "screenshots.alt_offline": "Scarica mappe offline per metal detecting da 4 fonti per aree senza copertura",
+  "screenshots.alt_permission": "Cassaforte permessi per metal detecting con approvazioni proprietari, date di scadenza e confini",
+  "screenshots.alt_nearby": "Siti storici vicini e punti Wikipedia per la ricerca nel metal detecting",
+  "screenshots.alt_gallery": "Galleria fotografica dei ritrovamenti di metal detecting in griglia",
+  "screenshots.alt_caliper": "Calibro monete su schermo che misura una moneta per diametro contro un database",
+  "screenshots.alt_backup": "Backup cloud per metal detecting su Google Drive con ripristino con un tocco",
+  "screenshots.alt_nightvision": "Modalità visione notturna dell'app con display monocromatico rosso per sessioni all'alba e al tramonto",
+  "screenshots.alt_tide": "Previsioni tabella maree NOAA per metal detecting con intervalli di 3, 7 o 14 giorni",
+  "screenshots.alt_presets": "Preset rilevatore per Minelab, XP, Nokta, Garrett, Fisher e altri metal detector",
+  "screenshots.alt_detectorlib": "Libreria di riferimento metal detector con 61 modelli di 12 marchi",
+  "screenshots.alt_settings": "Schermata impostazioni SweepTrack Pro con 12 temi colore, visione notturna e cambio lingua",
+  "screenshots.alt_moremenu": "Menu con tutti gli strumenti SweepTrack Pro raggruppati per categoria"
 }

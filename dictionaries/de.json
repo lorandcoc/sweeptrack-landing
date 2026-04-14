@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Detektor-Vorlagen",
   "screenshots.shot_detectorlib": "Detektor-Bibliothek",
   "screenshots.shot_settings": "Einstellungen & Themes",
-  "screenshots.shot_moremenu": "Mehr-Menü"
+  "screenshots.shot_moremenu": "Mehr-Menü",
+  "screenshots.alt_livemap": "SweepTrack Pro Metallsuch-App mit GPS-Tracking auf Satellitenkarte",
+  "screenshots.alt_measure": "Messwerkzeug für Metallsuche mit geschlossenem Polygon mit Umfang und Fläche auf Satellitenansicht",
+  "screenshots.alt_forecast": "Suchvorhersage mit Bodenfeuchtigkeit, Wind, Temperatur und Luftfeuchtigkeit mit Such-Score",
+  "screenshots.alt_history": "Sitzungsverlauf der Metallsuche mit monatlicher Liste und Stapelverarbeitung",
+  "screenshots.alt_stats": "Statistiken der Metallsuche mit Entfernung, Funden, Dauer, Durchschnitten und persönlichen Bestleistungen",
+  "screenshots.alt_offline": "Offline-Karten für Metallsuche aus 4 Quellen für Gebiete ohne Mobilfunkempfang herunterladen",
+  "screenshots.alt_permission": "Genehmigungstresor für Metallsuche mit Grundeigentümer-Genehmigungen, Ablaufdaten und Grenzen",
+  "screenshots.alt_nearby": "Historische Stätten und Wikipedia-Sehenswürdigkeiten in der Nähe für die Metallsuch-Recherche",
+  "screenshots.alt_gallery": "Fotogalerie der Metallsuch-Funde in einer Rasteransicht",
+  "screenshots.alt_caliper": "Münzmesser auf dem Bildschirm zum Messen einer Münze nach Durchmesser gegen eine Datenbank",
+  "screenshots.alt_backup": "Cloud-Backup für Metallsuche auf Google Drive mit Ein-Tipp-Wiederherstellung",
+  "screenshots.alt_nightvision": "Nachtsichtmodus der Metallsuch-App mit rotem monochromatischem Display für Dämmerung",
+  "screenshots.alt_tide": "NOAA-Gezeitentabelle für Metallsuche mit 3, 7 oder 14 Tagen Vorhersage",
+  "screenshots.alt_presets": "Detektor-Vorlagen für Minelab, XP, Nokta, Garrett, Fisher und weitere Metalldetektoren",
+  "screenshots.alt_detectorlib": "Detektor-Referenzbibliothek mit 61 Modellen aus 12 Marken",
+  "screenshots.alt_settings": "SweepTrack Pro Einstellungen mit 12 Farbthemen, Nachtsicht und Sprachumschaltung",
+  "screenshots.alt_moremenu": "Mehr-Menü mit allen SweepTrack Pro Werkzeugen nach Kategorie gruppiert"
 }

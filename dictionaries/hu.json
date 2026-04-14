@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Detektor Beállítások",
   "screenshots.shot_detectorlib": "Detektor Könyvtár",
   "screenshots.shot_settings": "Beállítások és Témák",
-  "screenshots.shot_moremenu": "További Menü"
+  "screenshots.shot_moremenu": "További Menü",
+  "screenshots.alt_livemap": "SweepTrack Pro fémkereső alkalmazás GPS nyomkövetéssel műholdas térképen",
+  "screenshots.alt_measure": "Fémkereséshez mérőeszköz zárt sokszöggel kerülettel és területtel műholdas nézeten",
+  "screenshots.alt_forecast": "Keresési előrejelzés talajnedvességgel, széllel, hőmérséklettel és páratartalommal Keresési Pontszámmal",
+  "screenshots.alt_history": "Fémkeresési munkamenet előzmények havi listával és tömeges műveletekkel",
+  "screenshots.alt_stats": "Fémkeresési munkamenet statisztikák távolsággal, leletekkel, időtartammal, átlagokkal és személyes rekordokkal",
+  "screenshots.alt_offline": "Offline térképek letöltése fémkereséshez 4 forrásból lefedettség nélküli területekre",
+  "screenshots.alt_permission": "Fémkeresési engedélytár földtulajdonosi jóváhagyásokkal, lejárati dátumokkal és határokkal",
+  "screenshots.alt_nearby": "Közeli történelmi helyszínek és Wikipedia-jelölők fémkeresési kutatáshoz",
+  "screenshots.alt_gallery": "Fémkeresési leletek fotógaléria rácsos elrendezésben",
+  "screenshots.alt_caliper": "Képernyőn megjelenő érmemérő amely átmérő alapján méri az érmét adatbázishoz képest",
+  "screenshots.alt_backup": "Felhő biztonsági mentés fémkereséshez Google Drive-ra egyérintéses visszaállítással",
+  "screenshots.alt_nightvision": "Éjjellátó mód az alkalmazásban piros monokromatikus kijelzővel hajnali és alkonyati munkamenetekhez",
+  "screenshots.alt_tide": "NOAA árapály táblázat előrejelzések fémkereséshez 3, 7 vagy 14 napos tartományokkal",
+  "screenshots.alt_presets": "Detektor beállítások Minelab, XP, Nokta, Garrett, Fisher és további fémkeresőkhöz",
+  "screenshots.alt_detectorlib": "Fémkereső referencia könyvtár 61 modellel 12 márkából",
+  "screenshots.alt_settings": "SweepTrack Pro beállítások képernyő 12 színtémával, éjjellátóval és nyelvváltással",
+  "screenshots.alt_moremenu": "További menü az összes SweepTrack Pro eszközzel kategória szerint csoportosítva"
 }

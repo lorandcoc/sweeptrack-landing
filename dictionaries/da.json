@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Detektor Forudindstillinger",
   "screenshots.shot_detectorlib": "Detektorbibliotek",
   "screenshots.shot_settings": "Indstillinger & Temaer",
-  "screenshots.shot_moremenu": "Mere Menu"
+  "screenshots.shot_moremenu": "Mere Menu",
+  "screenshots.alt_livemap": "SweepTrack Pro metaldetekteringsapp med GPS-sporing på satellitkort",
+  "screenshots.alt_measure": "Måleværktøj til metaldetektion med lukket polygon med omkreds og areal på satellitvisning",
+  "screenshots.alt_forecast": "Detekteringsprognose med jordfugtighed, vind, temperatur og luftfugtighed med Detekteringsscore",
+  "screenshots.alt_history": "Sessionshistorik for metaldetektion med månedlig liste og batchhandlinger",
+  "screenshots.alt_stats": "Statistik for metaldetekteringssessioner med afstand, fund, varighed, gennemsnit og personlige rekorder",
+  "screenshots.alt_offline": "Download offlinekort til metaldetektion fra 4 kilder til områder uden dækning",
+  "screenshots.alt_permission": "Tilladelseshvælving til metaldetektion med lodsejergodkendelser, udløbsdatoer og grænser",
+  "screenshots.alt_nearby": "Nærliggende historiske steder og Wikipedia-vartegn til metaldetekteringsforskning",
+  "screenshots.alt_gallery": "Fotogalleri af metaldetekteringsfund i gittervisning",
+  "screenshots.alt_caliper": "Møntmåler på skærmen der måler en mønt efter diameter mod en database",
+  "screenshots.alt_backup": "Cloud backup til metaldetektion til Google Drive med gendannelse med ét tryk",
+  "screenshots.alt_nightvision": "Nattesynstilstand i appen med rødt monokromatisk display til sessioner ved daggry og skumring",
+  "screenshots.alt_tide": "NOAA tidevandstabel forudsigelser til metaldetektion med intervaller på 3, 7 eller 14 dage",
+  "screenshots.alt_presets": "Detektor forudindstillinger til Minelab, XP, Nokta, Garrett, Fisher og flere metaldetektorer",
+  "screenshots.alt_detectorlib": "Referencebibliotek for metaldetektorer med 61 modeller fra 12 mærker",
+  "screenshots.alt_settings": "SweepTrack Pro indstillingsskærm med 12 farvetemaer, nattesyn og sprogskift",
+  "screenshots.alt_moremenu": "Mere menu med alle SweepTrack Pro-værktøjer grupperet efter kategori"
 }

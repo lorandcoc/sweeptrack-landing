@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Detector Presets",
   "screenshots.shot_detectorlib": "Detectorbibliotheek",
   "screenshots.shot_settings": "Instellingen & Thema's",
-  "screenshots.shot_moremenu": "Meer Menu"
+  "screenshots.shot_moremenu": "Meer Menu",
+  "screenshots.alt_livemap": "SweepTrack Pro metaaldetectie-app met GPS-tracking op satellietkaart",
+  "screenshots.alt_measure": "Meetgereedschap voor metaaldetectie met gesloten polygoon met omtrek en oppervlakte op satellietbeeld",
+  "screenshots.alt_forecast": "Detectievoorspelling met bodemvocht, wind, temperatuur en luchtvochtigheid met Detectiescore",
+  "screenshots.alt_history": "Sessiegeschiedenis van metaaldetectie met maandelijkse lijst en batchacties",
+  "screenshots.alt_stats": "Statistieken van metaaldetectiesessies met afstand, vondsten, duur, gemiddelden en persoonlijke records",
+  "screenshots.alt_offline": "Offline kaarten downloaden voor metaaldetectie uit 4 bronnen voor gebieden zonder bereik",
+  "screenshots.alt_permission": "Vergunningenkluis voor metaaldetectie met goedkeuringen van landeigenaren, vervaldatums en grenzen",
+  "screenshots.alt_nearby": "Nabije historische locaties en Wikipedia-bezienswaardigheden voor metaaldetectie-onderzoek",
+  "screenshots.alt_gallery": "Fotogalerij van metaaldetectievondsten in rasterweergave",
+  "screenshots.alt_caliper": "Muntmeter op scherm die een munt meet op diameter tegen een database",
+  "screenshots.alt_backup": "Cloud backup voor metaaldetectie naar Google Drive met herstel met één tik",
+  "screenshots.alt_nightvision": "Nachtzichtmodus van de app met rood monochromatisch scherm voor sessies bij schemering",
+  "screenshots.alt_tide": "NOAA getijdentabel voorspellingen voor metaaldetectie met bereiken van 3, 7 of 14 dagen",
+  "screenshots.alt_presets": "Detector presets voor Minelab, XP, Nokta, Garrett, Fisher en meer metaaldetectoren",
+  "screenshots.alt_detectorlib": "Referentiebibliotheek van metaaldetectoren met 61 modellen van 12 merken",
+  "screenshots.alt_settings": "SweepTrack Pro instellingenscherm met 12 kleurthema's, nachtzicht en taalwissel",
+  "screenshots.alt_moremenu": "Meer menu met alle SweepTrack Pro tools gegroepeerd per categorie"
 }

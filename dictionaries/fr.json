@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Préréglages Détecteur",
   "screenshots.shot_detectorlib": "Bibliothèque de Détecteurs",
   "screenshots.shot_settings": "Paramètres & Thèmes",
-  "screenshots.shot_moremenu": "Menu Plus"
+  "screenshots.shot_moremenu": "Menu Plus",
+  "screenshots.alt_livemap": "Application SweepTrack Pro de détection de métaux avec suivi GPS sur carte satellite",
+  "screenshots.alt_measure": "Outil de mesure pour la détection de métaux avec polygone fermé avec périmètre et surface sur vue satellite",
+  "screenshots.alt_forecast": "Prévision de détection avec humidité du sol, vent, température et humidité avec Score de Détection",
+  "screenshots.alt_history": "Historique des sessions de détection de métaux avec liste mensuelle et actions groupées",
+  "screenshots.alt_stats": "Statistiques des sessions de détection avec distance, trouvailles, durée, moyennes et records personnels",
+  "screenshots.alt_offline": "Télécharger des cartes hors ligne pour la détection de métaux depuis 4 sources pour les zones sans réseau",
+  "screenshots.alt_permission": "Coffre de permissions pour la détection de métaux avec approbations de propriétaires, dates d'expiration et limites",
+  "screenshots.alt_nearby": "Sites historiques à proximité et points Wikipedia pour la recherche en détection de métaux",
+  "screenshots.alt_gallery": "Galerie photo des trouvailles de détection de métaux en grille",
+  "screenshots.alt_caliper": "Pied à coulisse sur écran mesurant une pièce par diamètre contre une base de données",
+  "screenshots.alt_backup": "Sauvegarde cloud pour la détection de métaux sur Google Drive avec restauration en un clic",
+  "screenshots.alt_nightvision": "Mode vision nocturne de l'application avec affichage monochromatique rouge pour les sessions à l'aube et au crépuscule",
+  "screenshots.alt_tide": "Prédictions de table des marées NOAA pour la détection de métaux avec plages de 3, 7 ou 14 jours",
+  "screenshots.alt_presets": "Préréglages détecteur pour Minelab, XP, Nokta, Garrett, Fisher et autres détecteurs de métaux",
+  "screenshots.alt_detectorlib": "Bibliothèque de référence de détecteurs de métaux avec 61 modèles de 12 marques",
+  "screenshots.alt_settings": "Écran paramètres SweepTrack Pro avec 12 thèmes de couleur, vision nocturne et changement de langue",
+  "screenshots.alt_moremenu": "Menu avec tous les outils SweepTrack Pro regroupés par catégorie"
 }

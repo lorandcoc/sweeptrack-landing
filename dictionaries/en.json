@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Machine Presets",
   "screenshots.shot_detectorlib": "Detector Library",
   "screenshots.shot_settings": "Settings & Themes",
-  "screenshots.shot_moremenu": "More Menu"
+  "screenshots.shot_moremenu": "More Menu",
+  "screenshots.alt_livemap": "SweepTrack Pro metal detecting app GPS tracking on satellite map",
+  "screenshots.alt_measure": "Metal detecting measure tool showing a closed polygon with perimeter and area on a satellite view",
+  "screenshots.alt_forecast": "Metal detecting forecast showing soil moisture, wind, temperature and humidity with Detecting Score",
+  "screenshots.alt_history": "Metal detecting session history with monthly session list and batch actions",
+  "screenshots.alt_stats": "Metal detecting session statistics with distance, finds, duration, averages and personal bests",
+  "screenshots.alt_offline": "Download offline metal detecting maps from 4 tile sources for areas with no cell coverage",
+  "screenshots.alt_permission": "Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries",
+  "screenshots.alt_nearby": "Nearby historic sites and Wikipedia landmarks for metal detecting research",
+  "screenshots.alt_gallery": "Photo gallery of metal detecting finds in a grid layout",
+  "screenshots.alt_caliper": "On-screen coin caliper measuring a coin by diameter against a built-in coin database",
+  "screenshots.alt_backup": "Metal detecting cloud backup to Google Drive with one-tap restore",
+  "screenshots.alt_nightvision": "Metal detecting app night vision mode with red monochromatic display for dawn and dusk sessions",
+  "screenshots.alt_tide": "NOAA tide table predictions for metal detecting with 3, 7, or 14 day ranges",
+  "screenshots.alt_presets": "Machine presets for Minelab, XP, Nokta, Garrett, Fisher and more metal detectors",
+  "screenshots.alt_detectorlib": "Metal detector reference library with 61 models across 12 brands",
+  "screenshots.alt_settings": "SweepTrack Pro settings screen with 12 color themes, night vision, and language toggle",
+  "screenshots.alt_moremenu": "More menu hub with all SweepTrack Pro tools grouped by category"
 }

@@ -237,5 +237,22 @@
   "screenshots.shot_presets": "Dedektör Ayarları",
   "screenshots.shot_detectorlib": "Dedektör Kütüphanesi",
   "screenshots.shot_settings": "Ayarlar ve Temalar",
-  "screenshots.shot_moremenu": "Diğer Menü"
+  "screenshots.shot_moremenu": "Diğer Menü",
+  "screenshots.alt_livemap": "SweepTrack Pro metal tespit uygulaması uydu haritasında GPS takibi",
+  "screenshots.alt_measure": "Metal tespit için ölçüm aracı uydu görünümünde çevre ve alan ile kapalı çokgen",
+  "screenshots.alt_forecast": "Toprak nemi, rüzgar, sıcaklık ve nem ile Tespit Puanı gösteren tespit tahmini",
+  "screenshots.alt_history": "Aylık oturum listesi ve toplu işlemlerle metal tespit oturum geçmişi",
+  "screenshots.alt_stats": "Mesafe, buluntular, süre, ortalamalar ve kişisel en iyilerle metal tespit oturum istatistikleri",
+  "screenshots.alt_offline": "Kapsama alanı olmayan bölgeler için 4 kaynaktan çevrimdışı metal tespit haritaları indirin",
+  "screenshots.alt_permission": "Arazi sahibi onayları, son kullanma tarihleri ve sınırlarla metal tespit izin kasası",
+  "screenshots.alt_nearby": "Metal tespit araştırması için yakın tarihi yerler ve Wikipedia yer işaretleri",
+  "screenshots.alt_gallery": "Izgara düzeninde metal tespit buluntularının fotoğraf galerisi",
+  "screenshots.alt_caliper": "Bir veritabanına karşı çapa göre madeni para ölçen ekran üstü madeni para kumpası",
+  "screenshots.alt_backup": "Tek dokunuşla geri yükleme ile Google Drive'a metal tespit bulut yedeklemesi",
+  "screenshots.alt_nightvision": "Şafak ve alacakaranlık oturumları için kırmızı monokrom ekranlı gece görüş modu",
+  "screenshots.alt_tide": "3, 7 veya 14 günlük aralıklarla metal tespit için NOAA gelgit tablosu tahminleri",
+  "screenshots.alt_presets": "Minelab, XP, Nokta, Garrett, Fisher ve daha fazla metal dedektör için dedektör ayarları",
+  "screenshots.alt_detectorlib": "12 markada 61 model ile metal dedektör referans kütüphanesi",
+  "screenshots.alt_settings": "12 renk teması, gece görüşü ve dil değiştirme ile SweepTrack Pro ayarlar ekranı",
+  "screenshots.alt_moremenu": "Kategoriye göre gruplandırılmış tüm SweepTrack Pro araçlarıyla diğer menü"
 }

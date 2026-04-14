@@ -6,23 +6,23 @@ import { useReveal } from "./useReveal";
 import { useI18n } from "@/lib/i18n";
 
 const screenshots = [
-  { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", labelKey: "screenshots.shot_livemap" },
-  { src: "/screenshots/measure2.jpg", alt: "Metal detecting measure tool showing a closed polygon with perimeter 606 m and area 2.14 ha on a satellite view of a field", labelKey: "screenshots.shot_measure" },
-  { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture, wind, temperature and humidity with Detecting Score", labelKey: "screenshots.shot_forecast" },
-  { src: "/screenshots/history.png", alt: "Metal detecting session history with monthly session list and batch actions", labelKey: "screenshots.shot_history" },
-  { src: "/screenshots/stats.png", alt: "Metal detecting session statistics with distance, finds, duration, averages and personal bests", labelKey: "screenshots.shot_stats" },
-  { src: "/screenshots/offline_maps.png", alt: "Download offline metal detecting maps from 4 tile sources for areas with no cell coverage", labelKey: "screenshots.shot_offline" },
-  { src: "/screenshots/permission_vault.png", alt: "Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries", labelKey: "screenshots.shot_permission" },
-  { src: "/screenshots/nearby.png", alt: "Nearby historic sites and Wikipedia landmarks for metal detecting research", labelKey: "screenshots.shot_nearby" },
-  { src: "/screenshots/gallery.png", alt: "Photo gallery of metal detecting finds in a grid layout", labelKey: "screenshots.shot_gallery" },
-  { src: "/screenshots/caliper.png", alt: "On-screen coin caliper measuring a coin by diameter against a built-in coin database", labelKey: "screenshots.shot_caliper" },
-  { src: "/screenshots/cloud_backup.png", alt: "Metal detecting cloud backup to Google Drive with one-tap restore", labelKey: "screenshots.shot_backup" },
-  { src: "/screenshots/night_vision.png", alt: "Metal detecting app night vision mode with red monochromatic display for dawn and dusk sessions", labelKey: "screenshots.shot_nightvision" },
-  { src: "/screenshots/tide.png", alt: "NOAA tide table predictions for metal detecting with 3, 7, or 14 day ranges", labelKey: "screenshots.shot_tide" },
-  { src: "/screenshots/presets.png", alt: "Machine presets for Minelab, XP, Nokta, Garrett, Fisher and more metal detectors", labelKey: "screenshots.shot_presets" },
-  { src: "/screenshots/detector_list.png", alt: "Metal detector reference library with 61 models across 12 brands", labelKey: "screenshots.shot_detectorlib" },
-  { src: "/screenshots/settings.png", alt: "SweepTrack Pro settings screen with 12 color themes, night vision, and language toggle", labelKey: "screenshots.shot_settings" },
-  { src: "/screenshots/more_menu.png", alt: "More menu hub with all SweepTrack Pro tools grouped by category", labelKey: "screenshots.shot_moremenu" },
+  { src: "/screenshots/home.png", altKey: "screenshots.alt_livemap", labelKey: "screenshots.shot_livemap" },
+  { src: "/screenshots/measure2.jpg", altKey: "screenshots.alt_measure", labelKey: "screenshots.shot_measure" },
+  { src: "/screenshots/forecast.png", altKey: "screenshots.alt_forecast", labelKey: "screenshots.shot_forecast" },
+  { src: "/screenshots/history.png", altKey: "screenshots.alt_history", labelKey: "screenshots.shot_history" },
+  { src: "/screenshots/stats.png", altKey: "screenshots.alt_stats", labelKey: "screenshots.shot_stats" },
+  { src: "/screenshots/offline_maps.png", altKey: "screenshots.alt_offline", labelKey: "screenshots.shot_offline" },
+  { src: "/screenshots/permission_vault.png", altKey: "screenshots.alt_permission", labelKey: "screenshots.shot_permission" },
+  { src: "/screenshots/nearby.png", altKey: "screenshots.alt_nearby", labelKey: "screenshots.shot_nearby" },
+  { src: "/screenshots/gallery.png", altKey: "screenshots.alt_gallery", labelKey: "screenshots.shot_gallery" },
+  { src: "/screenshots/caliper.png", altKey: "screenshots.alt_caliper", labelKey: "screenshots.shot_caliper" },
+  { src: "/screenshots/cloud_backup.png", altKey: "screenshots.alt_backup", labelKey: "screenshots.shot_backup" },
+  { src: "/screenshots/night_vision.png", altKey: "screenshots.alt_nightvision", labelKey: "screenshots.shot_nightvision" },
+  { src: "/screenshots/tide.png", altKey: "screenshots.alt_tide", labelKey: "screenshots.shot_tide" },
+  { src: "/screenshots/presets.png", altKey: "screenshots.alt_presets", labelKey: "screenshots.shot_presets" },
+  { src: "/screenshots/detector_list.png", altKey: "screenshots.alt_detectorlib", labelKey: "screenshots.shot_detectorlib" },
+  { src: "/screenshots/settings.png", altKey: "screenshots.alt_settings", labelKey: "screenshots.shot_settings" },
+  { src: "/screenshots/more_menu.png", altKey: "screenshots.alt_moremenu", labelKey: "screenshots.shot_moremenu" },
 ];
 
 function get3DClass(index: number, active: number) {
@@ -149,7 +149,7 @@ export default function Screenshots() {
               className={`flex-shrink-0 snap-center flex flex-col items-center gap-3 screenshot-3d ${get3DClass(i, activeIndex)}`}
             >
               <div className="phone-frame w-[200px] md:w-[230px] pointer-events-none">
-                <Image src={shot.src} alt={shot.alt} width={320} height={693} sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 280px" className="w-full h-auto screenshot-crop" />
+                <Image src={shot.src} alt={t(shot.altKey)} width={320} height={693} sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 280px" className="w-full h-auto screenshot-crop" />
               </div>
               <span className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"} pointer-events-none`}>
                 {t(shot.labelKey)}

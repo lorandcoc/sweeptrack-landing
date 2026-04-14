@@ -409,5 +409,22 @@
   "screenshots.shot_presets": "Presets de Detector",
   "screenshots.shot_detectorlib": "Biblioteca de Detectores",
   "screenshots.shot_settings": "Ajustes y Temas",
-  "screenshots.shot_moremenu": "Menú Más"
+  "screenshots.shot_moremenu": "Menú Más",
+  "screenshots.alt_livemap": "App SweepTrack Pro de detección de metales con seguimiento GPS en mapa satelital",
+  "screenshots.alt_measure": "Herramienta de medición para detección de metales con polígono cerrado con perímetro y área en vista satelital",
+  "screenshots.alt_forecast": "Pronóstico de detección con humedad del suelo, viento, temperatura y humedad con Puntuación de Detección",
+  "screenshots.alt_history": "Historial de sesiones de detección de metales con lista mensual y acciones por lotes",
+  "screenshots.alt_stats": "Estadísticas de sesiones de detección con distancia, hallazgos, duración, promedios y récords personales",
+  "screenshots.alt_offline": "Descargar mapas sin conexión para detección de metales de 4 fuentes para zonas sin cobertura",
+  "screenshots.alt_permission": "Bóveda de permisos de detección de metales con aprobaciones de propietarios, fechas de vencimiento y límites",
+  "screenshots.alt_nearby": "Sitios históricos cercanos y puntos de Wikipedia para investigación de detección de metales",
+  "screenshots.alt_gallery": "Galería de fotos de hallazgos de detección de metales en diseño de cuadrícula",
+  "screenshots.alt_caliper": "Calibrador de monedas en pantalla midiendo una moneda por diámetro contra una base de datos",
+  "screenshots.alt_backup": "Copia de seguridad en la nube para detección de metales en Google Drive con restauración de un toque",
+  "screenshots.alt_nightvision": "Modo visión nocturna de la app con pantalla monocromática roja para sesiones al amanecer y atardecer",
+  "screenshots.alt_tide": "Predicciones de tabla de mareas NOAA para detección de metales con rangos de 3, 7 o 14 días",
+  "screenshots.alt_presets": "Presets de detector para Minelab, XP, Nokta, Garrett, Fisher y más detectores de metales",
+  "screenshots.alt_detectorlib": "Biblioteca de referencia de detectores de metales con 61 modelos de 12 marcas",
+  "screenshots.alt_settings": "Pantalla de ajustes de SweepTrack Pro con 12 temas de color, visión nocturna y cambio de idioma",
+  "screenshots.alt_moremenu": "Menú con todas las herramientas de SweepTrack Pro agrupadas por categoría"
 }
