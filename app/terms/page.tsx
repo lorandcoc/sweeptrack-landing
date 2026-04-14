@@ -90,8 +90,8 @@ export default function TermsOfService() {
             <H3>5.1 Free Tier</H3>
             <P>The App offers limited functionality at no cost, including:</P>
             <UL>
-              <li>Up to 5 finds per session</li>
-              <li>Up to 10 sessions in history</li>
+              <li>Unlimited sessions</li>
+              <li>Up to 5 finds</li>
               <li>1 detector preset slot</li>
               <li>Access to core tracking and mapping features</li>
             </UL>

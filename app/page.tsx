@@ -56,7 +56,7 @@ const jsonLdGraph = [
         price: "0",
         priceCurrency: "USD",
         name: "Free",
-        description: "Core GPS tracking, 10 sessions, 5 finds, 1 detector preset",
+        description: "Core GPS tracking, unlimited sessions, 5 finds, 1 detector preset",
       },
       {
         "@type": "Offer",

@@ -25,10 +25,10 @@ type FeatureRow = {
  */
 const features: FeatureRow[] = [
   { key: "gps", free: "string", freeKey: "pricing.feat_gps_free", pro: "string", proKey: "pricing.feat_gps_pro" },
-  { key: "sessions", free: "string", freeKey: "pricing.feat_sessions_free", pro: "string", proKey: "pricing.feat_sessions_pro" },
+  { key: "sessions", free: true, pro: true },
   { key: "finds", free: "string", freeKey: "pricing.feat_finds_free", pro: "string", proKey: "pricing.feat_finds_pro" },
   { key: "presets", free: "string", freeKey: "pricing.feat_presets_free", pro: "string", proKey: "pricing.feat_presets_pro" },
-  { key: "measure", free: true, pro: true },
+  { key: "measure", free: false, pro: true },
   { key: "track", free: false, pro: true },
   { key: "perimeter", free: false, pro: true },
   { key: "permission", free: false, pro: true },
@@ -66,8 +66,8 @@ const extraFeatures: FeatureRow[] = [
   { key: "locationsearch", free: true, pro: true },
 
   // Analysis & history
-  { key: "sessioncompare", free: true, pro: true },
-  { key: "sessionmerge", free: true, pro: true },
+  { key: "sessioncompare", free: false, pro: true },
+  { key: "sessionmerge", free: false, pro: true },
   { key: "batchactions", free: true, pro: true },
   { key: "elevation", free: true, pro: true },
   { key: "advancedstats", free: false, pro: true },
