@@ -11,12 +11,13 @@ const stats = [
 ];
 
 export default function Hero() {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
+  const isLong = locale !== "en";
 
   return (
     <section className="relative pt-28 pb-12 md:pt-36 md:pb-16">
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 relative">
+        <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
           <div className="text-center md:text-left">
             <div className="hero-enter flex flex-wrap gap-2 mb-6" style={{ animationDelay: "0.1s" }}>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium">
@@ -28,7 +29,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="hero-enter font-display text-4xl md:text-5xl lg:text-6xl leading-[1.08] mb-5" style={{ animationDelay: "0.2s" }}>
+            <h1 className={`hero-enter font-display leading-[1.08] mb-5 ${isLong ? "text-3xl md:text-4xl lg:text-5xl" : "text-4xl md:text-5xl lg:text-6xl"}`} style={{ animationDelay: "0.2s" }}>
               {t("hero.title_line1")}
               <br />
               {t("hero.title_line2")}
@@ -36,7 +37,7 @@ export default function Hero() {
               <span className="text-accent">{t("hero.title_line3")}</span>
             </h1>
 
-            <p className="hero-enter text-base md:text-lg text-muted max-w-lg mb-6 md:mx-0 mx-auto leading-relaxed" style={{ animationDelay: "0.35s" }}>
+            <p className="hero-enter text-base md:text-lg text-muted max-w-xl mb-6 md:mx-0 mx-auto leading-relaxed" style={{ animationDelay: "0.35s" }}>
               {t("hero.subtitle")}
             </p>
 
