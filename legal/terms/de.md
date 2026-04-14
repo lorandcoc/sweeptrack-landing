@@ -1,5 +1,3 @@
-## 2. Deutsch (German)
-
 # Nutzungsbedingungen
 
 **SweepTrack Pro** — GPS-Tracking-Anwendung für die Metalldetektion

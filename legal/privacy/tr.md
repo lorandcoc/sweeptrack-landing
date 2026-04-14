@@ -1,5 +1,3 @@
-## 10. Türkçe (Turkish)
-
 # Gizlilik Politikası
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması

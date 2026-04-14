@@ -1,5 +1,3 @@
-## 10. Türkçe (Turkish)
-
 # Hizmet Şartları
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması

@@ -1,5 +1,3 @@
-## 8. Português (Portuguese)
-
 # Termos de Serviço
 
 **SweepTrack Pro** — Aplicação de rastreio GPS para deteção de metais

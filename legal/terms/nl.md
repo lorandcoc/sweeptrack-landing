@@ -1,5 +1,3 @@
-## 5. Nederlands (Dutch)
-
 # Gebruiksvoorwaarden
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie

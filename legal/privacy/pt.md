@@ -1,5 +1,3 @@
-## 8. Português (Portuguese)
-
 # Política de Privacidade
 
 **SweepTrack Pro** — Aplicação de rastreio GPS para deteção de metais

@@ -1,5 +1,3 @@
-## 11. Dansk (Danish)
-
 # Privatlivspolitik
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering

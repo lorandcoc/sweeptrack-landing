@@ -1,5 +1,3 @@
-## 3. Español (Spanish)
-
 # Términos de Servicio
 
 **SweepTrack Pro** — Aplicación de seguimiento GPS para detección de metales

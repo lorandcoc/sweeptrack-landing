@@ -1,5 +1,3 @@
-## 7. Italiano (Italian)
-
 # Termini di Servizio
 
 **SweepTrack Pro** — Applicazione di monitoraggio GPS per la ricerca di metalli

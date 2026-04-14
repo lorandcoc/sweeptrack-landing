@@ -1,5 +1,3 @@
-## 9. Svenska (Swedish)
-
 # Användarvillkor
 
 **SweepTrack Pro** — GPS-spårningsapplikation för metallsökning

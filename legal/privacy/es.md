@@ -1,5 +1,3 @@
-## 3. Español (Spanish)
-
 # Política de Privacidad
 
 **SweepTrack Pro** — Aplicación de seguimiento GPS para detección de metales

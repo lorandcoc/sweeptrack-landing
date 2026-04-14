@@ -125,9 +125,9 @@ export default function LegalPage({ page }: { page: "terms" | "privacy" }) {
   useEffect(() => {
     const loaders = pageLoaders[page];
     const loader = loaders[locale] || loaders.en;
-    loader().then((m) => setRaw(m.default)).catch(() => {
+    loader().then((m) => setRaw(typeof m === "string" ? m : m.default)).catch(() => {
       // Fallback to English if the locale file doesn't exist
-      loaders.en().then((m) => setRaw(m.default));
+      loaders.en().then((m) => setRaw(typeof m === "string" ? m : m.default));
     });
   }, [locale, page]);
 

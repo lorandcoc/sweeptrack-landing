@@ -1,5 +1,3 @@
-## 11. Dansk (Danish)
-
 # Servicevilkår
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering

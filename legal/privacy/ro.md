@@ -1,5 +1,3 @@
-## 1. Română (Romanian)
-
 # Politica de Confidențialitate
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale

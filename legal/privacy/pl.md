@@ -1,5 +1,3 @@
-## 6. Polski (Polish)
-
 # Polityka Prywatności
 
 **SweepTrack Pro** — aplikacja do śledzenia GPS dla pasjonatów poszukiwania metali

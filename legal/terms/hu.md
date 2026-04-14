@@ -1,5 +1,3 @@
-## 12. Magyar (Hungarian)
-
 # Általános Szerződési Feltételek
 
 **SweepTrack Pro** — GPS nyomkövető alkalmazás fémkeresőzéshez

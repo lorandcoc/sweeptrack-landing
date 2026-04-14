@@ -1,5 +1,3 @@
-## 6. Polski (Polish)
-
 # Regulamin korzystania z usługi
 
 **SweepTrack Pro** — aplikacja do śledzenia GPS dla pasjonatów poszukiwania metali

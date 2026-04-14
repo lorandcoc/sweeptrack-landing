@@ -1,5 +1,3 @@
-## 4. Français (French)
-
 # Conditions d'utilisation
 
 **SweepTrack Pro** — Application de suivi GPS pour la détection de métaux

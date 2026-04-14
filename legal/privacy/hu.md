@@ -1,5 +1,3 @@
-## 12. Magyar (Hungarian)
-
 # Adatvédelmi szabályzat
 
 **SweepTrack Pro** — GPS nyomkövető alkalmazás fémkeresőzéshez
