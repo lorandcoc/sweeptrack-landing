@@ -40,7 +40,7 @@ const COUNTRY_TO_LANG: Record<string, string> = {
 
 const COOKIE_NAME = "st-geo-lang";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Don't override if the cookie is already set (one-time detection)
   if (request.cookies.has(COOKIE_NAME)) return NextResponse.next();
 
