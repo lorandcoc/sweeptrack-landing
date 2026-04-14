@@ -2,6 +2,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useI18n, LOCALES } from "@/lib/i18n";
+import * as flagSvgs from "country-flag-icons/string/3x2";
+
+function Flag({ country, className }: { country: string; className?: string }) {
+  const svg = (flagSvgs as Record<string, string>)[country];
+  if (!svg) return null;
+  return <span className={className} dangerouslySetInnerHTML={{ __html: svg }} />;
+}
 
 export default function LanguageToggle() {
   const { locale, setLocale } = useI18n();
@@ -26,7 +33,7 @@ export default function LanguageToggle() {
         aria-label="Change language"
         aria-expanded={open}
       >
-        <span className="text-sm leading-none">{current.flag}</span>
+        <Flag country={current.country} className="inline-flex [&>svg]:w-4 [&>svg]:h-3 [&>svg]:rounded-[1px] shrink-0" />
         <span className="uppercase">{current.code}</span>
         <svg
           width="10"
@@ -56,7 +63,7 @@ export default function LanguageToggle() {
                   : "text-muted hover:text-foreground hover:bg-white/[0.04]"
               }`}
             >
-              <span className="text-base leading-none">{l.flag}</span>
+              <Flag country={l.country} className="inline-flex [&>svg]:w-5 [&>svg]:h-3.5 [&>svg]:rounded-[1px] shrink-0" />
               <span className="flex-1">{l.label}</span>
               {l.code === locale && (
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-accent shrink-0">

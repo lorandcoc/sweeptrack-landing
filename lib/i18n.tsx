@@ -6,20 +6,20 @@ import en from "@/dictionaries/en.json";
 type Dict = Record<string, string>;
 
 export const LOCALES = [
-  { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "ro", label: "Română", flag: "🇷🇴" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
-  { code: "pl", label: "Polski", flag: "🇵🇱" },
-  { code: "it", label: "Italiano", flag: "🇮🇹" },
-  { code: "pt", label: "Português", flag: "🇵🇹" },
-  { code: "sv", label: "Svenska", flag: "🇸🇪" },
-  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
-  { code: "da", label: "Dansk", flag: "🇩🇰" },
-  { code: "hu", label: "Magyar", flag: "🇭🇺" },
-  { code: "ru", label: "Русский", flag: "🇷🇺" },
+  { code: "en", label: "English", country: "GB" },
+  { code: "ro", label: "Română", country: "RO" },
+  { code: "de", label: "Deutsch", country: "DE" },
+  { code: "es", label: "Español", country: "ES" },
+  { code: "fr", label: "Français", country: "FR" },
+  { code: "nl", label: "Nederlands", country: "NL" },
+  { code: "pl", label: "Polski", country: "PL" },
+  { code: "it", label: "Italiano", country: "IT" },
+  { code: "pt", label: "Português", country: "PT" },
+  { code: "sv", label: "Svenska", country: "SE" },
+  { code: "tr", label: "Türkçe", country: "TR" },
+  { code: "da", label: "Dansk", country: "DK" },
+  { code: "hu", label: "Magyar", country: "HU" },
+  { code: "ru", label: "Русский", country: "RU" },
 ] as const;
 
 export type LocaleCode = (typeof LOCALES)[number]["code"];
