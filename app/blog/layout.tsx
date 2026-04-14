@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Guides & Tips",
   description:
-    "Metal detecting guides, location tips, detector comparisons, and SweepTrack Pro tutorials. Practical advice for beginners and experienced hunters.",
+    "Metal detecting guides, location tips, detector comparisons, and SweepTrack Pro tutorials. Practical advice for beginners and experienced detectorists.",
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {

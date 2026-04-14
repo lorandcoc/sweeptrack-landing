@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "beach-metal-detecting-tide-timing",
   title: "Beach Metal Detecting: Tide Timing & Where to Search",
   description:
-    "Learn how to time beach metal detecting hunts around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.",
-};
+    "Learn how to time beach metal detecting sessions around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.",
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "beach-metal-detecting-tide-timing",
+          title: "Beach Metal Detecting: Tide Timing & Where to Search",
+          description: "Learn how to time beach metal detecting sessions around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Beach</p>
@@ -49,12 +58,12 @@ export default function Post() {
             <li><strong>Beach access points</strong> — where people enter the water. Highest density of recent losses.</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Timing Your Hunts</h2>
+          <h2 className="text-xl font-semibold text-accent mt-8">Timing Your Sessions</h2>
           <p>The best beach detecting window is roughly 2 hours before low tide to 1 hour after. After that, the water starts coming back fast. Always keep an eye on the water — getting caught between incoming tide and a cliff or seawall is dangerous.</p>
 
           <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
             <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> has a built-in tide table showing high and low tide times with 3, 7, and 14-day forecasts for U.S. coastal stations. Plan your beach hunts from the app.
+              <strong className="text-foreground">SweepTrack Pro</strong> has a built-in tide table showing high and low tide times with 3, 7, and 14-day forecasts for U.S. coastal stations. Plan your beach sessions from the app.
               {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
             </p>
           </div>

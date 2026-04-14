@@ -3,68 +3,19 @@
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 
-const showcaseFeatures = [
-  {
-    tag: "Intelligence",
-    title: "Know Before You Go",
-    description: "Weather-based detecting score tells you if conditions are right. Soil moisture, wind, temperature, and precipitation — all analyzed into a single score so you never waste a trip.",
-    screenshot: "/screenshots/forecast.png",
-    alt: "Detecting Forecast showing 96% Excellent score",
-    highlight: "96% Excellent",
-    side: "right" as const,
-  },
-  {
-    tag: "Navigation",
-    title: "Never Lose Signal",
-    description: "Download offline maps in 4 formats — Street, Satellite, Terrain, and Historical Topographic. Hunt confidently in areas with zero cell coverage. Your maps stay on device.",
-    screenshot: "/screenshots/offline_maps.png",
-    alt: "Offline Maps with 4 tile sources and download area",
-    highlight: "4 Map Sources",
-    side: "left" as const,
-  },
-  {
-    tag: "Discovery",
-    title: "History Is Closer Than You Think",
-    description: "Find nearby historic sites and Wikipedia landmarks around your position. Every old church, monument, and battlefield is a potential goldmine. Distance and directions included.",
-    screenshot: "/screenshots/nearby.png",
-    alt: "Nearby Sites showing historic locations on map",
-    highlight: "Historic POIs",
-    side: "right" as const,
-  },
-  {
-    tag: "Arsenal",
-    title: "Your Detector Settings. Organized.",
-    description: "Save, organize, and share your detector presets across 61 models from 12 brands. Keep up to 10 configurations ready and share them with hunting buddies via QR code. Never forget your sweet settings again.",
-    screenshot: "/screenshots/presets.png",
-    alt: "Machine Presets for organizing detector settings",
-    highlight: "12 Brands",
-    side: "left" as const,
-  },
-  {
-    tag: "Legal",
-    title: "Stay on the Right Side of the Law",
-    description: "Track landowner permissions with approval status, expiry alerts, boundary maps, and automatic permission letters. The Permission Vault keeps you detecting legally.",
-    screenshot: "/screenshots/permission_vault.png",
-    alt: "Permission Vault with approved and expiring permits",
-    highlight: "Permission Vault",
-    side: "right" as const,
-  },
-  {
-    tag: "Safety",
-    title: "Your Data. Backed Up. Always.",
-    description: "One-tap Google Drive backup for all sessions, presets, permits, and settings. Restore on any device. Lost phone? Broken phone? Your detecting history survives.",
-    screenshot: "/screenshots/cloud_backup.png",
-    alt: "Cloud Backup connected to Google Drive",
-    highlight: "Cloud Backup",
-    side: "left" as const,
-  },
-];
-
 function FeatureRow({
   feature,
   index,
 }: {
-  feature: (typeof showcaseFeatures)[0];
+  feature: {
+    tag: string;
+    title: string;
+    description: string;
+    screenshot: string;
+    alt: string;
+    highlight: string;
+    side: "left" | "right";
+  };
   index: number;
 }) {
   const isLeft = feature.side === "left";
@@ -106,23 +57,80 @@ function FeatureRow({
 
 export default function FeatureShowcase() {
   const { t } = useI18n();
+
+  const showcaseFeatures = [
+    {
+      tag: t("showcase.forecast_tag"),
+      title: t("showcase.forecast_title"),
+      description: t("showcase.forecast_description"),
+      screenshot: "/screenshots/forecast.png",
+      alt: "Detecting Forecast showing 96% Excellent score",
+      highlight: t("showcase.forecast_highlight"),
+      side: "right" as const,
+    },
+    {
+      tag: t("showcase.offline_tag"),
+      title: t("showcase.offline_title"),
+      description: t("showcase.offline_description"),
+      screenshot: "/screenshots/offline_maps.png",
+      alt: "Offline Maps with 4 tile sources and download area",
+      highlight: t("showcase.offline_highlight"),
+      side: "left" as const,
+    },
+    {
+      tag: t("showcase.nearby_tag"),
+      title: t("showcase.nearby_title"),
+      description: t("showcase.nearby_description"),
+      screenshot: "/screenshots/nearby.png",
+      alt: "Nearby Sites showing historic locations on map",
+      highlight: t("showcase.nearby_highlight"),
+      side: "right" as const,
+    },
+    {
+      tag: t("showcase.presets_tag"),
+      title: t("showcase.presets_title"),
+      description: t("showcase.presets_description"),
+      screenshot: "/screenshots/presets.png",
+      alt: "Machine Presets for organizing detector settings",
+      highlight: t("showcase.presets_highlight"),
+      side: "left" as const,
+    },
+    {
+      tag: t("showcase.permission_tag"),
+      title: t("showcase.permission_title"),
+      description: t("showcase.permission_description"),
+      screenshot: "/screenshots/permission_vault.png",
+      alt: "Permission Vault with approved and expiring permits",
+      highlight: t("showcase.permission_highlight"),
+      side: "right" as const,
+    },
+    {
+      tag: t("showcase.backup_tag"),
+      title: t("showcase.backup_title"),
+      description: t("showcase.backup_description"),
+      screenshot: "/screenshots/cloud_backup.png",
+      alt: "Cloud Backup connected to Google Drive",
+      highlight: t("showcase.backup_highlight"),
+      side: "left" as const,
+    },
+  ];
+
   return (
     <section id="features" className="py-16 md:py-20">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">Why Detectorists Love It</p>
+          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("showcase.label")}</p>
           <h2 className="font-display text-3xl md:text-4xl mb-4">
-            Tools That Actually{" "}
-            <span className="text-accent accent-underline">Find More</span>
+            {t("showcase.heading_prefix")}
+            <span className="text-accent accent-underline">{t("showcase.heading_accent")}</span>
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            Every feature is built by a detectorist, for detectorists. No fluff.
-            No generic GPS tracker pretending to be useful in the field.
+            {t("showcase.description")}
           </p>
         </div>
 
         {showcaseFeatures.map((feature, i) => (
-          <FeatureRow key={feature.title} feature={feature} index={i} />
+          <FeatureRow key={i} feature={feature} index={i} />
         ))}
       </div>
     </section>

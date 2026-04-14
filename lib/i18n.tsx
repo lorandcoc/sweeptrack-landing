@@ -5,6 +5,41 @@ import en from "@/dictionaries/en.json";
 
 type Dict = Record<string, string>;
 
+export const LOCALES = [
+  { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "ro", label: "Română", flag: "🇷🇴" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
+  { code: "pl", label: "Polski", flag: "🇵🇱" },
+  { code: "it", label: "Italiano", flag: "🇮🇹" },
+  { code: "pt", label: "Português", flag: "🇵🇹" },
+  { code: "sv", label: "Svenska", flag: "🇸🇪" },
+  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
+  { code: "da", label: "Dansk", flag: "🇩🇰" },
+  { code: "hu", label: "Magyar", flag: "🇭🇺" },
+  { code: "ru", label: "Русский", flag: "🇷🇺" },
+] as const;
+
+export type LocaleCode = (typeof LOCALES)[number]["code"];
+
+const loaders: Record<string, () => Promise<{ default: Dict }>> = {
+  ro: () => import("@/dictionaries/ro.json"),
+  de: () => import("@/dictionaries/de.json"),
+  es: () => import("@/dictionaries/es.json"),
+  fr: () => import("@/dictionaries/fr.json"),
+  nl: () => import("@/dictionaries/nl.json"),
+  pl: () => import("@/dictionaries/pl.json"),
+  it: () => import("@/dictionaries/it.json"),
+  pt: () => import("@/dictionaries/pt.json"),
+  sv: () => import("@/dictionaries/sv.json"),
+  tr: () => import("@/dictionaries/tr.json"),
+  da: () => import("@/dictionaries/da.json"),
+  hu: () => import("@/dictionaries/hu.json"),
+  ru: () => import("@/dictionaries/ru.json"),
+};
+
 const I18nContext = createContext<{
   t: (key: string) => string;
   locale: string;
@@ -21,19 +56,19 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("st-locale");
-    if (saved === "ro") {
-      setLocaleState("ro");
-      import("@/dictionaries/ro.json").then((m) => setDict(m.default as Dict));
+    if (saved && saved !== "en" && saved in loaders) {
+      setLocaleState(saved);
+      loaders[saved]().then((m) => setDict(m.default as Dict));
     }
   }, []);
 
   const setLocale = useCallback((l: string) => {
     setLocaleState(l);
     localStorage.setItem("st-locale", l);
-    if (l === "ro") {
-      import("@/dictionaries/ro.json").then((m) => setDict(m.default as Dict));
-    } else {
+    if (l === "en") {
       setDict(en as Dict);
+    } else if (l in loaders) {
+      loaders[l]().then((m) => setDict(m.default as Dict));
     }
   }, []);
 

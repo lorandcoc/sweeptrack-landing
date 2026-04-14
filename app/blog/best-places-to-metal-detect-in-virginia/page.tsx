@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "best-places-to-metal-detect-in-virginia",
   title: "Best Places to Metal Detect in Virginia",
   description:
-    "Virginia's colonial and Civil War history makes it rich detecting territory — but strict laws on federal and state land mean you need to know the rules.",
-};
+    "Virginia",
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "best-places-to-metal-detect-in-virginia",
+          title: "Best Places to Metal Detect in Virginia",
+          description: "Virginia",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Location</p>

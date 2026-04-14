@@ -28,6 +28,11 @@ Before writing ANY code, run `git log --oneline -10` and `git diff HEAD` to unde
 - Accent color: #00FF6A (Tactical green)
 - Background: #0A0A1A
 
+## Language Rules
+- **NEVER use "hunt", "hunting", "hunter", or any hunting-derived language.** This is a metal detecting app, NOT a hunting app. The same applies to Romanian ("vânătoare", "vânător", etc.).
+- Use metal-detecting terminology: **session**, **detecting trip**, **dig**, **outing**, **detectorist**, **detecting buddy**, **fellow detectorists**.
+- "Bounty Hunter" is acceptable ONLY as a detector brand name.
+
 ## Deployment
 - GitHub: github.com/lorandcoc/sweeptrack-landing
 - Vercel: sweeptrack-landing.vercel.app

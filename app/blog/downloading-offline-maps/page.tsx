@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "downloading-offline-maps",
   title: "Downloading Offline Maps for Metal Detecting Without Cell Service",
   description:
     "Download offline maps in four tile styles for metal detecting in remote areas with no cell signal. Street, satellite, terrain, and historical topo maps.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "downloading-offline-maps",
+          title: "Downloading Offline Maps for Metal Detecting Without Cell Service",
+          description: "Download offline maps in four tile styles for metal detecting in remote areas with no cell signal. Street, satellite, terrain, and historical topo maps.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>

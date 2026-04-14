@@ -1,22 +1,28 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Detecting Forecast: Plan Every Hunt by the Numbers",
+export const metadata = blogMeta({
+  slug: "detecting-forecast-guide",
+  title: "Detecting Forecast: Plan Every Session by the Numbers",
   description:
     "SweepTrack Pro turns weather into a 0-100 Detecting Score. Check any location up to a week ahead with soil moisture, wind, temperature, and humidity tips.",
-  alternates: {
-    canonical: "https://sweeptrack.pro/blog/detecting-forecast-guide",
-  },
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "detecting-forecast-guide",
+          title: "Detecting Forecast: Plan Every Session by the Numbers",
+          description: "SweepTrack Pro turns weather into a 0-100 Detecting Score. Check any location up to a week ahead with soil moisture, wind, temperature, and humidity tips.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Detecting Forecast: Plan Every Hunt by the Numbers</h1>
+        <h1 className="text-3xl font-bold mb-4">Detecting Forecast: Plan Every Session by the Numbers</h1>
         <p className="text-muted text-sm mb-10">April 2026 &middot; 4 min read</p>
 
         <div className="space-y-6 text-foreground/90 leading-relaxed">

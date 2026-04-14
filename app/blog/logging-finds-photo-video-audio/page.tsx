@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "logging-finds-photo-video-audio",
   title: "Logging Finds with Photos and Audio Notes",
   description:
     "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, and audio recordings. Six find categories in SweepTrack Pro.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "logging-finds-photo-video-audio",
+          title: "Logging Finds with Photos and Audio Notes",
+          description: "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, and audio recordings. Six find categories in SweepTrack Pro.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
@@ -31,7 +40,7 @@ export default function Post() {
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Quick Pin Drop</h2>
-          <p>For a fast log, tap the find button while tracking. It drops a pin at your current GPS position with a timestamp. You can fill in the details later, but the location is captured immediately. This is perfect mid-hunt when you don&apos;t want to stop swinging.</p>
+          <p>For a fast log, tap the find button while tracking. It drops a pin at your current GPS position with a timestamp. You can fill in the details later, but the location is captured immediately. This is perfect mid-session when you don&apos;t want to stop swinging.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Full Logging</h2>
           <p>When you have a moment, open the find and add the details:</p>

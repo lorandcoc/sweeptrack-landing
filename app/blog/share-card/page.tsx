@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "share-card",
   title: "Share Card: A Printable Summary of Your Session",
   description:
     "Generate a shareable PNG session card with your name, date, stats, find breakdown, and score. One tap to share via any app that accepts images.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "share-card",
+          title: "Share Card: A Printable Summary of Your Session",
+          description: "Generate a shareable PNG session card with your name, date, stats, find breakdown, and score. One tap to share via any app that accepts images.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
@@ -17,7 +26,7 @@ export default function Post() {
         <p className="text-muted text-sm mb-10">April 2026 &middot; 2 min read</p>
 
         <div className="space-y-6 text-foreground/90 leading-relaxed">
-          <p>When you want to show a hunting buddy what happened today without screenshotting five different screens, the Share Card is a single 800&times;500 PNG image that sums the whole session up.</p>
+          <p>When you want to show a detecting buddy what happened today without screenshotting five different screens, the Share Card is a single 800&times;500 PNG image that sums the whole session up.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">What&apos;s on the Card</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">

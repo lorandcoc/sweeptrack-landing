@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "how-to-use-old-maps-for-metal-detecting",
   title: "How to Use Old Maps to Find Better Metal Detecting Spots",
   description:
     "Use USGS historical topographic maps to find old homesteads, vanished roads, and forgotten settlements for metal detecting. Tips on reading old topo maps.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "how-to-use-old-maps-for-metal-detecting",
+          title: "How to Use Old Maps to Find Better Metal Detecting Spots",
+          description: "Use USGS historical topographic maps to find old homesteads, vanished roads, and forgotten settlements for metal detecting. Tips on reading old topo maps.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">
           &larr; Back to blog

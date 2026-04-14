@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "best-weather-conditions-for-metal-detecting",
   title: "Best Weather Conditions for Metal Detecting (And When to Stay Home)",
   description:
     "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "best-weather-conditions-for-metal-detecting",
+          title: "Best Weather Conditions for Metal Detecting (And When to Stay Home)",
+          description: "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">
           &larr; Back to blog
@@ -26,7 +35,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Soil Moisture: The #1 Factor</h2>
           <p>
-            Moist soil conducts electromagnetic signals better than dry soil. After a rain, your detector&apos;s signal penetrates deeper and reads targets more clearly. This is why many experienced detectorists plan their hunts for the day after rainfall.
+            Moist soil conducts electromagnetic signals better than dry soil. After a rain, your detector&apos;s signal penetrates deeper and reads targets more clearly. This is why many experienced detectorists plan their sessions for the day after rainfall.
           </p>
           <p>
             Too wet is also a problem — standing water and saturated mud can false signal and make digging miserable. The sweet spot is 40-70% soil moisture.
@@ -44,7 +53,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Barometric Pressure</h2>
           <p>
-            Some detectorists swear that falling barometric pressure (before a storm) improves detecting. The theory is that dropping pressure pushes moisture upward in the soil, improving conductivity. Whether this is science or superstition, many experienced hunters prefer detecting as a storm approaches — just make sure you have shelter nearby.
+            Some detectorists swear that falling barometric pressure (before a storm) improves detecting. The theory is that dropping pressure pushes moisture upward in the soil, improving conductivity. Whether this is science or superstition, many experienced detectorists prefer going out as a storm approaches — just make sure you have shelter nearby.
           </p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">When to Stay Home</h2>
@@ -74,7 +83,7 @@ export default function Post() {
           <div className="mt-8 pt-8 border-t border-white/5">
             <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
             <div className="space-y-3">
-              <Link href="/blog/detecting-forecast-guide" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Detecting Forecast: Plan Every Hunt by the Numbers &rarr;</Link>
+              <Link href="/blog/detecting-forecast-guide" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Detecting Forecast: Plan Every Session by the Numbers &rarr;</Link>
               <Link href="/blog/beach-metal-detecting-tide-timing" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Beach Detecting: Tide Timing &rarr;</Link>
               <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
             </div>

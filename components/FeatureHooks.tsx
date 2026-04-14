@@ -69,7 +69,7 @@ export default function FeatureHooks() {
                 <h3 className="text-xl font-bold">12 Tactical Themes</h3>
               </div>
               <p className="text-muted text-sm mb-8 relative z-10">
-                Match your app to your machine or your environment. Night vision included for dawn & dusk hunts.
+                Match your app to your machine or your environment. Night vision included for dawn & dusk sessions.
               </p>
               
               {/* Fake App HUD */}

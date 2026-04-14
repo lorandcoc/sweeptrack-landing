@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "metal-detecting-laws-in-australia",
   title: "Metal Detecting Laws in Australia",
   description:
     "Australian metal detecting laws vary by state. What you need to know about heritage acts, Aboriginal heritage protection, and where you can legally detect.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "metal-detecting-laws-in-australia",
+          title: "Metal Detecting Laws in Australia",
+          description: "Australian metal detecting laws vary by state. What you need to know about heritage acts, Aboriginal heritage protection, and where you can legally detect.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Location</p>
@@ -26,7 +35,7 @@ export default function Post() {
           <p>Victoria is generally considered the most detecting-friendly state in Australia. The Miner&apos;s Right (now called a Fossicking Licence) is available for a small fee and allows you to prospect for gold and other minerals on Crown land and certain other areas. Many detectorists in Victoria focus on goldfield areas from the 1850s gold rush era. State forests and some Crown land are accessible with the appropriate licence. National parks are off-limits.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">New South Wales</h2>
-          <p>NSW has stricter heritage protection laws. The Heritage Act 1977 protects archaeological relics on all land, and you need an excavation permit to disturb any relic that is 50 years old or older &mdash; even on private land. This makes casual relic hunting significantly more restricted than in Victoria. Fossicking for gold is allowed in designated fossicking areas with a fossicking licence.</p>
+          <p>NSW has stricter heritage protection laws. The Heritage Act 1977 protects archaeological relics on all land, and you need an excavation permit to disturb any relic that is 50 years old or older &mdash; even on private land. This makes casual relic detecting significantly more restricted than in Victoria. Fossicking for gold is allowed in designated fossicking areas with a fossicking licence.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Queensland</h2>
           <p>Queensland has some of the strictest regulations. The Queensland Heritage Act 1992 protects archaeological artifacts, and the Fossicking Act 1994 governs mineral fossicking. You need a fossicking licence to use a metal detector on most land, and detecting is restricted in many areas. National parks, state forests, and heritage-listed areas are generally off-limits.</p>

@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "night-vision-mode",
   title: "Night Vision Mode for Dawn and Dusk Detecting",
   description:
     "Use the red-light night vision display to preserve your dark-adapted eyesight during early morning and late evening metal detecting sessions.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "night-vision-mode",
+          title: "Night Vision Mode for Dawn and Dusk Detecting",
+          description: "Use the red-light night vision display to preserve your dark-adapted eyesight during early morning and late evening metal detecting sessions.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
@@ -27,7 +36,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">When to Use It</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Pre-dawn beach hunts</strong> &mdash; get to the beach before sunrise, work the low tide line</li>
+            <li><strong>Pre-dawn beach sessions</strong> &mdash; get to the beach before sunrise, work the low tide line</li>
             <li><strong>Evening sessions</strong> &mdash; detecting after dinner when the light fades but you want to keep going</li>
             <li><strong>Camping trips</strong> &mdash; checking your session stats around the campfire without blinding yourself</li>
           </ul>

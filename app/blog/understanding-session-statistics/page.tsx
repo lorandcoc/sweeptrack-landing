@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "understanding-session-statistics",
   title: "Understanding Your Session Statistics and Personal Bests",
   description:
     "Learn how to read your metal detecting statistics including session totals, find breakdowns, personal bests, averages, and weather insights.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "understanding-session-statistics",
+          title: "Understanding Your Session Statistics and Personal Bests",
+          description: "Learn how to read your metal detecting statistics including session totals, find breakdowns, personal bests, averages, and weather insights.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
@@ -54,7 +63,7 @@ export default function Post() {
 
           <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
             <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> tracks your detecting statistics automatically, including personal bests, find breakdowns, averages, and weather insights so you can see your progress and optimise your hunts.
+              <strong className="text-foreground">SweepTrack Pro</strong> tracks your detecting statistics automatically, including personal bests, find breakdowns, averages, and weather insights so you can see your progress and optimise your detecting.
               {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
             </p>
           </div>

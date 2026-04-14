@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "best-metal-detectors-under-500",
   title: "Best Metal Detectors Under $500 in 2026",
   description:
     "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "best-metal-detectors-under-500",
+          title: "Best Metal Detectors Under $500 in 2026",
+          description: "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Gear</p>
@@ -28,15 +37,15 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Minelab Vanquish 440</h2>
           <p><strong>Price range:</strong> $280&ndash;$350</p>
-          <p><strong>Best for:</strong> Coin and jewelry hunters in parks and yards</p>
+          <p><strong>Best for:</strong> Coin and jewelry detecting in parks and yards</p>
           <p>Minelab&apos;s Multi-IQ technology gives the Vanquish 440 true simultaneous multi-frequency operation, which is a significant advantage in mineralized soil. It handles mixed trash and targets well, separating good signals from iron better than most machines at this price.</p>
           <p><strong>Key strength:</strong> Multi-frequency technology that was previously only available in $1,000+ machines.</p>
-          <p><strong>Limitation:</strong> Not waterproof beyond the coil. Rain-resistant but not for water hunting. The lighter build feels less robust than some competitors.</p>
+          <p><strong>Limitation:</strong> Not waterproof beyond the coil. Rain-resistant but not for water detecting. The lighter build feels less robust than some competitors.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Garrett Ace 400</h2>
           <p><strong>Price range:</strong> $300&ndash;$370</p>
-          <p><strong>Best for:</strong> All-around detecting, especially relic hunting</p>
-          <p>Garrett has been making detectors for decades, and the Ace 400 benefits from that experience. The Iron Audio feature lets you hear iron targets differently from non-ferrous ones, which is invaluable for relic hunting in iron-infested sites. The 8.5&rdquo; x 11&rdquo; DD coil covers good ground.</p>
+          <p><strong>Best for:</strong> All-around detecting, especially relic recovery</p>
+          <p>Garrett has been making detectors for decades, and the Ace 400 benefits from that experience. The Iron Audio feature lets you hear iron targets differently from non-ferrous ones, which is invaluable for relic detecting in iron-infested sites. The 8.5&rdquo; x 11&rdquo; DD coil covers good ground.</p>
           <p><strong>Key strength:</strong> Iron Audio discrimination &mdash; helps separate relics from iron trash without missing borderline targets.</p>
           <p><strong>Limitation:</strong> Single frequency (10 kHz). Less sensitive to small gold jewelry than higher-frequency or multi-frequency machines.</p>
 
@@ -50,7 +59,7 @@ export default function Post() {
           <h2 className="text-xl font-semibold text-accent mt-8">Fisher F44</h2>
           <p><strong>Price range:</strong> $250&ndash;$320</p>
           <p><strong>Best for:</strong> Coin shooting in parks and school yards</p>
-          <p>The F44 is a weatherproof (not waterproof), lightweight detector with good depth on coins. It&apos;s simple to operate, has a backlit display for early morning hunts, and punches above its weight on coin-sized targets. Fisher has been making detectors since the 1930s, and the F44 reflects that lineage.</p>
+          <p>The F44 is a weatherproof (not waterproof), lightweight detector with good depth on coins. It&apos;s simple to operate, has a backlit display for early morning sessions, and punches above its weight on coin-sized targets. Fisher has been making detectors since the 1930s, and the F44 reflects that lineage.</p>
           <p><strong>Key strength:</strong> Excellent coin depth and target separation for the price.</p>
           <p><strong>Limitation:</strong> Not waterproof &mdash; weather-resistant only. Single frequency (7.69 kHz), which limits sensitivity to very small targets.</p>
 

@@ -16,7 +16,7 @@ const jsonLdGraph = [
     "@type": "WebSite",
     name: "SweepTrack Pro",
     url: "https://sweeptrack.pro",
-    description: "The best metal detecting app for Android. GPS tracking, historical map overlays, offline maps, and 20+ tools for serious detectorists.",
+    description: "The best metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, and 48 field tools built for serious detectorists.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://sweeptrack.pro/#features",
@@ -47,6 +47,7 @@ const jsonLdGraph = [
     applicationCategory: "UtilitiesApplication",
     applicationSubCategory: "Metal Detecting",
     operatingSystem: "Android",
+    alternateName: ["Metal Detecting App", "Metal Detecting App for Android", "Metal Detector GPS App"],
     description:
       "Metal detecting GPS app with USGS historical topographic map overlay, offline maps (4 sources), track overlay, perimeter guard, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 61 detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
     offers: [
@@ -106,9 +107,20 @@ const jsonLdGraph = [
   },
 ];
 
+const breadcrumbLd = {
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://sweeptrack.pro" },
+    { "@type": "ListItem", position: 2, name: "Features", item: "https://sweeptrack.pro/#features" },
+    { "@type": "ListItem", position: 3, name: "Pricing", item: "https://sweeptrack.pro/#pricing" },
+    { "@type": "ListItem", position: 4, name: "FAQ", item: "https://sweeptrack.pro/#faq" },
+    { "@type": "ListItem", position: 5, name: "Guides", item: "https://sweeptrack.pro/blog" },
+  ],
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": jsonLdGraph,
+  "@graph": [...jsonLdGraph, breadcrumbLd],
 };
 
 export default function Home() {
@@ -120,6 +132,7 @@ export default function Home() {
       />
       <Header />
       <main>
+        <h2 className="sr-only">The Best Metal Detecting App for Android — GPS Tracking, Offline Maps, and 48 Field Tools</h2>
         <Hero />
         <MapCompareSlider />
         <HowItWorks />

@@ -1,15 +1,24 @@
-import type { Metadata } from "next";
+import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = blogMeta({
+  slug: "organize-metal-detector-presets-settings",
   title: "How to Organize Your Metal Detector Settings and Presets",
   description:
     "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.",
-};
+});
 
 export default function Post() {
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
+          slug: "organize-metal-detector-presets-settings",
+          title: "How to Organize Your Metal Detector Settings and Presets",
+          description: "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.",
+        })) }}
+      />
       <article className="max-w-2xl w-full">
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
         <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tips</p>
@@ -29,11 +38,11 @@ export default function Post() {
             <li><strong>&ldquo;Trashy Farm — Relics&rdquo;</strong> — low discrimination, iron audio on, slow recovery</li>
             <li><strong>&ldquo;Beach Wet Sand&rdquo;</strong> — salt ground balance, multi-frequency</li>
             <li><strong>&ldquo;Pasture — Deep Silver&rdquo;</strong> — max sensitivity, slow sweep, all metal</li>
-            <li><strong>&ldquo;Competition Mode&rdquo;</strong> — fast recovery, tight discrimination for rally hunts</li>
+            <li><strong>&ldquo;Competition Mode&rdquo;</strong> — fast recovery, tight discrimination for rally events</li>
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Sharing Settings with Others</h2>
-          <p>When a hunting buddy asks &ldquo;what settings are you running?&rdquo; — instead of reading numbers off your screen, export the preset as a small JSON file. Send it over chat or email and they import it in one tap. No typos, no miscommunication.</p>
+          <p>When a detecting buddy asks &ldquo;what settings are you running?&rdquo; — instead of reading numbers off your screen, export the preset as a small JSON file. Send it over chat or email and they import it in one tap. No typos, no miscommunication.</p>
           <p>The exported JSON contains the model name and every field value, so anything forum-friendly works too.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">When to Update Your Presets</h2>

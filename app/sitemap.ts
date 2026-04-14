@@ -44,15 +44,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [
-    { url: base, lastModified: "2026-04-12", changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/blog`, lastModified: "2026-04-12", changeFrequency: "weekly", priority: 0.9 },
+    { url: base, lastModified: "2026-04-14", changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/blog`, lastModified: "2026-04-14", changeFrequency: "weekly", priority: 0.9 },
     ...blogSlugs.map((slug) => ({
       url: `${base}/blog/${slug}`,
-      lastModified: "2026-04-12" as string,
+      lastModified: "2026-04-14" as string,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    { url: `${base}/privacy`, lastModified: "2026-04-12", changeFrequency: "yearly", priority: 0.3 },
-    { url: `${base}/terms`, lastModified: "2026-04-12", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: "2026-04-14", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/terms`, lastModified: "2026-04-14", changeFrequency: "yearly", priority: 0.3 },
   ];
 }
