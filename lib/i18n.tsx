@@ -55,10 +55,12 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [dict, setDict] = useState<Dict>(en as Dict);
 
   useEffect(() => {
-    const saved = localStorage.getItem("st-locale");
-    if (saved && saved !== "en" && saved in loaders) {
-      setLocaleState(saved);
-      loaders[saved]().then((m) => setDict(m.default as Dict));
+    // Priority: 1) manual choice in localStorage, 2) geo-detected cookie, 3) English
+    const manual = localStorage.getItem("st-locale");
+    const lang = manual || document.cookie.match(/(?:^|; )st-geo-lang=([^;]*)/)?.[1] || "en";
+    if (lang !== "en" && lang in loaders) {
+      setLocaleState(lang);
+      loaders[lang]().then((m) => setDict(m.default as Dict));
     }
   }, []);
 
