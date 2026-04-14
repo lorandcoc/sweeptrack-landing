@@ -214,6 +214,18 @@
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "r/metaldetecting tartışmaları, buluntu tanımlama ve uygulama geri bildirimi.",
 
+  "footer.description": "Metal tespit arkadaş uygulaması. GPS takibi, çevrimdışı haritalar, bulut yedekleme ve bu alt bilgiye sığdıramayacağımız çok daha fazlası.",
+  "footer.product": "Ürün",
+  "footer.features": "Özellikler",
+  "footer.screenshots": "Ekran Görüntüleri",
+  "footer.pricing": "Fiyatlandırma",
+  "footer.faq": "SSS",
+  "footer.community": "Topluluk",
+  "footer.guides": "Rehberler ve İpuçları",
+  "footer.adfree": "Sonsuza Kadar Reklamsız",
+  "footer.privacy": "Gizlilik Politikası",
+  "footer.terms": "Hizmet Şartları",
+
   "legal.back": "Ana sayfaya dön",
   "legal.rights": "Tüm hakları saklıdır.",
 
