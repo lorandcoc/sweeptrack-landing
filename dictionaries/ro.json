@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "Onboarding în 5 Pași",
   "pricing.feat_aboutfeedback": "Ecrane Despre + Feedback",
 
+  "blog.back": "Înapoi acasă",
+  "blog.title": "Ghiduri & Sfaturi",
+  "blog.subtitle": "{count} articole care acoperă fiecare funcție și tehnică.",
+  "blog.featured": "Recomandat",
+  "blog.read_suffix": "citire",
+  "blog.cta_beginners": "Mai multe ghiduri în curând. Ești nou în detecție? Începe cu",
+  "blog.cta_link": "ghidul pentru începători",
+  "blog.cat_all": "Toate",
+  "blog.cat_tutorials": "Tutoriale App",
+  "blog.cat_guides": "Ghiduri",
+  "blog.cat_tips": "Sfaturi",
+  "blog.cat_location": "Locații & Legislație",
+  "blog.cat_beach": "Plajă",
+  "blog.cat_beginners": "Începători",
+  "blog.cat_gear": "Echipament",
+
   "legal.back": "Înapoi acasă",
   "legal.rights": "Toate drepturile rezervate.",
 

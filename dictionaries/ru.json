@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "Обучение в 5 шагов",
   "pricing.feat_aboutfeedback": "О программе + Feedback",
 
+  "blog.back": "На главную",
+  "blog.title": "Гайды и Советы",
+  "blog.subtitle": "{count} статей о каждой функции и технике.",
+  "blog.featured": "Рекомендуем",
+  "blog.read_suffix": "чтения",
+  "blog.cta_beginners": "Новые гайды выходят регулярно. Новичок в поиске? Начните с",
+  "blog.cta_link": "руководства для начинающих",
+  "blog.cat_all": "Все",
+  "blog.cat_tutorials": "Обучение",
+  "blog.cat_guides": "Гайды",
+  "blog.cat_tips": "Советы",
+  "blog.cat_location": "Места и Законы",
+  "blog.cat_beach": "Пляж",
+  "blog.cat_beginners": "Новичкам",
+  "blog.cat_gear": "Снаряжение",
+
   "legal.back": "На главную",
   "legal.rights": "Все права защищены.",
 

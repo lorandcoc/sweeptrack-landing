@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "5-trins onboarding",
   "pricing.feat_aboutfeedback": "Om + Feedback",
 
+  "blog.back": "Tilbage til forsiden",
+  "blog.title": "Guides & Tips",
+  "blog.subtitle": "{count} artikler om hver funktion og teknik.",
+  "blog.featured": "Fremhævet",
+  "blog.read_suffix": "læsning",
+  "blog.cta_beginners": "Flere guides kommer løbende. Ny til detektering? Start med",
+  "blog.cta_link": "begynderguiden",
+  "blog.cat_all": "Alle",
+  "blog.cat_tutorials": "App vejledninger",
+  "blog.cat_guides": "Guides",
+  "blog.cat_tips": "Tips",
+  "blog.cat_location": "Steder & Love",
+  "blog.cat_beach": "Strand",
+  "blog.cat_beginners": "Begyndere",
+  "blog.cat_gear": "Udstyr",
+
   "legal.back": "Tilbage til forsiden",
   "legal.rights": "Alle rettigheder forbeholdes.",
 

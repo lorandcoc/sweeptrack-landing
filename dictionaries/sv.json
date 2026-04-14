@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "5-stegs onboarding",
   "pricing.feat_aboutfeedback": "Om + Feedback",
 
+  "blog.back": "Tillbaka till startsidan",
+  "blog.title": "Guider & Tips",
+  "blog.subtitle": "{count} artiklar om varje funktion och teknik.",
+  "blog.featured": "Utvald",
+  "blog.read_suffix": "läsning",
+  "blog.cta_beginners": "Fler guider kommer regelbundet. Ny inom detektering? Börja med",
+  "blog.cta_link": "nybörjarguiden",
+  "blog.cat_all": "Alla",
+  "blog.cat_tutorials": "Handledningar",
+  "blog.cat_guides": "Guider",
+  "blog.cat_tips": "Tips",
+  "blog.cat_location": "Platser & Lagar",
+  "blog.cat_beach": "Strand",
+  "blog.cat_beginners": "Nybörjare",
+  "blog.cat_gear": "Utrustning",
+
   "legal.back": "Tillbaka till startsidan",
   "legal.rights": "Alla rättigheter förbehållna.",
 

@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "5-Schritt Onboarding",
   "pricing.feat_aboutfeedback": "Über + Feedback Bildschirme",
 
+  "blog.back": "Zurück zur Startseite",
+  "blog.title": "Anleitungen & Tipps",
+  "blog.subtitle": "{count} Artikel zu jeder Funktion und Technik.",
+  "blog.featured": "Empfohlen",
+  "blog.read_suffix": "Lesezeit",
+  "blog.cta_beginners": "Regelmäßig neue Anleitungen. Neu beim Sondeln? Starte mit",
+  "blog.cta_link": "dem Einsteiger-Guide",
+  "blog.cat_all": "Alle",
+  "blog.cat_tutorials": "App-Tutorials",
+  "blog.cat_guides": "Anleitungen",
+  "blog.cat_tips": "Tipps",
+  "blog.cat_location": "Orte & Gesetze",
+  "blog.cat_beach": "Strand",
+  "blog.cat_beginners": "Einsteiger",
+  "blog.cat_gear": "Ausrüstung",
+
   "legal.back": "Zurück zur Startseite",
   "legal.rights": "Alle Rechte vorbehalten.",
 

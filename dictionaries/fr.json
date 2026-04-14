@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "Onboarding 5 Étapes",
   "pricing.feat_aboutfeedback": "À Propos + Feedback",
 
+  "blog.back": "Retour à l'accueil",
+  "blog.title": "Guides et Astuces",
+  "blog.subtitle": "{count} articles couvrant chaque fonctionnalité et technique.",
+  "blog.featured": "À la une",
+  "blog.read_suffix": "de lecture",
+  "blog.cta_beginners": "Plus de guides à venir. Nouveau dans la détection ? Commencez par",
+  "blog.cta_link": "le guide du débutant",
+  "blog.cat_all": "Tous",
+  "blog.cat_tutorials": "Tutoriels",
+  "blog.cat_guides": "Guides",
+  "blog.cat_tips": "Astuces",
+  "blog.cat_location": "Lieux et Lois",
+  "blog.cat_beach": "Plage",
+  "blog.cat_beginners": "Débutants",
+  "blog.cat_gear": "Matériel",
+
   "legal.back": "Retour à l'accueil",
   "legal.rights": "Tous droits réservés.",
 

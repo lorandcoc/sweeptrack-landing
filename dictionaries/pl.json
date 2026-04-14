@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "Onboarding 5 Kroków",
   "pricing.feat_aboutfeedback": "O aplikacji + Feedback",
 
+  "blog.back": "Powrót do strony głównej",
+  "blog.title": "Przewodniki i Porady",
+  "blog.subtitle": "{count} artykułów o każdej funkcji i technice.",
+  "blog.featured": "Wyróżnione",
+  "blog.read_suffix": "czytania",
+  "blog.cta_beginners": "Więcej przewodników wkrótce. Nowy w wykrywaniu? Zacznij od",
+  "blog.cta_link": "przewodnika dla początkujących",
+  "blog.cat_all": "Wszystkie",
+  "blog.cat_tutorials": "Poradniki",
+  "blog.cat_guides": "Przewodniki",
+  "blog.cat_tips": "Porady",
+  "blog.cat_location": "Lokalizacje i Prawo",
+  "blog.cat_beach": "Plaża",
+  "blog.cat_beginners": "Początkujący",
+  "blog.cat_gear": "Sprzęt",
+
   "legal.back": "Powrót do strony głównej",
   "legal.rights": "Wszelkie prawa zastrzeżone.",
 

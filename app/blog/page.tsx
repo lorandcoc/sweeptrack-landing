@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
 
 const posts = [
   // ── GUIDES ──
@@ -49,29 +50,36 @@ const posts = [
   { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026", excerpt: "Nokta Simplex+, Minelab Vanquish, Garrett Ace 400, XP ORX, Fisher F44, and Nokta Legend compared.", tag: "Gear", category: "gear", readTime: "7 min", thumbnail: "/screenshots/presets.png" },
 ];
 
-const categories = [
-  { id: "all", label: "All" },
-  { id: "tutorials", label: "App Tutorials" },
-  { id: "guides", label: "Guides" },
-  { id: "tips", label: "Tips" },
-  { id: "location", label: "Locations & Laws" },
-  { id: "beach", label: "Beach" },
-  { id: "beginners", label: "Beginners" },
-  { id: "gear", label: "Gear" },
+const categoryKeys: { id: string; labelKey: string }[] = [
+  { id: "all", labelKey: "blog.cat_all" },
+  { id: "tutorials", labelKey: "blog.cat_tutorials" },
+  { id: "guides", labelKey: "blog.cat_guides" },
+  { id: "tips", labelKey: "blog.cat_tips" },
+  { id: "location", labelKey: "blog.cat_location" },
+  { id: "beach", labelKey: "blog.cat_beach" },
+  { id: "beginners", labelKey: "blog.cat_beginners" },
+  { id: "gear", labelKey: "blog.cat_gear" },
 ];
 
 export default function GuidesIndex() {
+  const { t, locale } = useI18n();
   const [filter, setFilter] = useState("all");
-  const featured = posts.find((p) => p.featured);
-  const filtered = posts.filter((p) => filter === "all" || p.category === filter);
+
+  // Hide location/law posts for non-English visitors (they're US/UK/AU specific)
+  const isEnglish = locale === "en";
+  const visiblePosts = isEnglish ? posts : posts.filter((p) => p.category !== "location");
+  const categories = isEnglish ? categoryKeys : categoryKeys.filter((c) => c.id !== "location");
+
+  const featured = visiblePosts.find((p) => p.featured);
+  const filtered = visiblePosts.filter((p) => filter === "all" || p.category === filter);
 
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
       <div className="max-w-4xl w-full">
-        <Link href="/" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to home</Link>
+        <Link href="/" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; {t("blog.back")}</Link>
 
-        <h1 className="text-3xl font-bold mb-2">Guides & Tips</h1>
-        <p className="text-muted mb-8">{posts.length} articles covering every feature and technique.</p>
+        <h1 className="text-3xl font-bold mb-2">{t("blog.title")}</h1>
+        <p className="text-muted mb-8">{t("blog.subtitle").replace("{count}", String(visiblePosts.length))}</p>
 
         {/* Featured */}
         {featured && filter === "all" && (
@@ -82,8 +90,8 @@ export default function GuidesIndex() {
               </div>
               <div className="p-6 md:p-8 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/15 px-2 py-0.5 rounded-full">Featured</span>
-                  <span className="text-xs text-muted">{featured.readTime} read</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/15 px-2 py-0.5 rounded-full">{t("blog.featured")}</span>
+                  <span className="text-xs text-muted">{featured.readTime} {t("blog.read_suffix")}</span>
                 </div>
                 <h2 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors mb-3">{featured.title}</h2>
                 <p className="text-sm text-muted leading-relaxed">{featured.excerpt}</p>
@@ -97,8 +105,8 @@ export default function GuidesIndex() {
           {categories.map((cat) => (
             <button key={cat.id} onClick={() => setFilter(cat.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filter === cat.id ? "bg-accent text-[#0A0A1A]" : "text-muted bg-surface/50 border border-white/5 hover:text-white hover:bg-white/5"}`}>
-              {cat.label}
-              {filter === "all" && <span className="ml-1.5 text-xs opacity-60">({posts.filter(p => cat.id === "all" ? true : p.category === cat.id).length})</span>}
+              {t(cat.labelKey)}
+              {filter === "all" && <span className="ml-1.5 text-xs opacity-60">({visiblePosts.filter(p => cat.id === "all" ? true : p.category === cat.id).length})</span>}
             </button>
           ))}
         </div>
@@ -121,7 +129,7 @@ export default function GuidesIndex() {
           ))}
         </div>
 
-        <p className="text-center text-muted text-sm mt-10">More guides coming regularly. New to detecting? Start with <Link href="/blog/metal-detecting-for-beginners" className="text-accent hover:underline">the beginner&apos;s guide</Link>.</p>
+        <p className="text-center text-muted text-sm mt-10">{t("blog.cta_beginners")} <Link href="/blog/metal-detecting-for-beginners" className="text-accent hover:underline">{t("blog.cta_link")}</Link>.</p>
       </div>
     </main>
   );

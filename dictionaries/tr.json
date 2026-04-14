@@ -350,6 +350,22 @@
   "footer.privacy": "Gizlilik Politikası",
   "footer.terms": "Hizmet Şartları",
 
+  "blog.back": "Ana sayfaya dön",
+  "blog.title": "Kılavuzlar ve İpuçları",
+  "blog.subtitle": "{count} makale her özellik ve tekniği kapsar.",
+  "blog.featured": "Öne Çıkan",
+  "blog.read_suffix": "okuma",
+  "blog.cta_beginners": "Düzenli olarak daha fazla kılavuz geliyor. Tespitte yeni misiniz? Başlayın",
+  "blog.cta_link": "başlangıç kılavuzu",
+  "blog.cat_all": "Tümü",
+  "blog.cat_tutorials": "Uygulama Eğitimleri",
+  "blog.cat_guides": "Kılavuzlar",
+  "blog.cat_tips": "İpuçları",
+  "blog.cat_location": "Konumlar ve Yasalar",
+  "blog.cat_beach": "Plaj",
+  "blog.cat_beginners": "Yeni Başlayanlar",
+  "blog.cat_gear": "Ekipman",
+
   "legal.back": "Ana sayfaya dön",
   "legal.rights": "Tüm hakları saklıdır.",
 

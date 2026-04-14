@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "Onboarding 5 Passaggi",
   "pricing.feat_aboutfeedback": "Info + Feedback",
 
+  "blog.back": "Torna alla home",
+  "blog.title": "Guide e Consigli",
+  "blog.subtitle": "{count} articoli su ogni funzionalità e tecnica.",
+  "blog.featured": "In evidenza",
+  "blog.read_suffix": "di lettura",
+  "blog.cta_beginners": "Altre guide in arrivo. Nuovo nel metal detecting? Inizia con",
+  "blog.cta_link": "la guida per principianti",
+  "blog.cat_all": "Tutti",
+  "blog.cat_tutorials": "Tutorial",
+  "blog.cat_guides": "Guide",
+  "blog.cat_tips": "Consigli",
+  "blog.cat_location": "Luoghi e Leggi",
+  "blog.cat_beach": "Spiaggia",
+  "blog.cat_beginners": "Principianti",
+  "blog.cat_gear": "Attrezzatura",
+
   "legal.back": "Torna alla home",
   "legal.rights": "Tutti i diritti riservati.",
 

@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "5 lépéses bevezetés",
   "pricing.feat_aboutfeedback": "Névjegy + Feedback",
 
+  "blog.back": "Vissza a főoldalra",
+  "blog.title": "Útmutatók és Tippek",
+  "blog.subtitle": "{count} cikk minden funkcióról és technikáról.",
+  "blog.featured": "Kiemelt",
+  "blog.read_suffix": "olvasás",
+  "blog.cta_beginners": "Rendszeresen újabb útmutatók. Új vagy a keresésben? Kezdd a",
+  "blog.cta_link": "kezdő útmutatóval",
+  "blog.cat_all": "Összes",
+  "blog.cat_tutorials": "App oktatóanyagok",
+  "blog.cat_guides": "Útmutatók",
+  "blog.cat_tips": "Tippek",
+  "blog.cat_location": "Helyszínek és Jogszabályok",
+  "blog.cat_beach": "Strand",
+  "blog.cat_beginners": "Kezdők",
+  "blog.cat_gear": "Felszerelés",
+
   "legal.back": "Vissza a főoldalra",
   "legal.rights": "Minden jog fenntartva.",
 

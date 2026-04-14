@@ -386,6 +386,22 @@
   "pricing.feat_onboarding": "5-Staps Onboarding",
   "pricing.feat_aboutfeedback": "Over + Feedback",
 
+  "blog.back": "Terug naar home",
+  "blog.title": "Gidsen & Tips",
+  "blog.subtitle": "{count} artikelen over elke functie en techniek.",
+  "blog.featured": "Uitgelicht",
+  "blog.read_suffix": "leestijd",
+  "blog.cta_beginners": "Regelmatig nieuwe gidsen. Nieuw met detectie? Begin met",
+  "blog.cta_link": "de beginnersgids",
+  "blog.cat_all": "Alle",
+  "blog.cat_tutorials": "App Tutorials",
+  "blog.cat_guides": "Gidsen",
+  "blog.cat_tips": "Tips",
+  "blog.cat_location": "Locaties & Wetten",
+  "blog.cat_beach": "Strand",
+  "blog.cat_beginners": "Beginners",
+  "blog.cat_gear": "Uitrusting",
+
   "legal.back": "Terug naar home",
   "legal.rights": "Alle rechten voorbehouden.",
 
