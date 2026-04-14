@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section className="relative pt-28 pb-12 md:pt-36 md:pb-16">
       <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+        <div className="grid md:grid-cols-[1.4fr_0.6fr] gap-3 items-center">
           <div className="text-center md:text-left">
             <div className="hero-enter flex flex-wrap gap-2 mb-6" style={{ animationDelay: "0.1s" }}>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium">
