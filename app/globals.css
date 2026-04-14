@@ -384,3 +384,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .stat-glow {
   text-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
 }
+
+/* ── Legal page prose ── */
+.legal-prose hr { border-color: var(--surface-variant); margin: 2rem 0; }
+.legal-prose h1 + p { margin-top: 0.25rem; }
+.legal-prose h2 { margin-top: 2.5rem; }
+.legal-prose p + p { margin-top: 0; }
+.legal-prose p.uppercase { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }

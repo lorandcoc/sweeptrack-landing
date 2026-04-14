@@ -6,23 +6,23 @@ import { useReveal } from "./useReveal";
 import { useI18n } from "@/lib/i18n";
 
 const screenshots = [
-  { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", label: "Live Map & GPS" },
-  { src: "/screenshots/measure2.jpg", alt: "Metal detecting measure tool showing a closed polygon with perimeter 606 m and area 2.14 ha on a satellite view of a field", label: "Measure Tool" },
-  { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture, wind, temperature and humidity with Detecting Score", label: "Detecting Forecast" },
-  { src: "/screenshots/history.png", alt: "Metal detecting session history with monthly session list and batch actions", label: "Session History" },
-  { src: "/screenshots/stats.png", alt: "Metal detecting session statistics with distance, finds, duration, averages and personal bests", label: "Career Stats" },
-  { src: "/screenshots/offline_maps.png", alt: "Download offline metal detecting maps from 4 tile sources for areas with no cell coverage", label: "Offline Maps" },
-  { src: "/screenshots/permission_vault.png", alt: "Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries", label: "Permission Vault" },
-  { src: "/screenshots/nearby.png", alt: "Nearby historic sites and Wikipedia landmarks for metal detecting research", label: "Nearby Sites" },
-  { src: "/screenshots/gallery.png", alt: "Photo gallery of metal detecting finds in a grid layout", label: "Photo Gallery" },
-  { src: "/screenshots/caliper.png", alt: "On-screen coin caliper measuring a coin by diameter against a built-in coin database", label: "Coin Caliper" },
-  { src: "/screenshots/cloud_backup.png", alt: "Metal detecting cloud backup to Google Drive with one-tap restore", label: "Cloud Backup" },
-  { src: "/screenshots/night_vision.png", alt: "Metal detecting app night vision mode with red monochromatic display for dawn and dusk sessions", label: "Night Vision" },
-  { src: "/screenshots/tide.png", alt: "NOAA tide table predictions for metal detecting with 3, 7, or 14 day ranges", label: "Tide Table" },
-  { src: "/screenshots/presets.png", alt: "Machine presets for Minelab, XP, Nokta, Garrett, Fisher and more metal detectors", label: "Machine Presets" },
-  { src: "/screenshots/detector_list.png", alt: "Metal detector reference library with 61 models across 12 brands", label: "Detector Library" },
-  { src: "/screenshots/settings.png", alt: "SweepTrack Pro settings screen with 12 color themes, night vision, and language toggle", label: "Settings & Themes" },
-  { src: "/screenshots/more_menu.png", alt: "More menu hub with all SweepTrack Pro tools grouped by category", label: "More Menu" },
+  { src: "/screenshots/home.png", alt: "SweepTrack Pro metal detecting app GPS tracking on satellite map", labelKey: "screenshots.shot_livemap" },
+  { src: "/screenshots/measure2.jpg", alt: "Metal detecting measure tool showing a closed polygon with perimeter 606 m and area 2.14 ha on a satellite view of a field", labelKey: "screenshots.shot_measure" },
+  { src: "/screenshots/forecast.png", alt: "Metal detecting forecast showing soil moisture, wind, temperature and humidity with Detecting Score", labelKey: "screenshots.shot_forecast" },
+  { src: "/screenshots/history.png", alt: "Metal detecting session history with monthly session list and batch actions", labelKey: "screenshots.shot_history" },
+  { src: "/screenshots/stats.png", alt: "Metal detecting session statistics with distance, finds, duration, averages and personal bests", labelKey: "screenshots.shot_stats" },
+  { src: "/screenshots/offline_maps.png", alt: "Download offline metal detecting maps from 4 tile sources for areas with no cell coverage", labelKey: "screenshots.shot_offline" },
+  { src: "/screenshots/permission_vault.png", alt: "Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries", labelKey: "screenshots.shot_permission" },
+  { src: "/screenshots/nearby.png", alt: "Nearby historic sites and Wikipedia landmarks for metal detecting research", labelKey: "screenshots.shot_nearby" },
+  { src: "/screenshots/gallery.png", alt: "Photo gallery of metal detecting finds in a grid layout", labelKey: "screenshots.shot_gallery" },
+  { src: "/screenshots/caliper.png", alt: "On-screen coin caliper measuring a coin by diameter against a built-in coin database", labelKey: "screenshots.shot_caliper" },
+  { src: "/screenshots/cloud_backup.png", alt: "Metal detecting cloud backup to Google Drive with one-tap restore", labelKey: "screenshots.shot_backup" },
+  { src: "/screenshots/night_vision.png", alt: "Metal detecting app night vision mode with red monochromatic display for dawn and dusk sessions", labelKey: "screenshots.shot_nightvision" },
+  { src: "/screenshots/tide.png", alt: "NOAA tide table predictions for metal detecting with 3, 7, or 14 day ranges", labelKey: "screenshots.shot_tide" },
+  { src: "/screenshots/presets.png", alt: "Machine presets for Minelab, XP, Nokta, Garrett, Fisher and more metal detectors", labelKey: "screenshots.shot_presets" },
+  { src: "/screenshots/detector_list.png", alt: "Metal detector reference library with 61 models across 12 brands", labelKey: "screenshots.shot_detectorlib" },
+  { src: "/screenshots/settings.png", alt: "SweepTrack Pro settings screen with 12 color themes, night vision, and language toggle", labelKey: "screenshots.shot_settings" },
+  { src: "/screenshots/more_menu.png", alt: "More menu hub with all SweepTrack Pro tools grouped by category", labelKey: "screenshots.shot_moremenu" },
 ];
 
 function get3DClass(index: number, active: number) {
@@ -120,14 +120,12 @@ export default function Screenshots() {
       <div ref={sectionRef} className={`relative reveal ${visible ? "visible" : ""}`}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">The App</p>
+            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("screenshots.label")}</p>
             <h2 className="font-display text-3xl md:text-4xl mb-4">
-              Real Screens. <span className="text-accent accent-underline">No Mockups.</span>
+              {t("screenshots.heading")} <span className="text-accent accent-underline">{t("screenshots.heading_accent")}</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
-              Every screen in the carousel is captured straight from the Android
-              app — no mockups, no renders, no Photoshop. Swipe through to see
-              how it really looks.
+              {t("screenshots.description")}
             </p>
           </div>
         </div>
@@ -144,7 +142,7 @@ export default function Screenshots() {
         >
           {screenshots.map((shot, i) => (
             <button
-              key={shot.label}
+              key={shot.labelKey}
               onClick={() => {
                 if (!hasDragged.current) scrollTo(i);
               }}
@@ -154,7 +152,7 @@ export default function Screenshots() {
                 <Image src={shot.src} alt={shot.alt} width={320} height={693} sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 280px" className="w-full h-auto screenshot-crop" />
               </div>
               <span className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"} pointer-events-none`}>
-                {shot.label}
+                {t(shot.labelKey)}
               </span>
             </button>
           ))}

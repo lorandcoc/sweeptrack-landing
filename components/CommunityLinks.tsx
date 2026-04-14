@@ -75,7 +75,7 @@ function NewsletterForm() {
               disabled={status === "sending"}
               className="px-5 py-2.5 rounded-xl bg-accent text-[#050510] text-sm font-semibold hover:bg-accent-dim transition-colors shrink-0 disabled:opacity-50"
             >
-              {status === "sending" ? "..." : status === "error" ? "Retry" : "Subscribe"}
+              {status === "sending" ? "..." : status === "error" ? t("community.newsletter_retry") : t("community.newsletter_subscribe")}
             </button>
           </form>
         )}
@@ -107,18 +107,18 @@ const TiktokIcon = () => (
 
 const communities = [
   {
-    title: "Facebook Group",
-    desc: "Join thousands of detectorists sharing finds, tips, and SweepTrack setups.",
+    titleKey: "community.facebook_title",
+    descKey: "community.facebook_desc",
     icon: <FacebookIcon />,
     link: "#",
     color: "from-[#1877F2]/20",
     border: "group-hover:border-[#1877F2]/50",
-    badge: "Most Active",
+    badgeKey: "community.badge_most_active",
     bg: "group-hover:bg-[#1877F2]/5"
   },
   {
-    title: "YouTube Shorts",
-    desc: "Watch our bite-sized animated tutorials and mastering guides.",
+    titleKey: "community.youtube_title",
+    descKey: "community.youtube_desc",
     icon: <YoutubeIcon />,
     link: "#",
     color: "from-[#FF0000]/20",
@@ -126,8 +126,8 @@ const communities = [
     bg: "group-hover:bg-[#FF0000]/5"
   },
   {
-    title: "Instagram",
-    desc: "Epic permissions, legendary finds, and behind-the-scenes.",
+    titleKey: "community.instagram_title",
+    descKey: "community.instagram_desc",
     icon: <InstagramIcon />,
     link: "#",
     color: "from-[#E1306C]/20",
@@ -135,8 +135,8 @@ const communities = [
     bg: "group-hover:bg-[#E1306C]/5"
   },
   {
-    title: "X (Twitter)",
-    desc: "App updates, dev logs, and quick metal detecting news.",
+    titleKey: "community.x_title",
+    descKey: "community.x_desc",
     icon: <XIcon />,
     link: "#",
     color: "from-white/20",
@@ -144,8 +144,8 @@ const communities = [
     bg: "group-hover:bg-white/5"
   },
   {
-    title: "TikTok",
-    desc: "Trending detecting moments and rapid-fire tips.",
+    titleKey: "community.tiktok_title",
+    descKey: "community.tiktok_desc",
     icon: <TiktokIcon />,
     link: "#",
     color: "from-[#00f2fe]/20",
@@ -153,8 +153,8 @@ const communities = [
     bg: "group-hover:bg-[#00f2fe]/5"
   },
   {
-    title: "Reddit",
-    desc: "r/metaldetecting discussions, find IDs, and app feedback.",
+    titleKey: "community.reddit_title",
+    descKey: "community.reddit_desc",
     icon: <RedditIcon />,
     link: "#",
     color: "from-[#FF4500]/20",
@@ -188,7 +188,7 @@ export default function CommunityLinks() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {communities.map((comm) => (
             <a
-              key={comm.title}
+              key={comm.titleKey}
               href={comm.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -200,20 +200,20 @@ export default function CommunityLinks() {
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     {comm.icon}
                   </div>
-                  {comm.badge && (
+                  {comm.badgeKey && (
                     <span className="text-[10px] uppercase tracking-wider font-bold text-white bg-accent/20 border border-accent/30 px-2 py-1 rounded-full">
-                      {comm.badge}
+                      {t(comm.badgeKey)}
                     </span>
                   )}
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-white transition-colors">
-                  {comm.title}
+                  {t(comm.titleKey)}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-4 flex-grow group-hover:text-white/80 transition-colors">
-                  {comm.desc}
+                  {t(comm.descKey)}
                 </p>
                 <div className="text-xs font-semibold text-white/40 uppercase tracking-widest group-hover:text-white/80 transition-colors flex items-center gap-2">
-                  Connect <span>&rarr;</span>
+                  {t("community.connect")} <span>&rarr;</span>
                 </div>
               </div>
             </a>
