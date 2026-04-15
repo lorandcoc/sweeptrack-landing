@@ -49,7 +49,7 @@ export default function LanguageToggle() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1.5 w-44 rounded-xl border border-white/[0.08] bg-[#0A0A1A]/95 backdrop-blur-xl shadow-2xl z-50 py-1 max-h-[320px] overflow-y-auto">
+        <div className="absolute left-0 bottom-full mb-1.5 md:left-auto md:right-0 md:bottom-auto md:top-full md:mt-1.5 w-44 rounded-xl border border-white/[0.08] bg-[#0A0A1A]/95 backdrop-blur-xl shadow-2xl z-50 py-1 max-h-[320px] overflow-y-auto">
           {LOCALES.map((l) => (
             <button
               key={l.code}

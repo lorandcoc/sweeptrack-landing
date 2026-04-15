@@ -29,7 +29,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className={`hero-enter font-display leading-[1.08] mb-5 ${isLong ? "text-3xl md:text-4xl lg:text-5xl" : "text-4xl md:text-5xl lg:text-6xl"}`} style={{ animationDelay: "0.2s" }}>
+            <h1 className={`hero-enter font-display leading-[1.08] mb-5 ${isLong ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"}`} style={{ animationDelay: "0.2s" }}>
               {t("hero.title_line1")}
               <br />
               {t("hero.title_line2")}

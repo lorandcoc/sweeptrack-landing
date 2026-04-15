@@ -47,7 +47,7 @@ function NewsletterForm() {
 
   return (
     <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-accent/[0.03]">
-      <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
+      <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 px-5 sm:px-8 py-5 sm:py-6">
         <div className="text-center sm:text-left">
           <h3 className="text-lg font-bold text-white mb-1">{t("community.newsletter_heading")}</h3>
           <p className="text-muted text-sm">{t("community.newsletter_description")}</p>
@@ -60,7 +60,7 @@ function NewsletterForm() {
             {status === "ok" ? t("community.newsletter_success") : t("community.newsletter_duplicate")}
           </div>
         ) : (
-          <form className="flex gap-2 shrink-0" onSubmit={handleSubmit}>
+          <form className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto shrink-0" onSubmit={handleSubmit}>
             <input
               type="email"
               required
@@ -68,7 +68,7 @@ function NewsletterForm() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               disabled={status === "sending"}
-              className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-[200px] disabled:opacity-50"
+              className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-full sm:w-[200px] disabled:opacity-50"
             />
             <button
               type="submit"
@@ -176,7 +176,7 @@ export default function CommunityLinks() {
           <div className="inline-flex items-center justify-center p-4 rounded-full bg-accent/8 mb-6">
             <Users className="w-8 h-8 text-accent" />
           </div>
-          <h2 className="font-display text-4xl md:text-5xl mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl mb-6">
             {t("community.heading_prefix")}<span className="text-accent">{t("community.heading_accent")}</span>
           </h2>
           <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto">

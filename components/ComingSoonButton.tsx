@@ -91,7 +91,7 @@ export default function ComingSoonButton({
   // Email input form
   if (showEmail) {
     return (
-      <form onSubmit={handleSubmit} className={`inline-flex items-center gap-2 ${className}`}>
+      <form onSubmit={handleSubmit} className={`inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto ${className}`}>
         <input
           type="email"
           required
@@ -100,7 +100,7 @@ export default function ComingSoonButton({
           placeholder={t("comingsoon.placeholder")}
           autoFocus
           disabled={status === "sending"}
-          className="px-4 py-3 rounded-xl bg-surface border border-white/10 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent/40 transition-colors w-[220px] disabled:opacity-50"
+          className="px-4 py-3 rounded-xl bg-surface border border-white/10 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent/40 transition-colors w-full sm:w-[220px] disabled:opacity-50"
         />
         <button
           type="submit"

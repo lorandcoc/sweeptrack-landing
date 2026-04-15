@@ -40,7 +40,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 pt-14 pb-8 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-10 mb-12">
           {/* Brand + Description */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">

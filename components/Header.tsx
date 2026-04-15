@@ -103,7 +103,7 @@ export default function Header() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-60 border-t border-white/5" : "max-h-0"
+          menuOpen ? "max-h-[400px] border-t border-white/5" : "max-h-0"
         } bg-[#050510]/95 backdrop-blur-xl`}
       >
         <nav className="flex flex-col px-6 py-4 gap-4">
@@ -117,12 +117,15 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+          <div className="pt-1 border-t border-white/5">
+            <LanguageToggle />
+          </div>
           <a
             href="/#download"
             className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#050510] text-center hover:bg-accent-dim transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            Coming Soon
+            {t("comingsoon.button")}
           </a>
         </nav>
       </div>

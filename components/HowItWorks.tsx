@@ -90,7 +90,7 @@ export default function HowItWorks() {
             </svg>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10 md:gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {steps.map((step, i) => (
               <div
                 key={step.num}
@@ -100,7 +100,7 @@ export default function HowItWorks() {
                 {/* Step circle */}
                 <div className="relative mb-5">
                   <div
-                    className="w-[104px] h-[104px] rounded-full bg-surface flex items-center justify-center"
+                    className="w-[80px] h-[80px] md:w-[104px] md:h-[104px] rounded-full bg-surface flex items-center justify-center"
                     style={{ border: `1.5px solid ${step.color}30`, color: step.color }}
                   >
                     {step.icon}

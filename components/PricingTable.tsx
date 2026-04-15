@@ -145,7 +145,7 @@ export default function PricingTable() {
 
         {/* Feature comparison */}
         <div className="rounded-2xl border border-white/5 overflow-hidden">
-          <div className="grid grid-cols-[1fr_80px_80px] bg-surface/80 px-4 py-3 border-b border-white/5">
+          <div className="grid grid-cols-[1fr_60px_60px] sm:grid-cols-[1fr_80px_80px] bg-surface/80 px-4 py-3 border-b border-white/5">
             <div className="text-xs font-semibold text-muted uppercase tracking-wider">{t("pricing.col_feature")}</div>
             <div className="text-xs font-semibold text-muted uppercase tracking-wider text-center">{t("pricing.col_free")}</div>
             <div className="text-xs font-semibold text-accent uppercase tracking-wider text-center">{t("pricing.col_pro")}</div>
@@ -153,7 +153,7 @@ export default function PricingTable() {
           {allFeatures.map((f, i) => (
             <div
               key={f.key}
-              className={`grid grid-cols-[1fr_80px_80px] px-4 py-2.5 ${i % 2 === 0 ? "bg-white/[0.01]" : "bg-white/[0.03]"}`}
+              className={`grid grid-cols-[1fr_60px_60px] sm:grid-cols-[1fr_80px_80px] px-4 py-2.5 ${i % 2 === 0 ? "bg-white/[0.01]" : "bg-white/[0.03]"}`}
             >
               <div className="text-sm text-white/80">{t(`pricing.feat_${f.key}`)}</div>
               <div className="text-center"><Cell value={resolveValue(f, "free")} /></div>

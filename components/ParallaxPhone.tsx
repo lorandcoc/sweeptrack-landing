@@ -37,7 +37,7 @@ export default function ParallaxPhone() {
         ref={containerRef}
         className={isDesktop ? "parallax-phone" : ""}
       >
-        <div className="relative phone-frame w-[260px] md:w-[300px]">
+        <div className="relative phone-frame w-[200px] sm:w-[260px] md:w-[300px]">
           <Image
             src="/screenshots/home.png"
             alt="SweepTrack Pro metal detecting app showing GPS satellite map with real-time tracking"

@@ -248,7 +248,7 @@ export default function FeaturesAll() {
 
         {/* ── Row 1 — GPS (large) + Cloud Backup ── */}
         <div className="grid md:grid-cols-5 gap-4 mb-4">
-          <RevealSection delay={0} className="md:col-span-3 min-h-[320px] h-full">
+          <RevealSection delay={0} className="md:col-span-3 min-h-[240px] sm:min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title={t("featuresall.gps_title")}
               subtitle={t("featuresall.gps_subtitle")}
@@ -260,7 +260,7 @@ export default function FeaturesAll() {
               guideLabel={learnMore}
             />
           </RevealSection>
-          <RevealSection delay={150} className="md:col-span-2 min-h-[320px] h-full">
+          <RevealSection delay={150} className="md:col-span-2 min-h-[240px] sm:min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title={t("featuresall.cloud_title")}
               subtitle={t("featuresall.cloud_subtitle")}
@@ -315,7 +315,7 @@ export default function FeaturesAll() {
 
         {/* ── Row 2.5 — Measure Tool (new killer feature) ── */}
         <div className="grid md:grid-cols-5 gap-4 mb-4">
-          <RevealSection delay={0} className="md:col-span-3 min-h-[320px] h-full">
+          <RevealSection delay={0} className="md:col-span-3 min-h-[240px] sm:min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title={t("featuresall.measure_title")}
               subtitle={t("featuresall.measure_subtitle")}
@@ -345,7 +345,7 @@ export default function FeaturesAll() {
 
         {/* ── Row 3 — Permission Manager + Old Map + Offline Maps ── */}
         <div className="grid md:grid-cols-3 gap-4 mb-14">
-          <RevealSection delay={0} className="min-h-[320px] h-full">
+          <RevealSection delay={0} className="min-h-[240px] sm:min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title={t("featuresall.permission_title")}
               subtitle={t("featuresall.permission_subtitle")}
@@ -374,7 +374,7 @@ export default function FeaturesAll() {
               guideLabel={learnMore}
             />
           </RevealSection>
-          <RevealSection delay={300} className="min-h-[320px] h-full">
+          <RevealSection delay={300} className="min-h-[240px] sm:min-h-[320px] h-full">
             <FeaturedWithScreenshot
               title={t("featuresall.offline_title")}
               subtitle={t("featuresall.offline_subtitle")}
