@@ -9,20 +9,17 @@
   "hero.stat_coins": "Katalogisierte Münzen",
   "hero.stat_maps": "Kartentypen",
   "hero.cta_secondary": "Inhalt ansehen",
-
   "header.nav_features": "Funktionen",
   "header.nav_screenshots": "Screenshots",
   "header.nav_pricing": "Preise",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Anleitungen",
-
   "mapcompare.label": "Interaktive Ansichten",
   "mapcompare.heading_prefix": "Sieh das Unsichtbare mit ",
   "mapcompare.heading_accent": "historischen Karten",
   "mapcompare.description": "Ziehe den Schieberegler, um moderne Satellitenbilder mit historischen Vermessungskarten zu vergleichen. Entdecke alte Gehöfte, vergessene Pfade und erstklassige Suchgebiete direkt in deinem Hinterhof.",
   "mapcompare.label_old": "Vermessungskarte aus den 1880ern",
   "mapcompare.label_modern": "Moderne Satellitenansicht",
-
   "howitworks.label": "Dein Workflow",
   "howitworks.heading_prefix": "Vor, während und ",
   "howitworks.heading_accent": "nach dem Grabung",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "GPS verfolgt jeden Schritt auf 4 Kartentypen. Perimeter Guard hält dich innerhalb deiner erlaubten Zone. Protokolliere Funde mit Fotos und Notizen währenddessen.",
   "howitworks.step3_title": "Auswertung",
   "howitworks.step3_description": "Lade vergangene Tracks auf die Live-Karte, um Lücken zu sehen. Vergleiche Sitzungen nebeneinander. Exportiere deine Daten. Sichere alles in Google Drive.",
-
   "features.label": "Funktionen",
   "features.heading_prefix": "Alles, was du brauchst, um ",
   "features.heading_accent": "intelligenter zu suchen",
@@ -65,7 +61,6 @@
   "features.compare_description": "Staple deine letzten drei Besuche auf demselben Feld und sieh sofort die Lücken. Overlay-Modus oder Split-Screen.",
   "features.backup_title": "Cloud-Backup",
   "features.backup_description": "Handy kaputt? Upgrade? Google Drive Backup sichert jede Sitzung, jeden Fund, jedes Preset und jede Genehmigung.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "Haben Sie ",
   "faq.heading_accent": "Fragen",
@@ -89,7 +84,6 @@
   "faq.a9": "Ja. Lade Kartenkacheln (Satelit, Straße, Topo) vorab herunter. GPS-Tracking läuft hardwarebasiert ohne Internet. Nur Wetter, Gezeiten und die Suche nach historischen Stätten benötigen eine Verbindung.",
   "faq.q10": "Sind meine Daten privat und sicher?",
   "faq.a10": "Alle Daten bleiben auf deinem Gerät. Keine Server, keine Werbung, kein Tracking. Das optionale Google Drive Backup nutzt dein eigenes Konto. Du exportierst GPX, KML, CSV oder JSON, wann immer du willst.",
-
   "pricing.label": "Preise",
   "pricing.heading_prefix": "Kostenloser Start. ",
   "pricing.heading_accent": "Pro wenn du bereit bist.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Alle {count} Funktionen ansehen",
   "pricing.show_less": "Weniger anzeigen",
-
   "cta.label": "Fast geschafft",
   "cta.heading_prefix": "Dein nächster Fund ",
   "cta.heading_accent": "wartet schon",
   "cta.description": "Kostenlos herunterzuladen. Pro schaltet alles frei.",
   "cta.sublabel": "Demnächst bei Google Play",
-
   "community.heading_prefix": "Tritt der ",
   "community.heading_accent": "Community bei",
   "community.description": "Teile Funde, tausche Tipps und sieh, was andere ausgraben.",
@@ -139,7 +131,6 @@
   "community.tiktok_desc": "Trendige Such-Momente und schnelle Tipps.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "r/metaldetecting-Diskussionen, Fund-IDs und App-Feedback.",
-
   "footer.description": "Die Begleit-App zum Metallsondeln. GPS-Tracking, Offline-Karten, Cloud-Backup und vieles mehr.",
   "footer.product": "Produkt",
   "footer.features": "Funktionen",
@@ -151,7 +142,6 @@
   "footer.adfree": "Für immer werbefrei",
   "footer.privacy": "Datenschutz",
   "footer.terms": "AGB",
-
   "comingsoon.button": "Bei Start benachrichtigen",
   "comingsoon.joining": "Wird beigefügt...",
   "comingsoon.placeholder": "deine@email.de",
@@ -159,9 +149,7 @@
   "comingsoon.success": "Du bist auf der Liste!",
   "comingsoon.duplicate": "Bereits auf der Liste!",
   "comingsoon.error": "Fehler — zum Wiederholen tippen",
-
   "foundernote.quote": "Ich bin Sondler und Designer. Ich wollte eine App, die sich wie für das Sondeln gemacht anfühlt — kein Wander-Tracker mit neuem Anstrich. Also habe ich angefangen, selbst eine zu bauen.",
-
   "showcase.label": "Warum Sondler es lieben",
   "showcase.heading_prefix": "Werkzeuge, die tatsächlich ",
   "showcase.heading_accent": "mehr finden",
@@ -190,7 +178,6 @@
   "showcase.backup_title": "Deine Daten. Immer gesichert.",
   "showcase.backup_description": "Google Drive Backup für alle Sitzungen und Funde. Wiederherstellung auf jedem Gerät.",
   "showcase.backup_highlight": "Cloud-Backup",
-
   "featuresall.label": "Inhalt",
   "featuresall.heading_prefix": "Werkzeuge für den ",
   "featuresall.heading_accent": "Einsatz im Feld",
@@ -326,7 +313,6 @@
   "featuresall.sec_about_desc": "Version und Credits (Kotlin, Google Maps, etc.).",
   "featuresall.sec_feedback_title": "In-App Feedback",
   "featuresall.sec_feedback_desc": "Fehlerberichte direkt aus der App senden.",
-
   "pricing.feat_gps": "GPS-Tracking",
   "pricing.feat_gps_free": "3 Kartentypen",
   "pricing.feat_gps_pro": "4 (+ USGS Historisch)",
@@ -385,7 +371,6 @@
   "pricing.feat_languages": "Englisch + Rumänisch",
   "pricing.feat_onboarding": "5-Schritt Onboarding",
   "pricing.feat_aboutfeedback": "Über + Feedback Bildschirme",
-
   "blog.back": "Zurück zur Startseite",
   "blog.title": "Anleitungen & Tipps",
   "blog.subtitle": "{count} Artikel zu jeder Funktion und Technik.",
@@ -401,10 +386,8 @@
   "blog.cat_beach": "Strand",
   "blog.cat_beginners": "Einsteiger",
   "blog.cat_gear": "Ausrüstung",
-
   "legal.back": "Zurück zur Startseite",
   "legal.rights": "Alle Rechte vorbehalten.",
-
   "screenshots.label": "Die App",
   "screenshots.heading": "Echte Bildschirme.",
   "screenshots.heading_accent": "Keine Mockups.",
@@ -442,5 +425,26 @@
   "screenshots.alt_presets": "Detektor-Vorlagen für Minelab, XP, Nokta, Garrett, Fisher und weitere Metalldetektoren",
   "screenshots.alt_detectorlib": "Detektor-Referenzbibliothek mit 61 Modellen aus 12 Marken",
   "screenshots.alt_settings": "SweepTrack Pro Einstellungen mit 12 Farbthemen, Nachtsicht und Sprachumschaltung",
-  "screenshots.alt_moremenu": "Mehr-Menü mit allen SweepTrack Pro Werkzeugen nach Kategorie gruppiert"
+  "screenshots.alt_moremenu": "Mehr-Menü mit allen SweepTrack Pro Werkzeugen nach Kategorie gruppiert",
+  "featuretag.gps": "GPS-Tracking",
+  "featuretag.forecast": "Detektier-Prognose",
+  "featuretag.offline": "Offline-Karten",
+  "featuretag.cloud": "Cloud-Backup",
+  "featuretag.nightvision": "Nachtsicht",
+  "featuretag.permission": "Genehmigungsspeicher",
+  "featuretag.track": "Tracküberlagerung",
+  "featuretag.oldmap": "Historische Kartenüberlagerung",
+  "featuretag.nearby": "Orte in der Nähe",
+  "featuretag.tide": "Gezeitentabelle",
+  "featuretag.perimeter": "Perimeter-Wache",
+  "featuretag.findlog": "Fundprotokoll",
+  "featuretag.compare": "Sitzungsvergleich",
+  "featuretag.export": "GPX/KML/CSV-Export",
+  "mapcompare.alt_historical": "Historische USGS-Topografiekarte aus dem 19. Jahrhundert",
+  "mapcompare.alt_modern": "Moderne Satelliten-Luftaufnahme",
+  "blog.back_to_guides": "Zurück zu den Guides",
+  "blog.date_april_2026": "April 2026",
+  "blog.related_guides": "Verwandte Guides",
+  "blog.cta_card_text": "bietet jedes Werkzeug, das ein Detektorist braucht — GPS-Tracking, Genehmigungen, Prognose, Offline-Karten und mehr.",
+  "blog.cta_card_link": "Alle Funktionen ansehen →"
 }

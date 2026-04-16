@@ -9,20 +9,17 @@
   "hero.stat_coins": "Katalogiserade mynt",
   "hero.stat_maps": "Karttyper",
   "hero.cta_secondary": "Se vad som finns inuti",
-
   "header.nav_features": "Funktioner",
   "header.nav_screenshots": "Skärmbilder",
   "header.nav_pricing": "Prissättning",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Guider",
-
   "mapcompare.label": "Interaktiva vyer",
   "mapcompare.heading_prefix": "Se det osedda med ",
   "mapcompare.heading_accent": "historiska kartor",
   "mapcompare.description": "Dra i reglaget för att jämföra moderna satellitbilder med historiska lantmäterikartor. Hitta gamla torpställen, glömda stigar och utmärkta detekteringsplatser som gömmer sig i din närhet.",
   "mapcompare.label_old": "Lantmäterikarta från 1880-talet",
   "mapcompare.label_modern": "Modern satellitvy",
-
   "howitworks.label": "Ditt arbetsflöde",
   "howitworks.heading_prefix": "Före, under och ",
   "howitworks.heading_accent": "efter grävningen",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "GPS spårar varje steg på 4 karttyper. Perimeter Guard håller dig inom din tillåtna zon. Logga fynd med foton och anteckningar löpande.",
   "howitworks.step3_title": "Granskning",
   "howitworks.step3_description": "Ladda in tidigare spår på live-kartan för att se exakt var du missat ytor. Jämför sessioner sida vid sida. Exportera din data. Säkerhetskopiera allt till Google Drive.",
-
   "features.label": "Funktioner",
   "features.heading_prefix": "Allt du behöver för att ",
   "features.heading_accent": "detektera smartare",
@@ -65,7 +61,6 @@
   "features.compare_description": "Stapla dina tre senaste besök på samma fält och se luckorna direkt. Overlay-läge eller delad skärm.",
   "features.backup_title": "Molnbackup",
   "features.backup_description": "Tappat mobilen? Uppgraderat? Backup till Google Drive med ett tryck sparar sessioner, fynd, presets och tillstånd.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "Har du ",
   "faq.heading_accent": "Frågor?",
@@ -89,7 +84,6 @@
   "faq.a9": "Ja. Ladda ner kartor i förväg (Satellit, Väg, Topo). GPS-spårning körs på telefonens hårdvara utan internet. Endast väder, tidvatten och sökning efter historiska platser kräver anslutning.",
   "faq.q10": "Är min detekteringsdata privat och säker?",
   "faq.a10": "All data stannar på din enhet. Inga servrar, ingen reklam, ingen spårning. Den valfria backupen till Google Drive använder ditt eget konto. Exportera till GPX, KML, CSV eller JSON när du vill. Du äger allt.",
-
   "pricing.label": "Prissättning",
   "pricing.heading_prefix": "Gratis att börja. ",
   "pricing.heading_accent": "Pro när du är redo.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Se alla {count} funktioner",
   "pricing.show_less": "Visa mindre",
-
   "cta.label": "Nästan där",
   "cta.heading_prefix": "Ditt nästa fynd ",
   "cta.heading_accent": "väntar på dig",
   "cta.description": "Gratis att ladda ner. Pro-versionen låser upp allt.",
   "cta.sublabel": "Kommer snart till Google Play",
-
   "community.heading_prefix": "Gå med i ",
   "community.heading_accent": "communityn",
   "community.description": "Dela fynd, byt tips och se vad andra detektorister gräver upp.",
@@ -139,7 +131,6 @@
   "community.tiktok_desc": "Trendiga detekteringsögonblick och snabba tips.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "r/metaldetecting-diskussioner, fynd-ID och app-feedback.",
-
   "footer.description": "Följeslagarappen för metallsökning. GPS-spårning, offline-kartor, molnbackup och mycket mer.",
   "footer.product": "Produkt",
   "footer.features": "Funktioner",
@@ -151,7 +142,6 @@
   "footer.adfree": "Annonsfri för alltid",
   "footer.privacy": "Integritetspolicy",
   "footer.terms": "Villkor",
-
   "comingsoon.button": "Meddela mig vid lansering",
   "comingsoon.joining": "Anmäler...",
   "comingsoon.placeholder": "namn@email.se",
@@ -159,9 +149,7 @@
   "comingsoon.success": "Du är på listan!",
   "comingsoon.duplicate": "Redan på listan!",
   "comingsoon.error": "Något gick fel — tryck för att försöka igen",
-
   "foundernote.quote": "Jag är en detektorist och designer. Jag ville ha en app som känns gjord för detektering — inte en vandringsapp i ny färg. Så jag började bygga en för mig själv.",
-
   "showcase.label": "Varför detektorister älskar den",
   "showcase.heading_prefix": "Verktyg som faktiskt ",
   "showcase.heading_accent": "hittar mer",
@@ -190,7 +178,6 @@
   "showcase.backup_title": "Din data, alltid säker.",
   "showcase.backup_description": "Google Drive-backup med ett tryck. Återställ din historik på vilken mobil som helst.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "Innehåll",
   "featuresall.heading_prefix": "Verktyg för ",
   "featuresall.heading_accent": "fältarbete",
@@ -326,7 +313,6 @@
   "featuresall.sec_about_desc": "Appversion och teknikkrediter.",
   "featuresall.sec_feedback_title": "Feedback",
   "featuresall.sec_feedback_desc": "Skicka felrapporter direkt från appen.",
-
   "pricing.feat_gps": "GPS-spårning",
   "pricing.feat_gps_free": "3 karttyper",
   "pricing.feat_gps_pro": "4 (+ USGS Historisk)",
@@ -385,7 +371,6 @@
   "pricing.feat_languages": "Engelska + Rumänska",
   "pricing.feat_onboarding": "5-stegs onboarding",
   "pricing.feat_aboutfeedback": "Om + Feedback",
-
   "blog.back": "Tillbaka till startsidan",
   "blog.title": "Guider & Tips",
   "blog.subtitle": "{count} artiklar om varje funktion och teknik.",
@@ -401,10 +386,8 @@
   "blog.cat_beach": "Strand",
   "blog.cat_beginners": "Nybörjare",
   "blog.cat_gear": "Utrustning",
-
   "legal.back": "Tillbaka till startsidan",
   "legal.rights": "Alla rättigheter förbehållna.",
-
   "screenshots.label": "Appen",
   "screenshots.heading": "Riktiga Skärmar.",
   "screenshots.heading_accent": "Inga Mockups.",
@@ -442,5 +425,26 @@
   "screenshots.alt_presets": "Detektorinställningar för Minelab, XP, Nokta, Garrett, Fisher och fler metalldetektorer",
   "screenshots.alt_detectorlib": "Referensbibliotek för metalldetektorer med 61 modeller från 12 märken",
   "screenshots.alt_settings": "SweepTrack Pro inställningsskärm med 12 färgteman, mörkerseende och språkväxling",
-  "screenshots.alt_moremenu": "Mer-meny med alla SweepTrack Pro-verktyg grupperade efter kategori"
+  "screenshots.alt_moremenu": "Mer-meny med alla SweepTrack Pro-verktyg grupperade efter kategori",
+  "featuretag.gps": "GPS-spårning",
+  "featuretag.forecast": "Detekteringsprognos",
+  "featuretag.offline": "Offlinekartor",
+  "featuretag.cloud": "Molnsäkerhetskopiering",
+  "featuretag.nightvision": "Mörkerseende",
+  "featuretag.permission": "Tillståndsvalv",
+  "featuretag.track": "Spåröverlagring",
+  "featuretag.oldmap": "Historisk Kartoöverlagring",
+  "featuretag.nearby": "Platser i Närheten",
+  "featuretag.tide": "Tidvattenstabell",
+  "featuretag.perimeter": "Perimetervakt",
+  "featuretag.findlog": "Fyndlogg",
+  "featuretag.compare": "Jämför Sessioner",
+  "featuretag.export": "Exportera GPX/KML/CSV",
+  "mapcompare.alt_historical": "Historisk USGS-topografisk karta från 1800-talet",
+  "mapcompare.alt_modern": "Modern satellitvy från luften",
+  "blog.back_to_guides": "Tillbaka till guider",
+  "blog.date_april_2026": "April 2026",
+  "blog.related_guides": "Relaterade guider",
+  "blog.cta_card_text": "har alla verktyg en detektorist behöver — GPS-spårning, tillstånd, prognos, offlinekartor och mer.",
+  "blog.cta_card_link": "Se alla funktioner →"
 }

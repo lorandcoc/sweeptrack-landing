@@ -9,20 +9,17 @@
   "hero.stat_coins": "Monedas Catalogadas",
   "hero.stat_maps": "Tipos de Mapas",
   "hero.cta_secondary": "Ver Contenido",
-
   "header.nav_features": "Funciones",
   "header.nav_screenshots": "Capturas",
   "header.nav_pricing": "Precios",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Guías",
-
   "mapcompare.label": "Vistas Interactivas",
   "mapcompare.heading_prefix": "Mira lo invisible con ",
   "mapcompare.heading_accent": "mapas históricos",
   "mapcompare.description": "Arrastra el control para comparar imágenes satelitales modernas con mapas históricos. Detecta casas antiguas, senderos olvidados y puntos de detección premium en tu propio vecindario.",
   "mapcompare.label_old": "Mapa de Agrimensura de 1880",
   "mapcompare.label_modern": "Vista Satelital Moderna",
-
   "howitworks.label": "Tu Flujo de Trabajo",
   "howitworks.heading_prefix": "Antes, durante y ",
   "howitworks.heading_accent": "después de excavar",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "El GPS rastrea cada paso en 4 tipos de mapas. Perimeter Guard te mantiene en tu zona permitida. Registra hallazgos con fotos y notas al momento.",
   "howitworks.step3_title": "Revisar",
   "howitworks.step3_description": "Carga rastreos pasados en el mapa en vivo para ver qué áreas faltaron. Compara sesiones lado a lado. Exporta tus datos. Respalda todo en Google Drive.",
-
   "features.label": "Funciones",
   "features.heading_prefix": "Todo lo que necesitas para ",
   "features.heading_accent": "detectar mejor",
@@ -65,7 +61,6 @@
   "features.compare_description": "Superpone tus últimas tres visitas al mismo campo y mira los huecos al instante. Modo superposición o pantalla dividida.",
   "features.backup_title": "Respaldo en la Nube",
   "features.backup_description": "Respaldo en Google Drive con un toque para sesiones, hallazgos, ajustes y permisos. Restaura en cualquier dispositivo.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "¿Tienes ",
   "faq.heading_accent": "preguntas?",
@@ -89,7 +84,6 @@
   "faq.a9": "Sí. Descarga mapas antes de salir (Satélite, Calle, Topo). El rastreo GPS usa el hardware del móvil sin internet. Solo el clima, mareas y búsqueda de sitios históricos requieren conexión.",
   "faq.q10": "¿Mis datos de detección son privados?",
   "faq.a10": "Todos los datos residen en tu dispositivo. Sin servidores, anuncios ni rastreo. El respaldo opcional en Google Drive usa tu propia cuenta. Exporta en GPX, KML, CSV o JSON cuando quieras. Tú eres el dueño.",
-
   "pricing.label": "Precios",
   "pricing.heading_prefix": "Gratis al inicio. ",
   "pricing.heading_accent": "Pro cuando estés listo.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Ver las {count} funciones",
   "pricing.show_less": "Mostrar menos",
-
   "cta.label": "Ya casi",
   "cta.heading_prefix": "Tu próximo hallazgo te ",
   "cta.heading_accent": "espera",
   "cta.description": "Gratis para descargar. La versión Pro desbloquea todo.",
   "cta.sublabel": "Pronto en Google Play",
-
   "community.heading_prefix": "Únete a la ",
   "community.heading_accent": "comunidad",
   "community.description": "Comparte hallazgos, intercambia consejos y mira qué descubren otros.",
@@ -139,7 +131,6 @@
   "community.tiktok_desc": "Momentos de detección en tendencia y consejos rápidos.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "Discusiones en r/metaldetecting, identificación de hallazgos y feedback de la app.",
-
   "footer.description": "La app compañera para detectar metales. Rastreo GPS, mapas offline, respaldo en la nube y mucho más.",
   "footer.product": "Producto",
   "footer.features": "Funciones",
@@ -151,7 +142,6 @@
   "footer.adfree": "Sin Anuncios para Siempre",
   "footer.privacy": "Privacidad",
   "footer.terms": "Términos",
-
   "comingsoon.button": "Avisarme al lanzar",
   "comingsoon.joining": "Uniéndote...",
   "comingsoon.placeholder": "tu@email.com",
@@ -159,9 +149,7 @@
   "comingsoon.success": "¡Estás en la lista!",
   "comingsoon.duplicate": "¡Ya estás en la lista!",
   "comingsoon.error": "Algo falló — toca para reintentar",
-
   "foundernote.quote": "Soy detectorista y diseñador. Quería una app hecha para detectar, no un rastreador de senderismo con pintura nueva. Así que empecé a construir una para mí.",
-
   "showcase.label": "Por qué les encanta",
   "showcase.heading_prefix": "Herramientas que realmente ",
   "showcase.heading_accent": "encuentran más",
@@ -190,7 +178,6 @@
   "showcase.backup_title": "Tus datos, siempre seguros.",
   "showcase.backup_description": "Respaldo en Google Drive con un toque. Recupera tu historia en cualquier móvil.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "Contenido",
   "featuresall.heading_prefix": "Herramientas para el ",
   "featuresall.heading_accent": "trabajo de campo",
@@ -326,7 +313,6 @@
   "featuresall.sec_about_desc": "Versión y créditos de tecnología.",
   "featuresall.sec_feedback_title": "Feedback",
   "featuresall.sec_feedback_desc": "Envía reportes de error desde la app.",
-
   "pricing.feat_gps": "Rastreo GPS",
   "pricing.feat_gps_free": "3 tipos de mapas",
   "pricing.feat_gps_pro": "4 (+ USGS Histórico)",
@@ -385,7 +371,6 @@
   "pricing.feat_languages": "Inglés + Rumano",
   "pricing.feat_onboarding": "Onboarding de 5 Pasos",
   "pricing.feat_aboutfeedback": "Acerca de + Feedback",
-
   "blog.back": "Volver al inicio",
   "blog.title": "Guías y Consejos",
   "blog.subtitle": "{count} artículos sobre cada función y técnica.",
@@ -401,10 +386,8 @@
   "blog.cat_beach": "Playa",
   "blog.cat_beginners": "Principiantes",
   "blog.cat_gear": "Equipo",
-
   "legal.back": "Volver al inicio",
   "legal.rights": "Todos los derechos reservados.",
-
   "screenshots.label": "La App",
   "screenshots.heading": "Pantallas Reales.",
   "screenshots.heading_accent": "Sin Maquetas.",
@@ -442,5 +425,26 @@
   "screenshots.alt_presets": "Presets de detector para Minelab, XP, Nokta, Garrett, Fisher y más detectores de metales",
   "screenshots.alt_detectorlib": "Biblioteca de referencia de detectores de metales con 61 modelos de 12 marcas",
   "screenshots.alt_settings": "Pantalla de ajustes de SweepTrack Pro con 12 temas de color, visión nocturna y cambio de idioma",
-  "screenshots.alt_moremenu": "Menú con todas las herramientas de SweepTrack Pro agrupadas por categoría"
+  "screenshots.alt_moremenu": "Menú con todas las herramientas de SweepTrack Pro agrupadas por categoría",
+  "featuretag.gps": "Seguimiento GPS",
+  "featuretag.forecast": "Pronóstico de Detección",
+  "featuretag.offline": "Mapas Offline",
+  "featuretag.cloud": "Copia en la Nube",
+  "featuretag.nightvision": "Visión Nocturna",
+  "featuretag.permission": "Bóveda de Permisos",
+  "featuretag.track": "Superposición de Rutas",
+  "featuretag.oldmap": "Superposición de Mapas Históricos",
+  "featuretag.nearby": "Sitios Cercanos",
+  "featuretag.tide": "Tabla de Mareas",
+  "featuretag.perimeter": "Guardián de Perímetro",
+  "featuretag.findlog": "Registro de Hallazgos",
+  "featuretag.compare": "Comparar Sesiones",
+  "featuretag.export": "Exportar GPX/KML/CSV",
+  "mapcompare.alt_historical": "Mapa topográfico histórico USGS del siglo XIX",
+  "mapcompare.alt_modern": "Vista aérea satelital moderna",
+  "blog.back_to_guides": "Volver a las guías",
+  "blog.date_april_2026": "Abril 2026",
+  "blog.related_guides": "Guías relacionadas",
+  "blog.cta_card_text": "tiene todas las herramientas que un detectorista necesita: seguimiento GPS, permisos, pronóstico, mapas offline y más.",
+  "blog.cta_card_link": "Ver todas las funciones →"
 }

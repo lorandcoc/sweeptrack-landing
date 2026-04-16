@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "best-metal-detectors-under-500",
-  title: "Best Metal Detectors Under $500 in 2026",
-  description:
-    "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.",
-});
+const SLUG = "best-metal-detectors-under-500";
+const TITLE = "Best Metal Detectors Under $500 in 2026";
+const DESCRIPTION = "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.";
+const IMAGE = "/screenshots/presets.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "best-metal-detectors-under-500",
-          title: "Best Metal Detectors Under $500 in 2026",
-          description: "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Gear</p>
-        <h1 className="text-3xl font-bold mb-4">Best Metal Detectors Under $500</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 7 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="gear"
+        readTime="7 min"
+        relatedGuides={[
+          { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
+          { href: "/blog/organize-metal-detector-presets-settings", title: "Organize Metal Detector Presets &amp; Settings" },
+        ]}
+      >
           <p>You don&apos;t need to spend a thousand dollars to get a genuinely capable metal detector. The sub-$500 range has improved dramatically over the past few years, and several machines in this bracket can compete with detectors that cost twice as much. This isn&apos;t a ranking &mdash; the best detector depends on what you want to do with it.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Nokta Simplex+</h2>
@@ -72,23 +70,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">What Actually Matters</h2>
           <p>No detector finds things by itself. The person swinging it matters far more than the brand or price tag. A detectorist who understands their machine, researches good locations, and puts in the hours will outperform someone with a $3,000 machine who doesn&apos;t. Pick a detector that fits your budget and your intended use, learn it thoroughly, and go detect.</p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> has built-in presets for all of these detectors &mdash; Simplex+, Vanquish, Ace 400, ORX, F44, and Legend. Each preset configures the app&apos;s frequency display and discrimination tips to match your specific machine.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
-              <Link href="/blog/organize-metal-detector-presets-settings" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Organize Metal Detector Presets &amp; Settings &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

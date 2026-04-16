@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "where-to-metal-detect-near-me",
-  title: "Where to Metal Detect Near Me: Finding Good Spots Anywhere",
-  description:
-    "A practical guide to finding productive metal detecting locations in any area using old maps, local research, and common sense to find great spots.",
-});
+const SLUG = "where-to-metal-detect-near-me";
+const TITLE = "Where to Metal Detect Near Me: Finding Good Spots Anywhere";
+const DESCRIPTION = "A practical guide to finding productive metal detecting locations in any area using old maps, local research, and common sense to find great spots.";
+const IMAGE = "/screenshots/offline_maps.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "where-to-metal-detect-near-me",
-          title: "Where to Metal Detect Near Me: Finding Good Spots Anywhere",
-          description: "A practical guide to finding productive metal detecting locations in any area using old maps, local research, and common sense to find great spots.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Location</p>
-        <h1 className="text-3xl font-bold mb-4">Where to Metal Detect Near Me</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 5 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="location"
+        readTime="5 min"
+        relatedGuides={[
+          { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
+          { href: "/blog/finding-historic-sites-nearby", title: "Finding Historic Sites Nearby" },
+        ]}
+      >
           <p>Every detectorist asks this question eventually. You&apos;ve got the machine, you know how to use it, but where do you actually go? The answer is closer than you think. Every town in every country has spots where people gathered, played, traded, and lost things. You just need to find them.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Think Like a Person, Not a Detectorist</h2>
@@ -65,23 +63,7 @@ export default function Post() {
           <p className="text-xs text-muted mt-8 p-4 rounded-lg bg-white/[0.02] border border-white/5">
             <strong>Disclaimer:</strong> Laws and regulations change. This article is for general information only and does not constitute legal advice. Always verify current rules with local authorities before detecting at any location.
           </p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> includes USGS historical map overlays to compare old and new terrain, a nearby historic sites feature to discover points of interest around you, and a detecting forecast to pick the best conditions for your next outing.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Metal Detecting &rarr;</Link>
-              <Link href="/blog/finding-historic-sites-nearby" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Finding Historic Sites Nearby &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

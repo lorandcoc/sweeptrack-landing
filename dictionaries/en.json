@@ -9,20 +9,17 @@
   "hero.stat_coins": "Coins Catalogued",
   "hero.stat_maps": "Map Types",
   "hero.cta_secondary": "See What's Inside",
-
   "header.nav_features": "Features",
   "header.nav_screenshots": "Screenshots",
   "header.nav_pricing": "Pricing",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Guides",
-
   "mapcompare.label": "Interactive Views",
   "mapcompare.heading_prefix": "See the Unseen with ",
   "mapcompare.heading_accent": "Historical Maps",
   "mapcompare.description": "Drag the slider to compare modern satellite imagery with historical surveyor maps. Spot the old homesteads, forgotten trails, and prime detecting spots hiding right in your backyard.",
   "mapcompare.label_old": "1880s Survey Map",
   "mapcompare.label_modern": "Modern Satellite View",
-
   "howitworks.label": "Your Workflow",
   "howitworks.heading_prefix": "Before, During, and ",
   "howitworks.heading_accent": "After the Dig",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "GPS tracks your every step across 4 map types. Perimeter guard keeps you inside your permitted zone. Log finds with photos and notes as you go.",
   "howitworks.step3_title": "Review",
   "howitworks.step3_description": "Load past tracks on the live map to see exactly where you missed. Compare past sessions side by side. Export your data. Back everything up to Google Drive.",
-
   "features.label": "Features",
   "features.heading_prefix": "Everything you need to ",
   "features.heading_accent": "detect smarter",
@@ -65,7 +61,6 @@
   "features.compare_description": "Stack your last three visits to the same field and instantly see the gaps. Overlay mode or split-screen side by side.",
   "features.backup_title": "Cloud Backup",
   "features.backup_description": "Phone dies? Upgrade? One-tap Google Drive backup saves every session, find, preset, and permission. Restore it all on any device.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "Got ",
   "faq.heading_accent": "Questions",
@@ -89,7 +84,6 @@
   "faq.a9": "Yes. Download map tiles before you leave home — Street, Satellite, Terrain, and Historical Topo are all available for offline use. GPS tracking runs entirely on your phone's hardware with zero internet needed. The only features that require a connection are the weather forecast, tide tables, and nearby sites lookup.",
   "faq.q10": "Is my detecting data private and safe?",
   "faq.a10": "All data lives on your device. No servers, no analytics, no ads, no tracking. Optional Google Drive backup stores an encrypted copy in your own Drive account — we never see it. Export your data as GPX, KML, CSV, or JSON anytime. You own everything.",
-
   "pricing.label": "Pricing",
   "pricing.heading_prefix": "Free to Start. ",
   "pricing.heading_accent": "Pro When You're Ready.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "See all {count} features",
   "pricing.show_less": "Show less",
-
   "cta.label": "Almost There",
   "cta.heading_prefix": "Your next find is ",
   "cta.heading_accent": "waiting",
   "cta.description": "Free to download and use. Pro upgrade unlocks everything.",
   "cta.sublabel": "Launching soon on Google Play",
-
   "community.heading_prefix": "Join the ",
   "community.heading_accent": "community",
   "community.description": "Share your finds, swap tips, and see what other detectorists are digging up. We're all in this together.",
@@ -139,7 +131,6 @@
   "community.tiktok_desc": "Trending detecting moments and rapid-fire tips.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "r/metaldetecting discussions, find IDs, and app feedback.",
-
   "footer.description": "The metal detecting companion app. GPS tracking, offline maps, cloud backup, and way more than we can fit in this footer.",
   "footer.product": "Product",
   "footer.features": "Features",
@@ -151,7 +142,6 @@
   "footer.adfree": "Ad-Free Forever",
   "footer.privacy": "Privacy Policy",
   "footer.terms": "Terms of Service",
-
   "blog.back": "Back to home",
   "blog.title": "Guides & Tips",
   "blog.subtitle": "{count} articles covering every feature and technique.",
@@ -167,7 +157,6 @@
   "blog.cat_beach": "Beach",
   "blog.cat_beginners": "Beginners",
   "blog.cat_gear": "Gear",
-
   "comingsoon.button": "Get Notified at Launch",
   "comingsoon.joining": "Joining...",
   "comingsoon.placeholder": "your@email.com",
@@ -175,9 +164,7 @@
   "comingsoon.success": "You're on the list!",
   "comingsoon.duplicate": "Already on the list!",
   "comingsoon.error": "Something went wrong — tap to retry",
-
   "foundernote.quote": "I'm a detectorist and a designer who picked up coding along the way. I wanted an app that felt like it was made for detecting — not a hiking tracker with a new coat of paint. So I started building one for myself. Figured if I like using it, someone else might too.",
-
   "showcase.label": "Why Detectorists Love It",
   "showcase.heading_prefix": "Tools That Actually ",
   "showcase.heading_accent": "Find More",
@@ -206,7 +193,6 @@
   "showcase.backup_title": "Your Data. Backed Up. Always.",
   "showcase.backup_description": "One-tap Google Drive backup for all sessions, presets, permits, and settings. Restore on any device. Lost phone? Broken phone? Your detecting history survives.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "What's Inside",
   "featuresall.heading_prefix": "Tools You'll Actually ",
   "featuresall.heading_accent": "Use in the Field",
@@ -342,7 +328,6 @@
   "featuresall.sec_about_desc": "App version and built-with credits (Kotlin, Jetpack Compose, Google Maps, Open-Meteo, NOAA, Overpass/OSM).",
   "featuresall.sec_feedback_title": "In-App Feedback",
   "featuresall.sec_feedback_desc": "Send a bug report or feature request from Settings — opens a pre-filled email to support.",
-
   "pricing.feat_gps": "GPS Tracking",
   "pricing.feat_gps_free": "3 map types",
   "pricing.feat_gps_pro": "4 (+ USGS Historical)",
@@ -401,10 +386,8 @@
   "pricing.feat_languages": "English + Romanian",
   "pricing.feat_onboarding": "5-Slide Onboarding",
   "pricing.feat_aboutfeedback": "About + Feedback Screens",
-
   "legal.back": "Back to home",
   "legal.rights": "All rights reserved.",
-
   "screenshots.label": "The App",
   "screenshots.heading": "Real Screens.",
   "screenshots.heading_accent": "No Mockups.",
@@ -442,5 +425,26 @@
   "screenshots.alt_presets": "Machine presets for Minelab, XP, Nokta, Garrett, Fisher and more metal detectors",
   "screenshots.alt_detectorlib": "Metal detector reference library with 61 models across 12 brands",
   "screenshots.alt_settings": "SweepTrack Pro settings screen with 12 color themes, night vision, and language toggle",
-  "screenshots.alt_moremenu": "More menu hub with all SweepTrack Pro tools grouped by category"
+  "screenshots.alt_moremenu": "More menu hub with all SweepTrack Pro tools grouped by category",
+  "featuretag.gps": "GPS Tracking",
+  "featuretag.forecast": "Detecting Forecast",
+  "featuretag.offline": "Offline Maps",
+  "featuretag.cloud": "Cloud Backup",
+  "featuretag.nightvision": "Night Vision",
+  "featuretag.permission": "Permission Vault",
+  "featuretag.track": "Track Overlay",
+  "featuretag.oldmap": "Historical Map Overlay",
+  "featuretag.nearby": "Nearby Sites",
+  "featuretag.tide": "Tide Table",
+  "featuretag.perimeter": "Perimeter Guard",
+  "featuretag.findlog": "Find Logging",
+  "featuretag.compare": "Session Compare",
+  "featuretag.export": "GPX/KML/CSV Export",
+  "mapcompare.alt_historical": "Historical USGS topographic survey map from the 1800s",
+  "mapcompare.alt_modern": "Modern satellite aerial view",
+  "blog.back_to_guides": "Back to guides",
+  "blog.date_april_2026": "April 2026",
+  "blog.related_guides": "Related Guides",
+  "blog.cta_card_text": "has every tool a detectorist needs — GPS tracking, permissions, forecast, offline maps, and more.",
+  "blog.cta_card_link": "See all features →"
 }

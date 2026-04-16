@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "using-coin-caliper",
-  title: "Using the Coin Caliper to Identify Dirty or Worn Coins",
-  description:
-    "Identify unknown coins by measuring their diameter on screen and matching against a database of known coin sizes, filtered by region and era.",
-});
+const SLUG = "using-coin-caliper";
+const TITLE = "Using the Coin Caliper to Identify Dirty or Worn Coins";
+const DESCRIPTION = "Identify unknown coins by measuring their diameter on screen and matching against a database of known coin sizes, filtered by region and era.";
+const IMAGE = "/screenshots/presets.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "using-coin-caliper",
-          title: "Using the Coin Caliper to Identify Dirty or Worn Coins",
-          description: "Identify unknown coins by measuring their diameter on screen and matching against a database of known coin sizes, filtered by region and era.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Using the Coin Caliper to Identify Dirty or Worn Coins</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tutorials"
+        readTime="3 min"
+        relatedGuides={[
+          { href: "/blog/logging-finds-photo-video-audio", title: "Logging Finds with Photo, Video, and Audio Notes" },
+          { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
+        ]}
+      >
           <p>You pull a coin out of the ground and it&apos;s encrusted, green, and completely unreadable. No date, no face, no denomination. But it still has a measurable diameter, and that diameter narrows down what it could be. The Coin Caliper uses this approach to give you a shortlist of matches right in the field.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">How It Works</h2>
@@ -51,23 +49,7 @@ export default function Post() {
             <li>Measure the widest point &mdash; worn coins can be slightly irregular</li>
             <li>If the coin is heavily corroded, account for material loss &mdash; it might be slightly smaller than the original</li>
           </ul>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> includes a Coin Caliper that matches your find&apos;s diameter against a database of coin sizes, filtered by region and era, so you can start identifying coins right in the field.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/logging-finds-photo-video-audio" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Logging Finds with Photo, Video, and Audio Notes &rarr;</Link>
-              <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

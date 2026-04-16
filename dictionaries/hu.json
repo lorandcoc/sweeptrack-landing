@@ -9,20 +9,17 @@
   "hero.stat_coins": "Katalogizált érmék",
   "hero.stat_maps": "Térképtípusok",
   "hero.cta_secondary": "Nézd meg, mi van benne",
-
   "header.nav_features": "Funkciók",
   "header.nav_screenshots": "Képernyőképek",
   "header.nav_pricing": "Árazás",
   "header.nav_faq": "GYIK",
   "header.nav_guides": "Útmutatók",
-
   "mapcompare.label": "Interaktív nézetek",
   "mapcompare.heading_prefix": "Lásd a láthatatlant ",
   "mapcompare.heading_accent": "történelmi térképekkel",
   "mapcompare.description": "Húzd a csúszkát a modern műholdképek és a történelmi felmérési térképek összehasonlításához. Szúrd ki a régi tanyákat, elfeledett ösvényeket és prémium keresőhelyeket közvetlenül a környékeden.",
   "mapcompare.label_old": "1880-as évekbeli felmérési térkép",
   "mapcompare.label_modern": "Modern műholdas nézet",
-
   "howitworks.label": "Munkafolyamat",
   "howitworks.heading_prefix": "Az ásás előtt, közben és ",
   "howitworks.heading_accent": "után",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "A GPS minden lépésedet követi 4 térképtípuson. A Perimeter Guard a saját engedélyezett zónádon belül tart. Naplózd a találatokat fotókkal és jegyzetekkel menet közben.",
   "howitworks.step3_title": "Áttekintés",
   "howitworks.step3_description": "Töltsd be a korábbi nyomvonalakat az élő térképre, hogy lásd, pontosan hol maradtak ki részek. Hasonlítsd össze a korábbi munkameneteket egymás mellett. Exportáld az adataidat.ments el mindent a Google Drive-ba.",
-
   "features.label": "Funkciók",
   "features.heading_prefix": "Minden, amire szükséged van az ",
   "features.heading_accent": "okosabb kereséshez",
@@ -65,7 +61,6 @@
   "features.compare_description": "Egymásra helyezheted az utolsó három látogatásodat ugyanazon a mezőn, hogy azonnal lásd a réseket. Overlay mód vagy osztott képernyő.",
   "features.backup_title": "Felhő alapú mentés",
   "features.backup_description": "Tönkrement a telefonod? Újat veszel? Az egyérintéses Google Drive mentés megőriz minden munkamenetet, találatot és engedélyt.",
-
   "faq.label": "GYIK",
   "faq.heading_prefix": "Vannak ",
   "faq.heading_accent": "kérdéseid?",
@@ -89,7 +84,6 @@
   "faq.a9": "Igen. Töltsd le a térképszelvényeket előre. A GPS nyomkövetés a telefon hardverén fut, internet nélkül is. Csak az időjárás és a közeli helyszínek keresése igényel kapcsolatot.",
   "faq.q10": "Privátak és biztonságosak az adataim?",
   "faq.a10": "Minden adat az eszközödön marad. Nincsenek szerverek, nincs hirdetés vagy nyomkövetés. A Google Drive mentés egy titkosított másolatot tárol a saját fiókodban. Bármikor exportálhatod GPX, KML, CSV vagy JSON formátumban.",
-
   "pricing.label": "Árazás",
   "pricing.heading_prefix": "Ingyenesen indul. ",
   "pricing.heading_accent": "Pro, ha készen állsz.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Mind a {count} funkció megtekintése",
   "pricing.show_less": "Kevesebb",
-
   "cta.label": "Már majdnem ott vagy",
   "cta.heading_prefix": "A következő leleted már ",
   "cta.heading_accent": "vár rád",
   "cta.description": "Ingyenesen letölthető. A Pro verzió mindent felold.",
   "cta.sublabel": "Hamarosan a Google Play-en",
-
   "community.label": "Közösség",
   "community.heading_prefix": "Csatlakozz a ",
   "community.heading_accent": "közösséghez",
@@ -140,7 +132,6 @@
   "community.tiktok_desc": "Trendi keresési pillanatok és gyors tippek.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "r/metaldetecting beszélgetések, lelet-azonosítás és alkalmazás visszajelzés.",
-
   "footer.description": "A fémkeresős társkereső app. GPS, offline térképek, felhő mentés és még sok más.",
   "footer.product": "Termék",
   "footer.features": "Funkciók",
@@ -159,9 +150,7 @@
   "comingsoon.success": "A listán vagy!",
   "comingsoon.duplicate": "Már a listán vagy!",
   "comingsoon.error": "Hiba történt — próbáld újra",
-
   "foundernote.quote": "Fémkeresős és designer vagyok. Olyan appot akartam, ami tényleg a keresésről szól, nem csak egy átfestett túra-tracker. Magamnak kezdtem építeni, de remélem, neked is tetszeni fog.",
-
   "showcase.label": "Miért szeretik?",
   "showcase.heading_prefix": "Eszközök, amikkel ",
   "showcase.heading_accent": "többet találsz",
@@ -190,7 +179,6 @@
   "showcase.backup_title": "Az adataid mindig biztonságban",
   "showcase.backup_description": "Google Drive mentés egy érintéssel. Állítsd vissza a keresési előzményeidet bármelyik telefonon.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "Tartalom",
   "featuresall.heading_prefix": "Eszközök a ",
   "featuresall.heading_accent": "terepmunkához",
@@ -326,7 +314,6 @@
   "featuresall.sec_about_desc": "App verzió és technológiai kreditek.",
   "featuresall.sec_feedback_title": "Visszajelzés",
   "featuresall.sec_feedback_desc": "Hiba jelentése közvetlenül az appból.",
-
   "pricing.feat_gps": "GPS nyomkövetés",
   "pricing.feat_gps_free": "3 térképtípus",
   "pricing.feat_gps_pro": "4 (+ USGS Történelmi)",
@@ -385,7 +372,6 @@
   "pricing.feat_languages": "Angol + Román",
   "pricing.feat_onboarding": "5 lépéses bevezetés",
   "pricing.feat_aboutfeedback": "Névjegy + Feedback",
-
   "blog.back": "Vissza a főoldalra",
   "blog.title": "Útmutatók és Tippek",
   "blog.subtitle": "{count} cikk minden funkcióról és technikáról.",
@@ -401,10 +387,8 @@
   "blog.cat_beach": "Strand",
   "blog.cat_beginners": "Kezdők",
   "blog.cat_gear": "Felszerelés",
-
   "legal.back": "Vissza a főoldalra",
   "legal.rights": "Minden jog fenntartva.",
-
   "screenshots.label": "Az Alkalmazás",
   "screenshots.heading": "Valós Képernyők.",
   "screenshots.heading_accent": "Nem Makett.",
@@ -442,5 +426,26 @@
   "screenshots.alt_presets": "Detektor beállítások Minelab, XP, Nokta, Garrett, Fisher és további fémkeresőkhöz",
   "screenshots.alt_detectorlib": "Fémkereső referencia könyvtár 61 modellel 12 márkából",
   "screenshots.alt_settings": "SweepTrack Pro beállítások képernyő 12 színtémával, éjjellátóval és nyelvváltással",
-  "screenshots.alt_moremenu": "További menü az összes SweepTrack Pro eszközzel kategória szerint csoportosítva"
+  "screenshots.alt_moremenu": "További menü az összes SweepTrack Pro eszközzel kategória szerint csoportosítva",
+  "featuretag.gps": "GPS-követés",
+  "featuretag.forecast": "Észlelési Előrejelzés",
+  "featuretag.offline": "Offline Térképek",
+  "featuretag.cloud": "Felhőmentés",
+  "featuretag.nightvision": "Éjjellátó",
+  "featuretag.permission": "Engedélytár",
+  "featuretag.track": "Útvonal-átfedés",
+  "featuretag.oldmap": "Történelmi Térkép-átfedés",
+  "featuretag.nearby": "Közeli Helyek",
+  "featuretag.tide": "Árapply Táblázat",
+  "featuretag.perimeter": "Kerületvédelem",
+  "featuretag.findlog": "Lelet Napló",
+  "featuretag.compare": "Munkamenet Összehasonlítás",
+  "featuretag.export": "GPX/KML/CSV Export",
+  "mapcompare.alt_historical": "1800-as évekbeli történelmi USGS topográfiai térkép",
+  "mapcompare.alt_modern": "Modern műholdas légi felvétel",
+  "blog.back_to_guides": "Vissza az útmutatókhoz",
+  "blog.date_april_2026": "2026. április",
+  "blog.related_guides": "Kapcsolódó Útmutatók",
+  "blog.cta_card_text": "minden eszközt biztosít, amire egy fémkeresőnek szüksége van — GPS-követés, engedélyek, előrejelzés, offline térképek és még több.",
+  "blog.cta_card_link": "Összes funkció →"
 }

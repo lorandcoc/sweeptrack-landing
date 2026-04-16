@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "setting-up-perimeter-guard",
-  title: "Setting Up Perimeter Guard: Stay Within Your Permitted Zone",
-  description:
-    "Learn how to draw boundary zones on the map and get vibration alerts when you approach the edge of your permitted metal detecting area.",
-});
+const SLUG = "setting-up-perimeter-guard";
+const TITLE = "Setting Up Perimeter Guard: Stay Within Your Permitted Zone";
+const DESCRIPTION = "Learn how to draw boundary zones on the map and get vibration alerts when you approach the edge of your permitted metal detecting area.";
+const IMAGE = "/screenshots/permission_vault.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "setting-up-perimeter-guard",
-          title: "Setting Up Perimeter Guard: Stay Within Your Permitted Zone",
-          description: "Learn how to draw boundary zones on the map and get vibration alerts when you approach the edge of your permitted metal detecting area.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Setting Up Perimeter Guard: Stay Within Your Permitted Zone</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tutorials"
+        readTime="3 min"
+        relatedGuides={[
+          { href: "/blog/using-the-permission-vault", title: "Using the Permission Vault" },
+          { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
+        ]}
+      >
           <p>When a landowner gives you permission to detect on a specific field, you need to stay in that field. Walk too far and you&apos;re on someone else&apos;s land without permission. Perimeter Guard solves this by drawing a virtual fence on the map and buzzing your phone as you approach the edge.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Drawing a Boundary</h2>
@@ -53,23 +51,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Clearing or Editing Boundaries</h2>
           <p>Tap the Perimeter Guard icon again while a boundary is active to see your options. You can clear the current boundary and draw a new one, or deactivate monitoring temporarily without deleting the shape. If your permission area changes, just redraw it.</p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> keeps you inside your permitted zone with real-time vibration alerts at four distance levels, so you never accidentally wander onto land you don&apos;t have permission for.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/using-the-permission-vault" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Using the Permission Vault &rarr;</Link>
-              <Link href="/blog/how-to-track-metal-detecting-sessions-gps" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Track Your Sessions with GPS &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

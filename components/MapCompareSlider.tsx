@@ -86,7 +86,7 @@ export default function MapCompareSlider() {
           <div className="absolute inset-0 w-full h-full bg-surface">
             <Image
               src="/maps/old_map.jpg"
-              alt="Historical Map View"
+              alt={t("mapcompare.alt_historical")}
               fill
               sizes="(max-width: 768px) 100vw, 960px"
               className="object-cover pointer-events-none opacity-90"
@@ -104,7 +104,7 @@ export default function MapCompareSlider() {
           >
             <Image
               src="/maps/satellite_map.jpg"
-              alt="Modern Satellite View"
+              alt={t("mapcompare.alt_modern")}
               fill
               sizes="(max-width: 768px) 100vw, 960px"
               className="object-cover pointer-events-none"

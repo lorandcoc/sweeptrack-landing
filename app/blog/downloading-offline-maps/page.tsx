@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "downloading-offline-maps",
-  title: "Downloading Offline Maps for Metal Detecting Without Cell Service",
-  description:
-    "Download offline maps in four tile styles for metal detecting in remote areas with no cell signal. Street, satellite, terrain, and historical topo maps.",
-});
+const SLUG = "downloading-offline-maps";
+const TITLE = "Downloading Offline Maps for Metal Detecting Without Cell Service";
+const DESCRIPTION = "Download offline maps in four tile styles for metal detecting in remote areas with no cell signal. Street, satellite, terrain, and historical topo maps.";
+const IMAGE = "/screenshots/offline_maps.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "downloading-offline-maps",
-          title: "Downloading Offline Maps for Metal Detecting Without Cell Service",
-          description: "Download offline maps in four tile styles for metal detecting in remote areas with no cell signal. Street, satellite, terrain, and historical topo maps.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Downloading Offline Maps for Metal Detecting Without Cell Service</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tutorials"
+        readTime="3 min"
+        relatedGuides={[
+          { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
+          { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
+        ]}
+      >
           <p>Some of the best detecting spots are in places where your phone gets zero signal. Old farmland, remote beaches, woodland &mdash; no bars, no data, no map loading. Offline maps solve this by downloading the tiles you need while you still have Wi-Fi.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Four Tile Sources</h2>
@@ -51,23 +49,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Storage Considerations</h2>
           <p>Satellite tiles are the largest because they include high-resolution imagery. A typical field-sized area at max zoom might be 50&ndash;100 MB for satellite versus 5&ndash;10 MB for street tiles. Download over Wi-Fi and keep an eye on your device storage if you&apos;re caching lots of areas.</p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> supports four offline tile sources including historical topo maps, so your GPS tracking and map display work perfectly even with zero cell signal.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Metal Detecting &rarr;</Link>
-              <Link href="/blog/how-to-track-metal-detecting-sessions-gps" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Track Your Sessions with GPS &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

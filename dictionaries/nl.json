@@ -9,20 +9,17 @@
   "hero.stat_coins": "Gecatalogiseerde Munten",
   "hero.stat_maps": "Kaarttypes",
   "hero.cta_secondary": "Bekijk de inhoud",
-
   "header.nav_features": "Functies",
   "header.nav_screenshots": "Screenshots",
   "header.nav_pricing": "Prijzen",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Gidsen",
-
   "mapcompare.label": "Interactieve Weergaven",
   "mapcompare.heading_prefix": "Zie het onzichtbare met ",
   "mapcompare.heading_accent": "historische kaarten",
   "mapcompare.description": "Sleep de slider om moderne satellietbeelden te vergelijken met historische landmeetkaarten. Ontdek oude hoeves, vergeten paden en toplocaties die zich recht in je achtertuin verschuilen.",
   "mapcompare.label_old": "Landmeetkaart uit 1880",
   "mapcompare.label_modern": "Moderne Satellietweergave",
-
   "howitworks.label": "Je Workflow",
   "howitworks.heading_prefix": "Voor, tijdens en ",
   "howitworks.heading_accent": "na het graven",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "GPS volgt elke stap op 4 kaarttypes. Perimeter Guard houdt je binnen je toegestane zone. Log vondsten met foto's en notities terwijl je bezig bent.",
   "howitworks.step3_title": "Review",
   "howitworks.step3_description": "Laad eerdere tracks op de live-kaart om te zien wat je hebt gemist. Vergelijk sessies naast elkaar. Exporteer je data. Maak een backup in Google Drive.",
-
   "features.label": "Functies",
   "features.heading_prefix": "Alles wat je nodig hebt om ",
   "features.heading_accent": "slimmer te zoeken",
@@ -65,7 +61,6 @@
   "features.compare_description": "Stapel je laatste drie bezoeken aan hetzelfde veld en zie direct de gaten. Overlay-modus of split-screen.",
   "features.backup_title": "Cloud Backup",
   "features.backup_description": "Telefoon kwijt? Upgrade? Backup in één tik naar Google Drive voor sessies, vondsten, presets en toestemmingen.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "Heb je ",
   "faq.heading_accent": "Vragen?",
@@ -89,7 +84,6 @@
   "faq.a9": "Ja. Download kaarten vooraf (Satelliet, Straat, Topo). GPS-tracking werkt op de hardware van de telefoon zonder internet. Alleen weer, getijden en zoeken naar historische sites vereisen een verbinding.",
   "faq.q10": "Zijn mijn detectiegegevens privé?",
   "faq.a10": "Alle data blijft op je toestel. Geen servers, advertenties of tracking. De optionele Google Drive backup gebruikt je eigen account. Exporteer naar GPX, KML, CSV of JSON wanneer je wilt. Jij bent de eigenaar.",
-
   "pricing.label": "Prijzen",
   "pricing.heading_prefix": "Gratis starten. ",
   "pricing.heading_accent": "Pro wanneer je er klaar voor bent.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Bekijk alle {count} functies",
   "pricing.show_less": "Minder weergeven",
-
   "cta.label": "Bijna klaar",
   "cta.heading_prefix": "Je volgende vondst ",
   "cta.heading_accent": "wacht op je",
   "cta.description": "Gratis te downloaden. Pro-versie ontgrendelt alles.",
   "cta.sublabel": "Binnenkort op Google Play",
-
   "community.heading_prefix": "Word lid van de ",
   "community.heading_accent": "community",
   "community.description": "Deel vondsten, wissel tips uit en zie wat anderen opgraven.",
@@ -139,7 +131,6 @@
   "community.tiktok_desc": "Trending detectiemomenten en snelle tips.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "r/metaldetecting discussies, vondst-ID's en app-feedback.",
-
   "footer.description": "De metgezel-app voor metaaldetectie. GPS-tracking, offline kaarten, cloud backup en nog veel meer.",
   "footer.product": "Product",
   "footer.features": "Functies",
@@ -151,7 +142,6 @@
   "footer.adfree": "Voor altijd reclamevrij",
   "footer.privacy": "Privacy",
   "footer.terms": "Voorwaarden",
-
   "comingsoon.button": "Meld me aan voor de lancering",
   "comingsoon.joining": "Inschrijven...",
   "comingsoon.placeholder": "je@email.com",
@@ -159,9 +149,7 @@
   "comingsoon.success": "Je staat op de lijst!",
   "comingsoon.duplicate": "Al op de lijst!",
   "comingsoon.error": "Fout — tik om opnieuw te proberen",
-
   "foundernote.quote": "Ik ben detectorist en designer. Ik wilde een app die echt voor detecteren is gemaakt — geen wandel-tracker in een nieuw jasje. Dus ben ik er zelf een gaan bouwen.",
-
   "showcase.label": "Waarom detectoristen het geweldig vinden",
   "showcase.heading_prefix": "Tools die echt ",
   "showcase.heading_accent": "meer vinden",
@@ -190,7 +178,6 @@
   "showcase.backup_title": "Je data, altijd veilig.",
   "showcase.backup_description": "Google Drive backup in één tik. Herstel je historie op elke telefoon.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "Inhoud",
   "featuresall.heading_prefix": "Tools voor in het ",
   "featuresall.heading_accent": "veld",
@@ -326,7 +313,6 @@
   "featuresall.sec_about_desc": "Versie en technologie-credits.",
   "featuresall.sec_feedback_title": "Feedback",
   "featuresall.sec_feedback_desc": "Foutrapporten sturen vanuit de app.",
-
   "pricing.feat_gps": "GPS Tracking",
   "pricing.feat_gps_free": "3 kaarttypes",
   "pricing.feat_gps_pro": "4 (+ USGS Historisch)",
@@ -385,7 +371,6 @@
   "pricing.feat_languages": "Engels + Roemeens",
   "pricing.feat_onboarding": "5-Staps Onboarding",
   "pricing.feat_aboutfeedback": "Over + Feedback",
-
   "blog.back": "Terug naar home",
   "blog.title": "Gidsen & Tips",
   "blog.subtitle": "{count} artikelen over elke functie en techniek.",
@@ -401,10 +386,8 @@
   "blog.cat_beach": "Strand",
   "blog.cat_beginners": "Beginners",
   "blog.cat_gear": "Uitrusting",
-
   "legal.back": "Terug naar home",
   "legal.rights": "Alle rechten voorbehouden.",
-
   "screenshots.label": "De App",
   "screenshots.heading": "Echte Schermen.",
   "screenshots.heading_accent": "Geen Mockups.",
@@ -442,5 +425,26 @@
   "screenshots.alt_presets": "Detector presets voor Minelab, XP, Nokta, Garrett, Fisher en meer metaaldetectoren",
   "screenshots.alt_detectorlib": "Referentiebibliotheek van metaaldetectoren met 61 modellen van 12 merken",
   "screenshots.alt_settings": "SweepTrack Pro instellingenscherm met 12 kleurthema's, nachtzicht en taalwissel",
-  "screenshots.alt_moremenu": "Meer menu met alle SweepTrack Pro tools gegroepeerd per categorie"
+  "screenshots.alt_moremenu": "Meer menu met alle SweepTrack Pro tools gegroepeerd per categorie",
+  "featuretag.gps": "GPS-tracking",
+  "featuretag.forecast": "Detectievoorspelling",
+  "featuretag.offline": "Offline Kaarten",
+  "featuretag.cloud": "Cloudback-up",
+  "featuretag.nightvision": "Nachtzicht",
+  "featuretag.permission": "Vergunningenkluis",
+  "featuretag.track": "Spooroverlay",
+  "featuretag.oldmap": "Historische Kaartoverlay",
+  "featuretag.nearby": "Locaties in de Buurt",
+  "featuretag.tide": "Getijdentabel",
+  "featuretag.perimeter": "Perimeterbewaking",
+  "featuretag.findlog": "Vondstenlogboek",
+  "featuretag.compare": "Sessies Vergelijken",
+  "featuretag.export": "GPX/KML/CSV Export",
+  "mapcompare.alt_historical": "Historische USGS-topografische kaart uit de 19e eeuw",
+  "mapcompare.alt_modern": "Moderne satelliet-luchtfoto",
+  "blog.back_to_guides": "Terug naar gidsen",
+  "blog.date_april_2026": "April 2026",
+  "blog.related_guides": "Gerelateerde gidsen",
+  "blog.cta_card_text": "heeft alle tools die een detectorist nodig heeft — GPS-tracking, vergunningen, voorspelling, offline kaarten en meer.",
+  "blog.cta_card_link": "Bekijk alle functies →"
 }

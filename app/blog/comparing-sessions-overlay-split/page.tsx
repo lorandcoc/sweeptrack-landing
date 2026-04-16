@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "comparing-sessions-overlay-split",
-  title: "Comparing Sessions: Overlay and Split View",
-  description:
-    "Compare metal detecting sessions side by side or overlaid on the same map with colour-coded paths, blend controls, and map type toggling.",
-});
+const SLUG = "comparing-sessions-overlay-split";
+const TITLE = "Comparing Sessions: Overlay and Split View";
+const DESCRIPTION = "Compare metal detecting sessions side by side or overlaid on the same map with colour-coded paths, blend controls, and map type toggling.";
+const IMAGE = "/screenshots/stats.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "comparing-sessions-overlay-split",
-          title: "Comparing Sessions: Overlay and Split View",
-          description: "Compare metal detecting sessions side by side or overlaid on the same map with colour-coded paths, blend controls, and map type toggling.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Comparing Sessions: Overlay and Split View</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tutorials"
+        readTime="3 min"
+        relatedGuides={[
+          { href: "/blog/using-track-overlay", title: "Using Track Overlay" },
+          { href: "/blog/understanding-session-statistics", title: "Understanding Your Session Statistics" },
+        ]}
+      >
           <p>When you detect the same site over multiple visits, comparing sessions shows you how your coverage, finds, and strategy evolved. Session comparison gives you two ways to do this: overlay mode and split view.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Selecting Sessions to Compare</h2>
@@ -52,23 +50,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Path Width and Map Types</h2>
           <p>You can also adjust the path width to make tracks thicker or thinner, and toggle between satellite and street map views. Satellite is usually best for field detecting because you can see physical features, while street view works better for park and urban sessions where road context helps.</p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> lets you compare sessions in overlay or split view with colour-coded paths and blend controls, so you can see exactly how your coverage builds over time.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/using-track-overlay" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Using Track Overlay &rarr;</Link>
-              <Link href="/blog/understanding-session-statistics" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Understanding Your Session Statistics &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

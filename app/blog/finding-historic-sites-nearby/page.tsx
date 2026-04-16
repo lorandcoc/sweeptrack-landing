@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "finding-historic-sites-nearby",
-  title: "Finding Historic Sites and Landmarks Near Your Location",
-  description:
-    "Discover metal detecting spots by browsing nearby historic sites, landmarks, and Wikipedia-listed locations on an interactive map with distance display.",
-});
+const SLUG = "finding-historic-sites-nearby";
+const TITLE = "Finding Historic Sites and Landmarks Near Your Location";
+const DESCRIPTION = "Discover metal detecting spots by browsing nearby historic sites, landmarks, and Wikipedia-listed locations on an interactive map with distance display.";
+const IMAGE = "/screenshots/nearby.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "finding-historic-sites-nearby",
-          title: "Finding Historic Sites and Landmarks Near Your Location",
-          description: "Discover metal detecting spots by browsing nearby historic sites, landmarks, and Wikipedia-listed locations on an interactive map with distance display.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Finding Historic Sites and Landmarks Near Your Location</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tutorials"
+        readTime="3 min"
+        relatedGuides={[
+          { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
+          { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
+        ]}
+      >
           <p>Good detecting starts with good research. The most productive sites are usually places where people gathered historically &mdash; old market squares, coaching inns, battlefields, fairgrounds. The Nearby tool helps you discover these places without hours of map research.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Where the Data Comes From</h2>
@@ -52,23 +50,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Searching a Different Area</h2>
           <p>By default, Nearby uses your current GPS position. But you can also search around a different location by panning the map or entering a place name. Planning a trip? Search the area around your destination before you leave and identify sites worth visiting.</p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> shows you nearby historic sites and Wikipedia landmarks on a map with distance, so you can research productive detecting spots directly from your phone.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Metal Detecting &rarr;</Link>
-              <Link href="/blog/metal-detecting-permission-letter-template" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Permission Letter Template &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

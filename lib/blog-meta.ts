@@ -48,11 +48,13 @@ export function articleJsonLd({
   slug,
   title,
   description,
+  image,
   publishedDate = "2026-04-01",
 }: {
   slug: string;
   title: string;
   description: string;
+  image?: string;
   publishedDate?: string;
 }) {
   return {
@@ -63,6 +65,7 @@ export function articleJsonLd({
     url: `${BASE}/blog/${slug}`,
     datePublished: publishedDate,
     dateModified: publishedDate,
+    ...(image ? { image: image.startsWith("http") ? image : `${BASE}${image}` } : {}),
     author: {
       "@type": "Person",
       name: "Lorand",

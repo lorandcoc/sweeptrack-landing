@@ -9,20 +9,17 @@
   "hero.stat_coins": "Монет в каталоге",
   "hero.stat_maps": "Типы карт",
   "hero.cta_secondary": "Что внутри",
-
   "header.nav_features": "Функции",
   "header.nav_screenshots": "Скриншоты",
   "header.nav_pricing": "Цены",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Гайды",
-
   "mapcompare.label": "Интерактивный вид",
   "mapcompare.heading_prefix": "Увидьте невидимое с ",
   "mapcompare.heading_accent": "историческими картами",
   "mapcompare.description": "Используйте слайдер для сравнения современных спутниковых снимков с историческими картами. Найдите старые усадьбы, забытые тропы и лучшие места для поиска прямо у себя под боком.",
   "mapcompare.label_old": "Карта 1880-х годов",
   "mapcompare.label_modern": "Современный спутник",
-
   "howitworks.label": "Ваш рабочий процесс",
   "howitworks.heading_prefix": "До, во время и ",
   "howitworks.heading_accent": "после копа",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "GPS отслеживает каждый шаг на 4 типах карт. Perimeter Guard держит вас в границах разрешенной зоны. Фиксируйте находки с фото и заметками.",
   "howitworks.step3_title": "Обзор",
   "howitworks.step3_description": "Загружайте старые треки на карту, чтобы увидеть пропуски. Сравнивайте сессии. Экспортируйте данные. Делайте бэкап в Google Drive.",
-
   "features.label": "Функции",
   "features.heading_prefix": "Все, что нужно для ",
   "features.heading_accent": "умного поиска",
@@ -65,7 +61,6 @@
   "features.compare_description": "Наложите три последних визита на одно поле, чтобы увидеть «белые пятна». Режим наложения или раздельный экран.",
   "features.backup_title": "Облачный бэкап",
   "features.backup_description": "Сломался телефон? Купили новый? Бэкап в Google Drive сохранит все сессии, находки и разрешения.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "Есть ",
   "faq.heading_accent": "вопросы?",
@@ -89,7 +84,6 @@
   "faq.a9": "Да. Скачайте карты заранее. GPS работает напрямую через чип телефона. Интернет нужен только для прогноза погоды и поиска мест Wikipedia.",
   "faq.q10": "Приватны ли мои данные?",
   "faq.a10": "Все данные хранятся только на вашем устройстве. Нет серверов, рекламы или слежки. Бэкап в Google Drive — это зашифрованная копия в вашем личном аккаунте. Вы владелец своих данных.",
-
   "pricing.label": "Цены",
   "pricing.heading_prefix": "Бесплатно в начале. ",
   "pricing.heading_accent": "Pro, когда вы готовы.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Все {count} функций",
   "pricing.show_less": "Свернуть",
-
   "cta.label": "Почти у цели",
   "cta.heading_prefix": "Ваша следующая находка ",
   "cta.heading_accent": "ждет вас",
   "cta.description": "Бесплатно для скачивания. Pro-версия открывает всё.",
   "cta.sublabel": "Скоро в Google Play",
-
   "community.label": "Сообщество",
   "community.heading_prefix": "Присоединяйтесь к ",
   "community.heading_accent": "сообществу",
@@ -140,7 +132,6 @@
   "community.tiktok_desc": "Трендовые моменты поиска и быстрые советы.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "Обсуждения r/metaldetecting, определение находок и отзывы о приложении.",
-
   "footer.description": "Ваш напарник в поиске. GPS трекинг, оффлайн карты, облачный бэкап и многое другое.",
   "footer.product": "Продукт",
   "footer.features": "Функции",
@@ -159,9 +150,7 @@
   "comingsoon.success": "Вы в списке!",
   "comingsoon.duplicate": "Уже в списке!",
   "comingsoon.error": "Ошибка — нажмите, чтобы повторить",
-
   "foundernote.quote": "Я поисковик и дизайнер. Я хотел приложение для копа, а не трекер для походов. Начал делать для себя, но, думаю, оно пригодится и вам.",
-
   "showcase.label": "Почему это любят?",
   "showcase.heading_prefix": "Инструменты, которые ",
   "showcase.heading_accent": "находят больше",
@@ -190,7 +179,6 @@
   "showcase.backup_title": "Данные всегда под защитой",
   "showcase.backup_description": "Бэкап в Google Drive в одно касание. Восстановите историю на любом телефоне.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "Наполнение",
   "featuresall.heading_prefix": "Инструменты для ",
   "featuresall.heading_accent": "полевой работы",
@@ -326,7 +314,6 @@
   "featuresall.sec_about_desc": "Версия и используемые технологии.",
   "featuresall.sec_feedback_title": "Обратная связь",
   "featuresall.sec_feedback_desc": "Отправка баг-репортов из приложения.",
-
   "pricing.feat_gps": "GPS трекинг",
   "pricing.feat_gps_free": "3 типа карт",
   "pricing.feat_gps_pro": "4 (+ USGS Историческая)",
@@ -385,7 +372,6 @@
   "pricing.feat_languages": "English + Romanian",
   "pricing.feat_onboarding": "Обучение в 5 шагов",
   "pricing.feat_aboutfeedback": "О программе + Feedback",
-
   "blog.back": "На главную",
   "blog.title": "Гайды и Советы",
   "blog.subtitle": "{count} статей о каждой функции и технике.",
@@ -401,10 +387,8 @@
   "blog.cat_beach": "Пляж",
   "blog.cat_beginners": "Новичкам",
   "blog.cat_gear": "Снаряжение",
-
   "legal.back": "На главную",
   "legal.rights": "Все права защищены.",
-
   "screenshots.label": "Приложение",
   "screenshots.heading": "Реальные Экраны.",
   "screenshots.heading_accent": "Без Макетов.",
@@ -442,5 +426,26 @@
   "screenshots.alt_presets": "Пресеты детектора для Minelab, XP, Nokta, Garrett, Fisher и других металлоискателей",
   "screenshots.alt_detectorlib": "Справочная библиотека металлоискателей с 61 моделью от 12 брендов",
   "screenshots.alt_settings": "Экран настроек SweepTrack Pro с 12 цветовыми темами, ночным видением и переключением языка",
-  "screenshots.alt_moremenu": "Меню с инструментами SweepTrack Pro сгруппированными по категориям"
+  "screenshots.alt_moremenu": "Меню с инструментами SweepTrack Pro сгруппированными по категориям",
+  "featuretag.gps": "GPS-трекинг",
+  "featuretag.forecast": "Прогноз Детекции",
+  "featuretag.offline": "Офлайн-карты",
+  "featuretag.cloud": "Облачное резервирование",
+  "featuretag.nightvision": "Ночное зрение",
+  "featuretag.permission": "Хранилище разрешений",
+  "featuretag.track": "Наложение треков",
+  "featuretag.oldmap": "Наложение исторических карт",
+  "featuretag.nearby": "Близлежащие места",
+  "featuretag.tide": "Таблица приливов",
+  "featuretag.perimeter": "Охрана периметра",
+  "featuretag.findlog": "Журнал находок",
+  "featuretag.compare": "Сравнение сессий",
+  "featuretag.export": "Экспорт GPX/KML/CSV",
+  "mapcompare.alt_historical": "Историческая топографическая карта USGS 1800-х годов",
+  "mapcompare.alt_modern": "Современный спутниковый вид сверху",
+  "blog.back_to_guides": "Назад к руководствам",
+  "blog.date_april_2026": "Апрель 2026",
+  "blog.related_guides": "Похожие руководства",
+  "blog.cta_card_text": "обладает всеми инструментами, необходимыми детектористу: GPS-трекинг, разрешения, прогноз, офлайн-карты и многое другое.",
+  "blog.cta_card_link": "Смотреть все функции →"
 }

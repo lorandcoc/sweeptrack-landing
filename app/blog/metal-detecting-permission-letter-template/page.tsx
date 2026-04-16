@@ -1,34 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "metal-detecting-permission-letter-template",
-  title: "Metal Detecting Permission Letter: Free Template + What to Include",
-  description:
-    "Free metal detecting permission letter template. Learn what to include, how to approach landowners, and how to track permissions with expiry dates.",
-});
+const SLUG = "metal-detecting-permission-letter-template";
+const TITLE = "Metal Detecting Permission Letter: Free Template + What to Include";
+const DESCRIPTION = "Free metal detecting permission letter template. Learn what to include, how to approach landowners, and how to track permissions with expiry dates.";
+const IMAGE = "/screenshots/permission_vault.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "metal-detecting-permission-letter-template",
-          title: "Metal Detecting Permission Letter: Free Template + What to Include",
-          description: "Free metal detecting permission letter template. Learn what to include, how to approach landowners, and how to track permissions with expiry dates.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">
-          &larr; Back to blog
-        </Link>
-
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Guide</p>
-        <h1 className="text-3xl font-bold mb-4">Metal Detecting Permission Letter: Free Template + What to Include</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 6 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="guides"
+        readTime="6 min"
+        relatedGuides={[
+          { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Detecting" },
+          { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
+        ]}
+      >
           <p>
             Getting landowner permission is the single most important thing in metal detecting. Without it, you&apos;re trespassing. With it, you&apos;re a welcome guest who might find something incredible. Here&apos;s how to ask, what to put in writing, and how to keep track of it all.
           </p>
@@ -86,23 +81,7 @@ export default function Post() {
           <p>
             A dedicated permission tracker that stores site names, landowner details, expiry dates, boundary maps, and generates PDF letters when you need them is the practical solution.
           </p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> includes a Permission Vault that tracks all your permissions with approval status, expiry alerts to your phone calendar, site boundary maps with perimeter guard integration, and a PDF letter generator.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Detecting &rarr;</Link>
-              <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "best-places-to-metal-detect-in-texas",
-  title: "Best Places to Metal Detect in Texas",
-  description:
-    "From Gulf Coast beaches to ghost towns and old ranches, here are the best types of locations for metal detecting in Texas — plus what the law says.",
-});
+const SLUG = "best-places-to-metal-detect-in-texas";
+const TITLE = "Best Places to Metal Detect in Texas";
+const DESCRIPTION = "From Gulf Coast beaches to ghost towns and old ranches, here are the best types of locations for metal detecting in Texas — plus what the law says.";
+const IMAGE = "/screenshots/nearby.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "best-places-to-metal-detect-in-texas",
-          title: "Best Places to Metal Detect in Texas",
-          description: "From Gulf Coast beaches to ghost towns and old ranches, here are the best types of locations for metal detecting in Texas — plus what the law says.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Location</p>
-        <h1 className="text-3xl font-bold mb-4">Best Places to Metal Detect in Texas</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 5 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="location"
+        readTime="5 min"
+        relatedGuides={[
+          { href: "/blog/where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me" },
+          { href: "/blog/metal-detecting-laws-in-the-us", title: "Metal Detecting Laws in the US" },
+        ]}
+      >
           <p>Texas is massive, historically rich, and has no single state law banning metal detecting. That combination makes it one of the best states in the country for the hobby. But &ldquo;no state ban&rdquo; doesn&apos;t mean anything goes &mdash; individual cities, counties, and land agencies each have their own rules.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Gulf Coast Beaches</h2>
@@ -59,23 +57,7 @@ export default function Post() {
           <p className="text-xs text-muted mt-8 p-4 rounded-lg bg-white/[0.02] border border-white/5">
             <strong>Disclaimer:</strong> Laws and regulations change. This article is for general information only and does not constitute legal advice. Always verify current rules with local authorities before detecting at any location.
           </p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> includes offline maps for remote Texas ranch land where cell service is spotty, plus a permission vault to store landowner agreements so you always have proof of permission in your pocket.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/where-to-metal-detect-near-me" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Where to Metal Detect Near Me &rarr;</Link>
-              <Link href="/blog/metal-detecting-laws-in-the-us" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting Laws in the US &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

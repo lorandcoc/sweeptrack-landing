@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "beach-metal-detecting-tide-timing",
-  title: "Beach Metal Detecting: Tide Timing & Where to Search",
-  description:
-    "Learn how to time beach metal detecting sessions around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.",
-});
+const SLUG = "beach-metal-detecting-tide-timing";
+const TITLE = "Beach Metal Detecting: Tide Timing & Where to Search";
+const DESCRIPTION = "Learn how to time beach metal detecting sessions around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.";
+const IMAGE = "/screenshots/forecast.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "beach-metal-detecting-tide-timing",
-          title: "Beach Metal Detecting: Tide Timing & Where to Search",
-          description: "Learn how to time beach metal detecting sessions around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Beach</p>
-        <h1 className="text-3xl font-bold mb-4">Beach Metal Detecting: Tide Timing & Where to Search</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 5 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="beach"
+        readTime="5 min"
+        relatedGuides={[
+          { href: "/blog/best-weather-conditions-for-metal-detecting", title: "Best Weather Conditions for Metal Detecting" },
+          { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
+        ]}
+      >
           <p>Beach detecting is where the gold is — literally. Rings, chains, coins, and watches get lost in the sand every day. But the beach only gives them up at the right time. If you show up at high tide, you&apos;re wasting your time.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Why Low Tide Matters</h2>
@@ -60,23 +58,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Timing Your Sessions</h2>
           <p>The best beach detecting window is roughly 2 hours before low tide to 1 hour after. After that, the water starts coming back fast. Always keep an eye on the water — getting caught between incoming tide and a cliff or seawall is dangerous.</p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> has a built-in tide table showing high and low tide times with 3, 7, and 14-day forecasts for U.S. coastal stations. Plan your beach sessions from the app.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/best-weather-conditions-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Best Weather Conditions for Metal Detecting &rarr;</Link>
-              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Metal Detecting &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

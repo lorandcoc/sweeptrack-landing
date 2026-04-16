@@ -9,20 +9,17 @@
   "hero.stat_coins": "Kataloglanan Sikkeler",
   "hero.stat_maps": "Harita Türleri",
   "hero.cta_secondary": "İçeriğe Göz At",
-
   "header.nav_features": "Özellikler",
   "header.nav_screenshots": "Ekran Görüntüleri",
   "header.nav_pricing": "Fiyatlandırma",
   "header.nav_faq": "SSS",
   "header.nav_guides": "Kılavuzlar",
-
   "mapcompare.label": "Etkileşimli Görünümler",
   "mapcompare.heading_prefix": "Görünmeyeni ",
   "mapcompare.heading_accent": "Tarihi Haritalar ile Görün",
   "mapcompare.description": "Modern uydu görüntülerini tarihi haritalarla karşılaştırmak için sürgüyü sürükleyin. Arka bahçenizde gizlenen eski yerleşim yerlerini, unutulmuş yolları ve birincil arama noktalarını tespit edin.",
   "mapcompare.label_old": "1880'ler Arazi Haritası",
   "mapcompare.label_modern": "Modern Uydu Görünümü",
-
   "howitworks.label": "İş Akışınız",
   "howitworks.heading_prefix": "Kazıdan önce, sırasında ve ",
   "howitworks.heading_accent": "sonrasında",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "GPS, 4 harita türünde her adımınızı takip eder. Perimeter Guard sizi izinli bölgenizde tutar. İlerlerken fotoğraflar ve notlarla buluntuları kaydedin.",
   "howitworks.step3_title": "İnceleme",
   "howitworks.step3_description": "Kaçırdığınız yerleri tam olarak görmek için geçmiş rotaları canlı haritaya yükleyin. Geçmiş oturumları yan yana karşılaştırın. Verilerinizi dışa aktarın. Her şeyi Google Drive'a yedekleyin.",
-
   "features.label": "Özellikler",
   "features.heading_prefix": "Daha akıllı tespit için ",
   "features.heading_accent": "ihtiyacınız olan her şey",
@@ -65,11 +61,9 @@
   "features.compare_description": "Aynı araziye son üç ziyaretinizi üst üste koyun ve boşlukları anında görün. Üst üste bindirme modu veya yan yana bölünmüş ekran.",
   "features.backup_title": "Bulut Yedekleme",
   "features.backup_description": "Telefon bozuldu mu? Yükseltme mi? Tek dokunuşla Google Drive yedeklemesi her oturumu, buluntuyu, ayarı ve izni kaydeder. Her şeyi herhangi bir cihazda geri yükleyin.",
-
   "faq.label": "SSS",
   "faq.heading_prefix": "",
   "faq.heading_accent": "Sorularınız mı var?",
-
   "pricing.label": "Fiyatlandırma",
   "pricing.heading_prefix": "Ücretsiz Başlayın. ",
   "pricing.heading_accent": "Hazır Olunca Pro.",
@@ -89,13 +83,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Tüm {count} özelliği gör",
   "pricing.show_less": "Daha az göster",
-
   "cta.label": "Neredeyse Hazır",
   "cta.heading_prefix": "Bir sonraki buluntunuz ",
   "cta.heading_accent": "sizi bekliyor",
   "cta.description": "İndirmesi ve kullanması ücretsiz. Pro yükseltme her şeyin kilidini açar.",
   "cta.sublabel": "Yakında Google Play'de",
-
   "comingsoon.button": "Lansmanda Haber Ver",
   "comingsoon.joining": "Katılıyor...",
   "comingsoon.placeholder": "e-posta@adresiniz.com",
@@ -103,9 +95,7 @@
   "comingsoon.success": "Listedesiniz!",
   "comingsoon.duplicate": "Zaten listedesiniz!",
   "comingsoon.error": "Bir şeyler ters gitti — tekrar denemek için dokunun",
-
   "foundernote.quote": "Bir dedektör kullanıcısıyım ve yol boyunca kodlamayı öğrenen bir tasarımcıyım. Bir yürüyüş takipçisinin yeni bir boyayla süslenmesi değil, tespit için yapılmış gibi hissettiren bir uygulama istedim. Bu yüzden kendim için bir tane yapmaya başladım. Eğer ben kullanmaktan hoşlanıyorsam, başka biri de hoşlanabilir diye düşündüm.",
-
   "showcase.label": "Dedektör Kullanıcıları Neden Seviyor",
   "showcase.heading_prefix": "Gerçekten ",
   "showcase.heading_accent": "Daha Fazla Bulan Araçlar",
@@ -134,7 +124,6 @@
   "showcase.backup_title": "Verileriniz. Yedekli. Her Zaman.",
   "showcase.backup_description": "Tüm oturumlar, ayarlar, izinler ve tercihler için tek dokunuşla Google Drive yedeklemesi. Herhangi bir cihazda geri yükleyin. Telefon mu kayboldu? Bozuldu mu? Tespit geçmişiniz hayatta kalır.",
   "showcase.backup_highlight": "Bulut Yedekleme",
-
   "featuresall.label": "İçeride Ne Var",
   "featuresall.heading_prefix": "Arazide Gerçekten ",
   "featuresall.heading_accent": "Kullanacağınız Araçlar",
@@ -177,7 +166,6 @@
   "featuresall.offline_subtitle": "4 kaynak · Hücre gerekmez",
   "featuresall.offline_tag": "Arazi",
   "featuresall.offline_description": "Çevrimdışı kullanım için harita karoları indirin. Sokak, Uydu, Arazi ve Tarihi Topo. Sıfır hücre kapsama alanıyla güvenle tespit edin.",
-
   "featuresall.plus_label": "Artı",
   "featuresall.plus_heading": "Büyük fark yaratan tüm küçük şeyler",
   "featuresall.show_all": "Tüm {count} özelliği gör",
@@ -254,7 +242,6 @@
   "featuresall.sec_about_desc": "Uygulama sürümü ve kullanılan teknolojiler (Kotlin, Jetpack Compose, Google Maps, Open-Meteo, NOAA, Overpass/OSM) için krediler.",
   "featuresall.sec_feedback_title": "Uygulama İçi Geri Bildirim",
   "featuresall.sec_feedback_desc": "Ayarlar'dan bir hata raporu veya özellik isteği gönderin — destek ekibine önceden doldurulmuş bir e-posta açar.",
-
   "pricing.feat_gps": "GPS Takibi",
   "pricing.feat_gps_free": "3 harita türü",
   "pricing.feat_gps_pro": "4 (+ USGS Tarihi)",
@@ -313,7 +300,6 @@
   "pricing.feat_languages": "İngilizce + Romence",
   "pricing.feat_onboarding": "5 Adımlı Tanıtım",
   "pricing.feat_aboutfeedback": "Hakkında + Geri Bildirim Ekranları",
-
   "community.heading_prefix": "Topluluğa ",
   "community.heading_accent": "katılın",
   "community.description": "Buluntularınızı paylaşın, ipuçları alışverişi yapın ve diğer dedektörcülerin neler bulduğunu görün. Hepimiz bu işin içindeyiz.",
@@ -337,7 +323,6 @@
   "community.tiktok_desc": "Trend tespit anları ve hızlı ipuçları.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "r/metaldetecting tartışmaları, buluntu tanımlama ve uygulama geri bildirimi.",
-
   "footer.description": "Metal tespit arkadaş uygulaması. GPS takibi, çevrimdışı haritalar, bulut yedekleme ve bu alt bilgiye sığdıramayacağımız çok daha fazlası.",
   "footer.product": "Ürün",
   "footer.features": "Özellikler",
@@ -349,7 +334,6 @@
   "footer.adfree": "Sonsuza Kadar Reklamsız",
   "footer.privacy": "Gizlilik Politikası",
   "footer.terms": "Hizmet Şartları",
-
   "blog.back": "Ana sayfaya dön",
   "blog.title": "Kılavuzlar ve İpuçları",
   "blog.subtitle": "{count} makale her özellik ve tekniği kapsar.",
@@ -365,10 +349,8 @@
   "blog.cat_beach": "Plaj",
   "blog.cat_beginners": "Yeni Başlayanlar",
   "blog.cat_gear": "Ekipman",
-
   "legal.back": "Ana sayfaya dön",
   "legal.rights": "Tüm hakları saklıdır.",
-
   "screenshots.label": "Uygulama",
   "screenshots.heading": "Gerçek Ekranlar.",
   "screenshots.heading_accent": "Maket Yok.",
@@ -406,5 +388,26 @@
   "screenshots.alt_presets": "Minelab, XP, Nokta, Garrett, Fisher ve daha fazla metal dedektör için dedektör ayarları",
   "screenshots.alt_detectorlib": "12 markada 61 model ile metal dedektör referans kütüphanesi",
   "screenshots.alt_settings": "12 renk teması, gece görüşü ve dil değiştirme ile SweepTrack Pro ayarlar ekranı",
-  "screenshots.alt_moremenu": "Kategoriye göre gruplandırılmış tüm SweepTrack Pro araçlarıyla diğer menü"
+  "screenshots.alt_moremenu": "Kategoriye göre gruplandırılmış tüm SweepTrack Pro araçlarıyla diğer menü",
+  "featuretag.gps": "GPS Takibi",
+  "featuretag.forecast": "Dedеktör Tahmini",
+  "featuretag.offline": "Çevrimdışı Haritalar",
+  "featuretag.cloud": "Bulut Yedekleme",
+  "featuretag.nightvision": "Gece Görüşü",
+  "featuretag.permission": "İzin Kasası",
+  "featuretag.track": "İz Örtüşümü",
+  "featuretag.oldmap": "Tarihi Harita Örtüşümü",
+  "featuretag.nearby": "Yakındaki Yerler",
+  "featuretag.tide": "Gelgit Tablosu",
+  "featuretag.perimeter": "Çevre Koruyucu",
+  "featuretag.findlog": "Bulunanlar Kaydı",
+  "featuretag.compare": "Oturum Karşılaştırma",
+  "featuretag.export": "GPX/KML/CSV Dişa Aktarma",
+  "mapcompare.alt_historical": "1800'lerden kalma tarihi USGS topografya haritası",
+  "mapcompare.alt_modern": "Modern uydu havadan görünümü",
+  "blog.back_to_guides": "Kılavuzlara dön",
+  "blog.date_april_2026": "Nisan 2026",
+  "blog.related_guides": "İlgili Kılavuzlar",
+  "blog.cta_card_text": "bir dedektörcünün ihtiyaç duyduğu tüm araçlara sahip — GPS takibi, izinler, tahmin, çevrimdışı haritalar ve daha fazlası.",
+  "blog.cta_card_link": "Tüm özellikleri gör →"
 }

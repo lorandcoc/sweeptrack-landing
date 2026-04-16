@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "organize-metal-detector-presets-settings",
-  title: "How to Organize Your Metal Detector Settings and Presets",
-  description:
-    "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.",
-});
+const SLUG = "organize-metal-detector-presets-settings";
+const TITLE = "How to Organize Your Metal Detector Settings and Presets";
+const DESCRIPTION = "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.";
+const IMAGE = "/screenshots/presets.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "organize-metal-detector-presets-settings",
-          title: "How to Organize Your Metal Detector Settings and Presets",
-          description: "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tips</p>
-        <h1 className="text-3xl font-bold mb-4">How to Organize Your Metal Detector Settings and Presets</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tips"
+        readTime="3 min"
+        relatedGuides={[
+          { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
+          { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
+        ]}
+      >
           <p>If you&apos;ve been detecting for a while, you know that one set of settings doesn&apos;t work everywhere. The sensitivity you use in a clean park is completely wrong for a trashy farmstead. The frequency that finds gold jewelry isn&apos;t the same one that finds deep silver coins.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Why Presets Matter</h2>
@@ -52,23 +50,7 @@ export default function Post() {
             <li>When someone shares a setting that outperforms yours on similar ground</li>
             <li>Seasonally — ground conditions change between summer and winter</li>
           </ul>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> gives you 10 detector preset slots with templates for 57 models across 12 brands. Save, name, and share presets as JSON files.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
-              <Link href="/blog/how-to-track-metal-detecting-sessions-gps" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Track Your Sessions with GPS &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

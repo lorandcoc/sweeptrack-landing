@@ -19,6 +19,7 @@ const posts = [
   { slug: "comparing-sessions-overlay-split", title: "Comparing Sessions: Overlay and Split View" },
   { slug: "exporting-sessions-gpx-kml-csv", title: "Exporting Sessions as GPX, KML, or CSV" },
   { slug: "understanding-session-statistics", title: "Understanding Your Session Statistics and Personal Bests" },
+  { slug: "share-card", title: "Share Card: A Printable Summary of Your Session" },
   { slug: "best-places-to-metal-detect-in-texas", title: "Best Places to Metal Detect in Texas" },
   { slug: "best-places-to-metal-detect-in-florida", title: "Best Places to Metal Detect in Florida" },
   { slug: "best-places-to-metal-detect-in-ohio", title: "Best Places to Metal Detect in Ohio" },

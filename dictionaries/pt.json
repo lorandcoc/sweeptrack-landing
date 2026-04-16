@@ -9,20 +9,17 @@
   "hero.stat_coins": "Moedas Catalogadas",
   "hero.stat_maps": "Tipos de Mapas",
   "hero.cta_secondary": "Ver Conteúdo",
-
   "header.nav_features": "Funcionalidades",
   "header.nav_screenshots": "Capturas",
   "header.nav_pricing": "Preços",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Guias",
-
   "mapcompare.label": "Vistas Interativas",
   "mapcompare.heading_prefix": "Veja o invisível com ",
   "mapcompare.heading_accent": "mapas históricos",
   "mapcompare.description": "Arraste o slider para comparar imagens de satélite modernas com mapas históricos. Identifique antigas propriedades, trilhos esquecidos e pontos de deteção premium escondidos no seu bairro.",
   "mapcompare.label_old": "Mapa de Agrimensura de 1880",
   "mapcompare.label_modern": "Vista de Satélite Moderna",
-
   "howitworks.label": "O Seu Workflow",
   "howitworks.heading_prefix": "Antes, durante e ",
   "howitworks.heading_accent": "após a escavação",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "O GPS rastreia cada passo em 4 tipos de mapas. Perimeter Guard mantém-no na sua zona permitida. Registe achados com fotos e notas enquanto avança.",
   "howitworks.step3_title": "Revisão",
   "howitworks.step3_description": "Carregue rastros passados no mapa em tempo real para ver áreas perdidas. Compare sessões lado a lado. Exporte os seus dados. Backup no Google Drive.",
-
   "features.label": "Funcionalidades",
   "features.heading_prefix": "Tudo o que precisa para ",
   "features.heading_accent": "detetar melhor",
@@ -65,7 +61,6 @@
   "features.compare_description": "Sobreponha as suas últimas três visitas ao mesmo campo e veja as falhas instantaneamente. Modo sobreposição ou ecrã dividido.",
   "features.backup_title": "Backup na Nuvem",
   "features.backup_description": "Backup no Google Drive num toque para sessões, achados, presets e permissões. Restaure em qualquer dispositivo.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "Tem ",
   "faq.heading_accent": "perguntas?",
@@ -89,7 +84,6 @@
   "faq.a9": "Sim. Baixe mapas antes de sair (Satélite, Rua, Topo). O rastreamento GPS usa o hardware do telemóvel sem internet. Apenas clima, marés e procura de sítios históricos requerem ligação.",
   "faq.q10": "Os meus dados de deteção são privados?",
   "faq.a10": "Todos os dados ficam no seu dispositivo. Sem servidores, anúncios ou rastreamento. O backup opcional no Google Drive usa a sua própria conta. Exporte em GPX, KML, CSV ou JSON quando quiser. Você é o dono.",
-
   "pricing.label": "Preços",
   "pricing.heading_prefix": "Grátis para começar. ",
   "pricing.heading_accent": "Pro quando estiver pronto.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Ver as {count} funções",
   "pricing.show_less": "Mostrar menos",
-
   "cta.label": "Quase Lá",
   "cta.heading_prefix": "O seu próximo achado ",
   "cta.heading_accent": "espera por si",
   "cta.description": "Grátis para baixar. A versão Pro desbloqueia tudo.",
   "cta.sublabel": "Brevemente no Google Play",
-
   "community.heading_prefix": "Junte-se à ",
   "community.heading_accent": "comunidade",
   "community.description": "Partilhe achados, troque dicas e veja o que outros descobrem.",
@@ -139,7 +131,6 @@
   "community.tiktok_desc": "Momentos de deteção em tendência e dicas rápidas.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "Discussões em r/metaldetecting, identificação de achados e feedback da app.",
-
   "footer.description": "A app companheira para detetar metais. Rastreamento GPS, mapas offline, backup na nuvem e muito mais.",
   "footer.product": "Produto",
   "footer.features": "Funções",
@@ -151,7 +142,6 @@
   "footer.adfree": "Sem Anúncios para Sempre",
   "footer.privacy": "Privacidade",
   "footer.terms": "Termos",
-
   "comingsoon.button": "Avisar no Lançamento",
   "comingsoon.joining": "A entrar...",
   "comingsoon.placeholder": "seu@email.com",
@@ -159,9 +149,7 @@
   "comingsoon.success": "Está na lista!",
   "comingsoon.duplicate": "Já está na lista!",
   "comingsoon.error": "Algo falhou — toque para tentar de novo",
-
   "foundernote.quote": "Sou detectorista e designer. Queria uma app feita para detetar, não um rastreador de caminhadas ricolorido. Por isso, comecei a construir uma para mim.",
-
   "showcase.label": "Porque a adoram",
   "showcase.heading_prefix": "Ferramentas que realmente ",
   "showcase.heading_accent": "encontram mais",
@@ -190,7 +178,6 @@
   "showcase.backup_title": "Dados sempre seguros.",
   "showcase.backup_description": "Backup no Google Drive num toque. Recupere a sua história em qualquer telemóvel.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "Conteúdo",
   "featuresall.heading_prefix": "Ferramentas para o ",
   "featuresall.heading_accent": "trabalho de campo",
@@ -326,7 +313,6 @@
   "featuresall.sec_about_desc": "Versão e créditos de tecnologia.",
   "featuresall.sec_feedback_title": "Feedback",
   "featuresall.sec_feedback_desc": "Envie relatórios de erro da app.",
-
   "pricing.feat_gps": "Rastreamento GPS",
   "pricing.feat_gps_free": "3 tipos de mapas",
   "pricing.feat_gps_pro": "4 (+ USGS Histórico)",
@@ -385,7 +371,6 @@
   "pricing.feat_languages": "Inglês + Romeno",
   "pricing.feat_onboarding": "Onboarding de 5 Passos",
   "pricing.feat_aboutfeedback": "Sobre + Feedback",
-
   "blog.back": "Voltar ao início",
   "blog.title": "Guias e Dicas",
   "blog.subtitle": "{count} artigos sobre cada funcionalidade e técnica.",
@@ -401,10 +386,8 @@
   "blog.cat_beach": "Praia",
   "blog.cat_beginners": "Iniciantes",
   "blog.cat_gear": "Equipamento",
-
   "legal.back": "Voltar ao início",
   "legal.rights": "Todos os direitos reservados.",
-
   "screenshots.label": "O App",
   "screenshots.heading": "Telas Reais.",
   "screenshots.heading_accent": "Sem Mockups.",
@@ -442,5 +425,26 @@
   "screenshots.alt_presets": "Presets de detetor para Minelab, XP, Nokta, Garrett, Fisher e mais detetores de metais",
   "screenshots.alt_detectorlib": "Biblioteca de referência de detetores de metais com 61 modelos de 12 marcas",
   "screenshots.alt_settings": "Ecrã de configurações SweepTrack Pro com 12 temas de cor, visão noturna e alternância de idioma",
-  "screenshots.alt_moremenu": "Menu com todas as ferramentas SweepTrack Pro agrupadas por categoria"
+  "screenshots.alt_moremenu": "Menu com todas as ferramentas SweepTrack Pro agrupadas por categoria",
+  "featuretag.gps": "Rastreamento GPS",
+  "featuretag.forecast": "Previsão de Detecção",
+  "featuretag.offline": "Mapas Offline",
+  "featuretag.cloud": "Backup na Nuvem",
+  "featuretag.nightvision": "Visão Noturna",
+  "featuretag.permission": "Cofre de Permissões",
+  "featuretag.track": "Sobreposição de Rotas",
+  "featuretag.oldmap": "Sobreposição de Mapas Históricos",
+  "featuretag.nearby": "Locais Próximos",
+  "featuretag.tide": "Tabela de Marés",
+  "featuretag.perimeter": "Guarda de Perímetro",
+  "featuretag.findlog": "Registro de Achados",
+  "featuretag.compare": "Comparar Sessões",
+  "featuretag.export": "Exportar GPX/KML/CSV",
+  "mapcompare.alt_historical": "Mapa topográfico histórico USGS do século XIX",
+  "mapcompare.alt_modern": "Vista aérea de satélite moderna",
+  "blog.back_to_guides": "Voltar aos guias",
+  "blog.date_april_2026": "Abril 2026",
+  "blog.related_guides": "Guias relacionados",
+  "blog.cta_card_text": "tem todas as ferramentas que um detectorista precisa — rastreamento GPS, permissões, previsão, mapas offline e mais.",
+  "blog.cta_card_link": "Ver todas as funcionalidades →"
 }

@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "best-places-to-metal-detect-in-california",
-  title: "Best Places to Metal Detect in California",
-  description:
-    "California",
-});
+const SLUG = "best-places-to-metal-detect-in-california";
+const TITLE = "Best Places to Metal Detect in California";
+const DESCRIPTION = "California";
+const IMAGE = "/screenshots/nearby.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "best-places-to-metal-detect-in-california",
-          title: "Best Places to Metal Detect in California",
-          description: "California",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Location</p>
-        <h1 className="text-3xl font-bold mb-4">Best Places to Metal Detect in California</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 5 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="location"
+        readTime="5 min"
+        relatedGuides={[
+          { href: "/blog/where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me" },
+          { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
+        ]}
+      >
           <p>California&apos;s history runs from Spanish missions to the Gold Rush to Hollywood, and the detecting opportunities match that range. The challenge isn&apos;t finding interesting places &mdash; it&apos;s navigating a patchwork of land management agencies, each with their own rules.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Gold Rush Era Sites</h2>
@@ -57,23 +55,7 @@ export default function Post() {
           <p className="text-xs text-muted mt-8 p-4 rounded-lg bg-white/[0.02] border border-white/5">
             <strong>Disclaimer:</strong> Laws and regulations change. This article is for general information only and does not constitute legal advice. Always verify current rules with local authorities before detecting at any location.
           </p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> has downloadable offline maps for remote desert and mountain areas where cell service doesn&apos;t reach, plus a detecting forecast to help you pick the best days to head out.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/where-to-metal-detect-near-me" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Where to Metal Detect Near Me &rarr;</Link>
-              <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

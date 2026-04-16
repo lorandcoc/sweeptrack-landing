@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "how-to-track-metal-detecting-sessions-gps",
-  title: "How to Track Your Metal Detecting Sessions with GPS",
-  description:
-    "Learn how GPS tracking helps you cover more ground, avoid re-detecting areas, overlay past sessions, and build a complete history of your detecting trips.",
-});
+const SLUG = "how-to-track-metal-detecting-sessions-gps";
+const TITLE = "How to Track Your Metal Detecting Sessions with GPS";
+const DESCRIPTION = "Learn how GPS tracking helps you cover more ground, avoid re-detecting areas, overlay past sessions, and build a complete history of your detecting trips.";
+const IMAGE = "/screenshots/home.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "how-to-track-metal-detecting-sessions-gps",
-          title: "How to Track Your Metal Detecting Sessions with GPS",
-          description: "Learn how GPS tracking helps you cover more ground, avoid re-detecting areas, overlay past sessions, and build a complete history of your detecting trips.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Guide</p>
-        <h1 className="text-3xl font-bold mb-4">How to Track Your Metal Detecting Sessions with GPS</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 4 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="guides"
+        readTime="4 min"
+        relatedGuides={[
+          { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
+          { href: "/blog/organize-metal-detector-presets-settings", title: "Organize Your Detector Settings and Presets" },
+        ]}
+      >
           <p>Ever come back to a field and think &ldquo;did I already walk this row?&rdquo; GPS tracking solves that. It records your exact path in real time, so you know precisely what ground you&apos;ve covered — and more importantly, what you missed.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">What GPS Tracking Does for Detecting</h2>
@@ -52,23 +50,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">What About Battery Life?</h2>
           <p>GPS tracking does use battery — expect around 10-15% per hour on most modern phones, similar to navigation apps. For long sessions, bring a power bank. Some phones have battery saver GPS modes that reduce accuracy slightly but extend runtime.</p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> tracks your GPS path on 4 map types, overlays past sessions on the same map, and shows find pins. Works offline with downloaded tiles.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Metal Detecting &rarr;</Link>
-              <Link href="/blog/organize-metal-detector-presets-settings" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Organize Your Detector Settings and Presets &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

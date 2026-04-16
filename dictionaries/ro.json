@@ -9,20 +9,17 @@
   "hero.stat_coins": "Monede Catalogate",
   "hero.stat_maps": "Tipuri de Hărți",
   "hero.cta_secondary": "Vezi ce conține",
-
   "header.nav_features": "Funcționalități",
   "header.nav_screenshots": "Capturi de ecran",
   "header.nav_pricing": "Prețuri",
   "header.nav_faq": "FAQ",
   "header.nav_guides": "Ghiduri",
-
   "mapcompare.label": "Vizualizări Interactive",
   "mapcompare.heading_prefix": "Vezi nevăzutul cu ",
   "mapcompare.heading_accent": "Hărți Istorice",
   "mapcompare.description": "Trage glisorul pentru a compara imaginile satelitare moderne cu hărțile topografice istorice. Identifică vechile gospodării, poteci uitate și locuri de detecție premium ascunse chiar în curtea ta.",
   "mapcompare.label_old": "Hartă de Studiu din 1880",
   "mapcompare.label_modern": "Vizualizare Satelit Modernă",
-
   "howitworks.label": "Fluxul tău de lucru",
   "howitworks.heading_prefix": "Înainte, în timpul și ",
   "howitworks.heading_accent": "după săpătură",
@@ -33,7 +30,6 @@
   "howitworks.step2_description": "GPS-ul îți monitorizează fiecare pas pe 4 tipuri de hărți. Perimeter Guard te menține în zona permisă. Înregistrează descoperirile cu fotografii și note pe măsură ce avansezi.",
   "howitworks.step3_title": "Revizuire",
   "howitworks.step3_description": "Încarcă traseele trecute pe harta live pentru a vedea exact unde ai omis zone. Compară sesiunile trecute una lângă alta. Exportă-ți datele. Fă backup la tot în Google Drive.",
-
   "features.label": "Funcționalități",
   "features.heading_prefix": "Tot ce ai nevoie pentru a ",
   "features.heading_accent": "detecta mai inteligent",
@@ -65,7 +61,6 @@
   "features.compare_description": "Suprapune ultimele trei vizite pe același câmp și vezi instantaneu golurile. Mod suprapunere sau ecran partajat.",
   "features.backup_title": "Backup în Cloud",
   "features.backup_description": "Ți s-a descărcat telefonul? Faci upgrade? Backup-ul într-o singură atingere în Google Drive salvează fiecare sesiune, descoperire, presetare și permisiune. Restaurează totul pe orice dispozitiv.",
-
   "faq.label": "FAQ",
   "faq.heading_prefix": "Ai ",
   "faq.heading_accent": "Întrebări",
@@ -89,7 +84,6 @@
   "faq.a9": "Da. Descarcă planșele de hartă înainte de a pleca de acasă — Stradal, Satelit, Teren și Istoric Topo sunt toate disponibile pentru utilizare offline. Monitorizarea GPS rulează în întregime pe hardware-ul telefonului tău, fără a fi nevoie de internet. Singurele funcții care necesită o conexiune sunt prognoza meteo, tabelele de maree și căutarea site-urilor din apropiere.",
   "faq.q10": "Sunt datele mele de detecție private și în siguranță?",
   "faq.a10": "Toate datele rămân pe dispozitivul tău. Fără servere, fără analitice, fără reclame, fără monitorizare. Backup-ul opțional în Google Drive stochează o copie criptată în propriul tău cont Drive — noi nu o vedem niciodată. Exportă-ți datele ca GPX, KML, CSV sau JSON oricând. Tu deții totul.",
-
   "pricing.label": "Prețuri",
   "pricing.heading_prefix": "Gratuit pentru Început. ",
   "pricing.heading_accent": "Pro Când Ești Pregătit.",
@@ -109,13 +103,11 @@
   "pricing.col_pro": "Pro",
   "pricing.show_all": "Vezi toate cele {count} funcții",
   "pricing.show_less": "Arată mai puține",
-
   "cta.label": "Aproape Gata",
   "cta.heading_prefix": "Următoarea ta descoperire te ",
   "cta.heading_accent": "așteaptă",
   "cta.description": "Gratuit de descărcat și utilizat. Upgrade-ul Pro deblochează totul.",
   "cta.sublabel": "Se lansează curând pe Google Play",
-
   "community.heading_prefix": "Alătură-te ",
   "community.heading_accent": "comunității",
   "community.description": "Partajează-ți descoperirile, schimbă sfaturi și vezi ce mai dezgroapă alți detectoriști. Suntem toți în asta împreună.",
@@ -139,7 +131,6 @@
   "community.tiktok_desc": "Momente de detecție în tendințe și sfaturi rapide.",
   "community.reddit_title": "Reddit",
   "community.reddit_desc": "Discuții r/metaldetecting, identificări de descoperiri și feedback despre aplicație.",
-
   "footer.description": "Aplicația partener pentru detecția de metale. Monitorizare GPS, hărți offline, backup în cloud și mult mai multe decât putem cuprinde în acest subsol.",
   "footer.product": "Produs",
   "footer.features": "Funcționalități",
@@ -151,7 +142,6 @@
   "footer.adfree": "Fără Reclame pentru Totdeauna",
   "footer.privacy": "Politica de Confidențialitate",
   "footer.terms": "Termeni și Condiții",
-
   "comingsoon.button": "Anunță-mă la Lansare",
   "comingsoon.joining": "Se înscrie...",
   "comingsoon.placeholder": "nume@email.com",
@@ -159,9 +149,7 @@
   "comingsoon.success": "Ești pe listă!",
   "comingsoon.duplicate": "Deja pe listă!",
   "comingsoon.error": "Ceva nu a mers bine — atinge pentru a reîncerca",
-
   "foundernote.quote": "Sunt un detectorist și un designer care a învățat programare pe parcurs. Am vrut o aplicație care să se simtă ca fiind făcută pentru detecție — nu un tracker de drumeții cu un strat nou de vopsea. Așa că am început să construiesc una pentru mine. M-am gândit că dacă îmi place mie să o folosesc, s-ar putea să-i placă și altcuiva.",
-
   "showcase.label": "De ce o adoră detectoriștii",
   "showcase.heading_prefix": "Instrumente care chiar ",
   "showcase.heading_accent": "Găsesc Mai Mult",
@@ -190,7 +178,6 @@
   "showcase.backup_title": "Datele Tale. Backup Realizat. Mereu.",
   "showcase.backup_description": "Backup într-o singură atingere în Google Drive pentru toate sesiunile, presetările, permisele și setările. Restaurează pe orice dispozitiv. Telefon pierdut? Telefon stricat? Istoricul tău de detecție supraviețuiește.",
   "showcase.backup_highlight": "Cloud Backup",
-
   "featuresall.label": "Ce se află în interior",
   "featuresall.heading_prefix": "Instrumente pe care chiar le vei ",
   "featuresall.heading_accent": "folosi pe teren",
@@ -326,7 +313,6 @@
   "featuresall.sec_about_desc": "Versiunea aplicației și credite pentru tehnologiile utilizate (Kotlin, Jetpack Compose, Google Maps, Open-Meteo, NOAA, Overpass/OSM).",
   "featuresall.sec_feedback_title": "Feedback în Aplicație",
   "featuresall.sec_feedback_desc": "Trimite un raport de eroare sau o cerere de funcționalitate din Setări — deschide un e-mail precompletat către suport.",
-
   "pricing.feat_gps": "Monitorizare GPS",
   "pricing.feat_gps_free": "3 tipuri de hărți",
   "pricing.feat_gps_pro": "4 (+ USGS Istoric)",
@@ -385,7 +371,6 @@
   "pricing.feat_languages": "Engleză + Română",
   "pricing.feat_onboarding": "Onboarding în 5 Pași",
   "pricing.feat_aboutfeedback": "Ecrane Despre + Feedback",
-
   "blog.back": "Înapoi acasă",
   "blog.title": "Ghiduri & Sfaturi",
   "blog.subtitle": "{count} articole care acoperă fiecare funcție și tehnică.",
@@ -401,10 +386,8 @@
   "blog.cat_beach": "Plajă",
   "blog.cat_beginners": "Începători",
   "blog.cat_gear": "Echipament",
-
   "legal.back": "Înapoi acasă",
   "legal.rights": "Toate drepturile rezervate.",
-
   "screenshots.label": "Aplicația",
   "screenshots.heading": "Ecrane Reale.",
   "screenshots.heading_accent": "Fără Machete.",
@@ -442,5 +425,26 @@
   "screenshots.alt_presets": "Presetări detector pentru Minelab, XP, Nokta, Garrett, Fisher și alte detectoare de metale",
   "screenshots.alt_detectorlib": "Bibliotecă de referință detectoare de metale cu 61 de modele în 12 mărci",
   "screenshots.alt_settings": "Ecran setări SweepTrack Pro cu 12 teme de culoare, viziune nocturnă și comutare limbă",
-  "screenshots.alt_moremenu": "Meniu suplimentar cu toate instrumentele SweepTrack Pro grupate pe categorie"
+  "screenshots.alt_moremenu": "Meniu suplimentar cu toate instrumentele SweepTrack Pro grupate pe categorie",
+  "featuretag.gps": "Urmărire GPS",
+  "featuretag.forecast": "Prognoză Detecție",
+  "featuretag.offline": "Hărți Offline",
+  "featuretag.cloud": "Backup Cloud",
+  "featuretag.nightvision": "Viziune Nocturnă",
+  "featuretag.permission": "Seif Permisiuni",
+  "featuretag.track": "Suprapunere Trasee",
+  "featuretag.oldmap": "Suprapunere Hărți Istorice",
+  "featuretag.nearby": "Situri din Apropiere",
+  "featuretag.tide": "Tabel Maree",
+  "featuretag.perimeter": "Gard Perimetru",
+  "featuretag.findlog": "Jurnal Descoperiri",
+  "featuretag.compare": "Comparare Sesiuni",
+  "featuretag.export": "Export GPX/KML/CSV",
+  "mapcompare.alt_historical": "Hartă topografică USGS istorică din anii 1800",
+  "mapcompare.alt_modern": "Vizualizare aeriană prin satelit modernă",
+  "blog.back_to_guides": "Înapoi la ghiduri",
+  "blog.date_april_2026": "Aprilie 2026",
+  "blog.related_guides": "Ghiduri asociate",
+  "blog.cta_card_text": "are fiecare instrument de care un detectorist are nevoie — urmărire GPS, permisiuni, prognoză, hărți offline și multe altele.",
+  "blog.cta_card_link": "Vezi toate funcțiile →"
 }

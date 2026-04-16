@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "metal-detecting-laws-in-the-uk",
-  title: "Metal Detecting Laws in the UK",
-  description:
-    "The UK has one of the best legal frameworks for metal detecting. What you need to know about the Treasure Act, PAS, and landowner permissions.",
-});
+const SLUG = "metal-detecting-laws-in-the-uk";
+const TITLE = "Metal Detecting Laws in the UK";
+const DESCRIPTION = "The UK has one of the best legal frameworks for metal detecting. What you need to know about the Treasure Act, PAS, and landowner permissions.";
+const IMAGE = "/screenshots/permission_vault.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "metal-detecting-laws-in-the-uk",
-          title: "Metal Detecting Laws in the UK",
-          description: "The UK has one of the best legal frameworks for metal detecting. What you need to know about the Treasure Act, PAS, and landowner permissions.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Location</p>
-        <h1 className="text-3xl font-bold mb-4">Metal Detecting Laws in the UK</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 6 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="location"
+        readTime="6 min"
+        relatedGuides={[
+          { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
+          { href: "/blog/logging-finds-photo-video-audio", title: "Logging Finds with Photo, Video &amp; Audio" },
+        ]}
+      >
           <p>The United Kingdom is widely considered one of the best countries in the world for metal detecting. The legal framework is clear, the reporting system is well-established, and the hobby is actively encouraged as a way to contribute to archaeological knowledge. But there are rules, and breaking them carries serious consequences.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">The Treasure Act 1996</h2>
@@ -70,23 +68,7 @@ export default function Post() {
           <p className="text-xs text-muted mt-8 p-4 rounded-lg bg-white/[0.02] border border-white/5">
             <strong>Disclaimer:</strong> Laws and regulations change. This article is for general information only and does not constitute legal advice. Always verify current rules with local authorities before detecting at any location.
           </p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> has a permission vault for storing landowner agreements with GPS boundaries, and find logging with photos so you have accurate records for Treasure Act reporting and PAS submissions.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/metal-detecting-permission-letter-template" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Permission Letter Template &rarr;</Link>
-              <Link href="/blog/logging-finds-photo-video-audio" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Logging Finds with Photo, Video &amp; Audio &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

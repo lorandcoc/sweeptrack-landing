@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "exporting-sessions-gpx-kml-csv",
-  title: "Exporting Sessions as GPX, KML, or CSV",
-  description:
-    "Export your metal detecting sessions in GPX, KML, CSV, or SweepTrack JSON format for use in Google Earth, Garmin devices, or Excel spreadsheets.",
-});
+const SLUG = "exporting-sessions-gpx-kml-csv";
+const TITLE = "Exporting Sessions as GPX, KML, or CSV";
+const DESCRIPTION = "Export your metal detecting sessions in GPX, KML, CSV, or SweepTrack JSON format for use in Google Earth, Garmin devices, or Excel spreadsheets.";
+const IMAGE = "/screenshots/cloud_backup.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "exporting-sessions-gpx-kml-csv",
-          title: "Exporting Sessions as GPX, KML, or CSV",
-          description: "Export your metal detecting sessions in GPX, KML, CSV, or SweepTrack JSON format for use in Google Earth, Garmin devices, or Excel spreadsheets.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tutorial</p>
-        <h1 className="text-3xl font-bold mb-4">Exporting Sessions as GPX, KML, or CSV</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 3 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tutorials"
+        readTime="3 min"
+        relatedGuides={[
+          { href: "/blog/cloud-backup-google-drive", title: "Cloud Backup: Never Lose Your Detecting Data" },
+          { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
+        ]}
+      >
           <p>Your detecting data isn&apos;t locked inside the app. You can export any session in four different formats depending on what you want to do with it &mdash; view tracks in Google Earth, import them into a Garmin, analyse finds in a spreadsheet, or share with a detecting partner.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">The Four Formats</h2>
@@ -55,23 +53,7 @@ export default function Post() {
             <li>Analysing in a spreadsheet &rarr; CSV</li>
             <li>Sharing with a detecting partner who also uses the app &rarr; SweepTrack JSON</li>
           </ul>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> exports your sessions in GPX, KML, CSV, and its own JSON format, so your detecting data works with Google Earth, Garmin devices, Excel, and more.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/cloud-backup-google-drive" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Cloud Backup: Never Lose Your Detecting Data &rarr;</Link>
-              <Link href="/blog/how-to-track-metal-detecting-sessions-gps" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Track Your Sessions with GPS &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

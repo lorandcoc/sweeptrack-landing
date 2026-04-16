@@ -1,34 +1,30 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "best-weather-conditions-for-metal-detecting",
-  title: "Best Weather Conditions for Metal Detecting (And When to Stay Home)",
-  description:
-    "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.",
-});
+const SLUG = "best-weather-conditions-for-metal-detecting";
+const TITLE = "Best Weather Conditions for Metal Detecting (And When to Stay Home)";
+const DESCRIPTION = "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.";
+const IMAGE = "/screenshots/forecast.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "best-weather-conditions-for-metal-detecting",
-          title: "Best Weather Conditions for Metal Detecting (And When to Stay Home)",
-          description: "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">
-          &larr; Back to blog
-        </Link>
-
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Tips</p>
-        <h1 className="text-3xl font-bold mb-4">Best Weather Conditions for Metal Detecting (And When to Stay Home)</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 4 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="tips"
+        readTime="4 min"
+        relatedGuides={[
+          { href: "/blog/detecting-forecast-guide", title: "Detecting Forecast: Plan Every Session by the Numbers" },
+          { href: "/blog/beach-metal-detecting-tide-timing", title: "Beach Detecting: Tide Timing" },
+          { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
+        ]}
+      >
           <p>
             Not all detecting days are created equal. The weather plays a bigger role in your success than most beginners realize. The right conditions can mean the difference between a pocket full of coins and an empty pouch.
           </p>
@@ -72,24 +68,7 @@ export default function Post() {
           <p>
             A score above 80 is Excellent. 60&ndash;79 is Good, 40&ndash;59 is Fair, 20&ndash;39 is Poor, and below 20 is Bad. It&apos;s a one-number read on whether today is worth loading the truck.
           </p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> includes a built-in Detecting Forecast with a 0-100 Detecting Score, soil moisture, wind, temperature, humidity, contextual tips, and a 7-day outlook for any location you search.
-              {" "}<Link href="/blog/detecting-forecast-guide" className="text-accent hover:underline">Full guide &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/detecting-forecast-guide" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Detecting Forecast: Plan Every Session by the Numbers &rarr;</Link>
-              <Link href="/blog/beach-metal-detecting-tide-timing" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Beach Detecting: Tide Timing &rarr;</Link>
-              <Link href="/blog/metal-detecting-for-beginners" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting for Beginners &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

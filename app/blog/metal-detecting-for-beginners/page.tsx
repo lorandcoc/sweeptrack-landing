@@ -1,31 +1,30 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "metal-detecting-for-beginners",
-  title: "Metal Detecting for Beginners: What You Need to Know",
-  description:
-    "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and beginner mistakes to avoid.",
-});
+const SLUG = "metal-detecting-for-beginners";
+const TITLE = "Metal Detecting for Beginners: What You Need to Know";
+const DESCRIPTION = "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and beginner mistakes to avoid.";
+const IMAGE = "/screenshots/presets.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "metal-detecting-for-beginners",
-          title: "Metal Detecting for Beginners: What You Need to Know",
-          description: "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and beginner mistakes to avoid.",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Beginners</p>
-        <h1 className="text-3xl font-bold mb-4">Metal Detecting for Beginners: What You Need to Know</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 7 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="beginners"
+        readTime="7 min"
+        relatedGuides={[
+          { href: "/blog/best-weather-conditions-for-metal-detecting", title: "Best Weather for Metal Detecting" },
+          { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
+          { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
+        ]}
+      >
           <p>Metal detecting is one of those hobbies that looks simple until you try it. You wave a machine over the ground, it beeps, you dig. Except the first 50 beeps are pull tabs, bottle caps, and foil. This guide helps you skip the frustrating part.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Picking Your First Detector</h2>
@@ -68,24 +67,7 @@ export default function Post() {
             <li>Detecting without permission — always ask, always carry proof</li>
             <li>Giving up too soon — your first good find might be 20 hours in</li>
           </ul>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> has presets for popular beginner detectors, GPS tracking to show your coverage, and a detecting forecast so you know when conditions are good.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/best-weather-conditions-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Best Weather for Metal Detecting &rarr;</Link>
-              <Link href="/blog/metal-detecting-permission-letter-template" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Permission Letter Template &rarr;</Link>
-              <Link href="/blog/how-to-track-metal-detecting-sessions-gps" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Track Your Sessions with GPS &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }

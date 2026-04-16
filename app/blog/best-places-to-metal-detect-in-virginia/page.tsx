@@ -1,31 +1,29 @@
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
-import Link from "next/link";
+import BlogPostFrame from "@/components/BlogPostFrame";
 
-export const metadata = blogMeta({
-  slug: "best-places-to-metal-detect-in-virginia",
-  title: "Best Places to Metal Detect in Virginia",
-  description:
-    "Virginia",
-});
+const SLUG = "best-places-to-metal-detect-in-virginia";
+const TITLE = "Best Places to Metal Detect in Virginia";
+const DESCRIPTION = "Virginia";
+const IMAGE = "/screenshots/nearby.png";
+
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
 
 export default function Post() {
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({
-          slug: "best-places-to-metal-detect-in-virginia",
-          title: "Best Places to Metal Detect in Virginia",
-          description: "Virginia",
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
       />
-      <article className="max-w-2xl w-full">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; Back to guides</Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Location</p>
-        <h1 className="text-3xl font-bold mb-4">Best Places to Metal Detect in Virginia</h1>
-        <p className="text-muted text-sm mb-10">April 2026 &middot; 5 min read</p>
-
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
+      <BlogPostFrame
+        title={TITLE}
+        category="location"
+        readTime="5 min"
+        relatedGuides={[
+          { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
+          { href: "/blog/metal-detecting-laws-in-the-us", title: "Metal Detecting Laws in the US" },
+        ]}
+      >
           <p>Virginia has more documented history per square mile than almost any state in the country. Colonial settlements, Revolutionary War camps, Civil War battlefields, and centuries of farming have left an incredible amount of material in the ground. But Virginia also has some of the strictest enforcement of archaeological protection laws. Know the rules before you dig.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">A Critical Warning: Federal Battlefields</h2>
@@ -58,23 +56,7 @@ export default function Post() {
           <p className="text-xs text-muted mt-8 p-4 rounded-lg bg-white/[0.02] border border-white/5">
             <strong>Disclaimer:</strong> Laws and regulations change. This article is for general information only and does not constitute legal advice. Always verify current rules with local authorities before detecting at any location.
           </p>
-
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> overlays USGS historical topographic maps so you can identify old homesteads, tavern sites, and river crossings. The nearby historic sites feature helps you research an area before you visit.
-              {" "}<Link href="/#features" className="text-accent hover:underline">See all features &rarr;</Link>
-            </p>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">Related Guides</p>
-            <div className="space-y-3">
-              <Link href="/blog/how-to-use-old-maps-for-metal-detecting" className="block text-sm text-foreground/80 hover:text-accent transition-colors">How to Use Old Maps for Metal Detecting &rarr;</Link>
-              <Link href="/blog/metal-detecting-laws-in-the-us" className="block text-sm text-foreground/80 hover:text-accent transition-colors">Metal Detecting Laws in the US &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
+      </BlogPostFrame>
+    </>
   );
 }
