@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useReveal } from "./useReveal";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 import en from "@/dictionaries/en.json";
 
 const faqKeys = Array.from({ length: 10 }, (_, i) => i + 1);
@@ -67,7 +67,7 @@ export default function FAQ() {
 
         <div className="rounded-2xl border border-white/5 bg-surface/30 px-6">
           {faqKeys.map((i) => (
-            <FAQItem key={i} q={t(`faq.q${i}`)} a={t(`faq.a${i}`)} />
+            <FAQItem key={i} q={t(`faq.q${i}` as TranslationKey)} a={t(`faq.a${i}` as TranslationKey)} />
           ))}
         </div>
       </div>

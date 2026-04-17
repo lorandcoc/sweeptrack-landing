@@ -11,16 +11,23 @@ export default function BlogPostFrame({
   title,
   category,
   readTime,
+  publishedDate,
   relatedGuides,
   children,
 }: {
   title: string;
   category: BlogCategory;
   readTime: string;
+  publishedDate: string;
   relatedGuides?: RelatedGuide[];
   children: React.ReactNode;
 }) {
   const { t } = useI18n();
+  const formattedDate = new Date(publishedDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <main className="flex-1 flex justify-center px-4 py-12">
@@ -36,7 +43,7 @@ export default function BlogPostFrame({
         </p>
         <h1 className="text-3xl font-bold mb-4">{title}</h1>
         <p className="text-muted text-sm mb-10">
-          {t("blog.date_april_2026")} &middot; {readTime} {t("blog.read_suffix")}
+          <time dateTime={publishedDate}>{formattedDate}</time> &middot; {readTime} {t("blog.read_suffix")}
         </p>
 
         <div className="space-y-6 text-foreground/90 leading-relaxed">

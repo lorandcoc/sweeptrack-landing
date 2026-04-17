@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useReveal } from "./useReveal";
 import TiltCard from "./TiltCard";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 /* ─── FEATURED CARD WITH REAL SCREENSHOT ─── */
 
@@ -425,8 +425,8 @@ function SecondaryFeaturesGrid({
     <>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {visible.map((key, idx) => {
-          const title = t(`featuresall.sec_${key}_title`);
-          const desc = t(`featuresall.sec_${key}_desc`);
+          const title = t(`featuresall.sec_${key}_title` as TranslationKey);
+          const desc = t(`featuresall.sec_${key}_desc` as TranslationKey);
           const guide = guides[key];
           const icon = icons[idx];
 

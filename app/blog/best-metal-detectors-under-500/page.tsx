@@ -5,20 +5,22 @@ const SLUG = "best-metal-detectors-under-500";
 const TITLE = "Best Metal Detectors Under $500 in 2026";
 const DESCRIPTION = "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.";
 const IMAGE = "/screenshots/presets.png";
+const PUBLISHED = "2026-01-17";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="gear"
         readTime="7 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
           { href: "/blog/organize-metal-detector-presets-settings", title: "Organize Metal Detector Presets &amp; Settings" },

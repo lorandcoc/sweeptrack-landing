@@ -5,20 +5,22 @@ const SLUG = "downloading-offline-maps";
 const TITLE = "Downloading Offline Maps for Metal Detecting Without Cell Service";
 const DESCRIPTION = "Download offline maps in four tile styles for metal detecting in remote areas with no cell signal. Street, satellite, terrain, and historical topo maps.";
 const IMAGE = "/screenshots/offline_maps.png";
+const PUBLISHED = "2026-02-16";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
           { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },

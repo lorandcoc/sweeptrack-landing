@@ -23,7 +23,7 @@ const screenshots = [
   { src: "/screenshots/detector_list.png", altKey: "screenshots.alt_detectorlib", labelKey: "screenshots.shot_detectorlib" },
   { src: "/screenshots/settings.png", altKey: "screenshots.alt_settings", labelKey: "screenshots.shot_settings" },
   { src: "/screenshots/more_menu.png", altKey: "screenshots.alt_moremenu", labelKey: "screenshots.shot_moremenu" },
-];
+] as const;
 
 function get3DClass(index: number, active: number) {
   const diff = index - active;

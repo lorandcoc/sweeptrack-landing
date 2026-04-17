@@ -5,20 +5,22 @@ const SLUG = "best-places-to-metal-detect-in-texas";
 const TITLE = "Best Places to Metal Detect in Texas";
 const DESCRIPTION = "From Gulf Coast beaches to ghost towns and old ranches, here are the best types of locations for metal detecting in Texas — plus what the law says.";
 const IMAGE = "/screenshots/nearby.png";
+const PUBLISHED = "2026-01-29";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="location"
         readTime="5 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me" },
           { href: "/blog/metal-detecting-laws-in-the-us", title: "Metal Detecting Laws in the US" },

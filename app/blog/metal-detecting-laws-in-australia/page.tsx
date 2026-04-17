@@ -5,20 +5,22 @@ const SLUG = "metal-detecting-laws-in-australia";
 const TITLE = "Metal Detecting Laws in Australia";
 const DESCRIPTION = "Australian metal detecting laws vary by state. What you need to know about heritage acts, Aboriginal heritage protection, and where you can legally detect.";
 const IMAGE = "/screenshots/permission_vault.png";
+const PUBLISHED = "2026-03-09";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="location"
         readTime="5 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-laws-in-the-us", title: "Metal Detecting Laws in the US" },
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },

@@ -5,20 +5,22 @@ const SLUG = "organize-metal-detector-presets-settings";
 const TITLE = "How to Organize Your Metal Detector Settings and Presets";
 const DESCRIPTION = "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.";
 const IMAGE = "/screenshots/presets.png";
+const PUBLISHED = "2026-03-24";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tips"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
           { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },

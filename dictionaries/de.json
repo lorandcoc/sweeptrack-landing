@@ -446,5 +446,6 @@
   "blog.date_april_2026": "April 2026",
   "blog.related_guides": "Verwandte Guides",
   "blog.cta_card_text": "bietet jedes Werkzeug, das ein Detektorist braucht — GPS-Tracking, Genehmigungen, Prognose, Offline-Karten und mehr.",
-  "blog.cta_card_link": "Alle Funktionen ansehen →"
+  "blog.cta_card_link": "Alle Funktionen ansehen →",
+  "hero.platform_note": "Start zuerst auf Android. iOS ist in Planung — auf die Warteliste setzen."
 }

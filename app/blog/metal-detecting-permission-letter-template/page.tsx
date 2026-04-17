@@ -5,20 +5,22 @@ const SLUG = "metal-detecting-permission-letter-template";
 const TITLE = "Metal Detecting Permission Letter: Free Template + What to Include";
 const DESCRIPTION = "Free metal detecting permission letter template. Learn what to include, how to approach landowners, and how to track permissions with expiry dates.";
 const IMAGE = "/screenshots/permission_vault.png";
+const PUBLISHED = "2026-03-18";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="guides"
         readTime="6 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Detecting" },
           { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },

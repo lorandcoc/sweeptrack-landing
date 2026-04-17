@@ -5,20 +5,22 @@ const SLUG = "metal-detecting-laws-in-the-uk";
 const TITLE = "Metal Detecting Laws in the UK";
 const DESCRIPTION = "The UK has one of the best legal frameworks for metal detecting. What you need to know about the Treasure Act, PAS, and landowner permissions.";
 const IMAGE = "/screenshots/permission_vault.png";
+const PUBLISHED = "2026-03-12";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="location"
         readTime="6 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
           { href: "/blog/logging-finds-photo-video-audio", title: "Logging Finds with Photo, Video &amp; Audio" },

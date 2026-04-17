@@ -5,20 +5,22 @@ const SLUG = "night-vision-mode";
 const TITLE = "Night Vision Mode for Dawn and Dusk Detecting";
 const DESCRIPTION = "Use the red-light night vision display to preserve your dark-adapted eyesight during early morning and late evening metal detecting sessions.";
 const IMAGE = "/screenshots/night_vision.png";
+const PUBLISHED = "2026-03-21";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="2 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
           { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },

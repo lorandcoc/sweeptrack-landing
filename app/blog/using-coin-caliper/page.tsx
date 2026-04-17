@@ -5,20 +5,22 @@ const SLUG = "using-coin-caliper";
 const TITLE = "Using the Coin Caliper to Identify Dirty or Worn Coins";
 const DESCRIPTION = "Identify unknown coins by measuring their diameter on screen and matching against a database of known coin sizes, filtered by region and era.";
 const IMAGE = "/screenshots/presets.png";
+const PUBLISHED = "2026-04-05";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/logging-finds-photo-video-audio", title: "Logging Finds with Photo, Video, and Audio Notes" },
           { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },

@@ -26,7 +26,7 @@ export default function CTA() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 text-xs text-muted mb-8">
-            {["featuretag.gps", "featuretag.forecast", "featuretag.offline", "featuretag.cloud", "featuretag.nightvision", "featuretag.permission", "featuretag.track"].map((k) => (
+            {(["featuretag.gps", "featuretag.forecast", "featuretag.offline", "featuretag.cloud", "featuretag.nightvision", "featuretag.permission", "featuretag.track"] as const).map((k) => (
               <span key={k} className="px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02]">{t(k)}</span>
             ))}
           </div>

@@ -5,20 +5,22 @@ const SLUG = "beach-metal-detecting-tide-timing";
 const TITLE = "Beach Metal Detecting: Tide Timing & Where to Search";
 const DESCRIPTION = "Learn how to time beach metal detecting sessions around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.";
 const IMAGE = "/screenshots/forecast.png";
+const PUBLISHED = "2026-01-14";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="beach"
         readTime="5 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/best-weather-conditions-for-metal-detecting", title: "Best Weather Conditions for Metal Detecting" },
           { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },

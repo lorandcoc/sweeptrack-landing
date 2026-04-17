@@ -446,5 +446,6 @@
   "blog.date_april_2026": "April 2026",
   "blog.related_guides": "Related Guides",
   "blog.cta_card_text": "has every tool a detectorist needs — GPS tracking, permissions, forecast, offline maps, and more.",
-  "blog.cta_card_link": "See all features →"
+  "blog.cta_card_link": "See all features →",
+  "hero.platform_note": "Launching on Android first. iOS on the roadmap — join the waitlist."
 }

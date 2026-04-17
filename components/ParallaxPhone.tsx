@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import homeScreenshot from "@/public/screenshots/home.png";
 
 export default function ParallaxPhone() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,11 +40,11 @@ export default function ParallaxPhone() {
       >
         <div className="relative phone-frame w-[200px] sm:w-[260px] md:w-[300px]">
           <Image
-            src="/screenshots/home.png"
+            src={homeScreenshot}
             alt="SweepTrack Pro metal detecting app showing GPS satellite map with real-time tracking"
-            width={300}
-            height={650}
             className="w-full h-auto screenshot-crop"
+            placeholder="blur"
+            sizes="(max-width: 640px) 200px, (max-width: 768px) 260px, 300px"
             priority
           />
         </div>

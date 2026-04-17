@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
 import en from "@/dictionaries/en.json";
 
+export type TranslationKey = keyof typeof en;
 type Dict = Record<string, string>;
 
 export const LOCALES = [
@@ -41,7 +42,7 @@ const loaders: Record<string, () => Promise<{ default: Dict }>> = {
 };
 
 const I18nContext = createContext<{
-  t: (key: string) => string;
+  t: (key: TranslationKey) => string;
   locale: string;
   setLocale: (l: string) => void;
 }>({
@@ -75,7 +76,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const t = useCallback(
-    (key: string): string => dict[key] || (en as Dict)[key] || key,
+    (key: TranslationKey): string => dict[key] || (en as Dict)[key] || key,
     [dict]
   );
 

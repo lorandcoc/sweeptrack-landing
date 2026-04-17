@@ -5,20 +5,22 @@ const SLUG = "using-the-permission-vault";
 const TITLE = "Using the Permission Vault to Manage Landowner Permissions";
 const DESCRIPTION = "Track your metal detecting permissions with expiry alerts, boundary maps, PDF letter generation, and landowner contact details all in one place.";
 const IMAGE = "/screenshots/permission_vault.png";
+const PUBLISHED = "2026-04-08";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="5 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
           { href: "/blog/setting-up-perimeter-guard", title: "Setting Up Perimeter Guard" },

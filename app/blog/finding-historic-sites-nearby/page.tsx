@@ -5,20 +5,22 @@ const SLUG = "finding-historic-sites-nearby";
 const TITLE = "Finding Historic Sites and Landmarks Near Your Location";
 const DESCRIPTION = "Discover metal detecting spots by browsing nearby historic sites, landmarks, and Wikipedia-listed locations on an interactive map with distance display.";
 const IMAGE = "/screenshots/nearby.png";
+const PUBLISHED = "2026-02-22";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },

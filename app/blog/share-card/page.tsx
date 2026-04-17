@@ -5,20 +5,22 @@ const SLUG = "share-card";
 const TITLE = "Share Card: A Printable Summary of Your Session";
 const DESCRIPTION = "Generate a shareable PNG session card with your name, date, stats, find breakdown, and score. One tap to share via any app that accepts images.";
 const IMAGE = "/screenshots/stats.png";
+const PUBLISHED = "2026-03-30";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="2 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/exporting-sessions-gpx-kml-csv", title: "Exporting Sessions as GPX, KML, and CSV" },
           { href: "/blog/understanding-session-statistics", title: "Understanding Session Statistics" },

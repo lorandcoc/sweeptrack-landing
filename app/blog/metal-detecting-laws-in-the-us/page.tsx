@@ -5,20 +5,22 @@ const SLUG = "metal-detecting-laws-in-the-us";
 const TITLE = "Metal Detecting Laws in the US";
 const DESCRIPTION = "There";
 const IMAGE = "/screenshots/permission_vault.png";
+const PUBLISHED = "2026-03-15";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="location"
         readTime="6 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
           { href: "/blog/metal-detecting-laws-in-the-uk", title: "Metal Detecting Laws in the UK" },

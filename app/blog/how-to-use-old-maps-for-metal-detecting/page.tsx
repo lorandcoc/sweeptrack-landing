@@ -5,20 +5,22 @@ const SLUG = "how-to-use-old-maps-for-metal-detecting";
 const TITLE = "How to Use Old Maps to Find Better Metal Detecting Spots";
 const DESCRIPTION = "Use USGS historical topographic maps to find old homesteads, vanished roads, and forgotten settlements for metal detecting. Tips on reading old topo maps.";
 const IMAGE = "/screenshots/offline_maps.png";
+const PUBLISHED = "2026-02-28";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="guides"
         readTime="5 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },

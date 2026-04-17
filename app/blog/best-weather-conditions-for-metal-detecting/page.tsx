@@ -5,20 +5,22 @@ const SLUG = "best-weather-conditions-for-metal-detecting";
 const TITLE = "Best Weather Conditions for Metal Detecting (And When to Stay Home)";
 const DESCRIPTION = "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.";
 const IMAGE = "/screenshots/forecast.png";
+const PUBLISHED = "2026-02-04";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tips"
         readTime="4 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/detecting-forecast-guide", title: "Detecting Forecast: Plan Every Session by the Numbers" },
           { href: "/blog/beach-metal-detecting-tide-timing", title: "Beach Detecting: Tide Timing" },

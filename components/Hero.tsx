@@ -8,7 +8,7 @@ const stats = [
   { value: "61", key: "hero.stat_presets" },
   { value: "131", key: "hero.stat_coins" },
   { value: "4", key: "hero.stat_maps" },
-];
+] as const;
 
 export default function Hero() {
   const { locale, t } = useI18n();
@@ -62,6 +62,13 @@ export default function Hero() {
                 </svg>
               </a>
             </div>
+            <p className="hero-enter text-xs text-muted/70 mt-4 flex items-center gap-1.5 justify-center md:justify-start" style={{ animationDelay: "0.65s" }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <path d="M12 18h.01" />
+                <path d="M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+              {t("hero.platform_note")}
+            </p>
           </div>
 
           <div className="hero-enter-phone">

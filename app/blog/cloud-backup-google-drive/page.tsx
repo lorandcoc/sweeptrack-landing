@@ -5,20 +5,22 @@ const SLUG = "cloud-backup-google-drive";
 const TITLE = "Cloud Backup: Never Lose Your Detecting Data";
 const DESCRIPTION = "Back up your metal detecting sessions, detector presets, permissions, and settings to Google Drive so you never lose your data when switching phones.";
 const IMAGE = "/screenshots/cloud_backup.png";
+const PUBLISHED = "2026-02-07";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/exporting-sessions-gpx-kml-csv", title: "Exporting Sessions as GPX, KML, or CSV" },
           { href: "/blog/organize-metal-detector-presets-settings", title: "Organize Your Detector Presets" },

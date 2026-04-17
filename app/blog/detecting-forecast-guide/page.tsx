@@ -5,20 +5,22 @@ const SLUG = "detecting-forecast-guide";
 const TITLE = "Detecting Forecast: Plan Every Session by the Numbers";
 const DESCRIPTION = "SweepTrack Pro turns weather into a 0-100 Detecting Score. Check any location up to a week ahead with soil moisture, wind, temperature, and humidity tips.";
 const IMAGE = "/screenshots/forecast.png";
+const PUBLISHED = "2026-02-13";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="4 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/best-weather-conditions-for-metal-detecting", title: "Best Weather Conditions for Metal Detecting" },
           { href: "/blog/beach-metal-detecting-tide-timing", title: "Beach Metal Detecting: Tide Timing" },

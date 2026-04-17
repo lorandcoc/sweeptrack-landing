@@ -5,20 +5,22 @@ const SLUG = "where-to-metal-detect-near-me";
 const TITLE = "Where to Metal Detect Near Me: Finding Good Spots Anywhere";
 const DESCRIPTION = "A practical guide to finding productive metal detecting locations in any area using old maps, local research, and common sense to find great spots.";
 const IMAGE = "/screenshots/offline_maps.png";
+const PUBLISHED = "2026-04-14";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="location"
         readTime="5 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
           { href: "/blog/finding-historic-sites-nearby", title: "Finding Historic Sites Nearby" },

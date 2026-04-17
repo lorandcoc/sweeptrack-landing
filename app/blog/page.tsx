@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 const posts = [
   // ── GUIDES ──
@@ -50,7 +50,7 @@ const posts = [
   { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026", excerpt: "Nokta Simplex+, Minelab Vanquish, Garrett Ace 400, XP ORX, Fisher F44, and Nokta Legend compared.", tag: "Gear", category: "gear", readTime: "7 min", thumbnail: "/screenshots/presets.png" },
 ];
 
-const categoryKeys: { id: string; labelKey: string }[] = [
+const categoryKeys: { id: string; labelKey: TranslationKey }[] = [
   { id: "all", labelKey: "blog.cat_all" },
   { id: "tutorials", labelKey: "blog.cat_tutorials" },
   { id: "guides", labelKey: "blog.cat_guides" },

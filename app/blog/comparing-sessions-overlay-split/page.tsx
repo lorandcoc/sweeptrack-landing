@@ -5,20 +5,22 @@ const SLUG = "comparing-sessions-overlay-split";
 const TITLE = "Comparing Sessions: Overlay and Split View";
 const DESCRIPTION = "Compare metal detecting sessions side by side or overlaid on the same map with colour-coded paths, blend controls, and map type toggling.";
 const IMAGE = "/screenshots/stats.png";
+const PUBLISHED = "2026-02-10";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/using-track-overlay", title: "Using Track Overlay" },
           { href: "/blog/understanding-session-statistics", title: "Understanding Your Session Statistics" },

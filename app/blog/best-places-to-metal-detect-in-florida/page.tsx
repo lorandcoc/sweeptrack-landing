@@ -5,20 +5,22 @@ const SLUG = "best-places-to-metal-detect-in-florida";
 const TITLE = "Best Places to Metal Detect in Florida";
 const DESCRIPTION = "Florida's beaches, old homesteads, and Spanish shipwreck history make it a top state for metal detecting. Here's where to look and what the law allows.";
 const IMAGE = "/screenshots/nearby.png";
+const PUBLISHED = "2026-01-23";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="location"
         readTime="5 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/beach-metal-detecting-tide-timing", title: "Beach Metal Detecting &amp; Tide Timing" },
           { href: "/blog/where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me" },

@@ -1,27 +1,34 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { I18nProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#050510",
 };
 
 export const metadata: Metadata = {
@@ -172,6 +179,8 @@ export default function RootLayout({
         <I18nProvider>
           <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
         </I18nProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -161,7 +161,7 @@ const communities = [
     border: "group-hover:border-[#FF4500]/50",
     bg: "group-hover:bg-[#FF4500]/5"
   }
-];
+] as const;
 
 export default function CommunityLinks() {
   const { t } = useI18n();
@@ -200,7 +200,7 @@ export default function CommunityLinks() {
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     {comm.icon}
                   </div>
-                  {comm.badgeKey && (
+                  {"badgeKey" in comm && comm.badgeKey && (
                     <span className="text-[10px] uppercase tracking-wider font-bold text-white bg-accent/20 border border-accent/30 px-2 py-1 rounded-full">
                       {t(comm.badgeKey)}
                     </span>

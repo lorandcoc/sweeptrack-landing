@@ -5,20 +5,22 @@ const SLUG = "exporting-sessions-gpx-kml-csv";
 const TITLE = "Exporting Sessions as GPX, KML, or CSV";
 const DESCRIPTION = "Export your metal detecting sessions in GPX, KML, CSV, or SweepTrack JSON format for use in Google Earth, Garmin devices, or Excel spreadsheets.";
 const IMAGE = "/screenshots/cloud_backup.png";
+const PUBLISHED = "2026-02-19";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/cloud-backup-google-drive", title: "Cloud Backup: Never Lose Your Detecting Data" },
           { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },

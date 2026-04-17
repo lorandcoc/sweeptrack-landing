@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useReveal } from "./useReveal";
 import ComingSoonButton from "./ComingSoonButton";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 type FeatureRow = {
   key: string;
@@ -107,7 +107,7 @@ export default function PricingTable() {
   function resolveValue(row: FeatureRow, side: "free" | "pro"): boolean | string {
     const val = row[side];
     const key = side === "free" ? row.freeKey : row.proKey;
-    if (val === "string" && key) return t(key);
+    if (val === "string" && key) return t(key as TranslationKey);
     return val as boolean;
   }
 
@@ -155,7 +155,7 @@ export default function PricingTable() {
               key={f.key}
               className={`grid grid-cols-[1fr_60px_60px] sm:grid-cols-[1fr_80px_80px] px-4 py-2.5 ${i % 2 === 0 ? "bg-white/[0.01]" : "bg-white/[0.03]"}`}
             >
-              <div className="text-sm text-white/80">{t(`pricing.feat_${f.key}`)}</div>
+              <div className="text-sm text-white/80">{t(`pricing.feat_${f.key}` as TranslationKey)}</div>
               <div className="text-center"><Cell value={resolveValue(f, "free")} /></div>
               <div className="text-center"><Cell value={resolveValue(f, "pro")} /></div>
             </div>

@@ -5,20 +5,22 @@ const SLUG = "understanding-session-statistics";
 const TITLE = "Understanding Your Session Statistics and Personal Bests";
 const DESCRIPTION = "Learn how to read your metal detecting statistics including session totals, find breakdowns, personal bests, averages, and weather insights.";
 const IMAGE = "/screenshots/stats.png";
+const PUBLISHED = "2026-04-02";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="4 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
           { href: "/blog/comparing-sessions-overlay-split", title: "Comparing Sessions: Overlay and Split View" },

@@ -5,20 +5,22 @@ const SLUG = "metal-detecting-for-beginners";
 const TITLE = "Metal Detecting for Beginners: What You Need to Know";
 const DESCRIPTION = "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and beginner mistakes to avoid.";
 const IMAGE = "/screenshots/presets.png";
+const PUBLISHED = "2026-03-06";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="beginners"
         readTime="7 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/best-weather-conditions-for-metal-detecting", title: "Best Weather for Metal Detecting" },
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },

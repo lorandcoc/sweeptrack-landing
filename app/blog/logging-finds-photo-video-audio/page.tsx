@@ -5,20 +5,22 @@ const SLUG = "logging-finds-photo-video-audio";
 const TITLE = "Logging Finds with Photos and Audio Notes";
 const DESCRIPTION = "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, and audio recordings. Six find categories in SweepTrack Pro.";
 const IMAGE = "/screenshots/stats.png";
+const PUBLISHED = "2026-03-03";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
           { href: "/blog/understanding-session-statistics", title: "Understanding Your Session Statistics" },

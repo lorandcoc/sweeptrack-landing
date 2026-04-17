@@ -5,20 +5,22 @@ const SLUG = "setting-up-perimeter-guard";
 const TITLE = "Setting Up Perimeter Guard: Stay Within Your Permitted Zone";
 const DESCRIPTION = "Learn how to draw boundary zones on the map and get vibration alerts when you approach the edge of your permitted metal detecting area.";
 const IMAGE = "/screenshots/permission_vault.png";
+const PUBLISHED = "2026-03-27";
 
-export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION });
+export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
 
 export default function Post() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ slug: SLUG, title: TITLE, description: DESCRIPTION, image: IMAGE, publishedDate: PUBLISHED })) }}
       />
       <BlogPostFrame
         title={TITLE}
         category="tutorials"
         readTime="3 min"
+        publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/using-the-permission-vault", title: "Using the Permission Vault" },
           { href: "/blog/how-to-track-metal-detecting-sessions-gps", title: "Track Your Sessions with GPS" },
