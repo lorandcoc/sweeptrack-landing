@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 
 const socials = [
@@ -43,19 +44,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-6 md:gap-10 mb-12">
           {/* Brand + Description */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-                <svg
-                  width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"
-                >
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-                  <circle cx="12" cy="9" r="2.5" />
-                </svg>
-              </div>
-              <span className="font-bold text-lg">
-                SweepTrack <span className="text-accent">Pro</span>
-              </span>
+            <div className="flex items-center mb-4">
+              <Image
+                src="/logo.svg"
+                alt="SweepTrack Pro"
+                width={378}
+                height={95}
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-sm mb-5">
               {t("footer.description")}

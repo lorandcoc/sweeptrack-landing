@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle";
 
@@ -46,22 +47,15 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center group-hover:bg-accent/25 transition-colors">
-            <svg
-              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"
-            >
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-              <circle cx="12" cy="9" r="2.5" />
-            </svg>
-          </div>
-          <div>
-            <span className="font-bold text-[17px] tracking-tight block leading-tight">
-              SweepTrack <span className="text-accent">Pro</span>
-            </span>
-            <span className="text-[10px] text-muted tracking-wide hidden sm:block">Metal Detecting Companion</span>
-          </div>
+        <a href="/" className="flex items-center group" aria-label="SweepTrack Pro">
+          <Image
+            src="/logo.svg"
+            alt="SweepTrack Pro"
+            width={378}
+            height={95}
+            priority
+            className="h-9 w-auto"
+          />
         </a>
 
         {/* Desktop Nav */}
