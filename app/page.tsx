@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import FeaturesAll from "@/components/FeaturesAll";
 import HowItWorks from "@/components/HowItWorks";
 import MapCompareSlider from "@/components/MapCompareSlider";
+import StatsBar from "@/components/StatsBar";
 import Screenshots from "@/components/Screenshots";
 import FounderNote from "@/components/FounderNote";
 import PricingTable from "@/components/PricingTable";
@@ -134,9 +136,11 @@ export default function Home() {
       <main>
         <h2 className="sr-only">The Best Metal Detecting App for Android — GPS Tracking, Offline Maps, and 48 Field Tools</h2>
         <Hero />
+        <Marquee />
         <MapCompareSlider />
         <HowItWorks />
         <FeaturesAll />
+        <StatsBar />
         <Screenshots />
         <FounderNote />
         <PricingTable />

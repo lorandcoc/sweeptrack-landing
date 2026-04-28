@@ -71,46 +71,27 @@ export default function HowItWorks() {
         </div>
 
         <div className="relative">
-          {/* Connecting line (desktop only) */}
-          <div className="hidden md:block absolute top-[52px] left-[16.66%] right-[16.66%] h-[2px]">
-            <svg width="100%" height="2" className="overflow-visible">
-              <line
-                x1="0" y1="1" x2="100%" y2="1"
-                stroke="url(#lineGrad)"
-                strokeWidth="2"
-                className={`step-line ${visible ? "drawn" : ""}`}
-              />
-              <defs>
-                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#FFB000" stopOpacity="0.5" />
-                  <stop offset="50%" stopColor="#00FF6A" stopOpacity="0.5" />
-                  <stop offset="100%" stopColor="#00DDFF" stopOpacity="0.5" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+          {/* Gradient rail (amber → green → cyan), desktop only */}
+          <div className="how-rail" aria-hidden="true" />
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {steps.map((step, i) => (
               <div
                 key={step.num}
-                className={`step-circle ${visible ? "visible" : ""} flex flex-col items-center text-center`}
+                className={`step-circle ${visible ? "visible" : ""} relative flex flex-col items-center text-center`}
                 style={{ transitionDelay: visible ? `${i * 300 + 200}ms` : "0ms" }}
               >
+                {/* Big translucent step number — sits behind the circle */}
+                <span className="how-bignum" style={{ color: step.color }} aria-hidden="true">{step.num}</span>
+
                 {/* Step circle */}
                 <div className="relative mb-5">
                   <div
                     className="w-[80px] h-[80px] md:w-[104px] md:h-[104px] rounded-full bg-surface flex items-center justify-center"
-                    style={{ border: `1.5px solid ${step.color}30`, color: step.color }}
+                    style={{ border: `1.5px solid ${step.color}30`, color: step.color, boxShadow: `0 0 0 4px ${step.color}10` }}
                   >
                     {step.icon}
                   </div>
-                  <span
-                    className="absolute -top-2 -right-2 text-[11px] font-bold px-2 py-0.5 rounded-full"
-                    style={{ color: step.color, background: `${step.color}18`, border: `1px solid ${step.color}35` }}
-                  >
-                    {step.num}
-                  </span>
                 </div>
 
                 <h3 className="text-xl font-bold mb-2" style={{ color: step.color }}>{step.title}</h3>

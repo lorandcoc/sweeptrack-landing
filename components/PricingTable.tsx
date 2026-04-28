@@ -134,12 +134,14 @@ export default function PricingTable() {
             <div className="text-sm text-muted">{t("pricing.free_description")}</div>
           </div>
           {/* Pro */}
-          <div className="sweep-outline rounded-2xl border border-transparent bg-accent/5 p-6 relative">
-            <span className="absolute -top-3 right-4 text-[10px] font-bold uppercase tracking-wider bg-accent text-[#0A0A1A] px-3 py-1 rounded-full">{t("pricing.pro_badge")}</span>
-            <div className="text-sm font-semibold text-accent uppercase tracking-wider mb-1">{t("pricing.pro_label")}</div>
-            <div className="text-3xl font-bold mb-1">{t("pricing.pro_price")}<span className="text-base font-normal text-muted">{t("pricing.pro_frequency")}</span></div>
-            <div className="text-xs text-muted mb-4">{t("pricing.pro_sublabel")}</div>
-            <div className="text-sm text-muted">{t("pricing.pro_description")}</div>
+          <div className="plan-pro rounded-2xl p-6 relative">
+            <span className="absolute -top-3 right-4 text-[10px] font-bold uppercase tracking-wider bg-accent text-[#0A0A1A] px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(0,255,106,0.4)]">{t("pricing.pro_badge")}</span>
+            <div className="relative z-10">
+              <div className="text-sm font-semibold text-accent uppercase tracking-wider mb-1">{t("pricing.pro_label")}</div>
+              <div className="text-3xl font-bold mb-1">{t("pricing.pro_price")}<span className="text-base font-normal text-muted">{t("pricing.pro_frequency")}</span></div>
+              <div className="text-xs text-muted mb-4">{t("pricing.pro_sublabel")}</div>
+              <div className="text-sm text-muted">{t("pricing.pro_description")}</div>
+            </div>
           </div>
         </div>
 

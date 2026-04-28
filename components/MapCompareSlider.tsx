@@ -115,8 +115,20 @@ export default function MapCompareSlider() {
             </div>
           </div>
 
+          {/* Pulsing amber pins (hint at hidden finds) */}
+          <span className="map-pin-pulse" style={{ left: "28%", top: "42%" }} aria-hidden="true" />
+          <span className="map-pin-pulse" style={{ left: "64%", top: "31%", animationDelay: "0.8s" }} aria-hidden="true" />
+          <span className="map-pin-pulse" style={{ left: "41%", top: "68%", animationDelay: "1.6s" }} aria-hidden="true" />
+
+          {/* Drag hint */}
+          <span className="map-drag-hint" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7" /></svg>
+            DRAG
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          </span>
+
           {/* Slider Handle */}
-          <div 
+          <div
             className="absolute top-0 bottom-0 w-1 bg-accent/80 cursor-ew-resize transition-opacity"
             style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
           >

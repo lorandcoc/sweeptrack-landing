@@ -90,10 +90,15 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-xs text-muted">
+          <div className="flex items-center gap-3 text-xs text-muted flex-wrap">
             <p>&copy; {new Date().getFullYear()} SweepTrack Pro</p>
             <span className="text-white/10">&middot;</span>
             <span className="text-accent/60">{t("footer.adfree")}</span>
+            <span className="text-white/10">&middot;</span>
+            <span className="signal-live" aria-hidden="true">
+              <span className="signal-live__dot" />
+              SIGNAL · LIVE
+            </span>
           </div>
           <div className="flex items-center gap-4 text-xs text-muted">
             <a href="/privacy" className="hover:text-foreground transition-colors">{t("footer.privacy")}</a>

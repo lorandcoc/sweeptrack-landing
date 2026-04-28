@@ -11,7 +11,15 @@ export default function CTA() {
   return (
     <section id="download" className="py-20 md:py-28">
       <div ref={ref} className={`max-w-4xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
-        <div className="border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center bg-surface/50">
+        <div className="relative border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center bg-surface/50 overflow-hidden">
+          <div className="radar-rings" aria-hidden="true">
+            <span className="radar-ring" />
+            <span className="radar-ring" />
+            <span className="radar-ring" />
+            <span className="radar-ring" />
+            <span className="radar-pin" />
+          </div>
+          <div className="relative z-[2]">
           <p className="text-muted text-sm font-medium tracking-wider uppercase mb-4">{t("cta.label")}</p>
           <div className="accent-rule" />
           <h2 className="font-display text-3xl md:text-4xl mb-4">
@@ -33,6 +41,7 @@ export default function CTA() {
 
           <div className="flex justify-center">
             <ComingSoonButton size="large" />
+          </div>
           </div>
         </div>
       </div>

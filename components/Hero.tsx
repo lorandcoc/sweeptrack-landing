@@ -2,6 +2,7 @@
 
 import ParallaxPhone from "./ParallaxPhone";
 import ComingSoonButton from "./ComingSoonButton";
+import HeroHeatmap from "./HeroHeatmap";
 import { useI18n } from "@/lib/i18n";
 
 const stats = [
@@ -15,17 +16,24 @@ export default function Hero() {
   const isLong = locale !== "en";
 
   return (
-    <section className="relative pt-28 pb-12 md:pt-36 md:pb-16">
-      <div className="max-w-7xl mx-auto px-6 relative">
+    <section className="relative pt-12 pb-12 md:pt-20 md:pb-16 overflow-hidden">
+      <HeroHeatmap countTargetSelector="#hero-find-count" />
+
+      <div className="hero-content max-w-7xl mx-auto px-6 relative">
         <div className="grid md:grid-cols-[1.4fr_0.6fr] gap-3 items-center">
           <div className="text-center md:text-left">
-            <div className="hero-enter flex flex-wrap gap-2 mb-6" style={{ animationDelay: "0.1s" }}>
+            <div className="hero-enter flex flex-wrap gap-2 mb-6 justify-center md:justify-start" style={{ animationDelay: "0.1s" }}>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 {t("hero.pill_free")}
               </span>
               <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-muted text-xs font-medium">
                 {t("hero.pill_adfree")}
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-muted text-xs font-medium font-mono">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                <strong id="hero-find-count" className="text-accent font-semibold">0</strong>
+                <span>finds revealed</span>
               </span>
             </div>
 
@@ -71,7 +79,25 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="hero-enter-phone">
+          <div className="hero-enter-phone relative">
+            <div className="hero-hud-1 hidden md:flex">
+              <span className="st-hud">
+                <span className="st-hud__dot" />
+                <span style={{ fontSize: 11 }}>47°41′22″N</span>
+              </span>
+            </div>
+            <div className="hero-hud-3 hidden md:flex">
+              <span className="st-hud" style={{ background: "rgba(0,255,106,0.12)", borderColor: "var(--st-accent-edge)", color: "var(--st-accent)" }}>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8" /></svg>
+                <span style={{ fontSize: 11, fontWeight: 600 }}>+1 find · 18 cm</span>
+              </span>
+            </div>
+            <div className="hero-hud-2 hidden md:flex">
+              <span className="st-hud" style={{ background: "rgba(255,176,0,0.18)", borderColor: "var(--st-amber-edge)", color: "var(--st-amber)" }}>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "currentColor" }} />
+                <span style={{ fontSize: 11, fontWeight: 600 }}>Score 96</span>
+              </span>
+            </div>
             <ParallaxPhone />
           </div>
         </div>
