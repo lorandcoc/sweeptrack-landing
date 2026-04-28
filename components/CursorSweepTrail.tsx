@@ -37,10 +37,10 @@ export default function CursorSweepTrail() {
     type Ring = { x: number; y: number; t0: number };
     const rings: Ring[] = [];
 
-    const RING_DURATION = 2400; // ms
+    const RING_DURATION = 800; // ms (lifespan: 2400 / 3)
     const RING_START_RADIUS = 12 * dpr;
     const RING_END_RADIUS = 100 * dpr;
-    const EMIT_INTERVAL = 600; // ms
+    const EMIT_INTERVAL = 2400; // ms (1/4 the previous frequency)
 
     let cursorX = -1000;
     let cursorY = -1000;
