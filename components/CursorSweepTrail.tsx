@@ -2,6 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
+/**
+ * Cursor radar — emits expanding rings from the cursor every ~600ms.
+ * Stationary cursor pulses like a metal-detector ping; moving cursor leaves
+ * a trail of anchored pings. Cleans up on unmount, skips coarse pointers
+ * and reduced-motion.
+ */
 export default function CursorSweepTrail() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -28,56 +34,76 @@ export default function CursorSweepTrail() {
     size();
     window.addEventListener("resize", size);
 
-    type P = { x: number; y: number; vx: number; vy: number; life: number; size: number };
-    const particles: P[] = [];
-    let lastX = -1000;
-    let lastY = -1000;
+    type Ring = { x: number; y: number; t0: number };
+    const rings: Ring[] = [];
+
+    const RING_DURATION = 2400; // ms
+    const RING_START_RADIUS = 12 * dpr;
+    const RING_END_RADIUS = 100 * dpr;
+    const EMIT_INTERVAL = 600; // ms
+
+    let cursorX = -1000;
+    let cursorY = -1000;
+    let active = false;
     let started = false;
+    let lastEmit = 0;
     let raf = 0;
 
     const onMove = (e: MouseEvent) => {
+      cursorX = e.clientX * dpr;
+      cursorY = e.clientY * dpr;
+      active = true;
       if (!started) {
         canvas.style.display = "block";
         started = true;
       }
-      const mx = e.clientX * dpr;
-      const my = e.clientY * dpr;
-      const dx = mx - lastX;
-      const dy = my - lastY;
-      const dist = Math.hypot(dx, dy);
-      if (dist > 4) {
-        particles.push({
-          x: mx,
-          y: my,
-          vx: (Math.random() - 0.5) * 0.4 * dpr,
-          vy: (Math.random() - 0.5) * 0.4 * dpr,
-          life: 1,
-          size: (1 + Math.random() * 2) * dpr,
-        });
-        lastX = mx;
-        lastY = my;
-        if (particles.length > 80) particles.shift();
-      }
     };
+    const onLeave = () => { active = false; };
+    const onEnter = () => { active = true; };
     window.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseleave", onLeave);
+    document.addEventListener("mouseenter", onEnter);
 
-    const tick = () => {
+    const tick = (now: number) => {
       ctx.clearRect(0, 0, w, h);
-      ctx.globalCompositeOperation = "lighter";
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.life -= 0.025;
-        if (p.life <= 0) {
-          particles.splice(i, 1);
+
+      // emit a new ring at current cursor position on cadence
+      if (active && now - lastEmit > EMIT_INTERVAL) {
+        rings.push({ x: cursorX, y: cursorY, t0: now });
+        lastEmit = now;
+        // keep memory bounded
+        if (rings.length > 12) rings.shift();
+      }
+
+      // render rings — each anchored to its emission point, expanding + fading
+      for (let i = rings.length - 1; i >= 0; i--) {
+        const r = rings[i];
+        const age = (now - r.t0) / RING_DURATION;
+        if (age >= 1) {
+          rings.splice(i, 1);
           continue;
         }
+        const ease = 1 - Math.pow(1 - age, 3);
+        const radius = RING_START_RADIUS + ease * (RING_END_RADIUS - RING_START_RADIUS);
+        const alpha = (1 - age) * 0.5;
+        ctx.strokeStyle = `rgba(0, 255, 106, ${alpha})`;
+        ctx.lineWidth = 1.5 * dpr;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 255, 106, ${p.life * 0.6})`;
-        ctx.fill();
+        ctx.arc(r.x, r.y, radius, 0, Math.PI * 2);
+        ctx.stroke();
       }
+
+      // bright center pin at the live cursor position
+      if (active) {
+        ctx.shadowColor = "#00FF6A";
+        ctx.shadowBlur = 14 * dpr;
+        ctx.fillStyle = "rgba(0, 255, 106, 0.9)";
+        ctx.beginPath();
+        ctx.arc(cursorX, cursorY, 4 * dpr, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
@@ -85,6 +111,8 @@ export default function CursorSweepTrail() {
     return () => {
       window.removeEventListener("resize", size);
       window.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseleave", onLeave);
+      document.removeEventListener("mouseenter", onEnter);
       cancelAnimationFrame(raf);
     };
   }, []);

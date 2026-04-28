@@ -79,26 +79,36 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="hero-enter-phone relative">
-            <div className="hero-hud-1 hidden md:flex">
-              <span className="st-hud">
-                <span className="st-hud__dot" />
-                <span style={{ fontSize: 11 }}>47°41′22″N</span>
-              </span>
+          <div className="hero-enter-phone flex justify-center md:justify-end">
+            <div className="hero-phone-stage">
+              <div className="hero-phone-rings" aria-hidden="true">
+                <span className="hero-phone-ring" />
+                <span className="hero-phone-ring" />
+                <span className="hero-phone-ring" />
+                <span className="hero-phone-ring" />
+              </div>
+              <div className="hero-hud-1 hidden md:flex">
+                <span className="st-hud">
+                  <span className="st-hud__dot" />
+                  <span style={{ fontSize: 11 }}>47°41′22″N</span>
+                </span>
+              </div>
+              <div className="hero-hud-3 hidden md:flex">
+                <span className="st-hud" style={{ background: "rgba(0,255,106,0.12)", borderColor: "var(--st-accent-edge)", color: "var(--st-accent)" }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8" /></svg>
+                  <span style={{ fontSize: 11, fontWeight: 600 }}>+1 find · 18 cm</span>
+                </span>
+              </div>
+              <div className="hero-hud-2 hidden md:flex">
+                <span className="st-hud" style={{ background: "rgba(255,176,0,0.18)", borderColor: "var(--st-amber-edge)", color: "var(--st-amber)" }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "currentColor" }} />
+                  <span style={{ fontSize: 11, fontWeight: 600 }}>Score 96</span>
+                </span>
+              </div>
+              <div className="relative z-[1]">
+                <ParallaxPhone />
+              </div>
             </div>
-            <div className="hero-hud-3 hidden md:flex">
-              <span className="st-hud" style={{ background: "rgba(0,255,106,0.12)", borderColor: "var(--st-accent-edge)", color: "var(--st-accent)" }}>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8" /></svg>
-                <span style={{ fontSize: 11, fontWeight: 600 }}>+1 find · 18 cm</span>
-              </span>
-            </div>
-            <div className="hero-hud-2 hidden md:flex">
-              <span className="st-hud" style={{ background: "rgba(255,176,0,0.18)", borderColor: "var(--st-amber-edge)", color: "var(--st-amber)" }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "currentColor" }} />
-                <span style={{ fontSize: 11, fontWeight: 600 }}>Score 96</span>
-              </span>
-            </div>
-            <ParallaxPhone />
           </div>
         </div>
       </div>

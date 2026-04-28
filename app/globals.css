@@ -467,6 +467,43 @@ input[type="range"]::-webkit-slider-thumb:hover {
   100% { box-shadow: 0 0 0 0 rgba(0,255,106,0); }
 }
 
+/* ── Hero phone radar rings (behind the phone) ── */
+.hero-phone-stage {
+  position: relative;
+  width: 200px;
+}
+@media (min-width: 640px) { .hero-phone-stage { width: 260px; } }
+@media (min-width: 768px) { .hero-phone-stage { width: 300px; } }
+
+.hero-phone-rings {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+.hero-phone-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(0, 255, 106, 0.3);
+  border-radius: 50%;
+  animation: hero-phone-pulse 4s var(--st-ease-out) infinite;
+}
+.hero-phone-ring:nth-child(2) { animation-delay: 1s; }
+.hero-phone-ring:nth-child(3) { animation-delay: 2s; }
+.hero-phone-ring:nth-child(4) { animation-delay: 3s; }
+@keyframes hero-phone-pulse {
+  0%   { transform: scale(0.7); opacity: 0.6; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-phone-ring { animation: none; opacity: 0; }
+}
+
 /* ── Hero phone floating HUD chip placement + float animation ── */
 .hero-hud-1 { position: absolute; left: -8%; top: 14%; z-index: 3; animation: hud-float 6s ease-in-out infinite; }
 .hero-hud-2 { position: absolute; right: -6%; bottom: 20%; z-index: 3; animation: hud-float 6s ease-in-out 3s infinite; }
