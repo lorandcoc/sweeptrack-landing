@@ -50,7 +50,7 @@ export default function Footer() {
                 alt="SweepTrack Pro"
                 width={378}
                 height={95}
-                className="h-10 w-auto"
+                className="h-10 w-auto logo-pulse"
               />
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-sm mb-5">

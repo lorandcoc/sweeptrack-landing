@@ -54,7 +54,7 @@ export default function Header() {
             width={378}
             height={95}
             priority
-            className="h-9 w-auto"
+            className="h-9 w-auto logo-pulse"
           />
         </a>
 

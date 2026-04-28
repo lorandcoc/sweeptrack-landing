@@ -412,6 +412,24 @@ input[type="range"]::-webkit-slider-thumb:hover {
   text-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
 }
 
+/* ── Logo breathing pulse (subtle ambient halo) ── */
+.logo-pulse {
+  filter: drop-shadow(0 0 0 transparent);
+  animation: logo-breathe 6s ease-in-out infinite;
+  transition: filter 240ms var(--st-ease), transform 240ms var(--st-ease);
+}
+@keyframes logo-breathe {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(0,255,106,0)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(0,255,106,0.22)); }
+}
+.logo-pulse:hover {
+  filter: drop-shadow(0 0 20px rgba(0,255,106,0.45));
+  transform: scale(1.02);
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-pulse { animation: none; }
+}
+
 /* ── HUD ticker — page-top mono scroll bar ── */
 .hud-ticker {
   background: var(--st-bg);
@@ -545,11 +563,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
   width: 100px; height: 100px;
   border: 1px solid rgba(0,255,106,0.4);
   border-radius: 50%;
-  animation: radar-pulse 4s var(--st-ease-out) infinite;
+  animation: radar-pulse 12s var(--st-ease-out) infinite;
 }
-.radar-ring:nth-child(2) { animation-delay: 1s; }
-.radar-ring:nth-child(3) { animation-delay: 2s; }
-.radar-ring:nth-child(4) { animation-delay: 3s; }
+.radar-ring:nth-child(2) { animation-delay: 3s; }
+.radar-ring:nth-child(3) { animation-delay: 6s; }
+.radar-ring:nth-child(4) { animation-delay: 9s; }
 .radar-pin {
   position: absolute; left: 50%; top: 50%;
   width: 12px; height: 12px;
@@ -667,24 +685,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
   .stats-bar::before { animation: none; opacity: 0; }
 }
 
-/* ── Pricing Pro gradient mask border + halo ── */
+/* ── Pricing Pro: green halo glow (sweep-outline class adds the orbiting accent) ── */
 .plan-pro {
   position: relative;
   background: var(--st-bg-elev);
-  box-shadow: 0 0 0 1px var(--st-accent-edge), 0 24px 64px rgba(0,255,106,0.08);
-}
-.plan-pro::before {
-  content: "";
-  position: absolute; inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--st-accent) 0%, transparent 50%, var(--st-accent) 100%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  opacity: 0.55;
-  pointer-events: none;
+  box-shadow: 0 24px 64px rgba(0,255,106,0.10);
 }
 
 /* ── FAQ (native <details>) styles ── */

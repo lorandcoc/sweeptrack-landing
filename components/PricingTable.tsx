@@ -134,7 +134,7 @@ export default function PricingTable() {
             <div className="text-sm text-muted">{t("pricing.free_description")}</div>
           </div>
           {/* Pro */}
-          <div className="plan-pro rounded-2xl p-6 relative">
+          <div className="plan-pro sweep-outline rounded-2xl p-6 relative">
             <span className="absolute -top-3 right-4 text-[10px] font-bold uppercase tracking-wider bg-accent text-[#0A0A1A] px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(0,255,106,0.4)]">{t("pricing.pro_badge")}</span>
             <div className="relative z-10">
               <div className="text-sm font-semibold text-accent uppercase tracking-wider mb-1">{t("pricing.pro_label")}</div>
