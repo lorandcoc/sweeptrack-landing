@@ -531,16 +531,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   50%      { transform: translateY(-8px); }
 }
 
-/* ── Hero interactive heatmap canvas ── */
-.hero-heatmap-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: auto;
-  cursor: crosshair;
-}
-.hero-content { position: relative; z-index: 2; }
-
 /* ── Cursor sweep trail ── */
 #cursor-trail {
   position: fixed;

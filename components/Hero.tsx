@@ -2,7 +2,6 @@
 
 import ParallaxPhone from "./ParallaxPhone";
 import ComingSoonButton from "./ComingSoonButton";
-import HeroHeatmap from "./HeroHeatmap";
 import { useI18n } from "@/lib/i18n";
 
 const stats = [
@@ -17,9 +16,7 @@ export default function Hero() {
 
   return (
     <section className="relative pt-12 pb-12 md:pt-20 md:pb-16 overflow-hidden">
-      <HeroHeatmap countTargetSelector="#hero-find-count" />
-
-      <div className="hero-content max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-6 relative">
         <div className="grid md:grid-cols-[1.4fr_0.6fr] gap-3 items-center">
           <div className="text-center md:text-left">
             <div className="hero-enter flex flex-wrap gap-2 mb-6 justify-center md:justify-start" style={{ animationDelay: "0.1s" }}>
@@ -29,11 +26,6 @@ export default function Hero() {
               </span>
               <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-muted text-xs font-medium">
                 {t("hero.pill_adfree")}
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-muted text-xs font-medium font-mono">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                <strong id="hero-find-count" className="text-accent font-semibold">0</strong>
-                <span>finds revealed</span>
               </span>
             </div>
 
