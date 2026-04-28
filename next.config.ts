@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  env: {
+    // Vercel injects VERCEL_GIT_COMMIT_SHA at build time; fall back to "local" off-Vercel.
+    NEXT_PUBLIC_BUILD_SHA: (process.env.VERCEL_GIT_COMMIT_SHA || "local").slice(0, 7),
+    NEXT_PUBLIC_BUILD_DATE: new Date().toISOString().slice(0, 10),
+  },
   turbopack: {
     rules: {
       "*.md": { loaders: ["raw-loader"], as: "*.js" },

@@ -590,36 +590,36 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .feat-marquee {
   background: var(--st-bg);
   border-block: 1px solid var(--st-hairline);
-  padding-block: 20px;
+  padding-block: 10px;
   overflow: hidden;
   position: relative;
 }
 .feat-marquee::before, .feat-marquee::after {
   content: "";
-  position: absolute; top: 0; bottom: 0; width: 120px;
+  position: absolute; top: 0; bottom: 0; width: 80px;
   z-index: 2; pointer-events: none;
 }
 .feat-marquee::before { left: 0;  background: linear-gradient(to right, var(--st-bg), transparent); }
 .feat-marquee::after  { right: 0; background: linear-gradient(to left,  var(--st-bg), transparent); }
 .feat-marquee__track {
-  display: flex; gap: 48px; white-space: nowrap;
+  display: flex; gap: 36px; white-space: nowrap;
   animation: feat-marquee-scroll 40s linear infinite;
   width: max-content;
 }
 .feat-marquee:hover .feat-marquee__track { animation-play-state: paused; }
 .feat-marquee__item {
-  display: inline-flex; align-items: center; gap: 12px;
+  display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-display), system-ui;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 14px;
   color: var(--st-text-50);
   transition: color 220ms var(--st-ease);
 }
 .feat-marquee__item:hover { color: var(--st-accent); }
 .feat-marquee__pin {
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 6px; height: 6px; border-radius: 50%;
   background: var(--st-accent);
-  box-shadow: 0 0 12px rgba(0,255,106,0.5);
+  box-shadow: 0 0 10px rgba(0,255,106,0.5);
   flex-shrink: 0;
 }
 .feat-marquee__pin.amber  { background: var(--st-amber);  box-shadow: 0 0 12px rgba(255,176,0,0.5); }

@@ -95,9 +95,9 @@ export default function Footer() {
             <span className="text-white/10">&middot;</span>
             <span className="text-accent/60">{t("footer.adfree")}</span>
             <span className="text-white/10">&middot;</span>
-            <span className="signal-live" aria-hidden="true">
+            <span className="signal-live" title={`Build ${process.env.NEXT_PUBLIC_BUILD_SHA} · ${process.env.NEXT_PUBLIC_BUILD_DATE}`}>
               <span className="signal-live__dot" />
-              SIGNAL · LIVE
+              BUILD {process.env.NEXT_PUBLIC_BUILD_SHA} · {process.env.NEXT_PUBLIC_BUILD_DATE}
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs text-muted">

@@ -3,7 +3,6 @@ import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { I18nProvider } from "@/lib/i18n";
-import HudTicker from "@/components/HudTicker";
 import CursorSweepTrail from "@/components/CursorSweepTrail";
 import "./globals.css";
 
@@ -180,7 +179,6 @@ export default function RootLayout({
       <body className="min-h-full aurora-bg overflow-x-hidden">
         <CursorSweepTrail />
         <I18nProvider>
-          <HudTicker />
           <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
         </I18nProvider>
         <Analytics />
