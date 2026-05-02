@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "using-coin-caliper";
 const TITLE = "Using the Coin Caliper to Identify Dirty or Worn Coins";
 const DESCRIPTION = "Identify unknown coins by measuring their diameter on screen and matching against a database of known coin sizes, filtered by region and era.";
-const IMAGE = "/screenshots/presets.png";
+const IMAGE = "/screenshots/presets.jpg";
 const PUBLISHED = "2026-04-05";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

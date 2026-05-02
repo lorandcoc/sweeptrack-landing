@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "using-the-permission-vault";
 const TITLE = "Using the Permission Vault to Manage Landowner Permissions";
 const DESCRIPTION = "Track your metal detecting permissions with expiry alerts, boundary maps, PDF letter generation, and landowner contact details all in one place.";
-const IMAGE = "/screenshots/permission_vault.png";
+const IMAGE = "/screenshots/permission_vault.jpg";
 const PUBLISHED = "2026-04-08";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

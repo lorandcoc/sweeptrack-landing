@@ -24,7 +24,7 @@ export default function Marquee() {
   const all = [...items, ...items];
 
   return (
-    <div className="feat-marquee" aria-hidden="true">
+    <div className="feat-marquee cv-auto" aria-hidden="true">
       <div className="feat-marquee__track">
         {all.map((it, i) => (
           <span key={i} className="feat-marquee__item">

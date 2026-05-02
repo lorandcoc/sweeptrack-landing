@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "metal-detecting-permission-letter-template";
 const TITLE = "Metal Detecting Permission Letter: Free Template + What to Include";
 const DESCRIPTION = "Free metal detecting permission letter template. Learn what to include, how to approach landowners, and how to track permissions with expiry dates.";
-const IMAGE = "/screenshots/permission_vault.png";
+const IMAGE = "/screenshots/permission_vault.jpg";
 const PUBLISHED = "2026-03-18";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

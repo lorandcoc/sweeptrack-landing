@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "understanding-session-statistics";
 const TITLE = "Understanding Your Session Statistics and Personal Bests";
 const DESCRIPTION = "Learn how to read your metal detecting statistics including session totals, find breakdowns, personal bests, averages, and weather insights.";
-const IMAGE = "/screenshots/stats.png";
+const IMAGE = "/screenshots/stats.jpg";
 const PUBLISHED = "2026-04-02";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

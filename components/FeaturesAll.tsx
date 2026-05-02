@@ -229,7 +229,7 @@ export default function FeaturesAll() {
   const guideLabel = t("featuresall.guide");
 
   return (
-    <section id="features" className="py-16 md:py-24">
+    <section id="features" className="py-16 md:py-24 cv-auto">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
@@ -253,7 +253,7 @@ export default function FeaturesAll() {
               title={t("featuresall.gps_title")}
               subtitle={t("featuresall.gps_subtitle")}
               tag={t("featuresall.gps_tag")}
-              screenshot="/screenshots/home.png"
+              screenshot="/screenshots/home.jpg"
               alt="Metal detecting GPS tracking app with satellite map view and real-time HUD overlay"
               description={t("featuresall.gps_description")}
               guide="/blog/how-to-track-metal-detecting-sessions-gps"
@@ -266,7 +266,7 @@ export default function FeaturesAll() {
               subtitle={t("featuresall.cloud_subtitle")}
               tag={t("featuresall.cloud_tag")}
               tagColor="blue"
-              screenshot="/screenshots/cloud_backup.png"
+              screenshot="/screenshots/cloud_backup.jpg"
               alt="Metal detecting cloud backup to Google Drive — sessions, finds, presets, and permissions"
               description={t("featuresall.cloud_description")}
               guide="/blog/cloud-backup-google-drive"
@@ -350,7 +350,7 @@ export default function FeaturesAll() {
               title={t("featuresall.permission_title")}
               subtitle={t("featuresall.permission_subtitle")}
               tag={t("featuresall.permission_tag")}
-              screenshot="/screenshots/permission_vault.png"
+              screenshot="/screenshots/permission_vault.jpg"
               alt="Metal detecting permission vault tracking landowner approvals, expiry dates, and site boundaries"
               description={t("featuresall.permission_description")}
               guide="/blog/using-the-permission-vault"
@@ -380,7 +380,7 @@ export default function FeaturesAll() {
               subtitle={t("featuresall.offline_subtitle")}
               tag={t("featuresall.offline_tag")}
               tagColor="cyan"
-              screenshot="/screenshots/offline_maps.png"
+              screenshot="/screenshots/offline_maps.jpg"
               alt="Download offline maps for metal detecting — Street, Satellite, Terrain, and Historical Topographic tiles"
               description={t("featuresall.offline_description")}
               guide="/blog/downloading-offline-maps"

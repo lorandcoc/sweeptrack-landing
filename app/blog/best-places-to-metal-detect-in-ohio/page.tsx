@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "best-places-to-metal-detect-in-ohio";
 const TITLE = "Best Places to Metal Detect in Ohio";
 const DESCRIPTION = "Ohio";
-const IMAGE = "/screenshots/nearby.png";
+const IMAGE = "/screenshots/nearby.jpg";
 const PUBLISHED = "2026-01-26";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

@@ -20,13 +20,33 @@ export default function Header() {
   ];
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0);
+    let docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let pending = false;
+
+    const apply = () => {
+      pending = false;
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      setScrollProgress(docHeight > 0 ? (y / docHeight) * 100 : 0);
     };
+
+    const onScroll = () => {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(apply);
+    };
+
+    const onResize = () => {
+      docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      onScroll();
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   // Close menu on scroll
@@ -83,6 +103,8 @@ export default function Header() {
           className="md:hidden text-muted hover:text-foreground transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {menuOpen ? (
@@ -96,6 +118,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-nav"
         className={`md:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-[400px] border-t border-white/5" : "max-h-0"
         } bg-[#050510]/95 backdrop-blur-xl`}

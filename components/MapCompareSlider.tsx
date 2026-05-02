@@ -36,7 +36,7 @@ export default function MapCompareSlider() {
     if (isDragging) {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", stopDragging);
-      window.addEventListener("touchmove", handleTouchMove, { passive: false });
+      window.addEventListener("touchmove", handleTouchMove, { passive: true });
       window.addEventListener("touchend", stopDragging);
     } else {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -77,8 +77,6 @@ export default function MapCompareSlider() {
           }}
           onTouchStart={(e) => {
             setIsDragging(true);
-            // Prevent scrolling while interacting with map
-            if (e.cancelable) e.preventDefault();
             handleMove(e.touches[0].clientX);
           }}
         >
@@ -90,7 +88,7 @@ export default function MapCompareSlider() {
               fill
               sizes="(max-width: 768px) 100vw, 960px"
               className="object-cover pointer-events-none opacity-90"
-              priority
+              loading="lazy"
             />
             <div className="absolute bottom-4 right-4 bg-[#050510]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
               {t("mapcompare.label_old")}
@@ -108,7 +106,7 @@ export default function MapCompareSlider() {
               fill
               sizes="(max-width: 768px) 100vw, 960px"
               className="object-cover pointer-events-none"
-              priority
+              loading="lazy"
             />
             <div className="absolute bottom-4 left-4 bg-[#050510]/80 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium border border-white/10 text-white/90">
               {t("mapcompare.label_modern")}

@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "best-weather-conditions-for-metal-detecting";
 const TITLE = "Best Weather Conditions for Metal Detecting (And When to Stay Home)";
 const DESCRIPTION = "Soil moisture, temperature, wind, and barometric pressure all affect metal detecting. Learn the best weather conditions and how forecast scores work.";
-const IMAGE = "/screenshots/forecast.png";
+const IMAGE = "/screenshots/forecast.jpg";
 const PUBLISHED = "2026-02-04";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

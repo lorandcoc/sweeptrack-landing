@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "metal-detecting-laws-in-australia";
 const TITLE = "Metal Detecting Laws in Australia";
 const DESCRIPTION = "Australian metal detecting laws vary by state. What you need to know about heritage acts, Aboriginal heritage protection, and where you can legally detect.";
-const IMAGE = "/screenshots/permission_vault.png";
+const IMAGE = "/screenshots/permission_vault.jpg";
 const PUBLISHED = "2026-03-09";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

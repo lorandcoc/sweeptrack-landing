@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "metal-detecting-for-beginners";
 const TITLE = "Metal Detecting for Beginners: What You Need to Know";
 const DESCRIPTION = "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and beginner mistakes to avoid.";
-const IMAGE = "/screenshots/presets.png";
+const IMAGE = "/screenshots/presets.jpg";
 const PUBLISHED = "2026-03-06";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

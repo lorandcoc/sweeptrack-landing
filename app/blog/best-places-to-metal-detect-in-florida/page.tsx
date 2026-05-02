@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "best-places-to-metal-detect-in-florida";
 const TITLE = "Best Places to Metal Detect in Florida";
 const DESCRIPTION = "Florida's beaches, old homesteads, and Spanish shipwreck history make it a top state for metal detecting. Here's where to look and what the law allows.";
-const IMAGE = "/screenshots/nearby.png";
+const IMAGE = "/screenshots/nearby.jpg";
 const PUBLISHED = "2026-01-23";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

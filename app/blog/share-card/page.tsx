@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "share-card";
 const TITLE = "Share Card: A Printable Summary of Your Session";
 const DESCRIPTION = "Generate a shareable PNG session card with your name, date, stats, find breakdown, and score. One tap to share via any app that accepts images.";
-const IMAGE = "/screenshots/stats.png";
+const IMAGE = "/screenshots/stats.jpg";
 const PUBLISHED = "2026-03-30";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

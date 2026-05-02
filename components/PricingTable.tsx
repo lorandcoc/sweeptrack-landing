@@ -112,7 +112,7 @@ export default function PricingTable() {
   }
 
   return (
-    <section id="pricing" className="py-16 md:py-20">
+    <section id="pricing" className="py-16 md:py-20 cv-auto">
       <div ref={ref} className={`max-w-3xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="text-center mb-12">
           <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("pricing.label")}</p>

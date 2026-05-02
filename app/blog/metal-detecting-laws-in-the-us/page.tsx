@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "metal-detecting-laws-in-the-us";
 const TITLE = "Metal Detecting Laws in the US";
 const DESCRIPTION = "There";
-const IMAGE = "/screenshots/permission_vault.png";
+const IMAGE = "/screenshots/permission_vault.jpg";
 const PUBLISHED = "2026-03-15";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

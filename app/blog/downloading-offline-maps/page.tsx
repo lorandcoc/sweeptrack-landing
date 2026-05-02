@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "downloading-offline-maps";
 const TITLE = "Downloading Offline Maps for Metal Detecting Without Cell Service";
 const DESCRIPTION = "Download offline maps in four tile styles for metal detecting in remote areas with no cell signal. Street, satellite, terrain, and historical topo maps.";
-const IMAGE = "/screenshots/offline_maps.png";
+const IMAGE = "/screenshots/offline_maps.jpg";
 const PUBLISHED = "2026-02-16";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

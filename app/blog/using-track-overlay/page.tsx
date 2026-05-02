@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "using-track-overlay";
 const TITLE = "Using Track Overlay to See Where You Already Walked";
 const DESCRIPTION = "Load your past SweepTrack Pro sessions onto the live map as color-coded overlay tracks to spot coverage gaps and avoid re-detecting the same ground.";
-const IMAGE = "/screenshots/home.png";
+const IMAGE = "/screenshots/home.jpg";
 const PUBLISHED = "2026-04-11";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "setting-up-perimeter-guard";
 const TITLE = "Setting Up Perimeter Guard: Stay Within Your Permitted Zone";
 const DESCRIPTION = "Learn how to draw boundary zones on the map and get vibration alerts when you approach the edge of your permitted metal detecting area.";
-const IMAGE = "/screenshots/permission_vault.png";
+const IMAGE = "/screenshots/permission_vault.jpg";
 const PUBLISHED = "2026-03-27";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

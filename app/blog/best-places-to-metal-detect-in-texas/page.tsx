@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "best-places-to-metal-detect-in-texas";
 const TITLE = "Best Places to Metal Detect in Texas";
 const DESCRIPTION = "From Gulf Coast beaches to ghost towns and old ranches, here are the best types of locations for metal detecting in Texas — plus what the law says.";
-const IMAGE = "/screenshots/nearby.png";
+const IMAGE = "/screenshots/nearby.jpg";
 const PUBLISHED = "2026-01-29";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

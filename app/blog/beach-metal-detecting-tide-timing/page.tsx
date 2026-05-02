@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "beach-metal-detecting-tide-timing";
 const TITLE = "Beach Metal Detecting: Tide Timing & Where to Search";
 const DESCRIPTION = "Learn how to time beach metal detecting sessions around low tide, where to search the wet sand, and how tide charts help you find more coins and jewelry.";
-const IMAGE = "/screenshots/forecast.png";
+const IMAGE = "/screenshots/forecast.jpg";
 const PUBLISHED = "2026-01-14";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

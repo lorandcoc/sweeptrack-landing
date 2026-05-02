@@ -24,7 +24,7 @@ export default function FAQ() {
   const { t } = useI18n();
 
   return (
-    <section id="faq" className="py-16 md:py-20">
+    <section id="faq" className="py-16 md:py-20 cv-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

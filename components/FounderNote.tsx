@@ -60,7 +60,7 @@ export default function FounderNote() {
   }, [quote]);
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-16 md:py-20 cv-auto">
       <div ref={revealRef} className={`max-w-3xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
         <div className="founder-term">
           <div className="founder-term__head">

@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "exporting-sessions-gpx-kml-csv";
 const TITLE = "Exporting Sessions as GPX, KML, or CSV";
 const DESCRIPTION = "Export your metal detecting sessions in GPX, KML, CSV, or SweepTrack JSON format for use in Google Earth, Garmin devices, or Excel spreadsheets.";
-const IMAGE = "/screenshots/cloud_backup.png";
+const IMAGE = "/screenshots/cloud_backup.jpg";
 const PUBLISHED = "2026-02-19";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

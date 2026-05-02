@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import homeScreenshot from "@/public/screenshots/home.png";
+import homeScreenshot from "@/public/screenshots/home.jpg";
 
 export default function ParallaxPhone() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,12 +11,16 @@ export default function ParallaxPhone() {
   useEffect(() => {
     const mq = window.matchMedia("(pointer: fine)");
     setIsDesktop(mq.matches);
-
     if (!mq.matches) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    let pending = false;
+    let lastEvent: MouseEvent | null = null;
+
+    const apply = () => {
+      pending = false;
+      const e = lastEvent;
       const el = containerRef.current;
-      if (!el) return;
+      if (!el || !e) return;
       const rect = el.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
@@ -26,6 +30,13 @@ export default function ParallaxPhone() {
       const py = Math.max(-8, Math.min(8, -ny * 10));
       el.style.setProperty("--px", `${px}px`);
       el.style.setProperty("--py", `${py}px`);
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      lastEvent = e;
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(apply);
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });

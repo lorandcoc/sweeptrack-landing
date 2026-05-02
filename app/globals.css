@@ -5,7 +5,7 @@
   --surface: #0C0C1C;
   --surface-variant: #13132A;
   --foreground: #E8E8F0;
-  --muted: #8888AA;
+  --muted: #B0B0CC;
   --accent: #00FF6A;
   --accent-dim: #00CC55;
   --accent-glow: rgba(0, 255, 106, 0.15);
@@ -242,8 +242,8 @@ body {
 
 /* ── Hero entrance — staggered on page load ── */
 @keyframes enterUp {
-  from { opacity: 0; transform: translateY(24px); filter: blur(4px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes enterRight {
   from { opacity: 0; transform: translateX(40px); }
@@ -410,6 +410,26 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* ── Stat counter ── */
 .stat-glow {
   text-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
+}
+
+/* ── content-visibility utility for below-fold sections ── */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ── Keyboard focus indicator (site-wide WCAG 2.1 AA) ── */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+details:focus-visible > summary {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* ── Logo breathing pulse (subtle ambient halo) ── */

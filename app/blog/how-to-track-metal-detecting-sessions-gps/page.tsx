@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "how-to-track-metal-detecting-sessions-gps";
 const TITLE = "How to Track Your Metal Detecting Sessions with GPS";
 const DESCRIPTION = "Learn how GPS tracking helps you cover more ground, avoid re-detecting areas, overlay past sessions, and build a complete history of your detecting trips.";
-const IMAGE = "/screenshots/home.png";
+const IMAGE = "/screenshots/home.jpg";
 const PUBLISHED = "2026-02-25";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

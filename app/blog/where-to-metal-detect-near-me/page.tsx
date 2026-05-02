@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "where-to-metal-detect-near-me";
 const TITLE = "Where to Metal Detect Near Me: Finding Good Spots Anywhere";
 const DESCRIPTION = "A practical guide to finding productive metal detecting locations in any area using old maps, local research, and common sense to find great spots.";
-const IMAGE = "/screenshots/offline_maps.png";
+const IMAGE = "/screenshots/offline_maps.jpg";
 const PUBLISHED = "2026-04-14";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

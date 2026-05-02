@@ -108,11 +108,22 @@ export default function CursorSweepTrail() {
     };
     raf = requestAnimationFrame(tick);
 
+    const onVisibility = () => {
+      if (document.hidden) {
+        if (raf) cancelAnimationFrame(raf);
+        raf = 0;
+      } else if (!raf) {
+        raf = requestAnimationFrame(tick);
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
     return () => {
       window.removeEventListener("resize", size);
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("mouseenter", onEnter);
+      document.removeEventListener("visibilitychange", onVisibility);
       cancelAnimationFrame(raf);
     };
   }, []);

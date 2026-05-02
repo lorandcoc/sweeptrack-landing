@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "how-to-use-old-maps-for-metal-detecting";
 const TITLE = "How to Use Old Maps to Find Better Metal Detecting Spots";
 const DESCRIPTION = "Use USGS historical topographic maps to find old homesteads, vanished roads, and forgotten settlements for metal detecting. Tips on reading old topo maps.";
-const IMAGE = "/screenshots/offline_maps.png";
+const IMAGE = "/screenshots/offline_maps.jpg";
 const PUBLISHED = "2026-02-28";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

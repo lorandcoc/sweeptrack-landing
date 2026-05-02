@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "detecting-forecast-guide";
 const TITLE = "Detecting Forecast: Plan Every Session by the Numbers";
 const DESCRIPTION = "SweepTrack Pro turns weather into a 0-100 Detecting Score. Check any location up to a week ahead with soil moisture, wind, temperature, and humidity tips.";
-const IMAGE = "/screenshots/forecast.png";
+const IMAGE = "/screenshots/forecast.jpg";
 const PUBLISHED = "2026-02-13";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

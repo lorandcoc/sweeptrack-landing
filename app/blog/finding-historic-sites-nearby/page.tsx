@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "finding-historic-sites-nearby";
 const TITLE = "Finding Historic Sites and Landmarks Near Your Location";
 const DESCRIPTION = "Discover metal detecting spots by browsing nearby historic sites, landmarks, and Wikipedia-listed locations on an interactive map with distance display.";
-const IMAGE = "/screenshots/nearby.png";
+const IMAGE = "/screenshots/nearby.jpg";
 const PUBLISHED = "2026-02-22";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

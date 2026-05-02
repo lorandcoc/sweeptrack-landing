@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "night-vision-mode";
 const TITLE = "Night Vision Mode for Dawn and Dusk Detecting";
 const DESCRIPTION = "Use the red-light night vision display to preserve your dark-adapted eyesight during early morning and late evening metal detecting sessions.";
-const IMAGE = "/screenshots/night_vision.png";
+const IMAGE = "/screenshots/night_vision.jpg";
 const PUBLISHED = "2026-03-21";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

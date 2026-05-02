@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "metal-detecting-laws-in-the-uk";
 const TITLE = "Metal Detecting Laws in the UK";
 const DESCRIPTION = "The UK has one of the best legal frameworks for metal detecting. What you need to know about the Treasure Act, PAS, and landowner permissions.";
-const IMAGE = "/screenshots/permission_vault.png";
+const IMAGE = "/screenshots/permission_vault.jpg";
 const PUBLISHED = "2026-03-12";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "cloud-backup-google-drive";
 const TITLE = "Cloud Backup: Never Lose Your Detecting Data";
 const DESCRIPTION = "Back up your metal detecting sessions, detector presets, permissions, and settings to Google Drive so you never lose your data when switching phones.";
-const IMAGE = "/screenshots/cloud_backup.png";
+const IMAGE = "/screenshots/cloud_backup.jpg";
 const PUBLISHED = "2026-02-07";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

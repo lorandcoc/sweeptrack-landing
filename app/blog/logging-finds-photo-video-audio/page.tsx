@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "logging-finds-photo-video-audio";
 const TITLE = "Logging Finds with Photos and Audio Notes";
 const DESCRIPTION = "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, and audio recordings. Six find categories in SweepTrack Pro.";
-const IMAGE = "/screenshots/stats.png";
+const IMAGE = "/screenshots/stats.jpg";
 const PUBLISHED = "2026-03-03";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

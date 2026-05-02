@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "organize-metal-detector-presets-settings";
 const TITLE = "How to Organize Your Metal Detector Settings and Presets";
 const DESCRIPTION = "Save, name, and share your metal detector settings for different conditions. Tips on managing presets for Minelab, Garrett, XP, Nokta, and more.";
-const IMAGE = "/screenshots/presets.png";
+const IMAGE = "/screenshots/presets.jpg";
 const PUBLISHED = "2026-03-24";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });

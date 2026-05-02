@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "comparing-sessions-overlay-split";
 const TITLE = "Comparing Sessions: Overlay and Split View";
 const DESCRIPTION = "Compare metal detecting sessions side by side or overlaid on the same map with colour-coded paths, blend controls, and map type toggling.";
-const IMAGE = "/screenshots/stats.png";
+const IMAGE = "/screenshots/stats.jpg";
 const PUBLISHED = "2026-02-10";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
