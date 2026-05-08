@@ -39,14 +39,14 @@ export default function Post() {
           <p>Zoom in on satellite view first so you can follow field boundaries, hedgerows, and fences accurately.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">How the Alerts Work</h2>
-          <p>Once you activate Perimeter Guard, it watches your GPS position and gives you four levels of warning as you approach the boundary:</p>
+          <p>Once you activate Perimeter Guard, it watches your GPS position and steps you through four stages as you approach the boundary:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Green zone</strong> &mdash; you&apos;re well inside the boundary, no alerts</li>
-            <li><strong>Yellow zone</strong> &mdash; you&apos;re getting close, a gentle vibration nudges you</li>
-            <li><strong>Orange zone</strong> &mdash; you&apos;re very close to the edge, stronger vibration</li>
-            <li><strong>Red zone</strong> &mdash; you&apos;ve crossed the boundary, continuous vibration</li>
+            <li><strong>Approaching boundary</strong> &mdash; you&apos;re heading toward the edge but still safely inside</li>
+            <li><strong>Near boundary</strong> &mdash; you&apos;re close, a vibration nudge tells you to ease up</li>
+            <li><strong>At boundary edge</strong> &mdash; you&apos;re right on the line, stronger haptic warning</li>
+            <li><strong>Outside perimeter</strong> &mdash; you&apos;ve crossed it, audio alarm with continuous vibration</li>
           </ul>
-          <p>You don&apos;t need to stare at the screen. The vibration pattern tells you everything. Just swing your detector and let your phone do the watching.</p>
+          <p>You don&apos;t need to stare at the screen. The haptic and audio pattern tells you everything. Just swing your detector and let your phone do the watching.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Linking to the Permission Vault</h2>
           <p>If you&apos;ve already saved a permission entry in the Permission Vault for this site, you can link the boundary to it. This means the boundary is stored alongside your permission details &mdash; next time you visit the same site, load the permission and the boundary comes with it.</p>

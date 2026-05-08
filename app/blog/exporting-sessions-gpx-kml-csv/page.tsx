@@ -46,7 +46,7 @@ export default function Post() {
             <li>Pick your format</li>
             <li>Choose where to save or share the file</li>
           </ul>
-          <p>The file is generated instantly and you can share it via email, messaging apps, cloud drives, or AirDrop.</p>
+          <p>The file is generated instantly and you can share it via email, messaging apps, cloud drives, or save it directly to your phone&apos;s Downloads folder.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Which Format Should You Use?</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">

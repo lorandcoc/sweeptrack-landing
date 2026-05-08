@@ -32,7 +32,7 @@ export default function Post() {
           <p>Open the Map Features sheet and find the Overlay Paths dialog. It shows a list of your recent sessions. Tap any session to add its path to the live map. The track draws as a coloured line showing exactly where you walked.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Color-Coded Tracks</h2>
-          <p>Each overlay gets a color assigned in order from a fixed palette of five — blue, orange, purple, yellow, and teal. With each new overlay added, the color cycles through the palette so neighboring tracks always stand out from each other.</p>
+          <p>Each overlay gets a color from a fixed palette of six — Neon Green, Pink, Slate Blue, Orange, Gold, and White. With each new overlay added, the color cycles through the palette so neighboring tracks always stand out from each other.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Remove Tracks Individually</h2>
           <p>Loaded tracks appear in the overlay dialog with a remove action. Pull them off the map one by one, or clear all overlays at once. Your current session path stays untouched regardless.</p>

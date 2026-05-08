@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | SweepTrack Pro",
   },
   description:
-    "The #1 metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, 61 detector presets, cloud backup. Free to use, ad-free.",
+    "The metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, 60+ detector presets, cloud backup. Free to use, ad-free.",
   keywords: [
     // Primary searches
     "metal detecting app",
@@ -138,9 +138,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SweepTrack Pro — The Best Metal Detecting App for Android",
+    title: "SweepTrack Pro — Metal Detecting App for Android",
     description:
-      "The #1 metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, cloud backup, and 61 detector presets. Free and ad-free.",
+      "Metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, cloud backup, and 60+ detector presets. Free and ad-free.",
     url: "https://sweeptrack.pro",
     siteName: "SweepTrack Pro",
     type: "website",

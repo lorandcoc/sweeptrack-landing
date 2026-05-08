@@ -5,8 +5,8 @@ import ComingSoonButton from "./ComingSoonButton";
 import { useI18n } from "@/lib/i18n";
 
 const stats = [
-  { value: "61", key: "hero.stat_presets" },
-  { value: "131", key: "hero.stat_coins" },
+  { value: "60+", key: "hero.stat_presets" },
+  { value: "130", key: "hero.stat_coins" },
   { value: "4", key: "hero.stat_maps" },
 ] as const;
 

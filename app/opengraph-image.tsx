@@ -64,7 +64,7 @@ export default function OGImage() {
             flexWrap: "wrap",
           }}
         >
-          {["GPS Tracking", "Historical Maps", "Offline Maps", "Permission Vault", "61 Presets", "Cloud Backup"].map(
+          {["GPS Tracking", "Historical Maps", "Offline Maps", "Permission Vault", "60+ Presets", "Cloud Backup"].map(
             (f) => (
               <div
                 key={f}

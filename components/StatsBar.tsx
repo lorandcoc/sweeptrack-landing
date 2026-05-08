@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 type Stat = { count: number; suffix?: string; label: string };
 
 const stats: Stat[] = [
-  { count: 48, label: "FIELD TOOLS" },
-  { count: 61, label: "DETECTOR PRESETS" },
-  { count: 131, label: "COINS · 9 REGIONS" },
+  { count: 45, label: "FIELD TOOLS" },
+  { count: 60, suffix: "+", label: "DETECTOR PRESETS" },
+  { count: 130, label: "COINS · 9 REGIONS" },
   { count: 100, suffix: "%", label: "AD-FREE" },
 ];
 

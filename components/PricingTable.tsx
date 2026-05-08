@@ -25,13 +25,13 @@ type FeatureRow = {
  */
 const features: FeatureRow[] = [
   { key: "gps", free: "string", freeKey: "pricing.feat_gps_free", pro: "string", proKey: "pricing.feat_gps_pro" },
-  { key: "sessions", free: true, pro: true },
+  { key: "sessions", free: "string", freeKey: "pricing.feat_sessions_free", pro: "string", proKey: "pricing.feat_sessions_pro" },
   { key: "finds", free: "string", freeKey: "pricing.feat_finds_free", pro: "string", proKey: "pricing.feat_finds_pro" },
   { key: "presets", free: "string", freeKey: "pricing.feat_presets_free", pro: "string", proKey: "pricing.feat_presets_pro" },
+  { key: "vault", free: "string", freeKey: "pricing.feat_vault_free", pro: "string", proKey: "pricing.feat_vault_pro" },
   { key: "measure", free: false, pro: true },
   { key: "track", free: false, pro: true },
   { key: "perimeter", free: false, pro: true },
-  { key: "permission", free: false, pro: true },
   { key: "historicalmap", free: false, pro: true },
   { key: "offline", free: false, pro: true },
   { key: "forecast", free: false, pro: true },

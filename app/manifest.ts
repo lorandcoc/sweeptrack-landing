@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "SweepTrack Pro — Metal Detecting GPS App",
     short_name: "SweepTrack Pro",
     description:
-      "The metal detecting GPS companion. Tracking, maps, forecast, permissions, and 48 field tools.",
+      "The metal detecting GPS companion. Tracking, maps, forecast, permissions, and 45+ field tools.",
     start_url: "/",
     display: "standalone",
     background_color: "#050510",

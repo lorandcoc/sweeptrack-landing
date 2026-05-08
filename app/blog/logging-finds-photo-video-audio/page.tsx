@@ -2,8 +2,8 @@ import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "logging-finds-photo-video-audio";
-const TITLE = "Logging Finds with Photos and Audio Notes";
-const DESCRIPTION = "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, and audio recordings. Six find categories in SweepTrack Pro.";
+const TITLE = "Logging Finds with Photos, Videos, and Audio Notes";
+const DESCRIPTION = "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, videos, and audio recordings. Six find categories in SweepTrack Pro.";
 const IMAGE = "/screenshots/stats.jpg";
 const PUBLISHED = "2026-03-03";
 
@@ -52,15 +52,16 @@ export default function Post() {
             <li><strong>Notes</strong> — free text for context like detector settings, signal behaviour, soil</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Attaching a Photo and an Audio Note</h2>
-          <p>Each find can have a photo and an audio recording attached to it:</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Attaching Photo, Video, and Audio</h2>
+          <p>Each find can have a photo, a short video clip, and an audio note attached to it:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li><strong>Photo</strong> — snap the find in the hole, on a cloth, or after a clean. You can also pick an existing image from your gallery.</li>
+            <li><strong>Video</strong> — capture a short clip showing the hole, the surroundings, or how the coin came out of the dirt. The video plays back from the find detail screen.</li>
             <li><strong>Audio note</strong> — tap record and describe the find out loud. Faster than typing with muddy gloves, and stores the raw tone response if you want to replay it.</li>
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Edit Anything Later</h2>
-          <p>Every field on every find stays editable. Wrong type? Change it. Forgot a note? Add it. Re-shot the photo after cleaning? Replace it. The find detail screen has a mini-map to show the exact recovery spot, plus audio playback and edit buttons.</p>
+          <p>Every field on every find stays editable. Wrong type? Change it. Forgot a note? Add it. Re-shot the photo after cleaning? Replace it. The find detail screen has a mini-map to show the exact recovery spot, plus video and audio playback and edit buttons.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Why Bother Logging Trash?</h2>
           <p>It might seem pointless, but logging trash tells you about a site. If one corner of a field has 30 pull tabs and zero treasure, that area was probably a picnic spot with modern litter. The opposite corner with fewer signals might be untouched historical ground. Trash data shapes your strategy.</p>

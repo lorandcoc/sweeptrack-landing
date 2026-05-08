@@ -47,7 +47,7 @@ export default function Post() {
           <p>Install the app on your new phone, connect the same Google account, and tap Restore. It downloads the latest backup and rebuilds your entire detecting history. All your sessions, finds, presets, and permissions appear exactly as they were.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Auto-Backup</h2>
-          <p>Enable auto-backup and the app creates a new backup automatically after each session ends. You don&apos;t have to remember to do it manually. If something happens to your device, the most you&apos;d lose is the session that was actively recording.</p>
+          <p>Enable auto-backup and the app creates a fresh backup automatically once per day, the next time you open it after that day&apos;s rollover. You don&apos;t have to remember to back up manually &mdash; if your phone dies, the most you can lose is the latest day&apos;s sessions.</p>
       </BlogPostFrame>
     </>
   );

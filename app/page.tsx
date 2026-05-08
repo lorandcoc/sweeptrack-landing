@@ -18,7 +18,7 @@ const jsonLdGraph = [
     "@type": "WebSite",
     name: "SweepTrack Pro",
     url: "https://sweeptrack.pro",
-    description: "The best metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, and 48 field tools built for serious detectorists.",
+    description: "The best metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, and 45+ field tools built for serious detectorists.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://sweeptrack.pro/#features",
@@ -51,14 +51,14 @@ const jsonLdGraph = [
     operatingSystem: "Android",
     alternateName: ["Metal Detecting App", "Metal Detecting App for Android", "Metal Detector GPS App"],
     description:
-      "Metal detecting GPS app with USGS historical topographic map overlay, offline maps (4 sources), track overlay, perimeter guard, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 61 detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
+      "Metal detecting GPS app with USGS historical topographic map overlay, offline maps (4 sources), track overlay, perimeter guard, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 60+ detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
     offers: [
       {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
         name: "Free",
-        description: "Core GPS tracking, unlimited sessions, 5 finds, 1 detector preset",
+        description: "Core GPS tracking, 10 sessions, 5 finds, 1 detector preset, 2 vault entries, 3 themes",
       },
       {
         "@type": "Offer",
@@ -86,18 +86,19 @@ const jsonLdGraph = [
       "Detecting Forecast — 0-100 Detecting Score with 7-day outlook, soil moisture, wind, temperature, humidity, and tips",
       "NOAA tide table with 3, 7, or 14 day ranges from the nearest station",
       "Google Drive backup and restore of sessions, presets, and settings",
-      "10 detector preset slots with JSON import/export and templates for 61 detectors across 12 brands",
-      "Find logging with 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), 0-40 cm depth, photo, and audio notes",
+      "10 detector preset slots with JSON import/export and templates for 60+ detectors across 12 brands",
+      "Find logging with 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), 0-40 cm depth, photo, video, and audio notes",
       "Quick pin drop for instant find marking",
       "Coverage heatmap overlay",
-      "Session comparison — overlay or split view",
+      "Session comparison — overlay (with blend slider) or split view, 2 to 5 sessions",
       "Elevation profile per session",
       "Nearby historic sites from OpenStreetMap and Wikipedia",
-      "Coin caliper with built-in database of 131 coins across 9 regions",
+      "Coin caliper with built-in database of 130 coins across 9 regions",
       "Night vision red monochromatic override for dawn and dusk detecting",
       "On-screen compass with return-bearing arrow and 10 cm / 4 in calibrated ruler",
       "Export sessions as GPX, KML, CSV, or SweepTrack JSON",
-      "12 color themes and English + Romanian localization",
+      "12 color themes — 3 free (Tactical, Amber, Cobalt), all 12 with Pro",
+      "14 languages — English, Romanian, German, Spanish, French, Italian, Portuguese, Dutch, Polish, Russian, Danish, Swedish, Turkish, Hungarian",
       "Ad-free — no ads, no analytics, no tracking",
     ],
     url: "https://sweeptrack.pro",
@@ -134,7 +135,7 @@ export default function Home() {
       />
       <Header />
       <main>
-        <h2 className="sr-only">The Best Metal Detecting App for Android — GPS Tracking, Offline Maps, and 48 Field Tools</h2>
+        <h2 className="sr-only">The Best Metal Detecting App for Android — GPS Tracking, Offline Maps, and 45+ Field Tools</h2>
         <Hero />
         <Marquee />
         <MapCompareSlider />

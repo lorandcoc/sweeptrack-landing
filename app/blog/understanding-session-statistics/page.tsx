@@ -2,8 +2,8 @@ import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "understanding-session-statistics";
-const TITLE = "Understanding Your Session Statistics and Personal Bests";
-const DESCRIPTION = "Learn how to read your metal detecting statistics including session totals, find breakdowns, personal bests, averages, and weather insights.";
+const TITLE = "Understanding Your Session Statistics";
+const DESCRIPTION = "Read your metal detecting statistics: weekly, monthly, or yearly totals; sessions, finds per session, active days, treasure rate, top locations, top sessions, and weather insights.";
 const IMAGE = "/screenshots/stats.jpg";
 const PUBLISHED = "2026-04-02";
 
@@ -26,40 +26,32 @@ export default function Post() {
           { href: "/blog/comparing-sessions-overlay-split", title: "Comparing Sessions: Overlay and Split View" },
         ]}
       >
-          <p>Numbers tell a story that memory forgets. After 50 sessions, can you remember which one had the most finds? Which month you walked the furthest? Whether you find more on rainy days or dry ones? Your session statistics answer all of these automatically.</p>
+          <p>Numbers tell a story that memory forgets. After 50 sessions, can you remember which one had the most finds? Which sites consistently produce? Whether you find more on damp days or dry ones? Your session statistics answer all of these automatically.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Time Filters</h2>
-          <p>At the top of the Statistics screen you can filter by time period: all time, this year, this month, this week, or a custom date range. Everything below updates instantly. Use the weekly view to check your progress, or zoom out to all-time for the big picture.</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Time Filter</h2>
+          <p>At the top of the Statistics screen, three chips switch the entire screen between Weekly, Monthly, and Yearly views. Everything below recalculates instantly. Use Weekly to spot recent momentum, or Yearly to see your long-term progression.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Hero Stats</h2>
-          <p>The four big numbers at the top give you the headline summary for your selected period:</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Headline Numbers</h2>
+          <p>The first cards give you the totals for the selected period &mdash; sessions, finds per session, active days, and treasure rate &mdash; plus the classic counters underneath: total distance, total finds, and total duration.</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li><strong>Sessions</strong> &mdash; how many detecting sessions you completed</li>
-            <li><strong>Finds</strong> &mdash; total number of logged finds</li>
-            <li><strong>Distance</strong> &mdash; total ground covered in km or miles</li>
-            <li><strong>Duration</strong> &mdash; total time spent detecting</li>
+            <li><strong>Finds / session</strong> &mdash; your average haul per outing</li>
+            <li><strong>Active days</strong> &mdash; the number of distinct days you went out</li>
+            <li><strong>Treasure rate</strong> &mdash; the share of your finds that fall in the Treasure / Gold / Coin / Relic / Jewelry buckets vs. trash</li>
+            <li><strong>Distance, Finds, Duration</strong> &mdash; ground covered, logged finds, and total time spent detecting</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Find Breakdown</h2>
-          <p>Below the hero stats, a stacked bar breaks your total finds down by type with a color-coded legend. Each segment is proportional to its share of the total. This tells you what kind of targets you&apos;re recovering. A high trash percentage is normal, especially on new sites — it means you&apos;re digging everything and not missing good signals.</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Activity Rhythm</h2>
+          <p>A summary line tells you how many sessions you completed across how many active days &mdash; a quick read on whether you&apos;re detecting little and often or in bursts. Pair it with the period filter to spot dry spells or hot streaks.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Averages</h2>
-          <p>The averages section tells you what a typical session looks like: average finds per session, average distance per session, and average duration. These are useful benchmarks. If your average finds per session suddenly drops, maybe you need to try a new site or adjust your detector settings.</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Weather Insight</h2>
+          <p>The Weather Insight card surfaces conditions that correlate with your best finds &mdash; for example, the soil moisture level or temperature where your finds tend to come from. Over enough sessions, real data beats guesswork.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Personal Bests</h2>
-          <p>Your personal records across all time:</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Most finds in a session</strong> &mdash; your best single-session haul</li>
-            <li><strong>Longest distance</strong> &mdash; the most ground covered in one session</li>
-            <li><strong>Longest session</strong> &mdash; your marathon detecting record</li>
-          </ul>
-          <p>Each one shows the date and session so you can go back and look at the track and finds from that record-breaking session.</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Top Locations</h2>
+          <p>A ranked list of the sites that have produced the most for you, with session count and find count per location. Use this to plan return trips to your most reliable spots.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Top Sessions Ranking</h2>
-          <p>A ranked list of your best sessions by finds count. This leaderboard shows your top performers with date, site, and find count. It&apos;s a quick way to identify which sites and conditions produce the best results.</p>
-
-          <h2 className="text-xl font-semibold text-accent mt-8">Weather Insights</h2>
-          <p>If you&apos;ve been detecting across different weather conditions, the statistics screen shows whether you find more on certain types of days. Over time, this data reveals patterns &mdash; maybe you consistently find more after two days of rain, or on overcast mornings. Real data beats guesswork.</p>
+          <h2 className="text-xl font-semibold text-accent mt-8">Top Sessions</h2>
+          <p>A leaderboard of your single best sessions ranked by find count, with the find count and distance for each. It&apos;s a quick way to identify which days and sites produced the best results, then jump back into a record-breaking session to study its track.</p>
       </BlogPostFrame>
     </>
   );
