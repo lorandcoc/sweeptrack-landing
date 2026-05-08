@@ -125,11 +125,11 @@ export default function PricingTable() {
         </div>
 
         {/* Founder's Lifetime tease */}
-        <div className="mb-6">
-          <div className="relative overflow-hidden rounded-2xl border border-amber-400/30 bg-gradient-to-br from-amber-500/[0.08] via-amber-500/[0.04] to-transparent p-5 sm:p-6">
-            <div className="absolute -top-3 left-4 sm:left-6 text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-[#0A0A1A] px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(251,191,36,0.4)]">
+        <div className="mb-6 pt-3">
+          <div className="relative rounded-2xl border border-amber-400/30 bg-gradient-to-br from-amber-500/[0.08] via-amber-500/[0.04] to-transparent p-5 sm:p-6">
+            <span className="absolute -top-3 left-4 sm:left-6 text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-[#0A0A1A] px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(251,191,36,0.4)] z-10">
               {t("pricing.founder_badge")}
-            </div>
+            </span>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
               <div className="flex items-start gap-3 flex-1">
                 <div className="w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-300 shrink-0">
