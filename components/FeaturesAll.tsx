@@ -180,16 +180,29 @@ const secondaryIcons = [
   /* detectorlib */   <svg key="detectorlib" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg>,
   /* about */         <svg key="about" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>,
   /* feedback */      <svg key="feedback" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>,
+  /* rankladder */    <svg key="rankladder" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>,
+  /* greetings */     <svg key="greetings" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h.01M12 9h.01M16 9h.01"/></svg>,
+  /* verdict */       <svg key="verdict" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/><circle cx="18" cy="18" r="3"/></svg>,
+  /* moon */          <svg key="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>,
+  /* brandcolors */   <svg key="brandcolors" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><circle cx="8.5" cy="17.5" r="2.5"/><path d="M12 22a10 10 0 110-20 10 10 0 010 20z"/></svg>,
+  /* oemrationale */  <svg key="oemrationale" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="18" height="12" rx="2" ry="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="12" x2="6.01" y2="12"/><line x1="10" y1="12" x2="10.01" y2="12"/></svg>,
+  /* atomicrestore */ <svg key="atomicrestore" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>,
+  /* sessiontags */   <svg key="sessiontags" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>,
+  /* signaldiary */   <svg key="signaldiary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12h2l3-9 4 18 3-9 2 4h6"/></svg>,
+  /* calendarreminder */ <svg key="calendarreminder" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="15" r="2"/><line x1="12" y1="13" x2="12" y2="11"/></svg>,
 ];
 
 const secondaryKeys = [
+  "rankladder", "verdict", "brandcolors", "signaldiary",
   "findlogger", "pindrop", "backtostart", "sessioncompare", "presetslots",
   "export", "nightvision", "compass", "ruler", "forecast", "tidetable",
   "coincaliper", "nearbysites", "heatmap", "careerstats", "permissionletter",
   "sharecard", "summaryscore", "colorpins", "sessionmerge", "findsearch",
   "elevation", "permitreminders", "photogallery", "weathersnapshot", "autonamed",
   "batchactions", "editfinds", "locationsearch", "onboarding", "languages",
-  "unitstoggle", "colorthemes", "detectorlib", "about", "feedback",
+  "unitstoggle", "colorthemes", "detectorlib", "calendarreminder", "sessiontags",
+  "moon", "greetings", "oemrationale", "atomicrestore",
+  "about", "feedback",
 ];
 
 const secondaryGuides: Record<string, string> = {
@@ -421,14 +434,22 @@ function SecondaryFeaturesGrid({
   const [expanded, setExpanded] = useState(false);
   const visible = expanded ? keys : keys.slice(0, 8);
 
+  // Build a keyed lookup so the icons array can be reordered safely
+  const iconByKey: Record<string, React.ReactNode> = {};
+  for (const node of icons) {
+    if (node && typeof node === "object" && "key" in node && (node as { key: string }).key) {
+      iconByKey[(node as { key: string }).key] = node;
+    }
+  }
+
   return (
     <>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-        {visible.map((key, idx) => {
+        {visible.map((key) => {
           const title = t(`featuresall.sec_${key}_title` as TranslationKey);
           const desc = t(`featuresall.sec_${key}_desc` as TranslationKey);
           const guide = guides[key];
-          const icon = icons[idx];
+          const icon = iconByKey[key];
 
           const inner = (
             <div className="h-full px-4 py-4 rounded-xl bg-surface/50 border border-white/[0.05] hover:border-white/[0.12] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">

@@ -124,6 +124,40 @@ export default function PricingTable() {
           </p>
         </div>
 
+        {/* Founder's Lifetime tease */}
+        <div className="mb-6">
+          <div className="relative overflow-hidden rounded-2xl border border-amber-400/30 bg-gradient-to-br from-amber-500/[0.08] via-amber-500/[0.04] to-transparent p-5 sm:p-6">
+            <div className="absolute -top-3 left-4 sm:left-6 text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-[#0A0A1A] px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(251,191,36,0.4)]">
+              {t("pricing.founder_badge")}
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+              <div className="flex items-start gap-3 flex-1">
+                <div className="w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-300 shrink-0">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-display text-lg sm:text-xl text-amber-200 leading-tight mb-1">
+                    {t("pricing.founder_title")}
+                  </h3>
+                  <p className="text-amber-100/70 text-xs sm:text-sm leading-snug mb-2">{t("pricing.founder_sub")}</p>
+                  <p className="text-muted text-xs sm:text-sm leading-relaxed">{t("pricing.founder_description")}</p>
+                </div>
+              </div>
+              <a
+                href="#community"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-[#0A0A1A] text-sm font-semibold hover:bg-amber-300 transition-colors shrink-0 self-start sm:self-auto"
+              >
+                {t("pricing.founder_cta")}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Pricing cards */}
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* Free */}
