@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from "react";
 type Stat = { count: number; suffix?: string; label: string };
 
 const stats: Stat[] = [
-  { count: 45, label: "TOOLS YOU'LL REACH FOR" },
-  { count: 60, suffix: "+", label: "DETECTORS · 12 BRANDS" },
-  { count: 130, label: "COINS · 9 REGIONS" },
-  { count: 14, label: "LANGUAGES" },
+  { count: 3, label: "WAYS · COVERAGE MEMORY" },
+  { count: 4, label: "STAGES · PERIMETER LADDER" },
+  { count: 100, suffix: "%", label: "LOCAL · 0 ADS · 0 TRACKERS" },
+  { count: 1000, label: "FOUNDER SPOTS AT LAUNCH" },
 ];
 
 function CountUp({ target, suffix }: { target: number; suffix?: string }) {
