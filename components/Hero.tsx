@@ -17,9 +17,9 @@ function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
 }
 
 const stats = [
-  { value: "3 ways", key: "hero.stat_presets" },
-  { value: "4 stages", key: "hero.stat_coins" },
-  { value: "100% local", key: "hero.stat_maps" },
+  { value: "$0", key: "hero.stat_presets" },
+  { value: "0 trackers", key: "hero.stat_coins" },
+  { value: "Works offline", key: "hero.stat_maps" },
 ] as const;
 
 export default function Hero() {

@@ -2,16 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Stat = { count: number; suffix?: string; label: string };
+type Stat = { count: number; prefix?: string; suffix?: string; label: string };
 
 const stats: Stat[] = [
-  { count: 3, label: "WAYS · COVERAGE MEMORY" },
-  { count: 4, label: "STAGES · PERIMETER LADDER" },
-  { count: 100, suffix: "%", label: "LOCAL · 0 ADS · 0 TRACKERS" },
-  { count: 1000, label: "FOUNDER SPOTS AT LAUNCH" },
+  { count: 0, prefix: "$", label: "TO START · NO CARD · FREE FOREVER" },
+  { count: 4, label: "OFFLINE MAP SOURCES" },
+  { count: 0, label: "ADS · TRACKERS · SERVERS" },
+  { count: 1000, label: "FOUNDER LIFETIME SPOTS" },
 ];
 
-function CountUp({ target, suffix }: { target: number; suffix?: string }) {
+function CountUp({ target, prefix, suffix }: { target: number; prefix?: string; suffix?: string }) {
   const [v, setV] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
@@ -52,6 +52,7 @@ function CountUp({ target, suffix }: { target: number; suffix?: string }) {
 
   return (
     <span ref={ref} className="stats-bar__value">
+      {prefix}
       {v}
       {suffix && <sup>{suffix}</sup>}
     </span>
@@ -64,7 +65,7 @@ export default function StatsBar() {
       <div className="max-w-6xl mx-auto px-6 stats-bar__grid">
         {stats.map((s) => (
           <div key={s.label}>
-            <CountUp target={s.count} suffix={s.suffix} />
+            <CountUp target={s.count} prefix={s.prefix} suffix={s.suffix} />
             <div className="stats-bar__label">{s.label}</div>
           </div>
         ))}
