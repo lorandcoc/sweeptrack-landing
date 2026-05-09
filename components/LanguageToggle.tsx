@@ -25,6 +25,43 @@ export default function LanguageToggle() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  // Lock body scroll when the mobile sheet is open
+  useEffect(() => {
+    if (!open) return;
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(min-width: 768px)").matches) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
+  function pick(code: string) {
+    setLocale(code);
+    setOpen(false);
+  }
+
+  const localeButton = (l: (typeof LOCALES)[number], onClick: () => void) => (
+    <button
+      key={l.code}
+      onClick={onClick}
+      className={`w-full flex items-center gap-2.5 px-3 py-3 md:py-2 text-left text-sm transition-colors ${
+        l.code === locale
+          ? "text-accent bg-accent/5"
+          : "text-muted hover:text-foreground hover:bg-white/[0.04]"
+      }`}
+    >
+      <Flag country={l.country} className="inline-flex [&>svg]:w-5 [&>svg]:h-3.5 [&>svg]:rounded-[1px] shrink-0" />
+      <span className="flex-1">{l.label}</span>
+      {l.code === locale && (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-accent shrink-0">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      )}
+    </button>
+  );
+
   return (
     <div ref={ref} className="relative">
       <button
@@ -48,30 +85,38 @@ export default function LanguageToggle() {
         </svg>
       </button>
 
+      {/* Desktop: inline dropdown */}
       {open && (
-        <div className="absolute left-0 bottom-full mb-1.5 md:left-auto md:right-0 md:bottom-auto md:top-full md:mt-1.5 w-44 rounded-xl border border-white/[0.08] bg-[#0A0A1A]/95 backdrop-blur-xl shadow-2xl z-50 py-1 max-h-[320px] overflow-y-auto">
-          {LOCALES.map((l) => (
-            <button
-              key={l.code}
-              onClick={() => {
-                setLocale(l.code);
-                setOpen(false);
-              }}
-              className={`w-full flex items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors ${
-                l.code === locale
-                  ? "text-accent bg-accent/5"
-                  : "text-muted hover:text-foreground hover:bg-white/[0.04]"
-              }`}
-            >
-              <Flag country={l.country} className="inline-flex [&>svg]:w-5 [&>svg]:h-3.5 [&>svg]:rounded-[1px] shrink-0" />
-              <span className="flex-1">{l.label}</span>
-              {l.code === locale && (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-accent shrink-0">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              )}
-            </button>
-          ))}
+        <div className="hidden md:block absolute right-0 top-full mt-1.5 w-44 rounded-xl border border-white/[0.08] bg-[#0A0A1A]/95 backdrop-blur-xl shadow-2xl z-50 py-1 max-h-[320px] overflow-y-auto overscroll-contain">
+          {LOCALES.map((l) => localeButton(l, () => pick(l.code)))}
+        </div>
+      )}
+
+      {/* Mobile: full-screen backdrop + bottom sheet */}
+      {open && (
+        <div
+          className="md:hidden fixed inset-0 z-[100] flex items-end justify-center bg-black/70 backdrop-blur-sm"
+          onClick={() => setOpen(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="w-full max-h-[80vh] rounded-t-2xl border-t border-x border-white/[0.08] bg-[#0A0A1A] shadow-2xl flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+            style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+          >
+            {/* Drag handle + title */}
+            <div className="flex flex-col items-center pt-2 pb-1 shrink-0">
+              <div className="w-10 h-1 rounded-full bg-white/15 mb-2" />
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted px-4 pb-1.5">
+                Choose language
+              </div>
+            </div>
+            {/* Scrollable list with overscroll containment so pull-to-refresh doesn't fire */}
+            <div className="overflow-y-auto overscroll-contain flex-1 pb-2" style={{ WebkitOverflowScrolling: "touch" }}>
+              {LOCALES.map((l) => localeButton(l, () => pick(l.code)))}
+            </div>
+          </div>
         </div>
       )}
     </div>

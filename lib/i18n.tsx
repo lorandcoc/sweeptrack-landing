@@ -68,6 +68,9 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const setLocale = useCallback((l: string) => {
     setLocaleState(l);
     localStorage.setItem("st-locale", l);
+    // Mirror the manual choice into the geo cookie so it survives across devices /
+    // private windows and so the proxy doesn't overwrite it on next visit.
+    document.cookie = `st-geo-lang=${l}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
     if (l === "en") {
       setDict(en as Dict);
     } else if (l in loaders) {

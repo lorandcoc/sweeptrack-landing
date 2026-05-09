@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(grep -E \"\\\\.tsx$|\\\\.ts$\")",
+      "Bash(node -e ':*)",
+      "Bash(grep -c \"articleJsonLd\" app/blog/*/page.tsx)",
+      "Bash(grep \":0$\")",
+      "Bash(echo \"{}\")",
+      "Read(//o/REACT APPS/**)",
+      "Bash(grep -iv \"comment\\\\|//.*premium depth\")",
+      "Bash(cp legal/terms/en.md legal/terms/__TRACKED_VAR__.md)",
+      "Bash(cp legal/privacy/en.md legal/privacy/__TRACKED_VAR__.md)",
+      "Bash(npm install:*)",
+      "Bash(curl -s http://localhost:3099/terms)",
+      "Bash(curl -s http://localhost:3099/privacy)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 34976 //F)",
+      "WebFetch(domain:sweeptrack.pro)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('dictionaries/tr.json','utf8'\\)\\); console.log\\('valid JSON'\\)\")",
+      "Bash(ls -la *.ts)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}

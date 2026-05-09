@@ -39,10 +39,16 @@ const COUNTRY_TO_LANG: Record<string, string> = {
 };
 
 const COOKIE_NAME = "st-geo-lang";
+const SUPPORTED_LANGS = new Set([
+  "en", "ro", "de", "es", "fr", "nl", "pl", "it", "pt", "sv", "tr", "da", "hu", "ru",
+]);
 
 export function proxy(request: NextRequest) {
-  // Don't override if the cookie is already set (one-time detection)
-  if (request.cookies.has(COOKIE_NAME)) return NextResponse.next();
+  const existing = request.cookies.get(COOKIE_NAME)?.value;
+  // If the cookie is already set to a valid language, leave it alone — this
+  // preserves both the geo detection and any manual override the user made
+  // through the LanguageToggle (which mirrors its choice into this cookie).
+  if (existing && SUPPORTED_LANGS.has(existing)) return NextResponse.next();
 
   const country = request.headers.get("x-vercel-ip-country") || "";
   const lang = COUNTRY_TO_LANG[country] || "en";
