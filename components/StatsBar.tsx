@@ -16,7 +16,7 @@ type Stat =
   | { count: number; prefix?: string; suffix?: string; label: string };
 
 const stats: Stat[] = [
-  { display: "HEATMAP", label: "SHOWS WHERE YOU'VE WALKED · PRO" },
+  { display: "HEATMAP", label: "COVERAGE DENSITY OVERLAY · PRO" },
   { display: "USGS", label: "OLD MAP OVERLAY · PRO" },
   { display: "$1.66/mo", label: "PRO ANNUAL · 7-DAY FREE TRIAL" },
   { count: 1000, label: "FOUNDER LIFETIME SPOTS" },

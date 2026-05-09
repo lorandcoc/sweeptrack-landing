@@ -18,7 +18,7 @@ const jsonLdGraph = [
     "@type": "WebSite",
     name: "SweepTrack Pro",
     url: "https://sweeptrack.pro",
-    description: "The best metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, and 45+ field tools built for serious detectorists.",
+    description: "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Permission Vault, Detecting Forecast, and 45+ field tools.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://sweeptrack.pro/#features",
@@ -58,7 +58,7 @@ const jsonLdGraph = [
         price: "0",
         priceCurrency: "USD",
         name: "Free",
-        description: "Core GPS tracking, 10 sessions, 5 finds, 1 detector preset, 2 vault entries, 3 themes",
+        description: "Core GPS tracking, unlimited sessions, unlimited finds, 1 detector preset, 2 Permission Vault entries, 3 themes",
       },
       {
         "@type": "Offer",
@@ -77,8 +77,8 @@ const jsonLdGraph = [
       },
     ],
     featureList: [
-      "GPS tracking with 4 map types — Normal, Satellite, Terrain, and USGS Historical Topographic overlay",
-      "Measure tool — distance polylines with per-segment labels, or closed-polygon area in hectares/acres using real spherical geometry; save to library or convert to perimeter guard with one tap",
+      "GPS tracking with 3 base map types (Street, Satellite, Terrain) plus USGS Historical Topographic overlay (Pro)",
+      "Measure tool — distance polylines with per-segment labels, or closed-polygon area in hectares/acres using spherical geometry; save to library or convert to Perimeter Guard with one tap",
       "Offline maps from 4 tile sources — OpenStreetMap, Esri Satellite, OpenTopoMap, USGS Topo",
       "Track overlay — load past sessions on the live map with color-coded paths",
       "Perimeter guard with draw-on-map boundary and leave-zone alerts",
@@ -135,7 +135,7 @@ export default function Home() {
       />
       <Header />
       <main>
-        <h2 className="sr-only">The Best Metal Detecting App for Android — GPS Tracking, Offline Maps, and 45+ Field Tools</h2>
+        <h2 className="sr-only">Metal Detecting App for Android — GPS Tracking, Offline Maps, and 45+ Field Tools</h2>
         <Hero />
         <Marquee />
         <MapCompareSlider />
