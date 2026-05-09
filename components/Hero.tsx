@@ -48,11 +48,9 @@ export default function Hero() {
             </div>
 
             <h1 className={`hero-enter font-display leading-[1.08] mb-5 ${isLong ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"}`} style={{ animationDelay: "0.2s" }}>
-              {t("hero.title_line1")}
-              <br />
-              {t("hero.title_line2")}
-              <br />
-              <span className="text-accent">{t("hero.title_line3")}</span>
+              <span className="block [text-wrap:balance]">{t("hero.title_line1")}</span>
+              <span className="block [text-wrap:balance]">{t("hero.title_line2")}</span>
+              <span className="block text-accent [text-wrap:balance]">{t("hero.title_line3")}</span>
             </h1>
 
             <p className="hero-enter text-base md:text-lg text-muted max-w-xl mb-3 md:mx-0 mx-auto leading-relaxed" style={{ animationDelay: "0.35s" }}>
