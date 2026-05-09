@@ -3,6 +3,16 @@
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 
+function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
+  const href = e.currentTarget.getAttribute("href") || "";
+  const id = href.replace(/^[/#]+/, "");
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 const socials = [
   {
     label: "Facebook",
@@ -78,11 +88,11 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4 text-foreground">{t("footer.product")}</h4>
             <div className="flex flex-col gap-2.5 text-sm text-muted">
-              <a href="/#features" className="hover:text-foreground transition-colors">{t("footer.features")}</a>
-              <a href="/#screenshots" className="hover:text-foreground transition-colors">{t("footer.screenshots")}</a>
-              <a href="/#pricing" className="hover:text-foreground transition-colors">{t("footer.pricing")}</a>
-              <a href="/#faq" className="hover:text-foreground transition-colors">{t("footer.faq")}</a>
-              <a href="/#community" className="hover:text-foreground transition-colors">{t("footer.community")}</a>
+              <a href="/#features" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.features")}</a>
+              <a href="/#screenshots" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.screenshots")}</a>
+              <a href="/#pricing" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.pricing")}</a>
+              <a href="/#faq" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.faq")}</a>
+              <a href="/#community" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.community")}</a>
               <a href="/blog" className="hover:text-foreground transition-colors">{t("footer.guides")}</a>
             </div>
           </div>

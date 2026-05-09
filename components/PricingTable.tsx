@@ -5,6 +5,16 @@ import { useReveal } from "./useReveal";
 import ComingSoonButton from "./ComingSoonButton";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
+function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
+  const href = e.currentTarget.getAttribute("href") || "";
+  const id = href.replace(/^[/#]+/, "");
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 type FeatureRow = {
   key: string;
   free: boolean | "string";
@@ -147,6 +157,7 @@ export default function PricingTable() {
               </div>
               <a
                 href="#community"
+                onClick={scrollToHash}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-[#0A0A1A] text-sm font-semibold hover:bg-amber-300 transition-colors shrink-0 self-start sm:self-auto"
               >
                 {t("pricing.founder_cta")}

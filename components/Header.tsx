@@ -5,6 +5,21 @@ import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle";
 
+/**
+ * Smooth-scroll to the hash target without modifying window.location.hash.
+ * Avoids polluting browser history so the system back button still leaves
+ * the site instead of popping to a previous in-page anchor.
+ */
+function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
+  const href = e.currentTarget.getAttribute("href") || "";
+  const id = href.replace(/^[/#]+/, "");
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export default function Header() {
   const { t } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -84,6 +99,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
+              onClick={scrollToHash}
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
               {link.label}
@@ -91,7 +107,8 @@ export default function Header() {
           ))}
           <LanguageToggle />
           <a
-            href="/#download"
+            href="#community"
+            onClick={scrollToHash}
             className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#050510] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
             {t("comingsoon.button")}
@@ -129,7 +146,10 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className="text-muted hover:text-foreground transition-colors"
-              onClick={() => setMenuOpen(false)}
+              onClick={(e) => {
+                setMenuOpen(false);
+                scrollToHash(e);
+              }}
             >
               {link.label}
             </a>
@@ -138,9 +158,12 @@ export default function Header() {
             <LanguageToggle />
           </div>
           <a
-            href="/#download"
+            href="#community"
             className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#050510] text-center hover:bg-accent-dim transition-colors"
-            onClick={() => setMenuOpen(false)}
+            onClick={(e) => {
+              setMenuOpen(false);
+              scrollToHash(e);
+            }}
           >
             {t("comingsoon.button")}
           </a>
