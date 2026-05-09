@@ -77,7 +77,7 @@ const jsonLdGraph = [
       },
     ],
     featureList: [
-      "Live GPS tracking with 4 map types (Satellite, Terrain, Street, USGS Historical Topo) and 8-field tactical HUD",
+      "Live GPS tracking with 3 map types (Street, Satellite, Terrain) plus a USGS Historical Topo overlay and 8-field tactical HUD",
       "Tap-to-expand HUD: elapsed time, distance, speed, altitude, finds, heading, GPS accuracy, max speed",
       "USGS historical topographic map overlay with adjustable opacity slider",
       "Measure tool: distance polylines with per-segment labels, closed-polygon area in hectares or acres via spherical geometry, drag-to-edit vertices, save to Library, one-tap convert to Perimeter Guard",
