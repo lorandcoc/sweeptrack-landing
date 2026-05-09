@@ -58,7 +58,7 @@ const jsonLdGraph = [
         price: "0",
         priceCurrency: "USD",
         name: "Free",
-        description: "Core GPS tracking, 10 sessions, 5 finds, 1 detector preset, 2 vault entries, 3 themes, compass + ruler + back-to-start line — enough to run a Saturday.",
+        description: "Unlimited GPS tracking, sessions, and finds. 1 detector preset, 2 vault entries, 3 themes, compass + ruler + back-to-start line. Run as many Saturdays as you want.",
       },
       {
         "@type": "Offer",
