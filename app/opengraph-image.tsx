@@ -54,7 +54,7 @@ export default function OGImage() {
             marginBottom: "40px",
           }}
         >
-          Built for the dig. Not the hike.
+          Metal Detecting GPS App for Android
         </div>
         {/* Features */}
         <div
@@ -64,7 +64,7 @@ export default function OGImage() {
             flexWrap: "wrap",
           }}
         >
-          {["GPS · 8-field HUD", "USGS Overlay", "Perimeter Guard", "Permission Vault", "60+ Presets", "Founder's Lifetime"].map(
+          {["GPS Tracking", "Historical Maps", "Offline Maps", "Permission Vault", "60+ Presets", "Cloud Backup"].map(
             (f) => (
               <div
                 key={f}

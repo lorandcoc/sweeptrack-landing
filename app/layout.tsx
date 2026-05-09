@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | SweepTrack Pro",
   },
   description:
-    "Built for the dig, not the hike. GPS tracking, USGS historical map overlay, four-stage perimeter guard, permission vault with PDF Request and Thank-You letters, 0–100 Detecting Forecast with GO/CAUTION/WAIT verdict, NOAA tides, 60+ detector presets, daily Google Drive backup. Free to download, no ads, no tracking. Android.",
+    "The metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, 60+ detector presets, cloud backup. Free to use, ad-free.",
   keywords: [
     // Primary searches
     "metal detecting app",
@@ -138,9 +138,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SweepTrack Pro — Built for the Dig",
+    title: "SweepTrack Pro — Metal Detecting App for Android",
     description:
-      "GPS tracking, USGS historical overlay, perimeter guard, permission vault, detecting forecast, 60+ detector presets, daily Drive backup. Built by a detectorist for detectorists. Android, free, no ads.",
+      "Metal detecting app for Android. GPS tracking, historical map overlays, offline maps, permission vault, detecting forecast, cloud backup, and 60+ detector presets. Free and ad-free.",
     url: "https://sweeptrack.pro",
     siteName: "SweepTrack Pro",
     type: "website",
@@ -148,9 +148,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SweepTrack Pro — Built for the Dig",
+    title: "SweepTrack Pro — Best Metal Detecting App",
     description:
-      "GPS tracking, USGS overlay, perimeter guard, permission vault with PDF letters, detecting forecast with GO/CAUTION/WAIT verdict, 60+ detector presets, daily Drive backup. Free, ad-free, Android.",
+      "GPS tracking, old map overlays, offline maps, track overlay, perimeter guard, permission vault, detecting forecast. Built for detectorists. Ad-free.",
   },
   robots: {
     index: true,
