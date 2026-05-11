@@ -16,12 +16,6 @@ function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-const stats = [
-  { value: "$0", key: "hero.stat_presets" },
-  { value: "0 trackers", key: "hero.stat_coins" },
-  { value: "Works offline", key: "hero.stat_maps" },
-] as const;
-
 export default function Hero() {
   const { locale, t } = useI18n();
   const isLong = locale !== "en";
@@ -61,16 +55,7 @@ export default function Hero() {
               {t("hero.price_anchor")}
             </p>
 
-            <div className="hero-enter flex flex-wrap gap-3 justify-center md:justify-start mb-8" style={{ animationDelay: "0.45s" }}>
-              {stats.map((s) => (
-                <div key={s.key} className="flex items-baseline gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                  <span className="font-mono text-sm font-semibold text-accent">{s.value}</span>
-                  <span className="text-xs text-muted">{t(s.key)}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="hero-enter flex flex-col sm:flex-row gap-4 justify-center md:justify-start" style={{ animationDelay: "0.55s" }}>
+            <div className="hero-enter flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8" style={{ animationDelay: "0.55s" }}>
               <ComingSoonButton />
               <a
                 href="#features"
@@ -84,9 +69,8 @@ export default function Hero() {
               </a>
             </div>
             <p className="hero-enter text-xs text-muted/70 mt-4 flex items-center gap-1.5 justify-center md:justify-start" style={{ animationDelay: "0.65s" }}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-                <path d="M12 18h.01" />
-                <path d="M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="shrink-0">
+                <path d="M17.523 15.341c-.551 0-.999-.449-.999-1.0 0-.553.448-1.0.999-1.0s.999.447.999 1.0c0 .551-.448 1.0-.999 1.0m-11.046 0c-.551 0-.999-.449-.999-1.0 0-.553.448-1.0.999-1.0s.999.447.999 1.0c0 .551-.448 1.0-.999 1.0m11.405-6.02 1.997-3.459a.416.416 0 0 0-.152-.568.416.416 0 0 0-.568.152l-2.022 3.503C15.59 8.244 13.853 7.851 12 7.851s-3.59.393-5.137 1.101L4.841 5.449a.416.416 0 0 0-.568-.152.416.416 0 0 0-.152.568l1.997 3.459C2.689 11.187.343 14.659 0 18.761h24c-.343-4.102-2.689-7.574-6.118-9.44" />
               </svg>
               {t("hero.platform_note")}
             </p>

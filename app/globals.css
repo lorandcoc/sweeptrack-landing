@@ -660,11 +660,14 @@ details:focus-visible > summary {
 }
 .stats-bar__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
   text-align: center;
 }
-@media (max-width: 720px) {
+@media (max-width: 960px) {
+  .stats-bar__grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+@media (max-width: 600px) {
   .stats-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
 }
 .stats-bar__value {
