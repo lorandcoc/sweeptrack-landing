@@ -36,7 +36,7 @@ const jsonLdGraph = [
       name: "Lorand",
       url: "https://lorand.cc",
     },
-    sameAs: ["https://www.facebook.com/sweeptrackpro"],
+    sameAs: ["https://www.facebook.com/sweeptrackpro", "https://www.youtube.com/@SweepTrackPro", "https://www.instagram.com/sweeptrackpro"],
     contactPoint: {
       "@type": "ContactPoint",
       email: "support@sweeptrack.pro",
