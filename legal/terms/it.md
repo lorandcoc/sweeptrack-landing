@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Applicazione di monitoraggio GPS per la ricerca di metalli
 
-Data di entrata in vigore: 7 aprile 2026 · Ultimo aggiornamento: 7 aprile 2026
+Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 12 maggio 2026
 
 Gestito da: Coc Lorand Adrian P.F.A., operante come "Loriba"
 
@@ -14,9 +14,9 @@ Sito web: sweeptrack.pro
 
 ## 1. Accettazione dei Termini
 
-Scaricando, installando, accedendo o utilizzando SweepTrack Pro ("l'App"), l'utente accetta di essere vincolato dai presenti Termini di Servizio ("Termini"). Se non si accettano i presenti Termini, non utilizzare l'App. "Noi", "ci" e "nostro" si riferiscono a Coc Lorand Adrian P.F.A., operante come Loriba.
+Scaricando, installando, accedendo o utilizzando SweepTrack Pro ("l'App") o il sito web sweeptrack.pro ("il Sito Web"), l'utente accetta di essere vincolato dai presenti Termini di Servizio ("Termini"). Se non si accettano i presenti Termini, non utilizzare l'App o il Sito Web. "Noi", "ci" e "nostro" si riferiscono a Coc Lorand Adrian P.F.A., operante come Loriba.
 
-Ci riserviamo il diritto di modificare i presenti Termini in qualsiasi momento. L'uso continuato dell'App dopo le modifiche costituisce l'accettazione delle stesse. Le modifiche sostanziali saranno comunicate tramite l'App o il nostro sito web.
+Ci riserviamo il diritto di modificare i presenti Termini in qualsiasi momento. L'uso continuato dell'App o del Sito Web dopo le modifiche costituisce l'accettazione delle stesse. Le modifiche sostanziali saranno comunicate tramite l'App o il nostro sito web.
 
 ## 2. Descrizione del Servizio
 
@@ -28,226 +28,251 @@ SweepTrack Pro è un'applicazione di monitoraggio e registrazione delle sessioni
 - Previsioni meteorologiche e punteggio delle condizioni di ricerca
 - Previsioni delle tavole di marea (stazioni costiere degli Stati Uniti via NOAA)
 - Scoperta di punti di interesse storici e archeologici nelle vicinanze
-- Gestione dei preset del cercametalli per 57 modelli di metal detector
-- Cassaforte dei permessi per la gestione dei permessi dei proprietari terrieri e dell'accesso ai siti
-- Guardia perimetrale con avvisi sui confini
+- Gestione delle preimpostazioni del rilevatore per oltre 60 modelli di rilevatori di metalli
+- Caveau dei permessi per gestire i permessi dei proprietari di terreni e l'accesso ai siti
+- Guardia perimetrale con avvisi di confine
 - Download di mappe offline
-- Backup e ripristino tramite Google Drive
+- Backup e ripristino di Google Drive
 - Esportazione delle sessioni (GPX, KML, CSV, JSON) e strumenti di confronto
-- Heatmap del calendario, statistiche e monitoraggio dei risultati
+- Mappa di calore del calendario, statistiche e tracciamento degli obiettivi
 
-## 3. Requisiti di idoneità
+Il Sito Web sweeptrack.pro fornisce informazioni su SweepTrack Pro, una lista d'attesa pre-lancio e contenuti di supporto.
 
-L'utente deve avere almeno 16 anni per utilizzare questa App. Se l'utente ha meno di 18 anni, dichiara che un genitore o un tutore legale ha esaminato e accettato i presenti Termini per suo conto.
+## 3. Idoneità
 
-Utilizzando l'App, l'utente dichiara e garantisce di avere la capacità legale di stipulare un accordo vincolante nella propria giurisdizione.
+Dovete avere almeno 16 anni per utilizzare l'App o il Sito Web. Se avete meno di 18 anni, dichiarate che il vostro genitore o tutore legale ha esaminato e accettato i presenti Termini per vostro conto.
+
+Utilizzando l'App o il Sito Web, dichiarate e garantite di avere la capacità giuridica di stipulare un accordo vincolante nella vostra giurisdizione.
 
 ## 4. Account e Autenticazione
 
-L'App non richiede la creazione di un account. Un accesso opzionale tramite Google Sign-In è disponibile esclusivamente ai fini della funzionalità di backup e ripristino di Google Drive.
+L'App non richiede la creazione di un account. Un accesso Google opzionale è disponibile esclusivamente per la funzionalità di backup e ripristino di Google Drive.
 
-L'utente è responsabile di:
+Siete responsabili di:
 
-- Mantenere la sicurezza delle credenziali del proprio account Google
-- Tutte le attività che avvengono tramite la sessione autenticata
-- Assicurarsi che le impostazioni del proprio account Google siano in linea con le proprie preferenze sulla privacy
+- Mantenere la sicurezza delle credenziali del vostro account Google
+- Tutte le attività che si verificano tramite la vostra sessione autenticata
+- Assicurarvi che le impostazioni del vostro account Google siano allineate con le vostre preferenze sulla privacy
 
-Non memorizziamo la password dell'account Google dell'utente. L'autenticazione è gestita interamente dal sistema OAuth di Google.
+Non memorizziamo la password del vostro account Google. L'autenticazione è gestita interamente dal sistema OAuth di Google.
 
 ## 5. Abbonamento e Pagamenti
 
 ### 5.1 Livello Gratuito
 
-L'App offre funzionalità limitate senza costi, tra cui:
+L'App offre funzionalità limitate senza costi, incluso:
 
 - Sessioni illimitate
 - Fino a 5 ritrovamenti
-- 1 slot per i preset del cercametalli
-- Accesso alle funzioni principali di monitoraggio e mappatura
+- 1 slot per preimpostazioni del rilevatore
+- Accesso alle funzionalità principali di monitoraggio e mappatura
 
 ### 5.2 Abbonamento Premium
 
-Un abbonamento premium, gestito tramite Google Play Store e processedo da RevenueCat, Inc., sblocca ritrovamenti, sessioni e preset del cercametalli illimitati, oltre a funzioni avanzate tra cui sovrapposizioni di mappe storiche, mappe offline, guardia perimetrale, backup sul cloud e strumenti aggiuntivi.
+Un abbonamento premium, gestito tramite Google Play Store ed elaborato da RevenueCat, Inc., sblocca ritrovamenti, sessioni e preimpostazioni del rilevatore illimitati, oltre a funzionalità avanzate inclusi sovrapposizioni di mappe storiche, mappe offline, guardia perimetrale, backup cloud e strumenti aggiuntivi.
 
-### 5.3 Fatturazione
+### 5.3 Founder's Lifetime
+
+Un'offerta Founder's Lifetime limitata è disponibile per i primi 1.000 acquirenti tramite il meccanismo di acquisto in-app di Google Play, dopo che l'App è disponibile pubblicamente su Google Play. Founder's Lifetime è un pagamento unico che concede l'accesso a vita a tutte le funzionalità Pro. Dopo che sono stati completati 1.000 acquisti Founder's Lifetime, l'offerta si chiude permanentemente e gli utenti successivi accedono alle funzionalità Pro tramite l'abbonamento standard descritto in §5.2.
+
+Iscriversi alla lista d'attesa pre-lancio non riserva uno slot Founder's Lifetime. Il limite è applicato al momento dell'acquisto, in base al principio "primo arrivato, primo servito" tra gli utenti che hanno installato l'App.
+
+### 5.4 Fatturazione
 
 - Tutti i pagamenti sono elaborati tramite Google Play Store
-- Il prezzo dell'abbonamento viene visualizzato al momento dell'acquisto
-- Gli abbonamenti si rinnovano automaticamente a meno che non vengano annullati almeno 24 ore prima della fine del periodo corrente
-- L'utente può gestire o annullare il proprio abbonamento tramite le impostazioni di Google Play Store
+- I prezzi degli abbonamenti sono visualizzati al momento dell'acquisto
+- Gli abbonamenti si rinnovano automaticamente a meno che non vengano cancellati almeno 24 ore prima della fine del periodo corrente
+- Founder's Lifetime è un acquisto unico, senza rinnovo
+- Potete gestire o cancellare il vostro abbonamento tramite le impostazioni di Google Play Store
 
-### 5.4 Rimborsi
+### 5.5 Rimborsi
 
 Le richieste di rimborso sono gestite da Google Play Store in conformità con le loro politiche di rimborso. Non elaboriamo rimborsi direttamente.
 
-## 6. Dati dell'Utente e Privacy
+## 6. Dati Utente e Privacy
 
-### 6.1 Dati Raccolti
+### 6.1 Dati Raccolti (App)
 
-L'App raccoglie e memorizza i seguenti dati **localmente sul dispositivo dell'utente**:
+L'App raccoglie e memorizza i seguenti dati **localmente sul vostro dispositivo**:
 
 - Coordinate GPS, velocità, altitudine e direzione durante le sessioni di monitoraggio attive
 - Metadati della sessione (nome, data, durata, distanza, tag)
-- Registri di ritrovamento/scoperta (tipo, posizione, nome, note, profondità, valore, peso)
+- Registrazioni di ritrovamenti/scoperte (tipo, posizione, nome, note, profondità, valore, peso)
 - File multimediali (foto e registrazioni audio) acquisiti all'interno dell'App
-- Voci della cassaforte dei permessi (nomi dei siti, nomi dei proprietari terrieri, informazioni di contatto, dettagli del permesso, coordinate dei confini, firme)
-- Configurazioni dei preset del cercametalli
-- Istantanee meteo associate alle sessioni
+- Voci del caveau dei permessi (nomi dei siti, nomi dei proprietari, informazioni di contatto, dettagli del permesso, coordinate dei limiti, firme)
+- Configurazioni delle preimpostazioni del rilevatore
+- Istantanee meteorologiche associate alle sessioni
 - Preferenze dell'App (tema, unità, lingua)
 
-### 6.2 Archiviazione dei Dati
+### 6.2 Memorizzazione dei Dati (App)
 
-- **Tutti i dati sono memorizzati localmente sul dispositivo dell'utente** in un database crittografato e in un archivio file locale
-- **Nessun dato viene trasmesso ai nostri server** — non gestiamo server backend o database
-- **Il backup su Google Drive** (opzionale, avviato dall'utente) memorizza una copia crittografata dei dati nell'account Google Drive personale dell'utente in una cartella chiamata "SweepTrack Backups"
-- Il backup sul cloud di Android è stato disabilitato per proteggere i dati dell'utente
+- **Tutti i dati dell'App sono memorizzati localmente sul vostro dispositivo** in un database crittografato e in archiviazione locale di file
+- **Nessun dato dell'App viene trasmesso ai nostri server** — non gestiamo server o database backend per la funzionalità dell'App
+- **Backup Google Drive** (opzionale, avviato dall'utente) memorizza una copia crittografata dei vostri dati nel vostro account personale Google Drive in una cartella "SweepTrack Backups"
+- Il backup cloud Android è stato disabilitato per proteggere i vostri dati
 
-### 6.3 Chiamate API di Terze Parti
+Le pratiche relative ai dati del Sito Web (raccolta di email per la lista d'attesa, analisi, hosting) sono descritte separatamente in §6.7 di seguito e in dettaglio completo nella nostra Informativa sulla Privacy, Sezione 4.
 
-L'App effettua richieste di rete ai seguenti servizi di terze parti esclusivamente per scopi funzionali. Non vengono inviati dati personali o identificativi, a meno che non sia esplicitamente indicato:
+### 6.3 Chiamate API a Terze Parti (App)
+
+L'App effettua richieste di rete ai seguenti servizi di terze parti solo per scopi di funzionalità. Nessun dato personale o di identificazione viene inviato salvo diversamente specificato:
 
 - **Google Maps SDK** — Visualizzazione della mappa
-- **Open-Meteo** — Dati meteo (coordinate approssimative inviate, nessuna informazione personale)
+- **Open-Meteo** — Dati meteorologici (coordinate approssimative inviate, nessuna informazione personale)
 - **OpenStreetMap / Nominatim** — Geocodifica inversa (coordinate inviate, nessuna informazione personale)
-- **Overpass API** — Query sui punti di interesse storici nelle vicinanze (coordinate inviate, nessuna informazione personale)
+- **Overpass API** — Query per punti di interesse storici nelle vicinanze (coordinate inviate, nessuna informazione personale)
 - **Wikipedia API** — Articoli nelle vicinanze (coordinate inviate, nessuna informazione personale)
 - **NOAA** — Previsioni delle maree (ID stazione inviato, nessuna informazione personale)
-- **RevenueCat** — Verifica dell'abbonamento (ID utente dell'app anonimo, nessuna informazione personale)
+- **RevenueCat** — Verifica abbonamento (ID utente anonimo dell'app, nessuna informazione personale)
 
-### 6.4 Nessun Analytics o Monitoraggio
+### 6.4 Nessuna Analisi o Tracciamento (App)
 
-L'App **non** include SDK di analisi, strumenti di segnalazione arresti anomali, framework pubblicitari o meccanismi di monitoraggio del comportamento. Non raccogliamo, trasmettiamo o vendiamo alcun dato di utilizzo.
+L'App **non** include SDK di analisi, strumenti di segnalazione errori, framework pubblicitari o meccanismi di tracciamento comportamentale. Non raccogliamo, trasmettiamo o vendiamo dati di utilizzo dell'App.
+
+Le analisi del Sito Web (Vercel Analytics, Vercel Speed Insights) sono descritte in §6.7.
 
 ### 6.5 Cancellazione dei Dati
 
-L'utente può cancellare i propri dati in qualsiasi momento eliminando i singoli elementi all'interno dell'App, cancellando i dati dell'app tramite le impostazioni di Android, disinstallando l'App o eliminando i backup di Google Drive dal proprio account.
+Potete cancellare i vostri dati dell'App in qualsiasi momento eliminando singoli elementi all'interno dell'App, cancellando i dati dell'app tramite le impostazioni Android, disinstallando l'App o eliminando i backup di Google Drive dal vostro account. Per i dati della lista d'attesa del Sito Web, cancellate l'iscrizione dalle email o contattateci a [support@sweeptrack.pro](mailto:support@sweeptrack.pro).
 
 ### 6.6 Privacy dei Minori
 
-Non raccogliamo consapevolmente informazioni personali da minori di 16 anni. Se si ritiene che un minore ci abbia fornito dati personali, si prega di contattarci.
+Non raccogliamo consapevolmente informazioni personali da minori di 16 anni. Se ritenete che un minore ci abbia fornito dati personali, vi preghiamo di contattarci.
+
+### 6.7 Sito Web e Lista d'Attesa
+
+Il Sito Web sweeptrack.pro è gestito come canale di marketing e informazione per SweepTrack Pro. Inviando la vostra email tramite un modulo di iscrizione sul Sito Web, acconsentite a ricevere:
+
+- Un'email di benvenuto che conferma la vostra iscrizione
+- Un'email quando SweepTrack Pro sarà lanciato su Google Play
+- Aggiornamenti occasionali pre-lancio sul prodotto e sull'offerta Founder's Lifetime
+
+Le email sono memorizzate in un database Supabase Postgres ospitato nell'UE (regione Irlanda) e consegnate tramite Resend, Inc. (UE, Irlanda). Potete cancellare l'iscrizione in qualsiasi momento rispondendo con "remove" a qualsiasi email, o utilizzando il link List-Unsubscribe che il vostro client di posta visualizza. Gli indirizzi email sono conservati fino alla cancellazione dell'iscrizione o 12 mesi dopo il lancio pubblico, a seconda di quale evento si verifichi per primo.
+
+Il Sito Web utilizza anche Vercel Analytics e Vercel Speed Insights — strumenti rispettosi della privacy che non utilizzano cookie e non memorizzano indirizzi IP individuali.
+
+I dettagli completi sulla gestione dei dati del Sito Web — inclusi base giuridica, responsabili, conservazione e i vostri diritti — sono nella nostra Informativa sulla Privacy, Sezione 4.
 
 ## 7. Uso Consentito
 
-L'utente accetta di utilizzare l'App solo per scopi leciti e in conformità con i presenti Termini. L'utente accetta di **non**:
+Accettate di utilizzare l'App solo per scopi legali e in conformità con i presenti Termini. Accettate di **non**:
 
-- Utilizzare l'App per qualsiasi attività illegale, inclusa la violazione di domicilio, lo scavo non autorizzato o la violazione delle leggi sulla protezione del patrimonio culturale
-- Decodificare, decompilare o disassemblare l'App
-- Distribuire, concedere in sublicenza o sfruttare commercialmente l'App o il suo contenuto
-- Tentare di aggirare la verifica dell'abbonamento, le restrizioni delle funzioni premium o qualsiasi misura di sicurezza
+- Utilizzare l'App per qualsiasi attività illegale, inclusa violazione di domicilio, scavo non autorizzato o violazione delle leggi di protezione del patrimonio culturale
+- Eseguire ingegneria inversa, decompilare o disassemblare l'App
+- Distribuire, sublicenziare o sfruttare commercialmente l'App o i suoi contenuti
+- Tentare di aggirare la verifica dell'abbonamento, le restrizioni delle funzionalità premium o qualsiasi misura di sicurezza
 - Utilizzare sistemi automatizzati (bot, scraper) per interagire con l'App
-- Interferire con o interrompere la funzionalità dell'App o dei servizi associati
+- Interferire con o interrompere la funzionalità dell'App o i servizi associati
 
 ## 8. Ricerca di Metalli e Conformità Legale
 
-### 8.1 Responsabilità dell'Utente
+### 8.1 La Vostra Responsabilità
 
-La ricerca di metalli è soggetta a leggi e regolamenti che variano a seconda del paese, dello stato, della provincia e del comune. **L'utente è l'unico responsabile** dell'ottenimento dei permessi appropriati, del rispetto di tutte le leggi applicabili, dell'adesione alle leggi sul patrimonio culturale e sulle antichità, della segnalazione dei ritrovamenti come richiesto dalla legge locale e della verifica che la ricerca sia consentita in qualsiasi luogo prima di iniziare una sessione.
+La ricerca di metalli è soggetta a leggi e regolamenti che variano in base a paese, stato, provincia e comune. **Siete l'unico responsabile** dell'ottenimento dei permessi appropriati, del rispetto di tutte le leggi applicabili, del rispetto delle leggi sul patrimonio culturale e sulle antichità, della segnalazione dei ritrovamenti come richiesto dalla legge locale e della verifica che la ricerca sia consentita in qualsiasi luogo prima di iniziare una sessione.
 
-### 8.2 Note Legali Specifiche per Paese
+### 8.2 Avvisi Legali Specifici per Paese
 
-**UK:** Ai sensi del Treasure Act 1996, è necessario segnalare determinati ritrovamenti al coroner locale entro 14 giorni. La registrazione dei ritrovamenti nell'App non costituisce un rapporto legale. È necessario segnalare separatamente tramite il Portable Antiquities Scheme (PAS).
+**Regno Unito:** Ai sensi del Treasure Act 1996, dovete segnalare determinati ritrovamenti al vostro coroner locale entro 14 giorni. La registrazione dei ritrovamenti dell'App non costituisce una segnalazione legale. Dovete segnalare separatamente tramite il Portable Antiquities Scheme (PAS).
 
-**US:** La ricerca di metalli è vietata sulla maggior parte dei terreni pubblici federali ai sensi dell'ARPA (1979), inclusi parchi nazionali, foreste nazionali e terreni della BLM. Le violazioni possono comportare multe fino a $100.000 e la reclusione. L'App non indica se la ricerca è legale in un determinato luogo.
+**USA:** La ricerca di metalli è vietata sulla maggior parte dei terreni pubblici federali ai sensi dell'ARPA (1979), inclusi Parchi Nazionali, Foreste Nazionali e terreni BLM. Le violazioni possono comportare multe fino a 100.000 USD e reclusione. L'App non indica se la ricerca è legale in qualsiasi luogo.
 
-**EU:** Molti paesi dell'UE richiedono permessi governativi per la ricerca di metalli. In alcuni paesi, la ricerca senza permesso è illegale indipendentemente dalla proprietà del terreno. L'App non determina la classificazione legale dei ritrovamenti ai sensi della legge nazionale sui beni culturali.
+**UE:** Molti paesi dell'UE richiedono permessi governativi per la ricerca di metalli. In alcuni paesi, la ricerca senza permesso è illegale indipendentemente dalla proprietà del terreno. L'App non determina la classificazione legale dei ritrovamenti ai sensi della legge nazionale sulla proprietà culturale.
 
-**Romania:** Ai sensi dell'OG 43/2000, l'uso non autorizzato di metal detector su siti archeologici o aree protette è un reato penale.
+**Romania:** Ai sensi dell'OG 43/2000, l'uso non autorizzato di rilevatori di metalli su siti archeologici o aree protette costituisce un reato.
 
-**Australia:** La ricerca su terreni demaniali (Crown land), parchi nazionali, siti del patrimonio aborigeno e luoghi del patrimonio registrati è generalmente vietata.
+**Australia:** La ricerca su terreni della Corona, parchi nazionali, siti del patrimonio aborigeno e luoghi del patrimonio registrato è generalmente vietata.
 
 **Canada:** Le leggi provinciali sul patrimonio e il Canada National Parks Act limitano o vietano la ricerca in vari contesti.
 
-### 8.3 Esclusione di Responsabilità della Cassaforte dei Permessi
+### 8.3 Esclusione di Responsabilità del Caveau dei Permessi
 
-La Cassaforte dei Permessi è uno strumento organizzativo personale. **Non** costituisce prova legale del permesso, non crea alcun accordo legale e non sostituisce alcun consenso scritto o permesso legalmente richiesto. Le firme digitali sono solo per la tenuta dei registri personali. Il generatore di lettere PDF crea solo un documento modello — non ha alcun effetto legale a meno che entrambe le parti non concordino indipendentemente sui suoi contenuti.
+Il Caveau dei Permessi è uno strumento organizzativo personale. **Non** costituisce prova legale di permesso, non crea alcun accordo legale e non sostituisce alcun consenso scritto o permesso legalmente richiesto. Le firme digitali sono solo per la registrazione personale. Il generatore di lettere PDF crea solo un documento modello — non ha alcun effetto legale a meno che entrambe le parti non concordino indipendentemente sul suo contenuto.
 
 ### 8.4 Esclusione di Responsabilità per la Classificazione dei Ritrovamenti
 
-Le categorie di ritrovamento nell'App (Tesoro, Oro, Moneta, ecc.) sono solo per l'organizzazione personale. L'App **non** determina la classificazione legale, il significato archeologico, il valore o gli obblighi di segnalazione. Il Calibro per Monete (Coin Caliper) identifica le monete solo in base al diametro e non deve essere considerato affidabile per l'autenticazione, la valutazione o la segnalazione legale.
+Le categorie di ritrovamenti nell'App (Tesoro, Oro, Moneta, ecc.) sono solo per l'organizzazione personale. L'App **non** determina la classificazione legale, il significato archeologico, il valore o gli obblighi di segnalazione. Il Coin Caliper identifica le monete solo per diametro e non deve essere utilizzato per autenticazione, valutazione o segnalazione legale.
 
 ### 8.5 Nessuna Consulenza Legale
 
-Nulla nell'App — inclusa la Cassaforte dei Permessi, il punteggio meteo, le previsioni di ricerca, i siti nelle vicinanze, le sovrapposizioni di mappe storiche, la categorizzazione dei ritrovamenti o qualsiasi testo — costituisce consulenza legale, finanziaria, archeologica o professionale di alcun tipo.
+Niente nell'App — inclusi il Caveau dei Permessi, il punteggio meteorologico, le previsioni di rilevamento, i siti vicini, le sovrapposizioni di mappe storiche, la categorizzazione dei ritrovamenti o qualsiasi testo — costituisce consulenza legale, finanziaria, archeologica o professionale di alcun tipo.
 
 ## 9. GPS, Posizione e Sicurezza
 
-La precisione del GPS dipende dall'hardware del dispositivo, dalla disponibilità dei satelliti, dalle condizioni atmosferiche, dal terreno e dalle strutture circostanti. L'App fornisce i dati sulla posizione "così come sono". Non garantiamo la precisione.
+L'accuratezza del GPS dipende dall'hardware del vostro dispositivo, dalla disponibilità dei satelliti, dalle condizioni atmosferiche, dal terreno e dalle strutture circostanti. L'App fornisce dati di posizione "così come sono". Non garantiamo l'accuratezza.
 
-La guardia perimetrale è uno strumento approssimativo e non deve essere considerata un indicatore di confine preciso o una linea di proprietà legale. L'indicatore della strada del ritorno (road back) mostra la distanza in linea retta, non un percorso a piedi sicuro.
+La guardia perimetrale è uno strumento approssimativo e non deve essere utilizzata come un indicatore di confine preciso o linea di proprietà legale. L'indicatore di ritorno alla strada mostra la distanza in linea retta, non un percorso di marcia sicuro.
 
-**Sicurezza della ricerca in spiaggia:** La tavola delle maree fornisce previsioni, non garanzie. Le maree possono essere influenzate dal tempo, dal vento e dalla geografia locale in modi non riflessi nelle previsioni. Lasciare sempre un margine di sicurezza e avere una via di fuga. Non fare mai affidamento esclusivamente sui dati delle maree dell'App per le decisioni di sicurezza.
+**Sicurezza della ricerca in spiaggia:** La tavola delle maree fornisce previsioni, non garanzie. Le maree possono essere influenzate dal tempo, dal vento e dalla geografia locale in modi non riflessi nelle previsioni. Lasciate sempre un margine di sicurezza e abbiate una via di fuga. Non fate mai affidamento esclusivamente sui dati delle maree dell'App per decisioni di sicurezza.
 
-Le visualizzazioni della sovrapposizione del percorso e della heatmap sono approssimative. La deriva del GPS e la perdita di segnale possono far sì che i percorsi appaiano sfalsati rispetto alle posizioni effettive. Le lacune potrebbero non riflettere i modelli di ricerca effettivi.
+Le visualizzazioni di sovrapposizione del percorso e della mappa di calore sono approssimative. La deriva del GPS e la perdita del segnale possono far apparire i percorsi sfalsati rispetto alle posizioni effettive. Le lacune potrebbero non riflettere i modelli di ricerca effettivi.
 
 ## 10. Servizi e Contenuti di Terze Parti
 
-L'App utilizza dati di Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA e Wikipedia. I dati cartografici non devono **mai** essere utilizzati per determinare i confini legali della proprietà o i diritti di accesso.
+L'App utilizza dati di Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA e Wikipedia. I dati della mappa **non** devono mai essere utilizzati per determinare i confini legali di proprietà o i diritti di accesso.
 
-**Sovrapposizione di mappe storiche USGS:** Le mappe storiche raffigurano condizioni di decenni o secoli fa. Le caratteristiche mostrate potrebbero non esistere più o trovarsi su una proprietà diversa. Le mappe storiche non riflettono i confini, la proprietà o i diritti di accesso attuali. La presenza di una caratteristica storica non autorizza la ricerca.
+**Sovrapposizione di Mappe Storiche USGS:** Le mappe storiche rappresentano condizioni di decenni o secoli fa. Le caratteristiche mostrate potrebbero non esistere più o trovarsi su un'altra proprietà. Le mappe storiche non riflettono i confini attuali, la proprietà o i diritti di accesso. La presenza di una caratteristica storica non autorizza la ricerca.
 
-Le **previsioni delle maree** potrebbero non tenere conto delle mareggiate, del vento o delle anomalie locali. I dati sui **siti nelle vicinanze** sono forniti dalla comunità e potrebbero essere inaccurati — la presenza di un segnalino non autorizza la ricerca. Le **mappe offline** potrebbero diventare obsolete. I **preset del cercametalli** sono strumenti organizzativi, non approvati dai produttori.
+**Le previsioni delle maree** potrebbero non tenere conto di mareggiate, vento o anomalie locali. **I dati sui siti vicini** sono contributi della comunità e potrebbero essere imprecisi — la presenza di un marker non autorizza la ricerca. **Le mappe offline** potrebbero diventare obsolete. **Le preimpostazioni del rilevatore** sono strumenti organizzativi, non approvati dai produttori.
 
 ## 11. Proprietà Intellettuale
 
-SweepTrack Pro, compresi il design, il codice, la grafica, i componenti dell'interfaccia utente e il marchio, è proprietà intellettuale di Loriba. Tutti i diritti riservati.
+SweepTrack Pro, inclusi design, codice, grafica, componenti UI e branding, è di proprietà intellettuale di Coc Lorand Adrian P.F.A. (operante come Loriba). Tutti i diritti riservati.
 
-L'utente mantiene la proprietà di tutti i contenuti creati utilizzando l'App. Non rivendichiamo alcun diritto sui contenuti dell'utente.
+Mantenete la proprietà di tutti i contenuti che create utilizzando l'App. Non rivendichiamo alcun diritto sui vostri contenuti.
 
-I nomi dei marchi e dei modelli dei cercametalli sono marchi dei rispettivi produttori. Non siamo affiliati, approvati o sponsorizzati da alcun produttore di cercametalli.
+I nomi di marchi e modelli di rilevatori sono marchi commerciali dei rispettivi produttori. Non siamo affiliati, approvati o sponsorizzati da alcun produttore di rilevatori.
 
 ## 12. Esclusione di Garanzie
 
-L'APP VIENE FORNITA "COSÌ COM'È" E "COME DISPONIBILE" SENZA GARANZIE DI ALCUN TIPO, SIA ESPLICITE CHE IMPLICITE, INCLUSE, MA NON LIMITATE A, GARANZIE IMPLICITE DI COMMERCIABILITÀ, IDONEITÀ PER UNO SCOPO PARTICOLARE, ACCURATEZZA E NON VIOLAZIONE.
+L'APP È FORNITA "COSÌ COM'È" E "COME DISPONIBILE" SENZA GARANZIE DI ALCUN TIPO, ESPRESSE O IMPLICITE, INCLUSE MA NON LIMITATE A GARANZIE IMPLICITE DI COMMERCIABILITÀ, IDONEITÀ A UNO SCOPO PARTICOLARE, ACCURATEZZA E NON VIOLAZIONE.
 
 ## 13. Limitazione di Responsabilità
 
-NELLA MISURA MASSIMA CONSENTITA DALLA LEGGE APPLICABILE, COC LORAND P.F.A. (OPERANTE COME LORIBA) NON SARÀ RESPONSABILE PER EVENTUALI DANNI INDIRETTI, INCIDENTALI, SPECIALI, CONSEQUENZIALI O PUNITIVI, INCLUSI, MA NON LIMITATI A: DANNI DERIVANTI DA IMPRECISIONE DEL GPS, CONTROVERSIE SUI CONFINI DI PROPRIETÀ O RICHIESTE DI RISARCIMENTO PER VIOLAZIONE DI DOMICILIO; DANNI DERIVANTI DALL'AFFIDAMENTO SU DATI METEOROLOGICI, DELLE MAREE O AMBIENTALI; CONDIZIONI DELLE MAREE COMPRESI LESIONI O ANNEGAMENTO; CONSEGUENZE LEGALI DELLE ATTIVITÀ DI RICERCA COMPRESE MULTE, PERSECUZIONE O CONFISCA; MANCATA OSSERVANZA DEL TREASURE ACT 1996, ARPA O QUALSIASI LEGGE SUL PATRIMONIO CULTURALE; AFFIDAMENTO SU SOVRAPPOSIZIONI DI MAPPE STORICHE, SITI NELLE VICINANZE, CASSAFORTE DEI PERMESSI, LETTERE PDF, FIRME DIGITALI, CALIBRO PER MONETE O IDENTIFICAZIONE DEI RITROVAMENTI; IMPRECISIONE DELLA GUARDIA PERIMETRALE, DELLA SOVRAPPOSIZIONE DEL PERCORSO O DELLA HEATMAP; MAPPE OFFLINE O PRESET DEL CERCAMETALLI OBSOLETI; LESIONI PERSONALI, MORTE O DANNI ALLA PROPRIETÀ DURANTE LE ATTIVITÀ DI RICERCA; O INTERAZIONI CON PROPRIETARI TERRIERI, FORZE DELL'ORDINE O TERZE PARTI.
+NELLA MASSIMA MISURA CONSENTITA DALLA LEGGE APPLICABILE, COC LORAND ADRIAN P.F.A. (OPERANTE COME LORIBA) NON SARÀ RESPONSABILE DI ALCUN DANNO INDIRETTO, INCIDENTALE, SPECIALE, CONSEQUENZIALE O PUNITIVO, INCLUSI MA NON LIMITATI A: DANNI DA INACCURATEZZA GPS, CONTROVERSIE SUI LIMITI DI PROPRIETÀ O RECLAMI DI VIOLAZIONE DI DOMICILIO; DANNI DA AFFIDAMENTO SU DATI METEO, MAREE O AMBIENTALI; CONDIZIONI DI MAREA INCLUSE LESIONI O ANNEGAMENTO; CONSEGUENZE LEGALI DELLE ATTIVITÀ DI RICERCA INCLUSE MULTE, PROCESSI O CONFISCHE; INADEMPIENZA AL TREASURE ACT 1996, ARPA O QUALSIASI LEGGE SUL PATRIMONIO CULTURALE; AFFIDAMENTO SU SOVRAPPOSIZIONI DI MAPPE STORICHE, SITI VICINI, CAVEAU DEI PERMESSI, LETTERE PDF, FIRME DIGITALI, COIN CALIPER O IDENTIFICAZIONE DEI RITROVAMENTI; INACCURATEZZA DELLA GUARDIA PERIMETRALE, SOVRAPPOSIZIONE DEL PERCORSO O MAPPA DI CALORE; MAPPE OFFLINE O PREIMPOSTAZIONI DEL RILEVATORE OBSOLETE; LESIONI PERSONALI, MORTE O DANNI ALLA PROPRIETÀ DURANTE LE ATTIVITÀ DI RICERCA; O INTERAZIONI CON PROPRIETARI DI TERRENI, FORZE DELL'ORDINE O TERZE PARTI.
 
-In nessun caso la nostra responsabilità totale supererà l'importo pagato dall'utente per l'App nei dodici (12) mesi precedenti la richiesta.
+In nessun caso la nostra responsabilità totale supererà l'importo pagato per l'App nei dodici (12) mesi precedenti la richiesta.
 
 ## 14. Indennizzo
 
-L'utente accetta di indennizzare, difendere e tenere indenne Loriba da qualsiasi reclamo, danno, perdita, responsabilità, costo e spesa derivante dall'uso dell'App, dalla violazione dei presenti Termini, dalla violazione di qualsiasi legge applicabile o dalle proprie attività di ricerca di metalli.
+Accettate di indennizzare, difendere e tenere indenne Coc Lorand Adrian P.F.A. (operante come Loriba) da qualsiasi reclamo, danno, perdita, responsabilità, costo e spesa derivante dal vostro uso dell'App, violazione dei presenti Termini, violazione di qualsiasi legge applicabile o vostre attività di ricerca di metalli.
 
 ## 15. Risoluzione
 
-Possiamo terminare o sospendere l'accesso dell'utente all'App in qualsiasi momento, senza preavviso, per qualsiasi motivo, inclusa la violazione dei presenti Termini. In caso di risoluzione, i dati memorizzati localmente rimangono sul dispositivo dell'utente finché non vengono eliminati.
+Possiamo risolvere o sospendere l'accesso all'App in qualsiasi momento, senza preavviso, per qualsiasi motivo, inclusa la violazione dei presenti Termini. Alla risoluzione, i vostri dati memorizzati localmente rimangono sul vostro dispositivo fino a quando non li eliminate.
 
 ## 16. Legge Applicabile e Risoluzione delle Controversie
 
-I presenti Termini sono regolati dalle leggi della Romania. Qualsiasi controversia sarà prima oggetto di un tentativo di risoluzione tramite negoziazione in buona fede. Se non risolte entro 30 giorni, le controversie saranno sottoposte ai tribunali competenti della Romania.
+I presenti Termini sono regolati dalle leggi della Romania. Qualsiasi controversia sarà prima tentata di essere risolta attraverso negoziazione in buona fede. Se non risolta entro 30 giorni, le controversie saranno presentate ai tribunali competenti della Romania.
 
-**Consumatori UE:** È inoltre possibile ricorrere alla piattaforma europea per la risoluzione online delle controversie all'indirizzo [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr).
+**Consumatori UE:** Potete anche ricorrere alla piattaforma europea di Risoluzione Online delle Controversie all'indirizzo [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr).
 
-**Regno Unito:** I presenti Termini sono soggetti al UK GDPR e al Data Protection Act 2018. I diritti legali dei consumatori dell'utente ai sensi della legge del Regno Unito non sono influenzati. È possibile contattare l'[ICO](https://ico.org.uk).
+**Regno Unito:** I presenti Termini sono soggetti all'UK GDPR e al Data Protection Act 2018. I vostri diritti legali di consumatore ai sensi della legge britannica non sono interessati. Potete contattare l'[ICO](https://ico.org.uk).
 
-**Australia:** Nulla nei presenti Termini esclude o modifica alcuna garanzia o diritto del consumatore ai sensi della Australian Consumer Law. È possibile contattare l'[OAIC](https://www.oaic.gov.au).
+**Australia:** Niente nei presenti Termini esclude o modifica alcuna garanzia o diritto del consumatore ai sensi della Australian Consumer Law. Potete contattare l'[OAIC](https://www.oaic.gov.au).
 
-**Canada:** L'utilizzo da parte dell'utente è soggetto alla PIPEDA e alla legislazione provinciale applicabile sulla privacy. È possibile contattare l'[Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca).
+**Canada:** Il vostro uso è soggetto al PIPEDA e alla legislazione provinciale applicabile in materia di privacy. Potete contattare l'[Ufficio del Commissario per la Privacy del Canada](https://www.priv.gc.ca).
 
-**Nuova Zelanda:** I diritti dell'utente ai sensi del Consumer Guarantees Act 1993 e del Privacy Act 2020 non sono limitati. È possibile contattare il [NZ Privacy Commissioner](https://www.privacy.org.nz).
+**Nuova Zelanda:** I vostri diritti ai sensi del Consumer Guarantees Act 1993 e del Privacy Act 2020 non sono limitati. Potete contattare il [Commissario per la Privacy NZ](https://www.privacy.org.nz).
 
-**Altre giurisdizioni:** I diritti locali obbligatori per la protezione dei consumatori e dei dati dell'utente non sono influenzati dai presenti Termini. Laddove la legge locale conceda diritti che non possono essere rinunciati per contratto, tali diritti si applicano.
+**Altre giurisdizioni:** I vostri diritti locali obbligatori di protezione dei consumatori e dei dati non sono interessati dai presenti Termini. Dove la legge locale concede diritti che non possono essere rinunciati per contratto, tali diritti si applicano.
 
 ## 17. Disposizioni Generali
 
-I presenti Termini, insieme alla nostra Informativa sulla Privacy, costituiscono l'intero accordo tra l'utente e Loriba in merito all'App. Se una qualsiasi disposizione è ritenuta non valida, le restanti disposizioni continueranno ad avere piena efficacia. La nostra mancata applicazione di qualsiasi diritto non costituirà una rinuncia.
+I presenti Termini, insieme alla nostra Informativa sulla Privacy, costituiscono l'intero accordo tra voi e Loriba in merito all'App. Se una disposizione è ritenuta invalida, le restanti disposizioni continuano in pieno vigore. La nostra incapacità di far valere un diritto non costituirà una rinuncia.
 
 ## 18. Licenze Open Source e di Terze Parti
 
-L'App utilizza componenti open-source. Attribuzioni chiave: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (pubblico dominio), USGS (pubblico dominio), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+L'App utilizza componenti open source. Attribuzioni chiave: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (dominio pubblico), USGS (dominio pubblico), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
 
-## 19. Contatti
+## 19. Contatto
 
-Per domande sui presenti Termini, si prega di contattare:
+Per domande sui presenti Termini, vi preghiamo di contattare:
 
 **Coc Lorand Adrian P.F.A.** (operante come Loriba)
 CUI: 41299288 · Reg. F24/646/2019
-E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
+Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Sito web: [https://sweeptrack.pro](https://sweeptrack.pro)
 
 ---
 
-I presenti Termini di Servizio entrano in vigore il 7 aprile 2026 e si applicano a tutte le versioni di SweepTrack Pro.
-
----
+I presenti Termini di Servizio entrano in vigore il 12 maggio 2026 e si applicano a tutte le versioni di SweepTrack Pro.

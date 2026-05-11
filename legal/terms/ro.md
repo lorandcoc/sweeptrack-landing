@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale
 
-Data intrării în vigoare: 7 aprilie 2026 · Ultima actualizare: 7 aprilie 2026
+Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 12 mai 2026
 
 Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Acceptarea Termenilor
 
-Prin descărcarea, instalarea, accesarea sau utilizarea SweepTrack Pro ("Aplicația"), sunteți de acord să respectați acești Termeni și Condiții ("Termeni"). Dacă nu sunteți de acord cu acești Termeni, nu utilizați Aplicația. "Noi", "ne" și "al nostru" se referă la Coc Lorand Adrian P.F.A., activând sub denumirea Loriba.
+Prin descărcarea, instalarea, accesarea sau utilizarea SweepTrack Pro ("Aplicația") sau a site-ului web sweeptrack.pro ("Website-ul"), sunteți de acord să respectați acești Termeni și Condiții ("Termeni"). Dacă nu sunteți de acord cu acești Termeni, nu utilizați Aplicația sau Website-ul. "Noi", "ne" și "al nostru" se referă la Coc Lorand Adrian P.F.A., activând sub denumirea Loriba.
 
-Ne rezervăm dreptul de a modifica acești Termeni în orice moment. Utilizarea continuă a Aplicației după modificări constituie acceptarea acestora. Modificările materiale vor fi comunicate prin intermediul Aplicației sau al site-ului nostru web.
+Ne rezervăm dreptul de a modifica acești Termeni în orice moment. Utilizarea continuă a Aplicației sau Website-ului după modificări constituie acceptarea acestora. Modificările materiale vor fi comunicate prin intermediul Aplicației sau al site-ului nostru web.
 
 ## 2. Descrierea Serviciului
 
@@ -28,19 +28,21 @@ SweepTrack Pro este o aplicație de monitorizare GPS și înregistrare a sesiuni
 - Prognoza meteo și scorul condițiilor de detecție
 - Predicții pentru tabelele de maree (stații de coastă din S.U.A. via NOAA)
 - Descoperirea punctelor de interes istorice și arheologice din apropiere
-- Gestionarea setărilor pentru 57 de modele de detectoare de metale
-- Seif de permisiuni pentru gestionarea acordurilor cu proprietarii de terenuri și accesul la site-uri
+- Gestionarea setărilor pentru peste 60 de modele de detectoare de metale
+- Seif de permisiuni pentru gestionarea acordurilor cu proprietarii de terenuri și accesul la situri
 - Gardă de perimetru cu alerte de limită
 - Descărcări de hărți offline
 - Backup și restaurare prin Google Drive
 - Export de sesiuni (GPX, KML, CSV, JSON) și instrumente de comparare
 - Heatmap calendaristic, statistici și urmărirea realizărilor
 
+Website-ul sweeptrack.pro oferă informații despre SweepTrack Pro, o listă de așteptare pre-lansare și conținut suport.
+
 ## 3. Eligibilitate
 
-Trebuie să aveți cel puțin 16 ani pentru a utiliza această Aplicație. Dacă aveți sub 18 ani, declarați că părintele sau tutorele legal a revizuit și a fost de acord cu acești Termeni în numele dumneavoastră.
+Trebuie să aveți cel puțin 16 ani pentru a utiliza Aplicația sau Website-ul. Dacă aveți sub 18 ani, declarați că părintele sau tutorele legal a revizuit și a fost de acord cu acești Termeni în numele dumneavoastră.
 
-Prin utilizarea Aplicației, declarați și garantați că aveți capacitatea juridică de a încheia un acord obligatoriu în jurisdicția dumneavoastră.
+Prin utilizarea Aplicației sau Website-ului, declarați și garantați că aveți capacitatea juridică de a încheia un acord obligatoriu în jurisdicția dumneavoastră.
 
 ## 4. Cont și Autentificare
 
@@ -69,20 +71,27 @@ Aplicația oferă funcționalitate limitată fără costuri, incluzând:
 
 Un abonament premium, gestionat prin Google Play Store și procesat de RevenueCat, Inc., deblochează descoperiri, sesiuni și presetări de detector nelimitate, plus funcții avansate, inclusiv suprapuneri de hărți istorice, hărți offline, gardă de perimetru, backup în cloud și instrumente suplimentare.
 
-### 5.3 Facturare
+### 5.3 Founder's Lifetime
+
+O ofertă limitată Founder's Lifetime este disponibilă pentru primii 1.000 de cumpărători prin mecanismul de cumpărare in-app Google Play, după ce Aplicația este disponibilă public pe Google Play. Founder's Lifetime este o plată unică care acordă acces pe viață la toate funcțiile Pro. După ce s-au efectuat 1.000 de achiziții Founder's Lifetime, oferta se închide permanent, iar utilizatorii ulteriori accesează funcțiile Pro prin abonamentul standard descris în §5.2.
+
+Înscrierea pe lista de așteptare pre-lansare nu rezervă un loc Founder's Lifetime. Limita este aplicată în momentul achiziției, pe baza primului venit-primul servit, dintre utilizatorii care au instalat Aplicația.
+
+### 5.4 Facturare
 
 - Toate plățile sunt procesate prin Google Play Store
 - Prețul abonamentului este afișat în momentul achiziției
 - Abonamentele se reînnoiesc automat, cu excepția cazului în care sunt anulate cu cel puțin 24 de ore înainte de sfârșitul perioadei curente
+- Founder's Lifetime este o achiziție unică, fără reînnoire
 - Puteți gestiona sau anula abonamentul prin setările Google Play Store
 
-### 5.4 Rambursări
+### 5.5 Rambursări
 
 Cererile de rambursare sunt gestionate de Google Play Store în conformitate cu politicile lor de rambursare. Nu procesăm rambursări direct.
 
 ## 6. Datele Utilizatorului și Confidențialitatea
 
-### 6.1 Date Colectate
+### 6.1 Date Colectate (Aplicație)
 
 Aplicația colectează și stochează următoarele date **local pe dispozitivul dumneavoastră**:
 
@@ -90,19 +99,21 @@ Aplicația colectează și stochează următoarele date **local pe dispozitivul 
 - Metadate ale sesiunii (nume, dată, durată, distanță, etichete)
 - Înregistrări ale descoperirilor (tip, locație, nume, note, adâncime, valoare, greutate)
 - Fișiere media (fotografii și înregistrări audio) capturate în cadrul Aplicației
-- Intrări în seiful de permisiuni (numele site-urilor, numele proprietarilor, informații de contact, detalii despre permis, coordonatele limitelor, semnături)
+- Intrări în seiful de permisiuni (numele siturilor, numele proprietarilor, informații de contact, detalii despre permis, coordonatele limitelor, semnături)
 - Configurații ale presetărilor de detector
 - Instantanee meteo asociate sesiunilor
 - Preferințe ale Aplicației (temă, unități, limbă)
 
-### 6.2 Stocarea Datelor
+### 6.2 Stocarea Datelor (Aplicație)
 
-- **Toate datele sunt stocate local pe dispozitivul dumneavoastră** într-o bază de date criptată și în stocarea locală de fișiere
-- **Nicio dată nu este transmisă către serverele noastre** — nu operăm servere sau baze de date backend
+- **Toate datele Aplicației sunt stocate local pe dispozitivul dumneavoastră** într-o bază de date criptată și în stocarea locală de fișiere
+- **Nicio dată a Aplicației nu este transmisă către serverele noastre** — nu operăm servere sau baze de date backend pentru funcționalitatea Aplicației
 - **Backup Google Drive** (opțional, inițiat de utilizator) stochează o copie criptată a datelor dumneavoastră în contul personal Google Drive într-un folder "SweepTrack Backups"
 - Backup-ul în cloud Android a fost dezactivat pentru a vă proteja datele
 
-### 6.3 Apeluri API către Terți
+Practicile de date ale Website-ului (colectarea adresei de email pentru lista de așteptare, analize, găzduire) sunt descrise separat în §6.7 de mai jos și în detaliu complet în Politica noastră de Confidențialitate, Secțiunea 4.
+
+### 6.3 Apeluri API către Terți (Aplicație)
 
 Aplicația efectuează cereri de rețea către următoarele servicii terțe numai în scopuri de funcționalitate. Nu sunt trimise date personale sau de identificare, cu excepția cazului în care se specifică altfel:
 
@@ -114,17 +125,33 @@ Aplicația efectuează cereri de rețea către următoarele servicii terțe numa
 - **NOAA** — Predicții ale mareelor (ID-ul stației trimis, nicio informație personală)
 - **RevenueCat** — Verificarea abonamentului (ID utilizator anonim al aplicației, nicio informație personală)
 
-### 6.4 Fără Analytics sau Monitorizare
+### 6.4 Fără Analize sau Monitorizare (Aplicație)
 
-Aplicația **nu** include SDK-uri de analiză, instrumente de raportare a erorilor, cadre publicitare sau mecanisme de monitorizare a comportamentului. Nu colectăm, nu transmitem și nu vindem date de utilizare.
+Aplicația **nu** include SDK-uri de analiză, instrumente de raportare a erorilor, cadre publicitare sau mecanisme de monitorizare a comportamentului. Nu colectăm, nu transmitem și nu vindem date de utilizare ale Aplicației.
+
+Analizele Website-ului (Vercel Analytics, Vercel Speed Insights) sunt descrise în §6.7.
 
 ### 6.5 Ștergerea Datelor
 
-Vă puteți șterge datele în orice moment prin ștergerea elementelor individuale din Aplicație, ștergerea datelor aplicației din setările Android, dezinstalarea Aplicației sau ștergerea backup-urilor din Google Drive din contul dumneavoastră.
+Vă puteți șterge datele Aplicației în orice moment prin ștergerea elementelor individuale din Aplicație, ștergerea datelor aplicației din setările Android, dezinstalarea Aplicației sau ștergerea backup-urilor din Google Drive din contul dumneavoastră. Pentru datele listei de așteptare ale Website-ului, dezabonați-vă de la emailuri sau contactați-ne la [support@sweeptrack.pro](mailto:support@sweeptrack.pro).
 
 ### 6.6 Confidențialitatea Copiilor
 
 Nu colectăm cu bună știință informații personale de la copii sub 16 ani. Dacă credeți că un copil ne-a furnizat date personale, vă rugăm să ne contactați.
+
+### 6.7 Website și Lista de Așteptare
+
+Website-ul sweeptrack.pro este operat ca un canal de marketing și informare pentru SweepTrack Pro. Prin trimiterea adresei dumneavoastră de email printr-un formular de înscriere pe Website, sunteți de acord să primiți:
+
+- Un email de bun-venit care confirmă înregistrarea
+- Un email atunci când SweepTrack Pro este lansat pe Google Play
+- Actualizări ocazionale pre-lansare despre produs și oferta Founder's Lifetime
+
+Emailurile sunt stocate într-o bază de date Supabase Postgres găzduită în UE (regiunea Irlanda) și livrate prin Resend, Inc. (UE, Irlanda). Vă puteți dezabona în orice moment răspunzând cu "remove" la orice email, sau utilizând linkul List-Unsubscribe pe care clientul dumneavoastră de email îl afișează. Adresele de email sunt reținute până când vă dezabonați sau 12 luni după lansarea publică, oricare survine prima.
+
+Website-ul utilizează, de asemenea, Vercel Analytics și Vercel Speed Insights — instrumente care respectă confidențialitatea, care nu folosesc cookie-uri și nu stochează adrese IP individuale.
+
+Detalii complete despre gestionarea datelor Website-ului — inclusiv temeiul juridic, procesatorii, retenția și drepturile dumneavoastră — sunt în Politica noastră de Confidențialitate, Secțiunea 4.
 
 ## 7. Utilizarea Permisă
 
@@ -189,7 +216,7 @@ Aplicația folosește date de la Google Maps, OpenStreetMap, Esri, OpenTopoMap, 
 
 ## 11. Proprietate Intelectuală
 
-SweepTrack Pro, inclusiv designul, codul, grafica, componentele UI și branding-ul său, reprezintă proprietatea intelectuală a Loriba. Toate drepturile rezervate.
+SweepTrack Pro, inclusiv designul, codul, grafica, componentele UI și branding-ul său, reprezintă proprietatea intelectuală a Coc Lorand Adrian P.F.A. (activând sub denumirea Loriba). Toate drepturile rezervate.
 
 Vă păstrați proprietatea asupra întregului conținut pe care îl creați utilizând Aplicația. Nu revendicăm niciun drept asupra conținutului dumneavoastră.
 
@@ -197,17 +224,17 @@ Numele mărcilor de detectoare și numele modelelor sunt mărci comerciale ale p
 
 ## 12. Excluderea Garanțiilor
 
-APLICAȚIA ESTE FURNIZATĂ „CA ATARE” ȘI „AȘA CUM ESTE DISPONIBILĂ”, FĂRĂ GARANȚII DE ORICE FEL, FIE EXPRESE SAU IMPLICITE, INCLUSIV, DAR FĂRĂ A SE LIMITA LA, GARANȚII IMPLICITE DE COMERCIALIZARE, ADECVARE PENTRU UN ANUMIT SCOP, ACURATEȚE ȘI NEÎNCĂLCARE.
+APLICAȚIA ESTE FURNIZATĂ „CA ATARE" ȘI „AȘA CUM ESTE DISPONIBILĂ", FĂRĂ GARANȚII DE ORICE FEL, FIE EXPRESE SAU IMPLICITE, INCLUSIV, DAR FĂRĂ A SE LIMITA LA, GARANȚII IMPLICITE DE COMERCIALIZARE, ADECVARE PENTRU UN ANUMIT SCOP, ACURATEȚE ȘI NEÎNCĂLCARE.
 
 ## 13. Limitarea Răspunderii
 
-ÎN MĂSURĂ MAXIMĂ PERMISĂ DE LEGEA APLICABILĂ, COC LORAND P.F.A. (ACTIVÂND CA LORIBA) NU VA FI RĂSPUNZĂTOARE PENTRU NICIO DAUNĂ INDIRECTĂ, INCIDENTALĂ, SPECIALĂ, CONSECVENȚIALĂ SAU PUNITIVĂ, INCLUSIV, DAR FĂRĂ A SE LIMITA LA: DAUNE PROVENITE DIN INACURATEȚEA GPS, DISPUTE PRIVIND LIMITELE DE PROPRIETATE SAU RECLAMAȚII DE ÎNCĂLCARE A PROPRIETĂȚII; DAUNE DIN BAZAREA PE DATELE METEO, DE MAREE SAU DE MEDIU; CONDIȚII DE MAREE, INCLUSIV VĂTĂMARE SAU ÎNEC; CONSECINȚE JURIDICE ALE ACTIVITĂȚILOR DE DETECȚIE, INCLUSIV AMENZI, URMĂRIRE PENALĂ SAU CONFISCARE; NERESPECTAREA TREASURE ACT 1996, ARPA SAU A ORICĂREI LEGI PRIVIND PATRIMONIUL CULTURAL; BAZAREA PE SUPRAPUNERILE DE HĂRȚI ISTORICE, SITURI DIN APROPIERE, SEIFUL DE PERMISIUNI, SCRISORI PDF, SEMNĂTURI DIGITALE, ȘUBLERUL DE MONEDE SAU IDENTIFICAREA DESCOPERIRILOR; INACURATEȚEA GĂRZII DE PERIMETRU, A SUPRAPUNERII TRASEULUI SAU A HEATMAP-ULUI; HĂRȚI OFFLINE SAU PRESETĂRI DE DETECTOR ÎNVECHITE; VĂTĂMARE CORPORALĂ, DECES SAU DAUNE MATERIALE ÎN TIMPUL ACTIVITĂȚILOR DE DETECȚIE; SAU INTERACȚIUNI CU PROPRIETARII DE TERENURI, FORȚELE DE ORDINE SAU TERȚI.
+ÎN MĂSURĂ MAXIMĂ PERMISĂ DE LEGEA APLICABILĂ, COC LORAND ADRIAN P.F.A. (ACTIVÂND CA LORIBA) NU VA FI RĂSPUNZĂTOARE PENTRU NICIO DAUNĂ INDIRECTĂ, INCIDENTALĂ, SPECIALĂ, CONSECVENȚIALĂ SAU PUNITIVĂ, INCLUSIV, DAR FĂRĂ A SE LIMITA LA: DAUNE PROVENITE DIN INACURATEȚEA GPS, DISPUTE PRIVIND LIMITELE DE PROPRIETATE SAU RECLAMAȚII DE ÎNCĂLCARE A PROPRIETĂȚII; DAUNE DIN BAZAREA PE DATELE METEO, DE MAREE SAU DE MEDIU; CONDIȚII DE MAREE, INCLUSIV VĂTĂMARE SAU ÎNEC; CONSECINȚE JURIDICE ALE ACTIVITĂȚILOR DE DETECȚIE, INCLUSIV AMENZI, URMĂRIRE PENALĂ SAU CONFISCARE; NERESPECTAREA TREASURE ACT 1996, ARPA SAU A ORICĂREI LEGI PRIVIND PATRIMONIUL CULTURAL; BAZAREA PE SUPRAPUNERILE DE HĂRȚI ISTORICE, SITURI DIN APROPIERE, SEIFUL DE PERMISIUNI, SCRISORI PDF, SEMNĂTURI DIGITALE, ȘUBLERUL DE MONEDE SAU IDENTIFICAREA DESCOPERIRILOR; INACURATEȚEA GĂRZII DE PERIMETRU, A SUPRAPUNERII TRASEULUI SAU A HEATMAP-ULUI; HĂRȚI OFFLINE SAU PRESETĂRI DE DETECTOR ÎNVECHITE; VĂTĂMARE CORPORALĂ, DECES SAU DAUNE MATERIALE ÎN TIMPUL ACTIVITĂȚILOR DE DETECȚIE; SAU INTERACȚIUNI CU PROPRIETARII DE TERENURI, FORȚELE DE ORDINE SAU TERȚI.
 
 În niciun caz răspunderea noastră totală nu va depăși suma plătită de dumneavoastră pentru Aplicație în cele douăsprezece (12) luni premergătoare cererii.
 
 ## 14. Despăgubiri
 
-Sunteți de acord să despăgubiți, să apărați și să exonerați Loriba de orice reclamații, daune, pierderi, răspunderi, costuri și cheltuieli rezultate din utilizarea de către dumneavoastră a Aplicației, încălcarea acestor Termeni, încălcarea oricărei legi aplicabile sau activitățile dumneavoastră de detecție de metale.
+Sunteți de acord să despăgubiți, să apărați și să exonerați Coc Lorand Adrian P.F.A. (activând sub denumirea Loriba) de orice reclamații, daune, pierderi, răspunderi, costuri și cheltuieli rezultate din utilizarea de către dumneavoastră a Aplicației, încălcarea acestor Termeni, încălcarea oricărei legi aplicabile sau activitățile dumneavoastră de detecție de metale.
 
 ## 15. Reziliere
 
@@ -248,6 +275,4 @@ Website: [https://sweeptrack.pro](https://sweeptrack.pro)
 
 ---
 
-Acești Termeni și Condiții intră în vigoare la data de 7 aprilie 2026 și se aplică tuturor versiunilor SweepTrack Pro.
-
----
+Acești Termeni și Condiții intră în vigoare la data de 12 mai 2026 și se aplică tuturor versiunilor SweepTrack Pro.

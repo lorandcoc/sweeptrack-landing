@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale
 
-Data intrării în vigoare: 7 aprilie 2026 · Ultima actualizare: 7 aprilie 2026
+Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 12 mai 2026
 
 Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Introducere
 
-Această Politică de Confidențialitate explică modul în care SweepTrack Pro („Aplicația”) colectează, utilizează, stochează și protejează informațiile dumneavoastră. Ne angajăm să vă protejăm confidențialitatea și să asigurăm transparența practicilor noastre privind datele.
+Această Politică de Confidențialitate explică modul în care SweepTrack Pro ("Aplicația") și site-ul web sweeptrack.pro ("Website-ul") colectează, utilizează, stochează și protejează informațiile dumneavoastră. Ne angajăm să vă protejăm confidențialitatea și să asigurăm transparența practicilor noastre privind datele.
 
-SweepTrack Pro este conceput cu o **arhitectură axată pe confidențialitate**: toate datele sunt stocate local pe dispozitivul dumneavoastră, nu operăm servere backend și nu colectăm, transmitem sau vindem datele dumneavoastră cu caracter personal.
+Aplicația este concepută cu o **arhitectură axată pe confidențialitate**: toate datele de detecție sunt stocate local pe dispozitivul dumneavoastră, nu operăm servere backend pentru Aplicație și nu colectăm, transmitem sau vindem datele dumneavoastră personale de detecție. Website-ul funcționează separat și are propriile sale practici privind datele, descrise în Secțiunea 4.
 
 ## 2. Operatorul de Date
 
@@ -26,7 +26,7 @@ SweepTrack Pro este conceput cu o **arhitectură axată pe confidențialitate**:
 CUI: 41299288 · Reg. F24/646/2019  
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
-## 3. Datele pe care le colectăm
+## 3. Datele pe care le colectăm (Aplicația Android)
 
 ### 3.1 Date stocate local pe dispozitivul dumneavoastră
 
@@ -77,30 +77,84 @@ Următoarele date sunt trimise către API-uri terțe pentru funcționalitate în
 
 **RevenueCat (Gestionarea abonamentelor):** Un identificator anonim al utilizatorului aplicației, generat aleatoriu, este utilizat pentru verificarea abonamentului. Nu sunt partajate informații personale. Supus [Politicii de Confidențialitate RevenueCat](https://www.revenuecat.com/privacy).
 
-### 3.4 Date pe care NU le colectăm
+### 3.4 Date pe care Aplicația NU le colectează
 
-- **Nu** colectăm numele, email-ul, numărul de telefon sau orice identificatori personali
-- **Nu** folosim analize, raportarea erorilor sau SDK-uri de monitorizare a comportamentului
-- **Nu** folosim cadre publicitare sau identificatori de publicitate
-- **Nu** urmărim modelele de utilizare, frecvența sesiunilor sau utilizarea funcțiilor
-- **Nu** creăm profiluri de utilizator sau amprente comportamentale
-- **Nu** partajăm, vindem, închiriem sau tranzacționăm date cu terți
-- **Nu** operăm servere care primesc, procesează sau stochează datele dumneavoastră
+- **Aplicația** nu colectează numele, email-ul, numărul de telefon sau orice identificatori personali
+- **Aplicația** nu folosește analize, raportarea erorilor sau SDK-uri de monitorizare a comportamentului
+- **Aplicația** nu folosește cadre publicitare sau identificatori de publicitate
+- **Aplicația** nu urmărește modelele de utilizare, frecvența sesiunilor sau utilizarea funcțiilor
+- **Aplicația** nu creează profiluri de utilizator sau amprente comportamentale
+- **Aplicația** nu partajează, vinde, închiriază sau tranzacționează date cu terți
+- **Aplicația** nu operează servere care primesc, procesează sau stochează datele dumneavoastră de detecție
 
-## 4. Temeiul juridic pentru procesare (GDPR)
+Practicile de date ale Website-ului sunt acoperite separat în Secțiunea 4.
+
+## 4. Practicile de date ale Website-ului (sweeptrack.pro)
+
+Această secțiune acoperă practicile de date specifice site-ului nostru web sweeptrack.pro. Aplicația Android descrisă în Secțiunile 3 și 5–18 funcționează independent și nu partajează infrastructura cu Website-ul.
+
+### 4.1 Colectarea adresei de email pentru lista de așteptare
+
+Când trimiteți adresa de email printr-un formular de înscriere pe Website, colectăm:
+
+- **Adresa de email** pe care o furnizați
+- **Marcajul temporal** al înregistrării
+- **Adresa IP** (tranzitorie) — folosită pentru limitarea ratei de cereri; nu este stocată dincolo de durata cererii
+
+**Scop:** Pentru a vă notifica când SweepTrack Pro este lansat pe Google Play și pentru a trimite actualizări pre-lansare despre produs și oferta Founder's Lifetime. Nu vom folosi adresa dumneavoastră de email în niciun alt scop, nu o vom partaja și nu o vom vinde.
+
+**Temei juridic (GDPR):** Consimțământ (Art. 6(1)(a)) — furnizat atunci când trimiteți formularul.
+
+**Stocare:** Adresele de email sunt stocate într-o bază de date Supabase Postgres găzduită în UE (regiunea Irlanda). Supabase, Inc. acționează ca procesator de date al nostru conform Acordului standard de procesare a datelor.
+
+**Livrarea emailurilor:** Emailurile de ieșire sunt trimise prin Resend, Inc. (regiunea UE, Irlanda) acționând ca procesator al serviciilor de email conform Acordului standard de procesare a datelor.
+
+**Retenție:** Până când vă dezabonați sau 12 luni după lansarea publică a SweepTrack Pro pe Google Play, oricare survine prima.
+
+**Dezabonare:** Răspundeți cu "remove" la orice email pe care îl trimitem sau utilizați linkul List-Unsubscribe pe care clientul dumneavoastră de email îl afișează (Gmail și Outlook îl afișează lângă adresa De la).
+
+**Drepturile dumneavoastră:** Acces, rectificare, ștergere, restricționare, portabilitate și dreptul de a vă retrage consimțământul. Trimiteți un email la [support@sweeptrack.pro](mailto:support@sweeptrack.pro) pentru a exercita oricare dintre acestea.
+
+### 4.2 Analize Website
+
+Website-ul utilizează:
+
+- **Vercel Analytics** — analize care respectă confidențialitatea, care nu folosesc cookie-uri și nu stochează adrese IP individuale. Măsoară doar vizualizările agregate de pagini.
+- **Vercel Speed Insights** — măsurarea Core Web Vitals (timpul de încărcare a paginii, deplasarea aspectului, întârzierile de interacțiune) pe bază agregată.
+
+Ambele instrumente sunt operate de Vercel Inc. și supuse [Politicii de Confidențialitate Vercel](https://vercel.com/legal/privacy-policy). Nu colectează informații de identificare personală și nu creează profiluri de utilizator.
+
+### 4.3 Cookie-uri
+
+Website-ul nu setează cookie-uri de primă parte pentru urmărire, publicitate sau profilare. Vercel Analytics este lipsit de cookie-uri prin design. O preferință de limbă, dacă o modificați, este stocată în `localStorage`-ul browser-ului dumneavoastră (nu un cookie) și este citibilă doar de propriul browser.
+
+### 4.4 Găzduire și jurnale de server
+
+Website-ul este găzduit de Vercel Inc. Vercel poate înregistra automat metadate de cerere standard (adresă IP, user agent, calea cererii, marcaj temporal) în scopuri operaționale, de performanță și de securitate. Aceste jurnale sunt reținute conform politicilor standard Vercel și nu sunt folosite de noi pentru urmărire sau profilarea persoanelor.
+
+### 4.5 Drepturile dumneavoastră pentru datele Website-ului
+
+Aceleași drepturi GDPR, UK GDPR, australiene, canadiene, CCPA, LGPD și NZ Privacy Act descrise în Secțiunea 10 se aplică în mod egal datelor colectate de Website. Pentru a exercita orice drept cu privire la adresa dumneavoastră de email din lista de așteptare, contactați [support@sweeptrack.pro](mailto:support@sweeptrack.pro). Vom răspunde în termen de 30 de zile.
+
+## 5. Temeiul juridic pentru procesare (GDPR)
 
 - **Date GPS/sesiune, înregistrări descoperiri, intrări seif:** Consimțământ (Art. 6(1)(a)) — inițiați activ aceste acțiuni
 - **Apeluri API (vreme, geocodare):** Interes legitim (Art. 6(1)(f)) — necesar pentru funcționalitatea de bază
 - **Backup Google Drive:** Consimțământ (Art. 6(1)(a)) — activați și autentificați în mod explicit
 - **Verificarea abonamentului:** Executarea unui contract (Art. 6(1)(b)) — necesară pentru a furniza funcții plătite
+- **Email lista de așteptare (Website):** Consimțământ (Art. 6(1)(a)) — vezi Secțiunea 4.1
 
-Vă puteți retrage consimțământul în orice moment prin oprirea activității relevante sau prin dezinstalarea Aplicației.
+Vă puteți retrage consimțământul în orice moment prin oprirea activității relevante, prin dezinstalarea Aplicației sau prin dezabonarea de la emailurile Website-ului.
 
-## 5. Cum utilizăm datele dumneavoastră
+## 6. Cum utilizăm datele dumneavoastră
 
-Toată procesarea datelor are loc **local pe dispozitivul dumneavoastră**. Utilizăm datele dumneavoastră exclusiv pentru a furniza funcțiile Aplicației: afișarea hărții, monitorizarea sesiunilor, înregistrarea descoperirilor, gestionarea permisiunilor, date meteo/maree, exporturi, backup și verificarea abonamentului.
+Toată procesarea datelor Aplicației are loc **local pe dispozitivul dumneavoastră**. Utilizăm datele Aplicației exclusiv pentru a furniza funcțiile Aplicației: afișarea hărții, monitorizarea sesiunilor, înregistrarea descoperirilor, gestionarea permisiunilor, date meteo/maree, exporturi, backup și verificarea abonamentului.
 
-## 6. Stocarea datelor și securitatea
+Datele Website-ului (adresa dumneavoastră de email din lista de așteptare) sunt folosite doar pentru a trimite comunicările de lansare și pre-lansare descrise în Secțiunea 4.
+
+## 7. Stocarea datelor și securitatea
+
+**Datele Aplicației:**
 
 - Datele despre sesiuni și descoperiri sunt stocate într-o bază de date Room criptată pe dispozitivul dumneavoastră
 - Preferințele sensibile folosesc EncryptedSharedPreferences (AES-256) de la Android
@@ -108,25 +162,29 @@ Toată procesarea datelor are loc **local pe dispozitivul dumneavoastră**. Util
 - Backup-ul în cloud Android este **dezactivat** (`android:allowBackup="false"`) pentru a preveni expunerea neintenționată a datelor
 - Backup-urile Google Drive utilizează API-urile criptate ale Google (HTTPS/TLS) și există exclusiv în contul dumneavoastră
 
-Nu operăm servere, baze de date sau infrastructură cloud.
+Pentru Aplicație, nu operăm servere, baze de date sau infrastructură cloud care să stocheze datele dumneavoastră de detecție.
 
-## 7. Reținerea datelor
+**Datele Website-ului:** Emailurile listei de așteptare sunt stocate într-o bază de date Supabase Postgres găzduită în UE (Irlanda). Conexiunile sunt criptate (TLS). Accesul este restricționat doar la scopuri administrative. Emailul de ieșire este trimis prin Resend (UE, Irlanda) prin TLS. Vezi Secțiunea 4.
 
-Datele locale sunt reținute până când alegeți să le ștergeți. Puteți șterge elemente individuale în cadrul Aplicației, puteți șterge toate datele prin Setările Android sau puteți dezinstala Aplicația. Backup-urile Google Drive persistă până când le ștergeți manual din contul dumneavoastră.
+## 8. Reținerea datelor
 
-## 8. Partajarea și dezvăluirea datelor
+**Datele Aplicației:** Datele locale sunt reținute până când alegeți să le ștergeți. Puteți șterge elemente individuale în cadrul Aplicației, puteți șterge toate datele prin Setările Android sau puteți dezinstala Aplicația. Backup-urile Google Drive persistă până când le ștergeți manual din contul dumneavoastră.
 
-Nu partajăm, vindem, închiriem sau dezvăluim datele dumneavoastră cu caracter personal niciunei terțe părți. Puteți alege să partajați date prin exporturi (GPX, KML, CSV, JSON), carduri de partajare a sesiunii sau backup Google Drive — toate inițiate de utilizator.
+**Datele Website-ului:** Adresele de email din lista de așteptare sunt reținute până când vă dezabonați sau 12 luni după lansarea publică, oricare survine prima. După aceea, adresele sunt șterse din baza de date Supabase.
 
-## 9. Drepturile dumneavoastră (GDPR și internaționale)
+## 9. Partajarea și dezvăluirea datelor
+
+Nu partajăm, vindem, închiriem sau dezvăluim datele dumneavoastră cu caracter personal niciunei terțe părți. Puteți alege să partajați datele Aplicației prin exporturi (GPX, KML, CSV, JSON), carduri de partajare a sesiunii sau backup Google Drive — toate inițiate de utilizator. Datele listei de așteptare ale Website-ului sunt procesate doar de procesatorii noștri numiți (Supabase, Resend) pentru scopurile descrise în Secțiunea 4.
+
+## 10. Drepturile dumneavoastră (GDPR și internaționale)
 
 ### Drepturi GDPR (Rezidenți UE/SEE)
 
-- **Acces** — datele dumneavoastră sunt complet accesibile pe dispozitivul dumneavoastră
-- **Rectificare** — editați toate înregistrările direct în Aplicație
-- **Ștergere** — ștergeți prin ștergerea în aplicație sau dezinstalare
+- **Acces** — datele Aplicației sunt complet accesibile pe dispozitivul dumneavoastră; pentru datele Website-ului, trimiteți email la [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
+- **Rectificare** — editați toate înregistrările direct în Aplicație, sau trimiteți email pentru corectarea datelor Website-ului
+- **Ștergere** — ștergeți prin ștergerea în aplicație sau dezinstalare; pentru datele Website-ului, dezabonați-vă sau trimiteți email
 - **Restricționare** — controlați întreaga procesare prin pornirea/oprirea funcțiilor
-- **Portabilitatea datelor** — exportați prin GPX, KML, CSV, JSON
+- **Portabilitatea datelor** — exportați datele Aplicației prin GPX, KML, CSV, JSON
 - **Opoziție** — opriți orice funcție în orice moment
 - **Retragerea consimțământului** — în orice moment, fără a afecta procesarea anterioară
 
@@ -156,13 +214,13 @@ Aveți drepturi conform Privacy Act 2020, inclusiv accesul și corectarea. Pute�
 
 ### Alte jurisdicții
 
-Indiferent de locația dumneavoastră, aveți control deplin asupra datelor dumneavoastră prin intermediul Aplicației. Acolo unde legea locală acordă drepturi de confidențialitate suplimentare care nu pot fi renunțate prin contract, acele drepturi se aplică.
+Indiferent de locația dumneavoastră, aveți control deplin asupra datelor dumneavoastră. Acolo unde legea locală acordă drepturi de confidențialitate suplimentare care nu pot fi renunțate prin contract, acele drepturi se aplică.
 
-## 10. Confidențialitatea copiilor
+## 11. Confidențialitatea copiilor
 
-Aplicația nu este adresată copiilor sub 16 ani. Nu colectăm cu bună știință informații personale de la copii sub 16 ani. Dacă credeți că un copil a folosit Aplicația, puteți șterge datele acestuia prin ștergerea datelor Aplicației sau dezinstalare.
+Nici Aplicația, nici Website-ul nu sunt adresate copiilor sub 16 ani. Nu colectăm cu bună știință informații personale de la copii sub 16 ani. Dacă credeți că un copil a folosit Aplicația sau Website-ul, puteți șterge datele acestuia prin ștergerea datelor Aplicației, dezinstalare sau dezabonare de la lista de așteptare.
 
-## 11. Permisiuni explicate
+## 12. Permisiuni explicate (Aplicație)
 
 - **ACCESS_FINE_LOCATION** — GPS pentru monitorizarea traseului în timpul sesiunilor
 - **ACCESS_BACKGROUND_LOCATION** — continuarea monitorizării când ecranul este oprit
@@ -175,23 +233,27 @@ Aplicația nu este adresată copiilor sub 16 ani. Nu colectăm cu bună științ
 
 Puteți revoca orice permisiune în orice moment prin Setările Android.
 
-## 12. Cookie-uri și monitorizare
+## 13. Cookie-uri și monitorizare
 
-Aplicația nu utilizează module cookie, semnalizatoare web, etichete pixel, amprentarea dispozitivului sau orice alte tehnologii de monitorizare.
+**Aplicația** nu utilizează module cookie, semnalizatoare web, etichete pixel, amprentarea dispozitivului sau orice alte tehnologii de monitorizare. **Website-ul** nu setează cookie-uri de primă parte; vezi Secțiunea 4.3 pentru dezvăluirea completă a cookie-urilor Website-ului.
 
-## 13. Transferuri internaționale de date
+## 14. Transferuri internaționale de date
 
-Deoarece toate datele sunt stocate local pe dispozitivul dumneavoastră, nu au loc transferuri internaționale de date sub controlul nostru. Apelurile API către terți pot fi procesate în jurisdicțiile în care funcționează acele servicii.
+**Datele Aplicației:** Deoarece toate datele de detecție sunt stocate local pe dispozitivul dumneavoastră, nu au loc transferuri internaționale de date sub controlul nostru. Apelurile API către terți pot fi procesate în jurisdicțiile în care funcționează acele servicii.
 
-## 14. Notificarea încălcării securității datelor
+**Datele Website-ului:** Emailurile listei de așteptare sunt stocate în UE (Irlanda) de către Supabase și procesate de Resend (UE, Irlanda). Dacă accesați Website-ul din afara UE, adresa dumneavoastră de email este transferată în UE pentru procesare.
 
-Deoarece nu stocăm datele dumneavoastră pe niciun server, o încălcare a securității datelor din partea noastră nu este posibilă. Dacă luăm la cunoștință o vulnerabilitate în Aplicație, vom lansa o actualizare și vom notifica utilizatorii prin intermediul Aplicației sau al site-ului web.
+## 15. Notificarea încălcării securității datelor
 
-## 15. Modificări ale acestei politici
+**Aplicația:** Deoarece nu stocăm datele dumneavoastră de detecție pe niciun server pe care îl operăm, o încălcare a securității care afectează datele Aplicației din partea noastră nu este posibilă. Dacă luăm la cunoștință o vulnerabilitate în Aplicație, vom lansa o actualizare și vom notifica utilizatorii prin intermediul Aplicației sau al site-ului web.
 
-Putem actualiza această Politică de Confidențialitate pentru a reflecta modificările de funcționalitate sau ale legilor aplicabile. Data „Ultimei actualizări” va fi revizuită. Modificările materiale vor fi comunicate prin intermediul Aplicației sau al site-ului web.
+**Website-ul:** Procesatorii noștri (Supabase, Resend) mențin propriile protocoale de notificare a încălcărilor. În cazul puțin probabil al unei încălcări care afectează adresa dumneavoastră de email din lista de așteptare, vă vom notifica pe dumneavoastră și autoritatea de supraveghere relevantă (ANSPDCP) în termen de 72 de ore, conform cerințelor GDPR.
 
-## 16. Politicile de confidențialitate ale terților
+## 16. Modificări ale acestei politici
+
+Putem actualiza această Politică de Confidențialitate pentru a reflecta modificările de funcționalitate sau ale legilor aplicabile. Data „Ultimei actualizări" va fi revizuită. Modificările materiale vor fi comunicate prin intermediul Aplicației sau al site-ului web.
+
+## 17. Politicile de confidențialitate ale terților
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
@@ -199,8 +261,11 @@ Putem actualiza această Politică de Confidențialitate pentru a reflecta modif
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
+- [Vercel](https://vercel.com/legal/privacy-policy) (Găzduire Website + analize)
+- [Supabase](https://supabase.com/privacy) (Baza de date Website)
+- [Resend](https://resend.com/legal/privacy-policy) (Email Website)
 
-## 17. Contactați-ne
+## 18. Contactați-ne
 
 **Coc Lorand Adrian P.F.A.** (activând sub denumirea Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
@@ -211,6 +276,4 @@ Pentru întrebări legate de GDPR, puteți contacta și ANSPDCP (Autoritatea Na�
 
 ---
 
-Această Politică de Confidențialitate este în vigoare din 7 aprilie 2026 și se aplică tuturor versiunilor SweepTrack Pro.
-
----
+Această Politică de Confidențialitate este în vigoare din 12 mai 2026 și se aplică tuturor versiunilor SweepTrack Pro.

@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicação de rastreio GPS para deteção de metais
 
-Data de vigência: 7 de abril de 2026 · Última atualização: 7 de abril de 2026
+Data de vigência: 12 de maio de 2026 · Última atualização: 12 de maio de 2026
 
 Operado por: Coc Lorand Adrian P.F.A., operando como "Loriba"
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Aceitação dos Termos
 
-Ao descarregar, instalar, aceder ou utilizar o SweepTrack Pro ("a Aplicação"), o utilizador concorda em ficar vinculado a estes Termos de Serviço ("Termos"). Se não concordar com estes Termos, não utilize a Aplicação. "Nós", "nos" e "nosso" referem-se a Coc Lorand Adrian P.F.A., operando como Loriba.
+Ao descarregar, instalar, aceder ou utilizar o SweepTrack Pro ("a Aplicação") ou o site sweeptrack.pro ("o Website"), o utilizador concorda em ficar vinculado a estes Termos de Serviço ("Termos"). Se não concordar com estes Termos, não utilize a Aplicação ou o Website. "Nós", "nos" e "nosso" referem-se a Coc Lorand Adrian P.F.A., operando como Loriba.
 
-Reservamo-nos o direito de modificar estes Termos a qualquer momento. O uso continuado da Aplicação após as alterações constitui a aceitação das mesmas. As alterações materiais serão comunicadas através da Aplicação ou do nosso website.
+Reservamo-nos o direito de modificar estes Termos a qualquer momento. O uso continuado da Aplicação ou do Website após as alterações constitui a aceitação das mesmas. As alterações materiais serão comunicadas através da Aplicação ou do nosso website.
 
 ## 2. Descrição do Serviço
 
@@ -28,29 +28,31 @@ O SweepTrack Pro é uma aplicação de rastreio baseada em GPS e registo de sess
 - Previsão meteorológica e pontuação das condições de deteção
 - Previsões de tabelas de marés (estações costeiras dos EUA via NOAA)
 - Descoberta de pontos de interesse históricos e arqueológicos próximos
-- Gestão de predefinições de detetores para 57 modelos de detetores de metais
-- Cofre de permissões para gerir permissões de proprietários de terras e acesso a locais
-- Guarda de perímetro com alertas de limites
-- Downloads de mapas offline
-- Backup e restauro via Google Drive
+- Gestão de predefinições do detetor para mais de 60 modelos de detetores de metais
+- Cofre de permissões para gerir permissões de proprietários de terrenos e acesso a locais
+- Guarda perimetral com alertas de limites
+- Descargas de mapas offline
+- Cópia de segurança e restauro via Google Drive
 - Exportação de sessões (GPX, KML, CSV, JSON) e ferramentas de comparação
-- Mapa de calor do calendário, estatísticas e acompanhamento de conquistas
+- Mapa de calor do calendário, estatísticas e seguimento de conquistas
+
+O Website sweeptrack.pro fornece informações sobre o SweepTrack Pro, uma lista de espera pré-lançamento e conteúdo de suporte.
 
 ## 3. Elegibilidade
 
-Deve ter pelo menos 16 anos de idade para utilizar esta Aplicação. Se tiver menos de 18 anos, declara que o seu pai/mãe ou tutor legal reviu e concordou com estes Termos em seu nome.
+Deve ter pelo menos 16 anos para utilizar a Aplicação ou o Website. Se tiver menos de 18 anos, declara que o seu pai ou tutor legal reviu e aceitou estes Termos em seu nome.
 
-Ao utilizar a Aplicação, declara e garante que tem a capacidade jurídica para celebrar um acordo vinculativo na sua jurisdição.
+Ao utilizar a Aplicação ou o Website, declara e garante que tem a capacidade legal para celebrar um acordo vinculativo na sua jurisdição.
 
 ## 4. Conta e Autenticação
 
-A Aplicação não requer a criação de conta. Um Google Sign-In opcional está disponível exclusivamente para fins da funcionalidade de backup e restauro do Google Drive.
+A Aplicação não requer a criação de conta. Um início de sessão Google opcional está disponível apenas para a funcionalidade de cópia de segurança e restauro do Google Drive.
 
-O utilizador é responsável por:
+É responsável por:
 
 - Manter a segurança das credenciais da sua conta Google
-- Toda a atividade que ocorra através da sua sessão autenticada
-- Garantir que as definições da sua conta Google estão alinhadas com as suas preferências de privacidade
+- Toda a atividade que ocorre através da sua sessão autenticada
+- Garantir que as configurações da sua conta Google estão alinhadas com as suas preferências de privacidade
 
 Não armazenamos a palavra-passe da sua conta Google. A autenticação é gerida inteiramente pelo sistema OAuth do Google.
 
@@ -58,196 +60,219 @@ Não armazenamos a palavra-passe da sua conta Google. A autenticação é gerida
 
 ### 5.1 Nível Gratuito
 
-A Aplicação oferece funcionalidade limitada sem custos, incluindo:
+A Aplicação oferece funcionalidade limitada sem custo, incluindo:
 
 - Sessões ilimitadas
 - Até 5 achados
-- 1 slot de predefinição de detetor
-- Acesso a funcionalidades principais de rastreio e mapeamento
+- 1 slot de predefinição do detetor
+- Acesso às funcionalidades principais de rastreio e mapeamento
 
 ### 5.2 Subscrição Premium
 
-Uma subscrição premium, gerida através da Google Play Store e processada pela RevenueCat, Inc., desbloqueia achados, sessões e predefinições de detetores ilimitados, além de funcionalidades avançadas, incluindo sobreposições de mapas históricos, mapas offline, guarda de perímetro, backup na nuvem e ferramentas adicionais.
+Uma subscrição premium, gerida através do Google Play Store e processada pela RevenueCat, Inc., desbloqueia achados, sessões e predefinições do detetor ilimitados, além de funcionalidades avançadas, incluindo sobreposições de mapas históricos, mapas offline, guarda perimetral, cópia de segurança em nuvem e ferramentas adicionais.
 
-### 5.3 Faturação
+### 5.3 Founder's Lifetime
 
-- Todos os pagamentos são processados através da Google Play Store
-- O preço da subscrição é apresentado no momento da compra
+Uma oferta Founder's Lifetime limitada está disponível para os primeiros 1.000 compradores através do mecanismo de compra integrada da Google Play, após a Aplicação estar publicamente disponível na Google Play. O Founder's Lifetime é um pagamento único que concede acesso vitalício a todas as funcionalidades Pro. Depois de concluídas 1.000 compras de Founder's Lifetime, a oferta fecha permanentemente e os utilizadores subsequentes acedem às funcionalidades Pro através da subscrição padrão descrita em §5.2.
+
+Inscrever-se na lista de espera pré-lançamento não reserva um lugar Founder's Lifetime. O limite é aplicado no momento da compra, em regime de primeiro a chegar, primeiro a ser servido, entre os utilizadores que instalaram a Aplicação.
+
+### 5.4 Faturação
+
+- Todos os pagamentos são processados através do Google Play Store
+- Os preços de subscrição são apresentados no momento da compra
 - As subscrições renovam-se automaticamente, a menos que sejam canceladas pelo menos 24 horas antes do fim do período atual
-- Pode gerir ou cancelar a sua subscrição através das definições da Google Play Store
+- O Founder's Lifetime é uma compra única, sem renovação
+- Pode gerir ou cancelar a sua subscrição através das definições do Google Play Store
 
-### 5.4 Reembolsos
+### 5.5 Reembolsos
 
-Os pedidos de reembolso são geridos pela Google Play Store de acordo com as suas políticas de reembolso. Não processamos reembolsos diretamente.
+Os pedidos de reembolso são tratados pelo Google Play Store de acordo com as suas políticas de reembolso. Não processamos reembolsos diretamente.
 
 ## 6. Dados do Utilizador e Privacidade
 
-### 6.1 Dados Recolhidos
+### 6.1 Dados Recolhidos (Aplicação)
 
 A Aplicação recolhe e armazena os seguintes dados **localmente no seu dispositivo**:
 
-- Coordenadas GPS, velocidade, altitude e rumo durante sessões de rastreio ativas
+- Coordenadas GPS, velocidade, altitude e direção durante as sessões de rastreio ativas
 - Metadados da sessão (nome, data, duração, distância, etiquetas)
 - Registos de achados/descobertas (tipo, localização, nome, notas, profundidade, valor, peso)
-- Ficheiros multimédia (fotos e gravações de áudio) capturados na Aplicação
-- Entradas no cofre de permissões (nomes de locais, nomes de proprietários, informações de contacto, detalhes da licença, coordenadas de limites, assinaturas)
-- Configurações de predefinições de detetores
-- Instantâneos meteorológicos associados a sessões
+- Ficheiros multimédia (fotos e gravações áudio) capturados dentro da Aplicação
+- Entradas do cofre de permissões (nomes de locais, nomes de proprietários, informações de contacto, detalhes da permissão, coordenadas de limites, assinaturas)
+- Configurações de predefinições do detetor
+- Instantâneos meteorológicos associados às sessões
 - Preferências da Aplicação (tema, unidades, idioma)
 
-### 6.2 Armazenamento de Dados
+### 6.2 Armazenamento de Dados (Aplicação)
 
-- **Todos os dados são armazenados localmente no seu dispositivo** numa base de dados encriptada e armazenamento de ficheiros local
-- **Nenhuns dados são transmitidos para os nossos servidores** — não operamos quaisquer servidores backend ou bases de dados
-- **O backup do Google Drive** (opcional, iniciado pelo utilizador) armazena uma cópia encriptada dos seus dados na sua conta pessoal do Google Drive numa pasta chamada "SweepTrack Backups"
-- O backup na nuvem do Android foi desativado para proteger os seus dados
+- **Todos os dados da Aplicação são armazenados localmente no seu dispositivo** numa base de dados encriptada e armazenamento local de ficheiros
+- **Nenhum dado da Aplicação é transmitido para os nossos servidores** — não operamos servidores nem bases de dados backend para a funcionalidade da Aplicação
+- **Cópia de segurança Google Drive** (opcional, iniciada pelo utilizador) armazena uma cópia encriptada dos seus dados na sua conta pessoal Google Drive numa pasta "SweepTrack Backups"
+- A cópia de segurança em nuvem do Android foi desativada para proteger os seus dados
 
-### 6.3 Chamadas de API de Terceiros
+As práticas de dados do Website (recolha de email para lista de espera, análises, alojamento) são descritas separadamente em §6.7 abaixo e em detalhe completo na nossa Política de Privacidade, Secção 4.
 
-A Aplicação faz pedidos de rede aos seguintes serviços de terceiros apenas para fins de funcionalidade. Nenhuns dados pessoais ou de identificação são enviados, a menos que explicitamente indicado:
+### 6.3 Chamadas API a Terceiros (Aplicação)
 
-- **Google Maps SDK** — Exibição de mapa
-- **Open-Meteo** — Dados meteorológicos (coordenadas aproximadas enviadas, sem informações pessoais)
-- **OpenStreetMap / Nominatim** — Geocodificação inversa (coordenadas enviadas, sem informações pessoais)
-- **Overpass API** — Consultas de POI históricos próximos (coordenadas enviadas, sem informações pessoais)
-- **Wikipedia API** — Artigos próximos (coordenadas enviadas, sem informações pessoais)
-- **NOAA** — Previsões de marés (ID da estação enviado, sem informações pessoais)
-- **RevenueCat** — Verificação de subscrição (ID de utilizador da aplicação anónimo, sem informações pessoais)
+A Aplicação faz pedidos de rede aos seguintes serviços de terceiros apenas para fins de funcionalidade. Nenhum dado pessoal ou de identificação é enviado, exceto quando especificamente indicado:
 
-### 6.4 Sem Analytics ou Rastreio
+- **Google Maps SDK** — Apresentação do mapa
+- **Open-Meteo** — Dados meteorológicos (coordenadas aproximadas enviadas, nenhuma informação pessoal)
+- **OpenStreetMap / Nominatim** — Geocodificação inversa (coordenadas enviadas, nenhuma informação pessoal)
+- **Overpass API** — Consultas para pontos de interesse históricos próximos (coordenadas enviadas, nenhuma informação pessoal)
+- **Wikipedia API** — Artigos próximos (coordenadas enviadas, nenhuma informação pessoal)
+- **NOAA** — Previsões de marés (ID da estação enviado, nenhuma informação pessoal)
+- **RevenueCat** — Verificação de subscrição (ID de utilizador anónimo da aplicação, nenhuma informação pessoal)
 
-A Aplicação **não** inclui quaisquer SDKs de análise, ferramentas de reporte de erros, frameworks de publicidade ou mecanismos de rastreio comportamental. Não recolhemos, transmitimos ou vendemos quaisquer dados de utilização.
+### 6.4 Sem Análises ou Rastreio (Aplicação)
+
+A Aplicação **não** inclui SDKs de análises, ferramentas de relatórios de falhas, estruturas publicitárias ou mecanismos de rastreio comportamental. Não recolhemos, transmitimos ou vendemos quaisquer dados de utilização da Aplicação.
+
+As análises do Website (Vercel Analytics, Vercel Speed Insights) são descritas em §6.7.
 
 ### 6.5 Eliminação de Dados
 
-Pode eliminar os seus dados a qualquer momento eliminando itens individuais na Aplicação, limpando os dados da aplicação através das definições do Android, desinstalando a Aplicação ou eliminando os backups do Google Drive da sua conta.
+Pode eliminar os seus dados da Aplicação a qualquer momento eliminando itens individuais dentro da Aplicação, limpando os dados da aplicação através das definições Android, desinstalando a Aplicação ou eliminando as cópias de segurança Google Drive da sua conta. Para os dados da lista de espera do Website, cancele a subscrição dos emails ou contacte-nos em [support@sweeptrack.pro](mailto:support@sweeptrack.pro).
 
 ### 6.6 Privacidade das Crianças
 
-Não recolhemos conscientemente informações pessoais de crianças com menos de 16 anos. Se acredita que uma criança nos forneceu dados pessoais, contacte-nos.
+Não recolhemos conscientemente informações pessoais de crianças menores de 16 anos. Se acredita que uma criança nos forneceu dados pessoais, contacte-nos.
+
+### 6.7 Website e Lista de Espera
+
+O Website sweeptrack.pro é operado como um canal de marketing e informação para o SweepTrack Pro. Ao submeter o seu email através de qualquer formulário de inscrição no Website, consente em receber:
+
+- Um email de boas-vindas a confirmar a sua inscrição
+- Um email quando o SweepTrack Pro for lançado na Google Play
+- Atualizações ocasionais pré-lançamento sobre o produto e a oferta Founder's Lifetime
+
+Os emails são armazenados numa base de dados Supabase Postgres alojada na UE (região Irlanda) e entregues via Resend, Inc. (UE, Irlanda). Pode cancelar a subscrição a qualquer momento respondendo "remove" a qualquer email, ou utilizando o link List-Unsubscribe que o seu cliente de email exibe. Os endereços de email são conservados até cancelar a subscrição ou 12 meses após o lançamento público, o que ocorrer primeiro.
+
+O Website também utiliza Vercel Analytics e Vercel Speed Insights — ferramentas respeitadoras da privacidade que não utilizam cookies e não armazenam endereços IP individuais.
+
+Detalhes completos sobre o tratamento de dados do Website — incluindo base legal, subcontratantes, conservação e os seus direitos — estão na nossa Política de Privacidade, Secção 4.
 
 ## 7. Uso Permitido
 
-O utilizador concorda em utilizar a Aplicação apenas para fins lícitos e de acordo com estes Termos. O utilizador concorda em **não**:
+Concorda em utilizar a Aplicação apenas para fins legais e em conformidade com estes Termos. Concorda em **não**:
 
-- Utilizar a Aplicação para qualquer atividade ilegal, incluindo invasão de propriedade, escavação não autorizada ou violação de leis de proteção do património cultural
-- Fazer engenharia reversa, decompilar ou desmontar a Aplicação
+- Utilizar a Aplicação para qualquer atividade ilegal, incluindo intrusão, escavação não autorizada ou violação das leis de proteção do património cultural
+- Fazer engenharia inversa, descompilar ou desmontar a Aplicação
 - Distribuir, sublicenciar ou explorar comercialmente a Aplicação ou o seu conteúdo
 - Tentar contornar a verificação de subscrição, restrições de funcionalidades premium ou quaisquer medidas de segurança
 - Utilizar sistemas automatizados (bots, scrapers) para interagir com a Aplicação
-- Interferir com ou interromper a funcionalidade da Aplicação ou serviços associados
+- Interferir com ou perturbar a funcionalidade da Aplicação ou serviços associados
 
 ## 8. Deteção de Metais e Conformidade Legal
 
 ### 8.1 A Sua Responsabilidade
 
-A deteção de metais está sujeita a leis e regulamentos que variam por país, estado, província e município. **O utilizador é o único responsável** por obter as permissões adequadas, cumprir todas as leis aplicáveis, aderir às leis de património cultural e antiguidades, reportar achados conforme exigido pela lei local e verificar se a deteção é permitida em qualquer local antes de iniciar uma sessão.
+A deteção de metais está sujeita a leis e regulamentos que variam consoante o país, estado, província e município. **É o único responsável** por obter as permissões adequadas, cumprir todas as leis aplicáveis, respeitar as leis sobre património cultural e antiguidades, comunicar achados conforme exigido pela lei local e verificar se a deteção é permitida em qualquer local antes de iniciar uma sessão.
 
 ### 8.2 Avisos Legais Específicos por País
 
-**UK:** De acordo com o Treasure Act 1996, deve reportar certos achados ao seu legista local no prazo de 14 dias. O registo de achados da Aplicação não constitui um relatório legal. Deve reportar separadamente através do Portable Antiquities Scheme (PAS).
+**Reino Unido:** Ao abrigo do Treasure Act 1996, deve comunicar certos achados ao coroner local no prazo de 14 dias. O registo de achados da Aplicação não constitui um relatório legal. Deve comunicar separadamente através do Portable Antiquities Scheme (PAS).
 
-**US:** A deteção de metais é proibida na maioria das terras públicas federais sob a ARPA (1979), incluindo Parques Nacionais, Florestas Nacionais e terras do BLM. As violações podem resultar em multas até $100.000 e prisão. A Aplicação não indica se a deteção é legal em qualquer local.
+**EUA:** A deteção de metais é proibida na maioria das terras públicas federais ao abrigo do ARPA (1979), incluindo Parques Nacionais, Florestas Nacionais e terras BLM. As violações podem resultar em multas até 100.000 USD e prisão. A Aplicação não indica se a deteção é legal em qualquer local.
 
-**EU:** Muitos países da UE exigem licenças governamentais para a deteção de metais. Em alguns países, detetar sem licença é ilegal, independentemente da propriedade da terra. A Aplicação não determina a classificação legal dos achados sob a lei nacional de propriedade cultural.
+**UE:** Muitos países da UE exigem permissões governamentais para deteção de metais. Em alguns países, a deteção sem permissão é ilegal, independentemente da propriedade do terreno. A Aplicação não determina a classificação legal de achados ao abrigo da lei nacional sobre propriedade cultural.
 
-**Romania:** Sob a OG 43/2000, o uso não autorizado de detetores de metais em sítios arqueológicos ou áreas protegidas é um crime.
+**Roménia:** Ao abrigo da OG 43/2000, o uso não autorizado de detetores de metais em sítios arqueológicos ou áreas protegidas constitui um crime.
 
-**Australia:** A deteção em terras da Coroa (Crown land), parques nacionais, sítios de património aborígene e locais de património registados é geralmente proibida.
+**Austrália:** A deteção em terras da Coroa, parques nacionais, locais do património aborígene e locais do património registados é geralmente proibida.
 
-**Canada:** As leis provinciais de património e o Canada National Parks Act restringem ou proíbem a deteção em vários contextos.
+**Canadá:** As leis provinciais sobre património e o Canada National Parks Act restringem ou proíbem a deteção em vários contextos.
 
-### 8.3 Exoneração de Responsabilidade do Cofre de Permissões
+### 8.3 Isenção de Responsabilidade do Cofre de Permissões
 
-O Cofre de Permissões é uma ferramenta de organização pessoal. Ele **não** constitui prova legal de permissão, não cria qualquer acordo legal e não substitui qualquer consentimento por escrito ou licenças legalmente exigidas. As assinaturas digitais são apenas para registo pessoal. O gerador de cartas em PDF cria apenas um documento modelo — não tem efeito legal a menos que ambas as partes concordem independentemente com o seu conteúdo.
+O Cofre de Permissões é uma ferramenta de organização pessoal. **Não** constitui prova legal de permissão, não cria qualquer acordo legal e não substitui qualquer consentimento escrito ou permissão legalmente exigida. As assinaturas digitais são apenas para registo pessoal. O gerador de cartas PDF cria apenas um documento modelo — não tem efeito legal a menos que ambas as partes concordem independentemente com o seu conteúdo.
 
-### 8.4 Exoneração de Responsabilidade da Classificação de Achados
+### 8.4 Isenção de Responsabilidade pela Classificação de Achados
 
-As categorias de achados na Aplicação (Tesouro, Ouro, Moeda, etc.) servem apenas para organização pessoal. A Aplicação **não** determina a classificação legal, a importância arqueológica, o valor ou as obrigações de reporte. O Calibrador de Moedas (Coin Caliper) identifica moedas apenas pelo diâmetro e não deve ser utilizado para autenticação, avaliação ou reporte legal.
+As categorias de achados na Aplicação (Tesouro, Ouro, Moeda, etc.) são apenas para organização pessoal. A Aplicação **não** determina a classificação legal, significância arqueológica, valor ou obrigações de comunicação. O Coin Caliper identifica moedas apenas por diâmetro e não deve ser utilizado para autenticação, avaliação ou comunicação legal.
 
-### 8.5 Sem Aconselhamento Jurídico
+### 8.5 Sem Aconselhamento Legal
 
-Nada na Aplicação — incluindo o Cofre de Permissões, a pontuação meteorológica, a previsão de deteção, os locais próximos, as sobreposições de mapas históricos, a categorização de achados ou qualquer texto — constitui aconselhamento jurídico, financeiro, arqueológico ou profissional de qualquer tipo.
+Nada na Aplicação — incluindo o Cofre de Permissões, pontuação meteorológica, previsão de deteção, locais próximos, sobreposições de mapas históricos, categorização de achados ou qualquer texto — constitui aconselhamento legal, financeiro, arqueológico ou profissional de qualquer tipo.
 
 ## 9. GPS, Localização e Segurança
 
-A precisão do GPS depende do hardware do seu dispositivo, disponibilidade de satélites, condições atmosféricas, terreno e estruturas circundantes. A Aplicação fornece dados de localização "tal como estão". Não garantimos a precisão.
+A precisão do GPS depende do hardware do seu dispositivo, disponibilidade de satélite, condições atmosféricas, terreno e estruturas envolventes. A Aplicação fornece dados de localização "tal como estão". Não garantimos a precisão.
 
-A guarda de perímetro é uma ferramenta aproximada e não deve ser utilizada como um indicador de limite preciso ou linha de propriedade legal. O indicador de caminho de volta (road back) mostra a distância em linha reta, não uma rota de caminhada segura.
+A guarda perimetral é uma ferramenta aproximada e não deve ser usada como um indicador preciso de limite ou linha legal de propriedade. O indicador de caminho de regresso mostra a distância em linha reta, não uma rota de caminhada segura.
 
-**Segurança na deteção em praias:** A tabela de marés fornece previsões, não garantias. As marés podem ser afetadas pelo clima, vento e geografia local de formas não refletidas nas previsões. Deixe sempre uma margem de segurança e tenha uma rota de fuga. Nunca confie exclusivamente nos dados de marés da Aplicação para decisões de segurança.
+**Segurança de deteção em praia:** A tabela de marés fornece previsões, não garantias. As marés podem ser afetadas pelo tempo, vento e geografia local de formas não refletidas nas previsões. Deixe sempre uma margem de segurança e tenha uma rota de fuga. Nunca confie exclusivamente nos dados de marés da Aplicação para decisões de segurança.
 
-As visualizações de sobreposição de percurso e mapas de calor são aproximadas. O desvio do GPS e a perda de sinal podem fazer com que os percursos pareçam deslocados das posições reais. As lacunas podem não refletir os padrões reais de deteção.
+As visualizações de sobreposição de percurso e mapa de calor são aproximadas. A deriva de GPS e perda de sinal podem fazer com que os percursos pareçam desfasados das posições reais. As lacunas podem não refletir padrões reais de deteção.
 
 ## 10. Serviços e Conteúdo de Terceiros
 
-A Aplicação utiliza dados do Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA e Wikipedia. Os dados dos mapas **nunca** devem ser utilizados para determinar limites legais de propriedade ou direitos de acesso.
+A Aplicação utiliza dados do Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA e Wikipedia. Os dados do mapa **nunca** devem ser utilizados para determinar limites legais de propriedade ou direitos de acesso.
 
-**Sobreposição de Mapas Históricos da USGS:** Os mapas históricos retratam condições de há décadas ou séculos. As características mostradas podem já não existir ou podem estar em propriedades diferentes. Os mapas históricos não refletem limites, propriedade ou direitos de acesso atuais. A presença de uma característica histórica não autoriza a deteção.
+**Sobreposição de Mapas Históricos USGS:** Os mapas históricos representam condições de há décadas ou séculos. As características mostradas podem já não existir ou estar noutra propriedade. Os mapas históricos não refletem os limites atuais, propriedade ou direitos de acesso. A presença de uma característica histórica não autoriza a deteção.
 
-As **previsões de marés** podem não ter em conta tempestades, vento ou anomalias locais. Os dados de **locais próximos** são contributos da comunidade e podem ser imprecisos — a presença de um marcador não autoriza a deteção. Os **mapas offline** podem ficar desatualizados. As **predefinições de detetores** são ferramentas organizacionais, não endossadas pelos fabricantes.
+**As previsões de marés** podem não ter em conta tempestades, vento ou anomalias locais. **Os dados sobre locais próximos** são contribuições da comunidade e podem ser imprecisos — a presença de um marcador não autoriza a deteção. **Os mapas offline** podem ficar desatualizados. **As predefinições do detetor** são ferramentas organizacionais, não aprovadas pelos fabricantes.
 
 ## 11. Propriedade Intelectual
 
-O SweepTrack Pro, incluindo o seu design, código, gráficos, componentes de interface de utilizador e branding, é propriedade intelectual da Loriba. Todos os direitos reservados.
+O SweepTrack Pro, incluindo o seu design, código, gráficos, componentes UI e branding, é propriedade intelectual de Coc Lorand Adrian P.F.A. (operando como Loriba). Todos os direitos reservados.
 
-O utilizador mantém a propriedade de todo o conteúdo que criar utilizando a Aplicação. Não reivindicamos quaisquer direitos sobre o seu conteúdo.
+Mantém a propriedade de todo o conteúdo que cria utilizando a Aplicação. Não reivindicamos quaisquer direitos sobre o seu conteúdo.
 
-Os nomes de marcas de detetores e os nomes de modelos são marcas comerciais dos seus respetivos fabricantes. Não somos afiliados, endossados ou patrocinados por qualquer fabricante de detetores.
+Os nomes de marcas e modelos de detetores são marcas registadas dos respetivos fabricantes. Não estamos afiliados, aprovados ou patrocinados por qualquer fabricante de detetores.
 
-## 12. Exclusão de Garantias
+## 12. Isenção de Garantias
 
-A APLICAÇÃO É FORNECIDA "TAL COMO ESTÁ" E "CONFORME DISPONÍVEL", SEM GARANTIAS DE QUALQUER TIPO, SEJAM EXPRESSAS OU IMPLÍCITAS, INCLUINDO, MAS NÃO SE LIMITANDO A, GARANTIAS IMPLÍCITAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM FIM ESPECÍFICO, PRECISÃO E NÃO INFRAÇÃO.
+A APLICAÇÃO É FORNECIDA "TAL COMO ESTÁ" E "CONFORME DISPONÍVEL" SEM GARANTIAS DE QUALQUER TIPO, EXPRESSAS OU IMPLÍCITAS, INCLUINDO MAS NÃO LIMITADO ÀS GARANTIAS IMPLÍCITAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM PROPÓSITO PARTICULAR, PRECISÃO E NÃO INFRAÇÃO.
 
 ## 13. Limitação de Responsabilidade
 
-NA MEDIDA MÁXIMA PERMITIDA PELA LEI APLICÁVEL, COC LORAND P.F.A. (OPERANDO COMO LORIBA) NÃO SERÁ RESPONSÁVEL POR QUAISQUER DANOS INDIRETOS, INCIDENTAIS, ESPECIAIS, CONSEQUENCIAIS OU PUNITIVOS, INCLUINDO, MAS NÃO SE LIMITANDO A: DANOS POR IMPRECISÃO DO GPS, DISPUTAS DE LIMITES DE PROPRIEDADE OU REIVINDICAÇÕES DE INVASÃO DE PROPRIEDADE; DANOS POR CONFIANÇA EM DADOS METEOROLÓGICOS, DE MARÉS OU AMBIENTAIS; CONDIÇÕES DE MARÉS, INCLUINDO LESÕES OU AFOGAMENTO; CONSEQUÊNCIAS LEGAIS DE ATIVIDADES DE DETEÇÃO, INCLUINDO MULTAS, PROCESSOS OU CONFISCO; INCUMPRIMENTO DO TREASURE ACT 1996, ARPA OU QUALQUER LEI DE PATRIMÓNIO CULTURAL; CONFIANÇA EM SOBREPOSIÇÕES DE MAPAS HISTÓRICOS, LOCAIS PRÓXIMOS, COFRE DE PERMISSÕES, CARTAS EM PDF, ASSINATURAS DIGITAIS, CALIBRADOR DE MOEDAS OU IDENTIFICAÇÃO DE ACHADOS; IMPRECISÃO DA GUARDA DE PERÍMETRO, SOBREPOSIÇÃO DE PERCURSO OU MAPA DE CALOR; MAPAS OFFLINE OU PREDEFINIÇÕES DE DETETORES DESATUALIZADOS; LESÕES CORPORAIS, MORTE OU DANOS MATERIAIS DURANTE ATIVIDADES DE DETEÇÃO; OU INTERAÇÕES COM PROPRIETÁRIOS DE TERRAS, FORÇAS DE SEGURANÇA OU TERCEIROS.
+NA MÁXIMA EXTENSÃO PERMITIDA PELA LEI APLICÁVEL, COC LORAND ADRIAN P.F.A. (OPERANDO COMO LORIBA) NÃO SERÁ RESPONSÁVEL POR QUALQUER DANO INDIRETO, INCIDENTAL, ESPECIAL, CONSEQUENCIAL OU PUNITIVO, INCLUINDO MAS NÃO LIMITADO A: DANOS POR IMPRECISÃO DE GPS, DISPUTAS DE LIMITES DE PROPRIEDADE OU RECLAMAÇÕES DE INTRUSÃO; DANOS POR CONFIANÇA EM DADOS METEOROLÓGICOS, DE MARÉS OU AMBIENTAIS; CONDIÇÕES DE MARÉ INCLUINDO LESÕES OU AFOGAMENTO; CONSEQUÊNCIAS LEGAIS DAS ATIVIDADES DE DETEÇÃO INCLUINDO MULTAS, PROCESSAMENTO OU CONFISCO; INCUMPRIMENTO DO TREASURE ACT 1996, ARPA OU QUALQUER LEI DE PATRIMÓNIO CULTURAL; CONFIANÇA EM SOBREPOSIÇÕES DE MAPAS HISTÓRICOS, LOCAIS PRÓXIMOS, COFRE DE PERMISSÕES, CARTAS PDF, ASSINATURAS DIGITAIS, COIN CALIPER OU IDENTIFICAÇÃO DE ACHADOS; IMPRECISÃO DO GUARDA PERIMETRAL, SOBREPOSIÇÃO DE PERCURSO OU MAPA DE CALOR; MAPAS OFFLINE OU PREDEFINIÇÕES DO DETETOR DESATUALIZADAS; LESÕES PESSOAIS, MORTE OU DANOS MATERIAIS DURANTE ATIVIDADES DE DETEÇÃO; OU INTERAÇÕES COM PROPRIETÁRIOS DE TERRENOS, FORÇAS DA ORDEM OU TERCEIROS.
 
-Em caso algum a nossa responsabilidade total excederá o valor que pagou pela Aplicação nos doze (12) meses anteriores à reclamação.
+Em nenhum caso a nossa responsabilidade total excederá o montante pago pela Aplicação nos doze (12) meses anteriores à reclamação.
 
-## 14. Indeminização
+## 14. Indemnização
 
-O utilizador concorda em indemnizar, defender e isentar a Loriba de quaisquer reclamações, danos, perdas, responsabilidades, custos e despesas decorrentes da sua utilização da Aplicação, violação destes Termos, violação de qualquer lei aplicável ou das suas atividades de deteção de metais.
+Concorda em indemnizar, defender e isentar Coc Lorand Adrian P.F.A. (operando como Loriba) de quaisquer reclamações, danos, perdas, responsabilidades, custos e despesas resultantes do seu uso da Aplicação, violação destes Termos, violação de qualquer lei aplicável ou suas atividades de deteção de metais.
 
 ## 15. Rescisão
 
-Podemos rescindir ou suspender o seu acesso à Aplicação a qualquer momento, sem aviso prévio, por qualquer motivo, incluindo a violação destes Termos. Após a rescisão, os seus dados armazenados localmente permanecem no seu dispositivo até que os elimine.
+Podemos rescindir ou suspender o seu acesso à Aplicação a qualquer momento, sem aviso prévio, por qualquer motivo, incluindo violação destes Termos. Após a rescisão, os seus dados armazenados localmente permanecem no seu dispositivo até os eliminar.
 
-## 16. Lei Aplicável e Resolução de Litígios
+## 16. Lei Aplicável e Resolução de Disputas
 
-Estes Termos são regidos pelas leis da Roménia. Qualquer litígio deve ser primeiramente tentado resolver através de negociação de boa-fé. Se não for resolvido no prazo de 30 dias, os litígios serão submetidos aos tribunais competentes da Roménia.
+Estes Termos são regidos pelas leis da Roménia. Qualquer disputa será primeiro tentada ser resolvida através de negociação de boa-fé. Se não for resolvida no prazo de 30 dias, as disputas serão submetidas aos tribunais competentes da Roménia.
 
-**Consumidores da UE:** Também pode recorrer à plataforma europeia de Resolução de Litígios em Linha em [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr).
+**Consumidores UE:** Pode também recorrer à plataforma europeia de Resolução Online de Litígios em [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr).
 
-**Reino Unido:** Estes Termos estão sujeitos ao UK GDPR e ao Data Protection Act 2018. Os seus direitos legais como consumidor sob a lei do Reino Unido não são afetados. Pode contactar o [ICO](https://ico.org.uk).
+**Reino Unido:** Estes Termos estão sujeitos ao UK GDPR e ao Data Protection Act 2018. Os seus direitos legais como consumidor ao abrigo da lei britânica não são afetados. Pode contactar o [ICO](https://ico.org.uk).
 
-**Austrália:** Nada nestes Termos exclui ou modifica qualquer garantia ou direito do consumidor sob a Lei do Consumidor Australiana. Pode contactar o [OAIC](https://www.oaic.gov.au).
+**Austrália:** Nada nestes Termos exclui ou modifica qualquer garantia ou direito do consumidor ao abrigo da Australian Consumer Law. Pode contactar o [OAIC](https://www.oaic.gov.au).
 
-**Canadá:** A sua utilização está sujeita à PIPEDA e à legislação provincial de privacidade aplicável. Pode contactar o [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca).
+**Canadá:** O seu uso está sujeito ao PIPEDA e à legislação provincial aplicável de privacidade. Pode contactar o [Gabinete do Comissário de Privacidade do Canadá](https://www.priv.gc.ca).
 
-**Nova Zelândia:** Os seus direitos ao abrigo do Consumer Guarantees Act 1993 e do Privacy Act 2020 não são limitados. Pode contactar o [NZ Privacy Commissioner](https://www.privacy.org.nz).
+**Nova Zelândia:** Os seus direitos ao abrigo do Consumer Guarantees Act 1993 e do Privacy Act 2020 não são limitados. Pode contactar o [Comissário de Privacidade NZ](https://www.privacy.org.nz).
 
-**Outras jurisdições:** Os seus direitos locais obrigatórios de proteção do consumidor e de proteção de dados não são afetados por estes Termos. Onde a lei local concede direitos que não podem ser renunciados por contrato, esses direitos aplicam-se.
+**Outras jurisdições:** Os seus direitos locais obrigatórios de proteção do consumidor e de dados não são afetados por estes Termos. Onde a lei local conceder direitos que não podem ser renunciados por contrato, esses direitos aplicam-se.
 
 ## 17. Disposições Gerais
 
-Estes Termos, juntamente com a nossa Política de Privacidade, constituem o acordo integral entre o utilizador e a Loriba relativamente à Aplicação. Se qualquer disposição for considerada inválida, as restantes disposições continuam em pleno vigor. A nossa falha em fazer cumprir qualquer direito não constituirá uma renúncia.
+Estes Termos, juntamente com a nossa Política de Privacidade, constituem o acordo completo entre si e Loriba relativamente à Aplicação. Se qualquer disposição for considerada inválida, as disposições restantes continuam em pleno vigor. A nossa falha em fazer valer qualquer direito não constituirá uma renúncia.
 
-## 18. Licenças de Código Aberto e de Terceiros
+## 18. Licenças Open Source e de Terceiros
 
-A Aplicação utiliza componentes de código aberto. Atribuições principais: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (domínio público), USGS (domínio público), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+A Aplicação utiliza componentes open-source. Atribuições chave: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (domínio público), USGS (domínio público), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
 
 ## 19. Contacto
 
-Para questões sobre estes Termos, por favor contacte:
+Para questões sobre estes Termos, contacte:
 
 **Coc Lorand Adrian P.F.A.** (operando como Loriba)
 CUI: 41299288 · Reg. F24/646/2019
-E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
+E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)
 
 ---
 
-Estes Termos de Serviço entram em vigor a 7 de abril de 2026 e aplicam-se a todas as versões do SweepTrack Pro.
-
----
+Estes Termos de Serviço entram em vigor a 12 de maio de 2026 e aplicam-se a todas as versões do SweepTrack Pro.

@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 7 april 2026 · Laatst bijgewerkt: 7 april 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 12 mei 2026
 
 Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Inleiding
 
-Dit Privacybeleid legt uit hoe SweepTrack Pro ("de App") uw informatie verzamelt, gebruikt, opslaat en beschermt. Wij doen er alles aan om uw privacy te beschermen en transparantie te bieden over onze gegevenspraktijken.
+Dit Privacybeleid legt uit hoe SweepTrack Pro ("de App") en de website sweeptrack.pro ("de Website") uw informatie verzamelen, gebruiken, opslaan en beschermen. Wij doen er alles aan om uw privacy te beschermen en transparantie te bieden over onze gegevenspraktijken.
 
-SweepTrack Pro is ontworpen met een **privacy-first architectuur**: alle gegevens worden lokaal op uw apparaat opgeslagen, wij beheren geen backend-servers en wij verzamelen, verzenden of verkopen uw persoonlijke gegevens niet.
+De App is ontworpen met een **privacy-first architectuur**: alle detectiegegevens worden lokaal op uw apparaat opgeslagen, wij beheren geen backend-servers voor de App en wij verzamelen, verzenden of verkopen uw persoonlijke detectiegegevens niet. De Website werkt apart en heeft zijn eigen gegevenspraktijken, beschreven in Sectie 4.
 
 ## 2. Verwerkingsverantwoordelijke
 
@@ -26,172 +26,234 @@ Voor de doeleinden van de Algemene Verordening Gegevensbescherming van de EU (AV
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
-## 3. Gegevens die wij verzamelen
+## 3. Gegevens die wij verzamelen (Android-App)
 
-### 3.1 Gegevens die lokaal op uw apparaat worden opgeslagen
+### 3.1 Lokaal op uw apparaat opgeslagen gegevens
 
-De volgende gegevens worden door u aangemaakt en **uitsluitend op uw apparaat** opgeslagen. Wij hebben nooit toegang tot deze gegevens, tenzij u deze expliciet deelt.
+De volgende gegevens worden door u aangemaakt en **uitsluitend op uw apparaat** opgeslagen. Wij hebben nooit toegang tot deze gegevens tenzij u ze expliciet deelt.
 
 **Locatie- en sessiegegevens:**
 
 - GPS-coördinaten (breedtegraad, lengtegraad) tijdens actieve trackingsessies
-- Waarden voor snelheid, hoogte, koers en nauwkeurigheid van apparaatsensoren
+- Snelheid, hoogte, koers en nauwkeurigheid van apparaatsensoren
 - Sessiemetadata: naam, datum, begin-/eindtijd, duur, afstand, tags
-- Routecoördinaten met tijdstempels
+- Padcoördinaten met tijdstempels
 - Locatienamen (verkregen via omgekeerde geocodering)
 
-**Vondst- en ontdekkingsregistraties:**
+**Vondst- en ontdekkingsgegevens:**
 
-- Type vondst (Schat, Goud, Munt, Relikwie, Juweel, Afval)
+- Type vondst (Schat, Goud, Munt, Relict, Sieraad, Afval)
 - Locatie van de vondst (GPS-coördinaten op het moment van registratie)
 - Optionele metadata: naam, notities, diepte, geschatte waarde, gewicht
 - Mediabijlagen: foto's en audio-opnamen
 
-**Gegevens uit de machtigingskluis:**
+**Gegevens van de toestemmingenkluis:**
 
-- Namen en locaties van vindplaatsen
-- Namen en contactgegevens van grondeigenaren
+- Site-namen en locaties
+- Namen van landeigenaren en contactgegevens
 - Vergunningsnummers, uitgiftedatums, vervaldatums
-- Coördinaten van de grenzen van de vindplaats (polygoon)
+- Grenscoördinaten van de site (polygoon)
 - Digitale handtekeningen (SVG-formaat)
 - Aangepaste tags en notities
 
-**Andere lokale gegevens:** Configuraties voor detector-presets, app-voorkeuren (thema, eenheden, taal, kaartinstellingen) en weermomentopnamen gekoppeld aan sessies.
+**Andere lokale gegevens:** Detectorpreset-configuraties, app-voorkeuren (thema, eenheden, taal, kaartinstellingen) en weersmomentopnamen die aan sessies zijn gekoppeld.
 
 ### 3.2 Tijdelijk verwerkte gegevens (niet opgeslagen)
 
-De volgende gegevens worden uitsluitend voor realtime functionaliteit naar API-diensten van derden verzonden en **worden niet door ons of door deze diensten opgeslagen buiten het onmiddellijke verzoek**:
+De volgende gegevens worden naar API's van derden verzonden voor realtime functionaliteit en **worden door ons of deze diensten niet opgeslagen na het directe verzoek**:
 
-- Globale GPS-coördinaten verzonden naar Open-Meteo voor weersvoorspellingen en hoogtegegevens
-- Globale GPS-coördinaten verzonden naar OpenStreetMap/Nominatim voor het zoeken naar adressen
-- Globale GPS-coördinaten verzonden naar Overpass API voor het ontdekken van nabijgelegen historische bezienswaardigheden
-- Globale GPS-coördinaten verzonden naar Wikipedia API voor het geografisch zoeken naar nabijgelegen artikelen
-- Identificatiegegevens van getijdenstations verzonden naar NOAA voor getijdenvoorspellingen
-- Zoekopdrachten voor locaties verzonden naar Open-Meteo Geocoding voor het zoeken naar plaatsnamen
+- Geschatte GPS-coördinaten verzonden naar Open-Meteo voor weersvoorspellingen en hoogtegegevens
+- Geschatte GPS-coördinaten verzonden naar OpenStreetMap/Nominatim voor adres-opzoeking
+- Geschatte GPS-coördinaten verzonden naar Overpass API voor het ontdekken van nabijgelegen historische bezienswaardigheden
+- Geschatte GPS-coördinaten verzonden naar Wikipedia API voor geografische zoekopdrachten naar artikelen in de buurt
+- Identifiers van getijdestations verzonden naar NOAA voor getijvoorspellingen
+- Locatiezoekopdrachten verzonden naar Open-Meteo Geocoding
 
-### 3.3 Gegevens verwerkt door diensten van derden
+### 3.3 Door derden verwerkte gegevens
 
-**Google Maps SDK:** De locatie van uw apparaat wordt verwerkt door Google Maps voor de kaartweergave. Onderworpen aan het [Privacybeleid van Google](https://policies.google.com/privacy).
+**Google Maps SDK:** De locatie van uw apparaat wordt verwerkt door Google Maps voor kaartweergave. Onderworpen aan het [Privacybeleid van Google](https://policies.google.com/privacy).
 
-**Google Sign-In en Google Drive (Optioneel):** Als u back-up naar Google Drive inschakelt, wordt het e-mailadres van uw Google-account lokaal opgeslagen om het geauthenticeerde account te identificeren. De back-upgegevens worden geüpload naar uw eigen Google Drive-account. Wij hebben geen toegang tot uw Google Drive.
+**Google Sign-In en Google Drive (optioneel):** Als u Google Drive-back-up inschakelt, wordt het e-mailadres van uw Google-account lokaal opgeslagen om het geverifieerde account te identificeren. Back-upgegevens worden geüpload naar uw eigen Google Drive-account. Wij hebben geen toegang tot uw Google Drive.
 
-**RevenueCat (Abonnementsbeheer):** Een anonieme, willekeurig gegenereerde app-gebruikers-ID wordt gebruikt voor abonnementsverificatie. Er wordt geen persoonlijke informatie gedeeld. Onderworpen aan het [Privacybeleid van RevenueCat](https://www.revenuecat.com/privacy).
+**RevenueCat (Abonnementsbeheer):** Een anonieme, willekeurig gegenereerde app-gebruikersidentifier wordt gebruikt voor abonnementsverificatie. Er wordt geen persoonlijke informatie gedeeld. Onderworpen aan het [Privacybeleid van RevenueCat](https://www.revenuecat.com/privacy).
 
-### 3.4 Gegevens die wij NIET verzamelen
+### 3.4 Gegevens die de App NIET verzamelt
 
-- Wij verzamelen **geen** naam, e-mailadres, telefoonnummer of andere persoonlijke identificatiemiddelen.
-- Wij gebruiken **geen** analytics-SDK's, tools voor crashrapportage of gedragsmonitoring.
-- Wij gebruiken **geen** advertentiekaders of advertentie-ID's.
-- Wij volgen **geen** gebruikspatronen, sessiefrequentie of functiegebruik.
-- Wij maken **geen** gebruikersprofielen of gedragsvingerafdrukken aan.
-- Wij delen, verkopen, verhuren of verhandelen **geen** gegevens met derden.
-- Wij beheren **geen** servers die uw gegevens ontvangen, verwerken of opslaan.
+- **De App** verzamelt niet uw naam, e-mailadres, telefoonnummer of andere persoonlijke identifiers
+- **De App** gebruikt geen analytics, crashrapportage of SDK's voor gedragstracking
+- **De App** gebruikt geen advertentieframeworks of reclame-identifiers
+- **De App** volgt geen gebruikspatronen, sessiefrequentie of functiegebruik
+- **De App** maakt geen gebruikersprofielen of gedragsvingerafdrukken
+- **De App** deelt, verkoopt, verhuurt of ruilt geen gegevens met derden
+- **De App** beheert geen servers die uw detectiegegevens ontvangen, verwerken of opslaan
 
-## 4. Juridische grondslag voor verwerking (AVG/GDPR)
+De gegevenspraktijken van de Website worden apart behandeld in Sectie 4.
 
-- **GPS-/sessiegegevens, vondstregistraties, kluisvermeldingen:** Toestemming (Art. 6(1)(a)) — u initieert deze acties actief.
-- **API-aanroepen (weer, geocodering):** Gerechtvaardigd belang (Art. 6(1)(f)) — noodzakelijk voor de kernfunctionaliteit.
-- **Google Drive-back-up:** Toestemming (Art. 6(1)(a)) — u schakelt dit expliciet in en authenticeert uzelf.
-- **Abonnementsverificatie:** Uitvoering van een overeenkomst (Art. 6(1)(b)) — noodzakelijk om betaalde functies te leveren.
+## 4. Gegevenspraktijken van de Website (sweeptrack.pro)
 
-U kunt uw toestemming op elk gewenst moment intrekken door de betreffende activiteit te stoppen of de App te deïnstalleren.
+Deze sectie behandelt de gegevenspraktijken specifiek voor onze website sweeptrack.pro. De Android-App beschreven in Secties 3 en 5–18 werkt onafhankelijk en deelt geen infrastructuur met de Website.
 
-## 5. Hoe wij uw gegevens gebruiken
+### 4.1 E-mailadres-verzameling voor de wachtlijst
 
-Alle gegevensverwerking vindt **lokaal op uw apparaat** plaats. Wij gebruiken uw gegevens uitsluitend om de functies van de App te leveren: kaartweergave, sessietracking, vondstregistratie, machtigingsbeheer, weer-/getijdengegevens, export, back-up en abonnementsverificatie.
+Wanneer u uw e-mailadres indient via een aanmeldingsformulier op de Website, verzamelen wij:
 
-## 6. Gegevensopslag en beveiliging
+- **E-mailadres** dat u opgeeft
+- **Tijdstempel** van de inschrijving
+- **IP-adres** (tijdelijk) — gebruikt voor snelheidsbeperking; niet opgeslagen na de duur van het verzoek
 
-- Sessie- en vondstgegevens worden opgeslagen in een versleutelde Room-database op uw apparaat.
-- Gevoelige instellingen maken gebruik van EncryptedSharedPreferences (AES-256) van Android.
-- Mediabestanden worden opgeslagen in de privé interne opslag van de App, die niet toegankelijk is voor andere apps.
-- Android cloud back-up is **uitgeschakeld** (`android:allowBackup="false"`) om onbedoelde blootstelling van gegevens te voorkomen.
-- Google Drive-back-ups maken gebruik van de versleutelde API's van Google (HTTPS/TLS) en bestaan uitsluitend in uw eigen account.
+**Doel:** U op de hoogte stellen wanneer SweepTrack Pro op Google Play wordt gelanceerd en u pre-launch-updates sturen over het product en de Founder's Lifetime-aanbieding. Wij zullen uw e-mailadres niet voor andere doeleinden gebruiken, niet delen en niet verkopen.
 
-Wij beheren geen servers, databases of cloudinfrastructuur.
+**Rechtsgrondslag (GDPR):** Toestemming (Art. 6(1)(a)) — verstrekt wanneer u het formulier indient.
 
-## 7. Gegevensbewaring
+**Opslag:** E-mailadressen worden opgeslagen in een Supabase Postgres-database gehost in de EU (regio Ierland). Supabase, Inc. treedt op als onze gegevensverwerker volgens hun standaard gegevensverwerkingsovereenkomst.
 
-Lokale gegevens worden bewaard totdat u ervoor kiest deze te verwijderen. U kunt individuele items in de App verwijderen, alle gegevens wissen via de Android-instellingen of de App deïnstalleren. Google Drive-back-ups blijven bestaan totdat u deze handmatig uit uw account verwijdert.
+**E-mailbezorging:** Uitgaande e-mails worden verzonden via Resend, Inc. (EU-regio, Ierland) die optreden als onze e-maildienstverwerker volgens hun standaard gegevensverwerkingsovereenkomst.
 
-## 8. Delen en openbaarmaking van gegevens
+**Bewaring:** Tot u zich uitschrijft, of 12 maanden na de openbare lancering van SweepTrack Pro op Google Play, afhankelijk van wat eerst plaatsvindt.
 
-Wij delen, verkopen, verhuren of maken uw persoonlijke gegevens niet bekend aan derden. U kunt ervoor kiezen om gegevens te delen via export (GPX, KML, CSV, JSON), sessie-deelkaarten of de Google Drive-back-up — allemaal door de gebruiker geïnitieerd.
+**Uitschrijven:** Antwoord met "remove" op een e-mail die wij verzenden, of gebruik de List-Unsubscribe-link die uw e-mailclient weergeeft (Gmail en Outlook tonen deze naast het Van-adres).
 
-## 9. Uw rechten (AVG/GDPR en internationaal)
+**Uw rechten:** Toegang, rectificatie, wissing, beperking, overdraagbaarheid en het recht om toestemming in te trekken. Stuur een e-mail naar [support@sweeptrack.pro](mailto:support@sweeptrack.pro) om een van deze rechten uit te oefenen.
 
-### AVG-rechten (Inwoners van de EU/EER)
+### 4.2 Website-analytics
 
-- **Inzage** — uw gegevens zijn volledig toegankelijk op uw apparaat.
-- **Rectificatie** — u kunt alle records rechtstreeks in de App bewerken.
-- **Wissen** — u kunt gegevens verwijderen via de in-app verwijderfunctie of door deïnstallatie.
-- **Beperking** — u beheert alle verwerking door functies te starten/stoppen.
-- **Gegevensoverdraagbaarheid** — exporteren via GPX, KML, CSV, JSON.
-- **Bezwaar** — u kunt elke functie op elk moment stopzetten.
-- **Intrekken van toestemming** — op elk moment zonder gevolgen voor de eerdere verwerking.
+De Website gebruikt:
+
+- **Vercel Analytics** — privacy-vriendelijke analytics die geen cookies gebruiken en geen individuele IP-adressen opslaan. Meet alleen geaggregeerde paginaweergaven.
+- **Vercel Speed Insights** — Core Web Vitals-meting (paginalaadtijd, layout-verschuiving, interactievertragingen) op geaggregeerde basis.
+
+Beide tools worden beheerd door Vercel Inc. en zijn onderworpen aan het [Privacybeleid van Vercel](https://vercel.com/legal/privacy-policy). Ze verzamelen geen persoonlijk identificeerbare informatie en maken geen gebruikersprofielen.
+
+### 4.3 Cookies
+
+De Website plaatst geen first-party cookies voor tracking, reclame of profilering. Vercel Analytics is cookieloos van ontwerp. Een taalvoorkeur, als u deze wijzigt, wordt opgeslagen in de `localStorage` van uw browser (geen cookie) en is alleen leesbaar door uw eigen browser.
+
+### 4.4 Hosting en serverlogs
+
+De Website wordt gehost door Vercel Inc. Vercel kan automatisch standaard verzoekmetadata (IP-adres, user agent, verzoekpad, tijdstempel) loggen voor operationele, prestatie- en beveiligingsdoeleinden. Deze logs worden bewaard volgens het standaardbeleid van Vercel en worden door ons niet gebruikt voor tracking of profilering van individuen.
+
+### 4.5 Uw rechten voor Website-gegevens
+
+Dezelfde GDPR, UK GDPR, Australische, Canadese, CCPA, LGPD en NZ Privacy Act-rechten beschreven in Sectie 10 zijn evenzeer van toepassing op uw door de Website verzamelde gegevens. Om een recht uit te oefenen met betrekking tot uw wachtlijst-e-mail, neem contact op met [support@sweeptrack.pro](mailto:support@sweeptrack.pro). Wij reageren binnen 30 dagen.
+
+## 5. Rechtsgrondslag voor verwerking (GDPR)
+
+- **GPS-/sessiegegevens, vondstregistraties, kluisitems:** Toestemming (Art. 6(1)(a)) — u initieert deze acties actief
+- **API-oproepen (weer, geocodering):** Gerechtvaardigd belang (Art. 6(1)(f)) — noodzakelijk voor kernfunctionaliteit
+- **Google Drive-back-up:** Toestemming (Art. 6(1)(a)) — u activeert en authenticeert expliciet
+- **Abonnementsverificatie:** Uitvoering van overeenkomst (Art. 6(1)(b)) — noodzakelijk om betaalde functies te bieden
+- **Wachtlijst-e-mail (Website):** Toestemming (Art. 6(1)(a)) — zie Sectie 4.1
+
+U kunt uw toestemming op elk moment intrekken door de relevante activiteit te stoppen, de App te verwijderen of zich af te melden voor Website-e-mails.
+
+## 6. Hoe wij uw gegevens gebruiken
+
+Alle gegevensverwerking van de App vindt **lokaal op uw apparaat** plaats. Wij gebruiken App-gegevens uitsluitend om de functies van de App te bieden: kaartweergave, sessietracking, vondstregistratie, toestemmingenbeheer, weer-/getijgegevens, exports, back-up en abonnementsverificatie.
+
+Website-gegevens (uw wachtlijst-e-mail) worden alleen gebruikt om de lancerings- en pre-launch-communicatie te verzenden die in Sectie 4 wordt beschreven.
+
+## 7. Gegevensopslag en -beveiliging
+
+**App-gegevens:**
+
+- Sessie- en vondstgegevens worden opgeslagen in een versleutelde Room-database op uw apparaat
+- Gevoelige voorkeuren gebruiken EncryptedSharedPreferences (AES-256) van Android
+- Mediabestanden worden opgeslagen in de privé interne opslag van de App, ontoegankelijk voor andere apps
+- Android-cloudback-up is **uitgeschakeld** (`android:allowBackup="false"`) om onbedoelde gegevensblootstelling te voorkomen
+- Google Drive-back-ups gebruiken de versleutelde API's van Google (HTTPS/TLS) en bestaan alleen in uw account
+
+Voor de App beheren wij geen servers, databases of cloudinfrastructuur die uw detectiegegevens opslaan.
+
+**Website-gegevens:** Wachtlijst-e-mails worden opgeslagen in een Supabase Postgres-database gehost in de EU (Ierland). Verbindingen zijn versleuteld (TLS). Toegang is beperkt tot administratieve doeleinden. Uitgaande e-mail wordt verzonden via Resend (EU, Ierland) via TLS. Zie Sectie 4.
+
+## 8. Gegevensbewaring
+
+**App-gegevens:** Lokale gegevens worden bewaard totdat u ervoor kiest ze te verwijderen. U kunt afzonderlijke items in de App verwijderen, alle gegevens via Android-instellingen wissen of de App verwijderen. Google Drive-back-ups blijven bestaan totdat u ze handmatig uit uw account verwijdert.
+
+**Website-gegevens:** Wachtlijst-e-mails worden bewaard tot u zich uitschrijft, of 12 maanden na de openbare lancering, afhankelijk van wat eerst plaatsvindt. Daarna worden de adressen verwijderd uit de Supabase-database.
+
+## 9. Gegevensdeling en openbaarmaking
+
+Wij delen, verkopen, verhuren of maken uw persoonlijke gegevens niet bekend aan derden. U kunt ervoor kiezen App-gegevens te delen via exports (GPX, KML, CSV, JSON), sessie-share-kaarten of Google Drive-back-up — allemaal door de gebruiker geïnitieerd. Wachtlijst-gegevens van de Website worden alleen verwerkt door onze genoemde verwerkers (Supabase, Resend) voor de doeleinden beschreven in Sectie 4.
+
+## 10. Uw rechten (GDPR en internationaal)
+
+### GDPR-rechten (EU/EER-inwoners)
+
+- **Toegang** — uw App-gegevens zijn volledig toegankelijk op uw apparaat; voor Website-gegevens, stuur een e-mail naar [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
+- **Rectificatie** — bewerk alle records direct in de App, of stuur ons een e-mail voor correcties van Website-gegevens
+- **Wissing** — verwijder via in-app verwijdering of deïnstallatie; voor Website-gegevens, schrijf u uit of stuur ons een e-mail
+- **Beperking** — controleer alle verwerking door functies te starten/stoppen
+- **Gegevensoverdraagbaarheid** — exporteer App-gegevens via GPX, KML, CSV, JSON
+- **Bezwaar** — stop elke functie op elk moment
+- **Intrekking van toestemming** — op elk moment zonder eerdere verwerking aan te tasten
 
 ### Verenigd Koninkrijk (UK GDPR)
 
-Uw rechten onder de UK GDPR en de Data Protection Act 2018 zijn gelijkwaardig aan de hierboven genoemde AVG-rechten. U kunt contact opnemen met de [ICO](https://ico.org.uk).
+Uw rechten onder UK GDPR en de Data Protection Act 2018 zijn gelijkwaardig aan de bovenstaande GDPR-rechten. U kunt contact opnemen met de [ICO](https://ico.org.uk).
 
 ### Australië (Privacy Act 1988)
 
-U heeft rechten onder de Australian Privacy Principles (APP's), inclusief inzage en correctie. U kunt contact opnemen met de [OAIC](https://www.oaic.gov.au).
+U heeft rechten onder de Australian Privacy Principles (APP's), inclusief toegang en correctie. U kunt contact opnemen met de [OAIC](https://www.oaic.gov.au).
 
 ### Canada (PIPEDA)
 
-U heeft rechten onder PIPEDA en de toepasselijke provinciale privacywetgeving, inclusief inzage, correctie en het intrekken van toestemming. U kunt contact opnemen met het [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca).
+U heeft rechten onder PIPEDA en de toepasselijke provinciale privacywetgeving, inclusief toegang, correctie en intrekking van toestemming. U kunt contact opnemen met het [Bureau van de Commissaris voor Privacy van Canada](https://www.priv.gc.ca).
 
 ### Inwoners van Californië (CCPA/CPRA)
 
-Wij verkopen of delen **geen** persoonlijke informatie. Wij gebruiken geen gegevens voor cross-contextuele gedragsadvertenties. U heeft recht op inzage, verwijdering, beperking van het gebruik van gevoelige gegevens en het recht op niet-discriminatie.
+Wij verkopen of delen **geen** persoonlijke informatie. Wij gebruiken geen gegevens voor cross-context gedragsreclame. U heeft het recht om te weten, te verwijderen, gebruik van gevoelige gegevens te beperken en niet-discriminatie.
 
 ### Braziliaanse inwoners (LGPD)
 
-Gelijkwaardige rechten zijn van toepassing onder de Lei Geral de Proteção de Dados. U kunt contact opnemen met de [ANPD](https://www.gov.br/anpd).
+Gelijkwaardige rechten onder Lei Geral de Proteção de Dados zijn van toepassing. U kunt contact opnemen met de [ANPD](https://www.gov.br/anpd).
 
 ### Nieuw-Zeeland (Privacy Act 2020)
 
-U heeft rechten onder de Privacy Act 2020, inclusief inzage en correctie. U kunt contact opnemen met de [NZ Privacy Commissioner](https://www.privacy.org.nz).
+U heeft rechten onder Privacy Act 2020, inclusief toegang en correctie. U kunt contact opnemen met de [NZ Privacy Commissioner](https://www.privacy.org.nz).
 
-### Andere rechtsgebieden
+### Andere jurisdicties
 
-Ongeacht uw locatie heeft u via de App de volledige controle over uw gegevens. Waar lokale wetgeving aanvullende privacyrechten verleent waarvan niet contractueel kan worden afgezien, zijn die rechten van toepassing.
+Ongeacht uw locatie heeft u volledige controle over uw gegevens. Waar de lokale wet aanvullende privacyrechten verleent die niet door contract kunnen worden afgestaan, gelden die rechten.
 
-## 10. Privacy van kinderen
+## 11. Privacy van kinderen
 
-De App is niet gericht op kinderen onder de 16 jaar. Wij verzamelen niet bewust persoonlijke informatie van kinderen onder de 16 jaar. Als u vermoedt dat een kind de App heeft gebruikt, kunt u hun gegevens wissen door de app-gegevens te verwijderen of de App te deïnstalleren.
+Noch de App noch de Website is gericht op kinderen onder de 16 jaar. Wij verzamelen niet willens en wetens persoonlijke informatie van kinderen onder de 16 jaar. Als u denkt dat een kind de App of Website heeft gebruikt, kunt u hun gegevens verwijderen door App-gegevens te wissen, te deïnstalleren of zich uit te schrijven van de wachtlijst.
 
-## 11. Uitleg over machtigingen
+## 12. Toestemmingen uitgelegd (App)
 
-- **ACCESS_FINE_LOCATION** — GPS voor route-tracking tijdens sessies.
-- **ACCESS_BACKGROUND_LOCATION** — voortzetting van tracking wanneer het scherm uit is.
-- **CAMERA** — maken van foto's voor vondstregistratie.
-- **RECORD_AUDIO** — opnemen van audionotities bij vondsten.
-- **READ/WRITE_CALENDAR** — herinneringen voor het verlopen van machtigingen in de kluis.
-- **INTERNET** — weer, geocodering, getijden, kaarten, abonnementen.
-- **POST_NOTIFICATIONS** — melding voor GPS-tracking.
-- **VIBRATE** — grenswaarschuwingen voor perimeterbewaking.
+- **ACCESS_FINE_LOCATION** — GPS voor padtracking tijdens sessies
+- **ACCESS_BACKGROUND_LOCATION** — tracking voortzetten wanneer het scherm uit is
+- **CAMERA** — foto's vastleggen voor vondstregistratie
+- **RECORD_AUDIO** — audio-notities opnemen voor vondsten
+- **READ/WRITE_CALENDAR** — herinneringen voor vergunningenvervaldatum van de kluis
+- **INTERNET** — weer, geocodering, getijden, kaarten, abonnementen
+- **POST_NOTIFICATIONS** — GPS-trackingmelding
+- **VIBRATE** — grenswaarschuwingen van de perimeterbewaking
 
-U kunt elke machtiging op elk moment intrekken via de Android-instellingen.
+U kunt elke toestemming op elk moment intrekken via de Android-instellingen.
 
-## 12. Cookies en tracking
+## 13. Cookies en tracking
 
-De App maakt geen gebruik van cookies, webbakens, pixeltags, apparaat-fingerprinting of andere trackingtechnologieën.
+**De App** gebruikt geen cookies, webbeacons, pixel-tags, apparaatvingerafdrukken of andere trackingtechnologieën. **De Website** plaatst geen first-party cookies; zie Sectie 4.3 voor volledige Website-cookie-openbaarmaking.
 
-## 13. Internationale gegevensoverdracht
+## 14. Internationale gegevensoverdrachten
 
-Aangezien alle gegevens lokaal op uw apparaat worden opgeslagen, vinden er onder ons beheer geen internationale gegevensoverdrachten plaats. API-aanroepen van derden kunnen worden verwerkt in de rechtsgebieden waar die diensten actief zijn.
+**App-gegevens:** Aangezien alle detectiegegevens lokaal op uw apparaat worden opgeslagen, vinden er geen internationale gegevensoverdrachten plaats onder onze controle. API-oproepen naar derden kunnen worden verwerkt in de jurisdicties waar die diensten opereren.
 
-## 14. Melding van datalekken
+**Website-gegevens:** Wachtlijst-e-mails worden opgeslagen in de EU (Ierland) door Supabase en verwerkt door Resend (EU, Ierland). Als u de Website buiten de EU bezoekt, wordt uw e-mailadres voor verwerking naar de EU overgedragen.
 
-Aangezien wij uw gegevens niet op een server opslaan, is een datalek aan onze kant niet mogelijk. Als wij kennis krijgen van een kwetsbaarheid in de App, zullen wij een update uitbrengen en gebruikers informeren via de App of de website.
+## 15. Kennisgeving van gegevenslekken
 
-## 15. Wijzigingen in dit beleid
+**App:** Aangezien wij uw detectiegegevens niet op enige server opslaan die wij beheren, is een gegevenslek dat App-gegevens aan onze kant beïnvloedt niet mogelijk. Als wij op de hoogte raken van een kwetsbaarheid in de App, brengen wij een update uit en informeren wij gebruikers via de App of website.
 
-Wij kunnen dit Privacybeleid bijwerken om wijzigingen in de functionaliteit of toepasselijke wetgeving te reflecteren. De datum "Laatst bijgewerkt" zal worden herzien. Materiële wijzigingen zullen worden gecommuniceerd via de App of de website.
+**Website:** Onze verwerkers (Supabase, Resend) hanteren hun eigen meldingsprotocollen voor gegevenslekken. In het onwaarschijnlijke geval van een lek dat uw wachtlijst-e-mail beïnvloedt, zullen wij u en de relevante toezichthoudende autoriteit (ANSPDCP) binnen 72 uur informeren zoals vereist door de GDPR.
 
-## 16. Privacybeleid van derden
+## 16. Wijzigingen in dit beleid
+
+Wij kunnen dit Privacybeleid bijwerken om wijzigingen in functionaliteit of toepasselijke wetten te weerspiegelen. De datum "Laatst bijgewerkt" wordt herzien. Materiële wijzigingen worden gecommuniceerd via de App of website.
+
+## 17. Privacybeleid van derden
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
@@ -199,18 +261,19 @@ Wij kunnen dit Privacybeleid bijwerken om wijzigingen in de functionaliteit of t
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
+- [Vercel](https://vercel.com/legal/privacy-policy) (Website-hosting + analytics)
+- [Supabase](https://supabase.com/privacy) (Website-database)
+- [Resend](https://resend.com/legal/privacy-policy) (Website-e-mail)
 
-## 17. Contact met ons opnemen
+## 18. Contact
 
 **Coc Lorand Adrian P.F.A.** (handelend onder de naam Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)
 
-Voor AVG-gerelateerde vragen kunt u ook contact opnemen met de ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) via [dataprotection.ro](https://www.dataprotection.ro).
+Voor GDPR-gerelateerde vragen kunt u ook contact opnemen met ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) op [dataprotection.ro](https://www.dataprotection.ro).
 
 ---
 
-Dit Privacybeleid is van kracht vanaf 7 april 2026 en is van toepassing op alle versies van SweepTrack Pro.
-
----
+Dit Privacybeleid is van kracht vanaf 12 mei 2026 en is van toepassing op alle versies van SweepTrack Pro.

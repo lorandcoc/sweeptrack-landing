@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 7 april 2026 · Laatst bijgewerkt: 7 april 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 12 mei 2026
 
 Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Acceptatie van de voorwaarden
 
-Door SweepTrack Pro ("de App") te downloaden, installeren, openen of gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Gebruiksvoorwaarden ("Voorwaarden"). Als u niet akkoord gaat met deze Voorwaarden, gebruik de App dan niet. "Wij", "ons" en "onze" verwijzen naar Coc Lorand Adrian P.F.A., handelend onder de naam Loriba.
+Door SweepTrack Pro ("de App") of de website sweeptrack.pro ("de Website") te downloaden, installeren, openen of gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Gebruiksvoorwaarden ("Voorwaarden"). Als u niet akkoord gaat met deze Voorwaarden, gebruik de App of de Website dan niet. "Wij", "ons" en "onze" verwijzen naar Coc Lorand Adrian P.F.A., handelend onder de naam Loriba.
 
-Wij behouden ons het recht voor om deze Voorwaarden op elk gewenst moment te wijzigen. Voortgezet gebruik van de App na wijzigingen houdt acceptatie in. Materiële wijzigingen zullen worden gecommuniceerd via de App of onze website.
+Wij behouden ons het recht voor om deze Voorwaarden op elk gewenst moment te wijzigen. Voortgezet gebruik van de App of Website na wijzigingen houdt acceptatie in. Materiële wijzigingen zullen worden gecommuniceerd via de App of onze website.
 
 ## 2. Beschrijving van de dienst
 
@@ -28,214 +28,241 @@ SweepTrack Pro is een op GPS gebaseerde tracking- en sessielogboek-applicatie on
 - Weersverwachting en score voor detectie-omstandigheden
 - Getijdevoorspellingen (Amerikaanse kuststations via NOAA)
 - Ontdekking van nabijgelegen historische en archeologische bezienswaardigheden
-- Beheer van detector-presets voor 57 modellen metaaldetectors
-- Machtigingskluis voor het beheren van toestemmingen van grondeigenaren en toegang tot locaties
+- Beheer van detector-presets voor meer dan 60 modellen metaaldetectoren
+- Toestemmingenkluis voor het beheren van toestemmingen van landeigenaren en sitetoegang
 - Perimeterbewaking met grenswaarschuwingen
 - Offline kaartdownloads
-- Google Drive back-up en herstel
-- Sessie-export (GPX, KML, CSV, JSON) en vergelijkingstools
-- Kalender-heatmap, statistieken en het bijhouden van prestaties
+- Google Drive-back-up en -herstel
+- Sessie-export (GPX, KML, CSV, JSON) en vergelijkingshulpmiddelen
+- Kalender-heatmap, statistieken en prestatietracking
+
+De Website sweeptrack.pro biedt informatie over SweepTrack Pro, een pre-launch wachtlijst en ondersteunende inhoud.
 
 ## 3. Geschiktheid
 
-U moet ten minste 16 jaar oud zijn om deze App te gebruiken. Als u jonger bent dan 18 jaar, verklaart u dat een ouder of wettelijke voogd deze Voorwaarden namens u heeft beoordeeld en hiermee akkoord is gegaan.
+U moet minstens 16 jaar oud zijn om de App of de Website te gebruiken. Als u jonger bent dan 18 jaar, verklaart u dat uw ouder of wettelijke voogd deze Voorwaarden namens u heeft beoordeeld en geaccepteerd.
 
-Door de App te gebruiken, verklaart en garandeert u dat u de wettelijke bevoegdheid heeft om een bindende overeenkomst aan te gaan in uw rechtsgebied.
+Door de App of Website te gebruiken, verklaart en garandeert u dat u de juridische bevoegdheid heeft om een bindende overeenkomst in uw rechtsgebied aan te gaan.
 
 ## 4. Account en authenticatie
 
-De App vereist niet dat u een account aanmaakt. Een optionele Google Sign-In is uitsluitend beschikbaar voor de Google Drive back-up- en herstelfunctie.
+De App vereist geen accountaanmaak. Een optionele Google Sign-In is uitsluitend beschikbaar voor de Google Drive-back-up en -herstelfunctionaliteit.
 
 U bent verantwoordelijk voor:
 
-- Het handhaven van de veiligheid van uw Google-accountgegevens
-- Alle activiteiten die plaatsvinden via uw geauthenticeerde sessie
-- Ervoor zorgen dat uw Google-accountinstellingen in overeenstemming zijn met uw privacyvoorkeuren
+- Het handhaven van de beveiliging van uw Google-accountgegevens
+- Alle activiteiten die plaatsvinden via uw geverifieerde sessie
+- Ervoor zorgen dat uw Google-accountinstellingen zijn afgestemd op uw privacyvoorkeuren
 
-Wij slaan uw Google-wachtwoord niet op. De authenticatie wordt volledig afgehandeld door het OAuth-systeem van Google.
+Wij slaan uw Google-accountwachtwoord niet op. Authenticatie wordt volledig afgehandeld door het OAuth-systeem van Google.
 
 ## 5. Abonnement en betalingen
 
 ### 5.1 Gratis niveau
 
-De App biedt beperkte functionaliteit zonder kosten, waaronder:
+De App biedt beperkte functionaliteit kosteloos, waaronder:
 
 - Onbeperkte sessies
 - Tot 5 vondsten
-- 1 slot voor detector-presets
+- 1 detector-presetslot
 - Toegang tot basis tracking- en kaartfuncties
 
-### 5.2 Premium abonnement
+### 5.2 Premium-abonnement
 
-Een premium abonnement, beheerd via de Google Play Store en verwerkt door RevenueCat, Inc., ontgrendelt onbeperkte vondsten, sessies en detector-presets, plus geavanceerde functies zoals historische kaartlagen, offline kaarten, perimeterbewaking, cloud back-up en extra tools.
+Een premium-abonnement, beheerd via Google Play Store en verwerkt door RevenueCat, Inc., ontgrendelt onbeperkte vondsten, sessies en detector-presets, plus geavanceerde functies waaronder historische kaartoverlays, offline kaarten, perimeterbewaking, cloudback-up en aanvullende hulpmiddelen.
 
-### 5.3 Facturering
+### 5.3 Founder's Lifetime
 
-- Alle betalingen worden verwerkt via de Google Play Store
-- De abonnementsprijs wordt getoond op het moment van aankoop
-- Abonnementen worden automatisch verlengd, tenzij ze ten minste 24 uur voor het einde van de huidige periode worden opgezegd
-- U kunt uw abonnement beheren of opzeggen via de instellingen van de Google Play Store
+Een beperkte Founder's Lifetime-aanbieding is beschikbaar voor de eerste 1.000 kopers via het in-app aankoopmechanisme van Google Play, nadat de App publiekelijk beschikbaar is op Google Play. Founder's Lifetime is een eenmalige betaling die levenslange toegang verleent tot alle Pro-functies. Nadat 1.000 Founder's Lifetime-aankopen zijn voltooid, sluit de aanbieding permanent en volgende gebruikers krijgen toegang tot Pro-functies via het standaardabonnement beschreven in §5.2.
 
-### 5.4 Terugbetalingen
+Inschrijven op de pre-launch wachtlijst reserveert geen Founder's Lifetime-plek. De limiet wordt afgedwongen op het moment van aankoop, op basis van wie het eerst komt, het eerst maalt, onder gebruikers die de App hebben geïnstalleerd.
 
-Verzoeken om terugbetaling worden afgehandeld door de Google Play Store in overeenstemming met hun terugbetalingsbeleid. Wij verwerken geen rechtstreekse terugbetalingen.
+### 5.4 Facturering
+
+- Alle betalingen worden verwerkt via Google Play Store
+- Abonnementsprijzen worden getoond op het moment van aankoop
+- Abonnementen worden automatisch verlengd, tenzij geannuleerd ten minste 24 uur voor het einde van de huidige periode
+- Founder's Lifetime is een eenmalige, niet-verlengende aankoop
+- U kunt uw abonnement beheren of annuleren via de Google Play Store-instellingen
+
+### 5.5 Terugbetalingen
+
+Verzoeken om terugbetaling worden afgehandeld door Google Play Store in overeenstemming met hun terugbetalingsbeleid. Wij verwerken geen terugbetalingen rechtstreeks.
 
 ## 6. Gebruikersgegevens en privacy
 
-### 6.1 Verzamelde gegevens
+### 6.1 Verzamelde gegevens (App)
 
 De App verzamelt en slaat de volgende gegevens **lokaal op uw apparaat** op:
 
 - GPS-coördinaten, snelheid, hoogte en koers tijdens actieve trackingsessies
 - Sessiemetadata (naam, datum, duur, afstand, tags)
-- Vondstregistraties (type, locatie, naam, notities, diepte, waarde, gewicht)
-- Mediabestanden (foto's en audio-opnamen) die binnen de App zijn gemaakt
-- Vermeldingen in de machtigingskluis (locatienamen, namen van eigenaren, contactgegevens, machtigingsdetails, grenscoördinaten, handtekeningen)
-- Configuraties voor detector-presets
-- Weermomentopnamen gekoppeld aan sessies
+- Vondst-/ontdekkingsregistraties (type, locatie, naam, notities, diepte, waarde, gewicht)
+- Mediabestanden (foto's en audio-opnamen) vastgelegd binnen de App
+- Items van de toestemmingenkluis (sitenamen, namen van eigenaren, contactgegevens, vergunningsdetails, grenscoördinaten, handtekeningen)
+- Detector-presetconfiguraties
+- Weersmomentopnamen gekoppeld aan sessies
 - App-voorkeuren (thema, eenheden, taal)
 
-### 6.2 Gegevensopslag
+### 6.2 Gegevensopslag (App)
 
-- **Alle gegevens worden lokaal op uw apparaat opgeslagen** in een versleutelde database en lokale bestandsopslag
-- **Er worden geen gegevens naar onze servers verzonden** — wij beheren geen backend-servers of databases
-- **Google Drive Backup** (optioneel, door de gebruiker geïnitieerd) slaat een versleutelde kopie van uw gegevens op in uw persoonlijke Google Drive-account in een map genaamd "SweepTrack Backups"
-- Android cloud back-up is uitgeschakeld om uw gegevens te beschermen
+- **Alle App-gegevens worden lokaal op uw apparaat opgeslagen** in een versleutelde database en lokale bestandsopslag
+- **Geen App-gegevens worden verzonden naar onze servers** — wij beheren geen backend-servers of databases voor App-functionaliteit
+- **Google Drive-back-up** (optioneel, door de gebruiker geïnitieerd) slaat een versleutelde kopie van uw gegevens op in uw persoonlijke Google Drive-account in een "SweepTrack Backups"-map
+- Android-cloudback-up is uitgeschakeld om uw gegevens te beschermen
 
-### 6.3 API-aanroepen van derden
+Gegevenspraktijken van de Website (e-mailadres-verzameling voor de wachtlijst, analytics, hosting) worden apart beschreven in §6.7 hieronder en in volledig detail in ons Privacybeleid, Sectie 4.
 
-De App doet uitsluitend voor functionele doeleinden netwerkverzoeken aan de volgende diensten van derden. Er worden geen persoonlijke of identificerende gegevens verzonden, tenzij expliciet vermeld:
+### 6.3 API-oproepen aan derden (App)
+
+De App doet netwerkverzoeken aan de volgende diensten van derden, uitsluitend voor functionaliteitsdoeleinden. Er worden geen persoonlijke of identificerende gegevens verzonden, tenzij anders aangegeven:
 
 - **Google Maps SDK** — Kaartweergave
-- **Open-Meteo** — Weergegevens (globale coördinaten verzonden, geen persoonlijke info)
-- **OpenStreetMap / Nominatim** — Omgekeerde geocodering (coördinaten verzonden, geen persoonlijke info)
-- **Overpass API** — Zoekopdrachten voor nabijgelegen historische bezienswaardigheden (coördinaten verzonden, geen persoonlijke info)
-- **Wikipedia API** — Artikelen in de buurt (coördinaten verzonden, geen persoonlijke info)
-- **NOAA** — Getijdevoorspellingen (station-ID verzonden, geen persoonlijke info)
-- **RevenueCat** — Abonnementsverificatie (anonieme app-gebruikers-ID, geen persoonlijke info)
+- **Open-Meteo** — Weersgegevens (geschatte coördinaten verzonden, geen persoonlijke informatie)
+- **OpenStreetMap / Nominatim** — Omgekeerde geocodering (coördinaten verzonden, geen persoonlijke informatie)
+- **Overpass API** — Zoekopdrachten naar nabijgelegen historische bezienswaardigheden (coördinaten verzonden, geen persoonlijke informatie)
+- **Wikipedia API** — Artikelen in de buurt (coördinaten verzonden, geen persoonlijke informatie)
+- **NOAA** — Getijvoorspellingen (station-ID verzonden, geen persoonlijke informatie)
+- **RevenueCat** — Abonnementsverificatie (anonieme app-gebruikers-ID, geen persoonlijke informatie)
 
-### 6.4 Geen analytics of tracking
+### 6.4 Geen analytics of tracking (App)
 
-De App bevat **geen** analytics SDK's, tools voor crashrapportage, advertentiekaders of mechanismen voor gedragsmonitoring. Wij verzamelen, verzenden of verkopen geen gebruiksgegevens.
+De App bevat **geen** analytics-SDK's, crashrapportagehulpmiddelen, advertentieframeworks of mechanismen voor gedragstracking. Wij verzamelen, verzenden of verkopen geen App-gebruiksgegevens.
+
+Website-analytics (Vercel Analytics, Vercel Speed Insights) worden beschreven in §6.7.
 
 ### 6.5 Gegevensverwijdering
 
-U kunt uw gegevens op elk gewenst moment verwijderen door individuele items in de App te wissen, de app-gegevens te wissen via de Android-instellingen, de App te deïnstalleren of de Google Drive-back-ups uit uw account te verwijderen.
+U kunt uw App-gegevens op elk gewenst moment verwijderen door afzonderlijke items binnen de App te verwijderen, app-gegevens te wissen via de Android-instellingen, de App te deïnstalleren of Google Drive-back-ups te verwijderen uit uw account. Voor wachtlijst-gegevens van de Website, schrijf u uit van e-mails of neem contact op via [support@sweeptrack.pro](mailto:support@sweeptrack.pro).
 
 ### 6.6 Privacy van kinderen
 
-Wij verzamelen niet bewust persoonlijke informatie van kinderen onder de 16 jaar. Als u vermoedt dat een kind ons persoonlijke gegevens heeft verstrekt, neem dan contact met ons op.
+Wij verzamelen niet willens en wetens persoonlijke informatie van kinderen onder de 16 jaar. Als u denkt dat een kind ons persoonlijke gegevens heeft verstrekt, neem dan contact met ons op.
+
+### 6.7 Website en wachtlijst
+
+De Website sweeptrack.pro wordt geëxploiteerd als marketing- en informatiekanaal voor SweepTrack Pro. Door uw e-mailadres in te dienen via een aanmeldingsformulier op de Website, stemt u in met het ontvangen van:
+
+- Een welkomstmail die uw aanmelding bevestigt
+- Een e-mail wanneer SweepTrack Pro op Google Play wordt gelanceerd
+- Incidentele pre-launch-updates over het product en de Founder's Lifetime-aanbieding
+
+E-mails worden opgeslagen in een Supabase Postgres-database gehost in de EU (regio Ierland) en bezorgd via Resend, Inc. (EU, Ierland). U kunt zich op elk gewenst moment uitschrijven door "remove" te beantwoorden op een e-mail, of door de List-Unsubscribe-link te gebruiken die uw e-mailclient weergeeft. E-mailadressen worden bewaard tot u zich uitschrijft of 12 maanden na de openbare lancering, afhankelijk van wat eerst plaatsvindt.
+
+De Website gebruikt ook Vercel Analytics en Vercel Speed Insights — privacy-vriendelijke tools die geen cookies gebruiken en geen individuele IP-adressen opslaan.
+
+Volledige details over de afhandeling van Website-gegevens — inclusief rechtsgrondslag, verwerkers, bewaring en uw rechten — staan in ons Privacybeleid, Sectie 4.
 
 ## 7. Toegestaan gebruik
 
-U gaat ermee akkoord de App alleen voor wettige doeleinden en in overeenstemming met deze Voorwaarden te gebruiken. U gaat ermee akkoord om **niet**:
+U gaat ermee akkoord de App alleen voor wettige doeleinden en in overeenstemming met deze Voorwaarden te gebruiken. U gaat ermee akkoord **niet**:
 
-- De App te gebruiken voor illegale activiteiten, waaronder verboden toegang (trespassing), ongeoorloofde opgravingen of overtreding van wetten ter bescherming van cultureel erfgoed
+- De App te gebruiken voor enige illegale activiteit, waaronder betreden, ongeoorloofde opgraving of schending van wetten voor de bescherming van cultureel erfgoed
 - De App te reverse-engineeren, decompileren of demonteren
 - De App of de inhoud ervan te distribueren, in sublicentie te geven of commercieel te exploiteren
-- Te proberen de abonnementsverificatie, beperkingen van premiumfuncties of beveiligingsmaatregelen te omzeilen
+- Te proberen abonnementsverificatie, premium-functiebeperkingen of beveiligingsmaatregelen te omzeilen
 - Geautomatiseerde systemen (bots, scrapers) te gebruiken om met de App te communiceren
 - De functionaliteit van de App of bijbehorende diensten te verstoren of te onderbreken
 
-## 8. Metaaldetectie en naleving van de wet
+## 8. Metaaldetectie en wettelijke naleving
 
 ### 8.1 Uw verantwoordelijkheid
 
-Metaaldetectie is onderworpen aan wet- en regelgeving die verschilt per land, staat, provincie en gemeente. **U bent als enige verantwoordelijk** voor het verkrijgen van de juiste machtigingen, het naleven van alle toepasselijke wetten, het respecteren van wetten op cultureel erfgoed en oudheden, het melden van vondsten zoals vereist door de lokale wetgeving en het verifiëren of detectie op een locatie is toegestaan voordat u een sessie start.
+Metaaldetectie is onderworpen aan wetten en voorschriften die variëren per land, staat, provincie en gemeente. **U bent als enige verantwoordelijk** voor het verkrijgen van de juiste toestemmingen, het naleven van alle toepasselijke wetten, het naleven van wetten inzake cultureel erfgoed en oudheden, het rapporteren van vondsten zoals vereist door de lokale wet en het verifiëren dat detectie is toegestaan op een locatie voordat u een sessie begint.
 
-### 8.2 Land-specifieke juridische mededelingen
+### 8.2 Landenspecifieke juridische kennisgevingen
 
-**UK:** Onder de Treasure Act 1996 moet u bepaalde vondsten binnen 14 dagen melden aan de lokale lijkschouwer (coroner). Het registreren van vondsten in de App vormt geen wettelijke melding. U moet apart melding maken via het Portable Antiquities Scheme (PAS).
+**VK:** Onder de Treasure Act 1996 moet u bepaalde vondsten binnen 14 dagen melden aan uw plaatselijke coroner. De vondstregistratie van de App vormt geen wettelijk rapport. U moet afzonderlijk rapporteren via het Portable Antiquities Scheme (PAS).
 
-**US:** Metaaldetectie is verboden op de meeste federale openbare gronden onder ARPA (1979), inclusief nationale parken, nationale bossen en BLM-gronden. Overtredingen kunnen leiden tot boetes tot $100.000 en gevangenisstraf. De App geeft niet aan of detectie op een locatie legaal is.
+**VS:** Metaaldetectie is verboden op de meeste federale openbare gronden onder ARPA (1979), waaronder nationale parken, nationale bossen en BLM-land. Schendingen kunnen leiden tot boetes van maximaal $100.000 en gevangenisstraf. De App geeft niet aan of detectie legaal is op een locatie.
 
-**EU:** Veel EU-landen vereisen overheidsvergunningen voor metaaldetectie. In sommige landen is detectie zonder vergunning illegaal, ongeacht wie de eigenaar van de grond is. De App bepaalt niet de juridische classificatie van vondsten onder de nationale wetgeving op cultureel eigendom.
+**EU:** Veel EU-landen vereisen overheidsvergunningen voor metaaldetectie. In sommige landen is detectie zonder vergunning illegaal, ongeacht de eigendom van het land. De App bepaalt niet de juridische classificatie van vondsten onder nationale wetgeving inzake cultureel eigendom.
 
-**Romania:** Onder OG 43/2000 is het ongeoorloofd gebruik van metaaldetectors op archeologische vindplaatsen of beschermde gebieden een strafbaar feit.
+**Roemenië:** Onder OG 43/2000 vormt het ongeoorloofd gebruik van metaaldetectoren op archeologische sites of beschermde gebieden een strafbaar feit.
 
-**Australia:** Detectie op Crown land, in nationale parken, Aboriginal erfgoedlocaties en geregistreerde erfgoedlocaties is over het algemeen verboden.
+**Australië:** Detectie op kroongronden, nationale parken, Aboriginal heritage sites en geregistreerde erfgoedplaatsen is over het algemeen verboden.
 
 **Canada:** Provinciale erfgoedwetten en de Canada National Parks Act beperken of verbieden detectie in verschillende contexten.
 
-### 8.3 Disclaimer voor machtigingskluis
+### 8.3 Disclaimer toestemmingenkluis
 
-De machtigingskluis is een persoonlijk organisatiemiddel. Het vormt **geen** wettelijk bewijs van toestemming, creëert geen juridische overeenkomst en vervangt geen schriftelijke toestemming of wettelijk vereiste vergunning. Digitale handtekeningen zijn uitsluitend voor persoonlijke administratie. De PDF-briefgenerator maakt slechts een sjabloon-document — dit heeft geen rechtsgevolg tenzij beide partijen onafhankelijk instemmen met de inhoud ervan.
+De toestemmingenkluis is een persoonlijk organisatie-instrument. Het vormt **geen** wettelijk bewijs van toestemming, creëert geen juridische overeenkomst en vervangt geen wettelijk vereiste schriftelijke toestemming of vergunning. Digitale handtekeningen zijn alleen voor persoonlijke administratie. De PDF-briefgenerator creëert alleen een sjabloondocument — het heeft geen wettelijke werking, tenzij beide partijen onafhankelijk akkoord gaan met de inhoud.
 
-### 8.4 Disclaimer voor classificatie van vondsten
+### 8.4 Disclaimer vondstclassificatie
 
-Vondstcategorieën in de App (Schat, Goud, Munt, etc.) zijn uitsluitend bedoeld voor persoonlijke organisatie. De App bepaalt **niet** de juridische classificatie, archeologische betekenis, waarde of meldingsverplichtingen. De muntenschuifmaat (Coin Caliper) identificeert munten uitsluitend op diameter en mag niet worden gebruikt voor authenticatie, taxatie of wettelijke rapportage.
+Vondstcategorieën in de App (Schat, Goud, Munt, enz.) zijn alleen voor persoonlijke organisatie. De App bepaalt **geen** wettelijke classificatie, archeologische betekenis, waarde of rapportageverplichtingen. De Coin Caliper identificeert munten alleen op diameter en mag niet worden gebruikt voor authenticatie, taxatie of wettelijke rapportage.
 
 ### 8.5 Geen juridisch advies
 
-Niets in de App — inclusief de machtigingskluis, weerscore, detectievoorspelling, nabijgelegen locaties, historische kaartlagen, vondstcategorisering of welke tekst dan ook — vormt juridisch, financieel, archeologisch of ander professioneel advies van welke aard dan ook.
+Niets in de App — inclusief de toestemmingenkluis, weerscore, detectievoorspelling, nabijgelegen sites, historische kaartoverlays, vondstcategorisering of enige tekst — vormt juridisch, financieel, archeologisch of professioneel advies van welke aard dan ook.
 
-## 9. GPS, Locatie en Veiligheid
+## 9. GPS, locatie en veiligheid
 
-GPS-nauwkeurigheid is afhankelijk van uw hardware, beschikbaarheid van satellieten, atmosferische omstandigheden, terrein en omringende structuren. De App levert locatiegegevens "zoals ze zijn" (as is). Wij garanderen de nauwkeurigheid niet.
+De GPS-nauwkeurigheid hangt af van de hardware van uw apparaat, satellietbeschikbaarheid, atmosferische omstandigheden, terrein en omringende structuren. De App levert locatiegegevens "as-is". Wij garanderen geen nauwkeurigheid.
 
-De perimeterbewaking is een benaderend hulpmiddel en mag niet worden gebruikt als een nauwkeurige indicator van grenzen of juridische eigendomslijnen. De indicator voor de terugweg (road back) toont de afstand in een rechte lijn, niet een veilige wandelroute.
+De perimeterbewaking is een benaderend hulpmiddel en mag niet worden gebruikt als een precieze grensindicator of wettelijke eigendomslijn. De terug-naar-weg-indicator toont de rechte-lijn-afstand, geen veilige wandelroute.
 
-**Veiligheid bij detectie op het strand:** De getijdetabel biedt voorspellingen, geen garanties. Getijden kunnen worden beïnvloed door weer, wind en lokale geografie op manieren die niet in de voorspellingen worden weerspiegeld. Houd altijd een veiligheidsmarge aan en zorg voor een vluchtroute. Vertrouw nooit uitsluitend op de getijdegegevens van de App voor veiligheidsbeslissingen.
+**Strand-detectie veiligheid:** De getijdetabel biedt voorspellingen, geen garanties. Getijden kunnen worden beïnvloed door weer, wind en lokale geografie op manieren die niet in voorspellingen worden weerspiegeld. Houd altijd een veiligheidsmarge aan en heb een ontsnappingsroute. Vertrouw nooit alleen op de getijgegevens van de App voor veiligheidsbeslissingen.
 
-Route-overlays en heatmap-visualisaties zijn benaderingen. GPS-afwijking en signaalverlies kunnen ervoor zorgen dat routes verschoven lijken ten opzichte van de werkelijke posities. Gaten weerspiegelen mogelijk niet de werkelijke detectiepatronen.
+Routeoverlay- en heatmap-visualisaties zijn benaderend. GPS-drift en signaalverlies kunnen routes ten opzichte van de werkelijke posities verschoven laten verschijnen. Gaten kunnen geen werkelijke detectiepatronen weerspiegelen.
 
 ## 10. Diensten en inhoud van derden
 
 De App gebruikt gegevens van Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA en Wikipedia. Kaartgegevens mogen **nooit** worden gebruikt om wettelijke eigendomsgrenzen of toegangsrechten te bepalen.
 
-**USGS Historical Map Overlays:** Historische kaarten geven de situatie van decennia of eeuwen geleden weer. Weergegeven kenmerken bestaan mogelijk niet meer of kunnen zich op een ander perceel bevinden. Historische kaarten weerspiegelen niet de huidige grenzen, eigendom of toegangsrechten. De aanwezigheid van een historisch kenmerk geeft geen machtiging tot detectie.
+**USGS historische kaartoverlay:** Historische kaarten beelden omstandigheden af van decennia of eeuwen geleden. Getoonde kenmerken bestaan mogelijk niet meer of bevinden zich op andere eigendommen. Historische kaarten weerspiegelen geen huidige grenzen, eigendom of toegangsrechten. De aanwezigheid van een historisch kenmerk geeft geen toestemming voor detectie.
 
-**Getijdevoorspellingen** houden mogelijk geen rekening met stormvloeden, wind of lokale anomalieën. Gegevens over **nabijgelegen locaties** zijn bijdragen van de gemeenschap en kunnen onnauwkeurig zijn — de aanwezigheid van een marker geeft geen machtiging tot detectie. **Offline kaarten** kunnen verouderd raken. **Detector-presets** zijn organisatorische hulpmiddelen en zijn niet gecertificeerd door fabrikanten.
+**Getijvoorspellingen** houden mogelijk geen rekening met stormvloed, wind of lokale anomalieën. **Nabijgelegen sites-gegevens** zijn bijdragen van de gemeenschap en kunnen onnauwkeurig zijn — de aanwezigheid van een marker geeft geen toestemming voor detectie. **Offline kaarten** kunnen verouderen. **Detector-presets** zijn organisatorische hulpmiddelen, niet goedgekeurd door fabrikanten.
 
 ## 11. Intellectueel eigendom
 
-SweepTrack Pro, inclusief het ontwerp, de code, afbeeldingen, UI-componenten en branding, is het intellectueel eigendom van Loriba. Alle rechten voorbehouden.
+SweepTrack Pro, inclusief het ontwerp, de code, de grafische elementen, UI-componenten en branding, is intellectueel eigendom van Coc Lorand Adrian P.F.A. (handelend onder de naam Loriba). Alle rechten voorbehouden.
 
-U behoudt het eigendom van alle inhoud die u met de App maakt. Wij maken geen aanspraak op rechten op uw inhoud.
+U behoudt het eigendom van alle inhoud die u maakt met behulp van de App. Wij claimen geen rechten op uw inhoud.
 
-Merknamen van detectors en modelnamen zijn handelsmerken van hun respectievelijke fabrikanten. Wij zijn niet gelieerd aan, worden niet ondersteund door of gesponsord door een fabrikant van detectors.
+Detector-merknamen en modelnamen zijn handelsmerken van hun respectieve fabrikanten. Wij zijn niet aangesloten bij, goedgekeurd door of gesponsord door enige detectorfabrikant.
 
-## 12. Uitsluiting van garanties
+## 12. Disclaimer van garanties
 
-DE APP WORDT GELEVERD "ZOALS DEZE IS" EN "ZOALS BESCHIKBAAR" ZONDER ENIGE VORM VAN GARANTIE, EXPLICIET OF IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT IMPLICIETE GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL, NAUWKEURIGHEID EN HET NIET SCHENDEN VAN RECHTEN.
+DE APP WORDT GELEVERD "AS IS" EN "ZOALS BESCHIKBAAR" ZONDER GARANTIES VAN WELKE AARD DAN OOK, EXPLICIET OF IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT IMPLICIETE GARANTIES VAN VERHANDELBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL, NAUWKEURIGHEID EN NIET-INBREUK.
 
 ## 13. Beperking van aansprakelijkheid
 
-VOOR ZOVER TOEGESTAAN DOOR DE TOEPASSELIJKE WETGEVING, IS COC LORAND P.F.A. (HANDELND ALS LORIBA) NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, SPECIALE, GEVOLG- OF PUNITIEVE SCHADE, INCLUSIEF MAAR NIET BEPERKT TOT: SCHADE DOOR GPS-ONNAUWKEURIGHEID, GESCHILLEN OVER EIGENDOMSGRENZEN OF CLAIMS WEGENS VERBODEN TOEGANG; SCHADE DOOR HET VERTROUWEN OP WEER-, GETIJDE- OF MILIEUGEGEVENS; GETIJDEOMSTANDIGHEDEN, INCLUSIEF LETSEL OF VERDRINKING; JURIDISCHE GEVOLGEN VAN DETECTIE-ACTIVITEITEN, INCLUSIEF BOETES, VERVOLGING OF INBESLAGNAME; HET NIET NALEVEN VAN DE TREASURE ACT 1996, ARPA OF ENIGE WET OP CULTUREEL ERFGOED; HET VERTROUWEN OP HISTORISCHE KAARTLAGEN, NABIJGELEGEN LOCATIES, MACHTIGINGSKLUIS, PDF-BRIEVEN, DIGITALE HANDTEKENINGEN, MUNTSCHUIFMAAT OF VONDSTIDENTIFICATIE; ONNAUWKEURIGHEID VAN PERIMETERBEWAKING, ROUTE-OVERLAY OF HEATMAP; VEROUDERDE OFFLINE KAARTEN OF DETECTOR-PRESETS; LICHAMELIJK LETSEL, OVERLIJDEN OF MATERIËLE SCHADE TIJDENS DETECTIE-ACTIVITEITEN; OF INTERACTIES MET GRONDEIGENAREN, HANDHAVINGSINSTANTIES OF DERDEN.
+VOOR ZOVER MAXIMAAL TOEGESTAAN DOOR DE TOEPASSELIJKE WET, IS COC LORAND ADRIAN P.F.A. (HANDELEND ONDER DE NAAM LORIBA) NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, SPECIALE, GEVOLG- OF PUNITIEVE SCHADE, INCLUSIEF MAAR NIET BEPERKT TOT: SCHADE DOOR GPS-ONNAUWKEURIGHEID, GESCHILLEN OVER EIGENDOMSGRENZEN OF CLAIMS VAN BETREDEN; SCHADE DOOR VERTROUWEN OP WEER-, GETIJDE- OF MILIEUGEGEVENS; GETIJDEOMSTANDIGHEDEN INCLUSIEF LETSEL OF VERDRINKING; JURIDISCHE GEVOLGEN VAN DETECTIEACTIVITEITEN INCLUSIEF BOETES, VERVOLGING OF INBESLAGNEMING; HET NIET NALEVEN VAN DE TREASURE ACT 1996, ARPA OF ENIGE WET INZAKE CULTUREEL ERFGOED; VERTROUWEN OP HISTORISCHE KAARTOVERLAYS, NABIJGELEGEN SITES, TOESTEMMINGENKLUIS, PDF-BRIEVEN, DIGITALE HANDTEKENINGEN, COIN CALIPER OF VONDSTIDENTIFICATIE; ONNAUWKEURIGHEID VAN PERIMETERBEWAKING, ROUTEOVERLAY OF HEATMAP; VEROUDERDE OFFLINE KAARTEN OF DETECTOR-PRESETS; PERSOONLIJK LETSEL, OVERLIJDEN OF SCHADE AAN EIGENDOMMEN TIJDENS DETECTIEACTIVITEITEN; OF INTERACTIES MET LANDEIGENAREN, RECHTSHANDHAVING OF DERDEN.
 
 In geen geval zal onze totale aansprakelijkheid het bedrag overschrijden dat u voor de App heeft betaald in de twaalf (12) maanden voorafgaand aan de claim.
 
-## 14. Vrijwaring
+## 14. Schadeloosstelling
 
-U gaat ermee akkoord Loriba te vrijwaren, te verdedigen en schadeloos te stellen voor alle claims, schade, verliezen, aansprakelijkheden, kosten en uitgaven die voortvloeien uit uw gebruik van de App, uw schending van deze Voorwaarden, uw schending van toepasselijke wetgeving of uw metaaldetectie-activiteiten.
+U gaat ermee akkoord Coc Lorand Adrian P.F.A. (handelend onder de naam Loriba) schadeloos te stellen, te verdedigen en te vrijwaren van alle claims, schade, verliezen, aansprakelijkheden, kosten en uitgaven die voortvloeien uit uw gebruik van de App, schending van deze Voorwaarden, schending van enige toepasselijke wet of uw metaaldetectie-activiteiten.
 
 ## 15. Beëindiging
 
-Wij kunnen uw toegang tot de App op elk gewenst moment beëindigen of opschorten, zonder voorafgaande kennisgeving, om welke reden dan ook, inclusief schending van deze Voorwaarden. Bij beëindiging blijven uw lokaal opgeslagen gegevens op uw apparaat staan totdat u deze verwijdert.
+Wij kunnen uw toegang tot de App op elk moment beëindigen of opschorten, zonder voorafgaande kennisgeving, om welke reden dan ook, inclusief schending van deze Voorwaarden. Bij beëindiging blijven uw lokaal opgeslagen gegevens op uw apparaat staan totdat u ze verwijdert.
 
 ## 16. Toepasselijk recht en geschillenbeslechting
 
-Deze Voorwaarden worden beheerst door de wetten van Roemenië. Elk geschil zal eerst worden getracht op te lossen via onderhandelingen te goeder trouw. Indien dit niet binnen 30 dagen is opgelost, zullen geschillen worden voorgelegd aan de bevoegde rechtbanken in Roemenië.
+Deze Voorwaarden worden beheerst door de wetten van Roemenië. Elk geschil zal eerst worden geprobeerd op te lossen via te goeder trouw gevoerde onderhandelingen. Indien niet opgelost binnen 30 dagen, worden geschillen voorgelegd aan de bevoegde rechtbanken van Roemenië.
 
-**EU-consumenten:** U kunt ook gebruikmaken van het Europese platform voor online geschillenbeslechting via [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr).
+**EU-consumenten:** U kunt ook gebruik maken van het Europese online geschillenbeslechtingsplatform op [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr).
 
-**UK:** Deze Voorwaarden zijn onderworpen aan de UK GDPR en de Data Protection Act 2018. Uw wettelijke consumentenrechten onder de Britse wetgeving worden niet aangetast. U kunt contact opnemen met de [ICO](https://ico.org.uk).
+**Verenigd Koninkrijk:** Deze Voorwaarden zijn onderworpen aan UK GDPR en de Data Protection Act 2018. Uw wettelijke consumentenrechten onder het Britse recht zijn niet aangetast. U kunt contact opnemen met de [ICO](https://ico.org.uk).
 
-**Australia:** Niets in deze Voorwaarden sluit garanties of consumentenrechten onder de Australian Consumer Law uit of wijzigt deze. U kunt contact opnemen met de [OAIC](https://www.oaic.gov.au).
+**Australië:** Niets in deze Voorwaarden sluit een consumentengarantie of -recht onder de Australische consumentenwet uit of wijzigt deze. U kunt contact opnemen met de [OAIC](https://www.oaic.gov.au).
 
-**Canada:** Uw gebruik is onderworpen aan PIPEDA en de toepasselijke provinciale privacywetgeving. U kunt contact opnemen met het [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca).
+**Canada:** Uw gebruik is onderworpen aan PIPEDA en de toepasselijke provinciale privacywetgeving. U kunt contact opnemen met het [Bureau van de Commissaris voor Privacy van Canada](https://www.priv.gc.ca).
 
-**New Zealand:** Uw rechten onder de Consumer Guarantees Act 1993 en Privacy Act 2020 worden niet beperkt. U kunt contact opnemen met de [NZ Privacy Commissioner](https://www.privacy.org.nz).
+**Nieuw-Zeeland:** Uw rechten onder de Consumer Guarantees Act 1993 en Privacy Act 2020 zijn niet beperkt. U kunt contact opnemen met de [NZ Privacy Commissioner](https://www.privacy.org.nz).
 
-**Andere rechtsgebieden:** Uw lokale dwingende rechten op het gebied van consumentenbescherming en gegevensbescherming worden niet aangetast door deze Voorwaarden. Waar de lokale wetgeving rechten toekent waarvan niet bij contract kan worden afgezien, zijn die rechten van toepassing.
+**Andere jurisdicties:** Uw lokale verplichte consumenten- en gegevensbeschermingsrechten worden niet aangetast door deze Voorwaarden. Waar de lokale wet rechten verleent die niet door contract kunnen worden afgestaan, gelden die rechten.
 
 ## 17. Algemene bepalingen
 
-Deze Voorwaarden vormen, samen met ons Privacybeleid, de volledige overeenkomst tussen u en Loriba met betrekking tot de App. Indien een bepaling ongeldig wordt geacht, blijven de overige bepalingen volledig van kracht. Het niet afdwingen van een recht door ons vormt geen verklaring van afstand.
+Deze Voorwaarden, samen met ons Privacybeleid, vormen de volledige overeenkomst tussen u en Loriba met betrekking tot de App. Als een bepaling ongeldig wordt geacht, blijven de overige bepalingen volledig van kracht. Ons nalaten om een recht af te dwingen vormt geen afstand.
 
-## 18. Open source- en licenties van derden
+## 18. Open source- en derde-partijlicenties
 
-De App maakt gebruik van open-source componenten. Belangrijke toeschrijvingen: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (publiek domein), USGS (publiek domein), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+De App gebruikt open-sourcecomponenten. Belangrijke toeschrijvingen: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (publiek domein), USGS (publiek domein), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
 
 ## 19. Contact
 
@@ -248,6 +275,4 @@ Website: [https://sweeptrack.pro](https://sweeptrack.pro)
 
 ---
 
-Deze Gebruiksvoorwaarden treden in werking op 7 april 2026 en zijn van toepassing op alle versies van SweepTrack Pro.
-
----
+Deze Gebruiksvoorwaarden treden in werking op 12 mei 2026 en zijn van toepassing op alle versies van SweepTrack Pro.

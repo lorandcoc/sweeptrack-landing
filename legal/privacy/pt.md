@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicação de rastreio GPS para deteção de metais
 
-Data de vigência: 7 de abril de 2026 · Última atualização: 7 de abril de 2026
+Data de vigência: 12 de maio de 2026 · Última atualização: 12 de maio de 2026
 
 Operado por: Coc Lorand Adrian P.F.A., operando como "Loriba"
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Introdução
 
-Esta Política de Privacidade explica como o SweepTrack Pro ("a Aplicação") recolhe, utiliza, armazena e protege as suas informações. Estamos empenhados em proteger a sua privacidade e garantir a transparência sobre as nossas práticas de dados.
+Esta Política de Privacidade explica como o SweepTrack Pro ("a Aplicação") e o site sweeptrack.pro ("o Website") recolhem, utilizam, armazenam e protegem as suas informações. Estamos empenhados em proteger a sua privacidade e garantir a transparência sobre as nossas práticas de dados.
 
-O SweepTrack Pro foi concebido com uma **arquitetura de privacidade em primeiro lugar**: todos os dados são armazenados localmente no seu dispositivo, não operamos servidores backend e não recolhemos, transmitimos ou vendemos os seus dados pessoais.
+A Aplicação foi concebida com uma **arquitetura de privacidade em primeiro lugar**: todos os dados de deteção são armazenados localmente no seu dispositivo, não operamos servidores backend para a Aplicação e não recolhemos, transmitimos ou vendemos os seus dados pessoais de deteção. O Website opera separadamente e tem as suas próprias práticas de dados, descritas na Secção 4.
 
 ## 2. Responsável pelo Tratamento de Dados
 
@@ -26,125 +26,183 @@ Para efeitos do Regulamento Geral sobre a Proteção de Dados da UE (GDPR) e da 
 CUI: 41299288 · Reg. F24/646/2019  
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
-## 3. Dados que Recolhemos
+## 3. Dados que Recolhemos (Aplicação Android)
 
 ### 3.1 Dados armazenados localmente no seu dispositivo
 
-Os seguintes dados são criados por si e armazenados **exclusivamente no seu dispositivo**. Nunca temos acesso a estes dados, a menos que os partilhe explicitamente.
+Os seguintes dados são criados por si e armazenados **exclusivamente no seu dispositivo**. Nunca temos acesso a estes dados a menos que os partilhe explicitamente.
 
 **Dados de localização e sessão:**
 
-- Coordenadas GPS (latitude, longitude) durante sessões de rastreio ativas
-- Valores de velocidade, altitude, rumo e precisão dos sensores do dispositivo
+- Coordenadas GPS (latitude, longitude) durante as sessões de rastreio ativas
+- Velocidade, altitude, direção e precisão dos sensores do dispositivo
 - Metadados da sessão: nome, data, hora de início/fim, duração, distância, etiquetas
-- Coordenadas do percurso com marcas de tempo
-- Nomes de locais (obtidos através de geocodificação inversa)
+- Coordenadas do percurso com marcas temporais
+- Nomes de locais (obtidos por geocodificação inversa)
 
-**Registos de achados e descobertas:**
+**Registos de achados:**
 
 - Tipo de achado (Tesouro, Ouro, Moeda, Relíquia, Joia, Lixo)
 - Localização do achado (coordenadas GPS no momento do registo)
 - Metadados opcionais: nome, notas, profundidade, valor estimado, peso
-- Anexos multimédia: fotografias e gravações de áudio
+- Anexos multimédia: fotografias e gravações áudio
 
 **Dados do cofre de permissões:**
 
-- Nomes e localizações de sítios
-- Nomes e informações de contacto de proprietários de terras
-- Números de permissão, datas de emissão, datas de expiração
-- Coordenadas dos limites do sítio (polígono)
+- Nomes e localizações dos locais
+- Nomes dos proprietários e informações de contacto
+- Números de permissão, datas de emissão, datas de validade
+- Coordenadas dos limites do local (polígono)
 - Assinaturas digitais (formato SVG)
 - Etiquetas e notas personalizadas
 
-**Outros dados locais:** Configurações de predefinições de detetores, preferências da aplicação (tema, unidades, idioma, definições de mapa) e instantâneos meteorológicos associados a sessões.
+**Outros dados locais:** Configurações de predefinições do detetor, preferências da aplicação (tema, unidades, idioma, configurações do mapa) e instantâneos meteorológicos associados às sessões.
 
 ### 3.2 Dados processados temporariamente (não armazenados)
 
-Os seguintes dados são enviados para serviços de API de terceiros apenas para fins de funcionalidade em tempo real e **não são armazenados por nós ou por estes serviços para além do pedido imediato**:
+Os seguintes dados são enviados para APIs de terceiros para funcionalidade em tempo real e **não são armazenados por nós ou por estes serviços para além do pedido imediato**:
 
 - Coordenadas GPS aproximadas enviadas para Open-Meteo para previsões meteorológicas e dados de altitude
 - Coordenadas GPS aproximadas enviadas para OpenStreetMap/Nominatim para pesquisa de endereços
 - Coordenadas GPS aproximadas enviadas para Overpass API para descoberta de pontos de interesse históricos próximos
 - Coordenadas GPS aproximadas enviadas para Wikipedia API para pesquisa geográfica de artigos próximos
 - Identificadores de estações de marés enviados para NOAA para previsões de marés
-- Consultas de pesquisa de localização enviadas para Open-Meteo Geocoding para pesquisa de nomes de locais
+- Pesquisas de localização enviadas para Open-Meteo Geocoding
 
 ### 3.3 Dados processados por serviços de terceiros
 
-**Google Maps SDK:** A localização do seu dispositivo é processada pelo Google Maps para exibição de mapa. Sujeito à [Política de Privacidade da Google](https://policies.google.com/privacy).
+**Google Maps SDK:** A localização do seu dispositivo é processada pelo Google Maps para a apresentação do mapa. Sujeito à [Política de Privacidade do Google](https://policies.google.com/privacy).
 
-**Google Sign-In e Google Drive (Opcional):** Se ativar o backup no Google Drive, o endereço de email da sua conta Google é armazenado localmente para identificar a conta autenticada. Os dados de backup são carregados para a sua própria conta do Google Drive. Não temos acesso ao seu Google Drive.
+**Google Sign-In e Google Drive (Opcional):** Se ativar a cópia de segurança no Google Drive, o endereço de email da sua conta Google é armazenado localmente para identificar a conta autenticada. Os dados de cópia de segurança são carregados para a sua própria conta Google Drive. Não temos acesso ao seu Google Drive.
 
-**RevenueCat (Gestão de subscrições):** Um identificador de utilizador da aplicação anónimo e gerado aleatoriamente é utilizado para verificação de subscrição. Nenhuma informação pessoal é partilhada. Sujeito à [Política de Privacidade da RevenueCat](https://www.revenuecat.com/privacy).
+**RevenueCat (Gestão de subscrições):** Um identificador de utilizador anónimo, gerado aleatoriamente, é utilizado para verificação de subscrição. Não são partilhadas informações pessoais. Sujeito à [Política de Privacidade do RevenueCat](https://www.revenuecat.com/privacy).
 
-### 3.4 Dados que NÃO recolhemos
+### 3.4 Dados que a Aplicação NÃO Recolhe
 
-- **Não** recolhemos nomes, emails, números de telefone ou quaisquer identificadores pessoais.
-- **Não** utilizamos SDKs de análise, reporte de erros ou rastreio comportamental.
-- **Não** utilizamos frameworks de publicidade ou identificadores de publicidade.
-- **Não** rastreamos padrões de utilização, frequência de sessões ou utilização de funcionalidades.
-- **Não** criamos perfis de utilizador ou impressões digitais comportamentais.
-- **Não** partilhamos, vendemos, alugamos ou comercializamos dados com terceiros.
-- **Não** operamos servidores que recebam, processem ou armazenem os seus dados.
+- **A Aplicação** não recolhe o seu nome, email, número de telefone ou quaisquer identificadores pessoais
+- **A Aplicação** não utiliza análises, relatórios de falhas ou SDKs de rastreio comportamental
+- **A Aplicação** não utiliza estruturas publicitárias ou identificadores publicitários
+- **A Aplicação** não rastreia padrões de utilização, frequência de sessões ou uso de funcionalidades
+- **A Aplicação** não cria perfis de utilizador ou impressões digitais comportamentais
+- **A Aplicação** não partilha, vende, aluga ou troca dados com terceiros
+- **A Aplicação** não opera servidores que recebam, processem ou armazenem os seus dados de deteção
 
-## 4. Base legal para o processamento (GDPR)
+As práticas de dados do Website são cobertas separadamente na Secção 4.
 
-- **Dados de GPS/sessão, registos de achados, entradas no cofre:** Consentimento (Art. 6(1)(a)) — o utilizador inicia ativamente estas ações.
-- **Chamadas de API (meteorologia, geocodificação):** Interesse legítimo (Art. 6(1)(f)) — necessário para a funcionalidade principal.
-- **Backup do Google Drive:** Consentimento (Art. 6(1)(a)) — o utilizador ativa e autentica-se explicitamente.
-- **Verificação de subscrição:** Execução de um contrato (Art. 6(1)(b)) — necessário para fornecer funcionalidades pagas.
+## 4. Práticas de dados do Website (sweeptrack.pro)
 
-Pode retirar o seu consentimento a qualquer momento, interrompendo a atividade relevante ou desinstalando a Aplicação.
+Esta secção cobre as práticas de dados específicas do nosso site sweeptrack.pro. A Aplicação Android descrita nas Secções 3 e 5–18 opera independentemente e não partilha infraestrutura com o Website.
 
-## 5. Como utilizamos os seus dados
+### 4.1 Recolha de email para a lista de espera
 
-Todo o processamento de dados ocorre **localmente no seu dispositivo**. Utilizamos os seus dados exclusivamente para fornecer as funcionalidades da Aplicação: exibição de mapa, rastreio de sessões, registo de achados, gestão de permissões, dados meteorológicos/marés, exportações, backup e verificação de subscrições.
+Quando submete o seu email através de qualquer formulário de inscrição no Website, recolhemos:
 
-## 6. Armazenamento e segurança de dados
+- **Endereço de email** que fornece
+- **Marca temporal** do registo
+- **Endereço IP** (transitório) — utilizado para limitação de taxa; não armazenado para além da duração do pedido
 
-- Os dados de sessões e achados são armazenados numa base de dados Room encriptada no seu dispositivo.
-- As definições sensíveis utilizam EncryptedSharedPreferences (AES-256) do Android.
-- Os ficheiros multimédia são armazenados no armazenamento interno privado da Aplicação, inacessível a outras aplicações.
-- O backup na nuvem do Android está **desativado** (`android:allowBackup="false"`) para evitar a exposição não intencional de dados.
-- Os backups do Google Drive utilizam as APIs encriptadas da Google (HTTPS/TLS) e existem exclusivamente na sua conta.
+**Finalidade:** Notificá-lo quando o SweepTrack Pro for lançado no Google Play e enviar atualizações pré-lançamento sobre o produto e a oferta Founder's Lifetime. Não usaremos o seu email para qualquer outro fim, não o partilharemos e não o venderemos.
 
-Não operamos servidores, bases de dados ou infraestrutura na nuvem.
+**Base legal (GDPR):** Consentimento (Art. 6(1)(a)) — fornecido quando submete o formulário.
 
-## 7. Retenção de dados
+**Armazenamento:** Os endereços de email são armazenados numa base de dados Supabase Postgres alojada na UE (região da Irlanda). A Supabase, Inc. atua como nosso subcontratante de dados nos termos do seu Acordo Padrão de Tratamento de Dados.
 
-Os dados locais são retidos até que opte por eliminá-los. Pode eliminar itens individuais na Aplicação, limpar todos os dados através das definições do Android ou desinstalar a Aplicação. Os backups do Google Drive persistem até que os elimine manualmente da sua conta.
+**Entrega de email:** Os emails de saída são enviados via Resend, Inc. (região UE, Irlanda) atuando como nosso subcontratante de serviços de email nos termos do seu Acordo Padrão de Tratamento de Dados.
 
-## 8. Partilha e divulgação de dados
+**Conservação:** Até cancelar a subscrição, ou 12 meses após o lançamento público do SweepTrack Pro no Google Play, o que ocorrer primeiro.
 
-Não partilhamos, vendemos, alugamos ou divulgamos os seus dados pessoais a terceiros. Pode optar por partilhar dados através de exportações (GPX, KML, CSV, JSON), cartões de partilha de sessão ou backup do Google Drive — tudo iniciado pelo utilizador.
+**Cancelar subscrição:** Responda com "remove" a qualquer email que enviamos, ou utilize o link List-Unsubscribe que o seu cliente de email exibe (Gmail e Outlook exibem-no ao lado do endereço De).
 
-## 9. Os seus direitos (GDPR e internacionais)
+**Os seus direitos:** Acesso, retificação, apagamento, restrição, portabilidade e direito de retirar o consentimento. Envie um email para [support@sweeptrack.pro](mailto:support@sweeptrack.pro) para exercer qualquer um destes.
 
-### Direitos GDPR (Residentes na UE/EEE)
+### 4.2 Análises do Website
 
-- **Acesso** — os seus dados estão totalmente acessíveis no seu dispositivo.
-- **Retificação** — edite todos os registos diretamente na Aplicação.
-- **Apagamento** — elimine através da eliminação na aplicação ou desinstalação.
-- **Limitação** — controle todo o processamento iniciando/interrompendo funcionalidades.
-- **Portabilidade de dados** — exporte via GPX, KML, CSV, JSON.
-- **Oposição** — interrompa qualquer funcionalidade a qualquer momento.
-- **Retirada do consentimento** — a qualquer momento, sem afetar o processamento anterior.
+O Website utiliza:
+
+- **Vercel Analytics** — análises respeitadoras da privacidade que não utilizam cookies e não armazenam endereços IP individuais. Mede apenas visualizações de página agregadas.
+- **Vercel Speed Insights** — medição dos Core Web Vitals (tempo de carregamento da página, deslocamento de layout, atrasos de interação) numa base agregada.
+
+Ambas as ferramentas são operadas pela Vercel Inc. e sujeitas à [Política de Privacidade da Vercel](https://vercel.com/legal/privacy-policy). Não recolhem informações de identificação pessoal e não criam perfis de utilizador.
+
+### 4.3 Cookies
+
+O Website não define cookies de primeira parte para rastreio, publicidade ou criação de perfis. Vercel Analytics é sem cookies por design. Uma preferência de idioma, se a alterar, é armazenada no `localStorage` do seu navegador (não é um cookie) e só é legível pelo seu próprio navegador.
+
+### 4.4 Alojamento e registos do servidor
+
+O Website é alojado pela Vercel Inc. A Vercel pode registar automaticamente metadados de pedidos padrão (endereço IP, user agent, caminho do pedido, marca temporal) para fins operacionais, de desempenho e de segurança. Estes registos são conservados de acordo com as políticas padrão da Vercel e não são utilizados por nós para rastreio ou criação de perfis de indivíduos.
+
+### 4.5 Os seus direitos para dados do Website
+
+Os mesmos direitos GDPR, UK GDPR, australianos, canadianos, CCPA, LGPD e NZ Privacy Act descritos na Secção 10 aplicam-se igualmente aos seus dados recolhidos pelo Website. Para exercer qualquer direito relativamente ao seu email da lista de espera, contacte [support@sweeptrack.pro](mailto:support@sweeptrack.pro). Responderemos no prazo de 30 dias.
+
+## 5. Base legal para o tratamento (GDPR)
+
+- **Dados GPS/sessão, registos de achados, entradas do cofre:** Consentimento (Art. 6(1)(a)) — inicia ativamente estas ações
+- **Chamadas API (meteo, geocodificação):** Interesse legítimo (Art. 6(1)(f)) — necessário para a funcionalidade básica
+- **Cópia de segurança Google Drive:** Consentimento (Art. 6(1)(a)) — ativa e autentica explicitamente
+- **Verificação de subscrição:** Execução do contrato (Art. 6(1)(b)) — necessária para fornecer funcionalidades pagas
+- **Email da lista de espera (Website):** Consentimento (Art. 6(1)(a)) — ver Secção 4.1
+
+Pode retirar o consentimento a qualquer momento parando a atividade relevante, desinstalando a Aplicação ou cancelando a subscrição dos emails do Website.
+
+## 6. Como utilizamos os seus dados
+
+Todo o processamento de dados da Aplicação ocorre **localmente no seu dispositivo**. Utilizamos os dados da Aplicação exclusivamente para fornecer as funcionalidades da Aplicação: apresentação do mapa, rastreio de sessões, registo de achados, gestão de permissões, dados meteorológicos/de marés, exportações, cópia de segurança e verificação de subscrição.
+
+Os dados do Website (o seu email da lista de espera) são utilizados apenas para enviar as comunicações de lançamento e pré-lançamento descritas na Secção 4.
+
+## 7. Armazenamento e segurança dos dados
+
+**Dados da Aplicação:**
+
+- Os dados de sessão e achados são armazenados numa base de dados Room encriptada no seu dispositivo
+- As preferências sensíveis utilizam EncryptedSharedPreferences (AES-256) do Android
+- Os ficheiros multimédia são armazenados no armazenamento interno privado da Aplicação, inacessível a outras aplicações
+- A cópia de segurança em nuvem do Android está **desativada** (`android:allowBackup="false"`) para evitar a exposição não intencional de dados
+- As cópias de segurança Google Drive utilizam as APIs encriptadas do Google (HTTPS/TLS) e existem apenas na sua conta
+
+Para a Aplicação, não operamos servidores, bases de dados ou infraestrutura em nuvem que armazenem os seus dados de deteção.
+
+**Dados do Website:** Os emails da lista de espera são armazenados numa base de dados Supabase Postgres alojada na UE (Irlanda). As ligações são encriptadas (TLS). O acesso é restrito a fins administrativos apenas. O email de saída é enviado via Resend (UE, Irlanda) através de TLS. Ver Secção 4.
+
+## 8. Conservação de dados
+
+**Dados da Aplicação:** Os dados locais são conservados até decidir eliminá-los. Pode eliminar itens individuais dentro da Aplicação, limpar todos os dados através das Definições Android ou desinstalar a Aplicação. As cópias de segurança Google Drive persistem até as eliminar manualmente da sua conta.
+
+**Dados do Website:** Os emails da lista de espera são conservados até cancelar a subscrição, ou 12 meses após o lançamento público, o que ocorrer primeiro. Depois disso, os endereços são eliminados da base de dados Supabase.
+
+## 9. Partilha e divulgação de dados
+
+Não partilhamos, vendemos, alugamos nem divulgamos os seus dados pessoais a quaisquer terceiros. Pode optar por partilhar dados da Aplicação através de exportações (GPX, KML, CSV, JSON), cartões de partilha de sessão ou cópia de segurança Google Drive — todos iniciados pelo utilizador. Os dados da lista de espera do Website são processados apenas pelos nossos subcontratantes nomeados (Supabase, Resend) para os fins descritos na Secção 4.
+
+## 10. Os seus direitos (GDPR e internacionais)
+
+### Direitos GDPR (Residentes UE/EEE)
+
+- **Acesso** — os seus dados da Aplicação são totalmente acessíveis no seu dispositivo; para dados do Website, envie email para [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
+- **Retificação** — edite todos os registos diretamente na Aplicação, ou envie-nos um email para correções de dados do Website
+- **Apagamento** — elimine através da eliminação na aplicação ou desinstalação; para dados do Website, cancele a subscrição ou envie-nos um email
+- **Restrição** — controle todo o processamento iniciando/parando funcionalidades
+- **Portabilidade de Dados** — exporte os dados da Aplicação via GPX, KML, CSV, JSON
+- **Oposição** — pare qualquer funcionalidade a qualquer momento
+- **Retirada do Consentimento** — a qualquer momento sem afetar o processamento anterior
 
 ### Reino Unido (UK GDPR)
 
-Os seus direitos ao abrigo do UK GDPR e do Data Protection Act 2018 são equivalentes aos direitos GDPR mencionados acima. Pode contactar o [ICO](https://ico.org.uk).
+Os seus direitos ao abrigo do UK GDPR e da Data Protection Act 2018 são equivalentes aos direitos GDPR acima. Pode contactar o [ICO](https://ico.org.uk).
 
 ### Austrália (Privacy Act 1988)
 
-Tem direitos ao abrigo dos Princípios de Privacidade Australianos (APPs), incluindo acesso e correção. Pode contactar o [OAIC](https://www.oaic.gov.au).
+Tem direitos ao abrigo dos Australian Privacy Principles (APPs), incluindo o acesso e a correção. Pode contactar o [OAIC](https://www.oaic.gov.au).
 
 ### Canadá (PIPEDA)
 
-Tem direitos ao abrigo da PIPEDA e da legislação provincial de privacidade aplicável, incluindo acesso, correção e retirada de consentimento. Pode contactar o [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca).
+Tem direitos ao abrigo do PIPEDA e da legislação provincial aplicável de privacidade, incluindo o acesso, a correção e a retirada do consentimento. Pode contactar o [Gabinete do Comissário de Privacidade do Canadá](https://www.priv.gc.ca).
 
-### Residentes na Califórnia (CCPA/CPRA)
+### Residentes da Califórnia (CCPA/CPRA)
 
-**Não** vendemos nem partilhamos qualquer informação pessoal. Não utilizamos dados para publicidade comportamental de contexto cruzado. Tem o direito de conhecer, eliminar, limitar a utilização de dados sensíveis e o direito à não discriminação.
+**Não** vendemos nem partilhamos quaisquer informações pessoais. Não utilizamos dados para publicidade comportamental entre contextos. Tem direitos de saber, eliminar, limitar a utilização de dados sensíveis e de não discriminação.
 
 ### Residentes brasileiros (LGPD)
 
@@ -152,46 +210,50 @@ Aplicam-se direitos equivalentes ao abrigo da Lei Geral de Proteção de Dados. 
 
 ### Nova Zelândia (Privacy Act 2020)
 
-Tem direitos ao abrigo do Privacy Act 2020, incluindo acesso e correção. Pode contactar o [NZ Privacy Commissioner](https://www.privacy.org.nz).
+Tem direitos ao abrigo do Privacy Act 2020, incluindo o acesso e a correção. Pode contactar o [Comissário de Privacidade NZ](https://www.privacy.org.nz).
 
 ### Outras jurisdições
 
-Independentemente da sua localização, tem o controlo total dos seus dados através da Aplicação. Onde a lei local concede direitos de privacidade adicionais que não podem ser renunciados por contrato, esses direitos aplicam-se.
+Independentemente da sua localização, tem controlo total sobre os seus dados. Onde a lei local conceder direitos adicionais de privacidade que não possam ser renunciados por contrato, esses direitos aplicam-se.
 
-## 10. Privacidade das crianças
+## 11. Privacidade das crianças
 
-A Aplicação não se dirige a crianças com menos de 16 anos. Não recolhemos conscientemente informações pessoais de crianças com menos de 16 anos. Se acredita que uma criança utilizou a Aplicação, pode eliminar os seus dados limpando os dados da Aplicação ou desinstalando-a.
+Nem a Aplicação nem o Website são direcionados a crianças menores de 16 anos. Não recolhemos conscientemente informações pessoais de crianças menores de 16 anos. Se acredita que uma criança utilizou a Aplicação ou o Website, pode eliminar os seus dados limpando os dados da Aplicação, desinstalando ou cancelando a subscrição da lista de espera.
 
-## 11. Explicação das permissões
+## 12. Permissões explicadas (Aplicação)
 
-- **ACCESS_FINE_LOCATION** — GPS para rastreio de percurso durante as sessões.
-- **ACCESS_BACKGROUND_LOCATION** — continuação do rastreio quando o ecrã está desligado.
-- **CAMERA** — captura de fotos para registo de achados.
-- **RECORD_AUDIO** — gravação de notas de áudio para achados.
-- **READ/WRITE_CALENDAR** — lembretes de expiração para o cofre de permissões.
-- **INTERNET** — meteorologia, geocodificação, marés, mapas, subscrições.
-- **POST_NOTIFICATIONS** — notificação para rastreio GPS.
-- **VIBRATE** — alertas de limites para a guarda de perímetro.
+- **ACCESS_FINE_LOCATION** — GPS para rastreio de percurso durante as sessões
+- **ACCESS_BACKGROUND_LOCATION** — continuar o rastreio quando o ecrã está desligado
+- **CAMERA** — capturar fotos para registo de achados
+- **RECORD_AUDIO** — gravar notas áudio para achados
+- **READ/WRITE_CALENDAR** — lembretes de validade das permissões do cofre
+- **INTERNET** — meteo, geocodificação, marés, mapas, subscrições
+- **POST_NOTIFICATIONS** — notificação de rastreio GPS
+- **VIBRATE** — alertas de limite do guarda perimetral
 
-Pode revogar qualquer permissão a qualquer momento através das definições do Android.
+Pode revogar qualquer permissão a qualquer momento através das Definições Android.
 
-## 12. Cookies e rastreio
+## 13. Cookies e rastreio
 
-A Aplicação não utiliza cookies, web beacons, pixel tags, impressões digitais do dispositivo ou quaisquer outras tecnologias de rastreio.
+**A Aplicação** não utiliza cookies, web beacons, etiquetas pixel, impressões digitais de dispositivo ou quaisquer outras tecnologias de rastreio. **O Website** não define cookies de primeira parte; ver Secção 4.3 para divulgação completa dos cookies do Website.
 
-## 13. Transferências internacionais de dados
+## 14. Transferências internacionais de dados
 
-Uma vez que todos os dados são armazenados localmente no seu dispositivo, não ocorrem transferências internacionais de dados sob o nosso controlo. As chamadas de API de terceiros podem ser processadas nas jurisdições onde esses serviços operam.
+**Dados da Aplicação:** Uma vez que todos os dados de deteção são armazenados localmente no seu dispositivo, não ocorrem transferências internacionais de dados sob o nosso controlo. As chamadas API a terceiros podem ser processadas nas jurisdições onde esses serviços operam.
 
-## 14. Notificação de violação de dados
+**Dados do Website:** Os emails da lista de espera são armazenados na UE (Irlanda) pela Supabase e processados pelo Resend (UE, Irlanda). Se aceder ao Website a partir de fora da UE, o seu email é transferido para a UE para processamento.
 
-Uma vez que não armazenamos os seus dados em nenhum servidor, não é possível uma violação de dados do nosso lado. Se tivermos conhecimento de uma vulnerabilidade na Aplicação, lançaremos uma atualização e notificaremos os utilizadores através da Aplicação ou do website.
+## 15. Notificação de violação de dados
 
-## 15. Alterações a esta política
+**Aplicação:** Uma vez que não armazenamos os seus dados de deteção em nenhum servidor que operemos, uma violação de dados que afete os dados da Aplicação do nosso lado não é possível. Se tomarmos conhecimento de uma vulnerabilidade na Aplicação, lançaremos uma atualização e notificaremos os utilizadores através da Aplicação ou do site.
 
-Podemos atualizar esta Política de Privacidade para refletir alterações na funcionalidade ou nas leis aplicáveis. A data de "Última atualização" será revista. As alterações materiais serão comunicadas através da Aplicação ou do website.
+**Website:** Os nossos subcontratantes (Supabase, Resend) mantêm os seus próprios protocolos de notificação de violações. No caso improvável de uma violação que afete o seu email da lista de espera, notificá-lo-emos a si e à autoridade de controlo competente (ANSPDCP) no prazo de 72 horas, conforme exigido pelo GDPR.
 
-## 16. Políticas de privacidade de terceiros
+## 16. Alterações a esta política
+
+Podemos atualizar esta Política de Privacidade para refletir alterações na funcionalidade ou nas leis aplicáveis. A data "Última atualização" será revista. As alterações materiais serão comunicadas através da Aplicação ou do site.
+
+## 17. Políticas de privacidade de terceiros
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
@@ -199,18 +261,19 @@ Podemos atualizar esta Política de Privacidade para refletir alterações na fu
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
+- [Vercel](https://vercel.com/legal/privacy-policy) (Alojamento Website + análises)
+- [Supabase](https://supabase.com/privacy) (Base de dados Website)
+- [Resend](https://resend.com/legal/privacy-policy) (Email Website)
 
-## 17. Contacte-nos
+## 18. Contacte-nos
 
 **Coc Lorand Adrian P.F.A.** (operando como Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)
 
-Para questões relacionadas com o GDPR, pode também contactar a ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) em [dataprotection.ro](https://www.dataprotection.ro).
+Para consultas relacionadas com GDPR, também pode contactar a ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) em [dataprotection.ro](https://www.dataprotection.ro).
 
 ---
 
-Esta Política de Privacidade está em vigor desde 7 de abril de 2026 e aplica-se a todas as versões do SweepTrack Pro.
-
----
+Esta Política de Privacidade entra em vigor a 12 de maio de 2026 e aplica-se a todas as versões do SweepTrack Pro.
