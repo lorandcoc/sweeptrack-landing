@@ -13,24 +13,15 @@ const RATE_LIMIT_MAX = 5; // max 5 requests per minute per IP
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SweepTrack Waitlist <onboarding@resend.dev>";
 const NOTIFY_TO = "support@sweeptrack.pro";
 
-const WELCOME_SUBJECT = "You're on the SweepTrack Pro launch list.";
-const WELCOME_BODY = `Hi —
+const WELCOME_SUBJECT = "On the list.";
+const WELCOME_BODY = `You'll get the Play Store link the morning SweepTrack Pro goes live — before any social post or Reddit thread.
 
-You're on the list.
+The first 1,000 in get a one-time Founder's Lifetime: one payment, no renewal. After that, a regular trial + subscription.
 
-When SweepTrack Pro lands in the Google Play Store, the link comes to you first — before any social post, before any Reddit announcement. That's the deal.
-
-A few things to expect:
-— Between now and launch I'll walk you through what the app does. Feature by feature.
-— The Founder's Lifetime opens the day Play approves us. First 1,000 detectorists. One payment, never offered again.
-— No ads. No servers. No analytics. Everything lives on your phone unless you opt into Google Drive backup — to your Drive, not mine.
-
-Full feature list and screenshots: https://sweeptrack.pro
-
-If you'd rather not be on the list, reply with "remove" and you're off. No hard feelings.
+Reply "remove" anytime.
 
 — Lorand
-SweepTrack Pro
+sweeptrack.pro
 `;
 
 function isRateLimited(ip: string): boolean {
