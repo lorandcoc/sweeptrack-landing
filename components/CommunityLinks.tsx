@@ -60,24 +60,29 @@ function NewsletterForm() {
             {status === "ok" ? t("community.newsletter_success") : t("community.newsletter_duplicate")}
           </div>
         ) : (
-          <form className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto shrink-0" onSubmit={handleSubmit}>
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              disabled={status === "sending"}
-              className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-full sm:w-[200px] disabled:opacity-50"
-            />
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="px-5 py-2.5 rounded-xl bg-accent text-[#050510] text-sm font-semibold hover:bg-accent-dim transition-colors shrink-0 disabled:opacity-50"
-            >
-              {status === "sending" ? "..." : status === "error" ? t("community.newsletter_retry") : t("community.newsletter_subscribe")}
-            </button>
-          </form>
+          <div className="flex flex-col gap-2 w-full sm:w-auto shrink-0">
+            <form className="flex flex-col sm:flex-row gap-2" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                disabled={status === "sending"}
+                className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-full sm:w-[200px] disabled:opacity-50"
+              />
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="px-5 py-2.5 rounded-xl bg-accent text-[#050510] text-sm font-semibold hover:bg-accent-dim transition-colors shrink-0 disabled:opacity-50"
+              >
+                {status === "sending" ? "..." : status === "error" ? t("community.newsletter_retry") : t("community.newsletter_subscribe")}
+              </button>
+            </form>
+            <p className="text-[11px] text-muted/60 text-center sm:text-right">
+              Email only. Used to send the launch link. Unsubscribe in one click.
+            </p>
+          </div>
         )}
       </div>
     </div>

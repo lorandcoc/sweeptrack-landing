@@ -91,25 +91,30 @@ export default function ComingSoonButton({
   // Email input form
   if (showEmail) {
     return (
-      <form onSubmit={handleSubmit} className={`inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto ${className}`}>
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder={t("comingsoon.placeholder")}
-          autoFocus
-          disabled={status === "sending"}
-          className="px-4 py-3 rounded-xl bg-surface border border-white/10 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent/40 transition-colors w-full sm:w-[220px] disabled:opacity-50"
-        />
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="px-5 py-3 rounded-xl bg-accent text-[#050510] font-semibold text-sm hover:bg-accent-dim transition-colors shrink-0 disabled:opacity-50"
-        >
-          {status === "sending" ? t("comingsoon.joining") : t("comingsoon.join")}
-        </button>
-      </form>
+      <div className={`flex flex-col gap-2 w-full sm:w-auto ${className}`}>
+        <form onSubmit={handleSubmit} className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder={t("comingsoon.placeholder")}
+            autoFocus
+            disabled={status === "sending"}
+            className="px-4 py-3 rounded-xl bg-surface border border-white/10 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent/40 transition-colors w-full sm:w-[220px] disabled:opacity-50"
+          />
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="px-5 py-3 rounded-xl bg-accent text-[#050510] font-semibold text-sm hover:bg-accent-dim transition-colors shrink-0 disabled:opacity-50"
+          >
+            {status === "sending" ? t("comingsoon.joining") : t("comingsoon.join")}
+          </button>
+        </form>
+        <p className="text-[11px] text-muted/60 text-center sm:text-left max-w-[320px]">
+          Email only. Used to send the launch link. Unsubscribe in one click.
+        </p>
+      </div>
     );
   }
 
