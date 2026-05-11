@@ -163,7 +163,7 @@ export default function LegalPage({ page }: { page: "terms" | "privacy" }) {
         />
 
         <div className="mt-12 pt-8 border-t border-surface-variant text-center text-muted text-xs">
-          &copy; {new Date().getFullYear()} {page === "terms" ? "Loriba" : "Coc Lorand P.F.A."}. {t("legal.rights")}
+          &copy; {new Date().getFullYear()} Coc Lorand Adrian P.F.A. {t("legal.rights")}
         </div>
       </article>
     </main>

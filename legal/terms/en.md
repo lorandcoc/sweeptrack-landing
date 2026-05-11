@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS Tracking Application for Metal Detecting
 
-Effective Date: April 7, 2026 · Last Updated: April 7, 2026
+Effective Date: May 12, 2026 · Last Updated: May 12, 2026
 
-Operated by: Coc Lorand P.F.A., trading as "Loriba"
+Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Acceptance of Terms
 
-By downloading, installing, accessing, or using SweepTrack Pro ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App. "We," "us," and "our" refer to Coc Lorand P.F.A., trading as Loriba.
+By downloading, installing, accessing, or using SweepTrack Pro ("the App") or the website at sweeptrack.pro ("the Website"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App or the Website. "We," "us," and "our" refer to Coc Lorand Adrian P.F.A., trading as Loriba.
 
-We reserve the right to modify these Terms at any time. Continued use of the App after changes constitutes acceptance. Material changes will be communicated via the App or our website.
+We reserve the right to modify these Terms at any time. Continued use of the App or Website after changes constitutes acceptance. Material changes will be communicated via the App or our website.
 
 ## 2. Description of Service
 
@@ -28,7 +28,7 @@ SweepTrack Pro is a GPS-based tracking and session logging application designed 
 - Weather forecasting and detecting condition scoring
 - Tide table predictions (U.S. coastal stations via NOAA)
 - Nearby historical and archaeological point-of-interest discovery
-- Detector preset management for 57 metal detector models
+- Detector preset management for 60+ metal detector models
 - Permission vault for managing landowner permissions and site access
 - Perimeter guard with boundary alerts
 - Offline map downloads
@@ -36,11 +36,13 @@ SweepTrack Pro is a GPS-based tracking and session logging application designed 
 - Session export (GPX, KML, CSV, JSON) and comparison tools
 - Calendar heatmap, statistics, and achievement tracking
 
+The Website at sweeptrack.pro provides information about SweepTrack Pro, a pre-launch waitlist, and supporting content.
+
 ## 3. Eligibility
 
-You must be at least 16 years of age to use this App. If you are under 18, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.
+You must be at least 16 years of age to use the App or the Website. If you are under 18, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.
 
-By using the App, you represent and warrant that you have the legal capacity to enter into a binding agreement in your jurisdiction.
+By using the App or Website, you represent and warrant that you have the legal capacity to enter into a binding agreement in your jurisdiction.
 
 ## 4. Account and Authentication
 
@@ -69,20 +71,27 @@ The App offers limited functionality at no cost, including:
 
 A premium subscription, managed through the Google Play Store and processed by RevenueCat, Inc., unlocks unlimited finds, sessions, and detector presets, plus advanced features including historical map overlays, offline maps, perimeter guard, cloud backup, and additional tools.
 
-### 5.3 Billing
+### 5.3 Founder's Lifetime
+
+A limited Founder's Lifetime offer is available to the first 1,000 purchasers through the Google Play in-app purchase mechanism after the App is publicly available on Google Play. The Founder's Lifetime is a one-time payment that grants lifetime access to all Pro features. After 1,000 Founder's Lifetime purchases have been completed, the offer closes permanently and subsequent users access Pro features via the standard subscription described in §5.2.
+
+Joining the pre-launch waitlist does not reserve a Founder's Lifetime slot. The cap is enforced at purchase time on a first-come-first-served basis among installed users.
+
+### 5.4 Billing
 
 - All payments are processed through Google Play Store
 - Subscription pricing is displayed at the time of purchase
 - Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period
+- The Founder's Lifetime is a one-time, non-renewing purchase
 - You may manage or cancel your subscription through Google Play Store settings
 
-### 5.4 Refunds
+### 5.5 Refunds
 
 Refund requests are handled by Google Play Store in accordance with their refund policies. We do not process refunds directly.
 
 ## 6. User Data and Privacy
 
-### 6.1 Data Collected
+### 6.1 Data Collected (App)
 
 The App collects and stores the following data **locally on your device**:
 
@@ -95,14 +104,16 @@ The App collects and stores the following data **locally on your device**:
 - Weather snapshots associated with sessions
 - App preferences (theme, units, language)
 
-### 6.2 Data Storage
+### 6.2 Data Storage (App)
 
-- **All data is stored locally on your device** in an encrypted database and local file storage
-- **No data is transmitted to our servers** — we do not operate any backend servers or databases
+- **All App data is stored locally on your device** in an encrypted database and local file storage
+- **No App data is transmitted to our servers** — we do not operate backend servers or databases for App functionality
 - **Google Drive backup** (optional, user-initiated) stores an encrypted copy of your data in your personal Google Drive account under a "SweepTrack Backups" folder
 - Android cloud backup has been disabled to protect your data
 
-### 6.3 Third-Party API Calls
+Website data practices (waitlist email collection, analytics, hosting) are described separately in §6.7 below and in full detail in our Privacy Policy, Section 4.
+
+### 6.3 Third-Party API Calls (App)
 
 The App makes network requests to the following third-party services for functionality purposes only. No personal or identifying data is sent unless explicitly noted:
 
@@ -114,17 +125,33 @@ The App makes network requests to the following third-party services for functio
 - **NOAA** — Tide predictions (station ID sent, no personal info)
 - **RevenueCat** — Subscription verification (anonymous app user ID, no personal info)
 
-### 6.4 No Analytics or Tracking
+### 6.4 No Analytics or Tracking (App)
 
-The App does **not** include any analytics SDKs, crash reporting tools, advertising frameworks, or behavioral tracking mechanisms. We do not collect, transmit, or sell any usage data.
+The App does **not** include any analytics SDKs, crash reporting tools, advertising frameworks, or behavioral tracking mechanisms. We do not collect, transmit, or sell any App usage data.
+
+Website analytics (Vercel Analytics, Vercel Speed Insights) are described in §6.7.
 
 ### 6.5 Data Deletion
 
-You may delete your data at any time by deleting individual items within the App, clearing app data through Android settings, uninstalling the App, or deleting Google Drive backups from your account.
+You may delete your App data at any time by deleting individual items within the App, clearing app data through Android settings, uninstalling the App, or deleting Google Drive backups from your account. For Website waitlist data, unsubscribe from emails or contact us at [support@sweeptrack.pro](mailto:support@sweeptrack.pro).
 
 ### 6.6 Children's Privacy
 
 We do not knowingly collect personal information from children under 16. If you believe a child has provided us with personal data, please contact us.
+
+### 6.7 Website and Waitlist
+
+The Website at sweeptrack.pro is operated as a marketing and information channel for SweepTrack Pro. By submitting your email through any waitlist form on the Website, you consent to receive:
+
+- A welcome email confirming your signup
+- An email when SweepTrack Pro launches on Google Play
+- Occasional pre-launch updates about the product and the Founder's Lifetime offer
+
+Emails are stored in a Supabase Postgres database hosted in the EU (Ireland region) and delivered via Resend, Inc. (EU, Ireland). You may unsubscribe at any time by replying "remove" to any email, or by using the List-Unsubscribe link your mail client displays. Email addresses are retained until you unsubscribe or 12 months after public launch, whichever comes first.
+
+The Website also uses Vercel Analytics and Vercel Speed Insights — privacy-respecting tools that do not use cookies and do not store individual IP addresses.
+
+Full details on Website data handling — including legal basis, processors, retention, and your rights — are in our Privacy Policy, Section 4.
 
 ## 7. Permitted Use
 
@@ -189,7 +216,7 @@ The App uses data from Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open
 
 ## 11. Intellectual Property
 
-SweepTrack Pro, including its design, code, graphics, UI components, and branding, is the intellectual property of Loriba. All rights reserved.
+SweepTrack Pro, including its design, code, graphics, UI components, and branding, is the intellectual property of Coc Lorand Adrian P.F.A. (trading as Loriba). All rights reserved.
 
 You retain ownership of all content you create using the App. We do not claim any rights over your content.
 
@@ -201,13 +228,13 @@ THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, E
 
 ## 13. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, COC LORAND P.F.A. (TRADING AS LORIBA) SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO: DAMAGES FROM GPS INACCURACY, PROPERTY BOUNDARY DISPUTES, OR TRESPASSING CLAIMS; DAMAGES FROM RELIANCE ON WEATHER, TIDE, OR ENVIRONMENTAL DATA; TIDAL CONDITIONS INCLUDING INJURY OR DROWNING; LEGAL CONSEQUENCES OF DETECTING ACTIVITIES INCLUDING FINES, PROSECUTION, OR CONFISCATION; FAILURE TO COMPLY WITH THE TREASURE ACT 1996, ARPA, OR ANY CULTURAL HERITAGE LAW; RELIANCE ON HISTORICAL MAP OVERLAYS, NEARBY SITES, PERMISSION VAULT, PDF LETTERS, DIGITAL SIGNATURES, COIN CALIPER, OR FIND IDENTIFICATION; PERIMETER GUARD, TRACK OVERLAY, OR HEATMAP INACCURACY; OUTDATED OFFLINE MAPS OR DETECTOR PRESETS; PERSONAL INJURY, DEATH, OR PROPERTY DAMAGE DURING DETECTING ACTIVITIES; OR INTERACTIONS WITH LANDOWNERS, LAW ENFORCEMENT, OR THIRD PARTIES.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, COC LORAND ADRIAN P.F.A. (TRADING AS LORIBA) SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO: DAMAGES FROM GPS INACCURACY, PROPERTY BOUNDARY DISPUTES, OR TRESPASSING CLAIMS; DAMAGES FROM RELIANCE ON WEATHER, TIDE, OR ENVIRONMENTAL DATA; TIDAL CONDITIONS INCLUDING INJURY OR DROWNING; LEGAL CONSEQUENCES OF DETECTING ACTIVITIES INCLUDING FINES, PROSECUTION, OR CONFISCATION; FAILURE TO COMPLY WITH THE TREASURE ACT 1996, ARPA, OR ANY CULTURAL HERITAGE LAW; RELIANCE ON HISTORICAL MAP OVERLAYS, NEARBY SITES, PERMISSION VAULT, PDF LETTERS, DIGITAL SIGNATURES, COIN CALIPER, OR FIND IDENTIFICATION; PERIMETER GUARD, TRACK OVERLAY, OR HEATMAP INACCURACY; OUTDATED OFFLINE MAPS OR DETECTOR PRESETS; PERSONAL INJURY, DEATH, OR PROPERTY DAMAGE DURING DETECTING ACTIVITIES; OR INTERACTIONS WITH LANDOWNERS, LAW ENFORCEMENT, OR THIRD PARTIES.
 
 In no event shall our total liability exceed the amount you paid for the App in the twelve (12) months preceding the claim.
 
 ## 14. Indemnification
 
-You agree to indemnify, defend, and hold harmless Loriba from any claims, damages, losses, liabilities, costs, and expenses arising from your use of the App, violation of these Terms, violation of any applicable law, or your metal detecting activities.
+You agree to indemnify, defend, and hold harmless Coc Lorand Adrian P.F.A. (trading as Loriba) from any claims, damages, losses, liabilities, costs, and expenses arising from your use of the App, violation of these Terms, violation of any applicable law, or your metal detecting activities.
 
 ## 15. Termination
 
@@ -241,11 +268,11 @@ The App uses open-source components. Key attributions: Google Maps SDK (Copyrigh
 
 For questions about these Terms, please contact:
 
-**Coc Lorand P.F.A.** (trading as Loriba)
+**Coc Lorand Adrian P.F.A.** (trading as Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)
 
 ---
 
-These Terms of Service are effective as of April 7, 2026 and apply to all versions of SweepTrack Pro.
+These Terms of Service are effective as of May 12, 2026 and apply to all versions of SweepTrack Pro.

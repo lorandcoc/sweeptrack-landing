@@ -4,7 +4,7 @@
 
 Data intrării în vigoare: 7 aprilie 2026 · Ultima actualizare: 7 aprilie 2026
 
-Operat de: Coc Lorand P.F.A., activând sub denumirea comercială "Loriba"
+Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Website: sweeptrack.pro
 
 ## 1. Acceptarea Termenilor
 
-Prin descărcarea, instalarea, accesarea sau utilizarea SweepTrack Pro ("Aplicația"), sunteți de acord să respectați acești Termeni și Condiții ("Termeni"). Dacă nu sunteți de acord cu acești Termeni, nu utilizați Aplicația. "Noi", "ne" și "al nostru" se referă la Coc Lorand P.F.A., activând sub denumirea Loriba.
+Prin descărcarea, instalarea, accesarea sau utilizarea SweepTrack Pro ("Aplicația"), sunteți de acord să respectați acești Termeni și Condiții ("Termeni"). Dacă nu sunteți de acord cu acești Termeni, nu utilizați Aplicația. "Noi", "ne" și "al nostru" se referă la Coc Lorand Adrian P.F.A., activând sub denumirea Loriba.
 
 Ne rezervăm dreptul de a modifica acești Termeni în orice moment. Utilizarea continuă a Aplicației după modificări constituie acceptarea acestora. Modificările materiale vor fi comunicate prin intermediul Aplicației sau al site-ului nostru web.
 
@@ -241,7 +241,7 @@ Aplicația folosește componente open-source. Atribuiri cheie: Google Maps SDK (
 
 Pentru întrebări despre acești Termeni, vă rugăm să contactați:
 
-**Coc Lorand P.F.A.** (activând sub denumirea Loriba)
+**Coc Lorand Adrian P.F.A.** (activând sub denumirea Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

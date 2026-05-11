@@ -4,7 +4,7 @@
 
 Hatálybalépés napja: 2026. április 7. · Utolsó frissítés: 2026. április 7.
 
-Üzemeltető: Coc Lorand P.F.A., kereskedelmi neve: "Loriba"
+Üzemeltető: Coc Lorand Adrian P.F.A., kereskedelmi neve: "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -22,7 +22,7 @@ A SweepTrack Pro **adatvédelem-központú architektúrával** készült: minden
 
 Az EU általános adatvédelmi rendelete (GDPR) és a román adatvédelmi törvény (190/2018. sz. törvény) értelmében az adatkezelő:
 
-**Coc Lorand P.F.A.** (kereskedelmi neve: Loriba)
+**Coc Lorand Adrian P.F.A.** (kereskedelmi neve: Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -202,7 +202,7 @@ Frissíthetjük ezt az Adatvédelmi szabályzatot a funkciók vagy a vonatkozó 
 
 ## 17. Kapcsolat
 
-**Coc Lorand P.F.A.** (kereskedelmi neve: Loriba)
+**Coc Lorand Adrian P.F.A.** (kereskedelmi neve: Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Weboldal: [https://sweeptrack.pro](https://sweeptrack.pro)

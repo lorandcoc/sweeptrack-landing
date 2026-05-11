@@ -4,7 +4,7 @@
 
 Yürürlük Tarihi: 7 Nisan 2026 · Son Güncelleme: 7 Nisan 2026
 
-İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand P.F.A.
+İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Web sitesi: sweeptrack.pro
 
 ## 1. Şartların Kabulü
 
-SweepTrack Pro'yu ("Uygulama") indirerek, kurarak, erişerek veya kullanarak bu Hizmet Şartları'na ("Şartlar") bağlı kalmayı kabul edersiniz. Bu Şartları kabul etmiyorsanız Uygulamayı kullanmayın. "Biz", "bize" ve "bizim" ifadeleri, Loriba olarak faaliyet gösteren Coc Lorand P.F.A.'yı ifade eder.
+SweepTrack Pro'yu ("Uygulama") indirerek, kurarak, erişerek veya kullanarak bu Hizmet Şartları'na ("Şartlar") bağlı kalmayı kabul edersiniz. Bu Şartları kabul etmiyorsanız Uygulamayı kullanmayın. "Biz", "bize" ve "bizim" ifadeleri, Loriba olarak faaliyet gösteren Coc Lorand Adrian P.F.A.'yı ifade eder.
 
 Bu Şartları herhangi bir zamanda değiştirme hakkını saklı tutarız. Değişikliklerden sonra Uygulamanın kullanımına devam edilmesi, kabul anlamına gelir. Önemli değişiklikler Uygulama veya web sitemiz aracılığıyla bildirilecektir.
 
@@ -241,7 +241,7 @@ Uygulama açık kaynaklı bileşenler kullanır. Temel atıflar: Google Maps SDK
 
 Bu Şartlar hakkındaki sorularınız için lütfen iletişime geçin:
 
-**Coc Lorand P.F.A.** (Loriba olarak faaliyet gösteren)
+**Coc Lorand Adrian P.F.A.** (Loriba olarak faaliyet gösteren)
 CUI: 41299288 · Reg. F24/646/2019
 E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

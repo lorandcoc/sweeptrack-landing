@@ -4,7 +4,7 @@
 
 Дата вступления в силу: 7 апреля 2026 г. · Последнее обновление: 7 апреля 2026 г.
 
-Оператор: Coc Lorand P.F.A., действующий под торговым наименованием «Loriba»
+Оператор: Coc Lorand Adrian P.F.A., действующий под торговым наименованием «Loriba»
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -22,7 +22,7 @@ SweepTrack Pro разработан с использованием **архит
 
 Для целей Общего регламента ЕС по защите данных (GDPR) и румынского законодательства о защите данных (Закон 190/2018) контролером данных является:
 
-**Coc Lorand P.F.A.** (торговое наименование Loriba)
+**Coc Lorand Adrian P.F.A.** (торговое наименование Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 Электронная почта: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -202,7 +202,7 @@ CUI: 41299288 · Reg. F24/646/2019
 
 ## 17. Свяжитесь с нами
 
-**Coc Lorand P.F.A.** (торговое наименование Loriba)
+**Coc Lorand Adrian P.F.A.** (торговое наименование Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 Электронная почта: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Веб-сайт: [https://sweeptrack.pro](https://sweeptrack.pro)

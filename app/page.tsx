@@ -28,7 +28,7 @@ const jsonLdGraph = [
   {
     "@type": "Organization",
     name: "Loriba",
-    legalName: "Coc Lorand P.F.A.",
+    legalName: "Coc Lorand Adrian P.F.A.",
     url: "https://sweeptrack.pro",
     logo: "https://sweeptrack.pro/icon.svg",
     founder: {

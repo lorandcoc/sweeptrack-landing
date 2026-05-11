@@ -4,7 +4,7 @@
 
 Yürürlük Tarihi: 7 Nisan 2026 · Son Güncelleme: 7 Nisan 2026
 
-İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand P.F.A.
+İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -22,7 +22,7 @@ SweepTrack Pro, **önce gizlilik (privacy-first) mimarisi** ile tasarlanmıştı
 
 AB Genel Veri Koruma Yönetmeliği (GDPR) ve Romanya veri koruma yasası (Yasa 190/2018) amaçları doğrultusunda, veri sorumlusu şudur:
 
-**Coc Lorand P.F.A.** (Loriba olarak faaliyet gösteren)  
+**Coc Lorand Adrian P.F.A.** (Loriba olarak faaliyet gösteren)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-posta: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -202,7 +202,7 @@ Bu Gizlilik Politikasını, işlevsellikteki veya geçerli yasalardaki değişik
 
 ## 17. Bize Ulaşın
 
-**Coc Lorand P.F.A.** (Loriba olarak faaliyet gösteren)  
+**Coc Lorand Adrian P.F.A.** (Loriba olarak faaliyet gösteren)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-posta: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Web sitesi: [https://sweeptrack.pro](https://sweeptrack.pro)

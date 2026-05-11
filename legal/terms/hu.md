@@ -4,7 +4,7 @@
 
 Hatálybalépés napja: 2026. április 7. · Utolsó frissítés: 2026. április 7.
 
-Üzemeltető: Coc Lorand P.F.A., kereskedelmi neve: "Loriba"
+Üzemeltető: Coc Lorand Adrian P.F.A., kereskedelmi neve: "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Weboldal: sweeptrack.pro
 
 ## 1. A feltételek elfogadása
 
-A SweepTrack Pro („Alkalmazás”) letöltésével, telepítésével, elérésével vagy használatával Ön beleegyezik a jelen Általános Szerződési Feltételek („Feltételek”) betartásába. Ha nem ért egyet ezekkel a Feltételekkel, ne használja az Alkalmazást. A „mi”, „minket” és „miénk” kifejezések a Loriba néven tevékenykedő Coc Lorand P.F.A.-ra vonatkoznak.
+A SweepTrack Pro („Alkalmazás”) letöltésével, telepítésével, elérésével vagy használatával Ön beleegyezik a jelen Általános Szerződési Feltételek („Feltételek”) betartásába. Ha nem ért egyet ezekkel a Feltételekkel, ne használja az Alkalmazást. A „mi”, „minket” és „miénk” kifejezések a Loriba néven tevékenykedő Coc Lorand Adrian P.F.A.-ra vonatkoznak.
 
 Fenntartjuk a jogot, hogy ezeket a Feltételeket bármikor módosítsuk. Az Alkalmazás módosítások utáni folyamatos használata a módosítások elfogadását jelenti. A lényeges változásokról az Alkalmazáson vagy weboldalunkon keresztül értesítjük.
 
@@ -241,7 +241,7 @@ Az Alkalmazás nyílt forráskódú összetevőket használ. Főbb hivatkozások
 
 A jelen Feltételekkel kapcsolatos kérdéseivel forduljon a következőhöz:
 
-**Coc Lorand P.F.A.** (Loriba néven tevékenykedő)
+**Coc Lorand Adrian P.F.A.** (Loriba néven tevékenykedő)
 CUI: 41299288 · Reg. F24/646/2019
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

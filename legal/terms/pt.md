@@ -4,7 +4,7 @@
 
 Data de vigência: 7 de abril de 2026 · Última atualização: 7 de abril de 2026
 
-Operado por: Coc Lorand P.F.A., operando como "Loriba"
+Operado por: Coc Lorand Adrian P.F.A., operando como "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Website: sweeptrack.pro
 
 ## 1. Aceitação dos Termos
 
-Ao descarregar, instalar, aceder ou utilizar o SweepTrack Pro ("a Aplicação"), o utilizador concorda em ficar vinculado a estes Termos de Serviço ("Termos"). Se não concordar com estes Termos, não utilize a Aplicação. "Nós", "nos" e "nosso" referem-se a Coc Lorand P.F.A., operando como Loriba.
+Ao descarregar, instalar, aceder ou utilizar o SweepTrack Pro ("a Aplicação"), o utilizador concorda em ficar vinculado a estes Termos de Serviço ("Termos"). Se não concordar com estes Termos, não utilize a Aplicação. "Nós", "nos" e "nosso" referem-se a Coc Lorand Adrian P.F.A., operando como Loriba.
 
 Reservamo-nos o direito de modificar estes Termos a qualquer momento. O uso continuado da Aplicação após as alterações constitui a aceitação das mesmas. As alterações materiais serão comunicadas através da Aplicação ou do nosso website.
 
@@ -241,7 +241,7 @@ A Aplicação utiliza componentes de código aberto. Atribuições principais: G
 
 Para questões sobre estes Termos, por favor contacte:
 
-**Coc Lorand P.F.A.** (operando como Loriba)
+**Coc Lorand Adrian P.F.A.** (operando como Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

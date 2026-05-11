@@ -4,7 +4,7 @@
 
 Data intrării în vigoare: 7 aprilie 2026 · Ultima actualizare: 7 aprilie 2026
 
-Operat de: Coc Lorand P.F.A., activând sub denumirea comercială "Loriba"
+Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -22,7 +22,7 @@ SweepTrack Pro este conceput cu o **arhitectură axată pe confidențialitate**:
 
 În scopul Regulamentului General privind Protecția Datelor al UE (GDPR) și al legii române privind protecția datelor (Legea 190/2018), operatorul de date este:
 
-**Coc Lorand P.F.A.** (activând sub denumirea Loriba)  
+**Coc Lorand Adrian P.F.A.** (activând sub denumirea Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -202,7 +202,7 @@ Putem actualiza această Politică de Confidențialitate pentru a reflecta modif
 
 ## 17. Contactați-ne
 
-**Coc Lorand P.F.A.** (activând sub denumirea Loriba)  
+**Coc Lorand Adrian P.F.A.** (activând sub denumirea Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)
