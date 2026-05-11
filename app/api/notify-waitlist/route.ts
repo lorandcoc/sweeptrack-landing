@@ -13,15 +13,17 @@ const RATE_LIMIT_MAX = 5; // max 5 requests per minute per IP
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SweepTrack Waitlist <onboarding@resend.dev>";
 const NOTIFY_TO = "support@sweeptrack.pro";
 
-const WELCOME_SUBJECT = "On the list.";
-const WELCOME_BODY = `You'll get the Play Store link the morning SweepTrack Pro goes live — before any social post or Reddit thread.
+const WELCOME_SUBJECT = "Thanks for signing up.";
+const WELCOME_BODY = `Hey —
 
-The first 1,000 in get a one-time Founder's Lifetime: one payment, no renewal. After that, a regular trial + subscription.
+Just a quick note to say thanks for being on the list. Means a lot.
 
-Reply "remove" anytime.
+I'll send you the link the moment SweepTrack Pro is live. Until then, good luck out there.
 
 — Lorand
 sweeptrack.pro
+
+P.S. There are 1,000 Founder's Lifetime spots — one payment, never renews. A small thank-you for showing up early. After those are gone, just the regular trial + subscription.
 `;
 
 function isRateLimited(ip: string): boolean {
