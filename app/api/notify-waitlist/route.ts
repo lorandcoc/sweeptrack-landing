@@ -1,7 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Strict-ish RFC 5322 shape. The previous regex `^[^\s@]+@[^\s@]+\.[^\s@]+$`
+// happily accepted bot emails like `tenagnearega@53gmail.com` because
+// `53gmail.com` matched `[^\s@]+\.[^\s@]+`. This one enforces a TLD
+// shape that has to be 2-24 alpha chars, which kills the common
+// `<digits><provider>.com` bot pattern at the TLD boundary too.
+const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,24}$/;
+
+// Belt-and-braces blacklist for the exact bot pattern that hit us:
+// digits glued to a real provider name (53gmail.com, 11gmail.com, etc.).
+// EMAIL_RE alone catches @53gmail (no dot before the digits is fine, but
+// `53gmail.com` ends in `.com` so it still passes shape) — this kills it
+// explicitly. Add more providers here if new bot patterns surface.
+const BOT_DOMAIN_RE = /@\d+(gmail|yahoo|outlook|hotmail|icloud|protonmail|live|aol|mail)\.com$/i;
 
 // Simple in-memory rate limiter (per serverless instance)
 const recentRequests = new Map<string, number[]>();
@@ -125,9 +137,17 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
+
+    // Honeypot: a hidden `website` input that real browsers don't fill and
+    // bots fill because they spray every field they see. We return 200 OK so
+    // the bot can't tell it was caught — keeps them from probing the form.
+    if (typeof body?.website === "string" && body.website.trim().length > 0) {
+      return NextResponse.json({ ok: true });
+    }
+
     const email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
 
-    if (!email || !EMAIL_RE.test(email) || email.length > 254) {
+    if (!email || !EMAIL_RE.test(email) || BOT_DOMAIN_RE.test(email) || email.length > 254) {
       return NextResponse.json({ error: "invalid email" }, { status: 400 });
     }
 
