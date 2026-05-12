@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması
 
-Yürürlük Tarihi: 7 Nisan 2026 · Son Güncelleme: 7 Nisan 2026
+Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 12 Mayıs 2026
 
 İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
@@ -14,9 +14,9 @@ Web sitesi: sweeptrack.pro
 
 ## 1. Şartların Kabulü
 
-SweepTrack Pro'yu ("Uygulama") indirerek, kurarak, erişerek veya kullanarak bu Hizmet Şartları'na ("Şartlar") bağlı kalmayı kabul edersiniz. Bu Şartları kabul etmiyorsanız Uygulamayı kullanmayın. "Biz", "bize" ve "bizim" ifadeleri, Loriba olarak faaliyet gösteren Coc Lorand Adrian P.F.A.'yı ifade eder.
+SweepTrack Pro'yu ("Uygulama") veya sweeptrack.pro web sitesini ("Web Sitesi") indirerek, kurarak, erişerek veya kullanarak bu Hizmet Şartları'na ("Şartlar") bağlı kalmayı kabul edersiniz. Bu Şartları kabul etmiyorsanız Uygulamayı veya Web Sitesini kullanmayın. "Biz", "bize" ve "bizim" ifadeleri, Loriba olarak faaliyet gösteren Coc Lorand Adrian P.F.A.'yı ifade eder.
 
-Bu Şartları herhangi bir zamanda değiştirme hakkını saklı tutarız. Değişikliklerden sonra Uygulamanın kullanımına devam edilmesi, kabul anlamına gelir. Önemli değişiklikler Uygulama veya web sitemiz aracılığıyla bildirilecektir.
+Bu Şartları herhangi bir zamanda değiştirme hakkını saklı tutarız. Değişikliklerden sonra Uygulamanın veya Web Sitesinin kullanımına devam edilmesi, kabul anlamına gelir. Önemli değişiklikler Uygulama veya web sitemiz aracılığıyla bildirilecektir.
 
 ## 2. Hizmet Tanımı
 
@@ -28,226 +28,251 @@ SweepTrack Pro, metal arama meraklıları için tasarlanmış GPS tabanlı bir t
 - Hava durumu tahmini ve arama koşulu puanlaması
 - Gelgit tablosu tahminleri (NOAA aracılığıyla ABD kıyı istasyonları)
 - Yakındaki tarihi ve arkeolojik ilgi çekici noktaların keşfi
-- 57 metal dedektörü modeli için dedektör ön ayar yönetimi
+- 60'tan fazla metal dedektör modeli için dedektör ön ayar yönetimi
 - Arazi sahibi izinlerini ve saha erişimini yönetmek için izin kasası
-- Sınır uyarıları içeren çevre koruması (Perimeter guard)
+- Sınır uyarıları ile çevre koruyucu
 - Çevrimdışı harita indirmeleri
 - Google Drive yedekleme ve geri yükleme
-- Oturum dışa aktarma (GPX, KML, CSV, JSON) ve karşılaştırma araçları
+- Oturum dışa aktarımı (GPX, KML, CSV, JSON) ve karşılaştırma araçları
 - Takvim ısı haritası, istatistikler ve başarı takibi
+
+sweeptrack.pro Web Sitesi, SweepTrack Pro hakkında bilgi, lansman öncesi bir bekleme listesi ve destek içeriği sağlar.
 
 ## 3. Uygunluk
 
-Bu Uygulamayı kullanmak için en az 16 yaşında olmalısınız. 18 yaşın altındaysanız, ebeveyninizin veya yasal vasinizin bu Şartları sizin adınıza incelediğini ve kabul ettiğini beyan edersiniz.
+Uygulamayı veya Web Sitesini kullanmak için en az 16 yaşında olmalısınız. 18 yaşın altındaysanız, ebeveyninizin veya yasal vasinizin bu Şartları sizin adınıza incelediğini ve kabul ettiğini beyan edersiniz.
 
-Uygulamayı kullanarak, yargı bölgenizde bağlayıcı bir anlaşma yapma yasal kapasitesine sahip olduğunuzu beyan ve garanti edersiniz.
+Uygulamayı veya Web Sitesini kullanarak, yargı bölgenizde bağlayıcı bir sözleşmeye girme yasal kapasitesine sahip olduğunuzu beyan eder ve garanti edersiniz.
 
 ## 4. Hesap ve Kimlik Doğrulama
 
-Uygulama hesap oluşturmayı gerektirmez. İsteğe bağlı bir Google Sign-In, yalnızca Google Drive yedekleme ve geri yükleme işlevselliği amacıyla mevcuttur.
+Uygulama hesap oluşturulmasını gerektirmez. Sadece Google Drive yedekleme ve geri yükleme işlevi amacıyla isteğe bağlı bir Google Sign-In kullanılabilir.
 
 Şunlardan sorumlusunuz:
 
-- Google hesabı kimlik bilgilerinizin güvenliğini sağlamak
-- Kimliği doğrulanmış oturumunuz aracılığıyla gerçekleşen tüm faaliyetler
-- Google hesabı ayarlarınızın gizlilik tercihlerinizle uyumlu olmasını sağlamak
+- Google hesap kimlik bilgilerinizin güvenliğini sağlamak
+- Kimliği doğrulanmış oturumunuz aracılığıyla gerçekleşen tüm etkinlikler
+- Google hesap ayarlarınızın gizlilik tercihlerinizle uyumlu olmasını sağlamak
 
-Google hesabı şifrenizi saklamıyoruz. Kimlik doğrulama tamamen Google'ın OAuth sistemi tarafından yönetilir.
+Google hesap parolanızı saklamıyoruz. Kimlik doğrulama tamamen Google'ın OAuth sistemi tarafından yönetilir.
 
 ## 5. Abonelik ve Ödemeler
 
 ### 5.1 Ücretsiz Katman
 
-Uygulama, aşağıdakiler dahil olmak üzere ücretsiz olarak sınırlı işlevsellik sunar:
+Uygulama ücretsiz olarak sınırlı işlevsellik sunar, dahil olmak üzere:
 
 - Sınırsız oturum
-- 5 buluntuya kadar
+- 5'e kadar buluntu
 - 1 dedektör ön ayar yuvası
 - Temel takip ve haritalama özelliklerine erişim
 
 ### 5.2 Premium Abonelik
 
-Google Play Store üzerinden yönetilen ve RevenueCat, Inc. tarafından işlenen bir premium abonelik; sınırsız buluntu, oturum ve dedektör ön ayarının yanı sıra tarihi harita katmanları, çevrimdışı haritalar, çevre koruması, bulut yedekleme ve ek araçlar dahil olmak üzere gelişmiş özelliklerin kilidini açar.
+Google Play Store aracılığıyla yönetilen ve RevenueCat, Inc. tarafından işlenen premium abonelik, sınırsız buluntular, oturumlar ve dedektör ön ayarlarının yanı sıra tarihi harita kaplamaları, çevrimdışı haritalar, çevre koruyucu, bulut yedekleme ve ek araçlar dahil olmak üzere gelişmiş özelliklerin kilidini açar.
 
-### 5.3 Faturalandırma
+### 5.3 Founder's Lifetime
 
-- Tüm ödemeler Google Play Store üzerinden işlenir
-- Abonelik fiyatı satın alma sırasında görüntülenir
-- Abonelikler, mevcut dönemin bitiminden en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenir
-- Aboneliğinizi Google Play Store ayarlarından yönetebilir veya iptal edebilirsiniz
+Sınırlı bir Founder's Lifetime teklifi, Uygulamanın Google Play'de herkese açık olarak kullanılabilir olmasından sonra Google Play uygulama içi satın alma mekanizması aracılığıyla ilk 1.000 alıcı için kullanılabilir. Founder's Lifetime, tüm Pro özelliklerine ömür boyu erişim sağlayan tek seferlik bir ödemedir. 1.000 Founder's Lifetime satın alma işlemi tamamlandıktan sonra teklif kalıcı olarak kapanır ve sonraki kullanıcılar §5.2'de açıklanan standart abonelik aracılığıyla Pro özelliklerine erişir.
 
-### 5.4 İadeler
+Lansman öncesi bekleme listesine katılmak Founder's Lifetime yeri ayırmaz. Sınır, Uygulamayı yüklemiş kullanıcılar arasında ilk gelen ilk hizmet alır esasına göre satın alma sırasında uygulanır.
 
-İade talepleri, Google Play Store tarafından kendi iade politikalarına uygun olarak yönetilir. İadeleri doğrudan biz işlemiyoruz.
+### 5.4 Faturalama
+
+- Tüm ödemeler Google Play Store aracılığıyla işlenir
+- Abonelik fiyatları satın alma sırasında görüntülenir
+- Mevcut dönemin bitiminden en az 24 saat önce iptal edilmedikçe abonelikler otomatik olarak yenilenir
+- Founder's Lifetime, tek seferlik, yenilenmeyen bir satın alımdır
+- Aboneliğinizi Google Play Store ayarları aracılığıyla yönetebilir veya iptal edebilirsiniz
+
+### 5.5 İadeler
+
+İade talepleri Google Play Store tarafından iade politikalarına uygun olarak işlenir. İadeleri doğrudan işlemiyoruz.
 
 ## 6. Kullanıcı Verileri ve Gizlilik
 
-### 6.1 Toplanan Veriler
+### 6.1 Toplanan Veriler (Uygulama)
 
-Uygulama, aşağıdaki verileri **yerel olarak cihazınızda** toplar ve saklar:
+Uygulama aşağıdaki verileri **cihazınızda yerel olarak** toplar ve saklar:
 
-- Aktif takip oturumları sırasında GPS koordinatları, hız, rakım ve yön
+- Aktif takip oturumları sırasında GPS koordinatları, hız, rakım ve rota
 - Oturum meta verileri (ad, tarih, süre, mesafe, etiketler)
 - Buluntu/keşif kayıtları (tür, konum, ad, notlar, derinlik, değer, ağırlık)
 - Uygulama içinde yakalanan medya dosyaları (fotoğraflar ve ses kayıtları)
-- İzin kasası girişleri (saha adları, arazi sahibi adları, iletişim bilgileri, izin ayrıntıları, sınır koordinatları, imzalar)
+- İzin kasası girişleri (saha adları, sahip adları, iletişim bilgileri, izin ayrıntıları, sınır koordinatları, imzalar)
 - Dedektör ön ayar yapılandırmaları
 - Oturumlarla ilişkili hava durumu anlık görüntüleri
 - Uygulama tercihleri (tema, birimler, dil)
 
-### 6.2 Veri Depolama
+### 6.2 Veri Depolama (Uygulama)
 
-- **Tüm veriler yerel olarak cihazınızda**, şifrelenmiş bir veritabanında ve yerel dosya deposunda saklanır
-- **Sunucularımıza hiçbir veri iletilmez** — herhangi bir arka uç sunucusu veya veritabanı işletmiyoruz
-- **Google Drive yedekleme** (isteğe bağlı, kullanıcı tarafından başlatılan), verilerinizin şifrelenmiş bir kopyasını kişisel Google Drive hesabınızda "SweepTrack Backups" adlı bir klasör altında saklar
+- **Tüm Uygulama verileri cihazınızda yerel olarak saklanır**, şifrelenmiş bir veritabanında ve yerel dosya depolamasında
+- **Hiçbir Uygulama verisi sunucularımıza iletilmez** — Uygulama işlevselliği için arka uç sunucuları veya veritabanları işletmiyoruz
+- **Google Drive yedeklemesi** (isteğe bağlı, kullanıcı tarafından başlatılan), verilerinizin şifrelenmiş bir kopyasını kişisel Google Drive hesabınızda "SweepTrack Backups" klasörüne kaydeder
 - Verilerinizi korumak için Android bulut yedeklemesi devre dışı bırakılmıştır
 
-### 6.3 Üçüncü Taraf API Çağrıları
+Web Sitesi veri uygulamaları (bekleme listesi için e-posta toplama, analitik, barındırma) aşağıdaki §6.7'de ayrı olarak ve tam detayda Gizlilik Politikamız, Bölüm 4'te açıklanmıştır.
 
-Uygulama, yalnızca işlevsellik amacıyla aşağıdaki üçüncü taraf hizmetlerine ağ istekleri gönderir. Açıkça belirtilmediği sürece hiçbir kişisel veya tanımlayıcı veri gönderilmez:
+### 6.3 Üçüncü Taraf API Çağrıları (Uygulama)
 
-- **Google Maps SDK** — Harita görüntüleme
-- **Open-Meteo** — Hava durumu verileri (yaklaşık koordinatlar gönderilir, kişisel bilgi gönderilmez)
-- **OpenStreetMap / Nominatim** — Ters coğrafi kodlama (koordinatlar gönderilir, kişisel bilgi gönderilmez)
-- **Overpass API** — Yakındaki tarihi ilgi çekici nokta sorguları (koordinatlar gönderilir, kişisel bilgi gönderilmez)
-- **Wikipedia API** — Yakındaki makaleler (koordinatlar gönderilir, kişisel bilgi gönderilmez)
-- **NOAA** — Gelgit tahminleri (istasyon kimliği gönderilir, kişisel bilgi gönderilmez)
-- **RevenueCat** — Abonelik doğrulama (anonim uygulama kullanıcı kimliği, kişisel bilgi gönderilmez)
+Uygulama, yalnızca işlevsellik amaçları için aşağıdaki üçüncü taraf hizmetlerine ağ istekleri gönderir. Aksi açıkça belirtilmedikçe, kişisel veya tanımlayıcı veriler gönderilmez:
 
-### 6.4 Analitik veya Takip Yok
+- **Google Maps SDK** — Harita gösterimi
+- **Open-Meteo** — Hava durumu verileri (yaklaşık koordinatlar gönderilir, kişisel bilgi yok)
+- **OpenStreetMap / Nominatim** — Ters geocoding (koordinatlar gönderilir, kişisel bilgi yok)
+- **Overpass API** — Yakındaki tarihi POI sorguları (koordinatlar gönderilir, kişisel bilgi yok)
+- **Wikipedia API** — Yakındaki makaleler (koordinatlar gönderilir, kişisel bilgi yok)
+- **NOAA** — Gelgit tahminleri (istasyon kimliği gönderilir, kişisel bilgi yok)
+- **RevenueCat** — Abonelik doğrulaması (anonim uygulama kullanıcı kimliği, kişisel bilgi yok)
 
-Uygulama herhangi bir analitik SDK'sı, hata raporlama aracı, reklam çerçevesi veya davranışsal takip mekanizması **içermez**. Herhangi bir kullanım verisi toplamıyoruz, iletmiyoruz veya satmıyoruz.
+### 6.4 Analitik veya İzleme Yok (Uygulama)
+
+Uygulama, analitik SDK'ları, çökme raporlama araçları, reklam çerçeveleri veya davranış izleme mekanizmalarını **içermez**. Hiçbir Uygulama kullanım verisini toplamıyoruz, iletmiyoruz veya satmıyoruz.
+
+Web Sitesi analitiği (Vercel Analytics, Vercel Speed Insights) §6.7'de açıklanmıştır.
 
 ### 6.5 Veri Silme
 
-Verilerinizi istediğiniz zaman Uygulama içindeki öğeleri silerek, Android ayarları üzerinden uygulama verilerini temizleyerek, Uygulamayı kaldırarak veya Google Drive yedeklerini hesabınızdan silerek silebilirsiniz.
+Uygulama içindeki tek tek öğeleri silerek, Android ayarları aracılığıyla uygulama verilerini temizleyerek, Uygulamayı kaldırarak veya hesabınızdaki Google Drive yedeklemelerini silerek Uygulama verilerinizi istediğiniz zaman silebilirsiniz. Web Sitesi bekleme listesi verileri için, e-postalardan aboneliği iptal edin veya bize [support@sweeptrack.pro](mailto:support@sweeptrack.pro) adresinden ulaşın.
 
 ### 6.6 Çocukların Gizliliği
 
-16 yaşından küçük çocuklardan bilerek kişisel bilgi toplamıyoruz. Bir çocuğun bize kişisel veri sağladığını düşünüyorsanız, lütfen bizimle iletişime geçin.
+16 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamayız. Bir çocuğun bize kişisel veri sağladığını düşünüyorsanız, lütfen bizimle iletişime geçin.
+
+### 6.7 Web Sitesi ve Bekleme Listesi
+
+sweeptrack.pro Web Sitesi, SweepTrack Pro için bir pazarlama ve bilgi kanalı olarak işletilir. Web Sitesi'ndeki bir kayıt formu aracılığıyla e-postanızı göndererek, şunları almayı kabul edersiniz:
+
+- Kaydınızı onaylayan bir karşılama e-postası
+- SweepTrack Pro Google Play'de yayınlandığında bir e-posta
+- Ürün ve Founder's Lifetime teklifi hakkında ara sıra lansman öncesi güncellemeler
+
+E-postalar AB'de (İrlanda bölgesi) barındırılan bir Supabase Postgres veritabanında saklanır ve Resend, Inc. (AB, İrlanda) aracılığıyla teslim edilir. Herhangi bir e-postaya "remove" yanıtı vererek veya e-posta istemcinizin gösterdiği List-Unsubscribe bağlantısını kullanarak istediğiniz zaman aboneliği iptal edebilirsiniz. E-posta adresleri, aboneliği iptal edene kadar veya genel lansmandan 12 ay sonrasına kadar, hangisi önce olursa, saklanır.
+
+Web Sitesi ayrıca Vercel Analytics ve Vercel Speed Insights kullanır — çerez kullanmayan ve bireysel IP adreslerini saklamayan, gizliliğe saygılı araçlardır.
+
+Web Sitesi veri işleme hakkında tam ayrıntılar — yasal dayanak, işleyiciler, saklama ve haklarınız dahil — Gizlilik Politikamız, Bölüm 4'te yer almaktadır.
 
 ## 7. İzin Verilen Kullanım
 
-Uygulamayı yalnızca yasal amaçlarla ve bu Şartlara uygun olarak kullanmayı kabul edersiniz. Şunları **yapmamayı** kabul edersiniz:
+Uygulamayı yalnızca yasal amaçlarla ve bu Şartlara uygun olarak kullanmayı kabul edersiniz. Şunları yapmayacağınızı kabul edersiniz:
 
-- Uygulamayı mülke tecavüz, yetkisiz kazı veya kültürel miras koruma yasalarının ihlali dahil olmak üzere herhangi bir yasadışı faaliyet için kullanmak
-- Uygulamaya tersine mühendislik uygulamak, kaynak koda dönüştürmek veya parçalarına ayırmak
-- Uygulamayı veya içeriğini dağıtmak, alt lisans vermek veya ticari olarak istismar etmek
-- Abonelik doğrulamasını, premium özellik kısıtlamalarını veya herhangi bir güvenlik önlemini atlatmaya çalışmak
-- Uygulama ile etkileşim kurmak için otomatik sistemler (botlar, kazıyıcılar) kullanmak
-- Uygulamanın işlevselliğine veya ilişkili hizmetlerine müdahale etmek veya bunları bozmak
+- Uygulamayı izinsiz giriş, izinsiz kazı veya kültürel miras koruma yasalarının ihlali dahil herhangi bir yasadışı faaliyet için kullanmamak
+- Uygulamayı tersine mühendislik yapmamak, derlememek veya parçalamamak
+- Uygulamayı veya içeriğini dağıtmamak, alt lisans vermemek veya ticari olarak kullanmamak
+- Abonelik doğrulamasını, premium özellik kısıtlamalarını veya herhangi bir güvenlik önlemini atlatmaya çalışmamak
+- Uygulama ile etkileşim için otomatik sistemler (botlar, kazıyıcılar) kullanmamak
+- Uygulamanın işlevselliğini veya ilgili hizmetleri engellememek veya bozmamak
 
-## 8. Metal Arama ve Yasal Uyumluluk
+## 8. Metal Arama ve Yasal Uyum
 
-### 8.1 Sorumluluğunuz
+### 8.1 Sizin Sorumluluğunuz
 
-Metal arama; ülkeye, eyalete, bölgeye ve belediyeye göre değişen yasa ve düzenlemelere tabidir. Uygun izinlerin alınmasından, tüm geçerli yasalara uyulmasından, kültürel miras ve eski eserler yasalarına bağlı kalınmasından, buluntuların yerel yasaların gerektirdiği şekilde bildirilmesinden ve bir oturuma başlamadan önce herhangi bir konumda aramaya izin verildiğinin doğrulanmasından **yalnızca siz sorumlusunuz**.
+Metal arama, ülkeye, eyalete, bölgeye ve belediyeye göre değişen yasa ve düzenlemelere tabidir. **Yalnızca siz**, uygun izinleri almak, tüm geçerli yasalara uymak, kültürel miras ve antika yasalarına uymak, yerel yasaların gerektirdiği şekilde buluntuları raporlamak ve bir oturum başlatmadan önce herhangi bir konumda aramaya izin verildiğini doğrulamaktan sorumlusunuz.
 
-### 8.2 Ülkeye Özgü Yasal Bildirimler
+### 8.2 Ülkeye Özel Yasal Bildirimler
 
-**UK:** Treasure Act 1996 uyarınca, belirli buluntuları 14 gün içinde yerel adli tabibe (coroner) bildirmelisiniz. Uygulamanın buluntu kaydı yasal bir bildirim teşkil etmez. Portable Antiquities Scheme (PAS) aracılığıyla ayrıca bildirimde bulunmalısınız.
+**Birleşik Krallık:** Treasure Act 1996 kapsamında, belirli buluntuları yerel adli müşavirinize 14 gün içinde bildirmelisiniz. Uygulamanın buluntu kaydı yasal bir rapor oluşturmaz. Portable Antiquities Scheme (PAS) aracılığıyla ayrı olarak raporlamalısınız.
 
-**US:** Metal arama, ARPA (1979) uyarınca Ulusal Parklar, Ulusal Ormanlar ve BLM arazileri dahil olmak üzere çoğu federal kamu arazisinde yasaktır. İhlaller 100.000 dolara kadar para cezası ve hapisle sonuçlanabilir. Uygulama, herhangi bir konumda arama yapmanın yasal olup olmadığını belirtmez.
+**ABD:** ARPA (1979) kapsamında Ulusal Parklar, Ulusal Ormanlar ve BLM arazileri dahil olmak üzere çoğu federal kamu arazisinde metal arama yasaktır. İhlaller 100.000 USD'ye kadar para cezası ve hapis cezasıyla sonuçlanabilir. Uygulama, herhangi bir konumda aramanın yasal olup olmadığını belirtmez.
 
-**EU:** Birçok AB ülkesi metal arama için hükümet izni gerektirir. Bazı ülkelerde, arazi mülkiyetine bakılmaksızın izinsiz arama yapmak yasadışıdır. Uygulama, ulusal kültürel varlık yasası kapsamında buluntuların yasal sınıflandırmasını belirlemez.
+**AB:** Birçok AB ülkesi metal arama için hükümet izni gerektirir. Bazı ülkelerde arazi mülkiyetinden bağımsız olarak izinsiz arama yasadışıdır. Uygulama, ulusal kültürel mülkiyet yasası kapsamındaki buluntuların yasal sınıflandırmasını belirlemez.
 
-**Romania:** OG 43/2000 uyarınca, arkeolojik alanlarda veya korunan alanlarda metal dedektörlerinin yetkisiz kullanımı suçtur.
+**Romanya:** OG 43/2000 kapsamında, arkeolojik sitelerde veya korunan alanlarda metal dedektörlerin yetkisiz kullanımı bir suç teşkil eder.
 
-**Australia:** Crown arazilerinde, ulusal parklarda, Aborjin miras alanlarında ve kayıtlı miras yerlerinde arama yapmak genellikle yasaktır.
+**Avustralya:** Crown arazileri, ulusal parklar, Aborjin miras siteleri ve kayıtlı miras yerlerinde arama genellikle yasaktır.
 
-**Canada:** Eyalet miras yasaları ve Canada National Parks Act, çeşitli bağlamlarda aramayı kısıtlar veya yasaklar.
+**Kanada:** Bölgesel miras yasaları ve Canada National Parks Act, çeşitli bağlamlarda aramayı kısıtlar veya yasaklar.
 
 ### 8.3 İzin Kasası Sorumluluk Reddi
 
-İzin Kasası kişisel bir düzenleme aracıdır. İznin yasal kanıtını teşkil **etmez**, herhangi bir yasal anlaşma oluşturmaz ve yasal olarak gerekli olan herhangi bir yazılı onay veya iznin yerine geçmez. Dijital imzalar yalnızca kişisel kayıt tutma amaçlıdır. PDF mektup oluşturucu yalnızca bir şablon belge oluşturur — her iki taraf da içeriği üzerinde bağımsız olarak anlaşmadıkça hiçbir yasal etkisi yoktur.
+İzin Kasası kişisel bir organizasyon aracıdır. Yasal izin kanıtı **değildir**, herhangi bir yasal anlaşma oluşturmaz ve yasal olarak gerekli yazılı onay veya izinlerin yerine geçmez. Dijital imzalar yalnızca kişisel kayıt tutma içindir. PDF mektup oluşturucu yalnızca bir şablon belge oluşturur — her iki taraf bağımsız olarak içeriğini kabul etmedikçe yasal bir etkisi yoktur.
 
 ### 8.4 Buluntu Sınıflandırma Sorumluluk Reddi
 
-Uygulamadaki buluntu kategorileri (Hazine, Altın, Madeni Para vb.) yalnızca kişisel düzenleme içindir. Uygulama yasal sınıflandırmayı, arkeolojik önemi, değeri veya bildirim yükümlülüklerini **belirlemez**. Madeni Para Kumpası (Coin Caliper), madeni paraları yalnızca çapına göre tanımlar ve kimlik doğrulama, değerleme veya yasal bildirim için güvenilmemelidir.
+Uygulamadaki buluntu kategorileri (Hazine, Altın, Madeni Para vb.) yalnızca kişisel organizasyon içindir. Uygulama yasal sınıflandırma, arkeolojik önem, değer veya raporlama yükümlülüklerini **belirlemez**. Coin Caliper madeni paraları yalnızca çapa göre tanımlar ve kimlik doğrulama, değerleme veya yasal raporlama için kullanılmamalıdır.
 
-### 8.5 Yasal Tavsiye Değildir
+### 8.5 Yasal Tavsiye Yok
 
-Uygulamadaki hiçbir şey — İzin Kasası, hava durumu puanlaması, arama tahmini, yakındaki alanlar, tarihi harita katmanları, buluntu kategorizasyonu veya herhangi bir metin dahil — hiçbir türde yasal, mali, arkeolojik veya profesyonel tavsiye teşkil etmez.
+Uygulamada hiçbir şey — İzin Kasası, hava puanı, arama tahmini, yakındaki siteler, tarihi harita kaplamaları, buluntu kategorizasyonu veya herhangi bir metin dahil — herhangi bir türde yasal, finansal, arkeolojik veya profesyonel tavsiye oluşturmaz.
 
 ## 9. GPS, Konum ve Güvenlik
 
-GPS doğruluğu cihaz donanımınıza, uydu kullanılabilirliğine, atmosferik koşullara, araziye ve çevredeki yapılara bağlıdır. Uygulama konum verilerini "olduğu gibi" sunar. Doğruluğu garanti etmiyoruz.
+GPS doğruluğu cihazınızın donanımına, uydu kullanılabilirliğine, atmosferik koşullara, araziye ve çevredeki yapılara bağlıdır. Uygulama konum verilerini "olduğu gibi" sağlar. Doğruluğu garanti etmiyoruz.
 
-Çevre koruması yaklaşık bir araçtır ve kesin bir sınır göstergesi veya yasal mülkiyet hattı olarak güvenilmemelidir. Geri dönüş yolu göstergesi (road back), güvenli bir yürüyüş rotasını değil, kuş uçuşu mesafeyi gösterir.
+Çevre koruyucu yaklaşık bir araçtır ve kesin bir sınır göstergesi veya yasal mülkiyet hattı olarak kullanılmamalıdır. Yola dönüş göstergesi, güvenli bir yürüyüş rotası değil, düz çizgi mesafesini gösterir.
 
-**Plaj araması güvenliği:** Gelgit tablosu tahminler sunar, garanti vermez. Gelgitler; hava durumu, rüzgar ve yerel coğrafyadan tahminlere yansımayan şekillerde etkilenebilir. Daima bir güvenlik payı bırakın ve bir kaçış rotanız olsun. Güvenlik kararları için asla yalnızca Uygulamanın gelgit verilerine güvenmeyin.
+**Plaj arama güvenliği:** Gelgit tablosu garantiler değil, tahminler sağlar. Gelgitler, tahminlere yansıtılmayan şekillerde hava durumu, rüzgar ve yerel coğrafyadan etkilenebilir. Her zaman bir güvenlik payı bırakın ve bir kaçış rotanız olsun. Güvenlik kararları için Uygulamanın gelgit verilerine asla yalnızca güvenmeyin.
 
-Yol katmanı ve ısı haritası görselleştirmeleri yaklaşıktır. GPS kayması ve sinyal kaybı, yolların gerçek konumlardan sapmış görünmesine neden olabilir. Boşluklar gerçek arama modellerini yansıtmayabilir.
+Yol kaplama ve ısı haritası görselleştirmeleri yaklaşıktır. GPS sapması ve sinyal kaybı yolların gerçek konumlardan kaymış görünmesine neden olabilir. Boşluklar gerçek arama modellerini yansıtmayabilir.
 
 ## 10. Üçüncü Taraf Hizmetleri ve İçeriği
 
-Uygulama Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA ve Wikipedia'dan gelen verileri kullanır. Harita verileri yasal mülkiyet sınırlarını veya erişim haklarını belirlemek için **asla** kullanılmamalıdır.
+Uygulama Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA ve Wikipedia'dan veri kullanır. Harita verileri yasal mülkiyet sınırlarını veya erişim haklarını belirlemek için **asla** kullanılmamalıdır.
 
-**USGS Tarihi Harita Katmanı:** Tarihi haritalar onlarca veya yüzlerce yıl öncesindeki koşulları tasvir eder. Gösterilen özellikler artık mevcut olmayabilir veya farklı mülkiyetlerde olabilir. Tarihi haritalar güncel sınırları, mülkiyeti veya erişim haklarını yansıtmaz. Tarihi bir özelliğin varlığı arama yapma yetkisi vermez.
+**USGS Tarihi Harita Kaplaması:** Tarihi haritalar onlarca veya yüzlerce yıl önceki koşulları gösterir. Gösterilen özellikler artık var olmayabilir veya farklı mülklerde olabilir. Tarihi haritalar mevcut sınırları, mülkiyeti veya erişim haklarını yansıtmaz. Tarihi bir özelliğin varlığı arama yetkisi vermez.
 
-**Gelgit tahminleri** fırtına kabarmasını, rüzgarı veya yerel anomalileri hesaba katmayabilir. **Yakındaki alanlar** verileri topluluk tarafından sağlanmıştır ve yanlış olabilir — bir işaretçinin varlığı arama yapma yetkisi vermez. **Çevrimdışı haritalar** güncelliğini yitirebilir. **Dedektör ön ayarları** düzenleme araçlarıdır, üreticiler tarafından onaylanmamıştır.
+**Gelgit tahminleri** fırtına dalgalanmasını, rüzgarı veya yerel anormallikleri hesaba katmayabilir. **Yakındaki siteler verileri** topluluk katkılarıdır ve yanlış olabilir — bir işaretçinin varlığı arama yetkisi vermez. **Çevrimdışı haritalar** güncelliğini yitirebilir. **Dedektör ön ayarları** üreticiler tarafından onaylanmamış organizasyon araçlarıdır.
 
 ## 11. Fikri Mülkiyet
 
-Tasarımı, kodu, grafikleri, kullanıcı arayüzü bileşenleri ve markası dahil olmak üzere SweepTrack Pro, Loriba'nın fikri mülkiyetidir. Tüm hakları saklıdır.
+SweepTrack Pro, tasarımı, kodu, grafikleri, UI bileşenleri ve markası dahil olmak üzere, Coc Lorand Adrian P.F.A.'nın (Loriba olarak faaliyet gösteren) fikri mülkiyetidir. Tüm hakları saklıdır.
 
-Uygulamayı kullanarak oluşturduğunuz tüm içeriğin mülkiyeti size aittir. İçeriğiniz üzerinde herhangi bir hak iddia etmiyoruz.
+Uygulamayı kullanarak oluşturduğunuz tüm içeriğin mülkiyetini korursunuz. İçeriğiniz üzerinde herhangi bir hak talep etmiyoruz.
 
-Dedektör marka adları ve model adları, ilgili üreticilerin ticari markalarıdır. Herhangi bir dedektör üreticisine bağlı değiliz, onlar tarafından desteklenmiyoruz veya finanse edilmiyoruz.
+Dedektör marka adları ve model adları, ilgili üreticilerinin ticari markalarıdır. Herhangi bir dedektör üreticisi tarafından bağlı, onaylı veya sponsorlu değiliz.
 
 ## 12. Garantilerin Reddi
 
-UYGULAMA, TİCARİ ELVERİŞLİLİK, BELİRLİ BİR AMACA UYGUNLUK, DOĞRULUK VE İHLAL ETMEME DAHİL ANCAK BUNLARLA SINIRLI OLMAMAK ÜZERE, AÇIK VEYA ZIMNİ HİÇBİR GARANTİ OLMAKSIZIN "OLDUĞU GİBİ" VE "MEVCUT OLDUĞU ŞEKİLDE" SUNULMAKTADIR.
+UYGULAMA "OLDUĞU GİBİ" VE "MEVCUT OLDUĞU GİBİ" SAĞLANIR, AÇIK VEYA ZIMNİ HİÇBİR TÜRDEN GARANTİ OLMAKSIZIN, SATILABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK, DOĞRULUK VE İHLAL ETMEME ZIMNİ GARANTİLERİ DAHİL ANCAK BUNLARLA SINIRLI OLMAKSIZIN.
 
 ## 13. Sorumluluğun Sınırlandırılması
 
-GEÇERLİ YASALARIN İZİN VERDİĞİ AZAMİ ÖLÇÜDE, COC LORAND P.F.A. (LORIBA OLARAK FAALİYET GÖSTEREN), AŞAĞIDAKİLER DAHİL ANCAK BUNLARLA SINIRLI OLMAMAK ÜZERE HİÇBİR DOLAYLI, ARIZİ, ÖZEL, SONUÇSAL VEYA CEZAİ ZARARDAN SORUMLU TUTULAMAZ: GPS YANLIŞLIĞINDAN, MÜLKİYET SINIRI ANLAŞMAZLIKLARINDAN VEYA MÜLKE TECAVÜZ İDDİALARINDAN KAYNAKLANAN ZARARLAR; HAVA DURUMU, GELGİT VEYA ÇEVRESEL VERİLERE GÜVENDEN KAYNAKLANAN ZARARLAR; YARALANMA VEYA BOĞULMA DAHİL GELGİT KOŞULLARI; PARA CEZALARI, SORUŞTURMA VEYA MÜSADERE DAHİL ARAMA FAALİYETLERİNİN YASAL SONUÇLARI; TREASURE ACT 1996, ARPA VEYA HERHANGİ BİR KÜLTÜREL MİRAS YASASINA UYULMAMASI; TARİHİ HARİTA KATMANLARINA, YAKINDAKİ ALANLARA, İZİN KASASINA, PDF MEKTUPLARINA, DİJİTAL İMZALARA, MADENİ PARA KUMPASINA VEYA BULUNTU TANIMLAMASINA GÜVEN; ÇEVRE KORUMASI, YOL KATMANI VEYA ISI HARİTASI YANLIŞLIĞI; GÜNCEL OLMAYAN ÇEVRİMDIŞI HARİTALAR VEYA DEDEKTÖR ÖN AYARLARI; ARAMA FAALİYETLERİ SIRASINDA KİŞİSEL YARALANMA, ÖLÜM VEYA MADDİ HASAR; VEYA ARAZİ SAHİPLERİ, KOLLUK KUVVETLERİ VEYA ÜÇÜNCÜ TARAFLARLA ETKİLEŞİMLER.
+GEÇERLİ YASALARIN İZİN VERDİĞİ AZAMİ ÖLÇÜDE, COC LORAND ADRIAN P.F.A. (LORIBA OLARAK FAALİYET GÖSTEREN) DOLAYLI, ARIZİ, ÖZEL, SONUÇSAL VEYA CEZAİ ZARARLARDAN, AŞAĞIDAKİLER DAHİL ANCAK BUNLARLA SINIRLI OLMAKSIZIN SORUMLU OLMAYACAKTIR: GPS YANLIŞLIĞINDAN, MÜLKİYET SINIRI ANLAŞMAZLIKLARINDAN VEYA İZİNSİZ GİRİŞ İDDİALARINDAN KAYNAKLANAN HASARLAR; HAVA DURUMU, GELGİT VEYA ÇEVRE VERİLERİNE GÜVENMEKTEN KAYNAKLANAN HASARLAR; YARALANMA VEYA BOĞULMA DAHİL GELGİT KOŞULLARI; PARA CEZALARI, KOVUŞTURMA VEYA EL KOYMA DAHİL ARAMA FAALİYETLERİNİN YASAL SONUÇLARI; TREASURE ACT 1996, ARPA VEYA HERHANGİ BİR KÜLTÜREL MİRAS YASASINA UYULMAMASI; TARİHİ HARİTA KAPLAMALARINA, YAKINDAKİ SİTELERE, İZİN KASASINA, PDF MEKTUPLARA, DİJİTAL İMZALARA, COIN CALIPER'A VEYA BULUNTU KİMLİĞİNE GÜVENME; ÇEVRE KORUYUCU, YOL KAPLAMA VEYA ISI HARİTASI YANLIŞLIĞI; GÜNCEL OLMAYAN ÇEVRİMDIŞI HARİTALAR VEYA DEDEKTÖR ÖN AYARLARI; ARAMA FAALİYETLERİ SIRASINDA KİŞİSEL YARALANMA, ÖLÜM VEYA MAL HASARI; VEYA ARAZİ SAHİPLERİ, KOLLUK KUVVETLERİ VEYA ÜÇÜNCÜ TARAFLARLA ETKİLEŞİMLER.
 
-Hiçbir durumda toplam sorumluluğumuz, iddiadan önceki on iki (12) ay içinde Uygulama için ödediğiniz tutarı aşmayacaktır.
+Toplam sorumluluğumuz, hiçbir durumda iddiadan önceki on iki (12) ay içinde Uygulama için ödediğiniz miktarı aşmayacaktır.
 
 ## 14. Tazminat
 
-Uygulamayı kullanımınızdan, bu Şartları ihlalinizden, geçerli herhangi bir yasayı ihlalinizden veya metal arama faaliyetlerinizden kaynaklanan her türlü iddia, zarar, kayıp, sorumluluk, maliyet ve masrafa karşı Loriba'yı tazmin etmeyi, savunmayı ve zarar görmemesini sağlamayı kabul edersiniz.
+Coc Lorand Adrian P.F.A.'yı (Loriba olarak faaliyet gösteren), Uygulamayı kullanımınızdan, bu Şartların ihlalinden, herhangi bir geçerli yasanın ihlalinden veya metal arama faaliyetlerinizden kaynaklanan tüm taleplerden, zararlardan, kayıplardan, sorumluluklardan, maliyetlerden ve giderlerden tazmin etmeyi, savunmayı ve zararsız tutmayı kabul edersiniz.
 
 ## 15. Fesih
 
-Bu Şartların ihlali dahil olmak üzere herhangi bir nedenle, önceden bildirimde bulunmaksızın Uygulamaya erişiminizi her an sonlandırabilir veya askıya alabiliriz. Fesih üzerine, yerel olarak saklanan verileriniz siz silene kadar cihazınızda kalır.
+Bu Şartların ihlali dahil olmak üzere herhangi bir nedenle, önceden bildirimde bulunmaksızın, herhangi bir zamanda Uygulamaya erişiminizi sonlandırabilir veya askıya alabiliriz. Feshin ardından, yerel olarak saklanan verileriniz silene kadar cihazınızda kalır.
 
-## 16. Uygulanacak Hukuk ve Uyuşmazlık Çözümü
+## 16. Geçerli Hukuk ve Anlaşmazlık Çözümü
 
-Bu Şartlar Romanya yasalarına tabidir. Her türlü uyuşmazlık öncelikle iyi niyetli müzakere yoluyla çözülmeye çalışılacaktır. 30 gün içinde çözülmemesi halinde, uyuşmazlıklar Romanya'nın yetkili mahkemelerine sunulacaktır.
+Bu Şartlar Romanya yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere yoluyla çözülmeye çalışılacaktır. 30 gün içinde çözülmezse, anlaşmazlıklar Romanya'nın yetkili mahkemelerine sunulacaktır.
 
-**AB Tüketicileri:** Ayrıca [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr) adresindeki Avrupa Çevrimiçi Uyuşmazlık Çözümü platformuna başvurabilirsiniz.
+**AB Tüketicileri:** Ayrıca [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr) adresindeki Avrupa Çevrimiçi Anlaşmazlık Çözümü platformuna da başvurabilirsiniz.
 
-**Birleşik Krallık:** Bu Şartlar UK GDPR ve Data Protection Act 2018'e tabidir. Birleşik Krallık yasaları kapsamındaki yasal tüketici haklarınız etkilenmez. [ICO](https://ico.org.uk) ile iletişime geçebilirsiniz.
+**Birleşik Krallık:** Bu Şartlar UK GDPR ve 2018 Veri Koruma Yasasına tabidir. Birleşik Krallık yasaları kapsamındaki yasal tüketici haklarınız etkilenmez. [ICO](https://ico.org.uk) ile iletişime geçebilirsiniz.
 
-**Avustralya:** Bu Şartlardaki hiçbir şey, Avustralya Tüketici Yasası kapsamındaki herhangi bir tüketici garantisini veya hakkını hariç tutmaz veya değiştirmez. [OAIC](https://www.oaic.gov.au) ile iletişime geçebilirsiniz.
+**Avustralya:** Bu Şartlarda hiçbir şey Avustralya Tüketici Kanunu kapsamındaki herhangi bir tüketici garantisini veya hakkını dışlamaz veya değiştirmez. [OAIC](https://www.oaic.gov.au) ile iletişime geçebilirsiniz.
 
-**Kanada:** Kullanımınız PIPEDA ve geçerli eyalet gizlilik yasalarına tabidir. [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca) ile iletişime geçebilirsiniz.
+**Kanada:** Kullanımınız PIPEDA ve geçerli eyalet gizlilik mevzuatına tabidir. [Kanada Gizlilik Komiseri Ofisi](https://www.priv.gc.ca) ile iletişime geçebilirsiniz.
 
-**Yeni Zelanda:** Consumer Guarantees Act 1993 ve Privacy Act 2020 kapsamındaki haklarınız sınırlı değildir. [NZ Privacy Commissioner](https://www.privacy.org.nz) ile iletişime geçebilirsiniz.
+**Yeni Zelanda:** Consumer Guarantees Act 1993 ve Privacy Act 2020 kapsamındaki haklarınız sınırlı değildir. [NZ Gizlilik Komiseri](https://www.privacy.org.nz) ile iletişime geçebilirsiniz.
 
-**Diğer yargı bölgeleri:** Yerel zorunlu tüketici koruma ve veri koruma haklarınız bu Şartlardan etkilenmez. Yerel yasaların sözleşme ile feragat edilemeyecek haklar tanıdığı durumlarda, bu haklar geçerlidir.
+**Diğer yargı bölgeleri:** Yerel zorunlu tüketici koruma ve veri koruma haklarınız bu Şartlardan etkilenmez. Yerel yasanın sözleşmeyle feragat edilemeyen haklar verdiği yerlerde, bu haklar geçerlidir.
 
 ## 17. Genel Hükümler
 
-Bu Şartlar, Gizlilik Politikamızla birlikte, Uygulama ile ilgili olarak siz ve Loriba arasındaki anlaşmanın tamamını oluşturur. Herhangi bir hükmün geçersiz sayılması durumunda, kalan hükümler tam olarak yürürlükte kalmaya devam eder. Herhangi bir hakkı uygulamamamız feragat teşkil etmez.
+Bu Şartlar, Gizlilik Politikamızla birlikte, Uygulama ile ilgili olarak siz ve Loriba arasındaki tüm anlaşmayı oluşturur. Herhangi bir hüküm geçersiz sayılırsa, kalan hükümler tam olarak yürürlükte kalır. Herhangi bir hakkı uygulayamamamız bir feragat oluşturmayacaktır.
 
 ## 18. Açık Kaynak ve Üçüncü Taraf Lisansları
 
-Uygulama açık kaynaklı bileşenler kullanır. Temel atıflar: Google Maps SDK (Telif Hakkı Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (kamu malı), USGS (kamu malı), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+Uygulama açık kaynak bileşenler kullanır. Önemli atıflar: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (kamu malı), USGS (kamu malı), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
 
 ## 19. İletişim
 
-Bu Şartlar hakkındaki sorularınız için lütfen iletişime geçin:
+Bu Şartlarla ilgili sorularınız için lütfen iletişime geçin:
 
 **Coc Lorand Adrian P.F.A.** (Loriba olarak faaliyet gösteren)
 CUI: 41299288 · Reg. F24/646/2019
-E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
-Website: [https://sweeptrack.pro](https://sweeptrack.pro)
+E-posta: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
+Web sitesi: [https://sweeptrack.pro](https://sweeptrack.pro)
 
 ---
 
-Bu Hizmet Şartları 7 Nisan 2026 tarihinden itibaren geçerlidir ve SweepTrack Pro'nun tüm sürümleri için geçerlidir.
-
----
+Bu Hizmet Şartları 12 Mayıs 2026 tarihinde yürürlüğe girer ve SweepTrack Pro'nun tüm sürümleri için geçerlidir.

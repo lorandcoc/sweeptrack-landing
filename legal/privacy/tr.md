@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması
 
-Yürürlük Tarihi: 7 Nisan 2026 · Son Güncelleme: 7 Nisan 2026
+Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 12 Mayıs 2026
 
 İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
@@ -14,9 +14,9 @@ Web sitesi: sweeptrack.pro
 
 ## 1. Giriş
 
-Bu Gizlilik Politikası, SweepTrack Pro'nun ("Uygulama") bilgilerinizi nasıl topladığını, kullandığını, sakladığını ve koruduğunu açıklar. Gizliliğinizi korumayı ve veri uygulamalarımız hakkında şeffaflık sağlamayı taahhüt ediyoruz.
+Bu Gizlilik Politikası, SweepTrack Pro'nun ("Uygulama") ve sweeptrack.pro web sitesinin ("Web Sitesi") bilgilerinizi nasıl topladığını, kullandığını, sakladığını ve koruduğunu açıklar. Gizliliğinizi korumayı ve veri uygulamalarımız hakkında şeffaflık sağlamayı taahhüt ediyoruz.
 
-SweepTrack Pro, **önce gizlilik (privacy-first) mimarisi** ile tasarlanmıştır: tüm veriler yerel olarak cihazınızda saklanır, arka uç sunucuları işletmiyoruz ve kişisel verilerinizi toplamıyoruz, iletmiyoruz veya satmıyoruz.
+Uygulama, **önce gizlilik (privacy-first) mimarisi** ile tasarlanmıştır: tüm arama verileri yerel olarak cihazınızda saklanır, Uygulama için arka uç sunucuları işletmiyoruz ve kişisel arama verilerinizi toplamıyoruz, iletmiyoruz veya satmıyoruz. Web Sitesi ayrı çalışır ve Bölüm 4'te açıklanan kendi veri uygulamalarına sahiptir.
 
 ## 2. Veri Sorumlusu
 
@@ -26,172 +26,234 @@ AB Genel Veri Koruma Yönetmeliği (GDPR) ve Romanya veri koruma yasası (Yasa 1
 CUI: 41299288 · Reg. F24/646/2019  
 E-posta: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
-## 3. Topladığımız Veriler
+## 3. Topladığımız Veriler (Android Uygulaması)
 
-### 3.1 Yerel Olarak Cihazınızda Saklanan Veriler
+### 3.1 Cihazınızda yerel olarak saklanan veriler
 
-Aşağıdaki veriler tarafınızca oluşturulur ve **yalnızca cihazınızda** saklanır. Siz açıkça paylaşmadığınız sürece bu verilere asla erişimimiz yoktur.
+Aşağıdaki veriler sizin tarafınızdan oluşturulur ve **yalnızca cihazınızda** saklanır. Açıkça paylaşmadığınız sürece bu verilere asla erişimimiz olmaz.
 
-**Konum ve Oturum Verileri:**
+**Konum ve oturum verileri:**
 
 - Aktif takip oturumları sırasında GPS koordinatları (enlem, boylam)
-- Cihaz sensörlerinden gelen hız, rakım, yön ve doğruluk değerleri
+- Cihaz sensörlerinden hız, irtifa, rota ve doğruluk değerleri
 - Oturum meta verileri: ad, tarih, başlangıç/bitiş saati, süre, mesafe, etiketler
 - Zaman damgalı yol koordinatları
-- Yer adları (ters coğrafi kodlama yoluyla elde edilen)
+- Konum adları (ters geocoding ile elde edilen)
 
-**Buluntu ve Keşif Kayıtları:**
+**Buluntu ve keşif kayıtları:**
 
-- Buluntu türü (Hazine, Altın, Madeni Para, Kalıntı, Mücevher, Çöp)
+- Buluntu türü (Hazine, Altın, Madeni Para, Eser, Mücevher, Çöp)
 - Buluntu konumu (kayıt anındaki GPS koordinatları)
 - İsteğe bağlı meta veriler: ad, notlar, derinlik, tahmini değer, ağırlık
 - Medya ekleri: fotoğraflar ve ses kayıtları
 
-**İzin Kasası Verileri:**
+**İzin kasası verileri:**
 
 - Saha adları ve konumları
-- Arazi sahiplerinin adları ve iletişim bilgileri
+- Arazi sahibi adları ve iletişim bilgileri
 - İzin numaraları, veriliş tarihleri, son kullanma tarihleri
 - Saha sınır koordinatları (poligon)
-- Dijital imzalar (SVG formatı)
+- Dijital imzalar (SVG biçimi)
 - Özel etiketler ve notlar
 
-**Diğer Yerel Veriler:** Dedektör ön ayar yapılandırmaları, uygulama tercihleri (tema, birimler, dil, harita ayarları) ve oturumlarla ilişkili hava durumu anlık görüntüleri.
+**Diğer yerel veriler:** Dedektör ön ayar yapılandırmaları, uygulama tercihleri (tema, birimler, dil, harita ayarları) ve oturumlarla ilişkili hava durumu anlık görüntüleri.
 
-### 3.2 Geçici Olarak İşlenen Veriler (Saklanmaz)
+### 3.2 Geçici olarak işlenen veriler (saklanmaz)
 
-Aşağıdaki veriler, yalnızca gerçek zamanlı işlevsellik için üçüncü taraf API hizmetlerine gönderilir ve **bizim tarafımızdan veya bu hizmetler tarafından acil talep dışında saklanmaz**:
+Aşağıdaki veriler gerçek zamanlı işlevsellik için üçüncü taraf API'lerine gönderilir ve **anlık istek dışında bizim veya bu hizmetler tarafından saklanmaz**:
 
-- Hava durumu tahminleri ve rakım verileri için Open-Meteo'ya gönderilen yaklaşık GPS koordinatları
-- Adres arama için OpenStreetMap/Nominatim'e gönderilen yaklaşık GPS koordinatları
-- Yakındaki tarihi ilgi çekici noktaların (POI) keşfi için Overpass API'ye gönderilen yaklaşık GPS koordinatları
-- Yakındaki makalelerin coğrafi araması için Wikipedia API'ye gönderilen yaklaşık GPS koordinatları
+- Hava durumu tahminleri ve irtifa verileri için Open-Meteo'ya gönderilen yaklaşık GPS koordinatları
+- Adres aramaları için OpenStreetMap/Nominatim'e gönderilen yaklaşık GPS koordinatları
+- Yakındaki tarihi POI keşifleri için Overpass API'ye gönderilen yaklaşık GPS koordinatları
+- Yakındaki makale coğrafi araması için Wikipedia API'ye gönderilen yaklaşık GPS koordinatları
 - Gelgit tahminleri için NOAA'ya gönderilen gelgit istasyonu tanımlayıcıları
-- Yer adı araması için Open-Meteo Geocoding'e gönderilen konum arama sorguları
+- Open-Meteo Geocoding'e gönderilen konum arama sorguları
 
-### 3.3 Üçüncü Taraf Hizmetler Tarafından İşlenen Veriler
+### 3.3 Üçüncü taraf hizmetleri tarafından işlenen veriler
 
-**Google Maps SDK:** Cihazınızın konumu, harita görüntüsü için Google Maps tarafından işlenir. [Google Gizlilik Politikası](https://policies.google.com/privacy)'na tabidir.
+**Google Maps SDK:** Cihazınızın konumu, harita gösterimi için Google Maps tarafından işlenir. [Google Gizlilik Politikası'na](https://policies.google.com/privacy) tabidir.
 
-**Google Sign-In ve Google Drive (İsteğe Bağlı):** Google Drive'a yedeklemeyi etkinleştirirseniz, Google hesabınızın e-posta adresi, kimliği doğrulanmış hesabı tanımlamak için yerel olarak saklanır. Yedekleme verileri kendi Google Drive hesabınıza yüklenir. Google Drive'ınıza erişimimiz yoktur.
+**Google Sign-In ve Google Drive (isteğe bağlı):** Google Drive yedeklemesini etkinleştirirseniz, kimliği doğrulanmış hesabı tanımlamak için Google hesabınızın e-posta adresi yerel olarak saklanır. Yedekleme verileri kendi Google Drive hesabınıza yüklenir. Google Drive'ınıza erişimimiz yoktur.
 
-**RevenueCat (Abonelik Yönetimi):** Abonelik doğrulama için anonim, rastgele oluşturulmuş bir uygulama kullanıcı kimliği kullanılır. Hiçbir kişisel bilgi paylaşılmaz. [RevenueCat Gizlilik Politikası](https://www.revenuecat.com/privacy)'na tabidir.
+**RevenueCat (Abonelik Yönetimi):** Abonelik doğrulaması için anonim, rastgele oluşturulmuş bir uygulama kullanıcı tanımlayıcısı kullanılır. Hiçbir kişisel bilgi paylaşılmaz. [RevenueCat Gizlilik Politikası'na](https://www.revenuecat.com/privacy) tabidir.
 
-### 3.4 Toplamadığımız Veriler
+### 3.4 Uygulamanın TOPLAMADIĞI Veriler
 
-- İsim, e-posta, telefon numarası veya herhangi bir kişisel tanımlayıcı **toplamıyoruz**.
-- Analitik, hata raporlama veya davranış takibi SDK'ları **kullanmıyoruz**.
-- Reklam çerçeveleri veya reklam tanımlayıcıları **kullanmıyoruz**.
-- Kullanım kalıplarını, oturum sıklığını veya özellik kullanımını **takip etmiyoruz**.
-- Kullanıcı profilleri veya davranışsal parmak izleri **oluşturmuyoruz**.
-- Verileri üçüncü taraflarla **paylaşmıyoruz, satmıyoruz, kiralamıyoruz veya ticaretini yapmıyoruz**.
-- Verilerinizi alan, işleyen veya saklayan sunucular **işletmiyoruz**.
+- **Uygulama** adınızı, e-postanızı, telefon numaranızı veya herhangi bir kişisel tanımlayıcıyı toplamaz
+- **Uygulama** analitik, çökme raporlama veya davranış izleme SDK'ları kullanmaz
+- **Uygulama** reklam çerçeveleri veya reklam tanımlayıcıları kullanmaz
+- **Uygulama** kullanım modellerini, oturum sıklığını veya özellik kullanımını izlemez
+- **Uygulama** kullanıcı profilleri veya davranışsal parmak izleri oluşturmaz
+- **Uygulama** üçüncü taraflarla veri paylaşmaz, satmaz, kiralamaz veya takas etmez
+- **Uygulama** arama verilerinizi alan, işleyen veya saklayan sunucular işletmez
 
-## 4. İşleme İçin Yasal Dayanak (GDPR)
+Web Sitesi veri uygulamaları ayrı olarak Bölüm 4'te ele alınır.
 
-- **GPS/Oturum verileri, buluntu kayıtları, kasa girişleri:** Rıza (Madde 6(1)(a)) — bu eylemleri aktif olarak siz başlatırsınız.
-- **API çağrıları (hava durumu, coğrafi kodlama):** Meşru menfaat (Madde 6(1)(f)) — temel işlevsellik için gereklidir.
-- **Google Drive Yedekleme:** Rıza (Madde 6(1)(a)) — açıkça etkinleştirir ve kimliğinizi doğrularsınız.
-- **Abonelik doğrulaması:** Bir sözleşmenin ifası (Madde 6(1)(b)) — ücretli özellikleri sağlamak için gereklidir.
+## 4. Web Sitesi Veri Uygulamaları (sweeptrack.pro)
 
-İlgili faaliyeti durdurarak veya Uygulamayı kaldırarak rızanızı istediğiniz zaman geri çekebilirsiniz.
+Bu bölüm sweeptrack.pro web sitemize özgü veri uygulamalarını kapsar. Bölüm 3 ve 5–18'de açıklanan Android Uygulaması bağımsız olarak çalışır ve Web Sitesi ile altyapı paylaşmaz.
 
-## 5. Verilerinizi Nasıl Kullanıyoruz
+### 4.1 Bekleme listesi için e-posta toplama
 
-Tüm veri işleme süreçleri **yerel olarak cihazınızda** gerçekleşir. Verilerinizi yalnızca Uygulamanın özelliklerini sağlamak için kullanıyoruz: harita görüntüleme, oturum takibi, buluntu kaydı, izin yönetimi, hava durumu/gelgit verileri, dışa aktarmalar, yedekleme ve abonelik doğrulama.
+Web Sitesi'ndeki bir kayıt formu aracılığıyla e-postanızı gönderdiğinizde şunları topluyoruz:
 
-## 6. Veri Depolama ve Güvenlik
+- Sağladığınız **e-posta adresi**
+- Kayıt **zaman damgası**
+- **IP adresi** (geçici) — hız sınırlaması için kullanılır; isteğin süresi dışında saklanmaz
 
-- Oturum ve buluntu verileri cihazınızdaki şifrelenmiş bir Room veritabanında saklanır.
-- Hassas ayarlar Android'in EncryptedSharedPreferences (AES-256) özelliğini kullanır.
-- Medya dosyaları, Uygulamanın diğer uygulamalar tarafından erişilemeyen özel dahili deposunda saklanır.
-- Verilerin istenmeyen şekilde açığa çıkmasını önlemek için Android bulut yedeklemesi **devre dışı bırakılmıştır** (`android:allowBackup="false"`).
-- Google Drive yedeklemeleri Google'ın şifrelenmiş API'lerini (HTTPS/TLS) kullanır ve yalnızca sizin hesabınızda bulunur.
+**Amaç:** SweepTrack Pro'nun Google Play'de yayınlandığında size bildirmek ve ürün ile Founder's Lifetime teklifi hakkında lansman öncesi güncellemeler göndermek. E-postanızı başka herhangi bir amaç için kullanmayacağız, paylaşmayacağız ve satmayacağız.
 
-Sunucular, veritabanları veya bulut altyapısı işletmiyoruz.
+**Yasal dayanak (GDPR):** Onay (Madde 6(1)(a)) — formu gönderdiğinizde verilir.
 
-## 7. Veri Saklama
+**Saklama:** E-posta adresleri AB'de (İrlanda bölgesi) barındırılan bir Supabase Postgres veritabanında saklanır. Supabase, Inc. standart Veri İşleme Sözleşmeleri kapsamında veri işleyicimiz olarak hareket eder.
 
-Yerel veriler, siz silmeyi seçene kadar saklanır. Uygulama içindeki öğeleri silebilir, Android Ayarları üzerinden tüm verileri temizleyebilir veya Uygulamayı kaldırabilirsiniz. Google Drive yedekleri, siz onları hesabınızdan manuel olarak silene kadar kalır.
+**E-posta teslimi:** Giden e-postalar, standart Veri İşleme Sözleşmeleri kapsamında e-posta servis işleyicimiz olarak hareket eden Resend, Inc. (AB bölgesi, İrlanda) aracılığıyla gönderilir.
 
-## 8. Veri Paylaşımı ve İfşası
+**Saklama süresi:** Aboneliği iptal edene kadar veya SweepTrack Pro'nun Google Play'deki genel lansmanından 12 ay sonrasına kadar, hangisi önce olursa.
 
-Kişisel verilerinizi herhangi bir üçüncü tarafla paylaşmıyoruz, satmıyoruz, kiralamıyoruz veya ifşa etmiyoruz. Verileri dışa aktarmalar (GPX, KML, CSV, JSON), oturum paylaşım kartları veya Google Drive yedeklemesi yoluyla paylaşmayı seçebilirsiniz; bunların tümü kullanıcı tarafından başlatılır.
+**Aboneliği iptal etme:** Gönderdiğimiz herhangi bir e-postaya "remove" yazarak yanıt verin veya e-posta istemcinizin görüntülediği List-Unsubscribe bağlantısını kullanın (Gmail ve Outlook bunu Kimden adresinin yanında gösterir).
 
-## 9. Haklarınız (GDPR ve Uluslararası)
+**Haklarınız:** Erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve onayı geri çekme hakkı. Bunlardan herhangi birini kullanmak için [support@sweeptrack.pro](mailto:support@sweeptrack.pro) adresine e-posta gönderin.
+
+### 4.2 Web Sitesi Analitiği
+
+Web Sitesi şunları kullanır:
+
+- **Vercel Analytics** — çerez kullanmayan ve bireysel IP adreslerini saklamayan gizliliğe saygılı analitik. Yalnızca toplu sayfa görüntülemelerini ölçer.
+- **Vercel Speed Insights** — Core Web Vitals ölçümü (sayfa yükleme süresi, düzen kayması, etkileşim gecikmeleri) toplu olarak.
+
+Her iki araç da Vercel Inc. tarafından işletilir ve [Vercel'in Gizlilik Politikası'na](https://vercel.com/legal/privacy-policy) tabidir. Kişisel olarak tanımlanabilir bilgi toplamaz ve kullanıcı profilleri oluşturmazlar.
+
+### 4.3 Çerezler
+
+Web Sitesi, izleme, reklam veya profil oluşturma için birinci taraf çerezleri ayarlamaz. Vercel Analytics tasarım gereği çerezsizdir. Bir dil tercihi, eğer değiştirirseniz, tarayıcınızın `localStorage`'ında saklanır (çerez değildir) ve yalnızca kendi tarayıcınız tarafından okunabilir.
+
+### 4.4 Barındırma ve sunucu günlükleri
+
+Web Sitesi Vercel Inc. tarafından barındırılır. Vercel, operasyonel, performans ve güvenlik amaçları için standart istek meta verilerini (IP adresi, kullanıcı aracısı, istek yolu, zaman damgası) otomatik olarak günlüğe kaydedebilir. Bu günlükler Vercel'in standart politikalarına göre saklanır ve bizim tarafımızdan bireyleri izleme veya profil oluşturma için kullanılmaz.
+
+### 4.5 Web Sitesi verileri için haklarınız
+
+Bölüm 10'da açıklanan aynı GDPR, UK GDPR, Avustralya, Kanada, CCPA, LGPD ve NZ Privacy Act hakları, Web Sitesi tarafından toplanan verilerinize de eşit olarak uygulanır. Bekleme listesi e-postanızla ilgili herhangi bir hakkı kullanmak için [support@sweeptrack.pro](mailto:support@sweeptrack.pro) ile iletişime geçin. 30 gün içinde yanıt vereceğiz.
+
+## 5. İşlemenin yasal dayanağı (GDPR)
+
+- **GPS/oturum verileri, buluntu kayıtları, kasa girişleri:** Onay (Madde 6(1)(a)) — bu işlemleri aktif olarak başlatırsınız
+- **API çağrıları (hava durumu, geocoding):** Meşru menfaat (Madde 6(1)(f)) — temel işlevsellik için gereklidir
+- **Google Drive yedeklemesi:** Onay (Madde 6(1)(a)) — açıkça etkinleştirir ve kimlik doğrularsınız
+- **Abonelik doğrulaması:** Sözleşmenin ifası (Madde 6(1)(b)) — ücretli özellikler sağlamak için gereklidir
+- **Bekleme listesi e-postası (Web Sitesi):** Onay (Madde 6(1)(a)) — Bölüm 4.1'e bakın
+
+İlgili etkinliği durdurarak, Uygulamayı kaldırarak veya Web Sitesi e-postalarından aboneliği iptal ederek onayınızı istediğiniz zaman geri çekebilirsiniz.
+
+## 6. Verilerinizi nasıl kullanırız
+
+Tüm Uygulama veri işleme **cihazınızda yerel olarak** gerçekleşir. Uygulama verilerini yalnızca Uygulamanın özelliklerini sağlamak için kullanırız: harita gösterimi, oturum takibi, buluntu kaydı, izin yönetimi, hava durumu/gelgit verileri, dışa aktarımlar, yedekleme ve abonelik doğrulaması.
+
+Web Sitesi verileri (bekleme listesi e-postanız) yalnızca Bölüm 4'te açıklanan lansman ve lansman öncesi iletişimleri göndermek için kullanılır.
+
+## 7. Veri depolama ve güvenlik
+
+**Uygulama verileri:**
+
+- Oturum ve buluntu verileri, cihazınızdaki şifrelenmiş bir Room veritabanında saklanır
+- Hassas tercihler Android'in EncryptedSharedPreferences (AES-256) özelliğini kullanır
+- Medya dosyaları, diğer uygulamalar tarafından erişilemeyen Uygulamanın özel dahili depolama alanında saklanır
+- Android bulut yedeklemesi, istemsiz veri ifşasını önlemek için **devre dışı bırakılmıştır** (`android:allowBackup="false"`)
+- Google Drive yedeklemeleri Google'ın şifrelenmiş API'lerini (HTTPS/TLS) kullanır ve yalnızca hesabınızda bulunur
+
+Uygulama için arama verilerinizi depolayan herhangi bir sunucu, veritabanı veya bulut altyapısı işletmiyoruz.
+
+**Web Sitesi verileri:** Bekleme listesi e-postaları AB'de (İrlanda) barındırılan bir Supabase Postgres veritabanında saklanır. Bağlantılar şifrelenmiştir (TLS). Erişim yalnızca yönetimsel amaçlarla kısıtlanmıştır. Giden e-posta, TLS üzerinden Resend (AB, İrlanda) aracılığıyla gönderilir. Bölüm 4'e bakın.
+
+## 8. Veri saklama
+
+**Uygulama verileri:** Yerel veriler, silmeyi seçene kadar saklanır. Uygulamadaki tek tek öğeleri silebilir, Android Ayarları aracılığıyla tüm verileri temizleyebilir veya Uygulamayı kaldırabilirsiniz. Google Drive yedeklemeleri, hesabınızdan manuel olarak silene kadar kalır.
+
+**Web Sitesi verileri:** Bekleme listesi e-postaları, aboneliği iptal edene kadar veya genel lansmandan 12 ay sonrasına kadar, hangisi önce olursa, saklanır. Bundan sonra adresler Supabase veritabanından silinir.
+
+## 9. Veri paylaşımı ve açıklama
+
+Kişisel verilerinizi herhangi bir üçüncü tarafla paylaşmıyoruz, satmıyoruz, kiralamıyoruz veya açıklamıyoruz. Dışa aktarımlar (GPX, KML, CSV, JSON), oturum paylaşım kartları veya Google Drive yedeklemesi yoluyla Uygulama verilerini paylaşmayı seçebilirsiniz — tümü kullanıcı tarafından başlatılır. Web Sitesi bekleme listesi verileri yalnızca Bölüm 4'te açıklanan amaçlar için belirtilen işleyicilerimiz (Supabase, Resend) tarafından işlenir.
+
+## 10. Haklarınız (GDPR ve uluslararası)
 
 ### GDPR Hakları (AB/AEA Sakinleri)
 
-- **Erişim** — verileriniz cihazınızda tamamen erişilebilirdir.
-- **Düzeltme** — tüm kayıtları doğrudan Uygulama içinden düzenleyebilirsiniz.
-- **Silme** — uygulama içi silme veya kaldırma yoluyla silebilirsiniz.
-- **Kısıtlama** — özellikleri başlatarak/durdurarak tüm işlemeyi kontrol edebilirsiniz.
-- **Veri Taşınabilirliği** — GPX, KML, CSV, JSON aracılığıyla dışa aktarabilirsiniz.
-- **İtiraz** — herhangi bir özelliği istediğiniz zaman durdurabilirsiniz.
-- **Rızayı geri çekme** — önceki işlemeyi etkilemeden istediğiniz zaman.
+- **Erişim** — Uygulama verileriniz cihazınızda tam olarak erişilebilir; Web Sitesi verileri için [support@sweeptrack.pro](mailto:support@sweeptrack.pro) adresine e-posta gönderin
+- **Düzeltme** — tüm kayıtları doğrudan Uygulamada düzenleyin veya Web Sitesi veri düzeltmeleri için bize e-posta gönderin
+- **Silme** — uygulama içi silme veya kaldırma yoluyla silin; Web Sitesi verileri için aboneliği iptal edin veya bize e-posta gönderin
+- **Kısıtlama** — özellikleri başlatarak/durdurarak tüm işlemeyi kontrol edin
+- **Veri Taşınabilirliği** — Uygulama verilerini GPX, KML, CSV, JSON yoluyla dışa aktarın
+- **İtiraz** — herhangi bir özelliği istediğiniz zaman durdurun
+- **Onayı Geri Çekme** — önceki işlemeyi etkilemeden istediğiniz zaman
 
 ### Birleşik Krallık (UK GDPR)
 
-UK GDPR ve 2018 Veri Koruma Yasası kapsamındaki haklarınız, yukarıda belirtilen GDPR haklarına eşdeğerdir. [ICO](https://ico.org.uk) ile iletişime geçebilirsiniz.
+UK GDPR ve 2018 Veri Koruma Yasası kapsamındaki haklarınız yukarıdaki GDPR haklarına eşdeğerdir. [ICO](https://ico.org.uk) ile iletişime geçebilirsiniz.
 
-### Avustralya (Gizlilik Yasası 1988)
+### Avustralya (Privacy Act 1988)
 
-Erişim ve düzeltme dahil olmak üzere Avustralya Gizlilik İlkeleri (APPs) kapsamında haklarınız vardır. [OAIC](https://www.oaic.gov.au) ile iletişime geçebilirsiniz.
+Erişim ve düzeltme dahil olmak üzere Avustralya Gizlilik İlkeleri (APP'ler) kapsamında haklarınız vardır. [OAIC](https://www.oaic.gov.au) ile iletişime geçebilirsiniz.
 
 ### Kanada (PIPEDA)
 
-Erişim, düzeltme ve rızanın geri çekilmesi dahil olmak üzere PIPEDA ve geçerli eyalet gizlilik yasaları kapsamında haklarınız vardır. [Kanada Gizlilik Komiserliği Ofisi](https://www.priv.gc.ca) ile iletişime geçebilirsiniz.
+Erişim, düzeltme ve onay geri çekme dahil olmak üzere PIPEDA ve geçerli eyalet gizlilik mevzuatı kapsamında haklarınız vardır. [Kanada Gizlilik Komiseri Ofisi](https://www.priv.gc.ca) ile iletişime geçebilirsiniz.
 
 ### Kaliforniya Sakinleri (CCPA/CPRA)
 
-Kişisel bilgileri **satmıyoruz** veya **paylaşmıyoruz**. Verileri bağlamlar arası davranışsal reklamcılık için kullanmıyoruz. Bilgi alma, silme, hassas veri kullanımını kısıtlama ve ayrımcılığa uğramama hakkına sahipsiniz.
+Herhangi bir kişisel bilgiyi **satmıyor veya paylaşmıyoruz**. Verileri bağlam içermeyen davranışsal reklamcılık için kullanmıyoruz. Bilme, silme, hassas veri kullanımını sınırlama ve ayrımcılık yapılmaması haklarına sahipsiniz.
 
 ### Brezilya Sakinleri (LGPD)
 
 Lei Geral de Proteção de Dados kapsamında eşdeğer haklar geçerlidir. [ANPD](https://www.gov.br/anpd) ile iletişime geçebilirsiniz.
 
-### Yeni Zelanda (Gizlilik Yasası 2020)
+### Yeni Zelanda (Privacy Act 2020)
 
-Erişim ve düzeltme dahil olmak üzere 2020 Gizlilik Yasası kapsamında haklarınız vardır. [NZ Gizlilik Komiseri](https://www.privacy.org.nz) ile iletişime geçebilirsiniz.
+Erişim ve düzeltme dahil olmak üzere Privacy Act 2020 kapsamında haklarınız vardır. [NZ Gizlilik Komiseri](https://www.privacy.org.nz) ile iletişime geçebilirsiniz.
 
-### Diğer Yargı Bölgeleri
+### Diğer yargı bölgeleri
 
-Konumunuz ne olursa olsun, Uygulama aracılığıyla verileriniz üzerinde tam kontrole sahipsiniz. Yerel yasaların sözleşme ile feragat edilemeyecek ek gizlilik hakları tanıdığı durumlarda, bu haklar geçerlidir.
+Konumunuzdan bağımsız olarak, verileriniz üzerinde tam kontrole sahipsiniz. Yerel yasanın sözleşmeyle feragat edilemeyen ek gizlilik hakları verdiği durumlarda, bu haklar geçerlidir.
 
-## 10. Çocukların Gizliliği
+## 11. Çocukların gizliliği
 
-Uygulama 16 yaşından küçük çocuklara yönelik değildir. 16 yaşından küçük çocuklardan bilerek kişisel bilgi toplamıyoruz. Bir çocuğun Uygulamayı kullandığını düşünüyorsanız, uygulama verilerini temizleyerek veya Uygulamayı kaldırarak verilerini silebilirsiniz.
+Ne Uygulama ne de Web Sitesi 16 yaşın altındaki çocuklara yöneliktir. 16 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamayız. Bir çocuğun Uygulamayı veya Web Sitesini kullandığını düşünüyorsanız, Uygulama verilerini temizleyerek, kaldırarak veya bekleme listesi aboneliğini iptal ederek verilerini silebilirsiniz.
 
-## 11. İzinlerin Açıklaması
+## 12. İzinler açıklaması (Uygulama)
 
-- **ACCESS_FINE_LOCATION** — Oturumlar sırasında yol takibi için GPS.
-- **ACCESS_BACKGROUND_LOCATION** — Ekran kapalıyken takibe devam etme.
-- **CAMERA** — Buluntu kaydı için fotoğraf çekme.
-- **RECORD_AUDIO** — Buluntular için sesli not kaydetme.
-- **READ/WRITE_CALENDAR** — İzin kasası için son kullanma hatırlatıcıları.
-- **INTERNET** — Hava durumu, coğrafi kodlama, gelgit, haritalar, abonelikler.
-- **POST_NOTIFICATIONS** — GPS takip bildirimi.
-- **VIBRATE** — Çevre koruması için sınır uyarıları.
+- **ACCESS_FINE_LOCATION** — oturumlar sırasında yol takibi için GPS
+- **ACCESS_BACKGROUND_LOCATION** — ekran kapalıyken takibe devam etme
+- **CAMERA** — buluntu kaydı için fotoğraf çekme
+- **RECORD_AUDIO** — buluntular için ses notları kaydetme
+- **READ/WRITE_CALENDAR** — kasanın izin son kullanma hatırlatıcıları
+- **INTERNET** — hava durumu, geocoding, gelgitler, haritalar, abonelikler
+- **POST_NOTIFICATIONS** — GPS takip bildirimi
+- **VIBRATE** — çevre koruyucu sınır uyarıları
 
-İstediğiniz zaman Android Ayarları üzerinden herhangi bir izni iptal edebilirsiniz.
+Android Ayarları aracılığıyla herhangi bir izni istediğiniz zaman iptal edebilirsiniz.
 
-## 12. Çerezler ve Takip
+## 13. Çerezler ve izleme
 
-Uygulama çerezler, web işaretçileri, piksel etiketleri, cihaz parmak izi alma veya başka herhangi bir takip teknolojisi kullanmaz.
+**Uygulama** çerez, web işaretçisi, piksel etiketi, cihaz parmak izi veya başka herhangi bir izleme teknolojisi kullanmaz. **Web Sitesi** birinci taraf çerezleri ayarlamaz; tam Web Sitesi çerez bildirimi için Bölüm 4.3'e bakın.
 
-## 13. Uluslararası Veri Transferleri
+## 14. Uluslararası veri aktarımları
 
-Tüm veriler yerel olarak cihazınızda saklandığından, kontrolümüz altında uluslararası veri transferi gerçekleşmez. Üçüncü taraf API çağrıları, bu hizmetlerin faaliyet gösterdiği yargı bölgelerinde işlenebilir.
+**Uygulama verileri:** Tüm arama verileri cihazınızda yerel olarak saklandığından, kontrolümüz altında uluslararası veri aktarımları gerçekleşmez. Üçüncü taraflara yapılan API çağrıları, bu hizmetlerin faaliyet gösterdiği yargı bölgelerinde işlenebilir.
 
-## 14. Veri İhlali Bildirimi
+**Web Sitesi verileri:** Bekleme listesi e-postaları Supabase tarafından AB'de (İrlanda) saklanır ve Resend (AB, İrlanda) tarafından işlenir. Web Sitesine AB dışından erişiyorsanız, e-postanız işleme için AB'ye aktarılır.
 
-Verilerinizi herhangi bir sunucuda saklamadığımız için tarafımızda bir veri ihlali mümkün değildir. Uygulamada bir güvenlik açığından haberdar olursak, bir güncelleme yayınlayacağız ve kullanıcıları Uygulama veya web sitesi aracılığıyla bilgilendireceğiz.
+## 15. Veri ihlali bildirimi
 
-## 15. Bu Politikadaki Değişiklikler
+**Uygulama:** Arama verilerinizi işlettiğimiz herhangi bir sunucuda saklamadığımız için, tarafımızdan Uygulama verilerini etkileyen bir veri ihlali mümkün değildir. Uygulamada bir güvenlik açığından haberdar olursak, bir güncelleme yayınlayacak ve kullanıcıları Uygulama veya web sitesi aracılığıyla bilgilendireceğiz.
 
-Bu Gizlilik Politikasını, işlevsellikteki veya geçerli yasalardaki değişiklikleri yansıtacak şekilde güncelleyebiliriz. "Son Güncelleme" tarihi revize edilecektir. Önemli değişiklikler Uygulama veya web sitesi aracılığıyla bildirilecektir.
+**Web Sitesi:** İşleyicilerimiz (Supabase, Resend) kendi ihlal bildirim protokollerini sürdürür. Bekleme listesi e-postanızı etkileyen bir ihlalin olası olmayan durumunda, GDPR'nin gerektirdiği şekilde 72 saat içinde sizi ve ilgili denetim makamını (ANSPDCP) bilgilendireceğiz.
 
-## 16. Üçüncü Taraf Gizlilik Politikaları
+## 16. Bu politikadaki değişiklikler
+
+Bu Gizlilik Politikasını işlevsellik veya geçerli yasalardaki değişiklikleri yansıtmak için güncelleyebiliriz. "Son Güncelleme" tarihi revize edilecektir. Önemli değişiklikler Uygulama veya web sitesi aracılığıyla bildirilecektir.
+
+## 17. Üçüncü taraf gizlilik politikaları
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
@@ -199,18 +261,19 @@ Bu Gizlilik Politikasını, işlevsellikteki veya geçerli yasalardaki değişik
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
+- [Vercel](https://vercel.com/legal/privacy-policy) (Web Sitesi barındırma + analitik)
+- [Supabase](https://supabase.com/privacy) (Web Sitesi veritabanı)
+- [Resend](https://resend.com/legal/privacy-policy) (Web Sitesi e-posta)
 
-## 17. Bize Ulaşın
+## 18. Bize ulaşın
 
 **Coc Lorand Adrian P.F.A.** (Loriba olarak faaliyet gösteren)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-posta: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Web sitesi: [https://sweeptrack.pro](https://sweeptrack.pro)
 
-GDPR ile ilgili sorularınız için [dataprotection.ro](https://www.dataprotection.ro) adresinden ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) ile de iletişime geçebilirsiniz.
+GDPR ile ilgili sorularınız için, ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) ile [dataprotection.ro](https://www.dataprotection.ro) adresinden de iletişime geçebilirsiniz.
 
 ---
 
-Bu Gizlilik Politikası 7 Nisan 2026 tarihinden itibaren geçerlidir ve SweepTrack Pro'nun tüm sürümleri için geçerlidir.
-
----
+Bu Gizlilik Politikası 12 Mayıs 2026 tarihinde yürürlüğe girer ve SweepTrack Pro'nun tüm sürümleri için geçerlidir.

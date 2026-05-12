@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering
 
-Ikrafttrædelsesdato: 7. april 2026 · Sidst opdateret: 7. april 2026
+Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 12. maj 2026
 
 Drives af: Coc Lorand Adrian P.F.A., der handler som "Loriba"
 
@@ -14,9 +14,9 @@ Website: sweeptrack.pro
 
 ## 1. Introduktion
 
-Denne privatlivspolitik forklarer, hvordan SweepTrack Pro ("Appen") indsamler, bruger, gemmer og beskytter dine oplysninger. Vi er forpligtede til at beskytte dit privatliv og sikre gennemsigtighed omkring vores datapraksis.
+Denne privatlivspolitik forklarer, hvordan SweepTrack Pro ("Appen") og websitet sweeptrack.pro ("Websitet") indsamler, bruger, gemmer og beskytter dine oplysninger. Vi er forpligtede til at beskytte dit privatliv og sikre gennemsigtighed omkring vores datapraksis.
 
-SweepTrack Pro er designet med en **arkitektur, hvor privatlivet kommer først**: Alle data gemmes lokalt på din enhed, vi driver ingen backend-servere, og vi indsamler, overfører eller sælger ikke dine personlige data.
+Appen er designet med en **arkitektur, hvor privatlivet kommer først**: Alle detekteringsdata gemmes lokalt på din enhed, vi driver ingen backend-servere for Appen, og vi indsamler, overfører eller sælger ikke dine personlige detekteringsdata. Websitet drives separat og har sin egen datapraksis, beskrevet i Afsnit 4.
 
 ## 2. Dataansvarlig
 
@@ -26,109 +26,167 @@ I forbindelse med EU's generelle forordning om databeskyttelse (GDPR) og den rum
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
-## 3. Data vi indsamler
+## 3. Data vi indsamler (Android-app)
 
-### 3.1 Data gemt lokalt på din enhed
+### 3.1 Data, der gemmes lokalt på din enhed
 
-Følgende data oprettes af dig og gemmes **udelukkende på din enhed**. Vi har aldrig adgang til disse data, medmindre du eksplicit deler dem.
+Følgende data oprettes af dig og gemmes **udelukkende på din enhed**. Vi har aldrig adgang til disse data, medmindre du udtrykkeligt deler dem.
 
 **Lokations- og sessionsdata:**
 
 - GPS-koordinater (breddegrad, længdegrad) under aktive sporingssessioner
-- Hastigheds-, højde-, kurs- og nøjagtighedsværdier fra enhedens sensorer
-- Sessionsmetadata: navn, dato, start-/sluttidspunkt, varighed, afstand, tags
-- Rute-koordinater med tidsstempler
-- Lokationsnavne (indhentet via omvendt geokodning)
+- Hastighed, højde, kurs og nøjagtighedsværdier fra enhedens sensorer
+- Sessionsmetadata: navn, dato, start-/sluttid, varighed, distance, tags
+- Rutekoordinater med tidsstempler
+- Stednavne (opnået via omvendt geokodning)
 
-**Fund- og opdagelsesregistre:**
+**Fund- og opdagelsesregistreringer:**
 
-- Fundtype (Skat, Guld, Mønt, Relikvie, Smykke, Skrald)
-- Fundlokation (GPS-koordinater på registreringstidspunktet)
-- Valgfrie metadata: navn, noter, dybde, anslået værdi, vægt
-- Mediebilag: fotos og lydoptagelser
+- Type af fund (Skat, Guld, Mønt, Relikvie, Smykke, Affald)
+- Fundsted (GPS-koordinater på registreringstidspunktet)
+- Valgfri metadata: navn, noter, dybde, anslået værdi, vægt
+- Mediefiler: fotografier og lydoptagelser
 
-**Data i tilladelsesboksen:**
+**Data fra tilladelsesboksen:**
 
-- Navne og placeringer på steder
-- Navne og kontaktoplysninger på lodsejere
+- Stedsnavne og -placeringer
+- Grundejeres navne og kontaktoplysninger
 - Tilladelsesnumre, udstedelsesdatoer, udløbsdatoer
-- Koordinater for stedets grænser (polygon)
-- Digitale underskrifter (SVG-format)
+- Stedgrænsekoordinater (polygon)
+- Digitale signaturer (SVG-format)
 - Brugerdefinerede tags og noter
 
-**Andre lokale data:** Konfigurationer af detektorforudindstillinger, app-præferencer (tema, enheder, sprog, kortindstillinger) og vejr-snapshots tilknyttet sessioner.
+**Andre lokale data:** Detektor-forudindstillingskonfigurationer, app-præferencer (tema, enheder, sprog, kortindstillinger) og vejr-øjebliksbilleder knyttet til sessioner.
 
-### 3.2 Data behandlet midlertidigt (ikke gemt)
+### 3.2 Data, der behandles midlertidigt (gemmes ikke)
 
-Følgende data sendes kun til tredjeparts API-tjenester af hensyn til realtidsfunktionalitet og **gemmes ikke af os eller disse tjenester ud over den umiddelbare anmodning**:
+Følgende data sendes til tredjeparts API'er for realtidsfunktionalitet og **gemmes ikke af os eller af disse tjenester ud over den umiddelbare anmodning**:
 
-- Omtrentlige GPS-koordinater sendt til Open-Meteo for vejrudsigt og højdedata
-- Omtrentlige GPS-koordinater sendt til OpenStreetMap/Nominatim for adressesøgning
-- Omtrentlige GPS-koordinater sendt til Overpass API for opdagelse af nærliggende historiske interessepunkter
-- Omtrentlige GPS-koordinater sendt til Wikipedia API for geografisk søgning efter nærliggende artikler
-- Identifikatorer for tidevandsstationer sendt til NOAA for tidevandsforudsigelser
-- Lokationssøgeforespørgsler sendt til Open-Meteo Geocoding for stednavnesøgning
+- Omtrentlige GPS-koordinater sendt til Open-Meteo for vejrudsigter og højdedata
+- Omtrentlige GPS-koordinater sendt til OpenStreetMap/Nominatim til adresseopslag
+- Omtrentlige GPS-koordinater sendt til Overpass API for nærliggende historiske POI'er
+- Omtrentlige GPS-koordinater sendt til Wikipedia API til geografisk søgning af nærliggende artikler
+- Tidevands-station-ID'er sendt til NOAA for tidevandsudsigter
+- Lokationssøgeforespørgsler sendt til Open-Meteo Geocoding
 
 ### 3.3 Data behandlet af tredjepartstjenester
 
-**Google Maps SDK:** Din enheds placering behandles af Google Maps med henblik på kortvisning. Underlagt [Googles privatlivspolitik](https://policies.google.com/privacy).
+**Google Maps SDK:** Din enheds placering behandles af Google Maps til kortvisning. Underlagt [Googles privatlivspolitik](https://policies.google.com/privacy).
 
-**Google Sign-In og Google Drive (valgfrit):** Hvis du aktiverer backup til Google Drive, gemmes e-mailadressen på din Google-konto lokalt for at identificere den autentificerede konto. Backup-data uploades til din egen Google Drive-konto. Vi har ikke adgang til dit Google Drive.
+**Google Sign-In og Google Drive (valgfrit):** Hvis du aktiverer Google Drive-sikkerhedskopiering, gemmes din Google-kontos e-mailadresse lokalt for at identificere den autentificerede konto. Sikkerhedskopieringsdata uploades til din egen Google Drive-konto. Vi har ikke adgang til din Google Drive.
 
-**RevenueCat (styring af abonnementer):** Et anonymt, tilfældigt genereret app-bruger-ID bruges til abonnementsvalidering. Ingen personlige oplysninger deles. Underlagt [RevenueCats privatlivspolitik](https://www.revenuecat.com/privacy).
+**RevenueCat (Abonnementsstyring):** En anonym, tilfældigt genereret app-bruger-identifikator bruges til abonnementsverifikation. Ingen personlige oplysninger deles. Underlagt [RevenueCats privatlivspolitik](https://www.revenuecat.com/privacy).
 
-### 3.4 Data vi IKKE indsamler
+### 3.4 Data, som Appen IKKE indsamler
 
-- Vi indsamler **ikke** navne, e-mails, telefonnumre eller andre personlige identifikatorer.
-- Vi bruger **ikke** analyse-SDK'er, fejlrapportering eller adfærdssporing.
-- Vi bruger **ikke** reklamerammer eller reklameidentifikatorer.
-- Vi sporer **ikke** brugsmønstre, sessionsfrekvens eller brug af funktioner.
-- Vi opretter **ikke** brugerprofiler eller adfærdsmæssige fingeraftryk.
-- Vi deler, sælger, udlejer eller handler **ikke** med data med tredjepart.
-- Vi driver **ikke** servere, der modtager, behandler eller gemmer dine data.
+- **Appen** indsamler ikke dit navn, e-mailadresse, telefonnummer eller andre personlige identifikatorer
+- **Appen** bruger ikke analyse-, fejlrapporterings- eller adfærdssporings-SDK'er
+- **Appen** bruger ikke annonceframeworks eller reklame-identifikatorer
+- **Appen** sporer ikke brugsmønstre, sessionsfrekvens eller funktionsanvendelse
+- **Appen** opretter ikke brugerprofiler eller adfærdsmæssige fingeraftryk
+- **Appen** deler, sælger, udlejer eller bytter ikke data med tredjeparter
+- **Appen** driver ingen servere, der modtager, behandler eller gemmer dine detekteringsdata
 
-## 4. Juridisk grundlag for behandling (GDPR)
+Websitets datapraksis dækkes separat i Afsnit 4.
 
-- **GPS-/sessionsdata, fundregistre, boks-indtastninger:** Samtykke (Art. 6(1)(a)) — du initierer aktivt disse handlinger.
-- **API-kald (vejr, geokodning):** Legitim interesse (Art. 6(1)(f)) — nødvendig for kernefunktionalitet.
-- **Google Drive Backup:** Samtykke (Art. 6(1)(a)) — du aktiverer og autentificerer eksplicit.
-- **Abonnementsvalidering:** Opfyldelse af en kontrakt (Art. 6(1)(b)) — nødvendig for at levere betalte funktioner.
+## 4. Websitets datapraksis (sweeptrack.pro)
 
-Du kan til enhver tid trække dit samtykke tilbage ved at stoppe den relevante aktivitet eller afinstallere Appen.
+Dette afsnit dækker datapraksis, der er specifik for vores website sweeptrack.pro. Android-appen beskrevet i Afsnit 3 og 5-18 fungerer uafhængigt og deler ikke infrastruktur med Websitet.
 
-## 5. Hvordan vi bruger dine data
+### 4.1 E-mail-indsamling til ventelisten
 
-Al databehandling foregår **lokalt på din enhed**. Vi bruger udelukkende dine data til at levere Appens funktioner: kortvisning, sessionssporing, fundregistrering, tilladelsesstyring, vejr-/tidevandsdata, eksport, backup og abonnementsvalidering.
+Når du indsender din e-mailadresse via en tilmeldingsformular på Websitet, indsamler vi:
 
-## 6. Datalagring og sikkerhed
+- **E-mailadresse**, du angiver
+- **Tidsstempel** for tilmelding
+- **IP-adresse** (midlertidig) — bruges til hastighedsbegrænsning; gemmes ikke ud over forespørgslens varighed
 
-- Sessions- og funddata gemmes i en krypteret Room-database på din enhed.
-- Følsomme indstillinger bruger Androids EncryptedSharedPreferences (AES-256).
-- Mediefiler gemmes i Appens private interne lager, som er utilgængeligt for andre apps.
-- Android cloud-backup er **deaktiveret** (`android:allowBackup="false"`) for at forhindre utilsigtet eksponering af data.
-- Google Drive-backups bruger Googles krypterede API'er (HTTPS/TLS) og findes udelukkende på din konto.
+**Formål:** At underrette dig, når SweepTrack Pro lanceres på Google Play, og sende opdateringer før lanceringen om produktet og Founder's Lifetime-tilbuddet. Vi vil ikke bruge din e-mail til andre formål, ikke dele den og ikke sælge den.
 
-Vi driver ingen servere, databaser eller cloud-infrastruktur.
+**Retsgrundlag (GDPR):** Samtykke (Art. 6(1)(a)) — afgivet, når du indsender formularen.
 
-## 7. Opbevaring af data
+**Opbevaring:** E-mailadresser opbevares i en Supabase Postgres-database hostet i EU (Irland-regionen). Supabase, Inc. fungerer som vores databehandler i henhold til deres standard databehandleraftale.
 
-Lokale data opbevares, indtil du vælger at slette dem. Du kan slette enkelte elementer i Appen, rydde alle data via Android-indstillingerne eller afinstallere Appen. Google Drive-backups bevares, indtil du manuelt sletter dem fra din konto.
+**E-mailafsendelse:** Udgående e-mails sendes via Resend, Inc. (EU-regionen, Irland), der fungerer som vores e-mailtjeneste-databehandler i henhold til deres standard databehandleraftale.
 
-## 8. Deling og videregivelse af data
+**Opbevaringstid:** Indtil du afmelder dig, eller 12 måneder efter den offentlige lancering af SweepTrack Pro på Google Play, alt efter hvad der indtræffer først.
 
-Vi deler, sælger, udlejer eller videregiver ikke dine personlige data til nogen tredjepart. Du kan vælge at dele data via eksport (GPX, KML, CSV, JSON), sessionsdelingskort eller Google Drive-backup — alt sammen initieret af brugeren.
+**Afmelding:** Svar "remove" på enhver e-mail, vi sender, eller brug List-Unsubscribe-linket, som din e-mailklient viser (Gmail og Outlook viser det ved siden af Fra-adressen).
 
-## 9. Dine rettigheder (GDPR og internationale)
+**Dine rettigheder:** Adgang, berigtigelse, sletning, begrænsning, portabilitet og ret til at tilbagekalde samtykke. Send en e-mail til [support@sweeptrack.pro](mailto:support@sweeptrack.pro) for at udøve en af disse.
 
-### GDPR-rettigheder (EU/EØS-borgere)
+### 4.2 Website-analyse
 
-- **Indsigt** — dine data er fuldt tilgængelige på din enhed.
-- **Berigtigelse** — rediger alle oplysninger direkte i Appen.
-- **Sletning** — slet via sletning i appen eller afinstallation.
-- **Begrænsning** — kontroller al behandling ved at starte/stoppe funktioner.
-- **Dataportabilitet** — eksporter via GPX, KML, CSV, JSON.
-- **Indsigelse** — stop enhver funktion til enhver tid.
-- **Tilbagetrækning af samtykke** — til enhver tid uden at påvirke tidligere behandling.
+Websitet bruger:
+
+- **Vercel Analytics** — privatlivsvenlig analyse, der ikke bruger cookies og ikke gemmer individuelle IP-adresser. Måler kun aggregerede sidevisninger.
+- **Vercel Speed Insights** — Core Web Vitals-måling (sideindlæsningstid, layoutforskydning, interaktionsforsinkelser) på aggregeret grundlag.
+
+Begge værktøjer drives af Vercel Inc. og er underlagt [Vercels privatlivspolitik](https://vercel.com/legal/privacy-policy). De indsamler ikke personligt identificerbare oplysninger og opretter ikke brugerprofiler.
+
+### 4.3 Cookies
+
+Websitet sætter ingen førsteparts-cookies til sporing, reklame eller profilering. Vercel Analytics er cookieløst af design. En sprogpræference, hvis du ændrer den, gemmes i din browsers `localStorage` (ikke en cookie) og kan kun læses af din egen browser.
+
+### 4.4 Hosting og serverlogfiler
+
+Websitet er hostet af Vercel Inc. Vercel kan automatisk logge standard forespørgselsmetadata (IP-adresse, user agent, forespørgselssti, tidsstempel) til operationelle, præstations- og sikkerhedsformål. Disse logfiler opbevares i henhold til Vercels standardpolitik og bruges ikke af os til sporing eller profilering af enkeltpersoner.
+
+### 4.5 Dine rettigheder for Website-data
+
+De samme GDPR, UK GDPR, australske, canadiske, CCPA, LGPD og NZ Privacy Act-rettigheder beskrevet i Afsnit 10 gælder ligeledes for dine data indsamlet af Websitet. For at udøve enhver rettighed vedrørende din venteliste-e-mail, kontakt [support@sweeptrack.pro](mailto:support@sweeptrack.pro). Vi svarer inden for 30 dage.
+
+## 5. Retsgrundlag for behandling (GDPR)
+
+- **GPS-/sessionsdata, fundregistreringer, boksindgange:** Samtykke (Art. 6(1)(a)) — du iværksætter aktivt disse handlinger
+- **API-opkald (vejr, geokodning):** Legitim interesse (Art. 6(1)(f)) — nødvendigt for grundlæggende funktionalitet
+- **Google Drive-sikkerhedskopiering:** Samtykke (Art. 6(1)(a)) — du aktiverer og autentificerer udtrykkeligt
+- **Abonnementsverifikation:** Kontraktopfyldelse (Art. 6(1)(b)) — nødvendigt for at levere betalte funktioner
+- **Venteliste-e-mail (Website):** Samtykke (Art. 6(1)(a)) — se Afsnit 4.1
+
+Du kan til enhver tid tilbagekalde samtykke ved at stoppe den relevante aktivitet, afinstallere Appen eller afmelde dig fra Websitets e-mails.
+
+## 6. Sådan bruger vi dine data
+
+Al databehandling i Appen sker **lokalt på din enhed**. Vi bruger app-data udelukkende til at levere Appens funktioner: kortvisning, sessionssporing, fundregistrering, tilladelseshåndtering, vejr-/tidevandsdata, eksport, sikkerhedskopiering og abonnementsverifikation.
+
+Website-data (din venteliste-e-mail) bruges kun til at sende lancerings- og før-lanceringsmeddelelser beskrevet i Afsnit 4.
+
+## 7. Dataopbevaring og sikkerhed
+
+**App-data:**
+
+- Sessions- og funddata gemmes i en krypteret Room-database på din enhed
+- Følsomme præferencer bruger Androids EncryptedSharedPreferences (AES-256)
+- Mediefiler gemmes i Appens private interne lager, utilgængeligt for andre apps
+- Android-cloudsikkerhedskopiering er **deaktiveret** (`android:allowBackup="false"`) for at forhindre utilsigtet dataeksponering
+- Google Drive-sikkerhedskopier bruger Googles krypterede API'er (HTTPS/TLS) og eksisterer kun på din konto
+
+For Appen driver vi ingen servere, databaser eller cloud-infrastruktur, der gemmer dine detekteringsdata.
+
+**Website-data:** Venteliste-e-mails opbevares i en Supabase Postgres-database hostet i EU (Irland). Forbindelser er krypterede (TLS). Adgang er begrænset til administrative formål. Udgående e-mail sendes via Resend (EU, Irland) over TLS. Se Afsnit 4.
+
+## 8. Dataopbevaring
+
+**App-data:** Lokale data opbevares, indtil du vælger at slette dem. Du kan slette individuelle elementer i Appen, rydde alle data via Android-indstillinger eller afinstallere Appen. Google Drive-sikkerhedskopier består, indtil du manuelt sletter dem fra din konto.
+
+**Website-data:** Venteliste-e-mails opbevares, indtil du afmelder dig eller 12 måneder efter den offentlige lancering, alt efter hvad der indtræffer først. Derefter slettes adresserne fra Supabase-databasen.
+
+## 9. Datadeling og videregivelse
+
+Vi deler, sælger, udlejer eller videregiver ikke dine personlige data til nogen tredjepart. Du kan vælge at dele app-data gennem eksport (GPX, KML, CSV, JSON), sessionsdelingskort eller Google Drive-sikkerhedskopiering — alle initieret af brugeren. Websitets venteliste-data behandles kun af vores navngivne databehandlere (Supabase, Resend) til de formål, der er beskrevet i Afsnit 4.
+
+## 10. Dine rettigheder (GDPR og internationalt)
+
+### GDPR-rettigheder (EU/EØS-beboere)
+
+- **Adgang** — dine app-data er fuldt tilgængelige på din enhed; for Website-data, send e-mail til [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
+- **Berigtigelse** — rediger alle poster direkte i Appen, eller send os en e-mail for at rette Website-data
+- **Sletning** — slet via in-app-sletning eller afinstallation; for Website-data, afmeld dig eller send os en e-mail
+- **Begrænsning** — kontroller al behandling ved at starte/stoppe funktioner
+- **Dataportabilitet** — eksporter app-data via GPX, KML, CSV, JSON
+- **Indsigelse** — stop enhver funktion til enhver tid
+- **Tilbagekaldelse af samtykke** — til enhver tid uden at påvirke tidligere behandling
 
 ### Storbritannien (UK GDPR)
 
@@ -136,62 +194,66 @@ Dine rettigheder i henhold til UK GDPR og Data Protection Act 2018 svarer til GD
 
 ### Australien (Privacy Act 1988)
 
-Du har rettigheder i henhold til de australske privatlivsprincipper (APPs), herunder indsigt og berigtigelse. Du kan kontakte [OAIC](https://www.oaic.gov.au).
+Du har rettigheder i henhold til Australian Privacy Principles (APPs), inklusive adgang og rettelse. Du kan kontakte [OAIC](https://www.oaic.gov.au).
 
 ### Canada (PIPEDA)
 
-Du har rettigheder i henhold til PIPEDA og gældende provinsiel lovgivning om beskyttelse af privatlivets fred, herunder indsigt, berigtigelse og tilbagetrækning af samtykke. Du kan kontakte [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca).
+Du har rettigheder i henhold til PIPEDA og gældende provinsielle privatlivslovgivning, inklusive adgang, rettelse og tilbagekaldelse af samtykke. Du kan kontakte [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca).
 
-### Borgere i Californien (CCPA/CPRA)
+### Californiske beboere (CCPA/CPRA)
 
-Vi sælger eller deler **ikke** nogen personlige oplysninger. Vi bruger ikke data til adfærdsbaseret annoncering på tværs af kontekster. Du har ret til at vide, slette, begrænse brugen af følsomme data og ret til ikke-diskriminering.
+Vi sælger eller deler **ikke** personlige oplysninger. Vi bruger ikke data til kontekstoverskridende adfærdsreklame. Du har ret til at vide, slette, begrænse brugen af følsomme data og ikke-diskrimination.
 
-### Borgere i Brasilien (LGPD)
+### Brasilianske beboere (LGPD)
 
-Tilsvarende rettigheder gælder i henhold til Lei Geral de Proteção de Dados. Du kan kontakte [ANPD](https://www.gov.br/anpd).
+Tilsvarende rettigheder i henhold til Lei Geral de Proteção de Dados gælder. Du kan kontakte [ANPD](https://www.gov.br/anpd).
 
 ### New Zealand (Privacy Act 2020)
 
-Du har rettigheder i henhold til Privacy Act 2020, herunder indsigt og berigtigelse. Du kan kontakte [NZ Privacy Commissioner](https://www.privacy.org.nz).
+Du har rettigheder i henhold til Privacy Act 2020, inklusive adgang og rettelse. Du kan kontakte [NZ Privacy Commissioner](https://www.privacy.org.nz).
 
 ### Andre jurisdiktioner
 
-Uanset hvor du befinder dig, har du fuld kontrol over dine data via Appen. Hvor lokal lovgivning giver yderligere privatlivsrettigheder, som ikke kan fraviges ved aftale, gælder disse rettigheder.
+Uanset din placering har du fuld kontrol over dine data. Hvor lokal lov giver yderligere privatlivsrettigheder, der ikke kan frafaldes ved kontrakt, gælder disse rettigheder.
 
-## 10. Børns privatliv
+## 11. Børns privatliv
 
-Appen henvender sig ikke til børn under 16 år. Vi indsamler ikke bevidst personlige oplysninger fra børn under 16 år. Hvis du mener, at et barn har brugt Appen, kan du slette barnets data ved at rydde app-data eller afinstallere Appen.
+Hverken Appen eller Websitet er rettet mod børn under 16 år. Vi indsamler ikke bevidst personlige oplysninger fra børn under 16 år. Hvis du tror, at et barn har brugt Appen eller Websitet, kan du slette deres data ved at rydde app-data, afinstallere eller afmelde dig ventelisten.
 
-## 11. Forklaring af tilladelser
+## 12. Tilladelser forklaret (App)
 
-- **ACCESS_FINE_LOCATION** — GPS til rutesporing under sessioner.
-- **ACCESS_BACKGROUND_LOCATION** — fortsættelse af sporing, når skærmen er slukket.
-- **CAMERA** — optagelse af fotos til fundregistrering.
-- **RECORD_AUDIO** — optagelse af lydnoter til fund.
-- **READ/WRITE_CALENDAR** — påmindelser om udløb af tilladelser i boksen.
-- **INTERNET** — vejr, geokodning, tidevand, kort, abonnementer.
-- **POST_NOTIFICATIONS** — meddelelse om GPS-sporing.
-- **VIBRATE** — grænseadvarsler til områdebeskyttelse.
+- **ACCESS_FINE_LOCATION** — GPS til rute-sporing under sessioner
+- **ACCESS_BACKGROUND_LOCATION** — fortsætte sporing, når skærmen er slukket
+- **CAMERA** — tage billeder til fundregistrering
+- **RECORD_AUDIO** — optage lydnoter til fund
+- **READ/WRITE_CALENDAR** — påmindelser om tilladelses-udløb fra boksen
+- **INTERNET** — vejr, geokodning, tidevand, kort, abonnementer
+- **POST_NOTIFICATIONS** — GPS-sporingsnotifikation
+- **VIBRATE** — perimeter-vagt grænsealarmer
 
-Du kan til enhver tid tilbagekalde enhver tilladelse via Android-indstillingerne.
+Du kan til enhver tid tilbagekalde enhver tilladelse via Android-indstillinger.
 
-## 12. Cookies og sporing
+## 13. Cookies og sporing
 
-Appen bruger ikke cookies, web beacons, pixel tags, enhedsfingeraftryk eller andre sporingsteknologier.
+**Appen** bruger ikke cookies, web-beacons, pixel-tags, enheds-fingeraftryk eller andre sporingsteknologier. **Websitet** sætter ingen førsteparts-cookies; se Afsnit 4.3 for fuld Website-cookie-oplysning.
 
-## 13. Internationale dataoverførsler
+## 14. Internationale dataoverførsler
 
-Da alle data gemmes lokalt på din enhed, finder ingen internationale dataoverførsler sted under vores kontrol. Tredjeparts API-kald kan blive behandlet i de jurisdiktioner, hvor disse tjenester opererer.
+**App-data:** Da alle detekteringsdata gemmes lokalt på din enhed, foregår ingen internationale dataoverførsler under vores kontrol. API-opkald til tredjeparter kan behandles i de jurisdiktioner, hvor disse tjenester opererer.
 
-## 14. Underretning om databrud
+**Website-data:** Venteliste-e-mails gemmes i EU (Irland) af Supabase og behandles af Resend (EU, Irland). Hvis du tilgår Websitet uden for EU, overføres din e-mail til EU til behandling.
 
-Da vi ikke gemmer dine data på nogen server, er et databrud hos os ikke muligt. Hvis vi bliver opmærksomme på en sårbarhed i Appen, vil vi udsende en opdatering og underrette brugerne via Appen eller websitet.
+## 15. Underretning om databrud
 
-## 15. Ændringer i denne politik
+**App:** Da vi ikke gemmer dine detekteringsdata på nogen server, vi driver, er et databrud, der påvirker app-data fra vores side, ikke muligt. Hvis vi bliver bekendt med en sårbarhed i Appen, udsender vi en opdatering og underretter brugerne via Appen eller websitet.
 
-Vi kan opdatere denne privatlivspolitik for at afspejle ændringer i funktionalitet eller gældende lovgivning. Datoen for "Sidst opdateret" vil blive revideret. Væsentlige ændringer vil blive kommunikeret via Appen eller websitet.
+**Website:** Vores databehandlere (Supabase, Resend) opretholder deres egne protokoller for brudunderretning. I det usandsynlige tilfælde af et brud, der påvirker din venteliste-e-mail, underretter vi dig og den relevante tilsynsmyndighed (ANSPDCP) inden for 72 timer som krævet af GDPR.
 
-## 16. Tredjeparts privatlivspolitikker
+## 16. Ændringer af denne politik
+
+Vi kan opdatere denne privatlivspolitik for at afspejle ændringer i funktionalitet eller gældende love. Datoen "Sidst opdateret" vil blive revideret. Væsentlige ændringer vil blive kommunikeret via Appen eller websitet.
+
+## 17. Tredjeparts-privatlivspolitikker
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
@@ -199,18 +261,19 @@ Vi kan opdatere denne privatlivspolitik for at afspejle ændringer i funktionali
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
+- [Vercel](https://vercel.com/legal/privacy-policy) (Website-hosting + analyse)
+- [Supabase](https://supabase.com/privacy) (Website-database)
+- [Resend](https://resend.com/legal/privacy-policy) (Website-e-mail)
 
-## 17. Kontakt os
+## 18. Kontakt os
 
 **Coc Lorand Adrian P.F.A.** (der handler som Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)
 
-For GDPR-relaterede spørgsmål kan du også kontakte ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) på [dataprotection.ro](https://www.dataprotection.ro).
+For GDPR-relaterede forespørgsler kan du også kontakte ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal) på [dataprotection.ro](https://www.dataprotection.ro).
 
 ---
 
-Denne privatlivspolitik er trådt i kraft den 7. april 2026 og gælder for alle versioner af SweepTrack Pro.
-
----
+Denne privatlivspolitik træder i kraft den 12. maj 2026 og gælder for alle versioner af SweepTrack Pro.
