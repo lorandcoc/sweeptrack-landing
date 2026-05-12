@@ -77,10 +77,19 @@ Les données suivantes sont envoyées à des API tierces pour la fonctionnalité
 
 **RevenueCat (gestion des abonnements) :** un identifiant d'utilisateur d'application anonyme, généré aléatoirement, est utilisé pour la vérification des abonnements. Aucune information personnelle n'est partagée. Soumise à la [Politique de Confidentialité de RevenueCat](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics et Crashlytics (optionnel — désactivés par défaut) :** deux SDK Google Firebase sont intégrés à l'Application, mais **tous deux restent inactifs tant que vous n'avez pas explicitement opté** via la demande de consentement au premier lancement ou depuis **Paramètres → Confidentialité → Diagnostics**. Tant que vous n'avez pas donné votre consentement, aucun événement n'est envoyé et aucun rapport de plantage n'est téléversé. Vous pouvez retirer votre consentement à tout moment ; la révocation prend effet dès l'événement suivant. Les versions de débogage n'activent jamais Crashlytics.
+
+Lorsqu'ils sont activés :
+
+- **Firebase Analytics** enregistre huit noms d'événements agrégés avec des paramètres non identifiants : `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Le contenu des événements **ne contient jamais** de coordonnées GPS, d'adresses, de noms de trouvailles, de photos, d'enregistrements audio, de données du coffre-fort, ni aucune autre information identifiante — uniquement des compteurs, durées, distances, types de trouvailles (la catégorie seule) et identifiants de fonctionnalités.
+- **Firebase Crashlytics** téléverse les traces de pile des plantages avec le modèle de l'appareil, la version du système d'exploitation et la version de l'application pour nous aider à diagnostiquer les bugs.
+
+Les deux services sont soumis à la [Politique de Confidentialité de Google](https://policies.google.com/privacy) et aux [informations de confidentialité et de sécurité de Firebase](https://firebase.google.com/support/privacy).
+
 ### 3.4 Données que l'Application NE collecte PAS
 
 - **L'Application** ne collecte ni votre nom, ni votre e-mail, ni votre numéro de téléphone, ni tout autre identifiant personnel
-- **L'Application** n'utilise pas d'analyses, de rapports d'erreurs ou de SDK de suivi comportemental
+- **L'Application** n'utilise pas d'analyses ni de rapports de plantage à moins que vous n'optiez explicitement (voir la section Firebase ci-dessus ; désactivé par défaut et révocable à tout moment dans Paramètres → Confidentialité → Diagnostics)
 - **L'Application** n'utilise pas de cadres publicitaires ou d'identifiants publicitaires
 - **L'Application** ne suit pas les modèles d'utilisation, la fréquence des sessions ou l'utilisation des fonctionnalités
 - **L'Application** ne crée pas de profils d'utilisateur ou d'empreintes comportementales
@@ -142,6 +151,7 @@ Les mêmes droits GDPR, UK GDPR, australiens, canadiens, CCPA, LGPD et NZ Privac
 - **Appels API (météo, géocodage) :** intérêt légitime (Art. 6(1)(f)) — nécessaire pour la fonctionnalité de base
 - **Sauvegarde Google Drive :** consentement (Art. 6(1)(a)) — vous activez et vous authentifiez explicitement
 - **Vérification de l'abonnement :** exécution du contrat (Art. 6(1)(b)) — nécessaire pour fournir les fonctionnalités payantes
+- **Firebase Analytics et Crashlytics (optionnel) :** consentement (Art. 6(1)(a)) — activé via la demande au premier lancement ou depuis les Paramètres, révocable à tout moment
 - **E-mail de la liste d'attente (Site Web) :** consentement (Art. 6(1)(a)) — voir Section 4.1
 
 Vous pouvez retirer votre consentement à tout moment en arrêtant l'activité concernée, en désinstallant l'Application ou en vous désabonnant des e-mails du Site Web.
@@ -226,7 +236,7 @@ Ni l'Application ni le Site Web ne sont destinés aux enfants de moins de 16 ans
 - **ACCESS_BACKGROUND_LOCATION** — continuer le suivi lorsque l'écran est éteint
 - **CAMERA** — capturer des photos pour l'enregistrement de trouvailles
 - **RECORD_AUDIO** — enregistrer des notes audio pour les trouvailles
-- **READ/WRITE_CALENDAR** — rappels d'expiration des permis du coffre-fort
+- **READ/WRITE_CALENDAR** — écrit les rappels d'expiration des permis du coffre-fort dans le calendrier local de votre appareil. Si vous avez activé la synchronisation avec un calendrier dans le cloud sur Android (par exemple, synchronisation Google Calendar), ces rappels seront synchronisés avec votre compte avec le reste de votre calendrier — cette synchronisation est contrôlée par vos paramètres Android, pas par l'Application
 - **INTERNET** — météo, géocodage, marées, cartes, abonnements
 - **POST_NOTIFICATIONS** — notification de suivi GPS
 - **VIBRATE** — alertes de limite du garde-périmètre
@@ -256,6 +266,7 @@ Nous pouvons mettre à jour cette Politique de Confidentialité pour refléter l
 ## 17. Politiques de confidentialité tierces
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics et Crashlytics — opt-in uniquement)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

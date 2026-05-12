@@ -77,10 +77,19 @@ De volgende gegevens worden naar API's van derden verzonden voor realtime functi
 
 **RevenueCat (Abonnementsbeheer):** Een anonieme, willekeurig gegenereerde app-gebruikersidentifier wordt gebruikt voor abonnementsverificatie. Er wordt geen persoonlijke informatie gedeeld. Onderworpen aan het [Privacybeleid van RevenueCat](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics en Crashlytics (Optioneel — standaard uitgeschakeld):** Twee Google Firebase-SDK's zijn in de App geïntegreerd, maar **beide blijven inactief totdat u uitdrukkelijk toestemming geeft** via het toestemmingsverzoek bij de eerste start of in **Instellingen → Privacy → Diagnostiek**. Tot u toestemming geeft, wordt er geen enkele gebeurtenis verzonden en geen enkel crashrapport geüpload. U kunt uw toestemming op elk moment intrekken; de intrekking is van kracht vanaf de volgende gebeurtenis. Debug-builds activeren Crashlytics nooit.
+
+Wanneer ingeschakeld:
+
+- **Firebase Analytics** registreert acht geaggregeerde gebeurtenisnamen met niet-identificerende parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. De inhoud van de gebeurtenissen bevat **nooit** GPS-coördinaten, adressen, vondstnamen, foto's, audio-opnames, kluisgegevens of andere persoonlijk identificeerbare informatie — uitsluitend tellingen, tijdsduren, afstanden, vondsttype (alleen de categorie) en functie-identifiers.
+- **Firebase Crashlytics** uploadt stack traces van crashes samen met het apparaatmodel, de besturingssysteemversie en de app-versie om ons te helpen bugs te diagnosticeren.
+
+Beide diensten zijn onderworpen aan het [Privacybeleid van Google](https://policies.google.com/privacy) en de [privacy- en veiligheidsverklaringen van Firebase](https://firebase.google.com/support/privacy).
+
 ### 3.4 Gegevens die de App NIET verzamelt
 
 - **De App** verzamelt niet uw naam, e-mailadres, telefoonnummer of andere persoonlijke identifiers
-- **De App** gebruikt geen analytics, crashrapportage of SDK's voor gedragstracking
+- **De App** gebruikt geen analytics of crashrapportage tenzij u uitdrukkelijk opt-in geeft (zie de Firebase-sectie hierboven; standaard uitgeschakeld en op elk moment intrekbaar in Instellingen → Privacy → Diagnostiek)
 - **De App** gebruikt geen advertentieframeworks of reclame-identifiers
 - **De App** volgt geen gebruikspatronen, sessiefrequentie of functiegebruik
 - **De App** maakt geen gebruikersprofielen of gedragsvingerafdrukken
@@ -142,6 +151,7 @@ Dezelfde GDPR, UK GDPR, Australische, Canadese, CCPA, LGPD en NZ Privacy Act-rec
 - **API-oproepen (weer, geocodering):** Gerechtvaardigd belang (Art. 6(1)(f)) — noodzakelijk voor kernfunctionaliteit
 - **Google Drive-back-up:** Toestemming (Art. 6(1)(a)) — u activeert en authenticeert expliciet
 - **Abonnementsverificatie:** Uitvoering van overeenkomst (Art. 6(1)(b)) — noodzakelijk om betaalde functies te bieden
+- **Firebase Analytics en Crashlytics (optioneel):** Toestemming (Art. 6(1)(a)) — geactiveerd via het verzoek bij de eerste start of in de Instellingen, op elk moment intrekbaar
 - **Wachtlijst-e-mail (Website):** Toestemming (Art. 6(1)(a)) — zie Sectie 4.1
 
 U kunt uw toestemming op elk moment intrekken door de relevante activiteit te stoppen, de App te verwijderen of zich af te melden voor Website-e-mails.
@@ -226,7 +236,7 @@ Noch de App noch de Website is gericht op kinderen onder de 16 jaar. Wij verzame
 - **ACCESS_BACKGROUND_LOCATION** — tracking voortzetten wanneer het scherm uit is
 - **CAMERA** — foto's vastleggen voor vondstregistratie
 - **RECORD_AUDIO** — audio-notities opnemen voor vondsten
-- **READ/WRITE_CALENDAR** — herinneringen voor vergunningenvervaldatum van de kluis
+- **READ/WRITE_CALENDAR** — schrijft herinneringen voor de vergunningenvervaldatum van de kluis naar de lokale agenda van uw apparaat. Als u in Android synchronisatie met een cloudagenda hebt ingeschakeld (bijvoorbeeld Google Calendar-synchronisatie), worden deze herinneringen samen met de rest van uw agenda gesynchroniseerd met uw account — die synchronisatie wordt geregeld door uw Android-instellingen, niet door de App
 - **INTERNET** — weer, geocodering, getijden, kaarten, abonnementen
 - **POST_NOTIFICATIONS** — GPS-trackingmelding
 - **VIBRATE** — grenswaarschuwingen van de perimeterbewaking
@@ -256,6 +266,7 @@ Wij kunnen dit Privacybeleid bijwerken om wijzigingen in functionaliteit of toep
 ## 17. Privacybeleid van derden
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics en Crashlytics — alleen opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

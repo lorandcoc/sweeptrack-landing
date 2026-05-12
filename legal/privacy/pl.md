@@ -77,10 +77,19 @@ Następujące dane są wysyłane do interfejsów API stron trzecich w celu zapew
 
 **RevenueCat (Zarządzanie subskrypcjami):** Anonimowy, losowo generowany identyfikator użytkownika aplikacji jest używany do weryfikacji subskrypcji. Żadne informacje osobiste nie są udostępniane. Podlega [Polityce Prywatności RevenueCat](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics i Crashlytics (Opcjonalnie — domyślnie wyłączone):** Dwa SDK Google Firebase są zintegrowane z Aplikacją, ale **oba pozostają nieaktywne, dopóki nie wyrazisz wyraźnej zgody** — poprzez prośbę o zgodę przy pierwszym uruchomieniu lub w **Ustawieniach → Prywatność → Diagnostyka**. Dopóki nie wyrazisz zgody, żadne zdarzenia nie są wysyłane i żadne raporty awarii nie są przesyłane. Możesz wycofać zgodę w dowolnym momencie; cofnięcie zaczyna obowiązywać od następnego zdarzenia. Wersje deweloperskie nigdy nie aktywują Crashlytics.
+
+Gdy są włączone:
+
+- **Firebase Analytics** rejestruje osiem zagregowanych nazw zdarzeń z nieidentyfikującymi parametrami: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Zawartość zdarzeń **nigdy nie obejmuje** współrzędnych GPS, adresów, nazw znalezisk, zdjęć, nagrań audio, danych sejfu ani żadnych innych informacji umożliwiających identyfikację osób — wyłącznie liczniki, czasy trwania, odległości, typ znaleziska (sama kategoria) oraz identyfikatory funkcji.
+- **Firebase Crashlytics** przesyła ślady stosu awarii wraz z modelem urządzenia, wersją systemu operacyjnego i wersją aplikacji, aby pomóc nam diagnozować błędy.
+
+Obie usługi podlegają [Polityce Prywatności Google](https://policies.google.com/privacy) oraz [informacjom o prywatności i bezpieczeństwie Firebase](https://firebase.google.com/support/privacy).
+
 ### 3.4 Dane, których Aplikacja NIE gromadzi
 
 - **Aplikacja** nie gromadzi Twojego imienia, e-maila, numeru telefonu ani żadnych identyfikatorów osobistych
-- **Aplikacja** nie wykorzystuje analiz, raportowania błędów ani SDK śledzenia zachowań
+- **Aplikacja** nie wykorzystuje analiz ani raportowania błędów, chyba że wyrazisz wyraźną zgodę (patrz sekcja Firebase powyżej; domyślnie wyłączone i odwoływalne w dowolnym momencie w Ustawieniach → Prywatność → Diagnostyka)
 - **Aplikacja** nie wykorzystuje frameworków reklamowych ani identyfikatorów reklamowych
 - **Aplikacja** nie śledzi wzorców użytkowania, częstotliwości sesji ani wykorzystania funkcji
 - **Aplikacja** nie tworzy profili użytkowników ani odcisków behawioralnych
@@ -142,6 +151,7 @@ Te same prawa GDPR, UK GDPR, australijskie, kanadyjskie, CCPA, LGPD i NZ Privacy
 - **Wywołania API (pogoda, geokodowanie):** Prawnie uzasadniony interes (Art. 6(1)(f)) — niezbędne dla podstawowej funkcjonalności
 - **Kopia zapasowa Google Drive:** Zgoda (Art. 6(1)(a)) — aktywujesz i uwierzytelniasz wyraźnie
 - **Weryfikacja subskrypcji:** Wykonanie umowy (Art. 6(1)(b)) — niezbędne do świadczenia płatnych funkcji
+- **Firebase Analytics i Crashlytics (opcjonalnie):** Zgoda (Art. 6(1)(a)) — aktywowane poprzez prośbę przy pierwszym uruchomieniu lub w Ustawieniach, odwoływalne w dowolnym momencie
 - **E-mail listy oczekujących (Strona Internetowa):** Zgoda (Art. 6(1)(a)) — patrz Sekcja 4.1
 
 Możesz wycofać zgodę w dowolnym momencie, zatrzymując odpowiednią aktywność, odinstalowując Aplikację lub wypisując się z e-maili Strony Internetowej.
@@ -226,7 +236,7 @@ Ani Aplikacja, ani Strona Internetowa nie są skierowane do dzieci poniżej 16 r
 - **ACCESS_BACKGROUND_LOCATION** — kontynuowanie śledzenia, gdy ekran jest wyłączony
 - **CAMERA** — robienie zdjęć dla rejestrowania znalezisk
 - **RECORD_AUDIO** — nagrywanie notatek audio dla znalezisk
-- **READ/WRITE_CALENDAR** — przypomnienia o wygaśnięciu pozwoleń sejfu
+- **READ/WRITE_CALENDAR** — zapisuje przypomnienia o wygaśnięciu pozwoleń sejfu w lokalnym kalendarzu Twojego urządzenia. Jeśli masz włączoną synchronizację z kalendarzem w chmurze w Androidzie (na przykład synchronizację Google Calendar), te przypomnienia zostaną zsynchronizowane z Twoim kontem wraz z resztą kalendarza — synchronizacja ta jest kontrolowana przez ustawienia Androida, a nie przez Aplikację
 - **INTERNET** — pogoda, geokodowanie, pływy, mapy, subskrypcje
 - **POST_NOTIFICATIONS** — powiadomienie o śledzeniu GPS
 - **VIBRATE** — alerty granicy strażnika perymetru
@@ -256,6 +266,7 @@ Możemy aktualizować niniejszą Politykę Prywatności, aby odzwierciedlić zmi
 ## 17. Polityki prywatności stron trzecich
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics i Crashlytics — tylko za zgodą)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

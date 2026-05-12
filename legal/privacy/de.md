@@ -77,10 +77,19 @@ Die folgenden Daten werden zur Echtzeit-Funktionalität an Drittanbieter-APIs ge
 
 **RevenueCat (Abonnementverwaltung):** Ein anonymer, zufällig generierter App-Benutzeridentifikator wird zur Abonnementverifizierung verwendet. Es werden keine persönlichen Informationen weitergegeben. Unterliegt der [Datenschutzerklärung von RevenueCat](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics und Crashlytics (Optional — standardmäßig deaktiviert):** Zwei Google-Firebase-SDKs sind in der App integriert, aber **beide bleiben inaktiv, bis Sie ausdrücklich zustimmen** — entweder über die Einwilligungsabfrage beim ersten Start oder unter **Einstellungen → Datenschutz → Diagnose**. Bis zur Zustimmung werden keine Ereignisse gesendet und keine Absturzberichte hochgeladen. Sie können Ihre Einwilligung jederzeit widerrufen; der Widerruf greift ab dem nächsten Ereignis. Debug-Builds aktivieren Crashlytics niemals.
+
+Wenn aktiviert:
+
+* **Firebase Analytics** protokolliert acht aggregierte Ereignisnamen mit nicht-identifizierenden Parametern: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Die Ereignis-Nutzdaten enthalten **niemals** GPS-Koordinaten, Adressen, Fundnamen, Fotos, Audioaufnahmen, Tresordaten oder andere personenbezogene Informationen — ausschließlich Zähler, Dauern, Entfernungen, Fundtypen (nur die Kategorie) und Funktions-Identifikatoren.
+* **Firebase Crashlytics** lädt Absturz-Stacktraces zusammen mit Gerätemodell, Betriebssystemversion und App-Version hoch, damit wir Fehler diagnostizieren können.
+
+Beide Dienste unterliegen der [Google-Datenschutzerklärung](https://policies.google.com/privacy) und den [Firebase-Datenschutz- und Sicherheitshinweisen](https://firebase.google.com/support/privacy).
+
 ### 3.4 Daten, die die App NICHT sammelt
 
 * **Die App** sammelt nicht Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer oder andere persönliche Identifikatoren
-* **Die App** verwendet keine Analyse-, Absturzberichterstattungs- oder Verhaltens-Tracking-SDKs
+* **Die App** verwendet keine Analyse- oder Absturzberichterstattung, es sei denn, Sie stimmen ausdrücklich zu (siehe Firebase-Abschnitt oben; standardmäßig deaktiviert, jederzeit widerrufbar unter Einstellungen → Datenschutz → Diagnose)
 * **Die App** verwendet keine Werberahmen oder Werbeidentifikatoren
 * **Die App** verfolgt keine Nutzungsmuster, Sitzungshäufigkeit oder Funktionsnutzung
 * **Die App** erstellt keine Benutzerprofile oder Verhaltens-Fingerabdrücke
@@ -142,6 +151,7 @@ Die gleichen GDPR-, UK GDPR-, australischen, kanadischen, CCPA-, LGPD- und NZ Pr
 * **API-Aufrufe (Wetter, Geocoding):** Berechtigtes Interesse (Art. 6(1)(f)) — notwendig für die Kernfunktionalität
 * **Google Drive Sicherung:** Einwilligung (Art. 6(1)(a)) — Sie aktivieren und authentifizieren ausdrücklich
 * **Abonnementverifizierung:** Vertragserfüllung (Art. 6(1)(b)) — erforderlich, um kostenpflichtige Funktionen bereitzustellen
+* **Firebase Analytics und Crashlytics (optional):** Einwilligung (Art. 6(1)(a)) — über die Abfrage beim ersten Start oder in den Einstellungen aktiviert, jederzeit widerrufbar
 * **Warteliste-E-Mail (Website):** Einwilligung (Art. 6(1)(a)) — siehe Abschnitt 4.1
 
 Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die entsprechende Aktivität stoppen, die App deinstallieren oder sich von Website-E-Mails abmelden.
@@ -226,7 +236,7 @@ Weder die App noch die Website richten sich an Kinder unter 16 Jahren. Wir samme
 * **ACCESS_BACKGROUND_LOCATION** — Tracking fortsetzen, wenn der Bildschirm aus ist
 * **CAMERA** — Fotos für die Fundprotokollierung aufnehmen
 * **RECORD_AUDIO** — Audionotizen für Funde aufzeichnen
-* **READ/WRITE_CALENDAR** — Erinnerungen für den Ablauf von Berechtigungen aus dem Tresor
+* **READ/WRITE_CALENDAR** — schreibt Erinnerungen für den Ablauf von Tresor-Berechtigungen in den lokalen Kalender Ihres Geräts. Wenn Sie unter Android die Synchronisierung mit einem Cloud-Kalender aktiviert haben (z. B. Google Calendar-Synchronisierung), werden diese Erinnerungen zusammen mit dem Rest Ihres Kalenders mit Ihrem Konto synchronisiert — diese Synchronisierung wird durch Ihre Android-Einstellungen gesteuert, nicht durch die App
 * **INTERNET** — Wetter, Geocoding, Gezeiten, Karten, Abonnements
 * **POST_NOTIFICATIONS** — GPS-Tracking-Benachrichtigung
 * **VIBRATE** — Grenzwarnungen des Perimeter-Guards
@@ -256,6 +266,7 @@ Wir können diese Datenschutzerklärung aktualisieren, um Änderungen der Funkti
 ## 17. Datenschutzerklärungen Dritter
 
 * [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+* [Firebase (Analytics und Crashlytics — nur Opt-in)](https://firebase.google.com/support/privacy)
 * [RevenueCat](https://www.revenuecat.com/privacy)
 * [Open-Meteo](https://open-meteo.com/en/terms)
 * [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

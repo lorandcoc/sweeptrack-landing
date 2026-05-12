@@ -77,10 +77,19 @@ Următoarele date sunt trimise către API-uri terțe pentru funcționalitate în
 
 **RevenueCat (Gestionarea abonamentelor):** Un identificator anonim al utilizatorului aplicației, generat aleatoriu, este utilizat pentru verificarea abonamentului. Nu sunt partajate informații personale. Supus [Politicii de Confidențialitate RevenueCat](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics și Crashlytics (Opțional — dezactivate implicit):** Două SDK-uri Google Firebase sunt integrate în Aplicație, dar **ambele rămân inactive până când optați explicit** prin solicitarea de consimțământ de la prima rulare sau din **Setări → Confidențialitate → Diagnostice**. Până la momentul opt-in-ului nu se trimite niciun eveniment și nu se încarcă niciun raport de eroare. Vă puteți retrage consimțământul oricând; retragerea are efect la următorul eveniment. Versiunile de dezvoltare nu activează niciodată Crashlytics.
+
+Când sunt activate:
+
+- **Firebase Analytics** înregistrează opt nume de evenimente agregate cu parametri neidentificatori: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Conținutul evenimentelor **nu** include niciodată coordonate GPS, adrese, denumirile descoperirilor, fotografii, înregistrări audio, date din seif sau alte informații de identificare personală — doar contoare, durate, distanțe, tipul descoperirii (doar categoria) și identificatori de funcții.
+- **Firebase Crashlytics** încarcă urme de stivă ale erorilor împreună cu modelul dispozitivului, versiunea sistemului de operare și versiunea aplicației pentru a ne ajuta să diagnosticăm problemele.
+
+Ambele servicii sunt supuse [Politicii de Confidențialitate Google](https://policies.google.com/privacy) și [dezvăluirilor Firebase privind confidențialitatea și securitatea](https://firebase.google.com/support/privacy).
+
 ### 3.4 Date pe care Aplicația NU le colectează
 
 - **Aplicația** nu colectează numele, email-ul, numărul de telefon sau orice identificatori personali
-- **Aplicația** nu folosește analize, raportarea erorilor sau SDK-uri de monitorizare a comportamentului
+- **Aplicația** nu folosește analize sau raportare de erori decât dacă optați explicit (vezi secțiunea Firebase de mai sus; opt-in-ul este dezactivat implicit și revocabil oricând în Setări → Confidențialitate → Diagnostice)
 - **Aplicația** nu folosește cadre publicitare sau identificatori de publicitate
 - **Aplicația** nu urmărește modelele de utilizare, frecvența sesiunilor sau utilizarea funcțiilor
 - **Aplicația** nu creează profiluri de utilizator sau amprente comportamentale
@@ -142,6 +151,7 @@ Aceleași drepturi GDPR, UK GDPR, australiene, canadiene, CCPA, LGPD și NZ Priv
 - **Apeluri API (vreme, geocodare):** Interes legitim (Art. 6(1)(f)) — necesar pentru funcționalitatea de bază
 - **Backup Google Drive:** Consimțământ (Art. 6(1)(a)) — activați și autentificați în mod explicit
 - **Verificarea abonamentului:** Executarea unui contract (Art. 6(1)(b)) — necesară pentru a furniza funcții plătite
+- **Firebase Analytics și Crashlytics (opțional):** Consimțământ (Art. 6(1)(a)) — activate prin solicitarea de la prima rulare sau din Setări, revocabile oricând
 - **Email lista de așteptare (Website):** Consimțământ (Art. 6(1)(a)) — vezi Secțiunea 4.1
 
 Vă puteți retrage consimțământul în orice moment prin oprirea activității relevante, prin dezinstalarea Aplicației sau prin dezabonarea de la emailurile Website-ului.
@@ -226,7 +236,7 @@ Nici Aplicația, nici Website-ul nu sunt adresate copiilor sub 16 ani. Nu colect
 - **ACCESS_BACKGROUND_LOCATION** — continuarea monitorizării când ecranul este oprit
 - **CAMERA** — capturarea fotografiilor pentru înregistrarea descoperirilor
 - **RECORD_AUDIO** — înregistrarea notelor audio pentru descoperiri
-- **READ/WRITE_CALENDAR** — mementouri pentru expirarea permiselor din seif
+- **READ/WRITE_CALENDAR** — scrie mementouri pentru expirarea permiselor în calendarul local al dispozitivului. Dacă aveți activată sincronizarea cu calendarul în cloud în Android (de exemplu, sincronizare Google Calendar), aceste mementouri vor fi sincronizate cu contul dumneavoastră împreună cu restul calendarului — sincronizarea este controlată de setările Android, nu de Aplicație
 - **INTERNET** — vreme, geocodare, maree, hărți, abonamente
 - **POST_NOTIFICATIONS** — notificare pentru monitorizarea GPS
 - **VIBRATE** — alerte pentru limitele gardei de perimetru
@@ -256,6 +266,7 @@ Putem actualiza această Politică de Confidențialitate pentru a reflecta modif
 ## 17. Politicile de confidențialitate ale terților
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics și Crashlytics — doar opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

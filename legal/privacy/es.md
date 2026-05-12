@@ -77,10 +77,19 @@ Los siguientes datos se envían a API de terceros para funcionalidad en tiempo r
 
 **RevenueCat (Gestión de Suscripciones):** Se utiliza un identificador de usuario anónimo y generado aleatoriamente para la verificación de suscripciones. No se comparte información personal. Sujeto a la [Política de Privacidad de RevenueCat](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics y Crashlytics (Opcional — desactivados por defecto):** Dos SDK de Google Firebase están integrados en la Aplicación, pero **ambos permanecen inactivos hasta que usted opte explícitamente** mediante la solicitud de consentimiento en el primer arranque o desde **Ajustes → Privacidad → Diagnósticos**. Hasta que dé su consentimiento, no se envía ningún evento ni se sube ningún informe de fallos. Puede retirar el consentimiento en cualquier momento; la revocación surte efecto en el siguiente evento. Las versiones de depuración nunca activan Crashlytics.
+
+Cuando están activados:
+
+- **Firebase Analytics** registra ocho nombres de eventos agregados con parámetros no identificativos: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. El contenido de los eventos **nunca** incluye coordenadas GPS, direcciones, nombres de hallazgos, fotografías, grabaciones de audio, datos de la bóveda ni ninguna otra información de identificación personal — únicamente recuentos, duraciones, distancias, tipo de hallazgo (solo la categoría) e identificadores de funcionalidades.
+- **Firebase Crashlytics** sube trazas de pila de los fallos junto con el modelo del dispositivo, la versión del sistema operativo y la versión de la aplicación para ayudarnos a diagnosticar errores.
+
+Ambos servicios están sujetos a la [Política de Privacidad de Google](https://policies.google.com/privacy) y a las [divulgaciones de privacidad y seguridad de Firebase](https://firebase.google.com/support/privacy).
+
 ### 3.4 Datos que la Aplicación NO recopila
 
 - **La Aplicación** no recopila su nombre, correo electrónico, número de teléfono ni ningún identificador personal
-- **La Aplicación** no utiliza análisis, informes de errores ni SDK de seguimiento del comportamiento
+- **La Aplicación** no utiliza análisis ni informes de errores salvo que opte explícitamente (véase la sección de Firebase más arriba; desactivado por defecto y revocable en cualquier momento en Ajustes → Privacidad → Diagnósticos)
 - **La Aplicación** no utiliza marcos publicitarios ni identificadores publicitarios
 - **La Aplicación** no rastrea patrones de uso, frecuencia de sesiones ni uso de funciones
 - **La Aplicación** no crea perfiles de usuario ni huellas digitales de comportamiento
@@ -142,6 +151,7 @@ Los mismos derechos GDPR, UK GDPR, australianos, canadienses, CCPA, LGPD y Priva
 - **Llamadas a API (clima, geocodificación):** Interés legítimo (Art. 6(1)(f)) — necesario para la funcionalidad principal
 - **Copia de seguridad de Google Drive:** Consentimiento (Art. 6(1)(a)) — activa y autentica explícitamente
 - **Verificación de suscripción:** Ejecución de contrato (Art. 6(1)(b)) — necesaria para proporcionar funciones de pago
+- **Firebase Analytics y Crashlytics (opcional):** Consentimiento (Art. 6(1)(a)) — activado mediante la solicitud del primer arranque o desde Ajustes, revocable en cualquier momento
 - **Correo electrónico de lista de espera (Sitio Web):** Consentimiento (Art. 6(1)(a)) — ver Sección 4.1
 
 Puede retirar su consentimiento en cualquier momento deteniendo la actividad relevante, desinstalando la Aplicación o dándose de baja de los correos electrónicos del Sitio Web.
@@ -226,7 +236,7 @@ Ni la Aplicación ni el Sitio Web están dirigidos a niños menores de 16 años.
 - **ACCESS_BACKGROUND_LOCATION** — continuar el seguimiento cuando la pantalla está apagada
 - **CAMERA** — capturar fotos para el registro de hallazgos
 - **RECORD_AUDIO** — grabar notas de audio para hallazgos
-- **READ/WRITE_CALENDAR** — recordatorios de caducidad de permisos de la bóveda
+- **READ/WRITE_CALENDAR** — escribe recordatorios de caducidad de permisos de la bóveda en el calendario local de su dispositivo. Si tiene activada la sincronización con un calendario en la nube en Android (por ejemplo, sincronización con Google Calendar), esos recordatorios se sincronizarán con su cuenta junto con el resto de su calendario — esa sincronización la controlan los ajustes de Android, no la Aplicación
 - **INTERNET** — clima, geocodificación, mareas, mapas, suscripciones
 - **POST_NOTIFICATIONS** — notificación de seguimiento GPS
 - **VIBRATE** — alertas del límite del protector de perímetro
@@ -256,6 +266,7 @@ Podemos actualizar esta Política de Privacidad para reflejar cambios en la func
 ## 17. Políticas de privacidad de terceros
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics y Crashlytics — solo opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

@@ -77,10 +77,19 @@ The following data is sent to third-party APIs for real-time functionality and i
 
 **RevenueCat (Subscription Management):** An anonymous, randomly generated app user identifier is used for subscription verification. No personal information is shared. Subject to [RevenueCat's Privacy Policy](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics and Crashlytics (Optional — Disabled by Default):** Two Google Firebase SDKs are integrated in the App, but **both remain dark until you explicitly opt in** via the first-run consent prompt or **Settings → Privacy → Diagnostics**. Until you opt in, no events are sent and no crash reports are uploaded. You can revoke consent at any time; revocation takes effect on the next event. Debug builds never enable Crashlytics.
+
+When enabled:
+
+- **Firebase Analytics** logs eight aggregate event names with non-identifying parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Event payloads **never** include GPS coordinates, addresses, find names, photographs, audio recordings, vault data, or any personally identifying information — only counts, durations, distances, find types (category only), and feature identifiers.
+- **Firebase Crashlytics** uploads crash stack traces with device model, OS version, and app version to help us diagnose bugs.
+
+Both services are subject to [Google's Privacy Policy](https://policies.google.com/privacy) and [Firebase Privacy and Security disclosures](https://firebase.google.com/support/privacy).
+
 ### 3.4 Data the App Does NOT Collect
 
 - **The App** does not collect your name, email, phone number, or any personal identifiers
-- **The App** does not use analytics, crash reporting, or behavioral tracking SDKs
+- **The App** does not use analytics or crash reporting unless you explicitly opt in (see the Firebase section above; opt-in is off by default and revocable at any time in Settings → Privacy → Diagnostics)
 - **The App** does not use advertising frameworks or ad identifiers
 - **The App** does not track usage patterns, session frequency, or feature usage
 - **The App** does not create user profiles or behavioral fingerprints
@@ -142,6 +151,7 @@ The same GDPR, UK GDPR, Australian, Canadian, CCPA, LGPD, and NZ Privacy Act rig
 - **API calls (weather, geocoding):** Legitimate interest (Art. 6(1)(f)) — necessary for core functionality
 - **Google Drive backup:** Consent (Art. 6(1)(a)) — you explicitly enable and authenticate
 - **Subscription verification:** Contract performance (Art. 6(1)(b)) — necessary to provide paid features
+- **Firebase Analytics and Crashlytics (optional):** Consent (Art. 6(1)(a)) — opted in via the first-run prompt or Settings, revocable at any time
 - **Waitlist email (Website):** Consent (Art. 6(1)(a)) — see Section 4.1
 
 You may withdraw consent at any time by stopping the relevant activity, by uninstalling the App, or by unsubscribing from Website emails.
@@ -226,7 +236,7 @@ Neither the App nor the Website is directed at children under 16. We do not know
 - **ACCESS_BACKGROUND_LOCATION** — continue tracking when screen is off
 - **CAMERA** — capture photos for find logging
 - **RECORD_AUDIO** — record audio notes for finds
-- **READ/WRITE_CALENDAR** — permission vault expiry reminders
+- **READ/WRITE_CALENDAR** — write permission vault expiry reminders to your device's local calendar. If you have cloud calendar sync enabled in Android (e.g., Google Calendar sync), those reminder events will sync to your account along with the rest of your calendar — that sync is controlled by your Android settings, not the App
 - **INTERNET** — weather, geocoding, tides, maps, subscriptions
 - **POST_NOTIFICATIONS** — GPS tracking notification
 - **VIBRATE** — perimeter guard boundary alerts
@@ -256,6 +266,7 @@ We may update this Privacy Policy to reflect changes in functionality or applica
 ## 17. Third-Party Privacy Policies
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics and Crashlytics — opt-in only)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

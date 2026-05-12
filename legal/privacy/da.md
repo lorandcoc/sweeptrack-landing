@@ -77,10 +77,19 @@ Følgende data sendes til tredjeparts API'er for realtidsfunktionalitet og **gem
 
 **RevenueCat (Abonnementsstyring):** En anonym, tilfældigt genereret app-bruger-identifikator bruges til abonnementsverifikation. Ingen personlige oplysninger deles. Underlagt [RevenueCats privatlivspolitik](https://www.revenuecat.com/privacy).
 
+**Firebase Analytics og Crashlytics (Valgfrit — deaktiveret som standard):** To Google Firebase-SDK'er er integreret i Appen, men **begge forbliver inaktive, indtil du udtrykkeligt giver samtykke** — enten via samtykkeprompten ved første opstart eller i **Indstillinger → Privatliv → Diagnostik**. Indtil du giver samtykke, sendes der ingen hændelser, og der uploades ingen nedbrudsrapporter. Du kan til enhver tid tilbagekalde samtykket; tilbagekaldelsen træder i kraft fra næste hændelse. Debug-builds aktiverer aldrig Crashlytics.
+
+Når de er aktiveret:
+
+- **Firebase Analytics** logger otte aggregerede hændelsesnavne med ikke-identificerende parametre: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Hændelsernes indhold indeholder **aldrig** GPS-koordinater, adresser, fundnavne, fotos, lydoptagelser, boksdata eller andre personligt identificerbare oplysninger — kun tællere, varigheder, afstande, fundtype (kun kategorien) og funktionsidentifikatorer.
+- **Firebase Crashlytics** uploader stack-spor fra nedbrud sammen med enhedsmodel, operativsystemets version og appens version for at hjælpe os med at diagnosticere fejl.
+
+Begge tjenester er underlagt [Googles privatlivspolitik](https://policies.google.com/privacy) og [Firebases privatlivs- og sikkerhedsoplysninger](https://firebase.google.com/support/privacy).
+
 ### 3.4 Data, som Appen IKKE indsamler
 
 - **Appen** indsamler ikke dit navn, e-mailadresse, telefonnummer eller andre personlige identifikatorer
-- **Appen** bruger ikke analyse-, fejlrapporterings- eller adfærdssporings-SDK'er
+- **Appen** bruger ikke analyse eller fejlrapportering, medmindre du udtrykkeligt giver samtykke (se Firebase-afsnittet ovenfor; deaktiveret som standard og kan til enhver tid tilbagekaldes i Indstillinger → Privatliv → Diagnostik)
 - **Appen** bruger ikke annonceframeworks eller reklame-identifikatorer
 - **Appen** sporer ikke brugsmønstre, sessionsfrekvens eller funktionsanvendelse
 - **Appen** opretter ikke brugerprofiler eller adfærdsmæssige fingeraftryk
@@ -142,6 +151,7 @@ De samme GDPR, UK GDPR, australske, canadiske, CCPA, LGPD og NZ Privacy Act-rett
 - **API-opkald (vejr, geokodning):** Legitim interesse (Art. 6(1)(f)) — nødvendigt for grundlæggende funktionalitet
 - **Google Drive-sikkerhedskopiering:** Samtykke (Art. 6(1)(a)) — du aktiverer og autentificerer udtrykkeligt
 - **Abonnementsverifikation:** Kontraktopfyldelse (Art. 6(1)(b)) — nødvendigt for at levere betalte funktioner
+- **Firebase Analytics og Crashlytics (valgfrit):** Samtykke (Art. 6(1)(a)) — aktiveret via prompten ved første opstart eller i Indstillinger, kan til enhver tid tilbagekaldes
 - **Venteliste-e-mail (Website):** Samtykke (Art. 6(1)(a)) — se Afsnit 4.1
 
 Du kan til enhver tid tilbagekalde samtykke ved at stoppe den relevante aktivitet, afinstallere Appen eller afmelde dig fra Websitets e-mails.
@@ -226,7 +236,7 @@ Hverken Appen eller Websitet er rettet mod børn under 16 år. Vi indsamler ikke
 - **ACCESS_BACKGROUND_LOCATION** — fortsætte sporing, når skærmen er slukket
 - **CAMERA** — tage billeder til fundregistrering
 - **RECORD_AUDIO** — optage lydnoter til fund
-- **READ/WRITE_CALENDAR** — påmindelser om tilladelses-udløb fra boksen
+- **READ/WRITE_CALENDAR** — skriver påmindelser om udløb af tilladelser fra boksen i din enheds lokale kalender. Hvis du har aktiveret synkronisering med en cloud-kalender i Android (for eksempel Google Calendar-synkronisering), synkroniseres disse påmindelser til din konto sammen med resten af din kalender — den synkronisering styres af dine Android-indstillinger, ikke af Appen
 - **INTERNET** — vejr, geokodning, tidevand, kort, abonnementer
 - **POST_NOTIFICATIONS** — GPS-sporingsnotifikation
 - **VIBRATE** — perimeter-vagt grænsealarmer
@@ -256,6 +266,7 @@ Vi kan opdatere denne privatlivspolitik for at afspejle ændringer i funktionali
 ## 17. Tredjeparts-privatlivspolitikker
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics og Crashlytics — kun opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)

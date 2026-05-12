@@ -77,10 +77,19 @@ Aşağıdaki veriler gerçek zamanlı işlevsellik için üçüncü taraf API'le
 
 **RevenueCat (Abonelik Yönetimi):** Abonelik doğrulaması için anonim, rastgele oluşturulmuş bir uygulama kullanıcı tanımlayıcısı kullanılır. Hiçbir kişisel bilgi paylaşılmaz. [RevenueCat Gizlilik Politikası'na](https://www.revenuecat.com/privacy) tabidir.
 
+**Firebase Analytics ve Crashlytics (İsteğe Bağlı — varsayılan olarak devre dışı):** İki Google Firebase SDK'sı Uygulamaya entegre edilmiştir, ancak **ikisi de siz açıkça onay verene kadar pasif kalır** — ilk açılıştaki onay isteği veya **Ayarlar → Gizlilik → Tanılama** menüsü aracılığıyla. Onay verene kadar hiçbir olay gönderilmez ve hiçbir çökme raporu yüklenmez. Onayınızı istediğiniz zaman geri çekebilirsiniz; geri çekme bir sonraki olaydan itibaren geçerli olur. Hata ayıklama derlemeleri Crashlytics'i asla etkinleştirmez.
+
+Etkinleştirildiğinde:
+
+- **Firebase Analytics**, kimlik bilgisi içermeyen parametrelerle sekiz toplu olay adını kaydeder: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Olay içerikleri **asla** GPS koordinatları, adresler, buluntu adları, fotoğraflar, ses kayıtları, kasa verileri veya kişiyi tanımlamaya yarayan başka herhangi bir bilgi içermez — yalnızca sayaçlar, süreler, mesafeler, buluntu türü (yalnızca kategori) ve özellik tanımlayıcıları.
+- **Firebase Crashlytics**, hataları teşhis etmemize yardımcı olmak için cihaz modeli, işletim sistemi sürümü ve uygulama sürümü ile birlikte çökme yığın izlerini yükler.
+
+Her iki hizmet de [Google Gizlilik Politikası'na](https://policies.google.com/privacy) ve [Firebase gizlilik ve güvenlik açıklamalarına](https://firebase.google.com/support/privacy) tabidir.
+
 ### 3.4 Uygulamanın TOPLAMADIĞI Veriler
 
 - **Uygulama** adınızı, e-postanızı, telefon numaranızı veya herhangi bir kişisel tanımlayıcıyı toplamaz
-- **Uygulama** analitik, çökme raporlama veya davranış izleme SDK'ları kullanmaz
+- **Uygulama**, siz açıkça onay vermediğiniz sürece analitik veya çökme raporlaması kullanmaz (yukarıdaki Firebase bölümüne bakın; varsayılan olarak devre dışıdır ve istediğiniz zaman Ayarlar → Gizlilik → Tanılama menüsünden geri alınabilir)
 - **Uygulama** reklam çerçeveleri veya reklam tanımlayıcıları kullanmaz
 - **Uygulama** kullanım modellerini, oturum sıklığını veya özellik kullanımını izlemez
 - **Uygulama** kullanıcı profilleri veya davranışsal parmak izleri oluşturmaz
@@ -142,6 +151,7 @@ Bölüm 10'da açıklanan aynı GDPR, UK GDPR, Avustralya, Kanada, CCPA, LGPD ve
 - **API çağrıları (hava durumu, geocoding):** Meşru menfaat (Madde 6(1)(f)) — temel işlevsellik için gereklidir
 - **Google Drive yedeklemesi:** Onay (Madde 6(1)(a)) — açıkça etkinleştirir ve kimlik doğrularsınız
 - **Abonelik doğrulaması:** Sözleşmenin ifası (Madde 6(1)(b)) — ücretli özellikler sağlamak için gereklidir
+- **Firebase Analytics ve Crashlytics (isteğe bağlı):** Onay (Madde 6(1)(a)) — ilk açılıştaki istem veya Ayarlar üzerinden etkinleştirilir, istediğiniz zaman geri alınabilir
 - **Bekleme listesi e-postası (Web Sitesi):** Onay (Madde 6(1)(a)) — Bölüm 4.1'e bakın
 
 İlgili etkinliği durdurarak, Uygulamayı kaldırarak veya Web Sitesi e-postalarından aboneliği iptal ederek onayınızı istediğiniz zaman geri çekebilirsiniz.
@@ -226,7 +236,7 @@ Ne Uygulama ne de Web Sitesi 16 yaşın altındaki çocuklara yöneliktir. 16 ya
 - **ACCESS_BACKGROUND_LOCATION** — ekran kapalıyken takibe devam etme
 - **CAMERA** — buluntu kaydı için fotoğraf çekme
 - **RECORD_AUDIO** — buluntular için ses notları kaydetme
-- **READ/WRITE_CALENDAR** — kasanın izin son kullanma hatırlatıcıları
+- **READ/WRITE_CALENDAR** — kasa izinlerinin son kullanma tarihi hatırlatıcılarını cihazınızın yerel takvimine yazar. Android'de bir bulut takvimiyle senkronizasyonu etkinleştirdiyseniz (örneğin Google Calendar senkronizasyonu), bu hatırlatıcılar takviminizin geri kalanıyla birlikte hesabınıza senkronize edilir — bu senkronizasyonu Uygulama değil, Android ayarlarınız kontrol eder
 - **INTERNET** — hava durumu, geocoding, gelgitler, haritalar, abonelikler
 - **POST_NOTIFICATIONS** — GPS takip bildirimi
 - **VIBRATE** — çevre koruyucu sınır uyarıları
@@ -256,6 +266,7 @@ Bu Gizlilik Politikasını işlevsellik veya geçerli yasalardaki değişiklikle
 ## 17. Üçüncü taraf gizlilik politikaları
 
 - [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Firebase (Analytics ve Crashlytics — yalnızca opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
