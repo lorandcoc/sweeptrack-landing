@@ -20,14 +20,17 @@ export function useReveal(threshold = 0.05) {
       { threshold, rootMargin: "50px 0px" }
     );
 
-    observer.observe(el);
-
-    // Safety fallback: if element is already in viewport on mount, reveal it
+    // If the element is already in the viewport on mount, reveal it
+    // immediately and skip wiring the observer at all. This avoids the
+    // setVisible(true) double-fire that used to happen when the observer
+    // also caught the same condition asynchronously.
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       setVisible(true);
+      return undefined;
     }
 
+    observer.observe(el);
     return () => observer.disconnect();
   }, [threshold]);
 

@@ -2,50 +2,7 @@
 
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
-
-const SUPABASE_URL = "https://vntuabtcrllroulgqhwf.supabase.co";
-const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZudHVhYnRjcmxscm91bGdxaHdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMjYwNTIsImV4cCI6MjA4ODkwMjA1Mn0.WXVRYyUqt98tMe8g_yiFkP7puJUNyaQiQsz6SySKor4";
-
-async function joinWaitlist(
-  email: string,
-  honeypot: string,
-): Promise<"ok" | "duplicate" | "error"> {
-  // If the honeypot was filled, the submission is a bot. Don't even hit
-  // Supabase — pretend success on the client (no error toast, no retry).
-  // The notify route would silently OK this anyway, but skipping the DB
-  // insert entirely keeps the table clean.
-  if (honeypot.trim().length > 0) return "ok";
-
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
-      method: "POST",
-      headers: {
-        apikey: SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-        "Content-Type": "application/json",
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify({ email }),
-    });
-    if (res.ok) {
-      // Fire-and-forget notification — never blocks the user.
-      // We forward `website` (the honeypot field) so the server-side
-      // route gets the same signal even if a bot somehow bypassed the
-      // client check.
-      fetch("/api/notify-waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, website: honeypot }),
-      }).catch(() => {});
-      return "ok";
-    }
-    if (res.status === 409) return "duplicate";
-    return "error";
-  } catch {
-    return "error";
-  }
-}
+import { joinWaitlist } from "@/lib/waitlist";
 
 export default function ComingSoonButton({
   className = "",
@@ -65,13 +22,19 @@ export default function ComingSoonButton({
     e.preventDefault();
     if (!email || status === "sending") return;
     setStatus("sending");
-    const result = await joinWaitlist(email.trim().toLowerCase(), honeypot);
-    setStatus(result);
+    const result = await joinWaitlist(email, honeypot);
+    // "invalid" is treated as a generic error here — the input has `type="email"`
+    // and `required`, so this is only reachable if the email is over 254 chars
+    // or the user bypassed validation.
+    setStatus(result === "invalid" ? "error" : result);
     if (result === "ok" || result === "duplicate") {
       setTimeout(() => {
         setShowEmail(false);
         setStatus("idle");
         setEmail("");
+        // #25: reset honeypot too so a sticky bot-prefilled value can't trip
+        // the next legit submission from the same client.
+        setHoneypot("");
       }, 4000);
     }
   };
@@ -140,7 +103,7 @@ export default function ComingSoonButton({
           </button>
         </form>
         <p className="text-[11px] text-muted/60 text-center sm:text-left max-w-[320px]">
-          Email only. Used to send the launch link. Unsubscribe in one click.
+          {t("comingsoon.privacy_note")}
         </p>
       </div>
     );

@@ -1,5 +1,18 @@
 import Link from "next/link";
 
+/**
+ * Intentionally synchronous and English-only.
+ *
+ * Reading cookies/headers here (or making this async) propagates "dynamic"
+ * up to every route's not-found fallback, which Next.js then conservatively
+ * uses to mark the entire route as dynamic. That single change tanked SSG
+ * for / and all /blog/* during refactor #3 — see may16.md finding #8 for
+ * context.
+ *
+ * The notfound.* translation keys exist in every dictionary for future use
+ * (e.g. a client-side variant under [locale]/not-found that can opt in
+ * without poisoning the rest of the tree).
+ */
 export const metadata = {
   title: "Page Not Found",
   description: "The page you're looking for doesn't exist.",

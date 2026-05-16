@@ -4,7 +4,11 @@ import { useReveal } from "./useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 import en from "@/dictionaries/en.json";
 
-const faqKeys = Array.from({ length: 10 }, (_, i) => i + 1);
+// Derive the question count from the dictionary so adding faq.q11+ in the
+// JSON automatically surfaces in the UI. The hardcoded `length: 10` used to
+// silently swallow new entries (q11–q13 had been written but never shown).
+const enDict = en as Record<string, string>;
+const faqKeys = Array.from({ length: Object.keys(enDict).filter((k) => /^faq\.q\d+$/.test(k)).length }, (_, i) => i + 1);
 
 const faqSchema = {
   "@context": "https://schema.org",

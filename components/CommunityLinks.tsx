@@ -4,43 +4,24 @@ import { useState } from "react";
 import { useReveal } from "./useReveal";
 import { Users } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-
-const SUPABASE_URL = "https://vntuabtcrllroulgqhwf.supabase.co";
-const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZudHVhYnRjcmxscm91bGdxaHdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMjYwNTIsImV4cCI6MjA4ODkwMjA1Mn0.WXVRYyUqt98tMe8g_yiFkP7puJUNyaQiQsz6SySKor4";
+import { joinWaitlist } from "@/lib/waitlist";
 
 function NewsletterForm() {
   const { t } = useI18n();
   const [email, setEmail] = useState("");
+  // Honeypot — same anti-bot pattern as ComingSoonButton. Real users can't
+  // see or focus this; bots that scrape every input field on the page fill
+  // it and get caught.
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "duplicate" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || status === "sending") return;
     setStatus("sending");
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
-        method: "POST",
-        headers: {
-          apikey: SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-          "Content-Type": "application/json",
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({ email: email.trim().toLowerCase() }),
-      });
-      if (res.ok) {
-        fetch("/api/notify-waitlist", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: email.trim().toLowerCase() }),
-        }).catch(() => {});
-        setStatus("ok");
-      } else if (res.status === 409) setStatus("duplicate");
-      else setStatus("error");
-    } catch {
-      setStatus("error");
-    }
+    const result = await joinWaitlist(email, honeypot);
+    setStatus(result === "invalid" ? "error" : result);
+    if (result === "ok") setHoneypot("");
   };
 
   const done = status === "ok" || status === "duplicate";
@@ -67,9 +48,21 @@ function NewsletterForm() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
+                placeholder={t("comingsoon.placeholder")}
                 disabled={status === "sending"}
                 className="px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors w-full sm:w-[200px] disabled:opacity-50"
+              />
+              {/* Honeypot: off-screen, tabIndex=-1, aria-hidden. Real users can't
+                  reach it; bots filling every visible field hit it. */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: "absolute", left: "-9999px", top: "-9999px", width: 1, height: 1, opacity: 0 }}
               />
               <button
                 type="submit"
@@ -80,7 +73,7 @@ function NewsletterForm() {
               </button>
             </form>
             <p className="text-[11px] text-muted/60 text-center sm:text-right">
-              Email only. Used to send the launch link. Unsubscribe in one click.
+              {t("comingsoon.privacy_note")}
             </p>
           </div>
         )}
@@ -140,7 +133,7 @@ const communities = [
     titleKey: "community.tiktok_title",
     descKey: "community.tiktok_desc",
     icon: <TiktokIcon />,
-    link: "#",
+    link: "https://www.tiktok.com/@sweep.track.pro",
     color: "from-[#00f2fe]/20",
     border: "group-hover:border-[#00f2fe]/50",
     bg: "group-hover:bg-[#00f2fe]/5"

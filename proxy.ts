@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 /**
  * Map country codes to supported language codes.
  * Visitor's country comes from Vercel's x-vercel-ip-country header (free, automatic).
- * If the country's language isn't supported, we skip the cookie and the client defaults to English.
+ * If the country's language isn't supported, we fall back to English.
  */
 const COUNTRY_TO_LANG: Record<string, string> = {
   // Romanian
@@ -43,27 +43,77 @@ const SUPPORTED_LANGS = new Set([
   "en", "ro", "de", "es", "fr", "nl", "pl", "it", "pt", "sv", "tr", "da", "hu", "ru",
 ]);
 
-export function proxy(request: NextRequest) {
-  const existing = request.cookies.get(COOKIE_NAME)?.value;
-  // If the cookie is already set to a valid language, leave it alone — this
-  // preserves both the geo detection and any manual override the user made
-  // through the LanguageToggle (which mirrors its choice into this cookie).
-  if (existing && SUPPORTED_LANGS.has(existing)) return NextResponse.next();
-
+function resolveLocale(request: NextRequest): string {
+  const cookieValue = request.cookies.get(COOKIE_NAME)?.value;
+  if (cookieValue && SUPPORTED_LANGS.has(cookieValue)) return cookieValue;
   const country = request.headers.get("x-vercel-ip-country") || "";
-  const lang = COUNTRY_TO_LANG[country] || "en";
+  return COUNTRY_TO_LANG[country] || "en";
+}
 
+export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  const locale = resolveLocale(request);
+
+  // First-segment shortcut: pull out the first path piece (e.g. "/de/foo" → "de")
+  const firstSegment = pathname.split("/", 2)[1] || "";
+
+  // Visitor landed on `/` and their locale is non-English → bounce to the
+  // localized URL so the SSR'd HTML, canonical, and hreflang all line up
+  // with what their browser displays.
+  if (pathname === "/" && locale !== "en") {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}`;
+    const response = NextResponse.redirect(url);
+    response.cookies.set(COOKIE_NAME, locale, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: "lax",
+    });
+    return response;
+  }
+
+  // Visitor browsed straight to `/<locale>` (e.g. opened a German Google
+  // result) → trust the URL and persist that as their preference so future
+  // visits to `/` don't bounce them away from it.
+  if (SUPPORTED_LANGS.has(firstSegment) && firstSegment !== "en") {
+    const response = NextResponse.next();
+    if (request.cookies.get(COOKIE_NAME)?.value !== firstSegment) {
+      response.cookies.set(COOKIE_NAME, firstSegment, {
+        path: "/",
+        maxAge: 60 * 60 * 24 * 365,
+        sameSite: "lax",
+      });
+    }
+    return response;
+  }
+
+  // Otherwise — root with cookie==en, blog routes, privacy, terms, etc. Just
+  // ensure the cookie is set for future visits (so the geo detection runs
+  // once, not on every request).
   const response = NextResponse.next();
-  response.cookies.set(COOKIE_NAME, lang, {
-    path: "/",
-    maxAge: 60 * 60 * 24 * 365, // 1 year
-    sameSite: "lax",
-  });
-
+  if (!request.cookies.get(COOKIE_NAME)) {
+    response.cookies.set(COOKIE_NAME, locale, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: "lax",
+    });
+  }
   return response;
 }
 
 export const config = {
-  // Run on all pages but skip static assets and API routes
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|icon.svg|screenshots|.*\\.png$|.*\\.jpg$|.*\\.webp$|api).*)"],
+  // Run on real pages only. Skip:
+  //   - Next.js internals (_next/...)
+  //   - API routes
+  //   - All static assets in /public (icons, screenshots, maps)
+  //   - Metadata routes that should be canonical regardless of visitor locale
+  //     (sitemap.xml, robots.txt, manifest.webmanifest, opengraph-image,
+  //     feed.xml, plus any *.png|jpg|jpeg|webp|svg|ico|xml|txt|webmanifest)
+  //
+  // Note: keeping this in a single negative-lookahead pattern is intentional.
+  // A more granular allow-list ("only run on / and /<locale>") confuses
+  // Next.js 16's static analyzer and tanks SSG for unrelated pages.
+  matcher: [
+    "/((?!_next|api|opengraph-image|sitemap\\.xml|robots\\.txt|manifest\\.webmanifest|screenshots|maps|.*\\.(?:png|jpg|jpeg|webp|svg|ico|xml|txt|webmanifest)$).*)",
+  ],
 };

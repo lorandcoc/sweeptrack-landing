@@ -49,6 +49,10 @@ export default function CursorSweepTrail() {
     let lastEmit = 0;
     let raf = 0;
 
+    const ensureLoop = () => {
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+
     const onMove = (e: MouseEvent) => {
       cursorX = e.clientX * dpr;
       cursorY = e.clientY * dpr;
@@ -57,9 +61,10 @@ export default function CursorSweepTrail() {
         canvas.style.display = "block";
         started = true;
       }
+      ensureLoop();
     };
     const onLeave = () => { active = false; };
-    const onEnter = () => { active = true; };
+    const onEnter = () => { active = true; ensureLoop(); };
     window.addEventListener("mousemove", onMove);
     document.addEventListener("mouseleave", onLeave);
     document.addEventListener("mouseenter", onEnter);
@@ -104,16 +109,26 @@ export default function CursorSweepTrail() {
         ctx.shadowBlur = 0;
       }
 
-      raf = requestAnimationFrame(tick);
+      // Stop the loop when there's nothing left to animate. The next mouse
+      // event will spin it back up via ensureLoop.
+      if (active || rings.length > 0) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = 0;
+      }
     };
-    raf = requestAnimationFrame(tick);
+    // No initial RAF — we wait for the first mouse event before spinning
+    // up the loop. Saves 60fps of clear-and-do-nothing on idle tabs.
 
     const onVisibility = () => {
       if (document.hidden) {
         if (raf) cancelAnimationFrame(raf);
         raf = 0;
-      } else if (!raf) {
-        raf = requestAnimationFrame(tick);
+      } else {
+        // Reset the emit timer so the first frame after a long tab-away
+        // doesn't immediately drop a stale ring at the old cursor position.
+        lastEmit = performance.now();
+        if (active || rings.length > 0) ensureLoop();
       }
     };
     document.addEventListener("visibilitychange", onVisibility);

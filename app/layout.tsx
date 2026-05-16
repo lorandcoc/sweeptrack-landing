@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { I18nProvider } from "@/lib/i18n";
 import CursorSweepTrail from "@/components/CursorSweepTrail";
 import "./globals.css";
 
@@ -114,44 +113,9 @@ export const metadata: Metadata = {
     "KML metal detecting export",
     "night vision metal detecting",
   ],
-  alternates: {
-    canonical: "https://sweeptrack.pro",
-    languages: {
-      "en": "https://sweeptrack.pro",
-      "ro": "https://sweeptrack.pro",
-      "de": "https://sweeptrack.pro",
-      "es": "https://sweeptrack.pro",
-      "fr": "https://sweeptrack.pro",
-      "nl": "https://sweeptrack.pro",
-      "pl": "https://sweeptrack.pro",
-      "it": "https://sweeptrack.pro",
-      "pt": "https://sweeptrack.pro",
-      "sv": "https://sweeptrack.pro",
-      "tr": "https://sweeptrack.pro",
-      "da": "https://sweeptrack.pro",
-      "hu": "https://sweeptrack.pro",
-      "ru": "https://sweeptrack.pro",
-      "x-default": "https://sweeptrack.pro",
-    },
-    types: {
-      "application/rss+xml": "https://sweeptrack.pro/blog/feed.xml",
-    },
-  },
-  openGraph: {
-    title: "SweepTrack Pro — Metal Detecting App for Android",
-    description:
-      "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Permission Vault, Detecting Forecast, Cloud Backup, and 60+ detector presets. Free download, ad-free.",
-    url: "https://sweeptrack.pro",
-    siteName: "SweepTrack Pro",
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "SweepTrack Pro — Metal Detecting App for Android",
-    description:
-      "GPS tracking, USGS Historical Topo overlay, offline maps, Track Overlay, Perimeter Guard, Permission Vault, and Detecting Forecast. Android, ad-free.",
-  },
+  // Per-locale alternates/canonical/openGraph/twitter are set by each page via
+  // `landingMetadata(locale)` from lib/landingMetadata.ts. Keywords and robots
+  // stay here because they apply to every locale's HTML alike.
   robots: {
     index: true,
     follow: true,
@@ -165,6 +129,17 @@ export const metadata: Metadata = {
   },
   other: {
     "google-site-verification": "NxYPPcarbhOOTS89dkKan0TTRaaK3DZlT_hAcxbaMLU",
+  },
+  icons: {
+    // The manifest already lists the Android icons. Apple needs the dedicated
+    // <link rel="apple-touch-icon"> at 180×180 (flattened PNG on the brand
+    // background, since iOS ignores transparency).
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
@@ -180,9 +155,7 @@ export default function RootLayout({
     >
       <body className="min-h-full aurora-bg overflow-x-hidden">
         <CursorSweepTrail />
-        <I18nProvider>
-          <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
-        </I18nProvider>
+        <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
         <Analytics />
         <SpeedInsights />
       </body>

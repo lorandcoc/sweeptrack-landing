@@ -20,35 +20,37 @@ export default function MapCompareSlider() {
     setSliderPosition(percent);
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
-    if (!isDragging) return;
-    handleMove(e.clientX);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    if (!isDragging) return;
-    handleMove(e.touches[0].clientX);
-  };
-
-  const stopDragging = () => setIsDragging(false);
-
+  // Listener attach/detach moved inside the effect so the handler references
+  // are stable for the lifetime of a drag — previous version recreated them
+  // on every setSliderPosition (which re-rendered, made new closures, and
+  // forced the effect's cleanup-and-reattach path to run 60+ times a second).
+  //
+  // touchmove uses `passive: false` so we can call preventDefault and stop
+  // the page from scrolling while the user drags the slider on mobile.
   useEffect(() => {
-    if (isDragging) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", stopDragging);
-      window.addEventListener("touchmove", handleTouchMove, { passive: true });
-      window.addEventListener("touchend", stopDragging);
-    } else {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", stopDragging);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", stopDragging);
-    }
+    if (!isDragging) return;
+
+    const onMouseMove = (e: MouseEvent) => handleMove(e.clientX);
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches[0]) {
+        e.preventDefault();
+        handleMove(e.touches[0].clientX);
+      }
+    };
+    const onUp = () => setIsDragging(false);
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onUp);
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onUp);
+    window.addEventListener("touchcancel", onUp);
+
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", stopDragging);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", stopDragging);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onUp);
+      window.removeEventListener("touchcancel", onUp);
     };
   }, [isDragging]);
 

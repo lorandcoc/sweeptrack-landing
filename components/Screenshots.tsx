@@ -46,8 +46,17 @@ export default function Screenshots() {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
   const hasDragged = useRef(false);
+  // Tracks the "resume autoplay" timer so rapid touch interactions don't
+  // stack timers and resume mid-gesture.
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => { activeRef.current = activeIndex; }, [activeIndex]);
+
+  // Clear any pending resume timer when the component unmounts so a
+  // late-firing setTimeout doesn't try to update state on an unmounted tree.
+  useEffect(() => () => {
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+  }, []);
 
   const scrollTo = useCallback((index: number) => {
     const el = scrollRef.current;
@@ -137,8 +146,14 @@ export default function Screenshots() {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
           onMouseLeave={handleMouseUpOrLeave}
-          onTouchStart={() => setPaused(true)}
-          onTouchEnd={() => setTimeout(() => setPaused(false), 3000)}
+          onTouchStart={() => {
+            if (resumeTimer.current) clearTimeout(resumeTimer.current);
+            setPaused(true);
+          }}
+          onTouchEnd={() => {
+            if (resumeTimer.current) clearTimeout(resumeTimer.current);
+            resumeTimer.current = setTimeout(() => setPaused(false), 3000);
+          }}
         >
           {screenshots.map((shot, i) => (
             <button
@@ -159,14 +174,17 @@ export default function Screenshots() {
         </div>
 
         <div className="flex justify-center gap-2 mt-4">
-          {screenshots.map((_, i) => (
+          {screenshots.map((shot, i) => (
             <button
-              key={i}
+              key={shot.labelKey}
               onClick={() => scrollTo(i)}
               className={`dot-indicator h-2 rounded-full transition-all ${
                 activeIndex === i ? "bg-accent w-6" : "bg-white/20 w-2 hover:bg-white/40"
               }`}
-              aria-label={`Screenshot ${i + 1}`}
+              // The slide's own translated label reads better than a generic
+              // "Screenshot N" — screen-reader users hear what each dot
+              // jumps to, in their language.
+              aria-label={t(shot.labelKey)}
             />
           ))}
         </div>

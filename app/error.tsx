@@ -2,6 +2,13 @@
 
 import Link from "next/link";
 
+/**
+ * Intentionally English-only. Translating this would require shipping all 14
+ * dictionaries into the error chunk (~420 KB of JSON) to handle a page that
+ * fires on catastrophic failures. The translation keys exist (error.* in
+ * the dictionaries) for future use — wire them up via dynamic import if
+ * locale-aware errors ever become a priority.
+ */
 export default function Error({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-20">

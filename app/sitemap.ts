@@ -1,58 +1,23 @@
 import type { MetadataRoute } from "next";
+import { POSTS } from "@/lib/posts";
+
+const BASE = "https://sweeptrack.pro";
+
+// Date the landing page itself was last meaningfully refreshed. Bump when the
+// homepage copy or sections change. Blog post dates come from POSTS.
+const SITE_LAST_MODIFIED = "2026-05-16";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://sweeptrack.pro";
-
-  const blogSlugs = [
-    // Guides
-    "how-to-use-old-maps-for-metal-detecting",
-    "metal-detecting-permission-letter-template",
-    "how-to-track-metal-detecting-sessions-gps",
-    "metal-detecting-for-beginners",
-    // Tips
-    "best-weather-conditions-for-metal-detecting",
-    "organize-metal-detector-presets-settings",
-    // Beach
-    "beach-metal-detecting-tide-timing",
-    // App Tutorials
-    "detecting-forecast-guide",
-    "setting-up-perimeter-guard",
-    "using-the-permission-vault",
-    "downloading-offline-maps",
-    "using-track-overlay",
-    "cloud-backup-google-drive",
-    "night-vision-mode",
-    "logging-finds-photo-video-audio",
-    "using-coin-caliper",
-    "finding-historic-sites-nearby",
-    "comparing-sessions-overlay-split",
-    "exporting-sessions-gpx-kml-csv",
-    "understanding-session-statistics",
-    "share-card",
-    // Location & Laws
-    "best-places-to-metal-detect-in-texas",
-    "best-places-to-metal-detect-in-florida",
-    "best-places-to-metal-detect-in-ohio",
-    "best-places-to-metal-detect-in-virginia",
-    "best-places-to-metal-detect-in-california",
-    "metal-detecting-laws-in-the-uk",
-    "metal-detecting-laws-in-the-us",
-    "metal-detecting-laws-in-australia",
-    "where-to-metal-detect-near-me",
-    // Gear
-    "best-metal-detectors-under-500",
-  ];
-
   return [
-    { url: base, lastModified: "2026-04-14", changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/blog`, lastModified: "2026-04-14", changeFrequency: "weekly", priority: 0.9 },
-    ...blogSlugs.map((slug) => ({
-      url: `${base}/blog/${slug}`,
-      lastModified: "2026-04-14" as string,
+    { url: BASE, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 1 },
+    { url: `${BASE}/blog`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.9 },
+    ...POSTS.map((post) => ({
+      url: `${BASE}/blog/${post.slug}`,
+      lastModified: post.publishedDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    { url: `${base}/privacy`, lastModified: "2026-04-14", changeFrequency: "yearly", priority: 0.3 },
-    { url: `${base}/terms`, lastModified: "2026-04-14", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/privacy`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/terms`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

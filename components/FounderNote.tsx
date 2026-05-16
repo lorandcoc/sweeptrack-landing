@@ -11,7 +11,6 @@ export default function FounderNote() {
 
   const quoteRef = useRef<HTMLParagraphElement>(null);
   const [typed, setTyped] = useState("");
-  const [done, setDone] = useState(false);
 
   useEffect(() => {
     const el = quoteRef.current;
@@ -19,7 +18,6 @@ export default function FounderNote() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
       setTyped(quote);
-      setDone(true);
       return;
     }
 
@@ -39,8 +37,6 @@ export default function FounderNote() {
               i++;
               if (i <= quote.length) {
                 timer = setTimeout(step, 12);
-              } else {
-                setDone(true);
               }
             };
             step();
@@ -74,7 +70,7 @@ export default function FounderNote() {
             <div>
               <p ref={quoteRef} className="founder-term__quote">
                 {typed}
-                {done && <span className="founder-term__cursor" aria-hidden="true">▊</span>}
+                <span className="founder-term__cursor" aria-hidden="true">▊</span>
               </p>
               <div className="founder-term__attr">
                 <strong>Lorand</strong>

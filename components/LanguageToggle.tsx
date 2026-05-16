@@ -1,17 +1,49 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useI18n, LOCALES } from "@/lib/i18n";
-import * as flagSvgs from "country-flag-icons/string/3x2";
+import { useI18n, LOCALES, type LocaleCode } from "@/lib/i18n";
+
+// Explicit per-country React component imports. The `/react/3x2` entrypoint
+// returns proper JSX SVGs, so no dangerouslySetInnerHTML is needed — that
+// dodges the audit concern about a future package fork shipping malicious
+// strings. Individual subpath imports also let the bundler tree-shake the
+// 200+ unused flags.
+import GB from "country-flag-icons/react/3x2/GB";
+import RO from "country-flag-icons/react/3x2/RO";
+import DE from "country-flag-icons/react/3x2/DE";
+import ES from "country-flag-icons/react/3x2/ES";
+import FR from "country-flag-icons/react/3x2/FR";
+import NL from "country-flag-icons/react/3x2/NL";
+import PL from "country-flag-icons/react/3x2/PL";
+import IT from "country-flag-icons/react/3x2/IT";
+import PT from "country-flag-icons/react/3x2/PT";
+import SE from "country-flag-icons/react/3x2/SE";
+import TR from "country-flag-icons/react/3x2/TR";
+import DK from "country-flag-icons/react/3x2/DK";
+import HU from "country-flag-icons/react/3x2/HU";
+import RU from "country-flag-icons/react/3x2/RU";
+
+// Use the package's inferred FlagComponent type by anchoring on one of the
+// imports. country-flag-icons defines `(props: Props) => JSX.Element` where
+// `Props` extends `HTMLAttributes<HTMLSVGElement>` — a custom intersection
+// that doesn't match React.SVGProps. Anchoring keeps us aligned with
+// whatever the package decides next.
+const FLAGS: Record<string, typeof GB> = {
+  GB, RO, DE, ES, FR, NL, PL, IT, PT, SE, TR, DK, HU, RU,
+};
 
 function Flag({ country, className }: { country: string; className?: string }) {
-  const svg = (flagSvgs as Record<string, string>)[country];
-  if (!svg) return null;
-  return <span className={className} dangerouslySetInnerHTML={{ __html: svg }} />;
+  const Component = FLAGS[country];
+  if (!Component) return null;
+  return (
+    <span className={className}>
+      <Component />
+    </span>
+  );
 }
 
 export default function LanguageToggle() {
-  const { locale, setLocale } = useI18n();
+  const { locale, setLocale, t } = useI18n();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -21,8 +53,15 @@ export default function LanguageToggle() {
     function handleClick(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     }
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
     document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKey);
+    };
   }, []);
 
   // Lock body scroll when the mobile sheet is open
@@ -37,7 +76,7 @@ export default function LanguageToggle() {
     };
   }, [open]);
 
-  function pick(code: string) {
+  function pick(code: LocaleCode) {
     setLocale(code);
     setOpen(false);
   }
@@ -67,7 +106,7 @@ export default function LanguageToggle() {
       <button
         onClick={() => setOpen((o) => !o)}
         className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-muted hover:text-foreground border border-white/[0.06] hover:border-white/[0.12] transition-colors"
-        aria-label="Change language"
+        aria-label={t("language.aria_label")}
         aria-expanded={open}
       >
         <Flag country={current.country} className="inline-flex [&>svg]:w-4 [&>svg]:h-3 [&>svg]:rounded-[1px] shrink-0" />
@@ -109,7 +148,7 @@ export default function LanguageToggle() {
             <div className="flex flex-col items-center pt-2 pb-1 shrink-0">
               <div className="w-10 h-1 rounded-full bg-white/15 mb-2" />
               <div className="text-xs font-semibold uppercase tracking-wider text-muted px-4 pb-1.5">
-                Choose language
+                {t("language.sheet_heading")}
               </div>
             </div>
             {/* Scrollable list with overscroll containment so pull-to-refresh doesn't fire */}

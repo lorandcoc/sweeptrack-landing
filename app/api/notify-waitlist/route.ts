@@ -15,7 +15,11 @@ const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,24}$/;
 // explicitly. Add more providers here if new bot patterns surface.
 const BOT_DOMAIN_RE = /@\d+(gmail|yahoo|outlook|hotmail|icloud|protonmail|live|aol|mail)\.com$/i;
 
-// Simple in-memory rate limiter (per serverless instance)
+// Simple in-memory rate limiter — bounded per *serverless instance*, which
+// means a determined attacker can scale past it by triggering cold starts /
+// hitting different regions. Acceptable pre-launch; if waitlist abuse ever
+// becomes real, swap this for Upstash + sliding window or move the limit
+// into a Supabase function backed by a `rate_limit` table.
 const recentRequests = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW = 60_000; // 1 minute
 const RATE_LIMIT_MAX = 5; // max 5 requests per minute per IP
@@ -156,7 +160,10 @@ export async function POST(req: NextRequest) {
 
     const resend = new Resend(apiKey);
 
-    // Fire both emails in parallel. allSettled so one failure doesn't drop the other.
+    // Fire both emails in parallel. allSettled so one failure doesn't drop
+    // the other. Any rejections are logged server-side; the client only ever
+    // sees {ok:true} so bots can't probe whether a given email survived
+    // validation by inspecting per-side error flags.
     const [notifyRes, welcomeRes] = await Promise.allSettled([
       resend.emails.send({
         from: FROM_EMAIL,
@@ -171,17 +178,26 @@ export async function POST(req: NextRequest) {
         text: WELCOME_BODY,
         html: WELCOME_BODY_HTML,
         headers: {
+          // RFC 8058 one-click unsubscribe. Gmail/Yahoo render the
+          // "Unsubscribe" affordance next to the sender name when both
+          // headers are present. The mailto handler at support@sweeptrack.pro
+          // doubles as the manual fallback.
           "List-Unsubscribe": `<mailto:${NOTIFY_TO}?subject=remove>`,
+          "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
         },
       }),
     ]);
 
-    return NextResponse.json({
-      ok: true,
-      notifyError: notifyRes.status === "rejected",
-      welcomeError: welcomeRes.status === "rejected",
-    });
-  } catch {
-    return NextResponse.json({ ok: true, notifyError: true });
+    if (notifyRes.status === "rejected") {
+      console.error("notify email failed:", notifyRes.reason);
+    }
+    if (welcomeRes.status === "rejected") {
+      console.error("welcome email failed:", welcomeRes.reason);
+    }
+
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("notify-waitlist handler crashed:", err);
+    return NextResponse.json({ ok: true });
   }
 }

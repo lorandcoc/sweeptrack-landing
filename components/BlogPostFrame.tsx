@@ -22,8 +22,12 @@ export default function BlogPostFrame({
   relatedGuides?: RelatedGuide[];
   children: React.ReactNode;
 }) {
-  const { t } = useI18n();
-  const formattedDate = new Date(publishedDate).toLocaleDateString("en-US", {
+  const { t, locale } = useI18n();
+  // Format the publish date using whatever locale the chrome is rendering in.
+  // Today that's always "en" because /blog stays English-only, but driving
+  // this from the i18n context means localizing blog content later is one
+  // fewer thing to remember to flip.
+  const formattedDate = new Date(publishedDate).toLocaleDateString(locale, {
     year: "numeric",
     month: "long",
     day: "numeric",

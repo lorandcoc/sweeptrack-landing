@@ -64,12 +64,20 @@ export default function Header() {
     };
   }, []);
 
-  // Close menu on scroll
+  // Close menu on scroll or Escape so the menu doesn't trap users who
+  // changed their mind. Standard a11y pattern for disclosure menus.
   useEffect(() => {
     if (!menuOpen) return;
     const close = () => setMenuOpen(false);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
     window.addEventListener("scroll", close, { passive: true });
-    return () => window.removeEventListener("scroll", close);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("scroll", close);
+      window.removeEventListener("keydown", onKey);
+    };
   }, [menuOpen]);
 
   return (
