@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CursorSweepTrail from "@/components/CursorSweepTrail";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-E8V2DG5WMC";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -159,6 +162,18 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
       </body>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
     </html>
   );
 }
