@@ -133,7 +133,7 @@ const communities = [
     titleKey: "community.tiktok_title",
     descKey: "community.tiktok_desc",
     icon: <TiktokIcon />,
-    link: "https://www.tiktok.com/@sweep.track.pro",
+    link: "https://www.tiktok.com/@sweeptrackpro",
     color: "from-[#00f2fe]/20",
     border: "group-hover:border-[#00f2fe]/50",
     bg: "group-hover:bg-[#00f2fe]/5"
