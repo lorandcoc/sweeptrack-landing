@@ -31,16 +31,16 @@ const NOTIFY_TO = "support@sweeptrack.pro";
 
 const WELCOME_SUBJECT = "Thanks for signing up.";
 
-const WELCOME_BODY = `Hey —
+const WELCOME_BODY = `Hey,
 
 Just a quick note to say thanks for being on the list. Means a lot.
 
 You will receive the link the moment SweepTrack Pro is live. Until then, good luck out there.
 
-— Lorand
+Lorand
 sweeptrack.pro
 
-P.S. There are 1,000 Founder's Lifetime spots — one payment, never renews. A small thank-you for showing up early. After those are gone, just the regular trial + subscription.
+P.S. There are 1,000 Founder's Lifetime spots. One payment, never renews. A small thank-you for showing up early. After those are gone, just the regular trial + subscription.
 `;
 
 // HTML version — dark, tactical, matches the app's color system from globals.css.
@@ -87,11 +87,11 @@ const WELCOME_BODY_HTML = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transiti
 </tr>
 </table>
 
-<p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">Hey &mdash;</p>
+<p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">Hey,</p>
 <p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">Just a quick note to say thanks for being on the list. Means a lot.</p>
 <p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">You will receive the link the moment SweepTrack Pro is live. Until then, good luck out there.</p>
 
-<p style="margin:32px 0 4px;color:#E8E8F0;font-size:16px;line-height:1.5;">&mdash; Lorand</p>
+<p style="margin:32px 0 4px;color:#E8E8F0;font-size:16px;line-height:1.5;">Lorand</p>
 <p style="margin:0;font-size:14px;"><a href="https://sweeptrack.pro" style="color:#00FF6A;text-decoration:none;font-weight:500;">sweeptrack.pro</a></p>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:32px 0;">
@@ -100,7 +100,7 @@ const WELCOME_BODY_HTML = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transiti
 </tr>
 </table>
 
-<p style="margin:0;color:#B0B0CC;font-size:14px;line-height:1.65;"><span style="color:#00FF6A;font-weight:700;">P.S.</span> There are 1,000 Founder's Lifetime spots &mdash; one payment, never renews. A small thank-you for showing up early. After those are gone, just the regular trial + subscription.</p>
+<p style="margin:0;color:#B0B0CC;font-size:14px;line-height:1.65;"><span style="color:#00FF6A;font-weight:700;">P.S.</span> There are 1,000 Founder's Lifetime spots. One payment, never renews. A small thank-you for showing up early. After those are gone, just the regular trial + subscription.</p>
 
 </td>
 </tr>
