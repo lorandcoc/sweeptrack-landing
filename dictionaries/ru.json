@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Бесплатная загрузка. Pro-версия открывает все функции.",
-  "hero.pill_adfree": "Без рекламы навсегда",
-  "hero.title_line1": "GPS-трекинг для каждой сессии.",
-  "hero.title_line2": "Журнал находок с фото и аудио.",
-  "hero.title_line3": "Permission Vault для учёта землевладельцев.",
+  "hero.title_line1": "Каждая находка, каждый выход —",
+  "hero.title_line2_lead": "на одной",
+  "hero.title_line2_accent": "карте.",
   "hero.subtitle": "GPS-трекинг в реальном времени, журнал находок с фото и аудио, учёт разрешений землевладельцев и офлайн-карты в одном Android-приложении для поисковиков.",
   "hero.cta_secondary": "Все функции",
   "header.nav_features": "Функции",

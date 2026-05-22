@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Gratis te downloaden. De Pro-upgrade ontgrendelt alle functies.",
-  "hero.pill_adfree": "Voor altijd reclamevrij",
-  "hero.title_line1": "GPS-tracking voor elke sessie.",
-  "hero.title_line2": "Vondsten loggen met foto en audio.",
-  "hero.title_line3": "Permission Vault voor toestemmingen van grondeigenaren.",
+  "hero.title_line1": "Elke vondst, elke sessie,",
+  "hero.title_line2_lead": "op één",
+  "hero.title_line2_accent": "kaart.",
   "hero.subtitle": "Live GPS-tracking, vondsten loggen met foto en audio, beheer van toestemmingen en offline kaarten in één Android-app voor detectoristen.",
   "hero.cta_secondary": "Bekijk alle functies",
   "header.nav_features": "Functies",

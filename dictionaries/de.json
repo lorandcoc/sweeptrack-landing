@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Kostenloser Download. Das Pro-Upgrade schaltet alle Funktionen frei.",
-  "hero.pill_adfree": "Dauerhaft werbefrei",
-  "hero.title_line1": "GPS-Aufzeichnung für jede Suche.",
-  "hero.title_line2": "Fundprotokoll mit Foto und Audio.",
-  "hero.title_line3": "Permission Vault für Eigentümerdaten.",
+  "hero.title_line1": "Jeder Fund, jede Suche,",
+  "hero.title_line2_lead": "auf einer",
+  "hero.title_line2_accent": "Karte.",
   "hero.subtitle": "Live-GPS-Aufzeichnung, Fundprotokoll mit Foto und Audio, Verwaltung von Eigentümergenehmigungen und Offline-Karten in einer einzigen Android-App für Sondengänger.",
   "hero.cta_secondary": "Alle Funktionen ansehen",
   "header.nav_features": "Funktionen",

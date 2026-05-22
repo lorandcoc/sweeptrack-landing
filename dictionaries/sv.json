@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Gratis nedladdning. Pro-uppgradering låser upp alla funktioner.",
-  "hero.pill_adfree": "Annonsfri för alltid",
-  "hero.title_line1": "GPS-spårning för varje session.",
-  "hero.title_line2": "Fyndloggning med foto och ljud.",
-  "hero.title_line3": "Permission Vault för markägaruppgifter.",
+  "hero.title_line1": "Varje fynd, varje pass,",
+  "hero.title_line2_lead": "på en",
+  "hero.title_line2_accent": "karta.",
   "hero.subtitle": "GPS-spårning i realtid, fyndloggning med foto och ljud, hantering av markägartillstånd och offlinekartor i en enda Android-app för metallsökare.",
   "hero.cta_secondary": "Se alla funktioner",
   "header.nav_features": "Funktioner",

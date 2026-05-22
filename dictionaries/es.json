@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Descarga gratuita. La actualización Pro desbloquea todas las funciones.",
-  "hero.pill_adfree": "Sin anuncios para siempre",
-  "hero.title_line1": "Seguimiento GPS para cada sesión.",
-  "hero.title_line2": "Registro de hallazgos con foto y audio.",
-  "hero.title_line3": "Permission Vault para los registros del propietario.",
+  "hero.title_line1": "Cada hallazgo, cada sesión,",
+  "hero.title_line2_lead": "en un solo",
+  "hero.title_line2_accent": "mapa.",
   "hero.subtitle": "Seguimiento GPS en vivo, registro de hallazgos con foto y audio, gestión de permisos del propietario y mapas sin conexión en una sola app de Android para detectoristas.",
   "hero.cta_secondary": "Ver todas las funciones",
   "header.nav_features": "Funciones",

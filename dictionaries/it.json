@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Download gratuito. L'aggiornamento Pro sblocca tutte le funzioni.",
-  "hero.pill_adfree": "Senza pubblicità per sempre",
-  "hero.title_line1": "Tracciamento GPS per ogni sessione.",
-  "hero.title_line2": "Registro ritrovamenti con foto e audio.",
-  "hero.title_line3": "Permission Vault per i dati dei proprietari.",
+  "hero.title_line1": "Ogni ritrovamento, ogni sessione,",
+  "hero.title_line2_lead": "in un'unica",
+  "hero.title_line2_accent": "mappa.",
   "hero.subtitle": "Tracciamento GPS in tempo reale, registro ritrovamenti con foto e audio, gestione delle autorizzazioni dei proprietari e mappe offline in un'unica app Android per metaldetectoristi.",
   "hero.cta_secondary": "Tutte le funzioni",
   "header.nav_features": "Funzioni",

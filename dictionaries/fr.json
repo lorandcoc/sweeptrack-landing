@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Téléchargement gratuit. La mise à niveau Pro débloque toutes les fonctionnalités.",
-  "hero.pill_adfree": "Sans publicité à vie",
-  "hero.title_line1": "Suivi GPS pour chaque session.",
-  "hero.title_line2": "Journal des trouvailles avec photo et audio.",
-  "hero.title_line3": "Permission Vault pour les autorisations de propriétaires.",
+  "hero.title_line1": "Chaque trouvaille, chaque session,",
+  "hero.title_line2_lead": "sur une seule",
+  "hero.title_line2_accent": "carte.",
   "hero.subtitle": "Suivi GPS en direct, journal des trouvailles avec photo et audio, gestion des autorisations de propriétaires et cartes hors ligne dans une seule application Android pour détectoristes.",
   "hero.cta_secondary": "Voir toutes les fonctionnalités",
   "header.nav_features": "Fonctionnalités",

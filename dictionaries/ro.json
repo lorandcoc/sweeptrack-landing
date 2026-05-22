@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Descărcare gratuită. Upgrade-ul Pro deblochează toate funcțiile.",
-  "hero.pill_adfree": "Fără reclame, definitiv",
-  "hero.title_line1": "Urmărire GPS pentru fiecare sesiune.",
-  "hero.title_line2": "Jurnal de descoperiri cu fotografie și audio.",
-  "hero.title_line3": "Permission Vault pentru evidența proprietarilor.",
+  "hero.title_line1": "Fiecare descoperire, fiecare ieșire,",
+  "hero.title_line2_lead": "pe o singură",
+  "hero.title_line2_accent": "hartă.",
   "hero.subtitle": "Urmărire GPS în timp real, jurnal de descoperiri cu fotografie și audio, gestionarea acordurilor de la proprietari și hărți offline într-o singură aplicație Android pentru detectoriști.",
   "hero.cta_secondary": "Vezi toate funcțiile",
   "header.nav_features": "Funcții",

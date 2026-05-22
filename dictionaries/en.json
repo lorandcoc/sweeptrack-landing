@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Free download. Pro upgrade unlocks all features.",
-  "hero.pill_adfree": "Ad-Free Forever",
-  "hero.title_line1": "GPS tracking for every session.",
-  "hero.title_line2": "Find logging with photo and audio.",
-  "hero.title_line3": "Permission Vault for landowner records.",
+  "hero.title_line1": "Every find, every session,",
+  "hero.title_line2_lead": "in one",
+  "hero.title_line2_accent": "map.",
   "hero.subtitle": "Live GPS tracking, find logging with photo and audio, landowner permission management, and offline maps in a single Android app for metal detectorists.",
   "hero.cta_secondary": "See all features",
   "header.nav_features": "Features",

@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Ücretsiz indirme. Pro yükseltme tüm özellikleri açar.",
-  "hero.pill_adfree": "Sonsuza Kadar Reklamsız",
-  "hero.title_line1": "Her seans için GPS takibi.",
-  "hero.title_line2": "Fotoğraflı ve sesli buluntu kaydı.",
-  "hero.title_line3": "Arazi sahibi kayıtları için Permission Vault.",
+  "hero.title_line1": "Her buluş, her seans,",
+  "hero.title_line2_lead": "tek bir",
+  "hero.title_line2_accent": "haritada.",
   "hero.subtitle": "Canlı GPS takibi, fotoğraflı ve sesli buluntu kaydı, arazi sahibi izin yönetimi ve çevrimdışı haritalar — dedektörcüler için tek bir Android uygulamasında.",
   "hero.cta_secondary": "Tüm özellikleri gör",
   "header.nav_features": "Özellikler",

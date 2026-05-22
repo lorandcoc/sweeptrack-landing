@@ -25,26 +25,18 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="grid md:grid-cols-[1.4fr_0.6fr] gap-3 items-center">
           <div className="text-center md:text-left">
-            <div className="hero-enter flex flex-wrap gap-2 mb-3 justify-center md:justify-start" style={{ animationDelay: "0.1s" }}>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/8 border border-accent/15 text-accent text-xs font-medium">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                {t("hero.pill_free")}
-              </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-muted text-xs font-medium">
-                {t("hero.pill_adfree")}
-              </span>
-            </div>
-            <div className="hero-enter flex flex-wrap gap-2 mb-6 justify-center md:justify-start" style={{ animationDelay: "0.15s" }}>
+            <div className="hero-enter flex flex-wrap gap-2 mb-6 justify-center md:justify-start" style={{ animationDelay: "0.1s" }}>
               <a href="#community" onClick={scrollToHash} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-medium hover:bg-amber-500/15 hover:border-amber-400/50 transition-colors">
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" /></svg>
                 {t("hero.pill_founder")}
               </a>
             </div>
 
-            <h1 className={`hero-enter font-display leading-[1.08] mb-5 ${isLong ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"}`} style={{ animationDelay: "0.2s" }}>
+            <h1 className={`hero-enter font-display leading-[1.08] mb-5 ${isLong ? "text-xl sm:text-2xl md:text-3xl lg:text-4xl" : "text-2xl sm:text-3xl md:text-4xl lg:text-5xl"}`} style={{ animationDelay: "0.2s" }}>
               <span className="block [text-wrap:balance]">{t("hero.title_line1")}</span>
-              <span className="block [text-wrap:balance]">{t("hero.title_line2")}</span>
-              <span className="block text-accent [text-wrap:balance]">{t("hero.title_line3")}</span>
+              <span className="block [text-wrap:balance]">
+                {t("hero.title_line2_lead")} <span className="text-accent">{t("hero.title_line2_accent")}</span>
+              </span>
             </h1>
 
             <p className="hero-enter text-base md:text-lg text-muted max-w-xl mb-3 md:mx-0 mx-auto leading-relaxed" style={{ animationDelay: "0.35s" }}>

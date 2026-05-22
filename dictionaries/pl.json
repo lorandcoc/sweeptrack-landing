@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Bezpłatne pobranie. Aktualizacja Pro odblokowuje wszystkie funkcje.",
-  "hero.pill_adfree": "Bez reklam na zawsze",
-  "hero.title_line1": "Śledzenie GPS dla każdej sesji.",
-  "hero.title_line2": "Rejestracja znalezisk ze zdjęciem i notatką głosową.",
-  "hero.title_line3": "Permission Vault do ewidencji właścicieli gruntów.",
+  "hero.title_line1": "Każde znalezisko, każda sesja,",
+  "hero.title_line2_lead": "na jednej",
+  "hero.title_line2_accent": "mapie.",
   "hero.subtitle": "Śledzenie GPS na żywo, rejestrowanie znalezisk ze zdjęciem i notatką głosową, zarządzanie pozwoleniami właścicieli gruntów i mapy offline w jednej aplikacji na Androida dla detektorystów.",
   "hero.cta_secondary": "Zobacz wszystkie funkcje",
   "header.nav_features": "Funkcje",

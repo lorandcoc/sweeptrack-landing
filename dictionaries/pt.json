@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Download gratuito. O upgrade Pro desbloqueia todas as funcionalidades.",
-  "hero.pill_adfree": "Sem Anúncios para Sempre",
-  "hero.title_line1": "Rastreio GPS para cada sessão.",
-  "hero.title_line2": "Registo de achados com foto e áudio.",
-  "hero.title_line3": "Permission Vault para registos de proprietários.",
+  "hero.title_line1": "Cada achado, cada sessão,",
+  "hero.title_line2_lead": "num só",
+  "hero.title_line2_accent": "mapa.",
   "hero.subtitle": "Rastreio GPS em tempo real, registo de achados com foto e áudio, gestão de autorizações de proprietários e mapas offline numa única app Android para detectoristas.",
   "hero.cta_secondary": "Ver todas as funcionalidades",
   "header.nav_features": "Funcionalidades",

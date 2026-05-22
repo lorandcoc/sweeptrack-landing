@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Ingyenes letöltés. A Pro bővítés feloldja az összes funkciót.",
-  "hero.pill_adfree": "Reklámmentes, örökre",
-  "hero.title_line1": "GPS-követés minden menethez.",
-  "hero.title_line2": "Lelet-naplózás fotóval és hanggal.",
-  "hero.title_line3": "Permission Vault a tulajdonosi adatokhoz.",
+  "hero.title_line1": "Minden lelet, minden túra,",
+  "hero.title_line2_lead": "egyetlen",
+  "hero.title_line2_accent": "térképen.",
   "hero.subtitle": "Élő GPS-követés, lelet-naplózás fotóval és hanggal, tulajdonosi engedélyek kezelése és offline térképek egyetlen Android-alkalmazásban fémkeresőknek.",
   "hero.cta_secondary": "Összes funkció",
   "header.nav_features": "Funkciók",

@@ -1,9 +1,7 @@
 {
-  "hero.pill_free": "Gratis download. Pro-opgradering låser op for alle funktioner.",
-  "hero.pill_adfree": "Reklamefri for evigt",
-  "hero.title_line1": "GPS-sporing for hver session.",
-  "hero.title_line2": "Fundlogning med foto og lyd.",
-  "hero.title_line3": "Permission Vault til lodsejeraftaler.",
+  "hero.title_line1": "Hvert fund, hver session,",
+  "hero.title_line2_lead": "på ét",
+  "hero.title_line2_accent": "kort.",
   "hero.subtitle": "Live GPS-sporing, fundlogning med foto og lyd, håndtering af lodsejertilladelser og offline-kort i én Android-app til metaldetektorister.",
   "hero.cta_secondary": "Se alle funktioner",
   "header.nav_features": "Funktioner",
