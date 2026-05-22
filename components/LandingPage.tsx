@@ -71,7 +71,7 @@ const jsonLdGraph = [
         price: "19.99",
         priceCurrency: "USD",
         name: "Pro Annual",
-        description: "Everything unlimited. $19.99/year (save 52% vs monthly). 7-day free trial.",
+        description: "Everything unlimited. $19.99/year (save 52% vs monthly). 14-day free trial.",
         priceValidUntil: "2027-12-31",
       },
       {
@@ -79,7 +79,7 @@ const jsonLdGraph = [
         price: "3.49",
         priceCurrency: "USD",
         name: "Pro Monthly",
-        description: "$3.49/month with 7-day free trial",
+        description: "$3.49/month with 14-day free trial",
       },
     ],
     featureList: [
