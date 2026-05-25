@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering
 
-Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 12. maj 2026
+Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 25. maj 2026
 
 Drives af: Coc Lorand Adrian P.F.A., der handler som "Loriba"
 
@@ -82,7 +82,7 @@ Følgende data sendes til tredjeparts API'er for realtidsfunktionalitet og **gem
 Når de er aktiveret:
 
 - **Firebase Analytics** logger otte aggregerede hændelsesnavne med ikke-identificerende parametre: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Hændelsernes indhold indeholder **aldrig** GPS-koordinater, adresser, fundnavne, fotos, lydoptagelser, boksdata eller andre personligt identificerbare oplysninger — kun tællere, varigheder, afstande, fundtype (kun kategorien) og funktionsidentifikatorer.
-- **Firebase Crashlytics** uploader stack-spor fra nedbrud sammen med enhedsmodel, operativsystemets version og appens version for at hjælpe os med at diagnosticere fejl.
+- **Firebase Crashlytics** uploader stack-spor fra nedbrud sammen med enhedsmodel, operativsystemets version og appens version for at hjælpe os med at diagnosticere fejl. Før et nedbrud eller en ikke-fatal fejl videresendes til Crashlytics, **fjerner Appen koordinatformede delstrenge fra undtagelsesbeskeden** (f.eks. `lat=`/`lon=`-mønstre, fortegnsbestemte decimaltal med tre eller flere decimaler), så GPS-positioner gemt i lokale variable ikke kan lække via fejlrapportering. Stack-rammer (klasse, metode, linje) bevares til gruppering; runtime-værdier ikke. En procesbred handler for ufangede undtagelser anvender den samme scrubning på fatale nedbrud, der opfanges automatisk af SDK'et.
 
 Begge tjenester er underlagt [Googles privatlivspolitik](https://policies.google.com/privacy) og [Firebases privatlivs- og sikkerhedsoplysninger](https://firebase.google.com/support/privacy).
 

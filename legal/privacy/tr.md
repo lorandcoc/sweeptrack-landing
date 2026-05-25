@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması
 
-Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 12 Mayıs 2026
+Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 25 Mayıs 2026
 
 İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
@@ -82,7 +82,7 @@ Aşağıdaki veriler gerçek zamanlı işlevsellik için üçüncü taraf API'le
 Etkinleştirildiğinde:
 
 - **Firebase Analytics**, kimlik bilgisi içermeyen parametrelerle sekiz toplu olay adını kaydeder: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Olay içerikleri **asla** GPS koordinatları, adresler, buluntu adları, fotoğraflar, ses kayıtları, kasa verileri veya kişiyi tanımlamaya yarayan başka herhangi bir bilgi içermez — yalnızca sayaçlar, süreler, mesafeler, buluntu türü (yalnızca kategori) ve özellik tanımlayıcıları.
-- **Firebase Crashlytics**, hataları teşhis etmemize yardımcı olmak için cihaz modeli, işletim sistemi sürümü ve uygulama sürümü ile birlikte çökme yığın izlerini yükler.
+- **Firebase Crashlytics**, hataları teşhis etmemize yardımcı olmak için cihaz modeli, işletim sistemi sürümü ve uygulama sürümü ile birlikte çökme yığın izlerini yükler. Herhangi bir çökme veya kritik olmayan hata Crashlytics'e iletilmeden önce, Uygulama **istisna mesajından koordinat şeklindeki alt dizeleri temizler** (örneğin `lat=`/`lon=` desenleri, üç veya daha fazla ondalık basamağa sahip işaretli ondalık sayılar), böylece yerel değişkenlerde tutulan GPS konumları hata raporlama yoluyla sızamaz. Yığın çerçeveleri (sınıf, yöntem, satır) gruplama için korunur; çalışma zamanı değerleri korunmaz. Süreç çapında bir yakalanmamış istisna işleyicisi, SDK tarafından otomatik olarak yakalanan kritik çökmelere de aynı temizliği uygular.
 
 Her iki hizmet de [Google Gizlilik Politikası'na](https://policies.google.com/privacy) ve [Firebase gizlilik ve güvenlik açıklamalarına](https://firebase.google.com/support/privacy) tabidir.
 

@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicação de rastreio GPS para deteção de metais
 
-Data de vigência: 12 de maio de 2026 · Última atualização: 12 de maio de 2026
+Data de vigência: 12 de maio de 2026 · Última atualização: 25 de maio de 2026
 
 Operado por: Coc Lorand Adrian P.F.A., operando como "Loriba"
 
@@ -82,7 +82,7 @@ Os seguintes dados são enviados para APIs de terceiros para funcionalidade em t
 Quando ativados:
 
 - **Firebase Analytics** regista oito nomes de eventos agregados com parâmetros não identificadores: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. O conteúdo dos eventos **nunca inclui** coordenadas GPS, endereços, nomes de achados, fotografias, gravações áudio, dados do cofre ou qualquer outra informação de identificação pessoal — apenas contagens, durações, distâncias, tipo de achado (apenas a categoria) e identificadores de funcionalidades.
-- **Firebase Crashlytics** carrega rastros de pilha de falhas juntamente com o modelo do dispositivo, a versão do sistema operativo e a versão da aplicação para nos ajudar a diagnosticar bugs.
+- **Firebase Crashlytics** carrega rastros de pilha de falhas juntamente com o modelo do dispositivo, a versão do sistema operativo e a versão da aplicação para nos ajudar a diagnosticar bugs. Antes que qualquer falha ou erro não fatal seja encaminhado para o Crashlytics, a Aplicação **remove da mensagem da exceção as substrings com forma de coordenadas** (por exemplo, padrões `lat=`/`lon=`, decimais com sinal contendo três ou mais casas decimais), para que as posições GPS armazenadas em variáveis locais não possam vazar através do relatório de erros. Os frames da pilha (classe, método, linha) são preservados para o agrupamento; os valores em tempo de execução não são. Um manipulador de exceções não capturadas a nível de processo aplica a mesma limpeza às falhas fatais capturadas automaticamente pelo SDK.
 
 Ambos os serviços estão sujeitos à [Política de Privacidade do Google](https://policies.google.com/privacy) e às [divulgações de privacidade e segurança do Firebase](https://firebase.google.com/support/privacy).
 

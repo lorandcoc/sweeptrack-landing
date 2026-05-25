@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicación de seguimiento GPS para detección de metales
 
-Fecha de entrada en vigor: 12 de mayo de 2026 · Última actualización: 12 de mayo de 2026
+Fecha de entrada en vigor: 12 de mayo de 2026 · Última actualización: 25 de mayo de 2026
 
 Operado por: Coc Lorand Adrian P.F.A., operando como "Loriba"
 
@@ -82,7 +82,7 @@ Los siguientes datos se envían a API de terceros para funcionalidad en tiempo r
 Cuando están activados:
 
 - **Firebase Analytics** registra ocho nombres de eventos agregados con parámetros no identificativos: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. El contenido de los eventos **nunca** incluye coordenadas GPS, direcciones, nombres de hallazgos, fotografías, grabaciones de audio, datos de la bóveda ni ninguna otra información de identificación personal — únicamente recuentos, duraciones, distancias, tipo de hallazgo (solo la categoría) e identificadores de funcionalidades.
-- **Firebase Crashlytics** sube trazas de pila de los fallos junto con el modelo del dispositivo, la versión del sistema operativo y la versión de la aplicación para ayudarnos a diagnosticar errores.
+- **Firebase Crashlytics** sube trazas de pila de los fallos junto con el modelo del dispositivo, la versión del sistema operativo y la versión de la aplicación para ayudarnos a diagnosticar errores. Antes de que cualquier fallo o error no fatal se envíe a Crashlytics, la Aplicación **elimina del mensaje de la excepción las subcadenas con forma de coordenadas** (por ejemplo, patrones `lat=`/`lon=`, decimales con signo de tres o más cifras decimales), para que las posiciones GPS retenidas en variables locales no puedan filtrarse a través del informe de errores. Los marcos de pila (clase, método, línea) se conservan para el agrupamiento; los valores en tiempo de ejecución no. Un manejador de excepciones no capturadas a nivel de proceso aplica el mismo filtrado a los fallos fatales capturados automáticamente por el SDK.
 
 Ambos servicios están sujetos a la [Política de Privacidad de Google](https://policies.google.com/privacy) y a las [divulgaciones de privacidad y seguridad de Firebase](https://firebase.google.com/support/privacy).
 

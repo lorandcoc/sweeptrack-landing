@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering
 
-Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 12. maj 2026
+Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 25. maj 2026
 
 Drives af: Coc Lorand Adrian P.F.A., der handler som "Loriba"
 
@@ -125,9 +125,11 @@ Appen foretager netværksanmodninger til følgende tredjepartstjenester kun til 
 - **NOAA** — Tidevandsudsigter (station-ID sendt, ingen personlige oplysninger)
 - **RevenueCat** — Abonnementsverifikation (anonym app-bruger-ID, ingen personlige oplysninger)
 
-### 6.4 Ingen analyse eller sporing (App)
+### 6.4 Diagnostisk telemetri — kun opt-in (App)
 
-Appen inkluderer **ingen** analyse-SDK'er, fejlrapporteringsværktøjer, annonceframeworks eller mekanismer til adfærdssporing. Vi indsamler, overfører eller sælger ikke nogen app-brugsdata.
+Appen inkluderer **ingen** annonceframeworks eller mekanismer til adfærdssporing og indsamler eller sælger ikke nogen app-brugsdata.
+
+Firebase Analytics- og Firebase Crashlytics-SDK'erne er til stede i Appen, men **deaktiveret som standard**. Begge forbliver inaktive, indtil du udtrykkeligt giver samtykke via samtykkeprompten ved første opstart eller i **Indstillinger → Privatliv → Diagnostik**. Kun da: Analytics rapporterer et lille sæt aggregerede hændelsesnavne (`session_started`, `session_ended`, `find_logged` osv.) med ikke-identificerende parametre; Crashlytics uploader stack-spor sammen med enhedsmodel, operativsystemets version og appens version. Fejlmeddelelser renses for koordinatformede delstrenge før upload, så GPS-positioner ikke kan lække via fejlrapporter. Du kan til enhver tid tilbagekalde samtykket. Debug-builds aktiverer aldrig Crashlytics. Fulde detaljer i Privatlivspolitikken, §3.3.
 
 Website-analyse (Vercel Analytics, Vercel Speed Insights) beskrives i §6.7.
 

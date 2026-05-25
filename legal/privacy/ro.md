@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale
 
-Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 12 mai 2026
+Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 25 mai 2026
 
 Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
@@ -82,7 +82,7 @@ Următoarele date sunt trimise către API-uri terțe pentru funcționalitate în
 Când sunt activate:
 
 - **Firebase Analytics** înregistrează opt nume de evenimente agregate cu parametri neidentificatori: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Conținutul evenimentelor **nu** include niciodată coordonate GPS, adrese, denumirile descoperirilor, fotografii, înregistrări audio, date din seif sau alte informații de identificare personală — doar contoare, durate, distanțe, tipul descoperirii (doar categoria) și identificatori de funcții.
-- **Firebase Crashlytics** încarcă urme de stivă ale erorilor împreună cu modelul dispozitivului, versiunea sistemului de operare și versiunea aplicației pentru a ne ajuta să diagnosticăm problemele.
+- **Firebase Crashlytics** încarcă urme de stivă ale erorilor împreună cu modelul dispozitivului, versiunea sistemului de operare și versiunea aplicației pentru a ne ajuta să diagnosticăm problemele. Înainte ca orice eroare critică sau non-fatală să fie trimisă către Crashlytics, Aplicația **elimină din mesajul excepției șirurile cu formă de coordonate** (de exemplu, modele `lat=`/`lon=`, numere zecimale cu semn având trei sau mai multe cifre fracționare), astfel încât pozițiile GPS reținute în variabile locale să nu poată scăpa prin raportarea erorilor. Cadrele stivei (clasa, metoda, linia) se păstrează pentru gruparea erorilor; valorile de la rulare nu. Un handler global de excepții necapturate aplică aceeași curățare și pentru erorile fatale capturate automat de SDK.
 
 Ambele servicii sunt supuse [Politicii de Confidențialitate Google](https://policies.google.com/privacy) și [dezvăluirilor Firebase privind confidențialitatea și securitatea](https://firebase.google.com/support/privacy).
 

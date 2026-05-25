@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicación de seguimiento GPS para detección de metales
 
-Fecha de entrada en vigor: 12 de mayo de 2026 · Última actualización: 12 de mayo de 2026
+Fecha de entrada en vigor: 12 de mayo de 2026 · Última actualización: 25 de mayo de 2026
 
 Operado por: Coc Lorand Adrian P.F.A., operando como "Loriba"
 
@@ -125,9 +125,11 @@ La Aplicación realiza solicitudes de red a los siguientes servicios de terceros
 - **NOAA** — Predicciones de mareas (ID de estación enviado, sin información personal)
 - **RevenueCat** — Verificación de suscripción (ID de usuario anónimo de la aplicación, sin información personal)
 
-### 6.4 Sin Analíticas ni Seguimiento (Aplicación)
+### 6.4 Telemetría de diagnóstico — solo opt-in (Aplicación)
 
-La Aplicación **no** incluye SDKs de analítica, herramientas de informes de errores, marcos publicitarios ni mecanismos de seguimiento del comportamiento. No recopilamos, transmitimos ni vendemos datos de uso de la Aplicación.
+La Aplicación **no** incluye marcos publicitarios ni mecanismos de seguimiento del comportamiento, y no recopila ni vende datos de uso de la Aplicación.
+
+Los SDKs de Firebase Analytics y Firebase Crashlytics están presentes en la Aplicación pero **desactivados por defecto**. Ambos permanecen inactivos hasta que usted opte explícitamente mediante la solicitud de consentimiento del primer arranque o desde **Ajustes → Privacidad → Diagnósticos**. Solo entonces: Analytics informa un conjunto reducido de nombres de eventos agregados (`session_started`, `session_ended`, `find_logged`, etc.) con parámetros no identificativos; Crashlytics sube trazas de pila junto con el modelo del dispositivo, la versión del sistema operativo y la versión de la aplicación. Los mensajes de error se depuran de subcadenas con forma de coordenadas antes del envío, de modo que las posiciones GPS no puedan filtrarse a través de los informes de errores. Puede retirar el consentimiento en cualquier momento. Las versiones de depuración nunca activan Crashlytics. Detalles completos en la Política de Privacidad, §3.3.
 
 La analítica del Sitio Web (Vercel Analytics, Vercel Speed Insights) se describe en §6.7.
 

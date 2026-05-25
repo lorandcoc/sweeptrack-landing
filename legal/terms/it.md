@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Applicazione di monitoraggio GPS per la ricerca di metalli
 
-Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 12 maggio 2026
+Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 25 maggio 2026
 
 Gestito da: Coc Lorand Adrian P.F.A., operante come "Loriba"
 
@@ -125,9 +125,11 @@ L'App effettua richieste di rete ai seguenti servizi di terze parti solo per sco
 - **NOAA** — Previsioni delle maree (ID stazione inviato, nessuna informazione personale)
 - **RevenueCat** — Verifica abbonamento (ID utente anonimo dell'app, nessuna informazione personale)
 
-### 6.4 Nessuna Analisi o Tracciamento (App)
+### 6.4 Telemetria di diagnostica — solo opt-in (App)
 
-L'App **non** include SDK di analisi, strumenti di segnalazione errori, framework pubblicitari o meccanismi di tracciamento comportamentale. Non raccogliamo, trasmettiamo o vendiamo dati di utilizzo dell'App.
+L'App **non** include framework pubblicitari o meccanismi di tracciamento comportamentale e non raccoglie o vende dati di utilizzo dell'App.
+
+Gli SDK Firebase Analytics e Firebase Crashlytics sono presenti nell'App ma **disattivati per impostazione predefinita**. Entrambi restano inattivi finché non optate esplicitamente tramite la richiesta di consenso al primo avvio o da **Impostazioni → Privacy → Diagnostica**. Solo allora: Analytics riporta un piccolo insieme di nomi di eventi aggregati (`session_started`, `session_ended`, `find_logged`, ecc.) con parametri non identificativi; Crashlytics carica le tracce di stack degli arresti anomali insieme al modello del dispositivo, alla versione del sistema operativo e alla versione dell'app. I messaggi di errore vengono ripuliti dalle sottostringhe con forma di coordinate prima dell'invio, in modo che le posizioni GPS non possano trapelare attraverso i rapporti di errore. Potete revocare il consenso in qualsiasi momento. Le build di debug non attivano mai Crashlytics. Dettagli completi nell'Informativa sulla Privacy, §3.3.
 
 Le analisi del Sito Web (Vercel Analytics, Vercel Speed Insights) sono descritte in §6.7.
 

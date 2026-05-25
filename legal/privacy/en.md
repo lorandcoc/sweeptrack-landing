@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS Tracking Application for Metal Detecting
 
-Effective Date: May 12, 2026 · Last Updated: May 12, 2026
+Effective Date: May 12, 2026 · Last Updated: May 25, 2026
 
 Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
 
@@ -81,8 +81,8 @@ The following data is sent to third-party APIs for real-time functionality and i
 
 When enabled:
 
-- **Firebase Analytics** logs eight aggregate event names with non-identifying parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Event payloads **never** include GPS coordinates, addresses, find names, photographs, audio recordings, vault data, or any personally identifying information — only counts, durations, distances, find types (category only), and feature identifiers.
-- **Firebase Crashlytics** uploads crash stack traces with device model, OS version, and app version to help us diagnose bugs.
+- **Firebase Analytics** logs eight aggregate event names with non-identifying parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Event payloads **never** include GPS coordinates, addresses, find names, photographs, audio recordings, vault data, or any personally identifying information — only counts, durations, distances, find types (category only), and feature identifiers. The `find_logged` event reports type as a coarse category (`valuable`, `find`, `trash`, `unsorted`) rather than the specific find type, so the aggregate dashboard cannot infer the distribution of valuables an individual user logs.
+- **Firebase Crashlytics** uploads crash stack traces with device model, OS version, and app version to help us diagnose bugs. Before any crash or non-fatal error is forwarded to Crashlytics, the App **scrubs coordinate-shaped substrings from the exception message** (e.g. `lat=`/`lon=` patterns, signed decimals with three or more fractional digits) so GPS positions cached in local variables cannot leak through error reporting. Stack frames (class, method, line) are preserved for grouping; runtime values are not. A process-wide uncaught-exception handler applies the same scrubbing to fatal crashes captured automatically by the SDK.
 
 Both services are subject to [Google's Privacy Policy](https://policies.google.com/privacy) and [Firebase Privacy and Security disclosures](https://firebase.google.com/support/privacy).
 

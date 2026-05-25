@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Application de suivi GPS pour la détection de métaux
 
-Date d'entrée en vigueur : 12 mai 2026 · Dernière mise à jour : 12 mai 2026
+Date d'entrée en vigueur : 12 mai 2026 · Dernière mise à jour : 25 mai 2026
 
 Exploité par : Coc Lorand Adrian P.F.A., exerçant sous le nom commercial « Loriba »
 
@@ -125,9 +125,11 @@ L'Application effectue des requêtes réseau aux services tiers suivants à des 
 - **NOAA** — Prédictions de marées (ID de station envoyé, aucune information personnelle)
 - **RevenueCat** — Vérification d'abonnement (ID utilisateur d'application anonyme, aucune information personnelle)
 
-### 6.4 Pas d'analyses ni de suivi (Application)
+### 6.4 Télémétrie de diagnostic — opt-in uniquement (Application)
 
-L'Application n'inclut **pas** de SDK d'analyses, d'outils de rapports d'erreurs, de cadres publicitaires ou de mécanismes de suivi comportemental. Nous ne collectons, ne transmettons ni ne vendons aucune donnée d'utilisation de l'Application.
+L'Application n'inclut **pas** de cadres publicitaires ni de mécanismes de suivi comportemental, et ne collecte ni ne vend de données d'utilisation de l'Application.
+
+Les SDK Firebase Analytics et Firebase Crashlytics sont présents dans l'Application mais **désactivés par défaut**. Tous deux restent inactifs tant que vous n'avez pas explicitement opté via la demande de consentement au premier lancement ou depuis **Paramètres → Confidentialité → Diagnostics**. Seulement alors : Analytics rapporte un petit ensemble de noms d'événements agrégés (`session_started`, `session_ended`, `find_logged`, etc.) avec des paramètres non identifiants ; Crashlytics téléverse les traces de pile des plantages avec le modèle de l'appareil, la version du système d'exploitation et la version de l'application. Les messages d'erreur sont nettoyés des sous-chaînes ayant la forme de coordonnées avant l'envoi, afin que les positions GPS ne puissent pas fuir via les rapports d'erreurs. Vous pouvez retirer votre consentement à tout moment. Les versions de débogage n'activent jamais Crashlytics. Détails complets dans la Politique de Confidentialité, §3.3.
 
 Les analyses du Site Web (Vercel Analytics, Vercel Speed Insights) sont décrites au §6.7.
 

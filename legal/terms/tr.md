@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması
 
-Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 12 Mayıs 2026
+Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 25 Mayıs 2026
 
 İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
@@ -125,9 +125,11 @@ Uygulama, yalnızca işlevsellik amaçları için aşağıdaki üçüncü taraf 
 - **NOAA** — Gelgit tahminleri (istasyon kimliği gönderilir, kişisel bilgi yok)
 - **RevenueCat** — Abonelik doğrulaması (anonim uygulama kullanıcı kimliği, kişisel bilgi yok)
 
-### 6.4 Analitik veya İzleme Yok (Uygulama)
+### 6.4 Tanılama Telemetrisi — yalnızca opt-in (Uygulama)
 
-Uygulama, analitik SDK'ları, çökme raporlama araçları, reklam çerçeveleri veya davranış izleme mekanizmalarını **içermez**. Hiçbir Uygulama kullanım verisini toplamıyoruz, iletmiyoruz veya satmıyoruz.
+Uygulama, reklam çerçevelerini veya davranış izleme mekanizmalarını **içermez** ve Uygulama kullanım verisi toplamaz veya satmaz.
+
+Firebase Analytics ve Firebase Crashlytics SDK'ları Uygulamada bulunur ancak **varsayılan olarak devre dışıdır**. İlk açılıştaki onay istemi veya **Ayarlar → Gizlilik → Tanılama** menüsü aracılığıyla açıkça onay verene kadar ikisi de pasif kalır. Yalnızca o zaman: Analytics, kimlik bilgisi içermeyen parametrelerle küçük bir toplu olay adı kümesi (`session_started`, `session_ended`, `find_logged` vb.) raporlar; Crashlytics ise çökme yığın izlerini cihaz modeli, işletim sistemi sürümü ve uygulama sürümü ile birlikte yükler. Hata mesajları yüklenmeden önce koordinat şeklindeki alt dizelerden temizlenir, böylece GPS konumları hata raporları yoluyla sızamaz. Onayınızı istediğiniz zaman geri çekebilirsiniz. Hata ayıklama derlemeleri Crashlytics'i asla etkinleştirmez. Tüm ayrıntılar Gizlilik Politikası §3.3'tedir.
 
 Web Sitesi analitiği (Vercel Analytics, Vercel Speed Insights) §6.7'de açıklanmıştır.
 

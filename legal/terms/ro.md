@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale
 
-Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 12 mai 2026
+Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 25 mai 2026
 
 Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
@@ -125,9 +125,11 @@ Aplicația efectuează cereri de rețea către următoarele servicii terțe numa
 - **NOAA** — Predicții ale mareelor (ID-ul stației trimis, nicio informație personală)
 - **RevenueCat** — Verificarea abonamentului (ID utilizator anonim al aplicației, nicio informație personală)
 
-### 6.4 Fără Analize sau Monitorizare (Aplicație)
+### 6.4 Telemetrie de diagnostic — doar opt-in (Aplicație)
 
-Aplicația **nu** include SDK-uri de analiză, instrumente de raportare a erorilor, cadre publicitare sau mecanisme de monitorizare a comportamentului. Nu colectăm, nu transmitem și nu vindem date de utilizare ale Aplicației.
+Aplicația **nu** include cadre publicitare sau mecanisme de monitorizare a comportamentului și nu colectează sau vinde date de utilizare ale Aplicației.
+
+SDK-urile Firebase Analytics și Firebase Crashlytics sunt prezente în Aplicație, dar sunt **dezactivate implicit**. Ambele rămân inactive până când optați explicit prin solicitarea de consimțământ de la prima rulare sau din **Setări → Confidențialitate → Diagnostice**. Doar atunci când optați: Analytics raportează un set restrâns de nume de evenimente agregate (`session_started`, `session_ended`, `find_logged` etc.) cu parametri neidentificatori; Crashlytics încarcă urme de stivă ale erorilor împreună cu modelul dispozitivului, versiunea sistemului de operare și versiunea aplicației. Mesajele erorilor sunt curățate de șirurile cu forma de coordonate înainte de încărcare, astfel încât pozițiile GPS să nu poată scăpa prin raportarea erorilor. Vă puteți retrage consimțământul oricând. Versiunile de dezvoltare nu activează niciodată Crashlytics. Detalii complete în Politica de Confidențialitate, §3.3.
 
 Analizele Website-ului (Vercel Analytics, Vercel Speed Insights) sunt descrise în §6.7.
 

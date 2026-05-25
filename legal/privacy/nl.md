@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 12 mei 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 25 mei 2026
 
 Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
 
@@ -82,7 +82,7 @@ De volgende gegevens worden naar API's van derden verzonden voor realtime functi
 Wanneer ingeschakeld:
 
 - **Firebase Analytics** registreert acht geaggregeerde gebeurtenisnamen met niet-identificerende parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. De inhoud van de gebeurtenissen bevat **nooit** GPS-coördinaten, adressen, vondstnamen, foto's, audio-opnames, kluisgegevens of andere persoonlijk identificeerbare informatie — uitsluitend tellingen, tijdsduren, afstanden, vondsttype (alleen de categorie) en functie-identifiers.
-- **Firebase Crashlytics** uploadt stack traces van crashes samen met het apparaatmodel, de besturingssysteemversie en de app-versie om ons te helpen bugs te diagnosticeren.
+- **Firebase Crashlytics** uploadt stack traces van crashes samen met het apparaatmodel, de besturingssysteemversie en de app-versie om ons te helpen bugs te diagnosticeren. Voordat een crash of niet-fatale fout naar Crashlytics wordt doorgestuurd, **verwijdert de App uit het uitzonderingsbericht alle subtekenreeksen met coördinaatvorm** (bijvoorbeeld `lat=`/`lon=`-patronen, getekende decimale getallen met drie of meer cijfers achter de komma), zodat GPS-posities die in lokale variabelen zijn opgeslagen niet via de foutrapportage kunnen weglekken. Stackframes (klasse, methode, regel) blijven behouden voor groepering; runtime-waarden niet. Een procesbrede uncaught-exception-handler past dezelfde scrub-bewerking toe op fatale crashes die de SDK automatisch vastlegt.
 
 Beide diensten zijn onderworpen aan het [Privacybeleid van Google](https://policies.google.com/privacy) en de [privacy- en veiligheidsverklaringen van Firebase](https://firebase.google.com/support/privacy).
 

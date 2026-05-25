@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS nyomkövető alkalmazás fémkeresőzéshez
 
-Hatálybalépés napja: 2026. május 12. · Utolsó frissítés: 2026. május 12.
+Hatálybalépés napja: 2026. május 12. · Utolsó frissítés: 2026. május 25.
 
 Üzemeltető: Coc Lorand Adrian P.F.A., kereskedelmi neve: "Loriba"
 
@@ -125,9 +125,11 @@ Az Alkalmazás hálózati kéréseket küld a következő harmadik féltől szá
 - **NOAA** — Árapály-előrejelzések (állomás-azonosító küldve, nincs személyes információ)
 - **RevenueCat** — Előfizetés-ellenőrzés (anonim alkalmazás-felhasználó azonosító, nincs személyes információ)
 
-### 6.4 Nincs elemzés vagy nyomon követés (Alkalmazás)
+### 6.4 Diagnosztikai telemetria — csak hozzájárulással (Alkalmazás)
 
-Az Alkalmazás **nem** tartalmaz analitikai SDK-kat, hibajelentő eszközöket, reklámkeretrendszereket vagy viselkedéskövető mechanizmusokat. Nem gyűjtjük, nem továbbítjuk és nem adjuk el az Alkalmazás használati adatait.
+Az Alkalmazás **nem** tartalmaz reklámkeretrendszereket vagy viselkedéskövető mechanizmusokat, és nem gyűjti és nem adja el az Alkalmazás használati adatait.
+
+A Firebase Analytics és Firebase Crashlytics SDK-k jelen vannak az Alkalmazásban, de **alapértelmezetten letiltva** vannak. Mindkettő inaktív marad mindaddig, amíg Ön kifejezetten hozzá nem járul az első indításkor megjelenő hozzájárulási kérdés vagy a **Beállítások → Adatvédelem → Diagnosztika** menüpont segítségével. Csak akkor: az Analytics nem-azonosító paraméterekkel egy kis halmaz aggregált eseménynevet (`session_started`, `session_ended`, `find_logged` stb.) jelent; a Crashlytics az összeomlási stack trace-eket az eszköz modelljével, az operációs rendszer verziójával és az alkalmazás verziójával együtt tölti fel. A hibaüzeneteket feltöltés előtt megtisztítjuk a koordináta-formájú részstringektől, így a GPS-pozíciók nem szivároghatnak ki a hibajelentéseken keresztül. A hozzájárulását bármikor visszavonhatja. A hibakeresési buildek soha nem aktiválják a Crashlytics-et. Teljes részletek az Adatvédelmi szabályzat §3.3 pontjában.
 
 A Weboldal-elemzést (Vercel Analytics, Vercel Speed Insights) a §6.7 ismerteti.
 

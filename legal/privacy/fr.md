@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Application de suivi GPS pour la détection de métaux
 
-Date d'entrée en vigueur : 12 mai 2026 · Dernière mise à jour : 12 mai 2026
+Date d'entrée en vigueur : 12 mai 2026 · Dernière mise à jour : 25 mai 2026
 
 Exploité par : Coc Lorand Adrian P.F.A., exerçant sous le nom commercial « Loriba »
 
@@ -82,7 +82,7 @@ Les données suivantes sont envoyées à des API tierces pour la fonctionnalité
 Lorsqu'ils sont activés :
 
 - **Firebase Analytics** enregistre huit noms d'événements agrégés avec des paramètres non identifiants : `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Le contenu des événements **ne contient jamais** de coordonnées GPS, d'adresses, de noms de trouvailles, de photos, d'enregistrements audio, de données du coffre-fort, ni aucune autre information identifiante — uniquement des compteurs, durées, distances, types de trouvailles (la catégorie seule) et identifiants de fonctionnalités.
-- **Firebase Crashlytics** téléverse les traces de pile des plantages avec le modèle de l'appareil, la version du système d'exploitation et la version de l'application pour nous aider à diagnostiquer les bugs.
+- **Firebase Crashlytics** téléverse les traces de pile des plantages avec le modèle de l'appareil, la version du système d'exploitation et la version de l'application pour nous aider à diagnostiquer les bugs. Avant qu'un plantage ou une erreur non fatale ne soit transmis à Crashlytics, l'Application **supprime du message d'exception les sous-chaînes ayant la forme de coordonnées** (par exemple, motifs `lat=`/`lon=`, décimales signées comportant trois chiffres décimaux ou plus), afin que les positions GPS mises en cache dans des variables locales ne puissent pas fuir via le rapport d'erreurs. Les cadres de pile (classe, méthode, ligne) sont conservés pour le regroupement ; les valeurs d'exécution ne le sont pas. Un gestionnaire d'exceptions non capturées au niveau du processus applique le même filtrage aux plantages fatals capturés automatiquement par le SDK.
 
 Les deux services sont soumis à la [Politique de Confidentialité de Google](https://policies.google.com/privacy) et aux [informations de confidentialité et de sécurité de Firebase](https://firebase.google.com/support/privacy).
 

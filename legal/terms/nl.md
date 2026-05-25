@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 12 mei 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 25 mei 2026
 
 Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
 
@@ -125,9 +125,11 @@ De App doet netwerkverzoeken aan de volgende diensten van derden, uitsluitend vo
 - **NOAA** — Getijvoorspellingen (station-ID verzonden, geen persoonlijke informatie)
 - **RevenueCat** — Abonnementsverificatie (anonieme app-gebruikers-ID, geen persoonlijke informatie)
 
-### 6.4 Geen analytics of tracking (App)
+### 6.4 Diagnostische telemetrie — alleen opt-in (App)
 
-De App bevat **geen** analytics-SDK's, crashrapportagehulpmiddelen, advertentieframeworks of mechanismen voor gedragstracking. Wij verzamelen, verzenden of verkopen geen App-gebruiksgegevens.
+De App bevat **geen** advertentieframeworks of mechanismen voor gedragstracking, en verzamelt of verkoopt geen App-gebruiksgegevens.
+
+De Firebase Analytics- en Firebase Crashlytics-SDK's zijn aanwezig in de App maar **standaard uitgeschakeld**. Beide blijven inactief tot u uitdrukkelijk toestemming geeft via het verzoek bij de eerste start of in **Instellingen → Privacy → Diagnostiek**. Alleen dan: Analytics rapporteert een kleine set geaggregeerde gebeurtenisnamen (`session_started`, `session_ended`, `find_logged`, enz.) met niet-identificerende parameters; Crashlytics uploadt stack traces samen met het apparaatmodel, de besturingssysteemversie en de app-versie. Foutmeldingen worden vóór het uploaden ontdaan van subtekenreeksen met coördinaatvorm, zodat GPS-posities niet via foutrapporten kunnen weglekken. U kunt uw toestemming op elk moment intrekken. Debug-builds activeren Crashlytics nooit. Volledige details in het Privacybeleid, §3.3.
 
 Website-analytics (Vercel Analytics, Vercel Speed Insights) worden beschreven in §6.7.
 

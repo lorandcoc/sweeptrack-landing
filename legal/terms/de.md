@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-Tracking-Anwendung für die Metalldetektion
 
-Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 12. Mai 2026
+Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 25. Mai 2026
 
 Betrieben von: Coc Lorand Adrian P.F.A., firmierend unter „Loriba"
 
@@ -125,9 +125,11 @@ Die App stellt Netzwerkanforderungen an die folgenden Drittanbieterdienste nur z
 - **NOAA** — Gezeitenvorhersagen (Stations-ID gesendet, keine persönlichen Informationen)
 - **RevenueCat** — Abonnementverifizierung (anonyme App-Benutzer-ID, keine persönlichen Informationen)
 
-### 6.4 Keine Analyse oder Tracking (App)
+### 6.4 Diagnose-Telemetrie — nur Opt-in (App)
 
-Die App enthält **keine** Analyse-SDKs, Absturzberichts-Tools, Werberahmen oder Verhaltens-Tracking-Mechanismen. Wir sammeln, übertragen oder verkaufen keine App-Nutzungsdaten.
+Die App enthält **keine** Werberahmen oder Verhaltens-Tracking-Mechanismen und sammelt oder verkauft keine App-Nutzungsdaten.
+
+Firebase Analytics und Firebase Crashlytics SDKs sind in der App vorhanden, aber **standardmäßig deaktiviert**. Beide bleiben inaktiv, bis Sie ausdrücklich über die Einwilligungsabfrage beim ersten Start oder unter **Einstellungen → Datenschutz → Diagnose** zustimmen. Nur dann sendet Analytics eine kleine Reihe aggregierter Ereignisnamen (`session_started`, `session_ended`, `find_logged` usw.) mit nicht-identifizierenden Parametern; Crashlytics lädt Absturz-Stacktraces zusammen mit Gerätemodell, Betriebssystemversion und App-Version hoch. Absturzmeldungen werden vor dem Upload von koordinatenförmigen Teilzeichenfolgen bereinigt, sodass GPS-Positionen nicht über Fehlerberichte durchsickern können. Sie können Ihre Einwilligung jederzeit widerrufen. Debug-Builds aktivieren Crashlytics niemals. Vollständige Details in der Datenschutzerklärung, §3.3.
 
 Website-Analyse (Vercel Analytics, Vercel Speed Insights) ist in §6.7 beschrieben.
 

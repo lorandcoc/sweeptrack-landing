@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — aplikacja do śledzenia GPS dla pasjonatów poszukiwania metali
 
-Data wejścia w życie: 12 maja 2026 r. · Ostatnia aktualizacja: 12 maja 2026 r.
+Data wejścia w życie: 12 maja 2026 r. · Ostatnia aktualizacja: 25 maja 2026 r.
 
 Operator: Coc Lorand Adrian P.F.A., działający pod nazwą handlową „Loriba"
 
@@ -82,7 +82,7 @@ Następujące dane są wysyłane do interfejsów API stron trzecich w celu zapew
 Gdy są włączone:
 
 - **Firebase Analytics** rejestruje osiem zagregowanych nazw zdarzeń z nieidentyfikującymi parametrami: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Zawartość zdarzeń **nigdy nie obejmuje** współrzędnych GPS, adresów, nazw znalezisk, zdjęć, nagrań audio, danych sejfu ani żadnych innych informacji umożliwiających identyfikację osób — wyłącznie liczniki, czasy trwania, odległości, typ znaleziska (sama kategoria) oraz identyfikatory funkcji.
-- **Firebase Crashlytics** przesyła ślady stosu awarii wraz z modelem urządzenia, wersją systemu operacyjnego i wersją aplikacji, aby pomóc nam diagnozować błędy.
+- **Firebase Crashlytics** przesyła ślady stosu awarii wraz z modelem urządzenia, wersją systemu operacyjnego i wersją aplikacji, aby pomóc nam diagnozować błędy. Zanim jakakolwiek awaria lub błąd niekrytyczny zostanie przesłany do Crashlytics, Aplikacja **usuwa z komunikatu wyjątku podciągi w kształcie współrzędnych** (np. wzorce `lat=`/`lon=`, liczby dziesiętne ze znakiem z trzema lub większą liczbą cyfr po przecinku), tak aby pozycje GPS przechowywane w zmiennych lokalnych nie mogły przeciec przez raportowanie błędów. Ramki stosu (klasa, metoda, linia) są zachowywane do grupowania; wartości czasu wykonania nie. Procesowy handler nieprzechwyconych wyjątków stosuje to samo czyszczenie do krytycznych awarii rejestrowanych automatycznie przez SDK.
 
 Obie usługi podlegają [Polityce Prywatności Google](https://policies.google.com/privacy) oraz [informacjom o prywatności i bezpieczeństwie Firebase](https://firebase.google.com/support/privacy).
 

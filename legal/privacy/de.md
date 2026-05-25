@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-Tracking-Anwendung für die Metalldetektion
 
-Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 12. Mai 2026
+Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 25. Mai 2026
 
 Betrieben von: Coc Lorand Adrian P.F.A., firmierend unter „Loriba"
 
@@ -82,7 +82,7 @@ Die folgenden Daten werden zur Echtzeit-Funktionalität an Drittanbieter-APIs ge
 Wenn aktiviert:
 
 * **Firebase Analytics** protokolliert acht aggregierte Ereignisnamen mit nicht-identifizierenden Parametern: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Die Ereignis-Nutzdaten enthalten **niemals** GPS-Koordinaten, Adressen, Fundnamen, Fotos, Audioaufnahmen, Tresordaten oder andere personenbezogene Informationen — ausschließlich Zähler, Dauern, Entfernungen, Fundtypen (nur die Kategorie) und Funktions-Identifikatoren.
-* **Firebase Crashlytics** lädt Absturz-Stacktraces zusammen mit Gerätemodell, Betriebssystemversion und App-Version hoch, damit wir Fehler diagnostizieren können.
+* **Firebase Crashlytics** lädt Absturz-Stacktraces zusammen mit Gerätemodell, Betriebssystemversion und App-Version hoch, damit wir Fehler diagnostizieren können. Bevor ein Absturz oder ein nicht-fataler Fehler an Crashlytics weitergeleitet wird, **bereinigt die App koordinatenförmige Teilzeichenfolgen aus der Ausnahme-Nachricht** (z. B. `lat=`/`lon=`-Muster, vorzeichenbehaftete Dezimalzahlen mit drei oder mehr Nachkommastellen), damit GPS-Positionen, die in lokalen Variablen zwischengespeichert sind, nicht über die Fehlerberichterstattung durchsickern können. Stack-Frames (Klasse, Methode, Zeile) bleiben zur Gruppierung erhalten, Laufzeitwerte nicht. Ein prozessweiter UncaughtExceptionHandler wendet dieselbe Bereinigung auf fatale Abstürze an, die das SDK automatisch erfasst.
 
 Beide Dienste unterliegen der [Google-Datenschutzerklärung](https://policies.google.com/privacy) und den [Firebase-Datenschutz- und Sicherheitshinweisen](https://firebase.google.com/support/privacy).
 
