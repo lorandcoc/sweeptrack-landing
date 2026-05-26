@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Applicazione di monitoraggio GPS per la ricerca di metalli
 
-Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 25 maggio 2026
+Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 26 maggio 2026
 
 Gestito da: Coc Lorand Adrian P.F.A., operante come "Loriba"
 
@@ -228,7 +228,7 @@ Indipendentemente dalla vostra posizione, avete il pieno controllo sui vostri da
 
 ## 11. Privacy dei minori
 
-Né l'App né il Sito Web sono diretti ai minori di 16 anni. Non raccogliamo consapevolmente informazioni personali da minori di 16 anni. Se ritenete che un minore abbia utilizzato l'App o il Sito Web, potete eliminare i suoi dati cancellando i dati dell'App, disinstallando o cancellando l'iscrizione dalla lista d'attesa.
+Né l'App né il Sito Web sono diretti ai minori di 18 anni. L'utente previsto dell'App è un detectorista adulto; molte funzioni (caveau dei permessi, accordi con i proprietari terrieri, firme digitali, abbonamenti a pagamento) richiedono lo status legale di adulto nella maggior parte delle giurisdizioni. Non raccogliamo consapevolmente informazioni personali da minori di 18 anni. Se ritenete che un minore abbia utilizzato l'App o il Sito Web, potete eliminare i suoi dati cancellando i dati dell'App, disinstallando o cancellando l'iscrizione dalla lista d'attesa.
 
 ## 12. Autorizzazioni spiegate (App)
 

@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması
 
-Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 25 Mayıs 2026
+Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 26 Mayıs 2026
 
 İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
@@ -228,7 +228,7 @@ Konumunuzdan bağımsız olarak, verileriniz üzerinde tam kontrole sahipsiniz. 
 
 ## 11. Çocukların gizliliği
 
-Ne Uygulama ne de Web Sitesi 16 yaşın altındaki çocuklara yöneliktir. 16 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamayız. Bir çocuğun Uygulamayı veya Web Sitesini kullandığını düşünüyorsanız, Uygulama verilerini temizleyerek, kaldırarak veya bekleme listesi aboneliğini iptal ederek verilerini silebilirsiniz.
+Ne Uygulama ne de Web Sitesi 18 yaşın altındaki çocuklara yöneliktir. Uygulamanın hedef kullanıcısı yetişkin bir define arayıcısıdır; birçok özellik (izin kasası, arazi sahibi sözleşmeleri, dijital imzalar, ücretli abonelikler) çoğu yetki alanında yetişkin yasal statüsü gerektirir. 18 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamayız. Bir çocuğun Uygulamayı veya Web Sitesini kullandığını düşünüyorsanız, Uygulama verilerini temizleyerek, kaldırarak veya bekleme listesi aboneliğini iptal ederek verilerini silebilirsiniz.
 
 ## 12. İzinler açıklaması (Uygulama)
 

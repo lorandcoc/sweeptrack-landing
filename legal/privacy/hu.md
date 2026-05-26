@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS nyomkövető alkalmazás fémkeresőzéshez
 
-Hatálybalépés napja: 2026. május 12. · Utolsó frissítés: 2026. május 25.
+Hatálybalépés napja: 2026. május 12. · Utolsó frissítés: 2026. május 26.
 
 Üzemeltető: Coc Lorand Adrian P.F.A., kereskedelmi neve: "Loriba"
 
@@ -228,7 +228,7 @@ Tartózkodási helyétől függetlenül teljes körű ellenőrzéssel rendelkezi
 
 ## 11. Gyermekek adatvédelme
 
-Sem az Alkalmazás, sem a Weboldal nem 16 év alatti gyermekek számára készült. Tudatosan nem gyűjtünk személyes adatokat 16 év alatti gyermekektől. Ha úgy gondolja, hogy egy gyermek használta az Alkalmazást vagy a Weboldalt, törölheti annak adatait az Alkalmazás adatainak törlésével, eltávolításával vagy a várólistáról való leiratkozással.
+Sem az Alkalmazás, sem a Weboldal nem 18 év alatti gyermekek számára készült. Az Alkalmazás célzott felhasználója egy felnőtt fémkeresőző; számos funkció (engedély-széf, földtulajdonosi megállapodások, digitális aláírások, fizetős előfizetések) a legtöbb joghatóságban felnőtt jogi státuszt igényel. Tudatosan nem gyűjtünk személyes adatokat 18 év alatti gyermekektől. Ha úgy gondolja, hogy egy gyermek használta az Alkalmazást vagy a Weboldalt, törölheti annak adatait az Alkalmazás adatainak törlésével, eltávolításával vagy a várólistáról való leiratkozással.
 
 ## 12. Engedélyek magyarázata (Alkalmazás)
 

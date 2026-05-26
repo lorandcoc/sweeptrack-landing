@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS Tracking Application for Metal Detecting
 
-Effective Date: May 12, 2026 · Last Updated: May 25, 2026
+Effective Date: May 12, 2026 · Last Updated: May 26, 2026
 
 Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
 
@@ -228,7 +228,7 @@ Regardless of your location, you have full control over your data. Where local l
 
 ## 11. Children's Privacy
 
-Neither the App nor the Website is directed at children under 16. We do not knowingly collect personal information from children under 16. If you believe a child has used the App or Website, you can delete their data by clearing App data, uninstalling, or unsubscribing from the waitlist.
+Neither the App nor the Website is directed at children under 18. The App's intended user is an adult metal detectorist; many features (permission-vault permits, landowner agreements, digital signatures, paid subscriptions) require legal adult status in most jurisdictions. We do not knowingly collect personal information from children under 18. If you believe a child has used the App or Website, you can delete their data by clearing App data, uninstalling, or unsubscribing from the waitlist.
 
 ## 12. Permissions Explained (App)
 

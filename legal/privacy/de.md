@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-Tracking-Anwendung für die Metalldetektion
 
-Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 25. Mai 2026
+Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 26. Mai 2026
 
 Betrieben von: Coc Lorand Adrian P.F.A., firmierend unter „Loriba"
 
@@ -228,7 +228,7 @@ Unabhängig von Ihrem Standort haben Sie die volle Kontrolle über Ihre Daten. W
 
 ## 11. Datenschutz von Kindern
 
-Weder die App noch die Website richten sich an Kinder unter 16 Jahren. Wir sammeln wissentlich keine personenbezogenen Daten von Kindern unter 16 Jahren. Wenn Sie glauben, dass ein Kind die App oder Website verwendet hat, können Sie dessen Daten löschen, indem Sie App-Daten löschen, die App deinstallieren oder sich von der Warteliste abmelden.
+Weder die App noch die Website richten sich an Kinder unter 18 Jahren. Der vorgesehene Nutzer der App ist ein erwachsener Sondengänger; viele Funktionen (Genehmigungstresor, Vereinbarungen mit Grundbesitzern, digitale Unterschriften, kostenpflichtige Abonnements) setzen in den meisten Rechtsordnungen den volljährigen rechtlichen Status voraus. Wir sammeln wissentlich keine personenbezogenen Daten von Kindern unter 18 Jahren. Wenn Sie glauben, dass ein Kind die App oder Website verwendet hat, können Sie dessen Daten löschen, indem Sie App-Daten löschen, die App deinstallieren oder sich von der Warteliste abmelden.
 
 ## 12. Berechtigungen erläutert (App)
 

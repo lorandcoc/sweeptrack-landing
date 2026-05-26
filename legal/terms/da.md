@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering
 
-Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 25. maj 2026
+Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 26. maj 2026
 
 Drives af: Coc Lorand Adrian P.F.A., der handler som "Loriba"
 
@@ -40,7 +40,7 @@ Websitet sweeptrack.pro leverer information om SweepTrack Pro, en venteliste fø
 
 ## 3. Berettigelse
 
-Du skal være mindst 16 år for at bruge Appen eller Websitet. Hvis du er under 18 år, erklærer du, at din forælder eller værge har gennemgået og accepteret disse Vilkår på dine vegne.
+Du skal være mindst 18 år for at bruge Appen eller Websitet. Appen er designet til voksne detektorister; mange funktioner (tilladelsesboks, aftaler med grundejere, digitale underskrifter, betalte abonnementer) kræver i de fleste jurisdiktioner voksen retsstatus.
 
 Ved at bruge Appen eller Websitet erklærer og garanterer du, at du har den juridiske kapacitet til at indgå en bindende aftale i din jurisdiktion.
 
@@ -139,7 +139,7 @@ Du kan slette dine app-data til enhver tid ved at slette individuelle elementer 
 
 ### 6.6 Børns privatliv
 
-Vi indsamler ikke bevidst personlige oplysninger fra børn under 16 år. Hvis du tror, at et barn har givet os personlige data, bedes du kontakte os.
+Vi indsamler ikke bevidst personlige oplysninger fra børn under 18 år. Hvis du tror, at et barn har givet os personlige data, bedes du kontakte os.
 
 ### 6.7 Website og venteliste
 

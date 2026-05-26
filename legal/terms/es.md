@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicación de seguimiento GPS para detección de metales
 
-Fecha de entrada en vigor: 12 de mayo de 2026 · Última actualización: 25 de mayo de 2026
+Fecha de entrada en vigor: 12 de mayo de 2026 · Última actualización: 26 de mayo de 2026
 
 Operado por: Coc Lorand Adrian P.F.A., operando como "Loriba"
 
@@ -40,7 +40,7 @@ El Sitio Web sweeptrack.pro proporciona información sobre SweepTrack Pro, una l
 
 ## 3. Elegibilidad
 
-Debe tener al menos 16 años para usar la Aplicación o el Sitio Web. Si es menor de 18 años, declara que su padre o tutor legal ha revisado y aceptado estos Términos en su nombre.
+Debe tener al menos 18 años para usar la Aplicación o el Sitio Web. La Aplicación está diseñada para detectoristas adultos; muchas funciones (caja fuerte de permisos, acuerdos con propietarios, firmas digitales, suscripciones de pago) requieren el estatus legal de adulto en la mayoría de las jurisdicciones.
 
 Al usar la Aplicación o el Sitio Web, usted declara y garantiza que tiene la capacidad legal para celebrar un acuerdo vinculante en su jurisdicción.
 
@@ -139,7 +139,7 @@ Puede eliminar los datos de su Aplicación en cualquier momento eliminando eleme
 
 ### 6.6 Privacidad de los Niños
 
-No recopilamos a sabiendas información personal de niños menores de 16 años. Si cree que un niño nos ha proporcionado datos personales, por favor contáctenos.
+No recopilamos a sabiendas información personal de niños menores de 18 años. Si cree que un niño nos ha proporcionado datos personales, por favor contáctenos.
 
 ### 6.7 Sitio Web y Lista de Espera
 

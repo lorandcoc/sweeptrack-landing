@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 25 mei 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 26 mei 2026
 
 Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
 
@@ -40,7 +40,7 @@ De Website sweeptrack.pro biedt informatie over SweepTrack Pro, een pre-launch w
 
 ## 3. Geschiktheid
 
-U moet minstens 16 jaar oud zijn om de App of de Website te gebruiken. Als u jonger bent dan 18 jaar, verklaart u dat uw ouder of wettelijke voogd deze Voorwaarden namens u heeft beoordeeld en geaccepteerd.
+U moet minstens 18 jaar oud zijn om de App of de Website te gebruiken. De App is ontworpen voor volwassen detectoristen; veel functies (vergunningen-kluis, overeenkomsten met grondeigenaren, digitale handtekeningen, betaalde abonnementen) vereisen in de meeste rechtsgebieden de wettelijke volwassen status.
 
 Door de App of Website te gebruiken, verklaart en garandeert u dat u de juridische bevoegdheid heeft om een bindende overeenkomst in uw rechtsgebied aan te gaan.
 
@@ -139,7 +139,7 @@ U kunt uw App-gegevens op elk gewenst moment verwijderen door afzonderlijke item
 
 ### 6.6 Privacy van kinderen
 
-Wij verzamelen niet willens en wetens persoonlijke informatie van kinderen onder de 16 jaar. Als u denkt dat een kind ons persoonlijke gegevens heeft verstrekt, neem dan contact met ons op.
+Wij verzamelen niet willens en wetens persoonlijke informatie van kinderen onder de 18 jaar. Als u denkt dat een kind ons persoonlijke gegevens heeft verstrekt, neem dan contact met ons op.
 
 ### 6.7 Website en wachtlijst
 

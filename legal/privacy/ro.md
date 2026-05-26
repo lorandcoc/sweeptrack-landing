@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale
 
-Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 25 mai 2026
+Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 26 mai 2026
 
 Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
@@ -228,7 +228,7 @@ Indiferent de locația dumneavoastră, aveți control deplin asupra datelor dumn
 
 ## 11. Confidențialitatea copiilor
 
-Nici Aplicația, nici Website-ul nu sunt adresate copiilor sub 16 ani. Nu colectăm cu bună știință informații personale de la copii sub 16 ani. Dacă credeți că un copil a folosit Aplicația sau Website-ul, puteți șterge datele acestuia prin ștergerea datelor Aplicației, dezinstalare sau dezabonare de la lista de așteptare.
+Nici Aplicația, nici Website-ul nu sunt adresate copiilor sub 18 ani. Utilizatorul vizat al Aplicației este un detectorist adult; multe funcții (permise în seif, acorduri cu proprietarii de teren, semnături digitale, abonamente plătite) necesită statutul legal de adult în majoritatea jurisdicțiilor. Nu colectăm cu bună știință informații personale de la copii sub 18 ani. Dacă credeți că un copil a folosit Aplicația sau Website-ul, puteți șterge datele acestuia prin ștergerea datelor Aplicației, dezinstalare sau dezabonare de la lista de așteptare.
 
 ## 12. Permisiuni explicate (Aplicație)
 

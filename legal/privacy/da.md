@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering
 
-Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 25. maj 2026
+Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 26. maj 2026
 
 Drives af: Coc Lorand Adrian P.F.A., der handler som "Loriba"
 
@@ -228,7 +228,7 @@ Uanset din placering har du fuld kontrol over dine data. Hvor lokal lov giver yd
 
 ## 11. Børns privatliv
 
-Hverken Appen eller Websitet er rettet mod børn under 16 år. Vi indsamler ikke bevidst personlige oplysninger fra børn under 16 år. Hvis du tror, at et barn har brugt Appen eller Websitet, kan du slette deres data ved at rydde app-data, afinstallere eller afmelde dig ventelisten.
+Hverken Appen eller Websitet er rettet mod børn under 18 år. Appens tilsigtede bruger er en voksen detektorist; mange funktioner (tilladelsesboks, aftaler med grundejere, digitale underskrifter, betalte abonnementer) kræver i de fleste jurisdiktioner voksen retsstatus. Vi indsamler ikke bevidst personlige oplysninger fra børn under 18 år. Hvis du tror, at et barn har brugt Appen eller Websitet, kan du slette deres data ved at rydde app-data, afinstallere eller afmelde dig ventelisten.
 
 ## 12. Tilladelser forklaret (App)
 
