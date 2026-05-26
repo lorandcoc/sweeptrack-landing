@@ -166,7 +166,7 @@ Datele Website-ului (adresa dumneavoastră de email din lista de așteptare) sun
 
 **Datele Aplicației:**
 
-- Datele despre sesiuni și descoperiri sunt stocate într-o bază de date Room criptată pe dispozitivul dumneavoastră
+- Datele despre sesiuni și descoperiri sunt stocate într-o bază de date Room (SQLite) în stocarea privată izolată a Aplicației pe dispozitivul dumneavoastră — protejate prin modelul de izolare a aplicațiilor Android și criptarea datelor utilizatorului la nivel de dispozitiv în stare de repaus
 - Preferințele sensibile folosesc EncryptedSharedPreferences (AES-256) de la Android
 - Fișierele media sunt stocate în spațiul de stocare intern privat al Aplicației, inaccesibil altor aplicații
 - Backup-ul în cloud Android este **dezactivat** (`android:allowBackup="false"`) pentru a preveni expunerea neintenționată a datelor

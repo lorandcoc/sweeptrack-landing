@@ -166,7 +166,7 @@ Website-gegevens (uw wachtlijst-e-mail) worden alleen gebruikt om de lancerings-
 
 **App-gegevens:**
 
-- Sessie- en vondstgegevens worden opgeslagen in een versleutelde Room-database op uw apparaat
+- Sessie- en vondstgegevens worden opgeslagen in een Room-database (SQLite) in de afgeschermde privé-opslag van de App op uw apparaat — beschermd door Androids app-isolatiemodel en de versleuteling van gebruikersgegevens in rust van het apparaat
 - Gevoelige voorkeuren gebruiken EncryptedSharedPreferences (AES-256) van Android
 - Mediabestanden worden opgeslagen in de privé interne opslag van de App, ontoegankelijk voor andere apps
 - Android-cloudback-up is **uitgeschakeld** (`android:allowBackup="false"`) om onbedoelde gegevensblootstelling te voorkomen

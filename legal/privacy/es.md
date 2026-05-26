@@ -166,7 +166,7 @@ Los datos del Sitio Web (su correo electrónico de la lista de espera) se usan s
 
 **Datos de la Aplicación:**
 
-- Los datos de sesiones y hallazgos se almacenan en una base de datos Room cifrada en su dispositivo
+- Los datos de sesiones y hallazgos se almacenan en una base de datos Room (SQLite) en el almacenamiento privado aislado de la Aplicación en su dispositivo — protegidos por el modelo de aislamiento de aplicaciones de Android y el cifrado de datos de usuario del dispositivo en reposo
 - Las preferencias sensibles utilizan EncryptedSharedPreferences (AES-256) de Android
 - Los archivos multimedia se almacenan en el almacenamiento interno privado de la Aplicación, inaccesibles para otras aplicaciones
 - La copia de seguridad en la nube de Android está **desactivada** (`android:allowBackup="false"`) para evitar la exposición no intencionada de datos

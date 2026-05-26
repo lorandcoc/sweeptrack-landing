@@ -166,7 +166,7 @@ Web Sitesi verileri (bekleme listesi e-postanız) yalnızca Bölüm 4'te açıkl
 
 **Uygulama verileri:**
 
-- Oturum ve buluntu verileri, cihazınızdaki şifrelenmiş bir Room veritabanında saklanır
+- Oturum ve buluntu verileri, cihazınızdaki Uygulamanın yalıtılmış özel depolama alanındaki bir Room (SQLite) veritabanında saklanır — Android'in uygulama yalıtım modeli ve cihazın bekleyen kullanıcı verisi şifrelemesi tarafından korunur
 - Hassas tercihler Android'in EncryptedSharedPreferences (AES-256) özelliğini kullanır
 - Medya dosyaları, diğer uygulamalar tarafından erişilemeyen Uygulamanın özel dahili depolama alanında saklanır
 - Android bulut yedeklemesi, istemsiz veri ifşasını önlemek için **devre dışı bırakılmıştır** (`android:allowBackup="false"`)

@@ -166,7 +166,7 @@ I dati del Sito Web (la vostra email della lista d'attesa) sono utilizzati solo 
 
 **Dati dell'App:**
 
-- I dati delle sessioni e dei ritrovamenti sono memorizzati in un database Room crittografato sul vostro dispositivo
+- I dati delle sessioni e dei ritrovamenti sono memorizzati in un database Room (SQLite) nello spazio di archiviazione privato isolato dell'App sul vostro dispositivo — protetti dal modello di isolamento delle app di Android e dalla cifratura dei dati utente a riposo del dispositivo
 - Le preferenze sensibili utilizzano EncryptedSharedPreferences (AES-256) di Android
 - I file multimediali sono memorizzati nello storage interno privato dell'App, inaccessibile ad altre applicazioni
 - Il backup cloud di Android è **disabilitato** (`android:allowBackup="false"`) per prevenire l'esposizione involontaria dei dati

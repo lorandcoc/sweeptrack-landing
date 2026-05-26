@@ -166,7 +166,7 @@ A Weboldal adatait (az Ön várólista e-mail-címét) csak a 4. szakaszban leí
 
 **Az Alkalmazás adatai:**
 
-- A munkamenet- és találati adatokat titkosított Room adatbázisban tároljuk az Ön eszközén
+- A munkamenet- és találati adatokat Room (SQLite) adatbázisban tároljuk az Ön eszközén, az Alkalmazás elszigetelt, privát tárhelyén — az Android alkalmazás-elszigetelési modellje és az eszköz nyugalmi állapotú felhasználói adatainak titkosítása védi
 - Az érzékeny beállítások az Android EncryptedSharedPreferences-ét használják (AES-256)
 - A médiafájlokat az Alkalmazás privát belső tárhelyén tároljuk, más alkalmazások számára hozzáférhetetlenül
 - Az Android felhőalapú biztonsági mentése **letiltva** (`android:allowBackup="false"`), hogy megelőzze a nem szándékos adatközzétételt

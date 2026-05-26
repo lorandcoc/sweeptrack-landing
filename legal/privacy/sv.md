@@ -166,7 +166,7 @@ Webbplatsdata (din väntelist-e-post) används endast för att skicka lanserings
 
 **Appdata:**
 
-- Sessions- och fynddata lagras i en krypterad Room-databas på din enhet
+- Sessions- och fynddata lagras i en Room-databas (SQLite) i Appens sandlådade privata lagring på din enhet — skyddade av Androids app-isolationsmodell och enhetens kryptering av användardata i vila
 - Känsliga inställningar använder Androids EncryptedSharedPreferences (AES-256)
 - Mediafiler lagras i appens privata interna lagring, otillgängliga för andra appar
 - Android-molnsäkerhetskopiering är **inaktiverad** (`android:allowBackup="false"`) för att förhindra oavsiktlig dataexponering

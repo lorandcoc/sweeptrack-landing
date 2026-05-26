@@ -166,7 +166,7 @@ Dane Strony Internetowej (Twój adres e-mail z listy oczekujących) są używane
 
 **Dane Aplikacji:**
 
-- Dane sesji i znalezisk są przechowywane w zaszyfrowanej bazie danych Room na Twoim urządzeniu
+- Dane sesji i znalezisk są przechowywane w bazie danych Room (SQLite) w odizolowanej prywatnej pamięci Aplikacji na Twoim urządzeniu — chronione przez model izolacji aplikacji Androida i szyfrowanie danych użytkownika urządzenia w spoczynku
 - Wrażliwe preferencje wykorzystują EncryptedSharedPreferences (AES-256) Androida
 - Pliki multimedialne są przechowywane w prywatnej pamięci wewnętrznej Aplikacji, niedostępnej dla innych aplikacji
 - Kopia zapasowa w chmurze Androida jest **wyłączona** (`android:allowBackup="false"`), aby zapobiec niezamierzonemu ujawnieniu danych

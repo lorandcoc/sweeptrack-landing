@@ -166,7 +166,7 @@ Les données du Site Web (votre e-mail de la liste d'attente) ne sont utilisées
 
 **Données de l'Application :**
 
-- Les données de session et de trouvailles sont stockées dans une base de données Room chiffrée sur votre appareil
+- Les données de session et de trouvailles sont stockées dans une base de données Room (SQLite) dans le stockage privé cloisonné de l'Application sur votre appareil — protégées par le modèle d'isolation des applications d'Android et le chiffrement des données utilisateur de l'appareil au repos
 - Les préférences sensibles utilisent EncryptedSharedPreferences (AES-256) d'Android
 - Les fichiers multimédias sont stockés dans le stockage interne privé de l'Application, inaccessible aux autres applications
 - La sauvegarde cloud Android est **désactivée** (`android:allowBackup="false"`) pour éviter une exposition involontaire des données

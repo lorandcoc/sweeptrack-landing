@@ -166,7 +166,7 @@ Website data (your waitlist email) is used only to send launch and pre-launch co
 
 **App data:**
 
-- Session and find data stored in an encrypted Room database on your device
+- Session and find data stored in a Room (SQLite) database in the App's sandboxed private storage on your device — protected by Android's app-isolation model and the device's user-data encryption at rest
 - Sensitive preferences use Android's EncryptedSharedPreferences (AES-256)
 - Media files stored in the App's private internal storage, inaccessible to other apps
 - Android cloud backup **disabled** (`android:allowBackup="false"`) to prevent unintended data exposure

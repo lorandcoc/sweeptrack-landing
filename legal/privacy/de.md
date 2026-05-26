@@ -166,7 +166,7 @@ Website-Daten (Ihre Warteliste-E-Mail) werden nur zum Versand der in Abschnitt 4
 
 **App-Daten:**
 
-* Sitzungs- und Funddaten werden in einer verschlüsselten Room-Datenbank auf Ihrem Gerät gespeichert
+* Sitzungs- und Funddaten werden in einer Room-Datenbank (SQLite) im sandboxed privaten Speicher der App auf Ihrem Gerät gespeichert — geschützt durch Androids App-Isolationsmodell und die geräteseitige Verschlüsselung der Nutzerdaten im Ruhezustand
 * Sensible Einstellungen verwenden Androids EncryptedSharedPreferences (AES-256)
 * Mediendateien werden im privaten internen Speicher der App gespeichert und sind für andere Apps nicht zugänglich
 * Android-Cloud-Sicherung **deaktiviert** (`android:allowBackup="false"`), um unbeabsichtigte Datenexposition zu verhindern

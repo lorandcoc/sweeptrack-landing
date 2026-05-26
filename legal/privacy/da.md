@@ -166,7 +166,7 @@ Website-data (din venteliste-e-mail) bruges kun til at sende lancerings- og før
 
 **App-data:**
 
-- Sessions- og funddata gemmes i en krypteret Room-database på din enhed
+- Sessions- og funddata gemmes i en Room-database (SQLite) i Appens sandboxede private lagring på din enhed — beskyttet af Androids app-isolationsmodel og enhedens kryptering af brugerdata i hvile
 - Følsomme præferencer bruger Androids EncryptedSharedPreferences (AES-256)
 - Mediefiler gemmes i Appens private interne lager, utilgængeligt for andre apps
 - Android-cloudsikkerhedskopiering er **deaktiveret** (`android:allowBackup="false"`) for at forhindre utilsigtet dataeksponering
