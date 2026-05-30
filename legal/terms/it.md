@@ -106,9 +106,9 @@ L'App raccoglie e memorizza i seguenti dati **localmente sul vostro dispositivo*
 
 ### 6.2 Memorizzazione dei Dati (App)
 
-- **Tutti i dati dell'App sono memorizzati localmente sul vostro dispositivo** in un database crittografato e in archiviazione locale di file
+- **Tutti i dati dell'App sono memorizzati localmente sul vostro dispositivo** in un database locale Room/SQLite e nell'archiviazione di file privata dell'app all'interno del sandbox privato di Android. Il file del database non è cifrato separatamente dall'App, sebbene si applichino le protezioni di archiviazione della piattaforma Android sui dispositivi supportati
 - **Nessun dato dell'App viene trasmesso ai nostri server** — non gestiamo server o database backend per la funzionalità dell'App
-- **Backup Google Drive** (opzionale, avviato dall'utente) memorizza una copia crittografata dei vostri dati nel vostro account personale Google Drive in una cartella "SweepTrack Backups"
+- **Backup Google Drive** (opzionale, avviato dall'utente) memorizza una copia di backup dei vostri dati nel vostro account personale Google Drive in una cartella "SweepTrack Backups". Se attivate la cifratura del backup tramite passphrase, il backup viene cifrato prima del caricamento
 - Il backup cloud Android è stato disabilitato per proteggere i vostri dati
 
 Le pratiche relative ai dati del Sito Web (raccolta di email per la lista d'attesa, analisi, hosting) sono descritte separatamente in §6.7 di seguito e in dettaglio completo nella nostra Informativa sulla Privacy, Sezione 4.

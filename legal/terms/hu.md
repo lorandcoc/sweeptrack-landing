@@ -106,9 +106,9 @@ Az Alkalmazás a következő adatokat gyűjti és tárolja **helyben az Ön eszk
 
 ### 6.2 Adattárolás (Alkalmazás)
 
-- **Az Alkalmazás összes adatát helyben tároljuk az Ön eszközén** titkosított adatbázisban és helyi fájltárolóban
+- **Az Alkalmazás összes adatát helyben tároljuk az Ön eszközén** egy helyi Room/SQLite adatbázisban és az alkalmazás privát fájltárolójában az Android privát sandboxján belül. Az adatbázisfájlt az Alkalmazás nem titkosítja külön, bár a támogatott eszközökön az Android platform tárolásvédelmi mechanizmusai érvényesülnek
 - **Az Alkalmazás adatai nem továbbítódnak szervereinkre** — nem üzemeltetünk háttér-szervereket vagy adatbázisokat az Alkalmazás funkcionalitásához
-- **Google Drive biztonsági mentés** (opcionális, felhasználó által kezdeményezett) az adatainak titkosított másolatát tárolja az Ön személyes Google Drive-fiókjában egy „SweepTrack Backups" mappában
+- **Google Drive biztonsági mentés** (opcionális, felhasználó által kezdeményezett) az adatairól biztonsági másolatot tárol az Ön személyes Google Drive-fiókjában egy „SweepTrack Backups" mappában. Ha engedélyezi a jelszavas biztonsági mentés titkosítását, a biztonsági másolat a feltöltés előtt titkosításra kerül
 - Az Android felhőalapú biztonsági mentését letiltottuk az adatai védelme érdekében
 
 A Weboldal adatkezelési gyakorlatát (e-mail-cím gyűjtése a várólistához, elemzés, tárhelyszolgáltatás) külön a §6.7 ismerteti az alábbiakban, és teljes részletességgel az Adatvédelmi szabályzatunk 4. szakaszában.

@@ -233,11 +233,14 @@ Né l'App né il Sito Web sono diretti ai minori di 18 anni. L'utente previsto d
 ## 12. Autorizzazioni spiegate (App)
 
 - **ACCESS_FINE_LOCATION** — GPS per il monitoraggio del percorso durante le sessioni
-- **ACCESS_BACKGROUND_LOCATION** — continuare il monitoraggio quando lo schermo è spento
+- **ACCESS_COARSE_LOCATION** — posizione approssimativa come ripiego quando il GPS preciso non è disponibile
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — mantenere attivo il tracker GPS come servizio in primo piano, in modo che il monitoraggio continui con lo schermo spento durante le sessioni attive
 - **CAMERA** — catturare foto per la registrazione dei ritrovamenti
 - **RECORD_AUDIO** — registrare note audio per i ritrovamenti
 - **READ/WRITE_CALENDAR** — scrive i promemoria di scadenza dei permessi del caveau nel calendario locale del vostro dispositivo. Se avete attivato la sincronizzazione con un calendario nel cloud in Android (ad esempio, sincronizzazione di Google Calendar), tali promemoria verranno sincronizzati con il vostro account insieme al resto del calendario — quella sincronizzazione è controllata dalle vostre impostazioni Android, non dall'App
 - **INTERNET** — meteo, geocodifica, maree, mappe, abbonamenti
+- **ACCESS_NETWORK_STATE** — rilevare lo stato offline prima di effettuare chiamate di rete
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — impedire al sistema di terminare il tracker GPS durante le sessioni prolungate
 - **POST_NOTIFICATIONS** — notifica di monitoraggio GPS
 - **VIBRATE** — avvisi di limite della guardia perimetrale
 

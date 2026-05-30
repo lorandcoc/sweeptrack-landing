@@ -233,11 +233,14 @@ Neither the App nor the Website is directed at children under 18. The App's inte
 ## 12. Permissions Explained (App)
 
 - **ACCESS_FINE_LOCATION** — GPS for path tracking during sessions
-- **ACCESS_BACKGROUND_LOCATION** — continue tracking when screen is off
+- **ACCESS_COARSE_LOCATION** — approximate location fallback when precise GPS is unavailable
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — keep the GPS tracker running as a foreground service so tracking continues with the screen off during active sessions
 - **CAMERA** — capture photos for find logging
 - **RECORD_AUDIO** — record audio notes for finds
 - **READ/WRITE_CALENDAR** — write permission vault expiry reminders to your device's local calendar. If you have cloud calendar sync enabled in Android (e.g., Google Calendar sync), those reminder events will sync to your account along with the rest of your calendar — that sync is controlled by your Android settings, not the App
 - **INTERNET** — weather, geocoding, tides, maps, subscriptions
+- **ACCESS_NETWORK_STATE** — detect offline state before making network calls
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — prevent the system from killing the GPS tracker during long sessions
 - **POST_NOTIFICATIONS** — GPS tracking notification
 - **VIBRATE** — perimeter guard boundary alerts
 

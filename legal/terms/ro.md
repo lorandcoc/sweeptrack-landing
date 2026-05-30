@@ -106,9 +106,9 @@ Aplicația colectează și stochează următoarele date **local pe dispozitivul 
 
 ### 6.2 Stocarea Datelor (Aplicație)
 
-- **Toate datele Aplicației sunt stocate local pe dispozitivul dumneavoastră** într-o bază de date criptată și în stocarea locală de fișiere
+- **Toate datele Aplicației sunt stocate local pe dispozitivul dumneavoastră** într-o bază de date locală Room/SQLite și în stocarea de fișiere privată a aplicației, în interiorul mediului izolat privat (sandbox) al Android. Fișierul bazei de date nu este criptat separat de către Aplicație, deși protecțiile de stocare ale platformei Android se aplică pe dispozitivele compatibile
 - **Nicio dată a Aplicației nu este transmisă către serverele noastre** — nu operăm servere sau baze de date backend pentru funcționalitatea Aplicației
-- **Backup Google Drive** (opțional, inițiat de utilizator) stochează o copie criptată a datelor dumneavoastră în contul personal Google Drive într-un folder "SweepTrack Backups"
+- **Backup Google Drive** (opțional, inițiat de utilizator) stochează o copie de rezervă a datelor dumneavoastră în contul personal Google Drive într-un folder "SweepTrack Backups". Dacă activați criptarea backup-ului cu frază de acces, copia de rezervă este criptată înainte de încărcare
 - Backup-ul în cloud Android a fost dezactivat pentru a vă proteja datele
 
 Practicile de date ale Website-ului (colectarea adresei de email pentru lista de așteptare, analize, găzduire) sunt descrise separat în §6.7 de mai jos și în detaliu complet în Politica noastră de Confidențialitate, Secțiunea 4.

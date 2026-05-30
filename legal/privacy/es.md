@@ -233,11 +233,14 @@ Ni la Aplicación ni el Sitio Web están dirigidos a niños menores de 18 años.
 ## 12. Permisos explicados (Aplicación)
 
 - **ACCESS_FINE_LOCATION** — GPS para el seguimiento de rutas durante las sesiones
-- **ACCESS_BACKGROUND_LOCATION** — continuar el seguimiento cuando la pantalla está apagada
+- **ACCESS_COARSE_LOCATION** — ubicación aproximada como alternativa cuando el GPS preciso no está disponible
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — mantener el rastreador GPS en ejecución como servicio en primer plano para que el seguimiento continúe con la pantalla apagada durante las sesiones activas
 - **CAMERA** — capturar fotos para el registro de hallazgos
 - **RECORD_AUDIO** — grabar notas de audio para hallazgos
 - **READ/WRITE_CALENDAR** — escribe recordatorios de caducidad de permisos de la bóveda en el calendario local de su dispositivo. Si tiene activada la sincronización con un calendario en la nube en Android (por ejemplo, sincronización con Google Calendar), esos recordatorios se sincronizarán con su cuenta junto con el resto de su calendario — esa sincronización la controlan los ajustes de Android, no la Aplicación
 - **INTERNET** — clima, geocodificación, mareas, mapas, suscripciones
+- **ACCESS_NETWORK_STATE** — detectar el estado sin conexión antes de realizar llamadas de red
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — evitar que el sistema detenga el rastreador GPS durante sesiones largas
 - **POST_NOTIFICATIONS** — notificación de seguimiento GPS
 - **VIBRATE** — alertas del límite del protector de perímetro
 

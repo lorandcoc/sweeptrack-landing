@@ -233,11 +233,14 @@ Nem a Aplicação nem o Website são direcionados a crianças menores de 18 anos
 ## 12. Permissões explicadas (Aplicação)
 
 - **ACCESS_FINE_LOCATION** — GPS para rastreio de percurso durante as sessões
-- **ACCESS_BACKGROUND_LOCATION** — continuar o rastreio quando o ecrã está desligado
+- **ACCESS_COARSE_LOCATION** — localização aproximada como alternativa quando o GPS preciso não está disponível
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — mantém o rastreador GPS a funcionar como um serviço em primeiro plano, para que o rastreio continue com o ecrã desligado durante as sessões ativas
 - **CAMERA** — capturar fotos para registo de achados
 - **RECORD_AUDIO** — gravar notas áudio para achados
 - **READ/WRITE_CALENDAR** — escreve os lembretes de validade das permissões do cofre no calendário local do seu dispositivo. Se tiver ativada a sincronização com um calendário na nuvem no Android (por exemplo, sincronização do Google Calendar), esses lembretes serão sincronizados com a sua conta juntamente com o resto do seu calendário — essa sincronização é controlada pelas suas definições Android, não pela Aplicação
 - **INTERNET** — meteo, geocodificação, marés, mapas, subscrições
+- **ACCESS_NETWORK_STATE** — detetar o estado offline antes de efetuar chamadas de rede
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — impedir que o sistema termine o rastreador GPS durante sessões prolongadas
 - **POST_NOTIFICATIONS** — notificação de rastreio GPS
 - **VIBRATE** — alertas de limite do guarda perimetral
 

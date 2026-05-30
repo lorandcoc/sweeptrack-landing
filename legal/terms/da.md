@@ -106,9 +106,9 @@ Appen indsamler og opbevarer følgende data **lokalt på din enhed**:
 
 ### 6.2 Dataopbevaring (App)
 
-- **Alle app-data opbevares lokalt på din enhed** i en krypteret database og lokal fillagring
+- **Alle app-data opbevares lokalt på din enhed** i en lokal Room/SQLite-database og app-privat fillagring inden for Androids private sandbox. Databasefilen krypteres ikke separat af Appen, men Androids platformsbaserede lagringsbeskyttelse gælder på understøttede enheder
 - **Ingen app-data overføres til vores servere** — vi driver ingen backend-servere eller databaser til app-funktionalitet
-- **Google Drive-sikkerhedskopiering** (valgfri, brugerinitieret) opbevarer en krypteret kopi af dine data på din personlige Google Drive-konto i en "SweepTrack Backups"-mappe
+- **Google Drive-sikkerhedskopiering** (valgfri, brugerinitieret) opbevarer en sikkerhedskopi af dine data på din personlige Google Drive-konto i en "SweepTrack Backups"-mappe. Hvis du aktiverer adgangskodebaseret kryptering af sikkerhedskopier, krypteres sikkerhedskopien før upload
 - Android-cloudsikkerhedskopiering er blevet deaktiveret for at beskytte dine data
 
 Websitets datapraksis (e-mail-indsamling til venteliste, analyse, hosting) beskrives separat i §6.7 nedenfor og i fuldt detaljeret omfang i vores privatlivspolitik, Afsnit 4.

@@ -106,9 +106,9 @@ L'Application collecte et stocke les données suivantes **localement sur votre a
 
 ### 6.2 Stockage des données (Application)
 
-- **Toutes les données de l'Application sont stockées localement sur votre appareil** dans une base de données chiffrée et un stockage local de fichiers
+- **Toutes les données de l'Application sont stockées localement sur votre appareil** dans une base de données locale Room/SQLite et un stockage de fichiers privé à l'application, au sein du bac à sable privé d'Android. Le fichier de base de données n'est pas chiffré séparément par l'Application, bien que les protections de stockage de la plateforme Android s'appliquent sur les appareils compatibles
 - **Aucune donnée de l'Application n'est transmise à nos serveurs** — nous n'exploitons pas de serveurs backend ou de bases de données pour la fonctionnalité de l'Application
-- **Sauvegarde Google Drive** (optionnelle, initiée par l'utilisateur) stocke une copie chiffrée de vos données dans votre compte personnel Google Drive dans un dossier « SweepTrack Backups »
+- **Sauvegarde Google Drive** (optionnelle, initiée par l'utilisateur) stocke une copie de sauvegarde de vos données dans votre compte personnel Google Drive dans un dossier « SweepTrack Backups ». Si vous activez le chiffrement de sauvegarde par phrase secrète, la sauvegarde est chiffrée avant le téléversement
 - La sauvegarde cloud Android a été désactivée pour protéger vos données
 
 Les pratiques de données du Site Web (collecte d'e-mail pour la liste d'attente, analyses, hébergement) sont décrites séparément au §6.7 ci-dessous et en détail complet dans notre Politique de Confidentialité, Section 4.

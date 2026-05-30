@@ -106,9 +106,9 @@ Aplikacja zbiera i przechowuje następujące dane **lokalnie na Twoim urządzeni
 
 ### 6.2 Przechowywanie danych (Aplikacja)
 
-- **Wszystkie dane Aplikacji są przechowywane lokalnie na Twoim urządzeniu** w zaszyfrowanej bazie danych i lokalnym przechowywaniu plików
+- **Wszystkie dane Aplikacji są przechowywane lokalnie na Twoim urządzeniu** w lokalnej bazie danych Room/SQLite oraz w prywatnej pamięci plików aplikacji w obrębie prywatnej piaskownicy (sandbox) Androida. Plik bazy danych nie jest osobno szyfrowany przez Aplikację, choć na obsługiwanych urządzeniach mają zastosowanie platformowe zabezpieczenia pamięci Androida
 - **Żadne dane Aplikacji nie są przesyłane na nasze serwery** — nie obsługujemy serwerów zaplecza ani baz danych dla funkcjonalności Aplikacji
-- **Kopia zapasowa Google Drive** (opcjonalna, inicjowana przez użytkownika) przechowuje zaszyfrowaną kopię Twoich danych na Twoim osobistym koncie Google Drive w folderze „SweepTrack Backups"
+- **Kopia zapasowa Google Drive** (opcjonalna, inicjowana przez użytkownika) przechowuje kopię zapasową Twoich danych na Twoim osobistym koncie Google Drive w folderze „SweepTrack Backups". Jeśli włączysz szyfrowanie kopii zapasowej za pomocą hasła, kopia zapasowa jest szyfrowana przed wysłaniem
 - Kopia zapasowa w chmurze Androida została wyłączona w celu ochrony Twoich danych
 
 Praktyki dotyczące danych Strony Internetowej (gromadzenie e-maili dla listy oczekujących, analityka, hosting) są opisane oddzielnie w §6.7 poniżej i szczegółowo w naszej Polityce Prywatności, Sekcja 4.

@@ -233,11 +233,14 @@ Ani Aplikacja, ani Strona Internetowa nie są skierowane do dzieci poniżej 18 r
 ## 12. Wyjaśnienie uprawnień (Aplikacja)
 
 - **ACCESS_FINE_LOCATION** — GPS do śledzenia trasy podczas sesji
-- **ACCESS_BACKGROUND_LOCATION** — kontynuowanie śledzenia, gdy ekran jest wyłączony
+- **ACCESS_COARSE_LOCATION** — przybliżona lokalizacja zastępcza, gdy precyzyjny GPS jest niedostępny
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — utrzymanie działającego trackera GPS jako usługi pierwszoplanowej, aby śledzenie było kontynuowane przy wyłączonym ekranie podczas aktywnych sesji
 - **CAMERA** — robienie zdjęć dla rejestrowania znalezisk
 - **RECORD_AUDIO** — nagrywanie notatek audio dla znalezisk
 - **READ/WRITE_CALENDAR** — zapisuje przypomnienia o wygaśnięciu pozwoleń sejfu w lokalnym kalendarzu Twojego urządzenia. Jeśli masz włączoną synchronizację z kalendarzem w chmurze w Androidzie (na przykład synchronizację Google Calendar), te przypomnienia zostaną zsynchronizowane z Twoim kontem wraz z resztą kalendarza — synchronizacja ta jest kontrolowana przez ustawienia Androida, a nie przez Aplikację
 - **INTERNET** — pogoda, geokodowanie, pływy, mapy, subskrypcje
+- **ACCESS_NETWORK_STATE** — wykrywanie stanu offline przed wykonaniem połączeń sieciowych
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — zapobieganie zatrzymaniu trackera GPS przez system podczas długich sesji
 - **POST_NOTIFICATIONS** — powiadomienie o śledzeniu GPS
 - **VIBRATE** — alerty granicy strażnika perymetru
 

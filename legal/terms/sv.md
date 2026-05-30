@@ -106,9 +106,9 @@ Appen samlar in och lagrar följande data **lokalt på din enhet**:
 
 ### 6.2 Datalagring (App)
 
-- **All appdata lagras lokalt på din enhet** i en krypterad databas och lokal fillagring
+- **All appdata lagras lokalt på din enhet** i en lokal Room/SQLite-databas och app-privat fillagring inom Androids privata sandlåda. Databasfilen krypteras inte separat av Appen, men Androids plattformsskydd för lagring tillämpas på enheter som stöder det
 - **Ingen appdata överförs till våra servrar** — vi driver inga backend-servrar eller databaser för app-funktionalitet
-- **Google Drive-säkerhetskopiering** (valfri, användarinitierad) lagrar en krypterad kopia av dina data i ditt personliga Google Drive-konto i en "SweepTrack Backups"-mapp
+- **Google Drive-säkerhetskopiering** (valfri, användarinitierad) lagrar en säkerhetskopia av dina data i ditt personliga Google Drive-konto i en "SweepTrack Backups"-mapp. Om du aktiverar lösenfraskryptering av säkerhetskopian krypteras säkerhetskopian innan den laddas upp
 - Android-molnsäkerhetskopiering har inaktiverats för att skydda dina data
 
 Webbplatsens datahantering (e-postinsamling för väntelista, analys, hosting) beskrivs separat i §6.7 nedan och i fullständig detalj i vår integritetspolicy, Avsnitt 4.

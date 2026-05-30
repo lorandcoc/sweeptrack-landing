@@ -233,11 +233,14 @@ Nici Aplicația, nici Website-ul nu sunt adresate copiilor sub 18 ani. Utilizato
 ## 12. Permisiuni explicate (Aplicație)
 
 - **ACCESS_FINE_LOCATION** — GPS pentru monitorizarea traseului în timpul sesiunilor
-- **ACCESS_BACKGROUND_LOCATION** — continuarea monitorizării când ecranul este oprit
+- **ACCESS_COARSE_LOCATION** — locație aproximativă ca alternativă, atunci când GPS-ul precis nu este disponibil
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — menținerea în funcțiune a serviciului de monitorizare GPS ca serviciu în prim-plan, astfel încât monitorizarea să continue cu ecranul oprit în timpul sesiunilor active
 - **CAMERA** — capturarea fotografiilor pentru înregistrarea descoperirilor
 - **RECORD_AUDIO** — înregistrarea notelor audio pentru descoperiri
 - **READ/WRITE_CALENDAR** — scrie mementouri pentru expirarea permiselor în calendarul local al dispozitivului. Dacă aveți activată sincronizarea cu calendarul în cloud în Android (de exemplu, sincronizare Google Calendar), aceste mementouri vor fi sincronizate cu contul dumneavoastră împreună cu restul calendarului — sincronizarea este controlată de setările Android, nu de Aplicație
 - **INTERNET** — vreme, geocodare, maree, hărți, abonamente
+- **ACCESS_NETWORK_STATE** — detectarea stării offline înainte de a efectua apeluri de rețea
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — împiedicarea sistemului să oprească serviciul de monitorizare GPS în timpul sesiunilor lungi
 - **POST_NOTIFICATIONS** — notificare pentru monitorizarea GPS
 - **VIBRATE** — alerte pentru limitele gardei de perimetru
 

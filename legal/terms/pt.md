@@ -106,9 +106,9 @@ A Aplicação recolhe e armazena os seguintes dados **localmente no seu disposit
 
 ### 6.2 Armazenamento de Dados (Aplicação)
 
-- **Todos os dados da Aplicação são armazenados localmente no seu dispositivo** numa base de dados encriptada e armazenamento local de ficheiros
+- **Todos os dados da Aplicação são armazenados localmente no seu dispositivo** numa base de dados local Room/SQLite e em armazenamento de ficheiros privado da aplicação, dentro da sandbox privada do Android. O ficheiro da base de dados não é encriptado separadamente pela Aplicação, embora as proteções de armazenamento da plataforma Android se apliquem nos dispositivos compatíveis
 - **Nenhum dado da Aplicação é transmitido para os nossos servidores** — não operamos servidores nem bases de dados backend para a funcionalidade da Aplicação
-- **Cópia de segurança Google Drive** (opcional, iniciada pelo utilizador) armazena uma cópia encriptada dos seus dados na sua conta pessoal Google Drive numa pasta "SweepTrack Backups"
+- **Cópia de segurança Google Drive** (opcional, iniciada pelo utilizador) armazena uma cópia dos seus dados na sua conta pessoal Google Drive numa pasta "SweepTrack Backups". Se ativar a encriptação da cópia de segurança por frase-passe, a cópia de segurança é encriptada antes do carregamento
 - A cópia de segurança em nuvem do Android foi desativada para proteger os seus dados
 
 As práticas de dados do Website (recolha de email para lista de espera, análises, alojamento) são descritas separadamente em §6.7 abaixo e em detalhe completo na nossa Política de Privacidade, Secção 4.

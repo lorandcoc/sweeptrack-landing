@@ -106,9 +106,9 @@ Die App sammelt und speichert die folgenden Daten **lokal auf Ihrem Gerät**:
 
 ### 6.2 Datenspeicherung (App)
 
-- **Alle App-Daten werden lokal auf Ihrem Gerät gespeichert** in einer verschlüsselten Datenbank und lokalem Dateispeicher
+- **Alle App-Daten werden lokal auf Ihrem Gerät gespeichert** in einer lokalen Room/SQLite-Datenbank und app-privatem Dateispeicher innerhalb der privaten Sandbox von Android. Die Datenbankdatei wird von der App nicht separat verschlüsselt, jedoch greifen auf unterstützten Geräten die Plattform-Speicherschutzmechanismen von Android
 - **Keine App-Daten werden an unsere Server übertragen** — wir betreiben keine Backend-Server oder Datenbanken für App-Funktionalität
-- **Google Drive Sicherung** (optional, benutzerinitiiert) speichert eine verschlüsselte Kopie Ihrer Daten in Ihrem persönlichen Google Drive-Konto in einem „SweepTrack Backups"-Ordner
+- **Google Drive Sicherung** (optional, benutzerinitiiert) speichert eine Sicherungskopie Ihrer Daten in Ihrem persönlichen Google Drive-Konto in einem „SweepTrack Backups"-Ordner. Wenn Sie die Sicherungsverschlüsselung per Passphrase aktivieren, wird die Sicherung vor dem Hochladen verschlüsselt
 - Android Cloud-Sicherung wurde deaktiviert, um Ihre Daten zu schützen
 
 Datenpraktiken der Website (Warteliste-E-Mail-Erfassung, Analyse, Hosting) sind separat in §6.7 unten beschrieben und in vollständigem Detail in unserer Datenschutzerklärung, Abschnitt 4.

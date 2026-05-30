@@ -233,11 +233,14 @@ Ne Uygulama ne de Web Sitesi 18 yaşın altındaki çocuklara yöneliktir. Uygul
 ## 12. İzinler açıklaması (Uygulama)
 
 - **ACCESS_FINE_LOCATION** — oturumlar sırasında yol takibi için GPS
-- **ACCESS_BACKGROUND_LOCATION** — ekran kapalıyken takibe devam etme
+- **ACCESS_COARSE_LOCATION** — hassas GPS kullanılamadığında yaklaşık konum yedeği
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — GPS izleyicinin bir ön plan hizmeti olarak çalışmasını sağlar, böylece aktif oturumlar sırasında ekran kapalıyken takip devam eder
 - **CAMERA** — buluntu kaydı için fotoğraf çekme
 - **RECORD_AUDIO** — buluntular için ses notları kaydetme
 - **READ/WRITE_CALENDAR** — kasa izinlerinin son kullanma tarihi hatırlatıcılarını cihazınızın yerel takvimine yazar. Android'de bir bulut takvimiyle senkronizasyonu etkinleştirdiyseniz (örneğin Google Calendar senkronizasyonu), bu hatırlatıcılar takviminizin geri kalanıyla birlikte hesabınıza senkronize edilir — bu senkronizasyonu Uygulama değil, Android ayarlarınız kontrol eder
 - **INTERNET** — hava durumu, geocoding, gelgitler, haritalar, abonelikler
+- **ACCESS_NETWORK_STATE** — ağ çağrıları yapmadan önce çevrimdışı durumu algılama
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — sistemin uzun oturumlar sırasında GPS izleyiciyi sonlandırmasını önleme
 - **POST_NOTIFICATIONS** — GPS takip bildirimi
 - **VIBRATE** — çevre koruyucu sınır uyarıları
 

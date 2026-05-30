@@ -233,11 +233,14 @@ Weder die App noch die Website richten sich an Kinder unter 18 Jahren. Der vorge
 ## 12. Berechtigungen erläutert (App)
 
 * **ACCESS_FINE_LOCATION** — GPS für die Pfadverfolgung während Sitzungen
-* **ACCESS_BACKGROUND_LOCATION** — Tracking fortsetzen, wenn der Bildschirm aus ist
+* **ACCESS_COARSE_LOCATION** — ungefährer Standort als Ausweichlösung, wenn präzises GPS nicht verfügbar ist
+* **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — hält den GPS-Tracker als Vordergrunddienst am Laufen, damit die Aufzeichnung während aktiver Sitzungen auch bei ausgeschaltetem Bildschirm fortgesetzt wird
 * **CAMERA** — Fotos für die Fundprotokollierung aufnehmen
 * **RECORD_AUDIO** — Audionotizen für Funde aufzeichnen
 * **READ/WRITE_CALENDAR** — schreibt Erinnerungen für den Ablauf von Tresor-Berechtigungen in den lokalen Kalender Ihres Geräts. Wenn Sie unter Android die Synchronisierung mit einem Cloud-Kalender aktiviert haben (z. B. Google Calendar-Synchronisierung), werden diese Erinnerungen zusammen mit dem Rest Ihres Kalenders mit Ihrem Konto synchronisiert — diese Synchronisierung wird durch Ihre Android-Einstellungen gesteuert, nicht durch die App
 * **INTERNET** — Wetter, Geocoding, Gezeiten, Karten, Abonnements
+* **ACCESS_NETWORK_STATE** — Offline-Zustand erkennen, bevor Netzwerkanfragen gestellt werden
+* **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — verhindert, dass das System den GPS-Tracker während langer Sitzungen beendet
 * **POST_NOTIFICATIONS** — GPS-Tracking-Benachrichtigung
 * **VIBRATE** — Grenzwarnungen des Perimeter-Guards
 

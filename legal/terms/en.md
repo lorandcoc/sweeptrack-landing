@@ -106,9 +106,9 @@ The App collects and stores the following data **locally on your device**:
 
 ### 6.2 Data Storage (App)
 
-- **All App data is stored locally on your device** in an encrypted database and local file storage
+- **All App data is stored locally on your device** in a local Room/SQLite database and app-private file storage within Android's private sandbox. The database file is not separately encrypted by the App, though Android's platform storage protections apply on supported devices
 - **No App data is transmitted to our servers** — we do not operate backend servers or databases for App functionality
-- **Google Drive backup** (optional, user-initiated) stores an encrypted copy of your data in your personal Google Drive account under a "SweepTrack Backups" folder
+- **Google Drive backup** (optional, user-initiated) stores a backup copy of your data in your personal Google Drive account under a "SweepTrack Backups" folder. If you enable passphrase backup encryption, the backup is encrypted before upload
 - Android cloud backup has been disabled to protect your data
 
 Website data practices (waitlist email collection, analytics, hosting) are described separately in §6.7 below and in full detail in our Privacy Policy, Section 4.

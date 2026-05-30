@@ -233,11 +233,14 @@ Varken Appen eller Webbplatsen är riktad till barn under 18 år. Appens avsedda
 ## 12. Behörigheter förklarade (App)
 
 - **ACCESS_FINE_LOCATION** — GPS för vägspårning under sessioner
-- **ACCESS_BACKGROUND_LOCATION** — fortsätta spårning när skärmen är avstängd
+- **ACCESS_COARSE_LOCATION** — ungefärlig plats som reserv när exakt GPS inte är tillgänglig
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — håller GPS-spåraren igång som en förgrundstjänst så att spårningen fortsätter med skärmen avstängd under aktiva sessioner
 - **CAMERA** — fånga foton för fyndregistrering
 - **RECORD_AUDIO** — spela in ljudanteckningar för fynd
 - **READ/WRITE_CALENDAR** — skriver påminnelser om utgångsdatum för tillstånd i valvet till din enhets lokala kalender. Om du har aktiverat synkronisering med en molnkalender i Android (till exempel Google Calendar-synkronisering) synkroniseras dessa påminnelser till ditt konto tillsammans med resten av din kalender — den synkroniseringen styrs av dina Android-inställningar, inte av Appen
 - **INTERNET** — väder, geokodning, tidvatten, kartor, abonnemang
+- **ACCESS_NETWORK_STATE** — upptäcka offline-läge innan nätverksanrop görs
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — förhindra att systemet stänger av GPS-spåraren under långa sessioner
 - **POST_NOTIFICATIONS** — GPS-spårningsmeddelande
 - **VIBRATE** — gränsmeddelanden från perimeterväktaren
 

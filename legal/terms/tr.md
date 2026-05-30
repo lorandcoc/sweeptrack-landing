@@ -106,9 +106,9 @@ Uygulama aşağıdaki verileri **cihazınızda yerel olarak** toplar ve saklar:
 
 ### 6.2 Veri Depolama (Uygulama)
 
-- **Tüm Uygulama verileri cihazınızda yerel olarak saklanır**, şifrelenmiş bir veritabanında ve yerel dosya depolamasında
+- **Tüm Uygulama verileri cihazınızda yerel olarak saklanır**, yerel bir Room/SQLite veritabanında ve Android'in özel sanal alanı içindeki uygulamaya özel dosya depolamasında. Veritabanı dosyası Uygulama tarafından ayrıca şifrelenmez, ancak desteklenen cihazlarda Android'in platform depolama korumaları geçerlidir
 - **Hiçbir Uygulama verisi sunucularımıza iletilmez** — Uygulama işlevselliği için arka uç sunucuları veya veritabanları işletmiyoruz
-- **Google Drive yedeklemesi** (isteğe bağlı, kullanıcı tarafından başlatılan), verilerinizin şifrelenmiş bir kopyasını kişisel Google Drive hesabınızda "SweepTrack Backups" klasörüne kaydeder
+- **Google Drive yedeklemesi** (isteğe bağlı, kullanıcı tarafından başlatılan), verilerinizin bir yedek kopyasını kişisel Google Drive hesabınızda "SweepTrack Backups" klasörüne kaydeder. Parola ile yedekleme şifrelemesini etkinleştirirseniz, yedek yüklemeden önce şifrelenir
 - Verilerinizi korumak için Android bulut yedeklemesi devre dışı bırakılmıştır
 
 Web Sitesi veri uygulamaları (bekleme listesi için e-posta toplama, analitik, barındırma) aşağıdaki §6.7'de ayrı olarak ve tam detayda Gizlilik Politikamız, Bölüm 4'te açıklanmıştır.

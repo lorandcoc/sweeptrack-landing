@@ -233,12 +233,15 @@ Ni l'Application ni le Site Web ne sont destinés aux enfants de moins de 18 ans
 ## 12. Autorisations expliquées (Application)
 
 - **ACCESS_FINE_LOCATION** — GPS pour le suivi de parcours pendant les sessions
-- **ACCESS_BACKGROUND_LOCATION** — continuer le suivi lorsque l'écran est éteint
+- **ACCESS_COARSE_LOCATION** — localisation approximative de secours lorsque le GPS précis n'est pas disponible
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — maintenir le traceur GPS actif en tant que service de premier plan afin que le suivi se poursuive lorsque l'écran est éteint pendant les sessions actives
 - **CAMERA** — capturer des photos pour l'enregistrement de trouvailles
 - **RECORD_AUDIO** — enregistrer des notes audio pour les trouvailles
 - **READ/WRITE_CALENDAR** — écrit les rappels d'expiration des permis du coffre-fort dans le calendrier local de votre appareil. Si vous avez activé la synchronisation avec un calendrier dans le cloud sur Android (par exemple, synchronisation Google Calendar), ces rappels seront synchronisés avec votre compte avec le reste de votre calendrier — cette synchronisation est contrôlée par vos paramètres Android, pas par l'Application
 - **INTERNET** — météo, géocodage, marées, cartes, abonnements
+- **ACCESS_NETWORK_STATE** — détecter l'état hors ligne avant d'effectuer des appels réseau
 - **POST_NOTIFICATIONS** — notification de suivi GPS
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — empêcher le système de fermer le traceur GPS pendant les longues sessions
 - **VIBRATE** — alertes de limite du garde-périmètre
 
 Vous pouvez révoquer toute autorisation à tout moment via les Paramètres Android.

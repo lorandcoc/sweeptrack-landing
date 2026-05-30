@@ -106,9 +106,9 @@ De App verzamelt en slaat de volgende gegevens **lokaal op uw apparaat** op:
 
 ### 6.2 Gegevensopslag (App)
 
-- **Alle App-gegevens worden lokaal op uw apparaat opgeslagen** in een versleutelde database en lokale bestandsopslag
+- **Alle App-gegevens worden lokaal op uw apparaat opgeslagen** in een lokale Room/SQLite-database en app-privé bestandsopslag binnen de afgeschermde privé-sandbox van Android. Het databasebestand wordt niet afzonderlijk door de App versleuteld, hoewel de platformopslagbescherming van Android op ondersteunde apparaten van toepassing is.
 - **Geen App-gegevens worden verzonden naar onze servers** — wij beheren geen backend-servers of databases voor App-functionaliteit
-- **Google Drive-back-up** (optioneel, door de gebruiker geïnitieerd) slaat een versleutelde kopie van uw gegevens op in uw persoonlijke Google Drive-account in een "SweepTrack Backups"-map
+- **Google Drive-back-up** (optioneel, door de gebruiker geïnitieerd) slaat een back-upkopie van uw gegevens op in uw persoonlijke Google Drive-account in een "SweepTrack Backups"-map. Als u back-upversleuteling met wachtwoordzin inschakelt, wordt de back-up vóór het uploaden versleuteld.
 - Android-cloudback-up is uitgeschakeld om uw gegevens te beschermen
 
 Gegevenspraktijken van de Website (e-mailadres-verzameling voor de wachtlijst, analytics, hosting) worden apart beschreven in §6.7 hieronder en in volledig detail in ons Privacybeleid, Sectie 4.

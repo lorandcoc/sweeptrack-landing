@@ -233,11 +233,14 @@ Sem az Alkalmazás, sem a Weboldal nem 18 év alatti gyermekek számára készü
 ## 12. Engedélyek magyarázata (Alkalmazás)
 
 - **ACCESS_FINE_LOCATION** — GPS a munkamenetek alatti útvonal-nyomkövetéshez
-- **ACCESS_BACKGROUND_LOCATION** — a nyomkövetés folytatása, amikor a képernyő ki van kapcsolva
+- **ACCESS_COARSE_LOCATION** — hozzávetőleges helymeghatározás tartalékként, amikor a pontos GPS nem érhető el
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — a GPS-nyomkövetőt előtérben futó szolgáltatásként tartja működésben, hogy a nyomkövetés az aktív munkamenetek alatt kikapcsolt képernyővel is folytatódjon
 - **CAMERA** — fotók készítése a találatok rögzítéséhez
 - **RECORD_AUDIO** — hangjegyzetek rögzítése a találatokhoz
 - **READ/WRITE_CALENDAR** — a kassza engedélyeinek lejárati emlékeztetőit írja az eszköz helyi naptárába. Ha az Android-eszközén engedélyezte a felhőalapú naptárszinkronizálást (például Google Calendar-szinkronizálást), ezek az emlékeztetők a naptár többi részével együtt szinkronizálódnak a fiókjába — ezt a szinkronizálást az Android-beállítások vezérlik, nem pedig az Alkalmazás
 - **INTERNET** — időjárás, geokódolás, árapályok, térképek, előfizetések
+- **ACCESS_NETWORK_STATE** — az offline állapot észlelése, mielőtt hálózati kéréseket indítana
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — megakadályozza, hogy a rendszer leállítsa a GPS-nyomkövetőt a hosszú munkamenetek során
 - **POST_NOTIFICATIONS** — GPS-nyomkövetési értesítés
 - **VIBRATE** — perimeter-őrség határriasztásai
 

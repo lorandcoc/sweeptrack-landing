@@ -233,11 +233,14 @@ Noch de App noch de Website is gericht op kinderen onder de 18 jaar. De beoogde 
 ## 12. Toestemmingen uitgelegd (App)
 
 - **ACCESS_FINE_LOCATION** — GPS voor padtracking tijdens sessies
-- **ACCESS_BACKGROUND_LOCATION** — tracking voortzetten wanneer het scherm uit is
+- **ACCESS_COARSE_LOCATION** — benaderende locatie als fallback wanneer nauwkeurige GPS niet beschikbaar is
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — houden de GPS-tracker als voorgrondservice actief zodat tracking doorloopt met het scherm uit tijdens actieve sessies
 - **CAMERA** — foto's vastleggen voor vondstregistratie
 - **RECORD_AUDIO** — audio-notities opnemen voor vondsten
 - **READ/WRITE_CALENDAR** — schrijft herinneringen voor de vergunningenvervaldatum van de kluis naar de lokale agenda van uw apparaat. Als u in Android synchronisatie met een cloudagenda hebt ingeschakeld (bijvoorbeeld Google Calendar-synchronisatie), worden deze herinneringen samen met de rest van uw agenda gesynchroniseerd met uw account — die synchronisatie wordt geregeld door uw Android-instellingen, niet door de App
 - **INTERNET** — weer, geocodering, getijden, kaarten, abonnementen
+- **ACCESS_NETWORK_STATE** — offline-status detecteren voordat netwerkoproepen worden gedaan
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — voorkomen dat het systeem de GPS-tracker beëindigt tijdens lange sessies
 - **POST_NOTIFICATIONS** — GPS-trackingmelding
 - **VIBRATE** — grenswaarschuwingen van de perimeterbewaking
 

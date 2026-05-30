@@ -233,11 +233,14 @@ Hverken Appen eller Websitet er rettet mod børn under 18 år. Appens tilsigtede
 ## 12. Tilladelser forklaret (App)
 
 - **ACCESS_FINE_LOCATION** — GPS til rute-sporing under sessioner
-- **ACCESS_BACKGROUND_LOCATION** — fortsætte sporing, når skærmen er slukket
+- **ACCESS_COARSE_LOCATION** — omtrentlig placering som reserve, når præcis GPS ikke er tilgængelig
+- **FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION** — holder GPS-sporeren kørende som en forgrundstjeneste, så sporing fortsætter med skærmen slukket under aktive sessioner
 - **CAMERA** — tage billeder til fundregistrering
 - **RECORD_AUDIO** — optage lydnoter til fund
 - **READ/WRITE_CALENDAR** — skriver påmindelser om udløb af tilladelser fra boksen i din enheds lokale kalender. Hvis du har aktiveret synkronisering med en cloud-kalender i Android (for eksempel Google Calendar-synkronisering), synkroniseres disse påmindelser til din konto sammen med resten af din kalender — den synkronisering styres af dine Android-indstillinger, ikke af Appen
 - **INTERNET** — vejr, geokodning, tidevand, kort, abonnementer
+- **ACCESS_NETWORK_STATE** — registrere offline-tilstand, før der foretages netværkskald
+- **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — forhindre systemet i at lukke GPS-sporeren under lange sessioner
 - **POST_NOTIFICATIONS** — GPS-sporingsnotifikation
 - **VIBRATE** — perimeter-vagt grænsealarmer
 
