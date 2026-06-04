@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması
 
-Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 26 Mayıs 2026
+Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 4 Haziran 2026
 
 İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
 
@@ -16,7 +16,7 @@ Web sitesi: sweeptrack.pro
 
 Bu Gizlilik Politikası, SweepTrack Pro'nun ("Uygulama") ve sweeptrack.pro web sitesinin ("Web Sitesi") bilgilerinizi nasıl topladığını, kullandığını, sakladığını ve koruduğunu açıklar. Gizliliğinizi korumayı ve veri uygulamalarımız hakkında şeffaflık sağlamayı taahhüt ediyoruz.
 
-Uygulama, **önce gizlilik (privacy-first) mimarisi** ile tasarlanmıştır: tüm arama verileri yerel olarak cihazınızda saklanır, Uygulama için arka uç sunucuları işletmiyoruz ve kişisel arama verilerinizi toplamıyoruz, iletmiyoruz veya satmıyoruz. Web Sitesi ayrı çalışır ve Bölüm 4'te açıklanan kendi veri uygulamalarına sahiptir.
+Uygulama, **önce gizlilik (privacy-first) mimarisi** ile tasarlanmıştır: tüm arama verileri yerel olarak cihazınızda saklanır, arama verilerinizi saklayan arka uç sunucuları işletmiyoruz ve kişisel arama verilerinizi toplamıyoruz, iletmiyoruz veya satmıyoruz. Az miktarda veri yalnızca Bölüm 3.2 ve 3.3'te açıklanan, kullanıcı tarafından başlatılan işlevler için cihazınızdan ayrılır (gerçek zamanlı API özellikleri, isteğe bağlı yedekleme, isteğe bağlı tanılama ve isteğe bağlı geri bildirim). Web Sitesi ayrı çalışır ve Bölüm 4'te açıklanan kendi veri uygulamalarına sahiptir.
 
 ## 2. Veri Sorumlusu
 
@@ -42,7 +42,7 @@ Aşağıdaki veriler sizin tarafınızdan oluşturulur ve **yalnızca cihazını
 
 **Buluntu ve keşif kayıtları:**
 
-- Buluntu türü (Hazine, Altın, Madeni Para, Eser, Mücevher, Çöp)
+- Buluntu türü (Hazine, Altın, Madeni Para, Eser, Mücevher, Çöp, Sınıflandırılmamış/Hızlı Bırakma)
 - Buluntu konumu (kayıt anındaki GPS koordinatları)
 - İsteğe bağlı meta veriler: ad, notlar, derinlik, tahmini değer, ağırlık
 - Medya ekleri: fotoğraflar ve ses kayıtları
@@ -56,6 +56,8 @@ Aşağıdaki veriler sizin tarafınızdan oluşturulur ve **yalnızca cihazını
 - Dijital imzalar (SVG biçimi)
 - Özel etiketler ve notlar
 
+**Ara noktalar:** Kullanıcı tarafından yerleştirilen harita işaretçileri — koordinatlar, ad, kategori ve isteğe bağlı notlar.
+
 **Diğer yerel veriler:** Dedektör ön ayar yapılandırmaları, uygulama tercihleri (tema, birimler, dil, harita ayarları) ve oturumlarla ilişkili hava durumu anlık görüntüleri.
 
 ### 3.2 Geçici olarak işlenen veriler (saklanmaz)
@@ -63,11 +65,12 @@ Aşağıdaki veriler sizin tarafınızdan oluşturulur ve **yalnızca cihazını
 Aşağıdaki veriler gerçek zamanlı işlevsellik için üçüncü taraf API'lerine gönderilir ve **anlık istek dışında bizim veya bu hizmetler tarafından saklanmaz**:
 
 - Hava durumu tahminleri ve irtifa verileri için Open-Meteo'ya gönderilen yaklaşık GPS koordinatları
-- Adres aramaları için OpenStreetMap/Nominatim'e gönderilen yaklaşık GPS koordinatları
+- Ters geocoding için Android'in platform geocoder'ı (çoğu cihazda Google Play Services tarafından sağlanır) aracılığıyla yer adlarına çözümlenen koordinatlar — oturumları ve buluntuları bir yer adıyla etiketlemek için kullanılır
 - Yakındaki tarihi POI keşifleri için Overpass API'ye gönderilen yaklaşık GPS koordinatları
 - Yakındaki makale coğrafi araması için Wikipedia API'ye gönderilen yaklaşık GPS koordinatları
 - Gelgit tahminleri için NOAA'ya gönderilen gelgit istasyonu tanımlayıcıları
 - Open-Meteo Geocoding'e gönderilen konum arama sorguları
+- Harita döşemesi (tile) istekleri (görüntülediğiniz haritanın yaklaşık alanını açığa çıkarır) etkin harita türünün döşeme sağlayıcısına gönderilir: Esri/ArcGIS (uydu görüntüleri ve USGS topografik haritaları), OpenStreetMap ve OpenTopoMap (çevrimdışı/indirilebilir harita paketleri) ve — Romanya tarihi "Eski Harita" katmanı için — geo-spatial.org'dan (eHarta) döşemeler getiren, Cloudflare üzerinde işlettiğimiz bir önbellekleme proxy'si. Varsayılan Google harita tabanı, Bölüm 3.3'teki Google Maps SDK kapsamındadır
 
 ### 3.3 Üçüncü taraf hizmetleri tarafından işlenen veriler
 
@@ -81,20 +84,22 @@ Aşağıdaki veriler gerçek zamanlı işlevsellik için üçüncü taraf API'le
 
 Etkinleştirildiğinde:
 
-- **Firebase Analytics**, kimlik bilgisi içermeyen parametrelerle sekiz toplu olay adını kaydeder: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Olay içerikleri **asla** GPS koordinatları, adresler, buluntu adları, fotoğraflar, ses kayıtları, kasa verileri veya kişiyi tanımlamaya yarayan başka herhangi bir bilgi içermez — yalnızca sayaçlar, süreler, mesafeler, buluntu türü (yalnızca kategori) ve özellik tanımlayıcıları.
+- **Firebase Analytics**, kimlik bilgisi içermeyen parametrelerle sekiz toplu olay adını kaydeder: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Olay içerikleri **asla** GPS koordinatları, adresler, buluntu adları, fotoğraflar, ses kayıtları, kasa verileri veya kişiyi tanımlamaya yarayan başka herhangi bir bilgi içermez — yalnızca sayaçlar, süreler, mesafeler, buluntu türü (yalnızca kategori) ve özellik tanımlayıcıları. `find_logged` olayı türü, belirli buluntu türü yerine kaba bir kategori olarak bildirir (`valuable`, `find`, `trash`, `unsorted` veya tanınmayan herhangi bir tür için `other`), böylece toplu gösterge paneli, bireysel bir kullanıcının kaydettiği değerli eşyaların dağılımını çıkaramaz.
 - **Firebase Crashlytics**, hataları teşhis etmemize yardımcı olmak için cihaz modeli, işletim sistemi sürümü ve uygulama sürümü ile birlikte çökme yığın izlerini yükler. Herhangi bir çökme veya kritik olmayan hata Crashlytics'e iletilmeden önce, Uygulama **istisna mesajından koordinat şeklindeki alt dizeleri temizler** (örneğin `lat=`/`lon=` desenleri, üç veya daha fazla ondalık basamağa sahip işaretli ondalık sayılar), böylece yerel değişkenlerde tutulan GPS konumları hata raporlama yoluyla sızamaz. Yığın çerçeveleri (sınıf, yöntem, satır) gruplama için korunur; çalışma zamanı değerleri korunmaz. Süreç çapında bir yakalanmamış istisna işleyicisi, SDK tarafından otomatik olarak yakalanan kritik çökmelere de aynı temizliği uygular.
 
 Her iki hizmet de [Google Gizlilik Politikası'na](https://policies.google.com/privacy) ve [Firebase gizlilik ve güvenlik açıklamalarına](https://firebase.google.com/support/privacy) tabidir.
 
+**Uygulama içi geri bildirim (isteğe bağlı):** Uygulamanın geri bildirim formu aracılığıyla geri bildirim gönderirseniz, Uygulama girdiğiniz bilgileri — mesajınızı, seçilen kategoriyi ve bunun bir hata raporu mu yoksa bir özellik önerisi mi olduğunu — cihaz modeliniz, Android sürümünüz, uygulama sürümünüz ve yerel ayarınızla birlikte ve **yalnızca sağlamayı seçerseniz e-posta adresinizle** birlikte, okuyup yanıt verebilmemiz için işlettiğimiz bir Supabase Edge Function'a iletir. Formu göndermediğiniz sürece hiçbir şey gönderilmez. Supabase, Inc. veri işleyicimiz olarak hareket eder (AB bölgesi). [Supabase Gizlilik Politikası'na](https://supabase.com/privacy) tabidir.
+
 ### 3.4 Uygulamanın TOPLAMADIĞI Veriler
 
-- **Uygulama** adınızı, e-postanızı, telefon numaranızı veya herhangi bir kişisel tanımlayıcıyı toplamaz
+- **Uygulama** adınızı, telefon numaranızı veya herhangi bir kişisel tanımlayıcıyı toplamaz — uygulama içi geri bildirim gönderirken isteğe bağlı olarak girdiğiniz bir e-posta adresi hariç (Bölüm 3.3'e bakın)
 - **Uygulama**, siz açıkça onay vermediğiniz sürece analitik veya çökme raporlaması kullanmaz (yukarıdaki Firebase bölümüne bakın; varsayılan olarak devre dışıdır ve istediğiniz zaman Ayarlar → Gizlilik → Tanılama menüsünden geri alınabilir)
 - **Uygulama** reklam çerçeveleri veya reklam tanımlayıcıları kullanmaz
 - **Uygulama** kullanım modellerini, oturum sıklığını veya özellik kullanımını izlemez
 - **Uygulama** kullanıcı profilleri veya davranışsal parmak izleri oluşturmaz
-- **Uygulama** üçüncü taraflarla veri paylaşmaz, satmaz, kiralamaz veya takas etmez
-- **Uygulama** arama verilerinizi alan, işleyen veya saklayan sunucular işletmez
+- **Uygulama** verilerinizi satmaz, kiralamaz veya takas etmez ve yalnızca sizin başlattığınız durumlarda paylaşır: Bölüm 3.2'deki gerçek zamanlı API çağrıları, isteğe bağlı Google Drive yedeklemesi, opt-in Firebase tanılaması ve göndermeyi seçtiğiniz geri bildirim (Bölüm 3.3)
+- **Uygulama** arama verilerinizi (konum, buluntular, kasa girişleri, oturumlar) alan, işleyen veya saklayan herhangi bir sunucu işletmez; işlettiğimiz bir sunucuya ulaşan, yazdığınız tek içerik göndermeyi seçtiğiniz geri bildirimdir (Bölüm 3.3)
 
 Web Sitesi veri uygulamaları ayrı olarak Bölüm 4'te ele alınır.
 
@@ -148,17 +153,18 @@ Bölüm 10'da açıklanan aynı GDPR, UK GDPR, Avustralya, Kanada, CCPA, LGPD ve
 ## 5. İşlemenin yasal dayanağı (GDPR)
 
 - **GPS/oturum verileri, buluntu kayıtları, kasa girişleri:** Onay (Madde 6(1)(a)) — bu işlemleri aktif olarak başlatırsınız
-- **API çağrıları (hava durumu, geocoding):** Meşru menfaat (Madde 6(1)(f)) — temel işlevsellik için gereklidir
+- **API çağrıları (hava durumu, geocoding, harita döşemeleri):** Meşru menfaat (Madde 6(1)(f)) — temel işlevsellik için gereklidir
 - **Google Drive yedeklemesi:** Onay (Madde 6(1)(a)) — açıkça etkinleştirir ve kimlik doğrularsınız
 - **Abonelik doğrulaması:** Sözleşmenin ifası (Madde 6(1)(b)) — ücretli özellikler sağlamak için gereklidir
 - **Firebase Analytics ve Crashlytics (isteğe bağlı):** Onay (Madde 6(1)(a)) — ilk açılıştaki istem veya Ayarlar üzerinden etkinleştirilir, istediğiniz zaman geri alınabilir
+- **Uygulama içi geri bildirim (isteğe bağlı):** Onay (Madde 6(1)(a)) — yalnızca geri bildirim formunu gönderdiğinizde gönderilir
 - **Bekleme listesi e-postası (Web Sitesi):** Onay (Madde 6(1)(a)) — Bölüm 4.1'e bakın
 
 İlgili etkinliği durdurarak, Uygulamayı kaldırarak veya Web Sitesi e-postalarından aboneliği iptal ederek onayınızı istediğiniz zaman geri çekebilirsiniz.
 
 ## 6. Verilerinizi nasıl kullanırız
 
-Tüm Uygulama veri işleme **cihazınızda yerel olarak** gerçekleşir. Uygulama verilerini yalnızca Uygulamanın özelliklerini sağlamak için kullanırız: harita gösterimi, oturum takibi, buluntu kaydı, izin yönetimi, hava durumu/gelgit verileri, dışa aktarımlar, yedekleme ve abonelik doğrulaması.
+Neredeyse tüm Uygulama veri işleme **cihazınızda yerel olarak** gerçekleşir. Uygulama verilerini yalnızca Uygulamanın özelliklerini sağlamak için kullanırız: harita gösterimi, oturum takibi, buluntu kaydı, izin yönetimi, hava durumu/gelgit verileri, dışa aktarımlar, yedekleme ve abonelik doğrulaması. Veriler cihazınızdan yalnızca Bölüm 3.2 ve 3.3'teki, kullanıcı tarafından başlatılan işlevler için ayrılır (gerçek zamanlı API'ler, isteğe bağlı yedekleme, isteğe bağlı tanılama, isteğe bağlı geri bildirim).
 
 Web Sitesi verileri (bekleme listesi e-postanız) yalnızca Bölüm 4'te açıklanan lansman ve lansman öncesi iletişimleri göndermek için kullanılır.
 
@@ -171,6 +177,7 @@ Web Sitesi verileri (bekleme listesi e-postanız) yalnızca Bölüm 4'te açıkl
 - Medya dosyaları, diğer uygulamalar tarafından erişilemeyen Uygulamanın özel dahili depolama alanında saklanır
 - Android bulut yedeklemesi, istemsiz veri ifşasını önlemek için **devre dışı bırakılmıştır** (`android:allowBackup="false"`)
 - Google Drive yedeklemeleri Google'ın şifrelenmiş API'lerini (HTTPS/TLS) kullanır ve yalnızca hesabınızda bulunur
+- Gönderdiğiniz isteğe bağlı uygulama içi geri bildirim, HTTPS/TLS üzerinden bir Supabase Edge Function'a (AB bölgesi) iletilir
 
 Uygulama için arama verilerinizi depolayan herhangi bir sunucu, veritabanı veya bulut altyapısı işletmiyoruz.
 
@@ -184,7 +191,7 @@ Uygulama için arama verilerinizi depolayan herhangi bir sunucu, veritabanı vey
 
 ## 9. Veri paylaşımı ve açıklama
 
-Kişisel verilerinizi herhangi bir üçüncü tarafla paylaşmıyoruz, satmıyoruz, kiralamıyoruz veya açıklamıyoruz. Dışa aktarımlar (GPX, KML, CSV, JSON), oturum paylaşım kartları veya Google Drive yedeklemesi yoluyla Uygulama verilerini paylaşmayı seçebilirsiniz — tümü kullanıcı tarafından başlatılır. Web Sitesi bekleme listesi verileri yalnızca Bölüm 4'te açıklanan amaçlar için belirtilen işleyicilerimiz (Supabase, Resend) tarafından işlenir.
+Kişisel verilerinizi satmıyoruz, kiralamıyoruz veya takas etmiyoruz. Dışa aktarımlar (GPX, KML, CSV, JSON), oturum paylaşım kartları veya Google Drive yedeklemesi yoluyla Uygulama verilerini paylaşmayı seçebilirsiniz — tümü kullanıcı tarafından başlatılır. Uygulama içi geri bildirim gönderirseniz, bu bizim adımıza Supabase tarafından işlenir (Bölüm 3.3'e bakın). Web Sitesi bekleme listesi verileri yalnızca Bölüm 4'te açıklanan amaçlar için belirtilen işleyicilerimiz (Supabase, Resend) tarafından işlenir.
 
 ## 10. Haklarınız (GDPR ve uluslararası)
 
@@ -238,7 +245,7 @@ Ne Uygulama ne de Web Sitesi 18 yaşın altındaki çocuklara yöneliktir. Uygul
 - **CAMERA** — buluntu kaydı için fotoğraf çekme
 - **RECORD_AUDIO** — buluntular için ses notları kaydetme
 - **READ/WRITE_CALENDAR** — kasa izinlerinin son kullanma tarihi hatırlatıcılarını cihazınızın yerel takvimine yazar. Android'de bir bulut takvimiyle senkronizasyonu etkinleştirdiyseniz (örneğin Google Calendar senkronizasyonu), bu hatırlatıcılar takviminizin geri kalanıyla birlikte hesabınıza senkronize edilir — bu senkronizasyonu Uygulama değil, Android ayarlarınız kontrol eder
-- **INTERNET** — hava durumu, geocoding, gelgitler, haritalar, abonelikler
+- **INTERNET** — hava durumu, geocoding, gelgitler, haritalar, abonelikler, isteğe bağlı geri bildirim
 - **ACCESS_NETWORK_STATE** — ağ çağrıları yapmadan önce çevrimdışı durumu algılama
 - **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — sistemin uzun oturumlar sırasında GPS izleyiciyi sonlandırmasını önleme
 - **POST_NOTIFICATIONS** — GPS takip bildirimi
@@ -252,13 +259,13 @@ Android Ayarları aracılığıyla herhangi bir izni istediğiniz zaman iptal ed
 
 ## 14. Uluslararası veri aktarımları
 
-**Uygulama verileri:** Tüm arama verileri cihazınızda yerel olarak saklandığından, kontrolümüz altında uluslararası veri aktarımları gerçekleşmez. Üçüncü taraflara yapılan API çağrıları, bu hizmetlerin faaliyet gösterdiği yargı bölgelerinde işlenebilir.
+**Uygulama verileri:** Tüm arama verileri cihazınızda yerel olarak saklandığından, kontrolümüz altında uluslararası veri aktarımları gerçekleşmez. Üçüncü taraflara yapılan API çağrıları (Bölüm 3.2), isteğe bağlı Google Drive yedeklemesi, isteğe bağlı Firebase tanılaması ve isteğe bağlı geri bildirim, bu hizmetlerin faaliyet gösterdiği yargı bölgelerinde işlenebilir.
 
 **Web Sitesi verileri:** Bekleme listesi e-postaları Supabase tarafından AB'de (İrlanda) saklanır ve Resend (AB, İrlanda) tarafından işlenir. Web Sitesine AB dışından erişiyorsanız, e-postanız işleme için AB'ye aktarılır.
 
 ## 15. Veri ihlali bildirimi
 
-**Uygulama:** Arama verilerinizi işlettiğimiz herhangi bir sunucuda saklamadığımız için, tarafımızdan Uygulama verilerini etkileyen bir veri ihlali mümkün değildir. Uygulamada bir güvenlik açığından haberdar olursak, bir güncelleme yayınlayacak ve kullanıcıları Uygulama veya web sitesi aracılığıyla bilgilendireceğiz.
+**Uygulama:** Arama verilerinizi işlettiğimiz herhangi bir sunucuda saklamadığımız için, tarafımızdan Uygulama verilerini etkileyen bir veri ihlali mümkün değildir. Uygulamada bir güvenlik açığından haberdar olursak, bir güncelleme yayınlayacak ve kullanıcıları Uygulama veya web sitesi aracılığıyla bilgilendireceğiz. Gönderdiğiniz isteğe bağlı geri bildirim, işleyicimiz Supabase tarafından kendi ihlal bildirim protokolleri kapsamında tutulur.
 
 **Web Sitesi:** İşleyicilerimiz (Supabase, Resend) kendi ihlal bildirim protokollerini sürdürür. Bekleme listesi e-postanızı etkileyen bir ihlalin olası olmayan durumunda, GDPR'nin gerektirdiği şekilde 72 saat içinde sizi ve ilgili denetim makamını (ANSPDCP) bilgilendireceğiz.
 
@@ -268,15 +275,19 @@ Bu Gizlilik Politikasını işlevsellik veya geçerli yasalardaki değişiklikle
 
 ## 17. Üçüncü taraf gizlilik politikaları
 
-- [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Google (Maps, Drive, Sign-In, platform geocoder)](https://policies.google.com/privacy)
 - [Firebase (Analytics ve Crashlytics — yalnızca opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+- [OpenTopoMap](https://opentopomap.org/about)
+- [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+- [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+- [Cloudflare](https://www.cloudflare.com/privacypolicy/) (tarihi harita döşeme proxy'si)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Web Sitesi barındırma + analitik)
-- [Supabase](https://supabase.com/privacy) (Web Sitesi veritabanı)
+- [Supabase](https://supabase.com/privacy) (Web Sitesi veritabanı + uygulama içi geri bildirim)
 - [Resend](https://resend.com/legal/privacy-policy) (Web Sitesi e-posta)
 
 ## 18. Bize ulaşın

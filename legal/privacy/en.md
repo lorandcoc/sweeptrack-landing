@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS Tracking Application for Metal Detecting
 
-Effective Date: May 12, 2026 · Last Updated: May 26, 2026
+Effective Date: May 12, 2026 · Last Updated: June 4, 2026
 
 Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
 
@@ -16,7 +16,7 @@ Website: sweeptrack.pro
 
 This Privacy Policy explains how SweepTrack Pro ("the App") and the website at sweeptrack.pro ("the Website") collect, use, store, and protect your information. We are committed to protecting your privacy and ensuring transparency about our data practices.
 
-The App is designed with a **privacy-first architecture**: all detecting data is stored locally on your device, we do not operate backend servers for the App, and we do not collect, transmit, or sell your personal detecting data. The Website operates separately and has its own data practices, described in Section 4.
+The App is designed with a **privacy-first architecture**: all detecting data is stored locally on your device, we do not operate backend servers that store your detecting data, and we do not collect, transmit, or sell your personal detecting data. A small amount of data leaves your device only for the user-initiated functions described in Sections 3.2 and 3.3 (real-time API features, optional backup, optional diagnostics, and optional feedback). The Website operates separately and has its own data practices, described in Section 4.
 
 ## 2. Data Controller
 
@@ -42,7 +42,7 @@ The following data is created by you and stored **exclusively on your device**. 
 
 **Find and Discovery Records:**
 
-- Find type (Treasure, Gold, Coin, Relic, Jewelry, Trash)
+- Find type (Treasure, Gold, Coin, Relic, Jewelry, Trash, Unsorted/Quick Drop)
 - Find location (GPS coordinates at time of logging)
 - Optional metadata: name, notes, depth, estimated value, weight
 - Media attachments: photographs and audio recordings
@@ -56,18 +56,21 @@ The following data is created by you and stored **exclusively on your device**. 
 - Digital signatures (SVG format)
 - Custom tags and notes
 
+**Waypoints:** User-placed map markers — coordinates, name, category, and optional notes.
+
 **Other Local Data:** Detector preset configurations, app preferences (theme, units, language, map settings), and weather snapshots associated with sessions.
 
 ### 3.2 Data Processed Temporarily (Not Stored)
 
-The following data is sent to third-party APIs for real-time functionality and is **not stored by us or by these services beyond the immediate request**:
+The following data is sent to third-party APIs for real-time functionality and is **not stored by us, and not stored by these services beyond the immediate request**:
 
 - Approximate GPS coordinates sent to Open-Meteo for weather forecasts and elevation data
-- Approximate GPS coordinates sent to OpenStreetMap/Nominatim for address lookup
+- Coordinates resolved to place names via Android's platform geocoder (provided by Google Play Services on most devices) for reverse geocoding — used to label sessions and finds with a place name
 - Approximate GPS coordinates sent to Overpass API for nearby historical POI discovery
 - Approximate GPS coordinates sent to Wikipedia API for nearby article geosearch
 - Tide station identifiers sent to NOAA for tide predictions
 - Location search queries sent to Open-Meteo Geocoding for place name search
+- Map tile requests (which reveal the approximate area of the map you are viewing) sent to the active map type's tile provider: Esri/ArcGIS (satellite imagery and USGS topographic maps), OpenStreetMap and OpenTopoMap (offline/downloadable map packs), and — for the Romanian historical "Old Map" overlay — a caching proxy we operate on Cloudflare that fetches tiles from geo-spatial.org (eHarta). The default Google map base is covered under Google Maps SDK in Section 3.3
 
 ### 3.3 Data Processed by Third-Party Services
 
@@ -81,20 +84,22 @@ The following data is sent to third-party APIs for real-time functionality and i
 
 When enabled:
 
-- **Firebase Analytics** logs eight aggregate event names with non-identifying parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Event payloads **never** include GPS coordinates, addresses, find names, photographs, audio recordings, vault data, or any personally identifying information — only counts, durations, distances, find types (category only), and feature identifiers. The `find_logged` event reports type as a coarse category (`valuable`, `find`, `trash`, `unsorted`) rather than the specific find type, so the aggregate dashboard cannot infer the distribution of valuables an individual user logs.
+- **Firebase Analytics** logs eight aggregate event names with non-identifying parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Event payloads **never** include GPS coordinates, addresses, find names, photographs, audio recordings, vault data, or any personally identifying information — only counts, durations, distances, find types (category only), and feature identifiers. The `find_logged` event reports type as a coarse category (`valuable`, `find`, `trash`, `unsorted`, or `other` for any unrecognized type) rather than the specific find type, so the aggregate dashboard cannot infer the distribution of valuables an individual user logs.
 - **Firebase Crashlytics** uploads crash stack traces with device model, OS version, and app version to help us diagnose bugs. Before any crash or non-fatal error is forwarded to Crashlytics, the App **scrubs coordinate-shaped substrings from the exception message** (e.g. `lat=`/`lon=` patterns, signed decimals with three or more fractional digits) so GPS positions cached in local variables cannot leak through error reporting. Stack frames (class, method, line) are preserved for grouping; runtime values are not. A process-wide uncaught-exception handler applies the same scrubbing to fatal crashes captured automatically by the SDK.
 
 Both services are subject to [Google's Privacy Policy](https://policies.google.com/privacy) and [Firebase Privacy and Security disclosures](https://firebase.google.com/support/privacy).
 
+**In-App Feedback (Optional):** If you send feedback through the App's feedback form, the App transmits the information you enter — your message, the selected category, and whether it is a bug report or a feature idea — together with your device model, Android version, app version, and locale, and, **only if you choose to provide it, your email address**, to a Supabase Edge Function we operate, so that we can read and respond. Nothing is sent unless you submit the form. Supabase, Inc. acts as our data processor (EU region). Subject to [Supabase's Privacy Policy](https://supabase.com/privacy).
+
 ### 3.4 Data the App Does NOT Collect
 
-- **The App** does not collect your name, email, phone number, or any personal identifiers
+- **The App** does not collect your name, phone number, or any personal identifiers — except an email address you optionally enter when submitting in-app feedback (see Section 3.3)
 - **The App** does not use analytics or crash reporting unless you explicitly opt in (see the Firebase section above; opt-in is off by default and revocable at any time in Settings → Privacy → Diagnostics)
 - **The App** does not use advertising frameworks or ad identifiers
 - **The App** does not track usage patterns, session frequency, or feature usage
 - **The App** does not create user profiles or behavioral fingerprints
-- **The App** does not share, sell, rent, or trade any data with third parties
-- **The App** does not operate any servers that receive, process, or store your detecting data
+- **The App** does not sell, rent, or trade your data, and shares it only where you initiate it: the real-time API calls in Section 3.2, optional Google Drive backup, opt-in Firebase diagnostics, and feedback you choose to submit (Section 3.3)
+- **The App** does not operate any servers that receive, process, or store your detecting data (location, finds, vault entries, sessions); the only content you type that reaches a server we operate is feedback you choose to submit (Section 3.3)
 
 Website data practices are covered separately in Section 4.
 
@@ -148,17 +153,18 @@ The same GDPR, UK GDPR, Australian, Canadian, CCPA, LGPD, and NZ Privacy Act rig
 ## 5. Legal Basis for Processing (GDPR)
 
 - **GPS/session data, find records, vault entries:** Consent (Art. 6(1)(a)) — you actively initiate these actions
-- **API calls (weather, geocoding):** Legitimate interest (Art. 6(1)(f)) — necessary for core functionality
+- **API calls (weather, geocoding, map tiles):** Legitimate interest (Art. 6(1)(f)) — necessary for core functionality
 - **Google Drive backup:** Consent (Art. 6(1)(a)) — you explicitly enable and authenticate
 - **Subscription verification:** Contract performance (Art. 6(1)(b)) — necessary to provide paid features
 - **Firebase Analytics and Crashlytics (optional):** Consent (Art. 6(1)(a)) — opted in via the first-run prompt or Settings, revocable at any time
+- **In-app feedback (optional):** Consent (Art. 6(1)(a)) — sent only when you submit the feedback form
 - **Waitlist email (Website):** Consent (Art. 6(1)(a)) — see Section 4.1
 
 You may withdraw consent at any time by stopping the relevant activity, by uninstalling the App, or by unsubscribing from Website emails.
 
 ## 6. How We Use Your Data
 
-All App data processing occurs **locally on your device**. We use App data exclusively to provide the App's features: map display, session tracking, find logging, permission management, weather/tide data, exports, backup, and subscription verification.
+Almost all App data processing occurs **locally on your device**. We use App data to provide the App's features: map display, session tracking, find logging, permission management, weather/tide data, exports, backup, and subscription verification. Data leaves your device only for the user-initiated functions in Sections 3.2 and 3.3 (real-time APIs, optional backup, optional diagnostics, optional feedback).
 
 Website data (your waitlist email) is used only to send launch and pre-launch communications as described in Section 4.
 
@@ -171,6 +177,7 @@ Website data (your waitlist email) is used only to send launch and pre-launch co
 - Media files stored in the App's private internal storage, inaccessible to other apps
 - Android cloud backup **disabled** (`android:allowBackup="false"`) to prevent unintended data exposure
 - Google Drive backups use Google's encrypted APIs (HTTPS/TLS) and exist solely in your account
+- Optional in-app feedback you submit is transmitted over HTTPS/TLS to a Supabase Edge Function (EU region)
 
 For the App, we do not operate any servers, databases, or cloud infrastructure that store your detecting data.
 
@@ -184,7 +191,7 @@ For the App, we do not operate any servers, databases, or cloud infrastructure t
 
 ## 9. Data Sharing and Disclosure
 
-We do not share, sell, rent, or disclose your personal data to any third party. You may choose to share App data through exports (GPX, KML, CSV, JSON), session share cards, or Google Drive backup — all user-initiated. Website waitlist data is processed only by our named processors (Supabase, Resend) for the purposes described in Section 4.
+We do not sell, rent, or trade your personal data. You may choose to share App data through exports (GPX, KML, CSV, JSON), session share cards, or Google Drive backup — all user-initiated. If you submit in-app feedback, it is processed on our behalf by Supabase (see Section 3.3). Website waitlist data is processed only by our named processors (Supabase, Resend) for the purposes described in Section 4.
 
 ## 10. Your Rights (GDPR and International)
 
@@ -238,7 +245,7 @@ Neither the App nor the Website is directed at children under 18. The App's inte
 - **CAMERA** — capture photos for find logging
 - **RECORD_AUDIO** — record audio notes for finds
 - **READ/WRITE_CALENDAR** — write permission vault expiry reminders to your device's local calendar. If you have cloud calendar sync enabled in Android (e.g., Google Calendar sync), those reminder events will sync to your account along with the rest of your calendar — that sync is controlled by your Android settings, not the App
-- **INTERNET** — weather, geocoding, tides, maps, subscriptions
+- **INTERNET** — weather, geocoding, tides, maps, subscriptions, optional feedback
 - **ACCESS_NETWORK_STATE** — detect offline state before making network calls
 - **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — prevent the system from killing the GPS tracker during long sessions
 - **POST_NOTIFICATIONS** — GPS tracking notification
@@ -252,13 +259,13 @@ You may revoke any permission at any time through Android Settings.
 
 ## 14. International Data Transfers
 
-**App data:** Since all detecting data is stored locally on your device, no international data transfers occur under our control. Third-party API calls may be processed in jurisdictions where those services operate.
+**App data:** Since all detecting data is stored locally on your device, no international transfers of your detecting data occur under our control. Third-party API calls (Section 3.2), optional Google Drive backup, optional Firebase diagnostics, and optional feedback may be processed in jurisdictions where those services operate.
 
 **Website data:** Waitlist emails are stored in the EU (Ireland) by Supabase and processed by Resend (EU, Ireland). If you are accessing the Website from outside the EU, your email is transferred to the EU for processing.
 
 ## 15. Data Breach Notification
 
-**App:** Since we do not store your detecting data on any server we operate, a data breach affecting App data on our end is not possible. If we become aware of a vulnerability in the App, we will issue an update and notify users through the App or website.
+**App:** Since we do not store your detecting data on any server we operate, a data breach affecting your detecting data on our end is not possible. If we become aware of a vulnerability in the App, we will issue an update and notify users through the App or website. Optional feedback you submit is held by our processor Supabase under its own breach-notification protocols.
 
 **Website:** Our processors (Supabase, Resend) maintain their own breach notification protocols. In the unlikely event of a breach affecting your waitlist email, we will notify you and the relevant supervisory authority (ANSPDCP) within 72 hours as required by GDPR.
 
@@ -268,15 +275,19 @@ We may update this Privacy Policy to reflect changes in functionality or applica
 
 ## 17. Third-Party Privacy Policies
 
-- [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Google (Maps, Drive, Sign-In, platform geocoder)](https://policies.google.com/privacy)
 - [Firebase (Analytics and Crashlytics — opt-in only)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+- [OpenTopoMap](https://opentopomap.org/about)
+- [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+- [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+- [Cloudflare](https://www.cloudflare.com/privacypolicy/) (historical-map tile proxy)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Website hosting + analytics)
-- [Supabase](https://supabase.com/privacy) (Website database)
+- [Supabase](https://supabase.com/privacy) (Website database + in-app feedback)
 - [Resend](https://resend.com/legal/privacy-policy) (Website email)
 
 ## 18. Contact Us

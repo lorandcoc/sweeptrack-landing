@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — aplikacja do śledzenia GPS dla pasjonatów poszukiwania metali
 
-Data wejścia w życie: 12 maja 2026 r. · Ostatnia aktualizacja: 26 maja 2026 r.
+Data wejścia w życie: 12 maja 2026 r. · Ostatnia aktualizacja: 4 czerwca 2026 r.
 
 Operator: Coc Lorand Adrian P.F.A., działający pod nazwą handlową „Loriba"
 
@@ -16,7 +16,7 @@ Strona internetowa: sweeptrack.pro
 
 Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób SweepTrack Pro („Aplikacja") oraz strona internetowa sweeptrack.pro („Strona Internetowa") gromadzą, wykorzystują, przechowują i chronią dane użytkownika. Zobowiązujemy się do ochrony prywatności i zapewnienia przejrzystości naszych praktyk dotyczących danych.
 
-Aplikacja została zaprojektowana w oparciu o **architekturę kładącą nacisk na prywatność (privacy-first)**: wszystkie dane poszukiwawcze są przechowywane lokalnie na urządzeniu użytkownika, nie obsługujemy serwerów zaplecza (backend) dla Aplikacji i nie zbieramy, nie przesyłamy ani nie sprzedajemy danych osobowych poszukiwawczych użytkownika. Strona Internetowa działa oddzielnie i ma własne praktyki dotyczące danych, opisane w Sekcji 4.
+Aplikacja została zaprojektowana w oparciu o **architekturę kładącą nacisk na prywatność (privacy-first)**: wszystkie dane poszukiwawcze są przechowywane lokalnie na urządzeniu użytkownika, nie obsługujemy serwerów zaplecza (backend), które przechowywałyby Twoje dane poszukiwawcze, i nie zbieramy, nie przesyłamy ani nie sprzedajemy danych osobowych poszukiwawczych użytkownika. Niewielka ilość danych opuszcza urządzenie wyłącznie w celu realizacji funkcji inicjowanych przez użytkownika opisanych w Sekcjach 3.2 i 3.3 (funkcje API w czasie rzeczywistym, opcjonalna kopia zapasowa, opcjonalna diagnostyka oraz opcjonalna opinia zwrotna). Strona Internetowa działa oddzielnie i ma własne praktyki dotyczące danych, opisane w Sekcji 4.
 
 ## 2. Administrator danych
 
@@ -42,7 +42,7 @@ Następujące dane są tworzone przez użytkownika i przechowywane **wyłącznie
 
 **Zapisy znalezisk i odkryć:**
 
-- Typ znaleziska (Skarb, Złoto, Moneta, Relikt, Biżuteria, Śmieci)
+- Typ znaleziska (Skarb, Złoto, Moneta, Relikt, Biżuteria, Śmieci, Nieposortowane/Szybki zrzut)
 - Lokalizacja znaleziska (współrzędne GPS w momencie rejestracji)
 - Opcjonalne metadane: nazwa, notatki, głębokość, szacowana wartość, waga
 - Załączniki multimedialne: zdjęcia i nagrania dźwiękowe
@@ -56,6 +56,8 @@ Następujące dane są tworzone przez użytkownika i przechowywane **wyłącznie
 - Podpisy cyfrowe (format SVG)
 - Niestandardowe tagi i notatki
 
+**Punkty trasy (Waypoints):** Znaczniki na mapie umieszczone przez użytkownika — współrzędne, nazwa, kategoria oraz opcjonalne notatki.
+
 **Inne dane lokalne:** Konfiguracje ustawień wstępnych detektora, preferencje aplikacji (motyw, jednostki, język, ustawienia mapy) oraz migawki pogodowe powiązane z sesjami.
 
 ### 3.2 Dane przetwarzane tymczasowo (nieprzechowywane)
@@ -63,11 +65,12 @@ Następujące dane są tworzone przez użytkownika i przechowywane **wyłącznie
 Następujące dane są wysyłane do interfejsów API stron trzecich w celu zapewnienia funkcjonalności w czasie rzeczywistym i **nie są przechowywane przez nas ani przez te usługi poza okresem natychmiastowego żądania**:
 
 - Przybliżone współrzędne GPS wysyłane do Open-Meteo dla prognoz pogody i danych o wysokości
-- Przybliżone współrzędne GPS wysyłane do OpenStreetMap/Nominatim dla wyszukiwania adresów
+- Współrzędne przekształcane na nazwy miejsc za pośrednictwem systemowego geokodera Androida (na większości urządzeń dostarczanego przez Google Play Services) do geokodowania odwrotnego — używane do oznaczania sesji i znalezisk nazwą miejsca
 - Przybliżone współrzędne GPS wysyłane do Overpass API dla wykrywania pobliskich historycznych POI
 - Przybliżone współrzędne GPS wysyłane do Wikipedia API dla geograficznego wyszukiwania artykułów w pobliżu
 - Identyfikatory stacji pływów wysyłane do NOAA dla prognoz pływów
 - Zapytania wyszukiwania lokalizacji wysyłane do Open-Meteo Geocoding
+- Żądania kafelków mapy (które ujawniają przybliżony obszar mapy, który właśnie przeglądasz) wysyłane do dostawcy kafelków aktywnego typu mapy: Esri/ArcGIS (zdjęcia satelitarne oraz mapy topograficzne USGS), OpenStreetMap i OpenTopoMap (pakiety map offline/do pobrania) oraz — w przypadku rumuńskiej historycznej nakładki „Stara Mapa" — buforujący serwer proxy, który obsługujemy w Cloudflare i który pobiera kafelki z geo-spatial.org (eHarta). Domyślna baza map Google jest objęta sekcją Google Maps SDK w Sekcji 3.3
 
 ### 3.3 Dane przetwarzane przez usługi stron trzecich
 
@@ -81,20 +84,22 @@ Następujące dane są wysyłane do interfejsów API stron trzecich w celu zapew
 
 Gdy są włączone:
 
-- **Firebase Analytics** rejestruje osiem zagregowanych nazw zdarzeń z nieidentyfikującymi parametrami: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Zawartość zdarzeń **nigdy nie obejmuje** współrzędnych GPS, adresów, nazw znalezisk, zdjęć, nagrań audio, danych sejfu ani żadnych innych informacji umożliwiających identyfikację osób — wyłącznie liczniki, czasy trwania, odległości, typ znaleziska (sama kategoria) oraz identyfikatory funkcji.
+- **Firebase Analytics** rejestruje osiem zagregowanych nazw zdarzeń z nieidentyfikującymi parametrami: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Zawartość zdarzeń **nigdy nie obejmuje** współrzędnych GPS, adresów, nazw znalezisk, zdjęć, nagrań audio, danych sejfu ani żadnych innych informacji umożliwiających identyfikację osób — wyłącznie liczniki, czasy trwania, odległości, typy znalezisk (sama kategoria) oraz identyfikatory funkcji. Zdarzenie `find_logged` zgłasza typ jako ogólną kategorię (`valuable`, `find`, `trash`, `unsorted` lub `other` dla każdego nierozpoznanego typu) zamiast konkretnego typu znaleziska, dzięki czemu zagregowany panel nie może wywnioskować rozkładu wartościowych przedmiotów rejestrowanych przez indywidualnego użytkownika.
 - **Firebase Crashlytics** przesyła ślady stosu awarii wraz z modelem urządzenia, wersją systemu operacyjnego i wersją aplikacji, aby pomóc nam diagnozować błędy. Zanim jakakolwiek awaria lub błąd niekrytyczny zostanie przesłany do Crashlytics, Aplikacja **usuwa z komunikatu wyjątku podciągi w kształcie współrzędnych** (np. wzorce `lat=`/`lon=`, liczby dziesiętne ze znakiem z trzema lub większą liczbą cyfr po przecinku), tak aby pozycje GPS przechowywane w zmiennych lokalnych nie mogły przeciec przez raportowanie błędów. Ramki stosu (klasa, metoda, linia) są zachowywane do grupowania; wartości czasu wykonania nie. Procesowy handler nieprzechwyconych wyjątków stosuje to samo czyszczenie do krytycznych awarii rejestrowanych automatycznie przez SDK.
 
 Obie usługi podlegają [Polityce Prywatności Google](https://policies.google.com/privacy) oraz [informacjom o prywatności i bezpieczeństwie Firebase](https://firebase.google.com/support/privacy).
 
+**Opinia zwrotna w aplikacji (opcjonalnie):** Jeśli wyślesz opinię za pośrednictwem formularza opinii w Aplikacji, Aplikacja przesyła wprowadzone przez Ciebie informacje — Twoją wiadomość, wybraną kategorię oraz to, czy jest to zgłoszenie błędu, czy propozycja funkcji — wraz z modelem urządzenia, wersją Androida, wersją aplikacji oraz ustawieniami językowymi, a także, **wyłącznie jeśli zdecydujesz się go podać, Twój adres e-mail**, do funkcji Supabase Edge Function, którą obsługujemy, abyśmy mogli przeczytać Twoją opinię i na nią odpowiedzieć. Nic nie jest wysyłane, dopóki nie prześlesz formularza. Supabase, Inc. działa jako nasz podmiot przetwarzający dane (region UE). Podlega [Polityce Prywatności Supabase](https://supabase.com/privacy).
+
 ### 3.4 Dane, których Aplikacja NIE gromadzi
 
-- **Aplikacja** nie gromadzi Twojego imienia, e-maila, numeru telefonu ani żadnych identyfikatorów osobistych
+- **Aplikacja** nie gromadzi Twojego imienia, numeru telefonu ani żadnych identyfikatorów osobistych — z wyjątkiem adresu e-mail, który opcjonalnie podajesz, przesyłając opinię w aplikacji (patrz Sekcja 3.3)
 - **Aplikacja** nie wykorzystuje analiz ani raportowania błędów, chyba że wyrazisz wyraźną zgodę (patrz sekcja Firebase powyżej; domyślnie wyłączone i odwoływalne w dowolnym momencie w Ustawieniach → Prywatność → Diagnostyka)
 - **Aplikacja** nie wykorzystuje frameworków reklamowych ani identyfikatorów reklamowych
 - **Aplikacja** nie śledzi wzorców użytkowania, częstotliwości sesji ani wykorzystania funkcji
 - **Aplikacja** nie tworzy profili użytkowników ani odcisków behawioralnych
-- **Aplikacja** nie udostępnia, nie sprzedaje, nie wynajmuje ani nie wymienia danych z osobami trzecimi
-- **Aplikacja** nie obsługuje serwerów, które otrzymują, przetwarzają lub przechowują Twoje dane poszukiwawcze
+- **Aplikacja** nie sprzedaje, nie wynajmuje ani nie wymienia Twoich danych i udostępnia je wyłącznie tam, gdzie sam to zainicjujesz: wywołania API w czasie rzeczywistym z Sekcji 3.2, opcjonalna kopia zapasowa Google Drive, dobrowolna diagnostyka Firebase oraz opinia, którą zdecydujesz się przesłać (Sekcja 3.3)
+- **Aplikacja** nie obsługuje żadnych serwerów, które otrzymują, przetwarzają lub przechowują Twoje dane poszukiwawcze (lokalizacja, znaleziska, wpisy sejfu, sesje); jedyną wpisywaną przez Ciebie treścią, która trafia na serwer przez nas obsługiwany, jest opinia, którą zdecydujesz się przesłać (Sekcja 3.3)
 
 Praktyki dotyczące danych Strony Internetowej są omówione oddzielnie w Sekcji 4.
 
@@ -148,17 +153,18 @@ Te same prawa GDPR, UK GDPR, australijskie, kanadyjskie, CCPA, LGPD i NZ Privacy
 ## 5. Podstawa prawna przetwarzania (GDPR)
 
 - **Dane GPS/sesji, zapisy znalezisk, wpisy sejfu:** Zgoda (Art. 6(1)(a)) — aktywnie inicjujesz te działania
-- **Wywołania API (pogoda, geokodowanie):** Prawnie uzasadniony interes (Art. 6(1)(f)) — niezbędne dla podstawowej funkcjonalności
+- **Wywołania API (pogoda, geokodowanie, kafelki mapy):** Prawnie uzasadniony interes (Art. 6(1)(f)) — niezbędne dla podstawowej funkcjonalności
 - **Kopia zapasowa Google Drive:** Zgoda (Art. 6(1)(a)) — aktywujesz i uwierzytelniasz wyraźnie
 - **Weryfikacja subskrypcji:** Wykonanie umowy (Art. 6(1)(b)) — niezbędne do świadczenia płatnych funkcji
 - **Firebase Analytics i Crashlytics (opcjonalnie):** Zgoda (Art. 6(1)(a)) — aktywowane poprzez prośbę przy pierwszym uruchomieniu lub w Ustawieniach, odwoływalne w dowolnym momencie
+- **Opinia zwrotna w aplikacji (opcjonalnie):** Zgoda (Art. 6(1)(a)) — wysyłana wyłącznie wtedy, gdy prześlesz formularz opinii
 - **E-mail listy oczekujących (Strona Internetowa):** Zgoda (Art. 6(1)(a)) — patrz Sekcja 4.1
 
 Możesz wycofać zgodę w dowolnym momencie, zatrzymując odpowiednią aktywność, odinstalowując Aplikację lub wypisując się z e-maili Strony Internetowej.
 
 ## 6. Jak wykorzystujemy Twoje dane
 
-Całe przetwarzanie danych Aplikacji odbywa się **lokalnie na Twoim urządzeniu**. Używamy danych Aplikacji wyłącznie do zapewnienia funkcji Aplikacji: wyświetlanie mapy, śledzenie sesji, rejestrowanie znalezisk, zarządzanie pozwoleniami, dane pogodowe/pływów, eksporty, kopie zapasowe i weryfikacja subskrypcji.
+Niemal całe przetwarzanie danych Aplikacji odbywa się **lokalnie na Twoim urządzeniu**. Używamy danych Aplikacji do zapewnienia funkcji Aplikacji: wyświetlanie mapy, śledzenie sesji, rejestrowanie znalezisk, zarządzanie pozwoleniami, dane pogodowe/pływów, eksporty, kopie zapasowe i weryfikacja subskrypcji. Dane opuszczają Twoje urządzenie wyłącznie w celu realizacji funkcji inicjowanych przez użytkownika opisanych w Sekcjach 3.2 i 3.3 (API w czasie rzeczywistym, opcjonalna kopia zapasowa, opcjonalna diagnostyka, opcjonalna opinia zwrotna).
 
 Dane Strony Internetowej (Twój adres e-mail z listy oczekujących) są używane tylko do wysyłania komunikatów dotyczących premiery i przed premierą, jak opisano w Sekcji 4.
 
@@ -171,6 +177,7 @@ Dane Strony Internetowej (Twój adres e-mail z listy oczekujących) są używane
 - Pliki multimedialne są przechowywane w prywatnej pamięci wewnętrznej Aplikacji, niedostępnej dla innych aplikacji
 - Kopia zapasowa w chmurze Androida jest **wyłączona** (`android:allowBackup="false"`), aby zapobiec niezamierzonemu ujawnieniu danych
 - Kopie zapasowe Google Drive korzystają z zaszyfrowanych API Google (HTTPS/TLS) i istnieją wyłącznie na Twoim koncie
+- Opcjonalna opinia zwrotna, którą przesyłasz, jest przekazywana przez HTTPS/TLS do funkcji Supabase Edge Function (region UE)
 
 Dla Aplikacji nie obsługujemy żadnych serwerów, baz danych ani infrastruktury w chmurze, które przechowują Twoje dane poszukiwawcze.
 
@@ -184,7 +191,7 @@ Dla Aplikacji nie obsługujemy żadnych serwerów, baz danych ani infrastruktury
 
 ## 9. Udostępnianie i ujawnianie danych
 
-Nie udostępniamy, nie sprzedajemy, nie wynajmujemy ani nie ujawniamy Twoich danych osobowych żadnym osobom trzecim. Możesz wybrać udostępnienie danych Aplikacji poprzez eksporty (GPX, KML, CSV, JSON), karty udostępniania sesji lub kopię zapasową Google Drive — wszystkie inicjowane przez użytkownika. Dane listy oczekujących Strony Internetowej są przetwarzane wyłącznie przez naszych wskazanych podmiotów przetwarzających (Supabase, Resend) w celach opisanych w Sekcji 4.
+Nie sprzedajemy, nie wynajmujemy ani nie wymieniamy Twoich danych osobowych. Możesz wybrać udostępnienie danych Aplikacji poprzez eksporty (GPX, KML, CSV, JSON), karty udostępniania sesji lub kopię zapasową Google Drive — wszystkie inicjowane przez użytkownika. Jeśli prześlesz opinię w aplikacji, jest ona przetwarzana w naszym imieniu przez Supabase (patrz Sekcja 3.3). Dane listy oczekujących Strony Internetowej są przetwarzane wyłącznie przez naszych wskazanych podmiotów przetwarzających (Supabase, Resend) w celach opisanych w Sekcji 4.
 
 ## 10. Twoje prawa (GDPR i międzynarodowe)
 
@@ -238,7 +245,7 @@ Ani Aplikacja, ani Strona Internetowa nie są skierowane do dzieci poniżej 18 r
 - **CAMERA** — robienie zdjęć dla rejestrowania znalezisk
 - **RECORD_AUDIO** — nagrywanie notatek audio dla znalezisk
 - **READ/WRITE_CALENDAR** — zapisuje przypomnienia o wygaśnięciu pozwoleń sejfu w lokalnym kalendarzu Twojego urządzenia. Jeśli masz włączoną synchronizację z kalendarzem w chmurze w Androidzie (na przykład synchronizację Google Calendar), te przypomnienia zostaną zsynchronizowane z Twoim kontem wraz z resztą kalendarza — synchronizacja ta jest kontrolowana przez ustawienia Androida, a nie przez Aplikację
-- **INTERNET** — pogoda, geokodowanie, pływy, mapy, subskrypcje
+- **INTERNET** — pogoda, geokodowanie, pływy, mapy, subskrypcje, opcjonalna opinia zwrotna
 - **ACCESS_NETWORK_STATE** — wykrywanie stanu offline przed wykonaniem połączeń sieciowych
 - **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — zapobieganie zatrzymaniu trackera GPS przez system podczas długich sesji
 - **POST_NOTIFICATIONS** — powiadomienie o śledzeniu GPS
@@ -252,13 +259,13 @@ Możesz cofnąć dowolne uprawnienie w dowolnym momencie za pośrednictwem ustaw
 
 ## 14. Międzynarodowe transfery danych
 
-**Dane Aplikacji:** Ponieważ wszystkie dane poszukiwawcze są przechowywane lokalnie na Twoim urządzeniu, nie odbywają się międzynarodowe transfery danych pod naszą kontrolą. Wywołania API stron trzecich mogą być przetwarzane w jurysdykcjach, w których te usługi działają.
+**Dane Aplikacji:** Ponieważ wszystkie dane poszukiwawcze są przechowywane lokalnie na Twoim urządzeniu, nie odbywają się międzynarodowe transfery danych pod naszą kontrolą. Wywołania API stron trzecich (Sekcja 3.2), opcjonalna kopia zapasowa Google Drive, opcjonalna diagnostyka Firebase oraz opcjonalna opinia zwrotna mogą być przetwarzane w jurysdykcjach, w których te usługi działają.
 
 **Dane Strony Internetowej:** E-maile listy oczekujących są przechowywane w UE (Irlandia) przez Supabase i przetwarzane przez Resend (UE, Irlandia). Jeśli uzyskujesz dostęp do Strony Internetowej spoza UE, Twój e-mail jest przesyłany do UE w celu przetwarzania.
 
 ## 15. Powiadomienie o naruszeniu danych
 
-**Aplikacja:** Ponieważ nie przechowujemy Twoich danych poszukiwawczych na żadnym serwerze, który obsługujemy, naruszenie danych wpływające na dane Aplikacji z naszej strony nie jest możliwe. Jeśli dowiemy się o luce w Aplikacji, wydamy aktualizację i powiadomimy użytkowników za pośrednictwem Aplikacji lub strony internetowej.
+**Aplikacja:** Ponieważ nie przechowujemy Twoich danych poszukiwawczych na żadnym serwerze, który obsługujemy, naruszenie danych wpływające na dane Aplikacji z naszej strony nie jest możliwe. Jeśli dowiemy się o luce w Aplikacji, wydamy aktualizację i powiadomimy użytkowników za pośrednictwem Aplikacji lub strony internetowej. Opcjonalna opinia zwrotna, którą przesyłasz, jest przechowywana przez naszego podmiot przetwarzający Supabase zgodnie z jego własnymi protokołami powiadamiania o naruszeniach.
 
 **Strona Internetowa:** Nasi podmiotowie przetwarzający (Supabase, Resend) utrzymują własne protokoły powiadamiania o naruszeniach. W mało prawdopodobnym przypadku naruszenia wpływającego na Twój adres e-mail z listy oczekujących powiadomimy Cię oraz odpowiedni organ nadzorczy (ANSPDCP) w ciągu 72 godzin, zgodnie z wymaganiami GDPR.
 
@@ -268,15 +275,19 @@ Możemy aktualizować niniejszą Politykę Prywatności, aby odzwierciedlić zmi
 
 ## 17. Polityki prywatności stron trzecich
 
-- [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Google (Maps, Drive, Sign-In, systemowy geokoder)](https://policies.google.com/privacy)
 - [Firebase (Analytics i Crashlytics — tylko za zgodą)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+- [OpenTopoMap](https://opentopomap.org/about)
+- [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+- [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+- [Cloudflare](https://www.cloudflare.com/privacypolicy/) (serwer proxy kafelków map historycznych)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Hosting Strony Internetowej + analityka)
-- [Supabase](https://supabase.com/privacy) (Baza danych Strony Internetowej)
+- [Supabase](https://supabase.com/privacy) (Baza danych Strony Internetowej + opinia zwrotna w aplikacji)
 - [Resend](https://resend.com/legal/privacy-policy) (E-mail Strony Internetowej)
 
 ## 18. Skontaktuj się z nami

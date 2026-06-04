@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 26 mei 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 4 juni 2026
 
 Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
 
@@ -16,7 +16,7 @@ Website: sweeptrack.pro
 
 Dit Privacybeleid legt uit hoe SweepTrack Pro ("de App") en de website sweeptrack.pro ("de Website") uw informatie verzamelen, gebruiken, opslaan en beschermen. Wij doen er alles aan om uw privacy te beschermen en transparantie te bieden over onze gegevenspraktijken.
 
-De App is ontworpen met een **privacy-first architectuur**: alle detectiegegevens worden lokaal op uw apparaat opgeslagen, wij beheren geen backend-servers voor de App en wij verzamelen, verzenden of verkopen uw persoonlijke detectiegegevens niet. De Website werkt apart en heeft zijn eigen gegevenspraktijken, beschreven in Sectie 4.
+De App is ontworpen met een **privacy-first architectuur**: alle detectiegegevens worden lokaal op uw apparaat opgeslagen, wij beheren geen backend-servers die uw detectiegegevens opslaan en wij verzamelen, verzenden of verkopen uw persoonlijke detectiegegevens niet. Een kleine hoeveelheid gegevens verlaat uw apparaat uitsluitend voor de door de gebruiker geïnitieerde functies beschreven in Secties 3.2 en 3.3 (realtime API-functies, optionele back-up, optionele diagnostiek en optionele feedback). De Website werkt apart en heeft zijn eigen gegevenspraktijken, beschreven in Sectie 4.
 
 ## 2. Verwerkingsverantwoordelijke
 
@@ -42,7 +42,7 @@ De volgende gegevens worden door u aangemaakt en **uitsluitend op uw apparaat** 
 
 **Vondst- en ontdekkingsgegevens:**
 
-- Type vondst (Schat, Goud, Munt, Relict, Sieraad, Afval)
+- Type vondst (Schat, Goud, Munt, Relict, Sieraad, Afval, Ongesorteerd/Snelle invoer)
 - Locatie van de vondst (GPS-coördinaten op het moment van registratie)
 - Optionele metadata: naam, notities, diepte, geschatte waarde, gewicht
 - Mediabijlagen: foto's en audio-opnamen
@@ -56,6 +56,8 @@ De volgende gegevens worden door u aangemaakt en **uitsluitend op uw apparaat** 
 - Digitale handtekeningen (SVG-formaat)
 - Aangepaste tags en notities
 
+**Routepunten (waypoints):** Door de gebruiker geplaatste kaartmarkeringen — coördinaten, naam, categorie en optionele notities.
+
 **Andere lokale gegevens:** Detectorpreset-configuraties, app-voorkeuren (thema, eenheden, taal, kaartinstellingen) en weersmomentopnamen die aan sessies zijn gekoppeld.
 
 ### 3.2 Tijdelijk verwerkte gegevens (niet opgeslagen)
@@ -63,11 +65,12 @@ De volgende gegevens worden door u aangemaakt en **uitsluitend op uw apparaat** 
 De volgende gegevens worden naar API's van derden verzonden voor realtime functionaliteit en **worden door ons of deze diensten niet opgeslagen na het directe verzoek**:
 
 - Geschatte GPS-coördinaten verzonden naar Open-Meteo voor weersvoorspellingen en hoogtegegevens
-- Geschatte GPS-coördinaten verzonden naar OpenStreetMap/Nominatim voor adres-opzoeking
+- Coördinaten omgezet naar plaatsnamen via de platform-geocoder van Android (op de meeste apparaten geleverd door Google Play Services) voor omgekeerde geocodering — gebruikt om sessies en vondsten van een plaatsnaam te voorzien
 - Geschatte GPS-coördinaten verzonden naar Overpass API voor het ontdekken van nabijgelegen historische bezienswaardigheden
 - Geschatte GPS-coördinaten verzonden naar Wikipedia API voor geografische zoekopdrachten naar artikelen in de buurt
 - Identifiers van getijdestations verzonden naar NOAA voor getijvoorspellingen
 - Locatiezoekopdrachten verzonden naar Open-Meteo Geocoding
+- Aanvragen van kaarttegels (die het globale gebied van de kaart die u bekijkt prijsgeven) verzonden naar de tegelprovider van het actieve kaarttype: Esri/ArcGIS (satellietbeelden en USGS-topografische kaarten), OpenStreetMap en OpenTopoMap (offline/downloadbare kaartpakketten), en — voor de Roemeense historische "Oude kaart"-overlay — een caching-proxy die wij op Cloudflare beheren en die tegels ophaalt van geo-spatial.org (eHarta). De standaard Google-kaartbasis valt onder Google Maps SDK in Sectie 3.3
 
 ### 3.3 Door derden verwerkte gegevens
 
@@ -81,20 +84,22 @@ De volgende gegevens worden naar API's van derden verzonden voor realtime functi
 
 Wanneer ingeschakeld:
 
-- **Firebase Analytics** registreert acht geaggregeerde gebeurtenisnamen met niet-identificerende parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. De inhoud van de gebeurtenissen bevat **nooit** GPS-coördinaten, adressen, vondstnamen, foto's, audio-opnames, kluisgegevens of andere persoonlijk identificeerbare informatie — uitsluitend tellingen, tijdsduren, afstanden, vondsttype (alleen de categorie) en functie-identifiers.
+- **Firebase Analytics** registreert acht geaggregeerde gebeurtenisnamen met niet-identificerende parameters: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. De inhoud van de gebeurtenissen bevat **nooit** GPS-coördinaten, adressen, vondstnamen, foto's, audio-opnames, kluisgegevens of andere persoonlijk identificeerbare informatie — uitsluitend tellingen, tijdsduren, afstanden, vondsttype (alleen de categorie) en functie-identifiers. De gebeurtenis `find_logged` rapporteert het type als een grove categorie (`valuable`, `find`, `trash`, `unsorted` of `other` voor elk niet-herkend type) in plaats van het specifieke vondsttype, zodat het geaggregeerde dashboard de verdeling van waardevolle vondsten die een individuele gebruiker registreert niet kan afleiden.
 - **Firebase Crashlytics** uploadt stack traces van crashes samen met het apparaatmodel, de besturingssysteemversie en de app-versie om ons te helpen bugs te diagnosticeren. Voordat een crash of niet-fatale fout naar Crashlytics wordt doorgestuurd, **verwijdert de App uit het uitzonderingsbericht alle subtekenreeksen met coördinaatvorm** (bijvoorbeeld `lat=`/`lon=`-patronen, getekende decimale getallen met drie of meer cijfers achter de komma), zodat GPS-posities die in lokale variabelen zijn opgeslagen niet via de foutrapportage kunnen weglekken. Stackframes (klasse, methode, regel) blijven behouden voor groepering; runtime-waarden niet. Een procesbrede uncaught-exception-handler past dezelfde scrub-bewerking toe op fatale crashes die de SDK automatisch vastlegt.
 
 Beide diensten zijn onderworpen aan het [Privacybeleid van Google](https://policies.google.com/privacy) en de [privacy- en veiligheidsverklaringen van Firebase](https://firebase.google.com/support/privacy).
 
+**In-app feedback (optioneel):** Als u feedback verzendt via het feedbackformulier van de App, verzendt de App de informatie die u invoert — uw bericht, de geselecteerde categorie en of het een bugmelding of een functie-idee betreft — samen met uw apparaatmodel, Android-versie, app-versie en taal, en, **uitsluitend als u ervoor kiest dit te verstrekken, uw e-mailadres**, naar een Supabase Edge Function die wij beheren, zodat wij deze kunnen lezen en erop kunnen reageren. Er wordt niets verzonden tenzij u het formulier indient. Supabase, Inc. treedt op als onze gegevensverwerker (EU-regio). Onderworpen aan het [Privacybeleid van Supabase](https://supabase.com/privacy).
+
 ### 3.4 Gegevens die de App NIET verzamelt
 
-- **De App** verzamelt niet uw naam, e-mailadres, telefoonnummer of andere persoonlijke identifiers
+- **De App** verzamelt niet uw naam, telefoonnummer of andere persoonlijke identifiers — behalve een e-mailadres dat u optioneel invoert bij het indienen van in-app feedback (zie Sectie 3.3)
 - **De App** gebruikt geen analytics of crashrapportage tenzij u uitdrukkelijk opt-in geeft (zie de Firebase-sectie hierboven; standaard uitgeschakeld en op elk moment intrekbaar in Instellingen → Privacy → Diagnostiek)
 - **De App** gebruikt geen advertentieframeworks of reclame-identifiers
 - **De App** volgt geen gebruikspatronen, sessiefrequentie of functiegebruik
 - **De App** maakt geen gebruikersprofielen of gedragsvingerafdrukken
-- **De App** deelt, verkoopt, verhuurt of ruilt geen gegevens met derden
-- **De App** beheert geen servers die uw detectiegegevens ontvangen, verwerken of opslaan
+- **De App** verkoopt, verhuurt of ruilt uw gegevens niet en deelt deze uitsluitend wanneer u dit zelf initieert: de realtime API-oproepen in Sectie 3.2, optionele Google Drive-back-up, opt-in Firebase-diagnostiek en feedback die u verkiest in te dienen (Sectie 3.3)
+- **De App** beheert geen servers die uw detectiegegevens (locatie, vondsten, kluisitems, sessies) ontvangen, verwerken of opslaan; de enige door u getypte inhoud die een server bereikt die wij beheren, is feedback die u verkiest in te dienen (Sectie 3.3)
 
 De gegevenspraktijken van de Website worden apart behandeld in Sectie 4.
 
@@ -148,17 +153,18 @@ Dezelfde GDPR, UK GDPR, Australische, Canadese, CCPA, LGPD en NZ Privacy Act-rec
 ## 5. Rechtsgrondslag voor verwerking (GDPR)
 
 - **GPS-/sessiegegevens, vondstregistraties, kluisitems:** Toestemming (Art. 6(1)(a)) — u initieert deze acties actief
-- **API-oproepen (weer, geocodering):** Gerechtvaardigd belang (Art. 6(1)(f)) — noodzakelijk voor kernfunctionaliteit
+- **API-oproepen (weer, geocodering, kaarttegels):** Gerechtvaardigd belang (Art. 6(1)(f)) — noodzakelijk voor kernfunctionaliteit
 - **Google Drive-back-up:** Toestemming (Art. 6(1)(a)) — u activeert en authenticeert expliciet
 - **Abonnementsverificatie:** Uitvoering van overeenkomst (Art. 6(1)(b)) — noodzakelijk om betaalde functies te bieden
 - **Firebase Analytics en Crashlytics (optioneel):** Toestemming (Art. 6(1)(a)) — geactiveerd via het verzoek bij de eerste start of in de Instellingen, op elk moment intrekbaar
+- **In-app feedback (optioneel):** Toestemming (Art. 6(1)(a)) — uitsluitend verzonden wanneer u het feedbackformulier indient
 - **Wachtlijst-e-mail (Website):** Toestemming (Art. 6(1)(a)) — zie Sectie 4.1
 
 U kunt uw toestemming op elk moment intrekken door de relevante activiteit te stoppen, de App te verwijderen of zich af te melden voor Website-e-mails.
 
 ## 6. Hoe wij uw gegevens gebruiken
 
-Alle gegevensverwerking van de App vindt **lokaal op uw apparaat** plaats. Wij gebruiken App-gegevens uitsluitend om de functies van de App te bieden: kaartweergave, sessietracking, vondstregistratie, toestemmingenbeheer, weer-/getijgegevens, exports, back-up en abonnementsverificatie.
+Vrijwel alle gegevensverwerking van de App vindt **lokaal op uw apparaat** plaats. Wij gebruiken App-gegevens om de functies van de App te bieden: kaartweergave, sessietracking, vondstregistratie, toestemmingenbeheer, weer-/getijgegevens, exports, back-up en abonnementsverificatie. Gegevens verlaten uw apparaat uitsluitend voor de door de gebruiker geïnitieerde functies in Secties 3.2 en 3.3 (realtime API's, optionele back-up, optionele diagnostiek, optionele feedback).
 
 Website-gegevens (uw wachtlijst-e-mail) worden alleen gebruikt om de lancerings- en pre-launch-communicatie te verzenden die in Sectie 4 wordt beschreven.
 
@@ -171,6 +177,7 @@ Website-gegevens (uw wachtlijst-e-mail) worden alleen gebruikt om de lancerings-
 - Mediabestanden worden opgeslagen in de privé interne opslag van de App, ontoegankelijk voor andere apps
 - Android-cloudback-up is **uitgeschakeld** (`android:allowBackup="false"`) om onbedoelde gegevensblootstelling te voorkomen
 - Google Drive-back-ups gebruiken de versleutelde API's van Google (HTTPS/TLS) en bestaan alleen in uw account
+- Optionele in-app feedback die u indient, wordt via HTTPS/TLS verzonden naar een Supabase Edge Function (EU-regio)
 
 Voor de App beheren wij geen servers, databases of cloudinfrastructuur die uw detectiegegevens opslaan.
 
@@ -184,7 +191,7 @@ Voor de App beheren wij geen servers, databases of cloudinfrastructuur die uw de
 
 ## 9. Gegevensdeling en openbaarmaking
 
-Wij delen, verkopen, verhuren of maken uw persoonlijke gegevens niet bekend aan derden. U kunt ervoor kiezen App-gegevens te delen via exports (GPX, KML, CSV, JSON), sessie-share-kaarten of Google Drive-back-up — allemaal door de gebruiker geïnitieerd. Wachtlijst-gegevens van de Website worden alleen verwerkt door onze genoemde verwerkers (Supabase, Resend) voor de doeleinden beschreven in Sectie 4.
+Wij verkopen, verhuren of ruilen uw persoonlijke gegevens niet. U kunt ervoor kiezen App-gegevens te delen via exports (GPX, KML, CSV, JSON), sessie-share-kaarten of Google Drive-back-up — allemaal door de gebruiker geïnitieerd. Als u in-app feedback indient, wordt deze namens ons verwerkt door Supabase (zie Sectie 3.3). Wachtlijst-gegevens van de Website worden alleen verwerkt door onze genoemde verwerkers (Supabase, Resend) voor de doeleinden beschreven in Sectie 4.
 
 ## 10. Uw rechten (GDPR en internationaal)
 
@@ -238,7 +245,7 @@ Noch de App noch de Website is gericht op kinderen onder de 18 jaar. De beoogde 
 - **CAMERA** — foto's vastleggen voor vondstregistratie
 - **RECORD_AUDIO** — audio-notities opnemen voor vondsten
 - **READ/WRITE_CALENDAR** — schrijft herinneringen voor de vergunningenvervaldatum van de kluis naar de lokale agenda van uw apparaat. Als u in Android synchronisatie met een cloudagenda hebt ingeschakeld (bijvoorbeeld Google Calendar-synchronisatie), worden deze herinneringen samen met de rest van uw agenda gesynchroniseerd met uw account — die synchronisatie wordt geregeld door uw Android-instellingen, niet door de App
-- **INTERNET** — weer, geocodering, getijden, kaarten, abonnementen
+- **INTERNET** — weer, geocodering, getijden, kaarten, abonnementen, optionele feedback
 - **ACCESS_NETWORK_STATE** — offline-status detecteren voordat netwerkoproepen worden gedaan
 - **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — voorkomen dat het systeem de GPS-tracker beëindigt tijdens lange sessies
 - **POST_NOTIFICATIONS** — GPS-trackingmelding
@@ -252,13 +259,13 @@ U kunt elke toestemming op elk moment intrekken via de Android-instellingen.
 
 ## 14. Internationale gegevensoverdrachten
 
-**App-gegevens:** Aangezien alle detectiegegevens lokaal op uw apparaat worden opgeslagen, vinden er geen internationale gegevensoverdrachten plaats onder onze controle. API-oproepen naar derden kunnen worden verwerkt in de jurisdicties waar die diensten opereren.
+**App-gegevens:** Aangezien alle detectiegegevens lokaal op uw apparaat worden opgeslagen, vinden er geen internationale gegevensoverdrachten van uw detectiegegevens plaats onder onze controle. API-oproepen naar derden (Sectie 3.2), optionele Google Drive-back-up, optionele Firebase-diagnostiek en optionele feedback kunnen worden verwerkt in de jurisdicties waar die diensten opereren.
 
 **Website-gegevens:** Wachtlijst-e-mails worden opgeslagen in de EU (Ierland) door Supabase en verwerkt door Resend (EU, Ierland). Als u de Website buiten de EU bezoekt, wordt uw e-mailadres voor verwerking naar de EU overgedragen.
 
 ## 15. Kennisgeving van gegevenslekken
 
-**App:** Aangezien wij uw detectiegegevens niet op enige server opslaan die wij beheren, is een gegevenslek dat App-gegevens aan onze kant beïnvloedt niet mogelijk. Als wij op de hoogte raken van een kwetsbaarheid in de App, brengen wij een update uit en informeren wij gebruikers via de App of website.
+**App:** Aangezien wij uw detectiegegevens niet op enige server opslaan die wij beheren, is een gegevenslek dat App-gegevens aan onze kant beïnvloedt niet mogelijk. Als wij op de hoogte raken van een kwetsbaarheid in de App, brengen wij een update uit en informeren wij gebruikers via de App of website. Optionele feedback die u indient, wordt bewaard door onze verwerker Supabase onder diens eigen meldingsprotocollen voor gegevenslekken.
 
 **Website:** Onze verwerkers (Supabase, Resend) hanteren hun eigen meldingsprotocollen voor gegevenslekken. In het onwaarschijnlijke geval van een lek dat uw wachtlijst-e-mail beïnvloedt, zullen wij u en de relevante toezichthoudende autoriteit (ANSPDCP) binnen 72 uur informeren zoals vereist door de GDPR.
 
@@ -268,15 +275,19 @@ Wij kunnen dit Privacybeleid bijwerken om wijzigingen in functionaliteit of toep
 
 ## 17. Privacybeleid van derden
 
-- [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Google (Maps, Drive, Sign-In, platform-geocoder)](https://policies.google.com/privacy)
 - [Firebase (Analytics en Crashlytics — alleen opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+- [OpenTopoMap](https://opentopomap.org/about)
+- [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+- [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+- [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy voor historische-kaarttegels)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Website-hosting + analytics)
-- [Supabase](https://supabase.com/privacy) (Website-database)
+- [Supabase](https://supabase.com/privacy) (Website-database + in-app feedback)
 - [Resend](https://resend.com/legal/privacy-policy) (Website-e-mail)
 
 ## 18. Contact

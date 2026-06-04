@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Applicazione di monitoraggio GPS per la ricerca di metalli
 
-Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 26 maggio 2026
+Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 4 giugno 2026
 
 Gestito da: Coc Lorand Adrian P.F.A., operante come "Loriba"
 
@@ -16,7 +16,7 @@ Sito web: sweeptrack.pro
 
 La presente Informativa sulla Privacy spiega come SweepTrack Pro ("l'App") e il sito web sweeptrack.pro ("il Sito Web") raccolgono, utilizzano, memorizzano e proteggono le informazioni dell'utente. Ci impegniamo a proteggere la vostra privacy e a garantire la trasparenza delle nostre pratiche relative ai dati.
 
-L'App è progettata con un'**architettura orientata alla privacy**: tutti i dati di rilevamento sono memorizzati localmente sul vostro dispositivo, non gestiamo server backend per l'App e non raccogliamo, trasmettiamo o vendiamo i vostri dati personali di rilevamento. Il Sito Web opera separatamente e ha le proprie pratiche relative ai dati, descritte nella Sezione 4.
+L'App è progettata con un'**architettura orientata alla privacy**: tutti i dati di rilevamento sono memorizzati localmente sul vostro dispositivo, non gestiamo server backend che memorizzano i vostri dati di rilevamento e non raccogliamo, trasmettiamo o vendiamo i vostri dati personali di rilevamento. Una piccola quantità di dati lascia il vostro dispositivo solo per le funzioni avviate dall'utente descritte nelle Sezioni 3.2 e 3.3 (funzionalità API in tempo reale, backup opzionale, diagnostica opzionale e feedback opzionale). Il Sito Web opera separatamente e ha le proprie pratiche relative ai dati, descritte nella Sezione 4.
 
 ## 2. Titolare del Trattamento dei Dati
 
@@ -42,7 +42,7 @@ I seguenti dati sono creati da voi e memorizzati **esclusivamente sul vostro dis
 
 **Registrazioni di ritrovamenti:**
 
-- Tipo di ritrovamento (Tesoro, Oro, Moneta, Reliquia, Gioiello, Rifiuti)
+- Tipo di ritrovamento (Tesoro, Oro, Moneta, Reliquia, Gioiello, Rifiuti, Non ordinato/Inserimento rapido)
 - Posizione del ritrovamento (coordinate GPS al momento della registrazione)
 - Metadati opzionali: nome, note, profondità, valore stimato, peso
 - Allegati multimediali: fotografie e registrazioni audio
@@ -56,6 +56,8 @@ I seguenti dati sono creati da voi e memorizzati **esclusivamente sul vostro dis
 - Firme digitali (formato SVG)
 - Tag e note personalizzati
 
+**Waypoint:** Marcatori sulla mappa posizionati dall'utente — coordinate, nome, categoria e note opzionali.
+
 **Altri dati locali:** Configurazioni delle preimpostazioni del rilevatore, preferenze dell'app (tema, unità, lingua, impostazioni della mappa) e istantanee meteorologiche associate alle sessioni.
 
 ### 3.2 Dati elaborati temporaneamente (non memorizzati)
@@ -63,11 +65,12 @@ I seguenti dati sono creati da voi e memorizzati **esclusivamente sul vostro dis
 I seguenti dati vengono inviati ad API di terze parti per funzionalità in tempo reale e **non sono memorizzati da noi o da questi servizi oltre la richiesta immediata**:
 
 - Coordinate GPS approssimative inviate a Open-Meteo per previsioni meteo e dati di altitudine
-- Coordinate GPS approssimative inviate a OpenStreetMap/Nominatim per la ricerca di indirizzi
+- Coordinate risolte in nomi di luoghi tramite il geocoder della piattaforma Android (fornito da Google Play Services sulla maggior parte dei dispositivi) per la geocodifica inversa — utilizzato per etichettare sessioni e ritrovamenti con un nome di luogo
 - Coordinate GPS approssimative inviate a Overpass API per la scoperta di punti di interesse storici nelle vicinanze
 - Coordinate GPS approssimative inviate a Wikipedia API per la ricerca geografica di articoli nelle vicinanze
 - Identificatori delle stazioni di marea inviati a NOAA per le previsioni delle maree
-- Query di ricerca della posizione inviate a Open-Meteo Geocoding
+- Query di ricerca della posizione inviate a Open-Meteo Geocoding per la ricerca di nomi di luoghi
+- Richieste di tessere della mappa (che rivelano l'area approssimativa della mappa che state visualizzando) inviate al fornitore di tessere del tipo di mappa attivo: Esri/ArcGIS (immagini satellitari e mappe topografiche USGS), OpenStreetMap e OpenTopoMap (pacchetti mappe offline/scaricabili) e — per la sovrapposizione storica rumena "Mappa antica" — un proxy di caching che gestiamo su Cloudflare che recupera le tessere da geo-spatial.org (eHarta). La mappa di base predefinita di Google è trattata nell'ambito di Google Maps SDK nella Sezione 3.3
 
 ### 3.3 Dati elaborati da servizi di terze parti
 
@@ -81,20 +84,22 @@ I seguenti dati vengono inviati ad API di terze parti per funzionalità in tempo
 
 Quando attivati:
 
-- **Firebase Analytics** registra otto nomi di eventi aggregati con parametri non identificativi: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Il contenuto degli eventi **non include mai** coordinate GPS, indirizzi, nomi di ritrovamenti, fotografie, registrazioni audio, dati del caveau o altre informazioni di identificazione personale — solo conteggi, durate, distanze, tipo di ritrovamento (la sola categoria) e identificatori di funzionalità.
+- **Firebase Analytics** registra otto nomi di eventi aggregati con parametri non identificativi: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Il contenuto degli eventi **non include mai** coordinate GPS, indirizzi, nomi di ritrovamenti, fotografie, registrazioni audio, dati del caveau o altre informazioni di identificazione personale — solo conteggi, durate, distanze, tipi di ritrovamento (solo categoria) e identificatori di funzionalità. L'evento `find_logged` riporta il tipo come categoria approssimativa (`valuable`, `find`, `trash`, `unsorted`, oppure `other` per qualsiasi tipo non riconosciuto) anziché il tipo specifico di ritrovamento, in modo che la dashboard aggregata non possa dedurre la distribuzione degli oggetti di valore registrati da un singolo utente.
 - **Firebase Crashlytics** carica le tracce di stack degli arresti anomali insieme al modello del dispositivo, alla versione del sistema operativo e alla versione dell'app per aiutarci a diagnosticare i bug. Prima che un arresto anomalo o un errore non fatale venga inoltrato a Crashlytics, l'App **rimuove dal messaggio dell'eccezione le sottostringhe con forma di coordinate** (ad esempio modelli `lat=`/`lon=`, decimali con segno aventi tre o più cifre frazionarie), in modo che le posizioni GPS memorizzate nelle variabili locali non possano trapelare attraverso la segnalazione degli errori. I frame dello stack (classe, metodo, riga) sono conservati per il raggruppamento; i valori di runtime no. Un gestore di eccezioni non rilevate a livello di processo applica la stessa pulizia agli arresti anomali fatali catturati automaticamente dall'SDK.
 
 Entrambi i servizi sono soggetti alla [Politica sulla Privacy di Google](https://policies.google.com/privacy) e alle [informative su privacy e sicurezza di Firebase](https://firebase.google.com/support/privacy).
 
+**Feedback nell'app (Opzionale):** Se inviate un feedback tramite il modulo di feedback dell'App, l'App trasmette le informazioni che inserite — il vostro messaggio, la categoria selezionata e se si tratta di una segnalazione di bug o di un'idea per una funzionalità — insieme al modello del vostro dispositivo, alla versione di Android, alla versione dell'app e alle impostazioni locali, e, **solo se scegliete di fornirlo, il vostro indirizzo email**, a una Edge Function di Supabase che gestiamo, in modo che possiamo leggere e rispondere. Nulla viene inviato a meno che non inviate il modulo. Supabase, Inc. agisce come nostro responsabile del trattamento dei dati (regione UE). Soggetta alla [Politica sulla Privacy di Supabase](https://supabase.com/privacy).
+
 ### 3.4 Dati che l'App NON Raccoglie
 
-- **L'App** non raccoglie il vostro nome, email, numero di telefono o qualsiasi identificativo personale
+- **L'App** non raccoglie il vostro nome, numero di telefono o qualsiasi identificativo personale — ad eccezione di un indirizzo email che inserite facoltativamente quando inviate un feedback nell'app (vedere Sezione 3.3)
 - **L'App** non utilizza analisi o segnalazione errori a meno che non optiate esplicitamente (vedere la sezione Firebase sopra; disattivato per impostazione predefinita e revocabile in qualsiasi momento in Impostazioni → Privacy → Diagnostica)
 - **L'App** non utilizza framework pubblicitari o identificativi pubblicitari
 - **L'App** non traccia modelli di utilizzo, frequenza delle sessioni o utilizzo delle funzionalità
 - **L'App** non crea profili utente o impronte digitali comportamentali
-- **L'App** non condivide, vende, affitta o scambia dati con terze parti
-- **L'App** non gestisce server che ricevono, elaborano o memorizzano i vostri dati di rilevamento
+- **L'App** non vende, affitta o scambia i vostri dati e li condivide solo dove siete voi a iniziare l'operazione: le chiamate API in tempo reale della Sezione 3.2, il backup opzionale di Google Drive, la diagnostica Firebase opt-in e il feedback che scegliete di inviare (Sezione 3.3)
+- **L'App** non gestisce server che ricevono, elaborano o memorizzano i vostri dati di rilevamento (posizione, ritrovamenti, voci del caveau, sessioni); l'unico contenuto che digitate che raggiunge un server da noi gestito è il feedback che scegliete di inviare (Sezione 3.3)
 
 Le pratiche relative ai dati del Sito Web sono trattate separatamente nella Sezione 4.
 
@@ -148,17 +153,18 @@ Gli stessi diritti GDPR, UK GDPR, australiani, canadesi, CCPA, LGPD e NZ Privacy
 ## 5. Base giuridica del trattamento (GDPR)
 
 - **Dati GPS/sessione, registrazioni di ritrovamenti, voci del caveau:** Consenso (Art. 6(1)(a)) — iniziate attivamente queste azioni
-- **Chiamate API (meteo, geocodifica):** Interesse legittimo (Art. 6(1)(f)) — necessario per la funzionalità di base
+- **Chiamate API (meteo, geocodifica, tessere della mappa):** Interesse legittimo (Art. 6(1)(f)) — necessario per la funzionalità di base
 - **Backup di Google Drive:** Consenso (Art. 6(1)(a)) — abilitate e autenticate esplicitamente
 - **Verifica dell'abbonamento:** Esecuzione del contratto (Art. 6(1)(b)) — necessaria per fornire le funzionalità a pagamento
 - **Firebase Analytics e Crashlytics (opzionale):** Consenso (Art. 6(1)(a)) — attivato tramite la richiesta al primo avvio o dalle Impostazioni, revocabile in qualsiasi momento
+- **Feedback nell'app (opzionale):** Consenso (Art. 6(1)(a)) — inviato solo quando inviate il modulo di feedback
 - **Email della lista d'attesa (Sito Web):** Consenso (Art. 6(1)(a)) — vedere Sezione 4.1
 
 Potete revocare il consenso in qualsiasi momento interrompendo l'attività pertinente, disinstallando l'App o cancellando l'iscrizione dalle email del Sito Web.
 
 ## 6. Come utilizziamo i vostri dati
 
-Tutta l'elaborazione dei dati dell'App avviene **localmente sul vostro dispositivo**. Utilizziamo i dati dell'App esclusivamente per fornire le funzionalità dell'App: visualizzazione della mappa, monitoraggio delle sessioni, registrazione dei ritrovamenti, gestione dei permessi, dati meteo/maree, esportazioni, backup e verifica dell'abbonamento.
+Quasi tutta l'elaborazione dei dati dell'App avviene **localmente sul vostro dispositivo**. Utilizziamo i dati dell'App per fornire le funzionalità dell'App: visualizzazione della mappa, monitoraggio delle sessioni, registrazione dei ritrovamenti, gestione dei permessi, dati meteo/maree, esportazioni, backup e verifica dell'abbonamento. I dati lasciano il vostro dispositivo solo per le funzioni avviate dall'utente nelle Sezioni 3.2 e 3.3 (API in tempo reale, backup opzionale, diagnostica opzionale, feedback opzionale).
 
 I dati del Sito Web (la vostra email della lista d'attesa) sono utilizzati solo per inviare le comunicazioni di lancio e pre-lancio descritte nella Sezione 4.
 
@@ -171,6 +177,7 @@ I dati del Sito Web (la vostra email della lista d'attesa) sono utilizzati solo 
 - I file multimediali sono memorizzati nello storage interno privato dell'App, inaccessibile ad altre applicazioni
 - Il backup cloud di Android è **disabilitato** (`android:allowBackup="false"`) per prevenire l'esposizione involontaria dei dati
 - I backup di Google Drive utilizzano le API crittografate di Google (HTTPS/TLS) ed esistono solo nel vostro account
+- Il feedback opzionale nell'app che inviate viene trasmesso tramite HTTPS/TLS a una Edge Function di Supabase (regione UE)
 
 Per l'App, non gestiamo server, database o infrastruttura cloud che memorizzano i vostri dati di rilevamento.
 
@@ -184,7 +191,7 @@ Per l'App, non gestiamo server, database o infrastruttura cloud che memorizzano 
 
 ## 9. Condivisione e divulgazione dei dati
 
-Non condividiamo, vendiamo, affittiamo o divulghiamo i vostri dati personali a terze parti. Potete scegliere di condividere i dati dell'App tramite esportazioni (GPX, KML, CSV, JSON), carte di condivisione della sessione o backup di Google Drive — tutti iniziati dall'utente. I dati della lista d'attesa del Sito Web sono elaborati solo dai nostri responsabili nominati (Supabase, Resend) per gli scopi descritti nella Sezione 4.
+Non vendiamo, affittiamo o scambiamo i vostri dati personali. Potete scegliere di condividere i dati dell'App tramite esportazioni (GPX, KML, CSV, JSON), carte di condivisione della sessione o backup di Google Drive — tutti iniziati dall'utente. Se inviate un feedback nell'app, viene elaborato per nostro conto da Supabase (vedere Sezione 3.3). I dati della lista d'attesa del Sito Web sono elaborati solo dai nostri responsabili nominati (Supabase, Resend) per gli scopi descritti nella Sezione 4.
 
 ## 10. I vostri diritti (GDPR e internazionali)
 
@@ -238,7 +245,7 @@ Né l'App né il Sito Web sono diretti ai minori di 18 anni. L'utente previsto d
 - **CAMERA** — catturare foto per la registrazione dei ritrovamenti
 - **RECORD_AUDIO** — registrare note audio per i ritrovamenti
 - **READ/WRITE_CALENDAR** — scrive i promemoria di scadenza dei permessi del caveau nel calendario locale del vostro dispositivo. Se avete attivato la sincronizzazione con un calendario nel cloud in Android (ad esempio, sincronizzazione di Google Calendar), tali promemoria verranno sincronizzati con il vostro account insieme al resto del calendario — quella sincronizzazione è controllata dalle vostre impostazioni Android, non dall'App
-- **INTERNET** — meteo, geocodifica, maree, mappe, abbonamenti
+- **INTERNET** — meteo, geocodifica, maree, mappe, abbonamenti, feedback opzionale
 - **ACCESS_NETWORK_STATE** — rilevare lo stato offline prima di effettuare chiamate di rete
 - **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — impedire al sistema di terminare il tracker GPS durante le sessioni prolungate
 - **POST_NOTIFICATIONS** — notifica di monitoraggio GPS
@@ -252,13 +259,13 @@ Potete revocare qualsiasi autorizzazione in qualsiasi momento tramite le Imposta
 
 ## 14. Trasferimenti internazionali di dati
 
-**Dati dell'App:** Poiché tutti i dati di rilevamento sono memorizzati localmente sul vostro dispositivo, non si verificano trasferimenti internazionali di dati sotto il nostro controllo. Le chiamate API a terze parti possono essere elaborate nelle giurisdizioni in cui operano tali servizi.
+**Dati dell'App:** Poiché tutti i dati di rilevamento sono memorizzati localmente sul vostro dispositivo, non si verificano trasferimenti internazionali dei vostri dati di rilevamento sotto il nostro controllo. Le chiamate API a terze parti (Sezione 3.2), il backup opzionale di Google Drive, la diagnostica Firebase opzionale e il feedback opzionale possono essere elaborati nelle giurisdizioni in cui operano tali servizi.
 
 **Dati del Sito Web:** Le email della lista d'attesa sono memorizzate nell'UE (Irlanda) da Supabase ed elaborate da Resend (UE, Irlanda). Se accedete al Sito Web dall'esterno dell'UE, la vostra email viene trasferita nell'UE per l'elaborazione.
 
 ## 15. Notifica di violazione dei dati
 
-**App:** Poiché non memorizziamo i vostri dati di rilevamento su nessun server che gestiamo, una violazione dei dati che riguarda i dati dell'App da parte nostra non è possibile. Se veniamo a conoscenza di una vulnerabilità nell'App, rilasceremo un aggiornamento e notificheremo gli utenti tramite l'App o il sito web.
+**App:** Poiché non memorizziamo i vostri dati di rilevamento su nessun server che gestiamo, una violazione dei dati che riguarda i dati dell'App da parte nostra non è possibile. Se veniamo a conoscenza di una vulnerabilità nell'App, rilasceremo un aggiornamento e notificheremo gli utenti tramite l'App o il sito web. Il feedback opzionale che inviate è conservato dal nostro responsabile del trattamento Supabase secondo i suoi protocolli di notifica delle violazioni.
 
 **Sito Web:** I nostri responsabili (Supabase, Resend) mantengono i propri protocolli di notifica delle violazioni. Nell'improbabile caso di una violazione che riguardi la vostra email della lista d'attesa, vi notificheremo voi e l'autorità di controllo competente (ANSPDCP) entro 72 ore come richiesto dal GDPR.
 
@@ -268,15 +275,19 @@ Possiamo aggiornare questa Informativa sulla Privacy per riflettere modifiche ne
 
 ## 17. Politiche sulla Privacy di terze parti
 
-- [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Google (Maps, Drive, Sign-In, geocoder della piattaforma)](https://policies.google.com/privacy)
 - [Firebase (Analytics e Crashlytics — solo opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+- [OpenTopoMap](https://opentopomap.org/about)
+- [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+- [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+- [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy tessere mappe storiche)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Hosting Sito Web + analisi)
-- [Supabase](https://supabase.com/privacy) (Database Sito Web)
+- [Supabase](https://supabase.com/privacy) (Database Sito Web + feedback nell'app)
 - [Resend](https://resend.com/legal/privacy-policy) (Email Sito Web)
 
 ## 18. Contattateci

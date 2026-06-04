@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale
 
-Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 26 mai 2026
+Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 4 iunie 2026
 
 Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
@@ -16,7 +16,7 @@ Website: sweeptrack.pro
 
 Această Politică de Confidențialitate explică modul în care SweepTrack Pro ("Aplicația") și site-ul web sweeptrack.pro ("Website-ul") colectează, utilizează, stochează și protejează informațiile dumneavoastră. Ne angajăm să vă protejăm confidențialitatea și să asigurăm transparența practicilor noastre privind datele.
 
-Aplicația este concepută cu o **arhitectură axată pe confidențialitate**: toate datele de detecție sunt stocate local pe dispozitivul dumneavoastră, nu operăm servere backend pentru Aplicație și nu colectăm, transmitem sau vindem datele dumneavoastră personale de detecție. Website-ul funcționează separat și are propriile sale practici privind datele, descrise în Secțiunea 4.
+Aplicația este concepută cu o **arhitectură axată pe confidențialitate**: toate datele de detecție sunt stocate local pe dispozitivul dumneavoastră, nu operăm servere backend care să stocheze datele dumneavoastră de detecție și nu colectăm, transmitem sau vindem datele dumneavoastră personale de detecție. O cantitate mică de date părăsește dispozitivul dumneavoastră doar pentru funcțiile inițiate de utilizator descrise în Secțiunile 3.2 și 3.3 (funcții API în timp real, backup opțional, diagnostice opționale și feedback opțional). Website-ul funcționează separat și are propriile sale practici privind datele, descrise în Secțiunea 4.
 
 ## 2. Operatorul de Date
 
@@ -42,7 +42,7 @@ Următoarele date sunt create de dumneavoastră și stocate **exclusiv pe dispoz
 
 **Înregistrări ale descoperirilor:**
 
-- Tipul descoperirii (Tezaur, Aur, Monedă, Relicvă, Bijuterie, Gunoi)
+- Tipul descoperirii (Tezaur, Aur, Monedă, Relicvă, Bijuterie, Gunoi, Nesortat/Adăugare rapidă)
 - Locația descoperirii (coordonate GPS în momentul înregistrării)
 - Metadate opționale: nume, note, adâncime, valoare estimată, greutate
 - Atașamente media: fotografii și înregistrări audio
@@ -56,6 +56,8 @@ Următoarele date sunt create de dumneavoastră și stocate **exclusiv pe dispoz
 - Semnături digitale (format SVG)
 - Etichete și note personalizate
 
+**Puncte de reper (waypoints):** Marcaje de hartă plasate de utilizator — coordonate, nume, categorie și note opționale.
+
 **Alte date locale:** Configurații ale presetărilor de detector, preferințe ale aplicației (temă, unități, limbă, setări hărți) și instantanee meteo asociate sesiunilor.
 
 ### 3.2 Date procesate temporar (nu sunt stocate)
@@ -63,11 +65,12 @@ Următoarele date sunt create de dumneavoastră și stocate **exclusiv pe dispoz
 Următoarele date sunt trimise către API-uri terțe pentru funcționalitate în timp real și **nu sunt stocate de noi sau de aceste servicii dincolo de cererea imediată**:
 
 - Coordonate GPS aproximative trimise către Open-Meteo pentru prognoze meteo și date de altitudine
-- Coordonate GPS aproximative trimise către OpenStreetMap/Nominatim pentru căutarea adreselor
+- Coordonate transformate în nume de locuri prin geocodificatorul de platformă Android (furnizat de Google Play Services pe majoritatea dispozitivelor) pentru geocodare inversă — folosit pentru a eticheta sesiunile și descoperirile cu un nume de loc
 - Coordonate GPS aproximative trimise către Overpass API pentru descoperirea punctelor de interes istorice din apropiere
 - Coordonate GPS aproximative trimise către Wikipedia API pentru căutarea geografică a articolelor din apropiere
 - Identificatori ai stațiilor de maree trimiși către NOAA pentru predicțiile mareelor
 - Interogări de căutare a locației trimise către Open-Meteo Geocoding pentru căutarea numelor de locuri
+- Cereri de plăci de hartă (care dezvăluie zona aproximativă a hărții pe care o vizualizați) trimise către furnizorul de plăci al tipului de hartă activ: Esri/ArcGIS (imagini din satelit și hărți topografice USGS), OpenStreetMap și OpenTopoMap (pachete de hărți offline/descărcabile) și — pentru suprapunerea istorică românească „Harta Veche" — un proxy de cache pe care îl operăm pe Cloudflare, care preia plăcile de la geo-spatial.org (eHarta). Harta de bază implicită Google este acoperită la Google Maps SDK în Secțiunea 3.3
 
 ### 3.3 Date procesate de servicii terțe
 
@@ -81,20 +84,22 @@ Următoarele date sunt trimise către API-uri terțe pentru funcționalitate în
 
 Când sunt activate:
 
-- **Firebase Analytics** înregistrează opt nume de evenimente agregate cu parametri neidentificatori: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Conținutul evenimentelor **nu** include niciodată coordonate GPS, adrese, denumirile descoperirilor, fotografii, înregistrări audio, date din seif sau alte informații de identificare personală — doar contoare, durate, distanțe, tipul descoperirii (doar categoria) și identificatori de funcții.
+- **Firebase Analytics** înregistrează opt nume de evenimente agregate cu parametri neidentificatori: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Conținutul evenimentelor **nu** include niciodată coordonate GPS, adrese, denumirile descoperirilor, fotografii, înregistrări audio, date din seif sau alte informații de identificare personală — doar contoare, durate, distanțe, tipul descoperirii (doar categoria) și identificatori de funcții. Evenimentul `find_logged` raportează tipul ca o categorie generală (`valuable`, `find`, `trash`, `unsorted` sau `other` pentru orice tip nerecunoscut) în loc de tipul specific al descoperirii, astfel încât panoul de bord agregat nu poate deduce distribuția obiectelor de valoare pe care le înregistrează un utilizator individual.
 - **Firebase Crashlytics** încarcă urme de stivă ale erorilor împreună cu modelul dispozitivului, versiunea sistemului de operare și versiunea aplicației pentru a ne ajuta să diagnosticăm problemele. Înainte ca orice eroare critică sau non-fatală să fie trimisă către Crashlytics, Aplicația **elimină din mesajul excepției șirurile cu formă de coordonate** (de exemplu, modele `lat=`/`lon=`, numere zecimale cu semn având trei sau mai multe cifre fracționare), astfel încât pozițiile GPS reținute în variabile locale să nu poată scăpa prin raportarea erorilor. Cadrele stivei (clasa, metoda, linia) se păstrează pentru gruparea erorilor; valorile de la rulare nu. Un handler global de excepții necapturate aplică aceeași curățare și pentru erorile fatale capturate automat de SDK.
 
 Ambele servicii sunt supuse [Politicii de Confidențialitate Google](https://policies.google.com/privacy) și [dezvăluirilor Firebase privind confidențialitatea și securitatea](https://firebase.google.com/support/privacy).
 
+**Feedback în aplicație (Opțional):** Dacă trimiteți feedback prin formularul de feedback al Aplicației, Aplicația transmite informațiile pe care le introduceți — mesajul dumneavoastră, categoria selectată și dacă este un raport de eroare sau o idee de funcție — împreună cu modelul dispozitivului dumneavoastră, versiunea Android, versiunea aplicației și limba (locale), și, **doar dacă alegeți să o furnizați, adresa dumneavoastră de email**, către o funcție Supabase Edge Function pe care o operăm, astfel încât să putem citi și răspunde. Nu se trimite nimic decât dacă trimiteți formularul. Supabase, Inc. acționează ca procesator de date al nostru (regiunea UE). Supus [Politicii de Confidențialitate Supabase](https://supabase.com/privacy).
+
 ### 3.4 Date pe care Aplicația NU le colectează
 
-- **Aplicația** nu colectează numele, email-ul, numărul de telefon sau orice identificatori personali
+- **Aplicația** nu colectează numele, numărul de telefon sau orice identificatori personali — cu excepția unei adrese de email pe care o introduceți opțional atunci când trimiteți feedback în aplicație (vezi Secțiunea 3.3)
 - **Aplicația** nu folosește analize sau raportare de erori decât dacă optați explicit (vezi secțiunea Firebase de mai sus; opt-in-ul este dezactivat implicit și revocabil oricând în Setări → Confidențialitate → Diagnostice)
 - **Aplicația** nu folosește cadre publicitare sau identificatori de publicitate
 - **Aplicația** nu urmărește modelele de utilizare, frecvența sesiunilor sau utilizarea funcțiilor
 - **Aplicația** nu creează profiluri de utilizator sau amprente comportamentale
-- **Aplicația** nu partajează, vinde, închiriază sau tranzacționează date cu terți
-- **Aplicația** nu operează servere care primesc, procesează sau stochează datele dumneavoastră de detecție
+- **Aplicația** nu vinde, închiriază sau tranzacționează datele dumneavoastră și le partajează doar acolo unde inițiați dumneavoastră acest lucru: apelurile API în timp real din Secțiunea 3.2, backup-ul opțional Google Drive, diagnosticele opționale Firebase și feedback-ul pe care alegeți să îl trimiteți (Secțiunea 3.3)
+- **Aplicația** nu operează servere care primesc, procesează sau stochează datele dumneavoastră de detecție (locație, descoperiri, intrări din seif, sesiuni); singurul conținut pe care îl tastați și care ajunge la un server pe care îl operăm este feedback-ul pe care alegeți să îl trimiteți (Secțiunea 3.3)
 
 Practicile de date ale Website-ului sunt acoperite separat în Secțiunea 4.
 
@@ -148,17 +153,18 @@ Aceleași drepturi GDPR, UK GDPR, australiene, canadiene, CCPA, LGPD și NZ Priv
 ## 5. Temeiul juridic pentru procesare (GDPR)
 
 - **Date GPS/sesiune, înregistrări descoperiri, intrări seif:** Consimțământ (Art. 6(1)(a)) — inițiați activ aceste acțiuni
-- **Apeluri API (vreme, geocodare):** Interes legitim (Art. 6(1)(f)) — necesar pentru funcționalitatea de bază
+- **Apeluri API (vreme, geocodare, plăci de hartă):** Interes legitim (Art. 6(1)(f)) — necesar pentru funcționalitatea de bază
 - **Backup Google Drive:** Consimțământ (Art. 6(1)(a)) — activați și autentificați în mod explicit
 - **Verificarea abonamentului:** Executarea unui contract (Art. 6(1)(b)) — necesară pentru a furniza funcții plătite
 - **Firebase Analytics și Crashlytics (opțional):** Consimțământ (Art. 6(1)(a)) — activate prin solicitarea de la prima rulare sau din Setări, revocabile oricând
+- **Feedback în aplicație (opțional):** Consimțământ (Art. 6(1)(a)) — trimis doar atunci când trimiteți formularul de feedback
 - **Email lista de așteptare (Website):** Consimțământ (Art. 6(1)(a)) — vezi Secțiunea 4.1
 
 Vă puteți retrage consimțământul în orice moment prin oprirea activității relevante, prin dezinstalarea Aplicației sau prin dezabonarea de la emailurile Website-ului.
 
 ## 6. Cum utilizăm datele dumneavoastră
 
-Toată procesarea datelor Aplicației are loc **local pe dispozitivul dumneavoastră**. Utilizăm datele Aplicației exclusiv pentru a furniza funcțiile Aplicației: afișarea hărții, monitorizarea sesiunilor, înregistrarea descoperirilor, gestionarea permisiunilor, date meteo/maree, exporturi, backup și verificarea abonamentului.
+Aproape toată procesarea datelor Aplicației are loc **local pe dispozitivul dumneavoastră**. Utilizăm datele Aplicației pentru a furniza funcțiile Aplicației: afișarea hărții, monitorizarea sesiunilor, înregistrarea descoperirilor, gestionarea permisiunilor, date meteo/maree, exporturi, backup și verificarea abonamentului. Datele părăsesc dispozitivul dumneavoastră doar pentru funcțiile inițiate de utilizator din Secțiunile 3.2 și 3.3 (API-uri în timp real, backup opțional, diagnostice opționale, feedback opțional).
 
 Datele Website-ului (adresa dumneavoastră de email din lista de așteptare) sunt folosite doar pentru a trimite comunicările de lansare și pre-lansare descrise în Secțiunea 4.
 
@@ -171,6 +177,7 @@ Datele Website-ului (adresa dumneavoastră de email din lista de așteptare) sun
 - Fișierele media sunt stocate în spațiul de stocare intern privat al Aplicației, inaccesibil altor aplicații
 - Backup-ul în cloud Android este **dezactivat** (`android:allowBackup="false"`) pentru a preveni expunerea neintenționată a datelor
 - Backup-urile Google Drive utilizează API-urile criptate ale Google (HTTPS/TLS) și există exclusiv în contul dumneavoastră
+- Feedback-ul opțional în aplicație pe care îl trimiteți este transmis prin HTTPS/TLS către o funcție Supabase Edge Function (regiunea UE)
 
 Pentru Aplicație, nu operăm servere, baze de date sau infrastructură cloud care să stocheze datele dumneavoastră de detecție.
 
@@ -184,7 +191,7 @@ Pentru Aplicație, nu operăm servere, baze de date sau infrastructură cloud ca
 
 ## 9. Partajarea și dezvăluirea datelor
 
-Nu partajăm, vindem, închiriem sau dezvăluim datele dumneavoastră cu caracter personal niciunei terțe părți. Puteți alege să partajați datele Aplicației prin exporturi (GPX, KML, CSV, JSON), carduri de partajare a sesiunii sau backup Google Drive — toate inițiate de utilizator. Datele listei de așteptare ale Website-ului sunt procesate doar de procesatorii noștri numiți (Supabase, Resend) pentru scopurile descrise în Secțiunea 4.
+Nu vindem, închiriem sau tranzacționăm datele dumneavoastră cu caracter personal. Puteți alege să partajați datele Aplicației prin exporturi (GPX, KML, CSV, JSON), carduri de partajare a sesiunii sau backup Google Drive — toate inițiate de utilizator. Dacă trimiteți feedback în aplicație, acesta este procesat în numele nostru de către Supabase (vezi Secțiunea 3.3). Datele listei de așteptare ale Website-ului sunt procesate doar de procesatorii noștri numiți (Supabase, Resend) pentru scopurile descrise în Secțiunea 4.
 
 ## 10. Drepturile dumneavoastră (GDPR și internaționale)
 
@@ -238,7 +245,7 @@ Nici Aplicația, nici Website-ul nu sunt adresate copiilor sub 18 ani. Utilizato
 - **CAMERA** — capturarea fotografiilor pentru înregistrarea descoperirilor
 - **RECORD_AUDIO** — înregistrarea notelor audio pentru descoperiri
 - **READ/WRITE_CALENDAR** — scrie mementouri pentru expirarea permiselor în calendarul local al dispozitivului. Dacă aveți activată sincronizarea cu calendarul în cloud în Android (de exemplu, sincronizare Google Calendar), aceste mementouri vor fi sincronizate cu contul dumneavoastră împreună cu restul calendarului — sincronizarea este controlată de setările Android, nu de Aplicație
-- **INTERNET** — vreme, geocodare, maree, hărți, abonamente
+- **INTERNET** — vreme, geocodare, maree, hărți, abonamente, feedback opțional
 - **ACCESS_NETWORK_STATE** — detectarea stării offline înainte de a efectua apeluri de rețea
 - **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — împiedicarea sistemului să oprească serviciul de monitorizare GPS în timpul sesiunilor lungi
 - **POST_NOTIFICATIONS** — notificare pentru monitorizarea GPS
@@ -252,13 +259,13 @@ Puteți revoca orice permisiune în orice moment prin Setările Android.
 
 ## 14. Transferuri internaționale de date
 
-**Datele Aplicației:** Deoarece toate datele de detecție sunt stocate local pe dispozitivul dumneavoastră, nu au loc transferuri internaționale de date sub controlul nostru. Apelurile API către terți pot fi procesate în jurisdicțiile în care funcționează acele servicii.
+**Datele Aplicației:** Deoarece toate datele de detecție sunt stocate local pe dispozitivul dumneavoastră, nu au loc transferuri internaționale de date sub controlul nostru. Apelurile API către terți (Secțiunea 3.2), backup-ul opțional Google Drive, diagnosticele opționale Firebase și feedback-ul opțional pot fi procesate în jurisdicțiile în care funcționează acele servicii.
 
 **Datele Website-ului:** Emailurile listei de așteptare sunt stocate în UE (Irlanda) de către Supabase și procesate de Resend (UE, Irlanda). Dacă accesați Website-ul din afara UE, adresa dumneavoastră de email este transferată în UE pentru procesare.
 
 ## 15. Notificarea încălcării securității datelor
 
-**Aplicația:** Deoarece nu stocăm datele dumneavoastră de detecție pe niciun server pe care îl operăm, o încălcare a securității care afectează datele Aplicației din partea noastră nu este posibilă. Dacă luăm la cunoștință o vulnerabilitate în Aplicație, vom lansa o actualizare și vom notifica utilizatorii prin intermediul Aplicației sau al site-ului web.
+**Aplicația:** Deoarece nu stocăm datele dumneavoastră de detecție pe niciun server pe care îl operăm, o încălcare a securității care afectează datele Aplicației din partea noastră nu este posibilă. Dacă luăm la cunoștință o vulnerabilitate în Aplicație, vom lansa o actualizare și vom notifica utilizatorii prin intermediul Aplicației sau al site-ului web. Feedback-ul opțional pe care îl trimiteți este deținut de procesatorul nostru Supabase conform propriilor sale protocoale de notificare a încălcărilor.
 
 **Website-ul:** Procesatorii noștri (Supabase, Resend) mențin propriile protocoale de notificare a încălcărilor. În cazul puțin probabil al unei încălcări care afectează adresa dumneavoastră de email din lista de așteptare, vă vom notifica pe dumneavoastră și autoritatea de supraveghere relevantă (ANSPDCP) în termen de 72 de ore, conform cerințelor GDPR.
 
@@ -268,15 +275,19 @@ Putem actualiza această Politică de Confidențialitate pentru a reflecta modif
 
 ## 17. Politicile de confidențialitate ale terților
 
-- [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Google (Maps, Drive, Sign-In, geocodificator de platformă)](https://policies.google.com/privacy)
 - [Firebase (Analytics și Crashlytics — doar opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+- [OpenTopoMap](https://opentopomap.org/about)
+- [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+- [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+- [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy pentru plăcile hărții istorice)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Găzduire Website + analize)
-- [Supabase](https://supabase.com/privacy) (Baza de date Website)
+- [Supabase](https://supabase.com/privacy) (Baza de date Website + feedback în aplicație)
 - [Resend](https://resend.com/legal/privacy-policy) (Email Website)
 
 ## 18. Contactați-ne

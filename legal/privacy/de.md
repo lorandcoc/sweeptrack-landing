@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-Tracking-Anwendung für die Metalldetektion
 
-Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 26. Mai 2026
+Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 4. Juni 2026
 
 Betrieben von: Coc Lorand Adrian P.F.A., firmierend unter „Loriba"
 
@@ -16,7 +16,7 @@ Website: sweeptrack.pro
 
 Diese Datenschutzerklärung erläutert, wie SweepTrack Pro („die App") und die Website unter sweeptrack.pro („die Website") Ihre Informationen sammeln, verwenden, speichern und schützen. Wir setzen uns für den Schutz Ihrer Privatsphäre ein und sorgen für Transparenz bei unseren Datenpraktiken.
 
-Die App basiert auf einer **Privacy-First-Architektur**: Alle Detektionsdaten werden lokal auf Ihrem Gerät gespeichert, wir betreiben keine Backend-Server für die App und wir sammeln, übertragen oder verkaufen Ihre personenbezogenen Detektionsdaten nicht. Die Website wird separat betrieben und hat ihre eigenen Datenpraktiken, die in Abschnitt 4 beschrieben werden.
+Die App basiert auf einer **Privacy-First-Architektur**: Alle Detektionsdaten werden lokal auf Ihrem Gerät gespeichert, wir betreiben keine Backend-Server, die Ihre Detektionsdaten speichern, und wir sammeln, übertragen oder verkaufen Ihre personenbezogenen Detektionsdaten nicht. Eine geringe Menge an Daten verlässt Ihr Gerät nur für die vom Nutzer initiierten Funktionen, die in den Abschnitten 3.2 und 3.3 beschrieben werden (Echtzeit-API-Funktionen, optionale Sicherung, optionale Diagnose und optionales Feedback). Die Website wird separat betrieben und hat ihre eigenen Datenpraktiken, die in Abschnitt 4 beschrieben werden.
 
 ## 2. Verantwortlicher für die Datenverarbeitung
 
@@ -42,7 +42,7 @@ Die folgenden Daten werden von Ihnen erstellt und **ausschließlich auf Ihrem Ge
 
 **Fund- und Entdeckungsaufzeichnungen:**
 
-* Fundtyp (Schatz, Gold, Münze, Relikt, Schmuck, Müll)
+* Fundtyp (Schatz, Gold, Münze, Relikt, Schmuck, Müll, Unsortiert/Schnellablage)
 * Fundort (GPS-Koordinaten zum Zeitpunkt der Protokollierung)
 * Optionale Metadaten: Name, Notizen, Tiefe, geschätzter Wert, Gewicht
 * Medienanhänge: Fotos und Audioaufnahmen
@@ -56,6 +56,8 @@ Die folgenden Daten werden von Ihnen erstellt und **ausschließlich auf Ihrem Ge
 * Digitale Signaturen (SVG-Format)
 * Benutzerdefinierte Tags und Notizen
 
+**Wegpunkte:** Von Ihnen platzierte Kartenmarkierungen — Koordinaten, Name, Kategorie und optionale Notizen.
+
 **Andere lokale Daten:** Detektor-Voreinstellungskonfigurationen, App-Präferenzen (Thema, Einheiten, Sprache, Karteneinstellungen) und mit Sitzungen verknüpfte Wetter-Snapshots.
 
 ### 3.2 Vorübergehend verarbeitete Daten (nicht gespeichert)
@@ -63,11 +65,12 @@ Die folgenden Daten werden von Ihnen erstellt und **ausschließlich auf Ihrem Ge
 Die folgenden Daten werden zur Echtzeit-Funktionalität an Drittanbieter-APIs gesendet und **werden weder von uns noch von diesen Diensten über die unmittelbare Anfrage hinaus gespeichert**:
 
 * Ungefähre GPS-Koordinaten an Open-Meteo für Wettervorhersagen und Höhendaten
-* Ungefähre GPS-Koordinaten an OpenStreetMap/Nominatim zur Adresssuche
+* Koordinaten, die über den Plattform-Geocoder von Android (auf den meisten Geräten von Google Play Services bereitgestellt) in Ortsnamen aufgelöst werden, zum Reverse-Geocoding — verwendet, um Sitzungen und Funde mit einem Ortsnamen zu versehen
 * Ungefähre GPS-Koordinaten an Overpass API zur Entdeckung nahegelegener historischer Points-of-Interest
 * Ungefähre GPS-Koordinaten an Wikipedia API für die geografische Suche nach Artikeln in der Nähe
 * Gezeitenstationskennungen an NOAA für Gezeitenvorhersagen
 * Standortsuchanfragen an Open-Meteo Geocoding zur Namenssuche von Orten
+* Kartenkachel-Anfragen (die das ungefähre Gebiet der von Ihnen angezeigten Karte verraten) an den Kachelanbieter des aktiven Kartentyps: Esri/ArcGIS (Satellitenbilder und USGS-topografische Karten), OpenStreetMap und OpenTopoMap (Offline-/herunterladbare Kartenpakete) und — für das rumänische historische „Alte Karte"-Overlay — einen von uns betriebenen Caching-Proxy auf Cloudflare, der Kacheln von geo-spatial.org (eHarta) abruft. Die standardmäßige Google-Kartenbasis ist unter Google Maps SDK in Abschnitt 3.3 abgedeckt
 
 ### 3.3 Von Drittanbieterdiensten verarbeitete Daten
 
@@ -81,20 +84,22 @@ Die folgenden Daten werden zur Echtzeit-Funktionalität an Drittanbieter-APIs ge
 
 Wenn aktiviert:
 
-* **Firebase Analytics** protokolliert acht aggregierte Ereignisnamen mit nicht-identifizierenden Parametern: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Die Ereignis-Nutzdaten enthalten **niemals** GPS-Koordinaten, Adressen, Fundnamen, Fotos, Audioaufnahmen, Tresordaten oder andere personenbezogene Informationen — ausschließlich Zähler, Dauern, Entfernungen, Fundtypen (nur die Kategorie) und Funktions-Identifikatoren.
+* **Firebase Analytics** protokolliert acht aggregierte Ereignisnamen mit nicht-identifizierenden Parametern: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Die Ereignis-Nutzdaten enthalten **niemals** GPS-Koordinaten, Adressen, Fundnamen, Fotos, Audioaufnahmen, Tresordaten oder andere personenbezogene Informationen — ausschließlich Zähler, Dauern, Entfernungen, Fundtypen (nur die Kategorie) und Funktions-Identifikatoren. Das `find_logged`-Ereignis meldet den Typ als grobe Kategorie (`valuable`, `find`, `trash`, `unsorted` oder `other` für jeden nicht erkannten Typ) anstelle des spezifischen Fundtyps, sodass das aggregierte Dashboard nicht auf die Verteilung der Wertgegenstände schließen kann, die ein einzelner Benutzer protokolliert.
 * **Firebase Crashlytics** lädt Absturz-Stacktraces zusammen mit Gerätemodell, Betriebssystemversion und App-Version hoch, damit wir Fehler diagnostizieren können. Bevor ein Absturz oder ein nicht-fataler Fehler an Crashlytics weitergeleitet wird, **bereinigt die App koordinatenförmige Teilzeichenfolgen aus der Ausnahme-Nachricht** (z. B. `lat=`/`lon=`-Muster, vorzeichenbehaftete Dezimalzahlen mit drei oder mehr Nachkommastellen), damit GPS-Positionen, die in lokalen Variablen zwischengespeichert sind, nicht über die Fehlerberichterstattung durchsickern können. Stack-Frames (Klasse, Methode, Zeile) bleiben zur Gruppierung erhalten, Laufzeitwerte nicht. Ein prozessweiter UncaughtExceptionHandler wendet dieselbe Bereinigung auf fatale Abstürze an, die das SDK automatisch erfasst.
 
 Beide Dienste unterliegen der [Google-Datenschutzerklärung](https://policies.google.com/privacy) und den [Firebase-Datenschutz- und Sicherheitshinweisen](https://firebase.google.com/support/privacy).
 
+**In-App-Feedback (Optional):** Wenn Sie Feedback über das Feedback-Formular der App senden, übermittelt die App die von Ihnen eingegebenen Informationen — Ihre Nachricht, die ausgewählte Kategorie und ob es sich um einen Fehlerbericht oder eine Funktionsidee handelt — zusammen mit Ihrem Gerätemodell, der Android-Version, der App-Version und der Sprache sowie, **nur wenn Sie sich entscheiden, sie anzugeben, Ihrer E-Mail-Adresse**, an eine von uns betriebene Supabase Edge Function, damit wir sie lesen und beantworten können. Es wird nichts gesendet, es sei denn, Sie senden das Formular ab. Supabase, Inc. fungiert dabei als unser Auftragsverarbeiter (EU-Region). Unterliegt der [Datenschutzerklärung von Supabase](https://supabase.com/privacy).
+
 ### 3.4 Daten, die die App NICHT sammelt
 
-* **Die App** sammelt nicht Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer oder andere persönliche Identifikatoren
+* **Die App** sammelt nicht Ihren Namen, Ihre Telefonnummer oder andere persönliche Identifikatoren — mit Ausnahme einer E-Mail-Adresse, die Sie optional eingeben, wenn Sie In-App-Feedback senden (siehe Abschnitt 3.3)
 * **Die App** verwendet keine Analyse- oder Absturzberichterstattung, es sei denn, Sie stimmen ausdrücklich zu (siehe Firebase-Abschnitt oben; standardmäßig deaktiviert, jederzeit widerrufbar unter Einstellungen → Datenschutz → Diagnose)
 * **Die App** verwendet keine Werberahmen oder Werbeidentifikatoren
 * **Die App** verfolgt keine Nutzungsmuster, Sitzungshäufigkeit oder Funktionsnutzung
 * **Die App** erstellt keine Benutzerprofile oder Verhaltens-Fingerabdrücke
-* **Die App** teilt, verkauft, vermietet oder handelt keine Daten mit Dritten
-* **Die App** betreibt keine Server, die Ihre Detektionsdaten empfangen, verarbeiten oder speichern
+* **Die App** verkauft, vermietet oder handelt Ihre Daten nicht und teilt sie nur dort, wo Sie es initiieren: die Echtzeit-API-Aufrufe in Abschnitt 3.2, die optionale Google Drive-Sicherung, die Opt-in-Firebase-Diagnose und das Feedback, das Sie absenden (Abschnitt 3.3)
+* **Die App** betreibt keine Server, die Ihre Detektionsdaten (Standort, Funde, Tresoreinträge, Sitzungen) empfangen, verarbeiten oder speichern; der einzige von Ihnen eingegebene Inhalt, der einen von uns betriebenen Server erreicht, ist das Feedback, das Sie absenden möchten (Abschnitt 3.3)
 
 Die Datenpraktiken der Website werden separat in Abschnitt 4 behandelt.
 
@@ -148,17 +153,18 @@ Die gleichen GDPR-, UK GDPR-, australischen, kanadischen, CCPA-, LGPD- und NZ Pr
 ## 5. Rechtsgrundlage der Verarbeitung (GDPR)
 
 * **GPS-/Sitzungsdaten, Fundaufzeichnungen, Tresoreinträge:** Einwilligung (Art. 6(1)(a)) — Sie initiieren diese Aktionen aktiv
-* **API-Aufrufe (Wetter, Geocoding):** Berechtigtes Interesse (Art. 6(1)(f)) — notwendig für die Kernfunktionalität
+* **API-Aufrufe (Wetter, Geocoding, Kartenkacheln):** Berechtigtes Interesse (Art. 6(1)(f)) — notwendig für die Kernfunktionalität
 * **Google Drive Sicherung:** Einwilligung (Art. 6(1)(a)) — Sie aktivieren und authentifizieren ausdrücklich
 * **Abonnementverifizierung:** Vertragserfüllung (Art. 6(1)(b)) — erforderlich, um kostenpflichtige Funktionen bereitzustellen
 * **Firebase Analytics und Crashlytics (optional):** Einwilligung (Art. 6(1)(a)) — über die Abfrage beim ersten Start oder in den Einstellungen aktiviert, jederzeit widerrufbar
+* **In-App-Feedback (optional):** Einwilligung (Art. 6(1)(a)) — nur gesendet, wenn Sie das Feedback-Formular absenden
 * **Warteliste-E-Mail (Website):** Einwilligung (Art. 6(1)(a)) — siehe Abschnitt 4.1
 
 Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die entsprechende Aktivität stoppen, die App deinstallieren oder sich von Website-E-Mails abmelden.
 
 ## 6. Wie wir Ihre Daten verwenden
 
-Die gesamte Datenverarbeitung der App erfolgt **lokal auf Ihrem Gerät**. Wir verwenden App-Daten ausschließlich zur Bereitstellung der App-Funktionen: Kartenanzeige, Sitzungstracking, Fundprotokollierung, Berechtigungsverwaltung, Wetter-/Gezeitendaten, Exporte, Sicherung und Abonnementverifizierung.
+Nahezu die gesamte Datenverarbeitung der App erfolgt **lokal auf Ihrem Gerät**. Wir verwenden App-Daten zur Bereitstellung der App-Funktionen: Kartenanzeige, Sitzungstracking, Fundprotokollierung, Berechtigungsverwaltung, Wetter-/Gezeitendaten, Exporte, Sicherung und Abonnementverifizierung. Daten verlassen Ihr Gerät nur für die vom Nutzer initiierten Funktionen in den Abschnitten 3.2 und 3.3 (Echtzeit-APIs, optionale Sicherung, optionale Diagnose, optionales Feedback).
 
 Website-Daten (Ihre Warteliste-E-Mail) werden nur zum Versand der in Abschnitt 4 beschriebenen Launch- und Pre-Launch-Kommunikation verwendet.
 
@@ -171,6 +177,7 @@ Website-Daten (Ihre Warteliste-E-Mail) werden nur zum Versand der in Abschnitt 4
 * Mediendateien werden im privaten internen Speicher der App gespeichert und sind für andere Apps nicht zugänglich
 * Android-Cloud-Sicherung **deaktiviert** (`android:allowBackup="false"`), um unbeabsichtigte Datenexposition zu verhindern
 * Google Drive-Sicherungen verwenden die verschlüsselten APIs von Google (HTTPS/TLS) und existieren ausschließlich in Ihrem Konto
+* Optionales In-App-Feedback, das Sie absenden, wird über HTTPS/TLS an eine Supabase Edge Function (EU-Region) übermittelt
 
 Für die App betreiben wir keine Server, Datenbanken oder Cloud-Infrastruktur, die Ihre Detektionsdaten speichern.
 
@@ -184,7 +191,7 @@ Für die App betreiben wir keine Server, Datenbanken oder Cloud-Infrastruktur, d
 
 ## 9. Datenweitergabe und Offenlegung
 
-Wir geben Ihre personenbezogenen Daten nicht an Dritte weiter, verkaufen, vermieten oder offenbaren sie. Sie können sich entscheiden, App-Daten über Exporte (GPX, KML, CSV, JSON), Sitzungsfreigabekarten oder Google Drive-Sicherung zu teilen — alle vom Benutzer initiiert. Website-Warteliste-Daten werden nur von unseren benannten Auftragsverarbeitern (Supabase, Resend) für die in Abschnitt 4 beschriebenen Zwecke verarbeitet.
+Wir verkaufen, vermieten oder handeln Ihre personenbezogenen Daten nicht. Sie können sich entscheiden, App-Daten über Exporte (GPX, KML, CSV, JSON), Sitzungsfreigabekarten oder Google Drive-Sicherung zu teilen — alle vom Benutzer initiiert. Wenn Sie In-App-Feedback absenden, wird es in unserem Auftrag von Supabase verarbeitet (siehe Abschnitt 3.3). Website-Warteliste-Daten werden nur von unseren benannten Auftragsverarbeitern (Supabase, Resend) für die in Abschnitt 4 beschriebenen Zwecke verarbeitet.
 
 ## 10. Ihre Rechte (GDPR und international)
 
@@ -238,7 +245,7 @@ Weder die App noch die Website richten sich an Kinder unter 18 Jahren. Der vorge
 * **CAMERA** — Fotos für die Fundprotokollierung aufnehmen
 * **RECORD_AUDIO** — Audionotizen für Funde aufzeichnen
 * **READ/WRITE_CALENDAR** — schreibt Erinnerungen für den Ablauf von Tresor-Berechtigungen in den lokalen Kalender Ihres Geräts. Wenn Sie unter Android die Synchronisierung mit einem Cloud-Kalender aktiviert haben (z. B. Google Calendar-Synchronisierung), werden diese Erinnerungen zusammen mit dem Rest Ihres Kalenders mit Ihrem Konto synchronisiert — diese Synchronisierung wird durch Ihre Android-Einstellungen gesteuert, nicht durch die App
-* **INTERNET** — Wetter, Geocoding, Gezeiten, Karten, Abonnements
+* **INTERNET** — Wetter, Geocoding, Gezeiten, Karten, Abonnements, optionales Feedback
 * **ACCESS_NETWORK_STATE** — Offline-Zustand erkennen, bevor Netzwerkanfragen gestellt werden
 * **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — verhindert, dass das System den GPS-Tracker während langer Sitzungen beendet
 * **POST_NOTIFICATIONS** — GPS-Tracking-Benachrichtigung
@@ -252,13 +259,13 @@ Sie können jede Berechtigung jederzeit über die Android-Einstellungen widerruf
 
 ## 14. Internationale Datenübermittlungen
 
-**App-Daten:** Da alle Detektionsdaten lokal auf Ihrem Gerät gespeichert werden, finden keine internationalen Datenübermittlungen unter unserer Kontrolle statt. API-Aufrufe an Drittanbieter können in den Gerichtsbarkeiten verarbeitet werden, in denen diese Dienste tätig sind.
+**App-Daten:** Da alle Detektionsdaten lokal auf Ihrem Gerät gespeichert werden, finden keine internationalen Datenübermittlungen unter unserer Kontrolle statt. API-Aufrufe an Drittanbieter (Abschnitt 3.2), die optionale Google Drive-Sicherung, die optionale Firebase-Diagnose und das optionale Feedback können in den Gerichtsbarkeiten verarbeitet werden, in denen diese Dienste tätig sind.
 
 **Website-Daten:** Warteliste-E-Mails werden in der EU (Irland) von Supabase gespeichert und von Resend (EU, Irland) verarbeitet. Wenn Sie von außerhalb der EU auf die Website zugreifen, wird Ihre E-Mail-Adresse zur Verarbeitung in die EU übermittelt.
 
 ## 15. Benachrichtigung über Datenschutzverletzungen
 
-**App:** Da wir Ihre Detektionsdaten nicht auf einem von uns betriebenen Server speichern, ist eine Datenschutzverletzung in Bezug auf App-Daten auf unserer Seite nicht möglich. Wenn wir auf eine Schwachstelle in der App aufmerksam werden, werden wir ein Update herausgeben und die Benutzer über die App oder Website benachrichtigen.
+**App:** Da wir Ihre Detektionsdaten nicht auf einem von uns betriebenen Server speichern, ist eine Datenschutzverletzung in Bezug auf App-Daten auf unserer Seite nicht möglich. Wenn wir auf eine Schwachstelle in der App aufmerksam werden, werden wir ein Update herausgeben und die Benutzer über die App oder Website benachrichtigen. Optionales Feedback, das Sie absenden, wird von unserem Auftragsverarbeiter Supabase im Rahmen seiner eigenen Benachrichtigungsprotokolle bei Datenpannen verwahrt.
 
 **Website:** Unsere Auftragsverarbeiter (Supabase, Resend) unterhalten ihre eigenen Benachrichtigungsprotokolle bei Datenpannen. Im unwahrscheinlichen Fall einer Verletzung, die Ihre Warteliste-E-Mail betrifft, werden wir Sie und die zuständige Aufsichtsbehörde (ANSPDCP) gemäß den GDPR-Anforderungen innerhalb von 72 Stunden benachrichtigen.
 
@@ -268,15 +275,19 @@ Wir können diese Datenschutzerklärung aktualisieren, um Änderungen der Funkti
 
 ## 17. Datenschutzerklärungen Dritter
 
-* [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+* [Google (Maps, Drive, Sign-In, Plattform-Geocoder)](https://policies.google.com/privacy)
 * [Firebase (Analytics und Crashlytics — nur Opt-in)](https://firebase.google.com/support/privacy)
 * [RevenueCat](https://www.revenuecat.com/privacy)
 * [Open-Meteo](https://open-meteo.com/en/terms)
 * [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+* [OpenTopoMap](https://opentopomap.org/about)
+* [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+* [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+* [Cloudflare](https://www.cloudflare.com/privacypolicy/) (Proxy für historische Kartenkacheln)
 * [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 * [NOAA](https://www.noaa.gov/privacy-policy)
 * [Vercel](https://vercel.com/legal/privacy-policy) (Website-Hosting + Analyse)
-* [Supabase](https://supabase.com/privacy) (Website-Datenbank)
+* [Supabase](https://supabase.com/privacy) (Website-Datenbank + In-App-Feedback)
 * [Resend](https://resend.com/legal/privacy-policy) (Website-E-Mail)
 
 ## 18. Kontakt

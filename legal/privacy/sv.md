@@ -2,7 +2,7 @@
 
 **SweepTrack Pro** — GPS-spårningsapplikation för metallsökning
 
-Ikraftträdandedatum: 12 maj 2026 · Senast uppdaterad: 26 maj 2026
+Ikraftträdandedatum: 12 maj 2026 · Senast uppdaterad: 4 juni 2026
 
 Drivs av: Coc Lorand Adrian P.F.A., som verkar under namnet "Loriba"
 
@@ -16,7 +16,7 @@ Webbplats: sweeptrack.pro
 
 Denna integritetspolicy förklarar hur SweepTrack Pro ("Appen") och webbplatsen sweeptrack.pro ("Webbplatsen") samlar in, använder, lagrar och skyddar din information. Vi strävar efter att skydda din integritet och säkerställa transparens kring vår datahantering.
 
-Appen är utformad med en **integritetsfokuserad arkitektur**: all sökningsdata lagras lokalt på din enhet, vi driver inga backend-servrar för Appen och vi samlar inte in, överför eller säljer dina personliga sökningsdata. Webbplatsen drivs separat och har sin egen datahantering, beskriven i Avsnitt 4.
+Appen är utformad med en **integritetsfokuserad arkitektur**: all sökningsdata lagras lokalt på din enhet, vi driver inga backend-servrar som lagrar dina sökningsdata och vi samlar inte in, överför eller säljer dina personliga sökningsdata. En liten mängd data lämnar din enhet enbart för de användarinitierade funktioner som beskrivs i Avsnitt 3.2 och 3.3 (realtids-API-funktioner, valfri säkerhetskopiering, valfri diagnostik och valfri feedback). Webbplatsen drivs separat och har sin egen datahantering, beskriven i Avsnitt 4.
 
 ## 2. Personuppgiftsansvarig
 
@@ -42,7 +42,7 @@ Följande data skapas av dig och lagras **uteslutande på din enhet**. Vi har al
 
 **Fynd- och upptäcktsregistreringar:**
 
-- Fyndtyp (Skatt, Guld, Mynt, Relik, Smycke, Skräp)
+- Fyndtyp (Skatt, Guld, Mynt, Relik, Smycke, Skräp, Osorterat/Snabbsläpp)
 - Fyndets plats (GPS-koordinater vid registreringstillfället)
 - Valfri metadata: namn, anteckningar, djup, uppskattat värde, vikt
 - Mediabilagor: foton och ljudinspelningar
@@ -56,6 +56,8 @@ Följande data skapas av dig och lagras **uteslutande på din enhet**. Vi har al
 - Digitala signaturer (SVG-format)
 - Anpassade taggar och anteckningar
 
+**Vägpunkter:** Användarplacerade kartmarkörer — koordinater, namn, kategori och valfria anteckningar.
+
 **Annan lokal data:** Detektorinställningar, appinställningar (tema, enheter, språk, kartinställningar) och väderögonblicksbilder kopplade till sessioner.
 
 ### 3.2 Data som behandlas tillfälligt (lagras inte)
@@ -63,11 +65,12 @@ Följande data skapas av dig och lagras **uteslutande på din enhet**. Vi har al
 Följande data skickas till tredjeparts-API:er för realtidsfunktionalitet och **lagras inte av oss eller dessa tjänster utöver den omedelbara begäran**:
 
 - Ungefärliga GPS-koordinater skickade till Open-Meteo för väderprognoser och höjddata
-- Ungefärliga GPS-koordinater skickade till OpenStreetMap/Nominatim för adress-sökning
+- Koordinater som översätts till platsnamn via Androids plattformsgeokodare (tillhandahållen av Google Play Services på de flesta enheter) för omvänd geokodning — används för att märka sessioner och fynd med ett platsnamn
 - Ungefärliga GPS-koordinater skickade till Overpass API för upptäckt av närliggande historiska sevärdheter
 - Ungefärliga GPS-koordinater skickade till Wikipedia API för geografisk sökning av närliggande artiklar
 - Tidvattenstation-identifierare skickade till NOAA för tidvattensprognoser
-- Platssökfrågor skickade till Open-Meteo Geocoding
+- Platssökfrågor skickade till Open-Meteo Geocoding för sökning på platsnamn
+- Kartrutebegäranden (som avslöjar det ungefärliga område på kartan du tittar på) skickade till leverantören av rutor för den aktiva karttypen: Esri/ArcGIS (satellitbilder och USGS topografiska kartor), OpenStreetMap och OpenTopoMap (offline-/nedladdningsbara kartpaket) och — för det rumänska historiska "Gammal karta"-överlägget — en cachande proxy som vi driver på Cloudflare och som hämtar rutor från geo-spatial.org (eHarta). Den förvalda Google-kartans baslager omfattas av Google Maps SDK i Avsnitt 3.3
 
 ### 3.3 Data som behandlas av tredjepartstjänster
 
@@ -81,20 +84,22 @@ Följande data skickas till tredjeparts-API:er för realtidsfunktionalitet och *
 
 När de är aktiverade:
 
-- **Firebase Analytics** loggar åtta aggregerade händelsenamn med icke-identifierande parametrar: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Händelsernas innehåll innehåller **aldrig** GPS-koordinater, adresser, fyndnamn, foton, ljudinspelningar, valvdata eller någon annan personligt identifierbar information — endast räknare, varaktigheter, avstånd, fyndtyp (endast kategorin) och funktionsidentifierare.
+- **Firebase Analytics** loggar åtta aggregerade händelsenamn med icke-identifierande parametrar: `session_started`, `session_ended`, `find_logged`, `paywall_shown`, `premium_purchased`, `feature_gated`, `share_card_generated`, `preset_added`. Händelsernas innehåll innehåller **aldrig** GPS-koordinater, adresser, fyndnamn, foton, ljudinspelningar, valvdata eller någon annan personligt identifierbar information — endast räknare, varaktigheter, avstånd, fyndtyper (endast kategori) och funktionsidentifierare. Händelsen `find_logged` rapporterar typen som en grov kategori (`valuable`, `find`, `trash`, `unsorted` eller `other` för en typ som inte känns igen) snarare än den specifika fyndtypen, så den aggregerade instrumentpanelen kan inte sluta sig till fördelningen av värdesaker som en enskild användare registrerar.
 - **Firebase Crashlytics** laddar upp stackspår från krascher tillsammans med enhetsmodell, operativsystemets version och appens version för att hjälpa oss att diagnostisera buggar. Innan en krasch eller ett icke-fatalt fel vidarebefordras till Crashlytics **tar Appen bort delsträngar med koordinatform från undantagsmeddelandet** (t.ex. `lat=`/`lon=`-mönster, signerade decimaltal med tre eller fler decimaler), så att GPS-positioner som lagrats i lokala variabler inte kan läcka genom felrapporteringen. Stack-ramar (klass, metod, rad) bevaras för gruppering; körtidsvärden inte. En processövergripande hanterare för ofångade undantag tillämpar samma rensning på fatala krascher som SDK:t fångar automatiskt.
 
 Båda tjänsterna omfattas av [Googles integritetspolicy](https://policies.google.com/privacy) och [Firebases sekretess- och säkerhetsinformation](https://firebase.google.com/support/privacy).
 
+**Feedback i appen (valfritt):** Om du skickar feedback via Appens feedbackformulär överför Appen den information du anger — ditt meddelande, den valda kategorin och om det är en buggrapport eller en funktionsidé — tillsammans med din enhetsmodell, Android-version, appversion och språkinställning, samt, **endast om du väljer att ange den, din e-postadress**, till en Supabase Edge Function som vi driver, så att vi kan läsa och svara. Ingenting skickas om du inte skickar in formuläret. Supabase, Inc. agerar som vårt personuppgiftsbiträde (EU-region). Föremål för [Supabases integritetspolicy](https://supabase.com/privacy).
+
 ### 3.4 Data som Appen INTE samlar in
 
-- **Appen** samlar inte in ditt namn, e-postadress, telefonnummer eller andra personliga identifierare
+- **Appen** samlar inte in ditt namn, telefonnummer eller andra personliga identifierare — förutom en e-postadress som du frivilligt anger när du skickar in feedback i appen (se Avsnitt 3.3)
 - **Appen** använder inte analyser eller kraschrapporter om du inte uttryckligen samtycker (se Firebase-avsnittet ovan; inaktiverat som standard och kan när som helst återkallas i Inställningar → Integritet → Diagnostik)
 - **Appen** använder inte annonsramverk eller reklamidentifierare
 - **Appen** spårar inte användningsmönster, sessionsfrekvens eller funktionsanvändning
 - **Appen** skapar inte användarprofiler eller beteendefingeravtryck
-- **Appen** delar, säljer, hyr ut eller byter inte data med tredje parter
-- **Appen** driver inga servrar som tar emot, behandlar eller lagrar din sökningsdata
+- **Appen** säljer, hyr ut eller byter inte dina data, och delar dem endast där du själv initierar det: realtids-API-anropen i Avsnitt 3.2, valfri Google Drive-säkerhetskopiering, opt-in Firebase-diagnostik och feedback som du väljer att skicka in (Avsnitt 3.3)
+- **Appen** driver inga servrar som tar emot, behandlar eller lagrar din sökningsdata (plats, fynd, valvposter, sessioner); det enda innehåll du skriver som når en server som vi driver är feedback som du väljer att skicka in (Avsnitt 3.3)
 
 Webbplatsens datahantering behandlas separat i Avsnitt 4.
 
@@ -148,17 +153,18 @@ Samma GDPR, UK GDPR, australiensiska, kanadensiska, CCPA, LGPD och NZ Privacy Ac
 ## 5. Rättslig grund för behandling (GDPR)
 
 - **GPS-/sessionsdata, fyndregistreringar, valvposter:** Samtycke (Art. 6(1)(a)) — du initierar aktivt dessa handlingar
-- **API-anrop (väder, geokodning):** Berättigat intresse (Art. 6(1)(f)) — nödvändigt för grundläggande funktionalitet
+- **API-anrop (väder, geokodning, kartrutor):** Berättigat intresse (Art. 6(1)(f)) — nödvändigt för grundläggande funktionalitet
 - **Google Drive-säkerhetskopiering:** Samtycke (Art. 6(1)(a)) — du aktiverar och autentiserar uttryckligen
 - **Abonnemangsverifiering:** Avtalsutförande (Art. 6(1)(b)) — nödvändigt för att tillhandahålla betalda funktioner
 - **Firebase Analytics och Crashlytics (valfritt):** Samtycke (Art. 6(1)(a)) — aktiverat via frågan vid första uppstart eller i Inställningar, kan återkallas när som helst
+- **Feedback i appen (valfritt):** Samtycke (Art. 6(1)(a)) — skickas endast när du skickar in feedbackformuläret
 - **Väntelistans e-post (Webbplats):** Samtycke (Art. 6(1)(a)) — se Avsnitt 4.1
 
 Du kan när som helst återkalla samtycke genom att stoppa den relevanta aktiviteten, avinstallera Appen eller avregistrera dig från Webbplatsens e-postmeddelanden.
 
 ## 6. Hur vi använder dina data
 
-All databehandling i Appen sker **lokalt på din enhet**. Vi använder appdata uteslutande för att tillhandahålla appens funktioner: kartvisning, sessionsspårning, fyndregistrering, tillståndshantering, väder-/tidvattensdata, exporter, säkerhetskopiering och abonnemangsverifiering.
+Nästan all databehandling i Appen sker **lokalt på din enhet**. Vi använder appdata för att tillhandahålla appens funktioner: kartvisning, sessionsspårning, fyndregistrering, tillståndshantering, väder-/tidvattensdata, exporter, säkerhetskopiering och abonnemangsverifiering. Data lämnar din enhet enbart för de användarinitierade funktionerna i Avsnitt 3.2 och 3.3 (realtids-API:er, valfri säkerhetskopiering, valfri diagnostik, valfri feedback).
 
 Webbplatsdata (din väntelist-e-post) används endast för att skicka lanserings- och förlanseringskommunikation som beskrivs i Avsnitt 4.
 
@@ -171,6 +177,7 @@ Webbplatsdata (din väntelist-e-post) används endast för att skicka lanserings
 - Mediafiler lagras i appens privata interna lagring, otillgängliga för andra appar
 - Android-molnsäkerhetskopiering är **inaktiverad** (`android:allowBackup="false"`) för att förhindra oavsiktlig dataexponering
 - Google Drive-säkerhetskopior använder Googles krypterade API:er (HTTPS/TLS) och existerar endast i ditt konto
+- Valfri feedback i appen som du skickar in överförs via HTTPS/TLS till en Supabase Edge Function (EU-region)
 
 För Appen driver vi inga servrar, databaser eller molninfrastruktur som lagrar din sökningsdata.
 
@@ -184,7 +191,7 @@ För Appen driver vi inga servrar, databaser eller molninfrastruktur som lagrar 
 
 ## 9. Datadelning och utlämnande
 
-Vi delar, säljer, hyr ut eller lämnar inte ut dina personuppgifter till tredje part. Du kan välja att dela appdata genom exporter (GPX, KML, CSV, JSON), sessionsdelningskort eller Google Drive-säkerhetskopior — allt initierat av användaren. Webbplatsens väntelist-data behandlas endast av våra namngivna personuppgiftsbiträden (Supabase, Resend) för de ändamål som beskrivs i Avsnitt 4.
+Vi säljer, hyr ut eller byter inte dina personuppgifter. Du kan välja att dela appdata genom exporter (GPX, KML, CSV, JSON), sessionsdelningskort eller Google Drive-säkerhetskopior — allt initierat av användaren. Om du skickar in feedback i appen behandlas den för vår räkning av Supabase (se Avsnitt 3.3). Webbplatsens väntelist-data behandlas endast av våra namngivna personuppgiftsbiträden (Supabase, Resend) för de ändamål som beskrivs i Avsnitt 4.
 
 ## 10. Dina rättigheter (GDPR och internationellt)
 
@@ -238,7 +245,7 @@ Varken Appen eller Webbplatsen är riktad till barn under 18 år. Appens avsedda
 - **CAMERA** — fånga foton för fyndregistrering
 - **RECORD_AUDIO** — spela in ljudanteckningar för fynd
 - **READ/WRITE_CALENDAR** — skriver påminnelser om utgångsdatum för tillstånd i valvet till din enhets lokala kalender. Om du har aktiverat synkronisering med en molnkalender i Android (till exempel Google Calendar-synkronisering) synkroniseras dessa påminnelser till ditt konto tillsammans med resten av din kalender — den synkroniseringen styrs av dina Android-inställningar, inte av Appen
-- **INTERNET** — väder, geokodning, tidvatten, kartor, abonnemang
+- **INTERNET** — väder, geokodning, tidvatten, kartor, abonnemang, valfri feedback
 - **ACCESS_NETWORK_STATE** — upptäcka offline-läge innan nätverksanrop görs
 - **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS** — förhindra att systemet stänger av GPS-spåraren under långa sessioner
 - **POST_NOTIFICATIONS** — GPS-spårningsmeddelande
@@ -252,13 +259,13 @@ Du kan återkalla vilken behörighet som helst när som helst via Android-instä
 
 ## 14. Internationella dataöverföringar
 
-**Appdata:** Eftersom all sökningsdata lagras lokalt på din enhet sker inga internationella dataöverföringar under vår kontroll. API-anrop till tredje parter kan behandlas i de jurisdiktioner där dessa tjänster opererar.
+**Appdata:** Eftersom all sökningsdata lagras lokalt på din enhet sker inga internationella dataöverföringar av din sökningsdata under vår kontroll. API-anrop till tredje parter (Avsnitt 3.2), valfri Google Drive-säkerhetskopiering, valfri Firebase-diagnostik och valfri feedback kan behandlas i de jurisdiktioner där dessa tjänster opererar.
 
 **Webbplatsdata:** Väntelist-e-post lagras i EU (Irland) av Supabase och behandlas av Resend (EU, Irland). Om du kommer åt Webbplatsen utanför EU överförs din e-post till EU för behandling.
 
 ## 15. Meddelande om dataintrång
 
-**App:** Eftersom vi inte lagrar din sökningsdata på någon server som vi driver är ett dataintrång som påverkar appdata från vår sida inte möjligt. Om vi blir medvetna om en sårbarhet i Appen kommer vi att utfärda en uppdatering och meddela användarna via Appen eller webbplatsen.
+**App:** Eftersom vi inte lagrar din sökningsdata på någon server som vi driver är ett dataintrång som påverkar appdata från vår sida inte möjligt. Om vi blir medvetna om en sårbarhet i Appen kommer vi att utfärda en uppdatering och meddela användarna via Appen eller webbplatsen. Valfri feedback som du skickar in hålls av vårt personuppgiftsbiträde Supabase enligt dess egna protokoll för intrångsmeddelande.
 
 **Webbplats:** Våra personuppgiftsbiträden (Supabase, Resend) upprätthåller sina egna protokoll för intrångsmeddelande. I det osannolika fallet av ett intrång som påverkar din väntelist-e-post kommer vi att meddela dig och relevant tillsynsmyndighet (ANSPDCP) inom 72 timmar enligt vad som krävs av GDPR.
 
@@ -268,15 +275,19 @@ Vi kan uppdatera denna integritetspolicy för att återspegla förändringar i f
 
 ## 17. Tredjepartsintegritetspolicys
 
-- [Google (Maps, Drive, Sign-In)](https://policies.google.com/privacy)
+- [Google (Maps, Drive, Sign-In, plattformsgeokodare)](https://policies.google.com/privacy)
 - [Firebase (Analytics och Crashlytics — endast opt-in)](https://firebase.google.com/support/privacy)
 - [RevenueCat](https://www.revenuecat.com/privacy)
 - [Open-Meteo](https://open-meteo.com/en/terms)
 - [OpenStreetMap](https://wiki.osmfoundation.org/wiki/Privacy_Policy)
+- [OpenTopoMap](https://opentopomap.org/about)
+- [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
+- [eHarta / geo-spatial.org](https://www.geo-spatial.org)
+- [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy för historiska kartrutor)
 - [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Webbplats hosting + analys)
-- [Supabase](https://supabase.com/privacy) (Webbplatsdatabas)
+- [Supabase](https://supabase.com/privacy) (Webbplatsdatabas + feedback i appen)
 - [Resend](https://resend.com/legal/privacy-policy) (Webbplatsens e-post)
 
 ## 18. Kontakta oss
