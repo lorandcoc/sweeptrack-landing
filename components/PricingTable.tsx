@@ -26,8 +26,9 @@ type FeatureRow = {
 /**
  * Always-visible comparison rows.
  * Free/Pro splits for these come from:
- *  - SubscriptionService.kt constants: FREE_FIND_LIMIT=5, FREE_HISTORY_LIMIT=10, FREE_PRESET_LIMIT=1
- *  - PaywallScreen.kt lines 58-73 (the in-app Premium features list)
+ *  - SubscriptionService.kt constants: FREE_PRESET_LIMIT=1, FREE_VAULT_ENTRY_LIMIT=1
+ *  - PaywallScreen.kt features list (the in-app Premium highlight list)
+ *  - HomeScreenLayers.kt `gate(...)` wrappers for map overlays
  *
  * Each row uses a translation key for the feature name.
  * Rows with string values use freeKey/proKey for translated values.
@@ -39,12 +40,15 @@ const features: FeatureRow[] = [
   { key: "finds", free: "string", freeKey: "pricing.feat_finds_free", pro: "string", proKey: "pricing.feat_finds_pro" },
   { key: "presets", free: "string", freeKey: "pricing.feat_presets_free", pro: "string", proKey: "pricing.feat_presets_pro" },
   { key: "vault", free: "string", freeKey: "pricing.feat_vault_free", pro: "string", proKey: "pricing.feat_vault_pro" },
-  { key: "measure", free: false, pro: true },
+  // Measure: live readout / drop / undo / clear are free; Save-to-Library,
+  // Share, and Convert-to-Guard route to the paywall (HomeScreenLayers).
+  { key: "measure", free: "string", freeKey: "pricing.feat_measure_free", pro: "string", proKey: "pricing.feat_measure_pro" },
   { key: "track", free: false, pro: true },
   { key: "perimeter", free: false, pro: true },
   { key: "historicalmap", free: false, pro: true },
   { key: "offline", free: false, pro: true },
-  { key: "forecast", free: false, pro: true },
+  // Forecast: free shows today + tomorrow (2 days); premium shows full 7-day.
+  { key: "forecast", free: "string", freeKey: "pricing.feat_forecast_free", pro: "string", proKey: "pricing.feat_forecast_pro" },
   { key: "cloudbackup", free: false, pro: true },
 ];
 
@@ -54,43 +58,45 @@ const extraFeatures: FeatureRow[] = [
   { key: "nightvision", free: false, pro: true },
   { key: "compass", free: true, pro: true },
   { key: "ruler", free: true, pro: true },
-  { key: "backtostart", free: true, pro: true },
+  // Back-to-Start (Road Back) was free; now gated alongside Heatmap / Guard / Tracks.
+  { key: "backtostart", free: false, pro: true },
   { key: "units", free: true, pro: true },
   { key: "hud", free: true, pro: true },
 
-  // Finds
+  // Finds — all free (no isPremium check in MediaCapture or the gallery / search screens)
   { key: "findtypes", free: true, pro: true },
   { key: "pindrop", free: true, pro: true },
   { key: "depth", free: true, pro: true },
-  { key: "photo", free: false, pro: true },
-  { key: "audio", free: false, pro: true },
-  { key: "gallery", free: false, pro: true },
+  { key: "photo", free: true, pro: true },
+  { key: "audio", free: true, pro: true },
+  { key: "gallery", free: true, pro: true },
   { key: "findsearch", free: true, pro: true },
   { key: "editfinds", free: true, pro: true },
 
-  // Research & intel
-  { key: "tidetable", free: false, pro: true },
+  // Research & intel — Tides, Nearby, Caliper, Library, Location Search are all free per MoreScreen
+  { key: "tidetable", free: true, pro: true },
   { key: "nearbysites", free: true, pro: true },
-  { key: "coincaliper", free: false, pro: true },
+  { key: "coincaliper", free: true, pro: true },
   { key: "detectorlib", free: true, pro: true },
   { key: "locationsearch", free: true, pro: true },
 
-  // Analysis & history
+  // Analysis & history — Comparison is premium (full-screen gated). Merge,
+  // batch actions, elevation, stats, summary score are all free.
   { key: "sessioncompare", free: false, pro: true },
-  { key: "sessionmerge", free: false, pro: true },
+  { key: "sessionmerge", free: true, pro: true },
   { key: "batchactions", free: true, pro: true },
   { key: "elevation", free: true, pro: true },
-  { key: "advancedstats", free: false, pro: true },
+  { key: "advancedstats", free: true, pro: true },
   { key: "summaryscore", free: true, pro: true },
   { key: "sharecard", free: true, pro: true },
   { key: "weathersnapshot", free: true, pro: true },
   { key: "autonamed", free: true, pro: true },
 
-  // Export
-  { key: "export", free: false, pro: true },
+  // Export — JSON is free (the only reimportable format); GPX/KML/CSV are premium.
+  { key: "export", free: "string", freeKey: "pricing.feat_export_free", pro: "string", proKey: "pricing.feat_export_pro" },
 
-  // Permissions
-  { key: "permitreminder", free: false, pro: true },
+  // Permissions — calendar reminder works on any vault entry (free), PDF letter is premium.
+  { key: "permitreminder", free: true, pro: true },
   { key: "permissionletter", free: false, pro: true },
 
   // Polish
