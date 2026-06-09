@@ -23,7 +23,7 @@ export default function Post() {
         publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
-          { href: "/blog/finding-historic-sites-nearby", title: "Finding Historic Sites Nearby" },
+          { href: "/blog/using-the-permission-vault", title: "Using the Permission Vault" },
         ]}
       >
           <p>Every detectorist asks this question eventually. You&apos;ve got the machine, you know how to use it, but where do you actually go? The answer is closer than you think. Every town in every country has spots where people gathered, played, traded, and lost things. You just need to find them.</p>

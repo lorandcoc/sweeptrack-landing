@@ -6,6 +6,7 @@ import HowItWorks from "@/components/HowItWorks";
 import MapCompareSlider from "@/components/MapCompareSlider";
 import StatsBar from "@/components/StatsBar";
 import Screenshots from "@/components/Screenshots";
+import RadarSection from "@/components/RadarSection";
 import FounderNote from "@/components/FounderNote";
 import PricingTable from "@/components/PricingTable";
 import FAQ from "@/components/FAQ";
@@ -19,7 +20,7 @@ const jsonLdGraph = [
     name: "SweepTrack Pro",
     url: "https://sweeptrack.pro",
     description:
-      "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Permission Vault, Detecting Forecast, and 45+ field tools.",
+      "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Waypoints, live group positioning, Permission Vault, Detecting Forecast, and 45+ field tools.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://sweeptrack.pro/#features",
@@ -56,7 +57,7 @@ const jsonLdGraph = [
       "Metal Detector GPS App",
     ],
     description:
-      "Metal detecting GPS app with USGS historical topographic map overlay, offline maps (4 sources), track overlay, perimeter guard, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 60+ detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
+      "Metal detecting GPS app with USGS historical topographic map overlay, offline maps (4 sources), track overlay, perimeter guard, Waypoints, live group positioning, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 60+ detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
     offers: [
       {
         "@type": "Offer",
@@ -98,7 +99,8 @@ const jsonLdGraph = [
       "Coverage heatmap overlay",
       "Session comparison — overlay (with blend slider) or split view, 2 to 5 sessions",
       "Elevation profile per session",
-      "Nearby historic sites from OpenStreetMap and Wikipedia",
+      "Personal Waypoints — drop, name, categorize (11 categories), and navigate to saved map pins; export to GPX, KML, or CSV",
+      "Live Group positioning — see your whole detecting group on one live map (join free, host with Pro) with shared waypoints, pings, base point, SOS, and a daylight leave-by countdown",
       "Coin caliper with built-in database of 130 coins across 9 regions",
       "Night vision red monochromatic override for dawn and dusk detecting",
       "On-screen compass with return-bearing arrow and 10 cm / 4 in calibrated ruler",
@@ -110,6 +112,26 @@ const jsonLdGraph = [
     url: "https://sweeptrack.pro",
     author: { "@type": "Organization", name: "Loriba", url: "https://sweeptrack.pro" },
   },
+  {
+    "@type": "SoftwareApplication",
+    name: "SweepTrack Radar",
+    alternateName: ["Live Group Positioning", "Metal Detecting Group Tracker"],
+    applicationCategory: "UtilitiesApplication",
+    applicationSubCategory: "Metal Detecting",
+    operatingSystem: "Android",
+    description:
+      "Free live group-positioning companion app for SweepTrack Pro. See everyone on a detecting trip on one shared map in real time — no account needed. Join free with a code or QR; Radar Premium adds hosting, faster updates, and GPX track export. A SweepTrack Pro subscription includes Radar Premium.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      name: "Free",
+      description:
+        "Join unlimited groups free with the live map, SOS, shared base point, shared waypoints, pings, and guide arrows. Radar Premium unlocks hosting, faster 10–15s updates, unlimited saved spots, and GPX track export.",
+    },
+    url: "https://sweeptrack.pro/radar",
+    author: { "@type": "Organization", name: "Loriba", url: "https://sweeptrack.pro" },
+  },
 ];
 
 const breadcrumbLd = {
@@ -117,9 +139,10 @@ const breadcrumbLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://sweeptrack.pro" },
     { "@type": "ListItem", position: 2, name: "Features", item: "https://sweeptrack.pro/#features" },
-    { "@type": "ListItem", position: 3, name: "Pricing", item: "https://sweeptrack.pro/#pricing" },
-    { "@type": "ListItem", position: 4, name: "FAQ", item: "https://sweeptrack.pro/#faq" },
-    { "@type": "ListItem", position: 5, name: "Guides", item: "https://sweeptrack.pro/blog" },
+    { "@type": "ListItem", position: 3, name: "Live Group & Radar", item: "https://sweeptrack.pro/radar" },
+    { "@type": "ListItem", position: 4, name: "Pricing", item: "https://sweeptrack.pro/#pricing" },
+    { "@type": "ListItem", position: 5, name: "FAQ", item: "https://sweeptrack.pro/#faq" },
+    { "@type": "ListItem", position: 6, name: "Guides", item: "https://sweeptrack.pro/blog" },
   ],
 };
 
@@ -147,6 +170,7 @@ export default function LandingPage() {
         <FeaturesAll />
         <StatsBar />
         <Screenshots />
+        <RadarSection />
         <FounderNote />
         <PricingTable />
         <FAQ />

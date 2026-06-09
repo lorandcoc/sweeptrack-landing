@@ -58,6 +58,9 @@ const extraFeatures: FeatureRow[] = [
   { key: "nightvision", free: false, pro: true },
   { key: "compass", free: true, pro: true },
   { key: "ruler", free: true, pro: true },
+  // Waypoints — personal saved map pins (11 categories); free for all users, no premium gate
+  // (MapFeaturesSheet.kt:310-313 "waypoints are a core map utility, no premium gate").
+  { key: "waypoints", free: true, pro: true },
   // Back-to-Start (Road Back) was free; now gated alongside Heatmap / Guard / Tracks.
   { key: "backtostart", free: false, pro: true },
   { key: "units", free: true, pro: true },
@@ -73,9 +76,8 @@ const extraFeatures: FeatureRow[] = [
   { key: "findsearch", free: true, pro: true },
   { key: "editfinds", free: true, pro: true },
 
-  // Research & intel — Tides, Nearby, Caliper, Library, Location Search are all free per MoreScreen
+  // Research & intel — Tides, Caliper, Library, Location Search are all free per MoreScreen
   { key: "tidetable", free: true, pro: true },
-  { key: "nearbysites", free: true, pro: true },
   { key: "coincaliper", free: true, pro: true },
   { key: "detectorlib", free: true, pro: true },
   { key: "locationsearch", free: true, pro: true },
@@ -98,6 +100,11 @@ const extraFeatures: FeatureRow[] = [
   // Permissions — calendar reminder works on any vault entry (free), PDF letter is premium.
   { key: "permitreminder", free: true, pro: true },
   { key: "permissionletter", free: false, pro: true },
+
+  // Live Group positioning — joining a group is free for everyone; creating/hosting a group is
+  // premium (HomeGroupLayer.kt:732,739 — canCreate routes to paywall when not entitled).
+  { key: "livegroup_join", free: true, pro: true },
+  { key: "livegroup_host", free: false, pro: true },
 
   // Polish
   { key: "themes", free: "string", freeKey: "pricing.feat_themes_free", pro: "string", proKey: "pricing.feat_themes_pro" },

@@ -35,7 +35,7 @@ export default function HowItWorks() {
       num: "01",
       title: t("howitworks.step1_title"),
       description: t("howitworks.step1_description"),
-      bullets: [t("featuretag.forecast"), t("featuretag.oldmap"), t("featuretag.nearby"), t("featuretag.tide")],
+      bullets: [t("featuretag.forecast"), t("featuretag.oldmap"), t("featuretag.waypoints"), t("featuretag.tide")],
       icon: stepIcons[0],
       color: stepColors[0],
     },

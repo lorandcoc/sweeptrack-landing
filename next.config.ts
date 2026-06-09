@@ -82,6 +82,13 @@ const nextConfig: NextConfig = {
         destination: "/blog/metal-detecting-permission-letter-template",
         permanent: true,
       },
+      // The Nearby Sites (OSM/Wikipedia POI) feature was removed from the app, so its
+      // tutorial was retired. 301 to the closely-related old-maps research guide.
+      {
+        source: "/blog/finding-historic-sites-nearby",
+        destination: "/blog/how-to-use-old-maps-for-metal-detecting",
+        permanent: true,
+      },
     ];
   },
 };

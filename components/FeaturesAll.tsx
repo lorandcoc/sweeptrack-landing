@@ -156,7 +156,7 @@ const secondaryIcons = [
   /* forecast */      <svg key="forecast" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 16.1A5 5 0 015.9 20M2 12.05A9 9 0 019.95 19M2 8V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2h-6" /><line x1="2" y1="20" x2="2.01" y2="20" /></svg>,
   /* tidetable */     <svg key="tidetable" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 19h20L12 2z" /><line x1="12" y1="9" x2="12" y2="13" /><circle cx="12" cy="16" r="0.5" fill="currentColor" /></svg>,
   /* coincaliper */   <svg key="coincaliper" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>,
-  /* nearbysites */   <svg key="nearbysites" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" /><circle cx="12" cy="10" r="3" /></svg>,
+  /* waypoints */     <svg key="waypoints" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22V3" /><path d="M4 4h11l-2.5 3.5L15 11H4" /></svg>,
   /* heatmap */       <svg key="heatmap" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><rect x="7" y="7" width="3" height="9" rx="1" fill="currentColor" opacity="0.3" /><rect x="14" y="5" width="3" height="11" rx="1" fill="currentColor" opacity="0.5" /></svg>,
   /* careerstats */   <svg key="careerstats" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2" /></svg>,
   /* permissionletter */ <svg key="permissionletter" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22 6 12 13 2 6" /></svg>,
@@ -193,10 +193,10 @@ const secondaryIcons = [
 ];
 
 const secondaryKeys = [
-  "rankladder", "verdict", "brandcolors", "signaldiary",
+  "waypoints", "rankladder", "verdict", "brandcolors", "signaldiary",
   "findlogger", "pindrop", "backtostart", "sessioncompare", "presetslots",
   "export", "nightvision", "compass", "ruler", "forecast", "tidetable",
-  "coincaliper", "nearbysites", "heatmap", "careerstats", "permissionletter",
+  "coincaliper", "heatmap", "careerstats", "permissionletter",
   "sharecard", "summaryscore", "colorpins", "sessionmerge", "findsearch",
   "elevation", "permitreminders", "photogallery", "weathersnapshot", "autonamed",
   "batchactions", "editfinds", "locationsearch", "onboarding", "languages",
@@ -216,7 +216,6 @@ const secondaryGuides: Record<string, string> = {
   forecast: "/blog/detecting-forecast-guide",
   tidetable: "/blog/beach-metal-detecting-tide-timing",
   coincaliper: "/blog/using-coin-caliper",
-  nearbysites: "/blog/finding-historic-sites-nearby",
   heatmap: "/blog/how-to-track-metal-detecting-sessions-gps",
   careerstats: "/blog/understanding-session-statistics",
   permissionletter: "/blog/metal-detecting-permission-letter-template",

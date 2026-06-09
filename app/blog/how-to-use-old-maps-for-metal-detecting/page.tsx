@@ -60,7 +60,7 @@ export default function Post() {
             <li>Compare maps from different decades. A building might appear on an 1890 map but be gone by 1920 — that&apos;s a 30-year window of human activity.</li>
             <li>Look for areas that were once populated but are now farmland or forest. These are your best detecting spots.</li>
             <li>Pay attention to elevation lines. Old homesteads were typically on high ground near water sources.</li>
-            <li>Cross-reference with the Nearby Sites feature in the app to find additional historical landmarks and Wikipedia articles about the area.</li>
+            <li>Drop a Waypoint on every promising structure as you spot it on the overlay — old wells, foundations, homesteads, and churches each get their own category and color, so you arrive with a ready-made plan.</li>
             <li>Always get permission before detecting on private land, regardless of what old maps show.</li>
           </ul>
 
