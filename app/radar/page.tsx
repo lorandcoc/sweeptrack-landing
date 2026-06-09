@@ -7,7 +7,7 @@ import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
 const URL = "https://sweeptrack.pro/radar";
-const TITLE = "SweepTrack Radar — Free Live Group Positioning for Metal Detecting";
+const TITLE = "SweepTrack Radar — Free Real-Time Group Map for Metal Detecting";
 const DESCRIPTION =
   "SweepTrack Radar is a free companion app that puts your whole detecting group on one live map. No account — join with a code or QR. SOS, shared base, waypoints, and guide arrows are free forever. Included free with SweepTrack Pro.";
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SweepTrack Radar — free live group positioning",
+    title: "SweepTrack Radar — free real-time group map",
     description: DESCRIPTION,
   },
 };
@@ -33,7 +33,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "SweepTrack Radar",
-  alternateName: ["Live Group Positioning", "Metal Detecting Group Tracker"],
+  alternateName: ["Radar", "live group positioning", "Metal Detecting Group Tracker"],
   applicationCategory: "UtilitiesApplication",
   applicationSubCategory: "Metal Detecting",
   operatingSystem: "Android",
@@ -114,7 +114,7 @@ export default function RadarPage() {
             <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-12 items-center">
               <div className="text-center md:text-left">
                 <p className="font-mono text-[11px] md:text-xs text-accent/80 tracking-[0.15em] uppercase mb-5">
-                  Free companion app · Live group positioning
+                  Radar · the free companion app
                 </p>
                 <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.08] mb-5 [text-wrap:balance]">
                   See your whole group on <span className="text-accent">one live map.</span>
@@ -124,9 +124,9 @@ export default function RadarPage() {
                   else joins with a code or QR and sees each other move in real time. No account, no email, no sign-up.
                 </p>
                 <p className="text-muted/80 text-sm max-w-xl mb-8 md:mx-0 mx-auto leading-relaxed">
-                  Built to pair with <span className="text-foreground">SweepTrack Pro</span>, which has the same live
-                  positioning built in as <span className="text-foreground">Live Group</span>. Already a Pro subscriber?
-                  Radar Premium is included free.
+                  Radar is also built into <span className="text-foreground">SweepTrack Pro</span> — it&apos;s the{" "}
+                  <span className="text-foreground">RADAR</span> button, one of the four controls on the home map. The
+                  free app lets everyone else join the same group. Already a Pro subscriber? Radar Premium is included free.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
                   <ComingSoonButton size="large" />
@@ -192,10 +192,10 @@ export default function RadarPage() {
                 <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-cyan-400/30 text-cyan-300/90 bg-cyan-400/[0.06]">
                   Built into Pro
                 </span>
-                <h3 className="font-display text-xl mt-4 mb-2">Live Group in SweepTrack Pro</h3>
+                <h3 className="font-display text-xl mt-4 mb-2">Radar, built into SweepTrack Pro</h3>
                 <p className="text-muted text-sm leading-relaxed">
-                  The same live positioning, folded right onto the Pro map alongside coverage tracking, offline maps,
-                  and 45+ tools. Host your own groups and bring friends in on Radar.
+                  Radar is the RADAR button on the Pro home map — one of four controls — right alongside coverage
+                  tracking, offline maps, and 45+ tools. Host your own groups and bring friends in on the free app.
                 </p>
                 <a href="/" className="text-accent text-sm font-medium mt-3 inline-flex items-center gap-1 hover:underline">
                   See SweepTrack Pro &rarr;
@@ -213,7 +213,7 @@ export default function RadarPage() {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { n: "01", t: "Start a group", b: "A Pro or Radar Premium host starts a live group and gets an 8-character code, QR, and share link." },
+                { n: "01", t: "Start a group", b: "A Pro or Radar Premium host taps RADAR, starts a group, and gets an 8-character code, QR, and share link." },
                 { n: "02", t: "Share the code", b: "Send the code or QR to your detecting buddies. They install the free Radar app — no account needed." },
                 { n: "03", t: "Everyone’s on the map", b: "Each phone appears as a colored dot with a name and heading arrow, refreshing about every 30 seconds." },
               ].map((s) => (

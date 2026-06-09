@@ -14,7 +14,7 @@ const screenshots = [
   { src: "/screenshots/offline_maps.jpg", altKey: "screenshots.alt_offline", labelKey: "screenshots.shot_offline" },
   { src: "/screenshots/permission_vault.jpg", altKey: "screenshots.alt_permission", labelKey: "screenshots.shot_permission" },
   { src: "/screenshots/waypoints.jpg", altKey: "screenshots.alt_waypoints", labelKey: "screenshots.shot_waypoints" },
-  { src: "/screenshots/live_group.jpg", altKey: "screenshots.alt_livegroup", labelKey: "screenshots.shot_livegroup" },
+  { src: "/screenshots/radar.jpg", altKey: "screenshots.alt_livegroup", labelKey: "screenshots.shot_livegroup" },
   { src: "/screenshots/gallery.jpg", altKey: "screenshots.alt_gallery", labelKey: "screenshots.shot_gallery" },
   { src: "/screenshots/caliper.jpg", altKey: "screenshots.alt_caliper", labelKey: "screenshots.shot_caliper" },
   { src: "/screenshots/cloud_backup.jpg", altKey: "screenshots.alt_backup", labelKey: "screenshots.shot_backup" },

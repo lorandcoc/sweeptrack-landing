@@ -22,13 +22,13 @@ const OG_LOCALE: Record<LocaleCode, string> = {
 };
 
 const SHARED_DESCRIPTION =
-  "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Waypoints, live group positioning, Permission Vault, Detecting Forecast, and 60+ detector presets. Free download, ad-free.";
+  "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Waypoints, Radar live group positioning, Permission Vault, Detecting Forecast, and 60+ detector presets. Free download, ad-free.";
 
 const SHARED_OG_DESCRIPTION =
-  "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Waypoints, live group positioning, Permission Vault, Detecting Forecast, and Cloud Backup. Free download, ad-free.";
+  "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Waypoints, Radar live group positioning, Permission Vault, Detecting Forecast, and Cloud Backup. Free download, ad-free.";
 
 const SHARED_TWITTER_DESCRIPTION =
-  "GPS tracking, USGS Historical Topo overlay, offline maps, Waypoints, live group positioning, Perimeter Guard, Permission Vault, and Detecting Forecast. Android, ad-free.";
+  "GPS tracking, USGS Historical Topo overlay, offline maps, Waypoints, Radar live group positioning, Perimeter Guard, Permission Vault, and Detecting Forecast. Android, ad-free.";
 
 const SHARED_TITLE = "SweepTrack Pro — Metal Detecting GPS App for Android";
 

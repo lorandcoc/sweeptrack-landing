@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useReveal } from "./useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
-/* Four field-useful pillars of live group positioning. Each maps to a radar.feat_* key pair. */
+/* Four field-useful pillars of Radar (live group positioning). Each maps to a radar.feat_* key pair. */
 const pillars: { key: string; icon: React.ReactNode }[] = [
   {
     key: "safety",
@@ -108,7 +108,7 @@ export default function RadarSection() {
               </div>
               <div className="phone-frame w-[210px] sm:w-[240px] aspect-[320/693] relative z-[1]">
                 <Image
-                  src="/screenshots/live_group.jpg"
+                  src="/screenshots/radar.jpg"
                   alt={t("screenshots.alt_livegroup")}
                   width={320}
                   height={693}

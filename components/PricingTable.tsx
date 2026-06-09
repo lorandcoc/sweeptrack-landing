@@ -101,8 +101,9 @@ const extraFeatures: FeatureRow[] = [
   { key: "permitreminder", free: true, pro: true },
   { key: "permissionletter", free: false, pro: true },
 
-  // Live Group positioning — joining a group is free for everyone; creating/hosting a group is
-  // premium (HomeGroupLayer.kt:732,739 — canCreate routes to paywall when not entitled).
+  // Radar (live group positioning) — joining a group is free for everyone; creating/hosting a group
+  // is premium (HomeGroupLayer.kt:732,739 — canCreate routes to paywall when not entitled).
+  // Dict labels say "Radar — join/host a group"; internal keys kept as livegroup_* (no behavior change).
   { key: "livegroup_join", free: true, pro: true },
   { key: "livegroup_host", free: false, pro: true },
 
