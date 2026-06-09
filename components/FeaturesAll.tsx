@@ -21,7 +21,7 @@ function FeaturedWithScreenshot({
   children,
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   tag: string;
   tagColor?: string;
   screenshot: string;
@@ -47,7 +47,7 @@ function FeaturedWithScreenshot({
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="font-bold text-base leading-tight">{title}</h3>
-              <p className="text-muted text-[11px]">{subtitle}</p>
+              {subtitle && <p className="text-muted text-[11px]">{subtitle}</p>}
             </div>
             <span className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border"
               style={{ color: `${c}cc`, background: `${c}0a`, borderColor: `${c}25` }}>{tag}</span>
@@ -114,7 +114,7 @@ function FeaturedTextCard({
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="font-bold text-base leading-tight">{title}</h3>
-              <p className="text-muted text-[11px]">{subtitle}</p>
+              {subtitle && <p className="text-muted text-[11px]">{subtitle}</p>}
             </div>
             <span className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border"
               style={{ color: `${c}cc`, background: `${c}0a`, borderColor: `${c}25` }}>{tag}</span>
@@ -193,7 +193,7 @@ const secondaryIcons = [
 ];
 
 const secondaryKeys = [
-  "waypoints", "rankladder", "verdict", "brandcolors", "signaldiary",
+  "rankladder", "verdict", "brandcolors", "signaldiary",
   "findlogger", "pindrop", "backtostart", "sessioncompare", "presetslots",
   "export", "nightvision", "compass", "ruler", "forecast", "tidetable",
   "coincaliper", "heatmap", "careerstats", "permissionletter",
@@ -257,6 +257,31 @@ export default function FeaturesAll() {
             </p>
           </div>
         </RevealSection>
+
+        {/* ── Headline new additions — Waypoints + Radar ── */}
+        <div className="grid md:grid-cols-2 gap-4 mb-4">
+          <RevealSection delay={0} className="min-h-[260px] sm:min-h-[340px] h-full">
+            <FeaturedWithScreenshot
+              title={t("featuresall.sec_waypoints_title")}
+              tag={t("featuresall.measure_tag")}
+              screenshot="/screenshots/waypoints.jpg"
+              alt={t("screenshots.alt_waypoints")}
+              description={t("featuresall.sec_waypoints_desc")}
+            />
+          </RevealSection>
+          <RevealSection delay={150} className="min-h-[260px] sm:min-h-[340px] h-full">
+            <FeaturedWithScreenshot
+              title={t("radar.label")}
+              tag={t("featuresall.measure_tag")}
+              tagColor="cyan"
+              screenshot="/screenshots/radar.jpg"
+              alt={t("screenshots.alt_livegroup")}
+              description={t("radar.builtin_desc")}
+              guide="/radar"
+              guideLabel={t("radar.cta")}
+            />
+          </RevealSection>
+        </div>
 
         {/* ── Row 1 — GPS (large) + Cloud Backup ── */}
         <div className="grid md:grid-cols-5 gap-4 mb-4">
