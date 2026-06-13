@@ -29,14 +29,14 @@ const EVENTS: { key: TranslationKey; tone: Tone }[] = [
 ];
 
 /*
- * Splits "06:54 — GPS lock · 9 satellites" into timestamp + event text so the
- * two halves can carry different weights. Falls back to rendering the whole
- * string if a locale drops the em dash.
+ * Splits "06:54 · GPS lock · 9 satellites" into timestamp + event text on the
+ * first middot so the two halves can carry different weights. Falls back to
+ * rendering the whole string if a locale drops the separator.
  */
 function splitEntry(s: string): { time: string | null; text: string } {
-  const i = s.indexOf("—");
+  const i = s.indexOf(" · ");
   if (i < 1) return { time: null, text: s };
-  return { time: s.slice(0, i).trim(), text: s.slice(i + 1).trim() };
+  return { time: s.slice(0, i).trim(), text: s.slice(i + 3).trim() };
 }
 
 export default function FieldLogTicker() {

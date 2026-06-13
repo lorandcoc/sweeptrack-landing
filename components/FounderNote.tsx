@@ -63,7 +63,7 @@ export default function FounderNote() {
             <span className="founder-term__dot r" />
             <span className="founder-term__dot y" />
             <span className="founder-term__dot g" />
-            <span className="founder-term__title">~/sweeptrack — note-from-the-founder.txt</span>
+            <span className="founder-term__title">~/sweeptrack/note-from-the-founder.txt</span>
           </div>
           <div className="founder-term__body">
             <div className="founder-term__avatar" aria-hidden="true">L</div>

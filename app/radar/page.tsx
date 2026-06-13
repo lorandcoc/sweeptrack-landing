@@ -7,7 +7,7 @@ import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
 const URL = "https://sweeptrack.pro/radar";
-const TITLE = "SweepTrack Radar — Free Real-Time Group Map for Metal Detecting";
+const TITLE = "SweepTrack Radar: Free Real-Time Group Map for Metal Detecting";
 const DESCRIPTION =
   "SweepTrack Radar is a free companion app that puts your whole detecting group on one live map. No account needed, just a code or QR. SOS, shared base, waypoints, and guide arrows are free for good. It comes free with SweepTrack Pro.";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: URL },
   openGraph: {
-    title: "SweepTrack Radar — see your whole group on one live map",
+    title: "SweepTrack Radar: see your whole group on one live map",
     description: DESCRIPTION,
     url: URL,
     siteName: "SweepTrack Pro",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SweepTrack Radar — free real-time group map",
+    title: "SweepTrack Radar: free real-time group map",
     description: DESCRIPTION,
   },
 };

@@ -87,29 +87,29 @@ const jsonLdGraph = [
     ],
     featureList: [
       "GPS tracking with 3 base map types (Street, Satellite, Terrain) plus USGS Historical Topographic overlay (Pro)",
-      "Measure tool — distance polylines with per-segment labels, or closed-polygon area in hectares/acres using spherical geometry; save to library or convert to Perimeter Guard with one tap",
-      "Offline maps from 4 tile sources — OpenStreetMap, Esri Satellite, OpenTopoMap, USGS Topo",
-      "Track overlay — load past sessions on the live map with color-coded paths",
+      "Measure tool: distance polylines with per-segment labels, or closed-polygon area in hectares/acres using spherical geometry; save to library or convert to Perimeter Guard with one tap",
+      "Offline maps from 4 tile sources: OpenStreetMap, Esri Satellite, OpenTopoMap, USGS Topo",
+      "Track overlay loads past sessions on the live map with color-coded paths",
       "Perimeter guard with draw-on-map boundary and leave-zone alerts",
       "Permission vault with 4 status colors, boundary drawing, expiry reminders, and a permission letter generator",
-      "Detecting Forecast — 0-100 Detecting Score with 7-day outlook, soil moisture, wind, temperature, humidity, and tips",
+      "Detecting Forecast: 0-100 Detecting Score with 7-day outlook, soil moisture, wind, temperature, humidity, and tips",
       "NOAA tide table with 3, 7, or 14 day ranges from the nearest station",
       "Google Drive backup and restore of sessions, presets, and settings",
       "10 detector preset slots with JSON import/export and templates for 60+ detectors across 12 brands",
       "Find logging with 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), 0-40 cm depth, photo, video, and audio notes",
       "Quick pin drop for instant find marking",
       "Coverage heatmap overlay",
-      "Session comparison — overlay (with blend slider) or split view, 2 to 5 sessions",
+      "Session comparison: overlay (with blend slider) or split view, 2 to 5 sessions",
       "Elevation profile per session",
-      "Personal Waypoints — drop, name, categorize (11 categories), and navigate to saved map pins; export to GPX, KML, or CSV",
-      "Radar — live group positioning from a button on the home map; see your whole detecting group on one live map (join free, host with Pro) with shared waypoints, pings, base point, SOS, and a daylight leave-by countdown",
+      "Personal Waypoints: drop, name, categorize (11 categories), and navigate to saved map pins; export to GPX, KML, or CSV",
+      "Radar live group positioning from a button on the home map: see your whole detecting group on one live map (join free, host with Pro) with shared waypoints, pings, base point, SOS, and a leave-before-dark countdown",
       "Coin caliper with built-in database of 130 coins across 9 regions",
       "Night vision red monochromatic override for dawn and dusk detecting",
       "On-screen compass with return-bearing arrow and 10 cm / 4 in calibrated ruler",
       "Export sessions as GPX, KML, CSV, or SweepTrack JSON",
-      "12 color themes — 3 free (Tactical, Amber, Cobalt), all 12 with Pro",
-      "14 languages — English, Romanian, German, Spanish, French, Italian, Portuguese, Dutch, Polish, Russian, Danish, Swedish, Turkish, Hungarian",
-      "Ad-free — no ads, no analytics, no tracking",
+      "12 color themes: 3 free (Tactical, Amber, Cobalt), all 12 with Pro",
+      "14 languages: English, Romanian, German, Spanish, French, Italian, Portuguese, Dutch, Polish, Russian, Danish, Swedish, Turkish, Hungarian",
+      "Ad-free: no ads, no analytics, no tracking",
     ],
     url: "https://sweeptrack.pro",
     author: { "@type": "Organization", name: "Loriba", url: "https://sweeptrack.pro" },
@@ -122,7 +122,7 @@ const jsonLdGraph = [
     applicationSubCategory: "Metal Detecting",
     operatingSystem: "Android",
     description:
-      "Free live group-positioning companion app for SweepTrack Pro. See everyone on a detecting trip on one shared map in real time — no account needed. Join free with a code or QR; Radar Premium adds hosting, faster updates, and GPX track export. A SweepTrack Pro subscription includes Radar Premium.",
+      "Free live group-positioning companion app for SweepTrack Pro. See everyone on a detecting trip on one shared map in real time, no account needed. Join free with a code or QR. Radar Premium adds hosting, faster updates, and GPX track export. A SweepTrack Pro subscription includes Radar Premium.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -163,7 +163,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <h2 className="sr-only">
-          Metal Detecting App for Android — GPS Tracking, Offline Maps, and 45+ Field Tools
+          Metal Detecting App for Android: GPS Tracking, Offline Maps, and 45+ Field Tools
         </h2>
         <Hero />
         <FieldLogTicker />
