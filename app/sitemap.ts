@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     { url: `${BASE}/privacy`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/privacy-radar`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/terms`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/data-deletion`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

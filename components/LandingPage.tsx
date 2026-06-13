@@ -12,6 +12,7 @@ import FounderNote from "@/components/FounderNote";
 import TrustStrip from "@/components/TrustStrip";
 import PricingTable from "@/components/PricingTable";
 import FAQ from "@/components/FAQ";
+import GuidesTeaser from "@/components/GuidesTeaser";
 import CTA from "@/components/CTA";
 import CommunityLinks from "@/components/CommunityLinks";
 import Footer from "@/components/Footer";
@@ -19,8 +20,10 @@ import Footer from "@/components/Footer";
 const jsonLdGraph = [
   {
     "@type": "WebSite",
+    "@id": "https://sweeptrack.pro/#website",
     name: "SweepTrack Pro",
     url: "https://sweeptrack.pro",
+    publisher: { "@id": "https://sweeptrack.pro/#org" },
     description:
       "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Waypoints, Radar live group positioning, Permission Vault, Detecting Forecast, and 45+ field tools.",
     potentialAction: {
@@ -31,6 +34,7 @@ const jsonLdGraph = [
   },
   {
     "@type": "Organization",
+    "@id": "https://sweeptrack.pro/#org",
     name: "Loriba",
     legalName: "Coc Lorand Adrian P.F.A.",
     url: "https://sweeptrack.pro",
@@ -47,8 +51,10 @@ const jsonLdGraph = [
       contactType: "customer support",
     },
   },
+  // No aggregateRating/review until real Google Play ratings exist. Fake ratings = Google spam manual action.
   {
     "@type": "SoftwareApplication",
+    "@id": "https://sweeptrack.pro/#app",
     name: "SweepTrack Pro",
     applicationCategory: "UtilitiesApplication",
     applicationSubCategory: "Metal Detecting",
@@ -66,6 +72,8 @@ const jsonLdGraph = [
         price: "0",
         priceCurrency: "USD",
         name: "Free",
+        availability: "https://schema.org/PreOrder",
+        priceValidUntil: "2027-12-31",
         description:
           "Core GPS tracking, unlimited sessions, unlimited finds, 1 detector preset, 1 Permission Vault entry, 3 themes",
       },
@@ -74,6 +82,7 @@ const jsonLdGraph = [
         price: "19.99",
         priceCurrency: "USD",
         name: "Pro Annual",
+        availability: "https://schema.org/PreOrder",
         description: "Everything unlimited. $19.99/year (save 52% vs monthly). 14-day free trial.",
         priceValidUntil: "2027-12-31",
       },
@@ -82,6 +91,8 @@ const jsonLdGraph = [
         price: "3.49",
         priceCurrency: "USD",
         name: "Pro Monthly",
+        availability: "https://schema.org/PreOrder",
+        priceValidUntil: "2027-12-31",
         description: "$3.49/month with 14-day free trial",
       },
       {
@@ -89,6 +100,8 @@ const jsonLdGraph = [
         price: "39.99",
         priceCurrency: "USD",
         name: "Founder's Lifetime",
+        availability: "https://schema.org/PreOrder",
+        priceValidUntil: "2027-12-31",
         description:
           "One-time purchase, lifetime access. Limited to the first 1,000 customers. Available at launch on Google Play.",
       },
@@ -120,10 +133,22 @@ const jsonLdGraph = [
       "Ad-free: no ads, no analytics, no tracking",
     ],
     url: "https://sweeptrack.pro",
-    author: { "@type": "Organization", name: "Loriba", url: "https://sweeptrack.pro" },
+    image: "https://sweeptrack.pro/icon-512.png",
+    screenshot: [
+      "https://sweeptrack.pro/screenshots/home.jpg",
+      "https://sweeptrack.pro/screenshots/offline_maps.jpg",
+      "https://sweeptrack.pro/screenshots/forecast.jpg",
+      "https://sweeptrack.pro/screenshots/permission_vault.jpg",
+      "https://sweeptrack.pro/screenshots/waypoints.jpg",
+      "https://sweeptrack.pro/screenshots/radar.jpg",
+    ],
+    inLanguage: ["en", "ro", "de", "es", "fr", "it", "pt", "nl", "pl", "ru", "da", "sv", "tr", "hu"],
+    publisher: { "@id": "https://sweeptrack.pro/#org" },
+    author: { "@id": "https://sweeptrack.pro/#org" },
   },
   {
     "@type": "SoftwareApplication",
+    "@id": "https://sweeptrack.pro/radar#app",
     name: "SweepTrack Radar",
     alternateName: ["Radar", "live group positioning", "Metal Detecting Group Tracker"],
     applicationCategory: "UtilitiesApplication",
@@ -136,11 +161,23 @@ const jsonLdGraph = [
       price: "0",
       priceCurrency: "USD",
       name: "Free",
+      availability: "https://schema.org/PreOrder",
+      priceValidUntil: "2027-12-31",
       description:
         "Join unlimited groups free with the live map, SOS, shared base point, shared waypoints, pings, and guide arrows. Radar Premium unlocks hosting, faster 10–15s updates, unlimited saved spots, and GPX track export.",
     },
     url: "https://sweeptrack.pro/radar",
-    author: { "@type": "Organization", name: "Loriba", url: "https://sweeptrack.pro" },
+    author: { "@id": "https://sweeptrack.pro/#org" },
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://sweeptrack.pro/#webpage",
+    url: "https://sweeptrack.pro",
+    name: "Metal Detecting App for Android | SweepTrack Pro",
+    isPartOf: { "@id": "https://sweeptrack.pro/#website" },
+    about: { "@id": "https://sweeptrack.pro/#app" },
+    mainEntity: { "@id": "https://sweeptrack.pro/#app" },
+    inLanguage: "en",
   },
 ];
 
@@ -171,7 +208,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <h2 className="sr-only">
-          Metal Detecting App for Android: GPS Tracking, Offline Maps, and 45+ Field Tools
+          Metal Detecting GPS App for Android: track every sweep, log finds, and overlay historical maps.
         </h2>
         <Hero />
         <FieldLogTicker />
@@ -186,6 +223,7 @@ export default function LandingPage() {
         <TrustStrip />
         <PricingTable />
         <FAQ />
+        <GuidesTeaser />
         <CTA />
         <CommunityLinks />
       </main>

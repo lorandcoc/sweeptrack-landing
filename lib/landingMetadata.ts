@@ -30,7 +30,7 @@ const SHARED_OG_DESCRIPTION =
 const SHARED_TWITTER_DESCRIPTION =
   "GPS tracking, USGS Historical Topo overlay, offline maps, Waypoints, Radar live group positioning, Perimeter Guard, Permission Vault, and Detecting Forecast. Android, ad-free.";
 
-const SHARED_TITLE = "SweepTrack Pro: Metal Detecting GPS App for Android";
+const SHARED_TITLE = "Metal Detecting App for Android | SweepTrack Pro";
 
 /**
  * Build per-locale metadata for the landing page. Each locale advertises its

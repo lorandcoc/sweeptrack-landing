@@ -59,7 +59,7 @@ export function articleJsonLd({
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: title,
     description,
     url: `${BASE}/blog/${slug}`,
@@ -75,7 +75,7 @@ export function articleJsonLd({
       "@type": "Organization",
       name: "Loriba",
       url: BASE,
-      logo: { "@type": "ImageObject", url: `${BASE}/icon.svg` },
+      logo: { "@type": "ImageObject", url: `${BASE}/icon-512.png`, width: 512, height: 512 },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE}/blog/${slug}` },
   };

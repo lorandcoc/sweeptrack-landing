@@ -39,7 +39,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sweeptrack.pro"),
   title: {
-    default: "SweepTrack Pro — Metal Detecting GPS App for Android",
+    default: "Metal Detecting App for Android | SweepTrack Pro",
     template: "%s | SweepTrack Pro",
   },
   description:

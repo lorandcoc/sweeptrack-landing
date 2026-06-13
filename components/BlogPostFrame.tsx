@@ -57,7 +57,7 @@ export default function BlogPostFrame({
             <p className="text-sm text-muted">
               <strong className="text-foreground">SweepTrack Pro</strong> {t("blog.cta_card_text")}
               {" "}
-              <Link href="/#features" className="text-accent hover:underline">
+              <Link href="/" className="text-accent hover:underline">
                 {t("blog.cta_card_link")}
               </Link>
             </p>
