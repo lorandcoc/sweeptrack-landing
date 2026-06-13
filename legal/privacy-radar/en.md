@@ -2,7 +2,7 @@
 
 **SweepTrack Radar** — Live Group Location Sharing for Metal Detecting
 
-Effective Date: June 8, 2026 · Last Updated: June 8, 2026
+Effective Date: June 8, 2026 · Last Updated: June 12, 2026
 
 Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
 
@@ -45,7 +45,7 @@ This is the App's core function. **When you create or join a group, the followin
 
 **Where it goes:** Firebase Realtime Database, operated by Google LLC, on Google's cloud infrastructure. All data is transmitted over an encrypted (TLS) connection, and access is restricted by server-side security rules to members of the same group.
 
-**How long it is kept:** Group location data is **transient**. Each group **automatically expires** (typically within about 12 hours), after which its data is removed. When you **leave a group**, your member entry is deleted. We do **not** keep a long-term history of your movements on our servers.
+**How long it is kept:** Group location data is **transient by design**. Each group **expires** (typically after about 12 hours; trial groups sooner) — once expired it stops accepting any new positions and can no longer be joined. When you **leave a group**, your member entry is deleted immediately, and when the last member leaves, the entire group is deleted. If a group is abandoned without anyone tapping Leave (for example, the App is uninstalled mid-trip), the last positions shared before expiry remain stored in the expired group until it is deleted — rejoining and leaving removes your entry, and you can request deletion at any time (Section 17). We do **not** keep a long-term history of your movements on our servers.
 
 ### 3.2 Anonymous Authentication
 
@@ -64,6 +64,7 @@ The following is stored **only on your device** and is **not** uploaded to us or
 
 - **Google Maps SDK** — your device's location is processed by Google Maps to display the map. Subject to [Google's Privacy Policy](https://policies.google.com/privacy).
 - **Firebase Realtime Database and Firebase Authentication** (Google) — the group backend and anonymous sign-in described above. Subject to [Google's Privacy Policy](https://policies.google.com/privacy) and the [Firebase Privacy and Security disclosures](https://firebase.google.com/support/privacy).
+- **Firebase Crashlytics (crash reporting)** — if the App crashes, an anonymized technical report (device model, Android version, and the error with its stack trace) is sent so we can fix the problem. Crash reports are **scrubbed of coordinates** before they leave your device, never include your display name or group code, and are not linked to any account. Crash reporting is on by default and can be turned **off at any time in Settings**. Subject to the [Firebase Privacy and Security disclosures](https://firebase.google.com/support/privacy).
 - **RevenueCat (subscription management)** — if you purchase Radar Premium, an anonymous, randomly generated identifier is used to verify your subscription. No personal information is shared. Subject to [RevenueCat's Privacy Policy](https://www.revenuecat.com/privacy).
 
 ### 3.5 SweepTrack Pro Cross-Recognition (on-device only)
@@ -72,7 +73,7 @@ If you also have our **SweepTrack Pro** app installed and it owns a Premium subs
 
 ### 3.6 Data the App Does NOT Collect
 
-- Radar contains **no analytics and no crash-reporting SDKs** — we do not track your usage, sessions, or feature use.
+- Radar contains **no analytics SDKs** — we do not track your usage, sessions, or feature use. The only diagnostic the App sends is the optional, anonymized, coordinate-scrubbed crash report described in Section 3.4, which you can disable in Settings.
 - Radar uses **no advertising frameworks and no advertising identifier** (the Android Advertising ID permission is explicitly removed from the App).
 - Radar does **not** collect your name, email address, phone number, or any personal identifier.
 - Radar does **not** access your location in the background. Location sharing runs **only while you are using the App**, and a visible foreground-service notification is shown the whole time it is active.
@@ -96,7 +97,8 @@ We use data solely to operate the App's features: showing group members on a sha
 
 ## 7. Data Retention
 
-- **Group and location data:** transient — deleted when a group expires (typically about 12 hours) and when you leave a group.
+- **Group and location data:** transient — sharing stops when a group expires (typically about 12 hours); your entry is deleted when you leave, and the whole group is deleted when its last member leaves. Last-shared positions in an abandoned, expired group persist until that group is deleted (Section 3.1); deletion on request at any time.
+- **Crash reports:** retained by Firebase Crashlytics per its standard retention (90 days); collection can be disabled in Settings.
 - **On-device data (saved spots, your track, preferences):** kept until you delete it within the App or uninstall the App.
 - **Subscription identifier:** retained by RevenueCat in accordance with their policy for the duration of the subscription.
 
@@ -110,7 +112,7 @@ The defining characteristic of this App is that **your live location and status 
 
 - **Access** — your live group data is visible to you in the App while you are in a group; your on-device data is fully accessible on your device.
 - **Rectification** — change your display name and on-device data directly in the App.
-- **Erasure** — leave the group to remove your shared entry, and uninstall the App or clear its data to remove on-device data.
+- **Erasure** — use **Settings → Delete my data** in the App to remove your shared entries, your on-device data, and your anonymous sign-in in one step; or simply leave the group to remove your shared entry. You can also email us (Section 17) to request deletion.
 - **Restriction** — control all processing by starting and stopping sharing, or by leaving a group.
 - **Data Portability** — export your own track via GPX.
 - **Objection** — stop sharing at any time.

@@ -1,13 +1,15 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
+import FieldLogTicker from "@/components/FieldLogTicker";
 import FeaturesAll from "@/components/FeaturesAll";
+import ForteSpotlights from "@/components/ForteSpotlights";
 import HowItWorks from "@/components/HowItWorks";
 import MapCompareSlider from "@/components/MapCompareSlider";
 import StatsBar from "@/components/StatsBar";
 import Screenshots from "@/components/Screenshots";
 import RadarSection from "@/components/RadarSection";
 import FounderNote from "@/components/FounderNote";
+import TrustStrip from "@/components/TrustStrip";
 import PricingTable from "@/components/PricingTable";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -65,7 +67,7 @@ const jsonLdGraph = [
         priceCurrency: "USD",
         name: "Free",
         description:
-          "Core GPS tracking, unlimited sessions, unlimited finds, 1 detector preset, 2 Permission Vault entries, 3 themes",
+          "Core GPS tracking, unlimited sessions, unlimited finds, 1 detector preset, 1 Permission Vault entry, 3 themes",
       },
       {
         "@type": "Offer",
@@ -164,14 +166,16 @@ export default function LandingPage() {
           Metal Detecting App for Android — GPS Tracking, Offline Maps, and 45+ Field Tools
         </h2>
         <Hero />
-        <Marquee />
+        <FieldLogTicker />
         <MapCompareSlider />
         <HowItWorks />
-        <FeaturesAll />
+        <FounderNote />
+        <ForteSpotlights />
         <StatsBar />
+        <FeaturesAll />
         <Screenshots />
         <RadarSection />
-        <FounderNote />
+        <TrustStrip />
         <PricingTable />
         <FAQ />
         <CTA />

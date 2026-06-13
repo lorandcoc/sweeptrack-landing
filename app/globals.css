@@ -857,35 +857,228 @@ details:focus-visible > summary {
   .founder-term__cursor { animation: none; }
 }
 
-/* ── HowItWorks gradient rail + big number ── */
-.how-rail {
-  position: absolute;
-  top: 52px;
-  left: 16.66%;
-  right: 16.66%;
-  height: 2px;
-  background: linear-gradient(90deg,
-    rgba(255,176,0,0.5) 0%,
-    rgba(0,255,106,0.5) 50%,
-    rgba(0,221,255,0.5) 100%);
-  pointer-events: none;
-  border-radius: 999px;
+/* ── HowItWorks story cards + drawing rail + per-step SVG vignettes ── */
+/* Story cards */
+.hiwx-card {
+  position: relative;
+  padding: 1.5rem 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--hiwx-color) 18%, transparent);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 620ms var(--st-ease-out),
+    transform 620ms var(--st-ease-out),
+    border-color 300ms var(--st-ease);
+  transition-delay: var(--hiwx-delay);
 }
-@media (max-width: 768px) { .how-rail { display: none; } }
-.how-bignum {
+.hiwx-go .hiwx-card { opacity: 1; transform: translateY(0); }
+
+/* Step number badge — dim until the rail "passes", then lights up */
+.hiwx-num {
   position: absolute;
-  top: -28px;
-  right: -8px;
+  top: -16px;
+  left: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1.5px solid color-mix(in srgb, var(--hiwx-color) 30%, transparent);
+  color: var(--hiwx-color);
+  z-index: 2;
+  transition: box-shadow 360ms var(--st-ease), border-color 360ms var(--st-ease);
+  transition-delay: var(--hiwx-delay);
+}
+.hiwx-num__digit {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-feature-settings: "tnum" 1;
+  opacity: 0.55;
+  transition: opacity 360ms var(--st-ease);
+  transition-delay: var(--hiwx-delay);
+}
+.hiwx-go .hiwx-num {
+  border-color: color-mix(in srgb, var(--hiwx-color) 70%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--hiwx-color) 12%, transparent),
+    0 0 16px color-mix(in srgb, var(--hiwx-color) 40%, transparent);
+}
+.hiwx-go .hiwx-num__digit { opacity: 1; }
+
+/* Card text */
+.hiwx-kicker {
+  margin-top: 0.875rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--hiwx-color) 85%, white);
+  opacity: 0.9;
+}
+.hiwx-title {
+  margin-top: 0.25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--hiwx-color);
+}
+.hiwx-desc {
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  color: rgba(235, 238, 245, 0.82);
+}
+
+/* Connecting rail */
+.hiwx-rail {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.hiwx-rail--h {
+  top: -16px;
+  left: 6%;
+  right: 6%;
+  width: 88%;
+  height: 4px;
+}
+.hiwx-rail-line {
+  transition: stroke-dashoffset 1400ms var(--st-ease-out);
+  transition-delay: 80ms;
+}
+.hiwx-go .hiwx-rail-line { stroke-dashoffset: 0 !important; }
+
+/* Shared vignette canvas */
+.hiwx-vignette {
+  width: 100%;
+  aspect-ratio: 120 / 78;
+  border-radius: 0.625rem;
+  background: linear-gradient(160deg,
+    color-mix(in srgb, var(--hiwx-color) 7%, var(--surface-variant)),
+    var(--surface));
+  border: 1px solid color-mix(in srgb, var(--hiwx-color) 12%, transparent);
+  overflow: hidden;
+}
+.hiwx-svg { display: block; width: 100%; height: 100%; }
+
+/* Step 1 — forecast dial */
+.hiwx-dial-track {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+.hiwx-dial-fill {
+  /* fill to 92/100 of the arc → leaves a small remaining offset */
+  transition: stroke-dashoffset 1500ms var(--st-ease-out);
+  transition-delay: var(--hiwx-delay);
+}
+.hiwx-go .hiwx-dial-fill { stroke-dashoffset: 11.6; } /* 144.5 * (1 - 0.92) */
+.hiwx-dial-num {
   font-family: var(--font-display), system-ui;
   font-weight: 700;
-  font-size: 72px;
-  line-height: 1;
-  letter-spacing: -0.025em;
+  font-size: 22px;
   font-feature-settings: "tnum" 1;
-  color: transparent;
-  -webkit-text-stroke: 1px currentColor;
-  opacity: 0.18;
-  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms var(--st-ease);
+  transition-delay: calc(var(--hiwx-delay) + 900ms);
+}
+.hiwx-go .hiwx-dial-num { opacity: 1; }
+.hiwx-go-chip {
+  opacity: 0;
+  transform: translateY(6px);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 420ms var(--st-ease-out), transform 420ms var(--st-ease-out);
+  transition-delay: calc(var(--hiwx-delay) + 1250ms);
+}
+.hiwx-go .hiwx-go-chip { opacity: 1; transform: translateY(0); }
+.hiwx-go-label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  fill: #050510;
+}
+
+/* Step 2 — sweep-lane track + find pin */
+.hiwx-lane {
+  transition: stroke-dashoffset 1700ms var(--st-ease-out);
+  transition-delay: var(--hiwx-delay);
+}
+.hiwx-go .hiwx-lane { stroke-dashoffset: 0; }
+.hiwx-find-pin {
+  opacity: 0;
+  transform: scale(0.4);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 360ms var(--st-ease-out), transform 360ms var(--st-ease-out);
+  transition-delay: calc(var(--hiwx-delay) + 1550ms);
+}
+.hiwx-go .hiwx-find-pin { opacity: 1; transform: scale(1); }
+
+/* Step 3 — overlapping tracks + missed strip */
+.hiwx-track {
+  opacity: 0;
+  transition: opacity 600ms var(--st-ease-out);
+}
+.hiwx-track--a { transition-delay: calc(var(--hiwx-delay) + 200ms); }
+.hiwx-track--b { transition-delay: calc(var(--hiwx-delay) + 600ms); }
+.hiwx-go .hiwx-track { opacity: 1; }
+.hiwx-missed {
+  fill: rgba(255, 107, 74, 0.22);
+  stroke: #FF6B4A;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity 500ms var(--st-ease-out);
+  transition-delay: calc(var(--hiwx-delay) + 1100ms);
+}
+.hiwx-missed-x {
+  opacity: 0;
+  transition: opacity 500ms var(--st-ease-out);
+  transition-delay: calc(var(--hiwx-delay) + 1300ms);
+}
+.hiwx-go .hiwx-missed,
+.hiwx-go .hiwx-missed-x { opacity: 1; }
+
+/* Mobile: rail runs vertically down the left edge of the stacked cards */
+@media (max-width: 768px) {
+  .hiwx-rail--h {
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    right: auto;
+    width: 4px;
+    height: 100%;
+  }
+}
+
+/* Reduced motion → final states, no drawing */
+@media (prefers-reduced-motion: reduce) {
+  .hiwx-card,
+  .hiwx-num,
+  .hiwx-num__digit,
+  .hiwx-dial-num,
+  .hiwx-go-chip,
+  .hiwx-find-pin,
+  .hiwx-track,
+  .hiwx-missed,
+  .hiwx-missed-x,
+  .hiwx-rail-line,
+  .hiwx-dial-fill,
+  .hiwx-lane {
+    transition: none !important;
+  }
+  .hiwx-card { opacity: 1; transform: none; }
+  .hiwx-num__digit,
+  .hiwx-dial-num,
+  .hiwx-go-chip,
+  .hiwx-find-pin,
+  .hiwx-track,
+  .hiwx-missed,
+  .hiwx-missed-x { opacity: 1; transform: none; }
+  .hiwx-rail-line { stroke-dashoffset: 0; }
+  .hiwx-dial-fill { stroke-dashoffset: 11.6; }
+  .hiwx-lane { stroke-dashoffset: 0; }
 }
 
 /* ── Map compare pulsing amber pins + hint ── */
@@ -955,3 +1148,2118 @@ details:focus-visible > summary {
 .legal-prose h2 { margin-top: 2.5rem; }
 .legal-prose p + p { margin-top: 0; }
 .legal-prose p.uppercase { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+/* ── Screenshots carousel chrome (scrx-) ── */
+/* Active-slide benefit caption: fades + lifts in on each slide change. The
+   `key` prop in the component remounts this node so the animation re-fires. */
+.scrx-caption {
+  animation: scrx-cap-in 0.45s var(--st-ease-out) both;
+}
+@keyframes scrx-cap-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Prev / next arrow buttons — >=44px touch targets, hairline border, accent
+   on hover/focus. */
+.scrx-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition:
+    color 220ms var(--st-ease),
+    border-color 220ms var(--st-ease),
+    background 220ms var(--st-ease),
+    transform 220ms var(--st-ease);
+}
+.scrx-arrow:hover {
+  color: var(--st-accent);
+  border-color: var(--st-accent-edge, rgba(0, 255, 106, 0.4));
+  background: rgba(0, 255, 106, 0.06);
+}
+.scrx-arrow:focus-visible {
+  outline: none;
+  color: var(--st-accent);
+  border-color: var(--st-accent-edge, rgba(0, 255, 106, 0.4));
+  box-shadow: 0 0 0 3px rgba(0, 255, 106, 0.18);
+}
+.scrx-arrow:active {
+  transform: scale(0.94);
+}
+
+.scrx-counter {
+  min-width: 4.5ch;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrx-caption {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .scrx-arrow {
+    transition: none;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   Hero rebuild — proof strip, cycling HUD chip, and the sweep-pattern
+   SVG overlay (HeroTrackDemo). Prefix: herox-
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Mono proof strip with subtle middot separators ── */
+.herox-proof {
+  gap: 0;
+  column-gap: 0;
+  row-gap: 4px;
+  letter-spacing: 0.02em;
+}
+.herox-proof__item {
+  white-space: nowrap;
+}
+.herox-proof__sep {
+  margin: 0 8px;
+  color: var(--st-accent);
+  opacity: 0.5;
+}
+
+/* ── Cycling HUD chip (crossfades through the 4-state story) ── */
+/* The stack lays the four chips on top of each other; only .is-active shows.
+   It sits in normal flow so the wrapper sizes to the chips. */
+.herox-hud-stack {
+  position: relative;
+  display: inline-grid;
+}
+.herox-hud {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.5s var(--st-ease), transform 0.5s var(--st-ease);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.herox-hud.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.herox-hud--green {
+  background: rgba(0, 255, 106, 0.12);
+  border-color: var(--st-accent-edge);
+  color: var(--st-accent);
+}
+.herox-hud--amber {
+  background: rgba(255, 176, 0, 0.18);
+  border-color: var(--st-amber-edge);
+  color: var(--st-amber);
+}
+.herox-hud-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+.herox-hud--green.is-active .herox-hud-dot {
+  animation: st-pulse 2s var(--st-ease) infinite;
+}
+.herox-hud--amber.is-active .herox-hud-dot {
+  animation: herox-amber-blink 1s steps(2, jump-none) infinite;
+}
+@keyframes herox-amber-blink {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.55); }
+  50%      { box-shadow: 0 0 0 6px rgba(255, 176, 0, 0); }
+}
+
+/* Desktop placement of the cycling chip — top-right, floats like the others. */
+.herox-hud-1 {
+  position: absolute;
+  right: -10%;
+  top: 30%;
+  z-index: 3;
+  animation: hud-float 7s ease-in-out 1.5s infinite;
+}
+/* Mobile placement — centered just below the phone so the story still lands. */
+.herox-hud-mobile {
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
+  z-index: 4;
+  justify-content: center;
+}
+
+/* ── Sweep-pattern SVG overlay ── */
+.herox-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 22px;          /* match .phone-frame so it clips like the screen */
+  overflow: hidden;
+}
+.herox-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Faint covered-ground ghost of the full path. */
+.herox-ghost {
+  opacity: 0.16;
+}
+
+/* Animated draw of the sweep line via stroke-dashoffset.
+   path length is ~1900 user units; round up so the dash fully clears. */
+.herox-line {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: herox-draw 12s linear infinite;
+}
+@keyframes herox-draw {
+  0%   { stroke-dashoffset: 2000; opacity: 0.95; }
+  6%   { opacity: 0.95; }
+  88%  { stroke-dashoffset: 0; opacity: 0.95; }
+  96%  { stroke-dashoffset: 0; opacity: 0; }   /* fade the finished line out */
+  100% { stroke-dashoffset: 2000; opacity: 0; }/* reset under cover of fade */
+}
+
+/* Leading head dot — soft glow plus a bright core. */
+.herox-headdot {
+  animation: herox-head-fade 12s linear infinite;
+}
+.herox-headcore {
+  animation: herox-head-fade 12s linear infinite;
+}
+@keyframes herox-head-fade {
+  0%, 3%   { opacity: 0; }
+  6%, 88%  { opacity: 1; }
+  94%, 100%{ opacity: 0; }
+}
+
+/* Find pins — pop (scale + fade) with a ping ripple as the line arrives.
+   The sweep draws 0%->88% of the 12s loop, so each pin pops at roughly its
+   path-fraction x 88%: pin1 ~14%, pin2 ~48%, pin3 ~81%. They hold, then fade
+   out together by ~96% under cover of the line's own fade so the loop resets
+   cleanly. Three explicit keyframe sets keep the timing exact. */
+.herox-pin {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.herox-ping {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Pin 1 pops at ~14% */
+.herox-pin--1 { animation: herox-pop-1 12s linear infinite; }
+.herox-pin--1 .herox-ping { animation: herox-ping-1 12s linear infinite; }
+@keyframes herox-pop-1 {
+  0%, 10%   { opacity: 0; transform: scale(0.2); }
+  14%       { opacity: 1; transform: scale(1.25); }
+  19%, 88%  { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(1); }
+}
+@keyframes herox-ping-1 {
+  0%, 11%   { opacity: 0; transform: scale(0.4); }
+  14%       { opacity: 0.7; transform: scale(0.6); }
+  22%, 100% { opacity: 0; transform: scale(3); }
+}
+
+/* Pin 2 pops at ~48% */
+.herox-pin--2 { animation: herox-pop-2 12s linear infinite; }
+.herox-pin--2 .herox-ping { animation: herox-ping-2 12s linear infinite; }
+@keyframes herox-pop-2 {
+  0%, 44%   { opacity: 0; transform: scale(0.2); }
+  48%       { opacity: 1; transform: scale(1.25); }
+  53%, 88%  { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(1); }
+}
+@keyframes herox-ping-2 {
+  0%, 45%   { opacity: 0; transform: scale(0.4); }
+  48%       { opacity: 0.7; transform: scale(0.6); }
+  56%, 100% { opacity: 0; transform: scale(3); }
+}
+
+/* Pin 3 pops at ~81% */
+.herox-pin--3 { animation: herox-pop-3 12s linear infinite; }
+.herox-pin--3 .herox-ping { animation: herox-ping-3 12s linear infinite; }
+@keyframes herox-pop-3 {
+  0%, 77%   { opacity: 0; transform: scale(0.2); }
+  81%       { opacity: 1; transform: scale(1.25); }
+  85%, 90%  { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(1); }
+}
+@keyframes herox-ping-3 {
+  0%, 78%   { opacity: 0; transform: scale(0.4); }
+  81%       { opacity: 0.7; transform: scale(0.6); }
+  89%, 100% { opacity: 0; transform: scale(3); }
+}
+
+/* ── Reduced motion: static finished state, no loop, no SMIL head ── */
+@media (prefers-reduced-motion: reduce) {
+  .herox-line {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 0.95;
+  }
+  .herox-ghost { opacity: 0.16; }
+  .herox-head-g { display: none; }   /* hide the SMIL-driven head dot */
+  .herox-pin {
+    animation: none;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .herox-ping { animation: none; opacity: 0; }
+  .herox-hud {
+    transition: none;
+  }
+  .herox-hud-1,
+  .herox-hud-mobile { animation: none; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   Radar section (RadarSection.tsx) — rgx2- namespace.
+   The live-map child (RadarGroupDemo / rgx-) owns its own styles.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Centerpiece stage — frames the live group-map demo */
+.rgx2-stage {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Two-app join diagram ── */
+.rgx2-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  .rgx2-diagram {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+  }
+}
+
+.rgx2-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Phone glyph carrying an app's tag + title */
+.rgx2-phone {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.4rem 1rem 1.1rem;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 1px 8px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px color-mix(in srgb, var(--rgx2-tint, #00FF6A) 8%, transparent);
+  transition: border-color 0.3s var(--st-ease);
+}
+.rgx2-phone:hover {
+  border-color: color-mix(in srgb, var(--rgx2-tint, #00FF6A) 32%, transparent);
+}
+.rgx2-phone__notch {
+  width: 34px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.rgx2-phone__tag {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rgx2-phone__title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #fff;
+  text-align: center;
+}
+.rgx2-phone__pings {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
+}
+.rgx2-phone__pings i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  display: block;
+  box-shadow: 0 0 8px currentColor;
+  animation: rgx2-blip 2.4s var(--st-ease) infinite;
+}
+.rgx2-phone__pings i:nth-child(2) { animation-delay: 0.4s; }
+.rgx2-phone__pings i:nth-child(3) { animation-delay: 0.8s; }
+@keyframes rgx2-blip {
+  0%, 60%, 100% { opacity: 0.45; transform: scale(1); }
+  30% { opacity: 1; transform: scale(1.25); }
+}
+
+.rgx2-node__cap {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Connector between the two apps — arrow + dashed join-code pill */
+.rgx2-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  padding: 0.5rem 0.25rem;
+}
+@media (min-width: 768px) {
+  .rgx2-link {
+    padding: 0 1.25rem;
+    align-self: flex-start;
+    margin-top: 2.6rem;
+  }
+}
+.rgx2-link__arrow {
+  color: var(--st-accent-edge);
+  display: flex;
+}
+/* Vertical (mobile) arrow → rotate the horizontal glyph */
+.rgx2-link__arrow svg {
+  width: 30px;
+  height: auto;
+  transform: rotate(90deg);
+}
+@media (min-width: 768px) {
+  .rgx2-link__arrow svg {
+    width: 64px;
+    transform: none;
+  }
+}
+.rgx2-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  padding: 0.4rem 0.85rem;
+  border-radius: 12px;
+  border: 1px dashed var(--st-accent-edge);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  white-space: nowrap;
+}
+.rgx2-code__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: rgx2-pulse 2s var(--st-ease) infinite;
+}
+@keyframes rgx2-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.rgx2-link__cap {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ── Tuck-away long descriptions ── */
+.rgx2-notes {
+  display: grid;
+  gap: 0.6rem;
+}
+@media (min-width: 640px) {
+  .rgx2-notes { grid-template-columns: 1fr 1fr; }
+}
+.rgx2-note {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+.rgx2-note__sum {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.rgx2-note__sum::-webkit-details-marker { display: none; }
+.rgx2-note__key {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+  background: var(--rgx2-tint, var(--accent));
+  box-shadow: 0 0 8px color-mix(in srgb, var(--rgx2-tint, var(--accent)) 60%, transparent);
+}
+.rgx2-note__chev {
+  margin-left: auto;
+  color: var(--muted);
+  flex: 0 0 auto;
+  transition: transform 0.25s var(--st-ease);
+}
+.rgx2-note[open] .rgx2-note__chev { transform: rotate(180deg); }
+.rgx2-note__body {
+  padding: 0 1rem 0.95rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--muted);
+  animation: rgx2-note-open 0.35s var(--st-ease-out);
+}
+@keyframes rgx2-note-open {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Four pillar rows — compact icon + title + desc, single line ── */
+.rgx2-pillars {
+  display: grid;
+  gap: 0.6rem;
+}
+@media (min-width: 640px) {
+  .rgx2-pillars { grid-template-columns: 1fr 1fr; }
+}
+.rgx2-pillar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  column-gap: 0.8rem;
+  row-gap: 0.15rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.25s var(--st-ease);
+}
+.rgx2-pillar:hover { border-color: rgba(255, 255, 255, 0.12); }
+.rgx2-pillar__ic {
+  grid-row: 1 / span 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  flex: 0 0 auto;
+}
+.rgx2-pillar__title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.92);
+}
+.rgx2-pillar__desc {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ── Reduced motion — drop to static end states ── */
+@media (prefers-reduced-motion: reduce) {
+  .rgx2-phone__pings i { animation: none; opacity: 1; transform: none; }
+  .rgx2-code__dot { animation: none; }
+  .rgx2-note__body { animation: none; }
+  .rgx2-note__chev { transition: none; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   CTA / Community / Coin easter-egg  (prefix: ctx-)
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── CTA: slow conic sonar sweep backdrop ── */
+.ctx-stage { isolation: isolate; }
+.ctx-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: 1;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 55%, transparent 78%);
+          mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 55%, transparent 78%);
+}
+.ctx-sweep__beam {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150%;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 300deg,
+    rgba(0, 255, 106, 0.05) 340deg,
+    rgba(0, 255, 106, 0.16) 358deg,
+    rgba(0, 255, 106, 0.04) 360deg
+  );
+  animation: ctx-sweep-spin 9s linear infinite;
+}
+.ctx-sweep__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  box-shadow: 0 0 18px var(--st-accent), 0 0 0 1px rgba(0, 255, 106, 0.3);
+  opacity: 0.6;
+}
+@keyframes ctx-sweep-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ── CTA: founder pill (amber) ── */
+.ctx-founder-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: var(--st-amber);
+  background: var(--st-amber-faint);
+  border: 1px solid var(--st-amber-edge);
+}
+.ctx-founder-pill__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--st-amber);
+  box-shadow: 0 0 8px var(--st-amber);
+  animation: ctx-amber-pulse 2.4s var(--st-ease) infinite;
+}
+@keyframes ctx-amber-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.7); }
+}
+
+/* ── CTA: closing line — emphasized, accent glow + leading tick ── */
+.ctx-closing {
+  position: relative;
+  color: var(--foreground);
+  line-height: 1.5;
+  text-wrap: balance;
+  text-shadow: 0 0 24px rgba(0, 255, 106, 0.12);
+}
+.ctx-closing::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin: 0 auto 1rem;
+  border-radius: 999px;
+  background: var(--st-accent);
+  box-shadow: 0 0 10px var(--st-accent);
+}
+
+/* ── Community: waitlist input arrival glow ── */
+.ctx-form-input--glow {
+  border-color: var(--st-accent) !important;
+  animation: ctx-input-glow 2s var(--st-ease) 1;
+}
+@keyframes ctx-input-glow {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0); }
+  20%  { box-shadow: 0 0 0 4px rgba(0, 255, 106, 0.28); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 106, 0); }
+}
+
+/* ── Community: demoted social chips ── */
+.ctx-social:hover {
+  color: var(--foreground);
+  border-color: var(--st-accent-edge);
+  background: var(--st-accent-faint);
+}
+
+/* ── Coin easter-egg ── */
+.ctx-coin {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  line-height: 0;
+  border-radius: 50%;
+}
+.ctx-coin:focus-visible {
+  outline: 2px solid var(--st-accent);
+  outline-offset: 4px;
+}
+.ctx-coin__disc {
+  display: block;
+  opacity: 0.13;
+  transform: rotate(-14deg);
+  transition: opacity 240ms var(--st-ease), transform 240ms var(--st-ease);
+}
+.ctx-coin:hover .ctx-coin__disc,
+.ctx-coin:focus-visible .ctx-coin__disc {
+  opacity: 0.4;
+  transform: rotate(-8deg) scale(1.08);
+}
+/* Specular glint — masked to the coin disc, swept across on hover/focus. */
+.ctx-coin__glint {
+  transform: translateX(0);
+  opacity: 0;
+}
+.ctx-coin:hover .ctx-coin__glint,
+.ctx-coin:focus-visible .ctx-coin__glint {
+  animation: ctx-coin-glint 0.7s var(--st-ease-out) 1;
+}
+@keyframes ctx-coin-glint {
+  0%   { transform: translateX(0);    opacity: 0; }
+  35%  { opacity: 0.9; }
+  100% { transform: translateX(34px); opacity: 0; }
+}
+/* Click ping ripple. */
+.ctx-coin__ping {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--st-accent);
+  pointer-events: none;
+  animation: ctx-coin-ping 0.85s var(--st-ease-out) 1;
+}
+@keyframes ctx-coin-ping {
+  0%   { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(3.4); opacity: 0; }
+}
+/* Mono "find" toast chip — anchored above the coin. */
+.ctx-coin__toast {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  white-space: nowrap;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: var(--st-accent);
+  background: rgba(5, 5, 16, 0.92);
+  border: 1px solid var(--st-accent-edge);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  animation: ctx-coin-toast 4s var(--st-ease) 1 both;
+}
+@keyframes ctx-coin-toast {
+  0%   { opacity: 0; transform: translateY(6px); }
+  8%   { opacity: 1; transform: translateY(0); }
+  85%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+/* ── Reduced motion — drop to static end states ── */
+@media (prefers-reduced-motion: reduce) {
+  .ctx-sweep__beam { animation: none; }
+  .ctx-founder-pill__dot { animation: none; }
+  .ctx-form-input--glow { animation: none; }
+  .ctx-coin__glint { animation: none; opacity: 0; }
+  .ctx-coin__ping { animation: none; opacity: 0; }
+  .ctx-coin__toast { animation: none; opacity: 1; transform: none; }
+}
+
+
+/* ===== appended from CSS agent: css-flogx-stx-prx ===== */
+/* ════════════════════════════════════════════════════════════════════
+   FieldLogTicker — decorative scrolling strip of live app telemetry.
+   Two duplicated sequences (.flogx__seq + .flogx__seq--dup) sit side by
+   side inside .flogx__track; the track translates left by exactly 50%
+   for a seamless loop (same convention as .feat-marquee / .hud-ticker).
+   Edge fades + a slow accent scan line read as "live feed". Motion is
+   transform-only (compositor), pauses on hover, and freezes static for
+   reduced-motion readers so 45–65 eyes never chase moving text.
+   ════════════════════════════════════════════════════════════════════ */
+.flogx {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid var(--st-hairline);
+  background: var(--st-bg);
+  padding-block: 9px;
+}
+/* Soft fade masks on both edges so entries dissolve rather than clip. */
+.flogx::before,
+.flogx::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  z-index: 2;
+  pointer-events: none;
+}
+.flogx::before { left: 0;  background: linear-gradient(to right, var(--st-bg), transparent); }
+.flogx::after  { right: 0; background: linear-gradient(to left,  var(--st-bg), transparent); }
+
+.flogx__track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: flogx-travel 64s linear infinite;
+}
+/* Pause when a curious reader hovers to actually read an entry. */
+.flogx:hover .flogx__track { animation-play-state: paused; }
+
+.flogx__seq {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.flogx__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 18px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--st-text-50);
+  border-right: 1px solid var(--st-hairline);
+}
+
+/* Status dot — tone fixed per event index in the TSX, never parsed. */
+.flogx__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--st-text-35);
+}
+.flogx__dot--go {
+  background: var(--st-accent);
+  box-shadow: 0 0 8px rgba(0, 255, 106, 0.55);
+}
+.flogx__dot--warn {
+  background: var(--st-amber);
+  box-shadow: 0 0 8px rgba(255, 176, 0, 0.55);
+}
+.flogx__dot--info {
+  background: var(--st-cyan);
+  box-shadow: 0 0 8px rgba(0, 221, 255, 0.55);
+}
+
+.flogx__time {
+  color: var(--st-text-35);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  flex-shrink: 0;
+}
+.flogx__text {
+  color: var(--st-text-50);
+  flex-shrink: 0;
+}
+
+/* Slow accent scan sweeping across the feed — pure transform. */
+.flogx__scan {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28%;
+  height: 1px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--st-accent), transparent);
+  transform: translateX(-100%);
+  animation: flogx-scan 6s linear infinite;
+}
+
+@keyframes flogx-travel {
+  to { transform: translateX(-50%); }
+}
+@keyframes flogx-scan {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(372%); } /* 100% viewport / 28% width ≈ 3.57 */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flogx__track { animation: none; transform: none; }
+  .flogx__scan  { animation: none; opacity: 0; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   StatsBar — five count-up tiles. The surrounding .stats-bar /
+   .stats-bar__grid / .stat-glow / stats-scanline already exist; these
+   stx- classes only style the animated value, its suffix, and the final
+   "zero" tile touchdown flash. Counting is driven in React (transform-
+   free DOM text swaps); CSS handles type + the green landing pulse.
+   ════════════════════════════════════════════════════════════════════ */
+.stx-value {
+  display: inline-block;
+  font-weight: 600;
+  font-size: clamp(28px, 4.4vw, 46px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--st-text);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  margin-bottom: 10px;
+}
+.stx-suffix {
+  margin-left: 1px;
+  font-size: 0.62em;
+  vertical-align: baseline;
+  color: var(--st-accent);
+  font-weight: 600;
+}
+
+/* The punchline tile (zero ads / trackers / compromises). */
+.stx-tile-zero .stx-value {
+  color: var(--st-accent);
+}
+
+/* Touchdown flash when the scramble lands on 0 — one calm pulse. */
+.stx-zero-hit {
+  animation: stx-zero-hit 0.6s var(--st-ease-out) 1;
+}
+@keyframes stx-zero-hit {
+  0% {
+    color: var(--st-text);
+    text-shadow: 0 0 0 rgba(0, 255, 106, 0);
+    transform: scale(1);
+  }
+  35% {
+    color: var(--st-accent);
+    text-shadow: 0 0 26px rgba(0, 255, 106, 0.75);
+    transform: scale(1.06);
+  }
+  100% {
+    color: var(--st-accent);
+    text-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stx-zero-hit { animation: none; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   PricingTable — Founder's Lifetime tease. The card, .plan-pro and
+   .sweep-outline already exist; these prx- classes add the amber
+   "FOUNDER" badge shimmer and the full (1000/1000) spots bar fill.
+   ════════════════════════════════════════════════════════════════════ */
+.prx-founder-badge {
+  background: linear-gradient(
+    100deg,
+    rgba(255, 176, 0, 0.10) 0%,
+    rgba(255, 176, 0, 0.22) 50%,
+    rgba(255, 176, 0, 0.10) 100%
+  );
+  background-size: 220% 100%;
+  box-shadow: 0 4px 14px rgba(255, 176, 0, 0.18);
+  animation: prx-badge-sheen 5s var(--st-ease) infinite;
+}
+@keyframes prx-badge-sheen {
+  0%, 100% { background-position: 200% 0; }
+  50%      { background-position: 0% 0; }
+}
+
+/* Spots track — full bar (offer opens at launch, all 1,000 available). */
+.prx-spots-track {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 176, 0, 0.12);
+  border: 1px solid var(--st-amber-edge);
+}
+.prx-spots-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--st-amber), #FFD060);
+  box-shadow: 0 0 12px rgba(255, 176, 0, 0.45);
+  transform-origin: left center;
+  /* Grow once into the full bar on first paint. */
+  animation: prx-spots-fill 1.2s var(--st-ease-out) both;
+}
+.prx-spots-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  background-size: 220% 100%;
+  pointer-events: none;
+  animation: prx-spots-sheen 4.5s var(--st-ease) 1.2s infinite;
+}
+@keyframes prx-spots-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes prx-spots-sheen {
+  0%, 100% { background-position: 200% 0; }
+  50%      { background-position: 0% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prx-founder-badge { animation: none; }
+  .prx-spots-fill { animation: none; transform: scaleX(1); }
+  .prx-spots-fill::after { animation: none; opacity: 0; }
+}
+
+/* ===== appended from CSS agent: css-spx-svx ===== */
+/* ════════════════════════════════════════════════════════════════════
+   SpotlightPerimeter — "Perimeter Guard" live boundary demo (spx-*)
+   10s loop: dot sweeps the field, drifts toward the east edge, the zone
+   chip escalates SAFE → CAUTION → WARNING → TURN BACK, the edge flashes,
+   then it retreats and resets. Timeline starts when .spx-on lands on the
+   wrapper (added by the IntersectionObserver / useReveal).
+   Motion is transform / opacity / stroke-dashoffset / offset-distance only.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Demo panel shell */
+.spx-demo {
+  border: 1px solid var(--st-hairline);
+  background:
+    radial-gradient(120% 90% at 70% 18%, rgba(0,255,106,0.05), transparent 60%),
+    linear-gradient(160deg, #0A0A18 0%, #050510 100%);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.spx-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* HUD micro-text (scale bar label, coordinates) */
+.spx-microtext text {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  fill: var(--st-text-50);
+}
+
+/* ── Boundary line: a calm idle "march" of the dashed outline ── */
+.spx-bound {
+  stroke-dasharray: 7 5;
+  animation: spx-bound-march 6s linear infinite;
+}
+@keyframes spx-bound-march {
+  to { stroke-dashoffset: -24; }
+}
+
+/* ── The painted track behind the dot draws itself across the cycle ── */
+/* pathLength is normalised to 100; dasharray/​offset start fully hidden. */
+.spx-track {
+  stroke-dashoffset: 100;
+  opacity: 0;
+}
+.spx-on .spx-track {
+  animation: spx-track-paint 10s var(--st-ease) infinite;
+}
+@keyframes spx-track-paint {
+  0%   { stroke-dashoffset: 100; opacity: 0; }
+  6%   { opacity: 1; }
+  62%  { stroke-dashoffset: 0;   opacity: 1; }   /* fully painted at the far edge */
+  80%  { stroke-dashoffset: 0;   opacity: 1; }
+  100% { stroke-dashoffset: 100; opacity: 0; }   /* retreat: track fades back */
+}
+
+/* ── The edge segment that flashes red when the dot reaches TURN BACK ── */
+.spx-edge {
+  opacity: 0;
+}
+.spx-on .spx-edge {
+  animation: spx-edge-flash 10s var(--st-ease) infinite;
+}
+@keyframes spx-edge-flash {
+  0%, 58%   { opacity: 0; }
+  62%       { opacity: 1; }
+  66%       { opacity: 0.25; }
+  70%       { opacity: 1; }
+  74%       { opacity: 0.25; }
+  78%       { opacity: 1; }
+  84%, 100% { opacity: 0; }
+}
+
+/* ── The detectorist dot travels WALK_PATH via offset-path ── */
+.spx-dot {
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+}
+.spx-on .spx-dot {
+  animation: spx-dot-travel 10s var(--st-ease-out) infinite;
+}
+@keyframes spx-dot-travel {
+  0%   { offset-distance: 0%; }
+  58%  { offset-distance: 86%; }   /* approaching the east edge */
+  62%  { offset-distance: 92%; }   /* TURN BACK reached */
+  66%  { offset-distance: 92%; }   /* hesitates at the edge */
+  82%  { offset-distance: 100%; }  /* retreats back along the route */
+  100% { offset-distance: 100%; }
+}
+/* Browsers without offset-path: keep the dot at a sensible resting spot. */
+@supports not (offset-path: path("M0 0")) {
+  .spx-dot { transform: translate(200px, 150px); }
+  .spx-on .spx-dot { animation: none; }
+}
+
+/* Dot glow halo + bright core */
+.spx-dotGlow {
+  fill: rgba(0,255,106,0.22);
+  filter: blur(2px);
+}
+.spx-on .spx-dotGlow {
+  animation: spx-dot-breathe 2.2s var(--st-ease) infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes spx-dot-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(0.9); }
+  50%      { opacity: 1;    transform: scale(1.25); }
+}
+.spx-dotCore {
+  fill: var(--st-accent);
+  stroke: #050510;
+  stroke-width: 1.2;
+}
+
+/* ── Haptic arcs radiating from the dot — two staggered rings ── */
+/* Hidden by default; each tone lights only during its phase. */
+.spx-arcs { opacity: 0; }
+.spx-arc {
+  fill: none;
+  stroke-width: 1.6;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.spx-arcs--warn   .spx-arc { stroke: var(--st-amber); }
+.spx-arcs--danger .spx-arc { stroke: #FF4D4D; }
+
+/* WARNING phase pulses the amber arcs; TURN BACK pulses the red arcs. */
+.spx-on .spx-arcs--warn {
+  animation: spx-arcs-warn 10s var(--st-ease) infinite;
+}
+.spx-on .spx-arcs--danger {
+  animation: spx-arcs-danger 10s var(--st-ease) infinite;
+}
+.spx-on .spx-arcs--warn .spx-arc {
+  animation: spx-arc-radiate 1.1s var(--st-ease-out) infinite;
+}
+.spx-on .spx-arcs--danger .spx-arc {
+  animation: spx-arc-radiate 0.7s var(--st-ease-out) infinite;
+}
+.spx-on .spx-arc--2 { animation-delay: 0.35s; }
+
+/* Gate visibility per phase (warn ≈ 40–58%, danger ≈ 60–80%). */
+@keyframes spx-arcs-warn {
+  0%, 38%   { opacity: 0; }
+  42%, 56%  { opacity: 1; }
+  60%, 100% { opacity: 0; }
+}
+@keyframes spx-arcs-danger {
+  0%, 58%   { opacity: 0; }
+  62%, 80%  { opacity: 1; }
+  84%, 100% { opacity: 0; }
+}
+/* Each arc expands + fades, the haptic "tap". */
+@keyframes spx-arc-radiate {
+  0%   { transform: scale(0.5); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ── Zone chip stack — exactly one visible per phase, top-right ── */
+.spx-chips {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  pointer-events: none;
+}
+.spx-chip {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(5,5,16,0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--st-hairline);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--st-text);
+  opacity: 0;
+}
+.spx-chip__dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  box-shadow: 0 0 8px currentColor;
+  flex-shrink: 0;
+}
+.spx-chip__dist {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--st-text-50);
+}
+/* Per-zone accent colours */
+.spx-chip--safe    { color: var(--st-accent); border-color: var(--st-accent-edge); }
+.spx-chip--safe    .spx-chip__dot { background: var(--st-accent); color: var(--st-accent); }
+.spx-chip--caution { color: var(--st-amber);  border-color: var(--st-amber-edge); }
+.spx-chip--caution .spx-chip__dot { background: var(--st-amber); color: var(--st-amber); }
+.spx-chip--warning { color: var(--st-orange); border-color: var(--st-orange-edge); }
+.spx-chip--warning .spx-chip__dot { background: var(--st-orange); color: var(--st-orange); }
+.spx-chip--danger  { color: #FF4D4D; border-color: rgba(255,77,77,0.35); }
+.spx-chip--danger  .spx-chip__dot { background: #FF4D4D; color: #FF4D4D; }
+
+/* Each chip is shown only during its slice of the 10s loop (swapin/out). */
+.spx-on .spx-chip--safe    { animation: spx-chip-safe    10s var(--st-ease) infinite; }
+.spx-on .spx-chip--caution { animation: spx-chip-caution 10s var(--st-ease) infinite; }
+.spx-on .spx-chip--warning { animation: spx-chip-warning 10s var(--st-ease) infinite; }
+.spx-on .spx-chip--danger  { animation: spx-chip-danger  10s var(--st-ease) infinite; }
+
+@keyframes spx-chip-safe {
+  0%        { opacity: 0; transform: translateY(-6px); }
+  3%, 36%   { opacity: 1; transform: translateY(0); }
+  40%       { opacity: 0; transform: translateY(-6px); }
+  /* returns to SAFE as the dot retreats */
+  86%       { opacity: 0; transform: translateY(-6px); }
+  90%, 100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes spx-chip-caution {
+  0%, 38%   { opacity: 0; transform: translateY(-6px); }
+  42%, 56%  { opacity: 1; transform: translateY(0); }
+  60%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+@keyframes spx-chip-warning {
+  0%, 58%   { opacity: 0; transform: translateY(-6px); }
+  62%, 70%  { opacity: 1; transform: translateY(0); }
+  74%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+@keyframes spx-chip-danger {
+  0%, 72%   { opacity: 0; transform: translateY(-6px); }
+  76%, 84%  { opacity: 1; transform: translateY(0); }
+  88%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+
+/* ── Live-demo badge (bottom-left) ── */
+.spx-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(5,5,16,0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--st-hairline);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--st-text);
+}
+.spx-badge__dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  animation: st-pulse 2s var(--st-ease) infinite;
+}
+
+/* ── Reduced motion: freeze on a clear, meaningful end state ── */
+@media (prefers-reduced-motion: reduce) {
+  .spx-bound { animation: none; }
+  .spx-on .spx-track {
+    animation: none;
+    stroke-dashoffset: 0;   /* show the full painted route */
+    opacity: 1;
+  }
+  .spx-on .spx-edge { animation: none; opacity: 0; }
+  .spx-on .spx-dot {
+    animation: none;
+    offset-distance: 58%;   /* rest near the east edge, inside the field */
+  }
+  .spx-on .spx-dotGlow { animation: none; opacity: 0.7; }
+  .spx-on .spx-arcs,
+  .spx-on .spx-arcs--warn,
+  .spx-on .spx-arcs--danger,
+  .spx-on .spx-arc { animation: none; opacity: 0; }
+  /* Keep just the SAFE chip visible, static. */
+  .spx-on .spx-chip { animation: none; }
+  .spx-on .spx-chip--safe { opacity: 1; transform: none; }
+  .spx-badge__dot { animation: none; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   SpotlightVault — "Permission Vault" signing ceremony (svx-*)
+   Plays once when .svx-play lands on the wrapper: the A4 letter settles
+   in, the signature draws itself, the APPROVED stamp thumps down, and the
+   two result chips rise. useReveal unobserves after first intersection,
+   so a single forwards-filling run is correct.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* The dark stage the bright letter sits on */
+.svx-stage {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid var(--st-hairline);
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(0,255,106,0.05), transparent 55%),
+    linear-gradient(160deg, #0A0A18 0%, #050510 100%);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+/* ── The A4 permission letter — the one bright object ── */
+.svx-paper {
+  border-radius: 6px;
+  background: #FCFBF7;
+  color: #15203A;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.45),
+    0 2px 6px rgba(0,0,0,0.3),
+    inset 0 0 0 1px rgba(21,32,58,0.06);
+}
+/* Settle-in: lift, fade and ease onto the stage. */
+.svx-doc {
+  opacity: 0;
+  transform: translateY(18px) scale(0.97);
+}
+.svx-play .svx-doc {
+  animation: svx-doc-settle 0.9s var(--st-ease-out) forwards;
+}
+@keyframes svx-doc-settle {
+  0%   { opacity: 0; transform: translateY(18px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── The landowner's signature draws itself ── */
+/* pathLength normalised to 1; dash hides the stroke, then reveals it. */
+.svx-sig {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.svx-play .svx-sig {
+  animation: svx-sig-draw 1.5s var(--st-ease) 0.9s forwards;
+}
+@keyframes svx-sig-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── APPROVED stamp thumps down after the signature ── */
+.svx-stamp {
+  position: absolute;
+  top: -2%;
+  right: 4%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 2.5px solid #11823F;
+  border-radius: 5px;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(11px, 3.4vw, 15px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #11823F;
+  background: rgba(0,200,90,0.06);
+  /* slight tilt, as if hand-stamped */
+  transform: rotate(-11deg) scale(2.4);
+  transform-origin: center;
+  opacity: 0;
+}
+.svx-play .svx-stamp {
+  animation: svx-stamp-thump 0.55s var(--st-ease) 2.5s forwards;
+}
+@keyframes svx-stamp-thump {
+  0%   { opacity: 0; transform: rotate(-11deg) scale(2.4); }
+  60%  { opacity: 1; transform: rotate(-11deg) scale(0.92); }
+  80%  { transform: rotate(-11deg) scale(1.05); }
+  100% { opacity: 1; transform: rotate(-11deg) scale(1); }
+}
+
+/* ── Result chips rise after the stamp lands ── */
+.svx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--st-accent-edge);
+  background: var(--st-accent-faint);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--st-accent);
+  opacity: 0;
+  transform: translateY(10px);
+}
+.svx-chip svg { flex-shrink: 0; }
+.svx-chip--expiry {
+  border-color: var(--st-amber-edge);
+  background: var(--st-amber-faint);
+  color: var(--st-amber);
+}
+.svx-play .svx-chip--sign {
+  animation: svx-chip-rise 0.55s var(--st-ease-out) 3.0s forwards;
+}
+.svx-play .svx-chip--expiry {
+  animation: svx-chip-rise 0.55s var(--st-ease-out) 3.2s forwards;
+}
+@keyframes svx-chip-rise {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reduced motion: show the finished, signed + approved end state ── */
+@media (prefers-reduced-motion: reduce) {
+  .svx-doc { opacity: 1; transform: none; }
+  .svx-play .svx-doc { animation: none; }
+  .svx-sig { stroke-dashoffset: 0; }
+  .svx-play .svx-sig { animation: none; }
+  .svx-stamp { opacity: 1; transform: rotate(-11deg) scale(1); }
+  .svx-play .svx-stamp { animation: none; }
+  .svx-chip { opacity: 1; transform: none; }
+  .svx-play .svx-chip--sign,
+  .svx-play .svx-chip--expiry { animation: none; }
+}
+
+/* ===== appended from CSS agent: css-sfx-sax-sex ===== */
+/* ════════════════════════════════════════════════════════════════════
+   SpotlightForecast (sfx-) · SpotlightArsenal (sax-) · SpotlightEngine (sex-)
+   Score-dial, preset-cycle and dual-track demos.
+   transform / opacity / stroke-dashoffset only · reduced-motion → end state.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ───────────────────── SpotlightForecast · sfx- ───────────────────── */
+
+.sfx-panel {
+  --sfx-arc-len: 251.33;          /* π × r80 semicircle path length        */
+  --sfx-arc-target: 20.1;         /* len × (1 − 92/100) → final dashoffset  */
+  --sfx-go-pos: 100.5;            /* len × (1 − 60/100) → GO threshold off  */
+}
+
+/* Dial layout: SVG sits in flow, centre readout overlaps its lower middle */
+.sfx-dial {
+  position: relative;
+  max-width: 280px;
+  margin-inline: auto;
+}
+.sfx-dial__center {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+  pointer-events: none;
+}
+.sfx-dial__num {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(34px, 7vw, 46px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-feature-settings: "tnum" 1;
+  color: var(--st-text);
+  transition: color 0.5s var(--st-ease);
+}
+.sfx-go .sfx-dial__num {
+  color: var(--st-accent);
+  text-shadow: 0 0 22px rgba(0, 255, 106, 0.45);
+}
+
+/* Two stacked arcs share the same path. Both start fully retracted
+   (dashoffset = full length) and fill to the 92-score position once the
+   panel reveals. The grey arc is the resting fill; the green arc fades
+   over it when the score crosses the GO threshold (.sfx-go). */
+.sfx-dial__arc,
+.sfx-dial__arc-go {
+  stroke-dasharray: var(--sfx-arc-len);
+  stroke-dashoffset: var(--sfx-arc-len);
+}
+.sfx-dial__arc {
+  stroke: rgba(255, 255, 255, 0.30);
+}
+.sfx-dial__arc-go {
+  stroke: var(--st-accent);
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 106, 0.5));
+  transition: opacity 0.6s var(--st-ease);
+}
+/* Draw both to the score position, timed to match the JS count-up (~2.2s) */
+.sfx-on .sfx-dial__arc {
+  animation: sfx-arc-fill 2.2s var(--st-ease) forwards;
+}
+.sfx-on .sfx-dial__arc-go {
+  animation: sfx-arc-fill 2.2s var(--st-ease) forwards;
+}
+.sfx-go .sfx-dial__arc-go { opacity: 1; }
+.sfx-go .sfx-dial__arc    { opacity: 0.35; } /* let green read on top */
+
+@keyframes sfx-arc-fill {
+  from { stroke-dashoffset: var(--sfx-arc-len); }
+  to   { stroke-dashoffset: var(--sfx-arc-target); }
+}
+
+/* Verdict row — GO chip stamps in, permit glyphs rise just after */
+.sfx-go-chip {
+  animation: sfx-stamp 0.5s var(--st-ease-out) both;
+}
+.sfx-permit {
+  animation: sfx-chip-rise 0.5s var(--st-ease-out) 0.12s both;
+}
+@keyframes sfx-stamp {
+  0%   { opacity: 0; transform: scale(1.35); }
+  60%  { opacity: 1; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes sfx-chip-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Factor bars — three-column grid: label · track · readout */
+.sfx-factors {
+  display: grid;
+  grid-template-columns: minmax(78px, auto) 1fr minmax(40px, auto);
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 14px;
+}
+.sfx-bar__track {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+.sfx-bar__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--st-accent-dim), var(--st-accent));
+  box-shadow: 0 0 10px rgba(0, 255, 106, 0.4);
+  transform-origin: left center;
+  /* inline width is the target; grow from zero via scaleX */
+  transform: scaleX(0);
+}
+.sfx-on .sfx-bar__fill {
+  animation: sfx-bar-grow 0.9s var(--st-ease-out) both;
+}
+@keyframes sfx-bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sfx-dial__arc,
+  .sfx-dial__arc-go {
+    animation: none !important;
+    stroke-dashoffset: var(--sfx-arc-target);
+  }
+  .sfx-dial__arc-go { opacity: 1; }
+  .sfx-dial__arc    { opacity: 0.35; }
+  .sfx-dial__num    { color: var(--st-accent); }
+  .sfx-go-chip,
+  .sfx-permit {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+  .sfx-bar__fill {
+    animation: none !important;
+    transform: scaleX(1);
+  }
+}
+
+/* ───────────────────── SpotlightArsenal · sax- ────────────────────── */
+
+/* QR scan line — a soft accent bar travelling top → bottom of the tile */
+.sax-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 16px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 255, 106, 0.55),
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(0, 255, 106, 0.4);
+  opacity: 0.9;
+  will-change: transform;
+  animation: sax-scan 2.6s var(--st-ease) infinite;
+}
+@keyframes sax-scan {
+  0%   { transform: translateY(-16px); opacity: 0; }
+  12%  { opacity: 0.9; }
+  88%  { opacity: 0.9; }
+  100% { transform: translateY(88px); opacity: 0; }
+}
+
+/* Header / label swap-in — runs each time the active machine changes
+   (React remounts these nodes via keyed `head-${active}` / `label-...`) */
+.sax-swapin {
+  animation: sax-swapin 0.45s var(--st-ease-out) both;
+}
+@keyframes sax-swapin {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slider fill — inline style sets transform: scaleX(fill); we just ease
+   between the per-machine values so the bars visibly re-tune on switch */
+.sax-fill {
+  transform-origin: left center;
+  box-shadow: 0 0 8px currentColor;
+  transition: transform 0.6s var(--st-ease);
+}
+/* Thumb rail — inline style sets transform: translateX(fill*100%);
+   ease it in lockstep with the fill */
+.sax-thumb-rail {
+  transition: transform 0.6s var(--st-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sax-scan   { animation: none; opacity: 0; }
+  .sax-swapin { animation: none; opacity: 1; transform: none; }
+  .sax-fill,
+  .sax-thumb-rail { transition: none; }
+}
+
+/* ───────────────────── SpotlightEngine · sex- ─────────────────────── */
+/*
+ * Both halves draw the same way: every <path pathLength={1}> is normalised
+ * to a 0–1 dash space, so dasharray/offset of 1 = whole path. Paths start
+ * fully retracted (offset 1) and draw to 0. The serpentine is one path;
+ * the raw recording is six sequenced segments whose draw windows are
+ * staggered down a shared 6s timeline, then a 3s hold, looped.
+ */
+.sex-path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.sex-raw {
+  stroke: #FF6B6B;
+  filter: drop-shadow(0 0 3px rgba(255, 92, 92, 0.35));
+}
+.sex-raw-dim {                       /* teleport jumps — dimmer, dashed */
+  stroke: rgba(255, 107, 107, 0.45);
+  stroke-width: 1.5;
+  stroke-dasharray: 0.012;           /* dotted look within 0–1 dash space */
+  stroke-dashoffset: 0;
+  opacity: 0;
+}
+.sex-clean {
+  stroke: var(--st-accent);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 106, 0.45));
+}
+
+/* The total cycle = 9s (6s draw window + 3s hold). Each solid raw segment
+   draws inside its own slice of that window; the two teleport dashes just
+   fade in at their moment. The clean lane draws across the full window. */
+.sex-run .sex-path { animation-duration: 9s; animation-iteration-count: infinite; }
+
+.sex-run .sex-k  { animation-name: sex-draw; animation-timing-function: linear; animation-delay: 0s;    /* 0–0.6s   */ }
+.sex-run .sex-a  { animation-name: sex-draw; animation-timing-function: linear; animation-delay: 0.6s;  /* knot→A   */ }
+.sex-run .sex-t1 { animation-name: sex-jump; animation-timing-function: linear; animation-delay: 2.0s;  /* teleport */ }
+.sex-run .sex-b  { animation-name: sex-draw; animation-timing-function: linear; animation-delay: 2.2s;  /* A→B      */ }
+.sex-run .sex-t2 { animation-name: sex-jump; animation-timing-function: linear; animation-delay: 3.8s;  /* teleport */ }
+.sex-run .sex-c  { animation-name: sex-draw; animation-timing-function: linear; animation-delay: 4.0s;  /* B→C      */ }
+.sex-run .sex-cl { animation-name: sex-draw-clean; animation-timing-function: var(--st-ease-out); animation-delay: 0s; }
+
+/*
+ * sex-draw — a segment's draw window is short, then it stays drawn through
+ * the hold and resets at the very end of the 9s cycle. Tuned per-segment
+ * via animation-delay above; the shape of the keyframes keeps each line
+ * visible once drawn until the loop restarts.
+ */
+@keyframes sex-draw {
+  0%   { stroke-dashoffset: 1; }
+  18%  { stroke-dashoffset: 0; }   /* drawn ~1.6s after its delay         */
+  92%  { stroke-dashoffset: 0; }   /* hold                                */
+  100% { stroke-dashoffset: 1; }   /* retract for the next cycle          */
+}
+/* Clean serpentine — one smooth draw across the window, held, then reset */
+@keyframes sex-draw-clean {
+  0%   { stroke-dashoffset: 1; }
+  62%  { stroke-dashoffset: 0; }   /* ~5.6s draw                          */
+  93%  { stroke-dashoffset: 0; }   /* hold                                */
+  100% { stroke-dashoffset: 1; }
+}
+/* Teleport dashes — no draw, just blink into view at their moment */
+@keyframes sex-jump {
+  0%, 100% { opacity: 0; }
+  3%       { opacity: 1; }
+  90%      { opacity: 1; }
+  95%      { opacity: 0; }
+}
+
+.sex-readout {
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sex-run .sex-path,
+  .sex-path {
+    animation: none !important;
+    stroke-dashoffset: 0;          /* show the full recorded track        */
+  }
+  .sex-raw-dim {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ===== appended from CSS agent: css-mcx-rgx ===== */
+/* ============================================================
+   MapCompareSlider — mcx-  (satellite/historical divider compare)
+   --mcx-pos (0–100) is the single source of truth: it drives the
+   satellite clip, the handle position and each pin chip's
+   legibility. The transition on --mcx-pos lives inline on the
+   stage (set in TSX); here we register it + wire everything to it.
+   ============================================================ */
+
+@property --mcx-pos {
+  syntax: "<number>";
+  initial-value: 50;
+  inherits: true;
+}
+
+.mcx-stage {
+  /* fallback for browsers without @property registration:
+     keeps a sane default before the inline style applies */
+  --mcx-pos: 50;
+}
+
+/* Satellite layer covers the LEFT side of the divider; it is clipped
+   from the right at --mcx-pos%. clip-path animates for free as the
+   registered custom property transitions (no layout/main-thread work). */
+.mcx-clip {
+  clip-path: inset(0 calc((100 - var(--mcx-pos)) * 1%) 0 0);
+}
+
+/* The vertical divider rides at --mcx-pos% of the stage width. */
+.mcx-handle {
+  left: calc(var(--mcx-pos) * 1%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(0, 255, 106, 0.45);
+}
+
+/* ── Named amber pins ──────────────────────────────────────────
+   Positioned via inline left/top. --mcx-px is the pin's own x (%)
+   and doubles as the legibility threshold: the chip is readable
+   once the divider sits left of the pin (--mcx-pos < --mcx-px),
+   exposing the historical layer beneath it. */
+.mcx-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 6;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mcx-pin__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: var(--st-amber);
+  box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.55), 0 0 16px rgba(255, 176, 0, 0.6);
+  /* staggered pulse — --mcx-delay set inline per pin */
+  animation: mcx-pin-pulse 2.4s var(--st-ease) infinite;
+  animation-delay: var(--mcx-delay, 0s);
+}
+@keyframes mcx-pin-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,176,0,0.55), 0 0 16px rgba(255,176,0,0.6); }
+  70%  { box-shadow: 0 0 0 14px rgba(255,176,0,0), 0 0 16px rgba(255,176,0,0.6); }
+  100% { box-shadow: 0 0 0 0 rgba(255,176,0,0), 0 0 16px rgba(255,176,0,0.6); }
+}
+
+/* Chip names the target. Hidden by default; fades + lifts in when the
+   historical layer is exposed past the pin. Driven by the boolean
+   step clamp((px - pos), 0, 1): 1 when divider is left of the pin,
+   0 otherwise — no JS toggle needed. Hover/focus force it visible. */
+.mcx-chip {
+  --mcx-shown: clamp(0, calc((var(--mcx-px) - var(--mcx-pos)) * 1000), 1);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translate(-50%, calc((1 - var(--mcx-shown)) * 6px));
+  opacity: var(--mcx-shown);
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(5, 5, 16, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--st-amber-edge);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--st-text);
+  pointer-events: none;
+  transition: opacity 320ms var(--st-ease), transform 320ms var(--st-ease);
+}
+.mcx-pin:hover .mcx-chip,
+.mcx-pin:focus-visible .mcx-chip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Drag hint — inherits placement/bob from .map-drag-hint; fades off
+   permanently once the user first interacts. */
+.mcx-hint {
+  transition: opacity 400ms var(--st-ease);
+}
+.mcx-hint--off {
+  opacity: 0;
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Static, legible 50% split: no property transition, chips resolve
+     to their threshold state, pins stop pulsing. */
+  .mcx-pin__dot { animation: none; }
+  .mcx-chip { transition: none; }
+  .mcx-hint { transition: none; }
+}
+
+/* ============================================================
+   RadarGroupDemo — rgx-  (15s self-running live group map)
+   Animated elements carry .rgx-anim and declare their keyframe
+   (--rgx-anim) + phase (--rgx-delay) inline. They only play once
+   the container has .rgx-live (scrolled into view). All motion is
+   transform / opacity / offset-distance — main-thread-free.
+   ============================================================ */
+
+.rgx-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 640 / 440;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 30% 20%, rgba(0, 255, 106, 0.05), transparent 60%),
+    linear-gradient(160deg, #0A0A18 0%, #050510 100%);
+  border: 1px solid var(--st-hairline);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02), 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+.rgx-map svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Shared timeline driver. Before .rgx-live every animated element sits
+   at its keyframe's intended start (held by animation-fill-mode:both
+   on the live state); pre-live we simply keep them invisible/idle so
+   the choreography reads as a single coordinated start. */
+.rgx-anim {
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  animation-name: none;
+}
+.rgx-live .rgx-anim {
+  animation-name: var(--rgx-anim);
+  animation-delay: var(--rgx-delay, 0s);
+  animation-play-state: running;
+}
+
+/* ── Ping blooms — three expanding amber rings per waypoint ──
+   The 15s loop holds the ring collapsed/invisible except for the
+   brief window after its delay. */
+.rgx-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+}
+@keyframes rgx-ping {
+  0%   { transform: scale(0.18); opacity: 0; }
+  2%   { transform: scale(0.2);  opacity: 0.85; }
+  12%  { transform: scale(1);    opacity: 0; }
+  100% { transform: scale(1);    opacity: 0; }
+}
+/* SOS — sharper, brighter red double-pulse. */
+@keyframes rgx-sos {
+  0%   { transform: scale(0.2);  opacity: 0; }
+  2%   { transform: scale(0.24); opacity: 0.95; }
+  10%  { transform: scale(1.05); opacity: 0; }
+  100% { transform: scale(1.05); opacity: 0; }
+}
+
+/* ── Members — gliding on looping offset-paths ──
+   Each member rides its own motion path; convergence toward the SOS
+   point at t≈9s is baked into the path geometry. offset-rotate keeps
+   plain dots upright; the "you" wedge turns to its heading. */
+.rgx-mem {
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+}
+.rgx-mem--you {
+  offset-rotate: auto;
+}
+
+/* Per-member paths (viewBox 0 0 640 440). offset-anchor centers the
+   group on the path. The single shared keyframe just runs distance
+   0→100%; the differing geometry lives in offset-path. */
+@keyframes rgx-travel {
+  to { offset-distance: 100%; }
+}
+.rgx-mem--cyan {
+  offset-path: path("M150 110 C 280 70 400 120 505 205 C 470 250 480 300 460 318 C 360 360 220 320 160 240 C 120 180 120 140 150 110 Z");
+}
+.rgx-mem--amber {
+  offset-path: path("M520 150 C 560 220 540 300 460 318 C 420 326 380 300 360 260 C 330 200 360 140 430 120 C 470 110 505 120 520 150 Z");
+}
+.rgx-mem--violet {
+  offset-path: path("M300 260 C 360 300 430 320 460 318 C 470 318 470 318 466 320 C 430 360 340 360 280 320 C 230 286 240 250 300 260 Z");
+}
+.rgx-mem--you {
+  offset-path: path("M120 360 C 200 320 300 300 380 280 C 440 264 470 300 460 318 C 420 360 300 380 200 392 C 140 398 90 388 120 360 Z");
+}
+
+/* @supports fallback for engines without offset-path: drift the groups
+   with a gentle translate so the demo still feels alive rather than
+   sitting frozen at the path origin. */
+@supports not (offset-path: path("M0 0 L1 1")) {
+  .rgx-mem { offset-distance: unset; }
+  @keyframes rgx-travel {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(40px, -24px); }
+    50%  { transform: translate(0, 28px); }
+    75%  { transform: translate(-32px, 6px); }
+    100% { transform: translate(0, 0); }
+  }
+}
+
+/* ── Chips (HUD labels + floating ping/SOS callouts) ── */
+.rgx-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(5, 5, 16, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--st-hairline);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--st-text);
+  white-space: nowrap;
+  z-index: 4;
+}
+.rgx-chip__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  box-shadow: 0 0 8px rgba(0, 255, 106, 0.6);
+  animation: rgx-dot-pulse 2s var(--st-ease) infinite;
+}
+@keyframes rgx-dot-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,255,106,0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(0,255,106,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,255,106,0); }
+}
+
+/* Static HUD chips */
+.rgx-chip--label { top: 14px; left: 14px; }
+.rgx-chip--day   { top: 14px; right: 14px; color: var(--st-text-50); }
+.rgx-chip--base {
+  transform: translate(-50%, -50%);
+  color: var(--st-accent);
+  border-color: var(--st-accent-edge);
+  background: rgba(5, 5, 16, 0.7);
+}
+
+/* Floating ping / SOS chips — placed inline, lifted on a timed cue */
+.rgx-float {
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.rgx-chip--ping { border-color: var(--st-amber-edge); color: var(--st-amber); }
+.rgx-chip--sos  { border-color: rgba(255, 92, 92, 0.45); color: #FF8B8B; }
+
+/* Ping chip rises into place just after its bloom, holds, fades. */
+@keyframes rgx-chip-rise {
+  0%   { opacity: 0; transform: translate(-50%, calc(-50% + 8px)); }
+  3%   { opacity: 1; transform: translate(-50%, -50%); }
+  20%  { opacity: 1; transform: translate(-50%, -50%); }
+  26%  { opacity: 0; transform: translate(-50%, calc(-50% - 6px)); }
+  100% { opacity: 0; transform: translate(-50%, calc(-50% - 6px)); }
+}
+/* SOS chip drops in below the violet member during the alert window. */
+@keyframes rgx-chip-sos {
+  0%   { opacity: 0; transform: translate(-50%, calc(-50% - 8px)); }
+  3%   { opacity: 1; transform: translate(-50%, -50%); }
+  30%  { opacity: 1; transform: translate(-50%, -50%); }
+  36%  { opacity: 0; transform: translate(-50%, calc(-50% + 6px)); }
+  100% { opacity: 0; transform: translate(-50%, calc(-50% + 6px)); }
+}
+
+/* ── HUD micro-labels — scale bar + coordinates ── */
+.rgx-coords {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--st-text-50);
+  z-index: 4;
+}
+.rgx-scale {
+  display: inline-block;
+  width: 34px;
+  height: 6px;
+  border: 1px solid var(--st-text-35);
+  border-top: none;
+  border-radius: 0 0 1px 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Static meaningful end state: hold the map populated and calm.
+     Members rest along their paths, blooms/chips settle visible so
+     the story (pings dropped, SOS raised) still reads, but nothing
+     moves while it is being read. */
+  .rgx-live .rgx-anim,
+  .rgx-anim {
+    animation: none !important;
+  }
+  .rgx-mem { offset-distance: 35%; }
+  .rgx-mem--violet { offset-distance: 50%; }
+  .rgx-mem--you { offset-distance: 20%; }
+  .rgx-ring { opacity: 0.5; }
+  .rgx-float { opacity: 1; transform: translate(-50%, -50%); }
+  .rgx-chip__dot { animation: none; }
+}
+
+/* accent-underline — subtle draw-in underline under accent heading words.
+   Previously referenced in Screenshots/RadarSection headings but undefined. */
+.accent-underline {
+  position: relative;
+  white-space: nowrap;
+}
+.accent-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.12em;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--st-accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 700ms var(--st-ease-out) 150ms;
+}
+.reveal.visible .accent-underline::after,
+.visible .accent-underline::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .accent-underline::after { transition: none; transform: scaleX(1); }
+}

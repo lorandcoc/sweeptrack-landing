@@ -1,8 +1,10 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import ParallaxPhone from "./ParallaxPhone";
+import HeroTrackDemo from "./HeroTrackDemo";
 import ComingSoonButton from "./ComingSoonButton";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 // Smooth-scroll without writing to window.location.hash so the back button
 // still leaves the site instead of popping to the previous in-page anchor.
@@ -16,9 +18,49 @@ function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// The four-state HUD story that cycles through the floating chip. `tone`
+// drives the accent (green for normal, amber for the boundary warning).
+const HUD_STORY: { key: TranslationKey; tone: "green" | "amber" }[] = [
+  { key: "hero.hud_gps", tone: "green" },
+  { key: "hero.hud_find", tone: "green" },
+  { key: "hero.hud_score", tone: "green" },
+  { key: "hero.hud_boundary", tone: "amber" },
+];
+
+function HudChip({ index }: { index: number }) {
+  const { t } = useI18n();
+  return (
+    <span className="herox-hud-stack">
+      {HUD_STORY.map((s, i) => (
+        <span
+          key={s.key}
+          className={`herox-hud st-hud ${s.tone === "amber" ? "herox-hud--amber" : "herox-hud--green"} ${i === index ? "is-active" : ""}`}
+        >
+          <span className="herox-hud-dot" />
+          <span style={{ fontSize: 11, fontWeight: 600 }}>{t(s.key)}</span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
 export default function Hero() {
   const { locale, t } = useI18n();
   const isLong = locale !== "en";
+
+  // One shared index drives both the desktop floating chip and the mobile
+  // compact chip so the story stays in lockstep.
+  const [hudIndex, setHudIndex] = useState(0);
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    const id = setInterval(() => setHudIndex((i) => (i + 1) % HUD_STORY.length), 3000);
+    return () => clearInterval(id);
+  }, []);
+
+  // Proof strip: split on " · " into spans rendered with middot separators.
+  const proofParts = t("hero.proof_line").split(" · ");
 
   return (
     <section className="relative pt-12 pb-12 md:pt-20 md:pb-16 overflow-hidden">
@@ -36,8 +78,13 @@ export default function Hero() {
               {t("hero.subtitle")}
             </p>
 
-            <p className="hero-enter font-mono text-[11px] md:text-xs text-muted/80 max-w-xl mb-6 md:mx-0 mx-auto" style={{ animationDelay: "0.4s" }}>
-              {t("hero.price_anchor")}
+            <p className="hero-enter herox-proof font-mono text-[11px] md:text-xs text-muted/80 max-w-xl mb-6 md:mx-0 mx-auto flex flex-wrap justify-center md:justify-start" style={{ animationDelay: "0.4s" }}>
+              {proofParts.map((part, i) => (
+                <span key={i} className="herox-proof__item inline-flex items-center">
+                  {i > 0 && <span className="herox-proof__sep" aria-hidden="true">·</span>}
+                  {part}
+                </span>
+              ))}
             </p>
 
             <div className="hero-enter flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8" style={{ animationDelay: "0.55s" }}>
@@ -54,8 +101,8 @@ export default function Hero() {
               </a>
             </div>
             <div className="hero-enter mt-5 flex justify-center md:justify-start" style={{ animationDelay: "0.6s" }}>
-              <a href="#community" onClick={scrollToHash} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-medium hover:bg-amber-500/15 hover:border-amber-400/50 transition-colors">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" /></svg>
+              <a href="#community" onClick={scrollToHash} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-amber-500/12 border border-amber-400/55 text-amber-200 text-sm font-medium hover:bg-amber-500/18 hover:border-amber-400/70 transition-colors">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" /></svg>
                 {t("hero.pill_founder")}
               </a>
             </div>
@@ -75,26 +122,25 @@ export default function Hero() {
                 <span className="hero-phone-ring" />
                 <span className="hero-phone-ring" />
               </div>
+              {/* Static coordinates chip — always-on field anchor. */}
               <div className="hero-hud-1 hidden md:flex">
                 <span className="st-hud">
                   <span className="st-hud__dot" />
                   <span style={{ fontSize: 11 }}>47°41′22″N</span>
                 </span>
               </div>
-              <div className="hero-hud-3 hidden md:flex">
-                <span className="st-hud" style={{ background: "rgba(0,255,106,0.12)", borderColor: "var(--st-accent-edge)", color: "var(--st-accent)" }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8" /></svg>
-                  <span style={{ fontSize: 11, fontWeight: 600 }}>+1 find · 18 cm</span>
-                </span>
-              </div>
-              <div className="hero-hud-2 hidden md:flex">
-                <span className="st-hud" style={{ background: "rgba(255,176,0,0.18)", borderColor: "var(--st-amber-edge)", color: "var(--st-amber)" }}>
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "currentColor" }} />
-                  <span style={{ fontSize: 11, fontWeight: 600 }}>Score 96</span>
-                </span>
+              {/* Cycling story chip (desktop, top-right). */}
+              <div className="herox-hud-1 hidden md:flex">
+                <HudChip index={hudIndex} />
               </div>
               <div className="relative z-[1]">
                 <ParallaxPhone />
+                {/* Sweep-pattern overlay sits on top of the screenshot. */}
+                <HeroTrackDemo />
+              </div>
+              {/* Cycling story chip (mobile only) near the phone's bottom edge. */}
+              <div className="herox-hud-mobile flex md:hidden">
+                <HudChip index={hudIndex} />
               </div>
             </div>
           </div>

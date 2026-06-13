@@ -72,6 +72,14 @@ export default function FounderNote() {
                 {typed}
                 <span className="founder-term__cursor" aria-hidden="true">▊</span>
               </p>
+              <p
+                className="founder-term__quote transition-opacity duration-700"
+                style={{ opacity: typed.length >= quote.length ? 1 : 0 }}
+              >
+                <a href="#community" className="hover:text-accent transition-colors">
+                  {t("foundernote.cta")} ↓
+                </a>
+              </p>
               <div className="founder-term__attr">
                 <strong>Lorand</strong>
                 <span>·</span>

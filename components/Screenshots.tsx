@@ -3,29 +3,70 @@
 import Image from "next/image";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useReveal } from "./useReveal";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
+/* Exactly eight slides, field-curated. Each carries its label (short name),
+ * a benefit caption (why it matters on a Saturday), and a descriptive alt. */
 const screenshots = [
-  { src: "/screenshots/home.jpg", altKey: "screenshots.alt_livemap", labelKey: "screenshots.shot_livemap" },
-  { src: "/screenshots/measure2.jpg", altKey: "screenshots.alt_measure", labelKey: "screenshots.shot_measure" },
-  { src: "/screenshots/forecast.jpg", altKey: "screenshots.alt_forecast", labelKey: "screenshots.shot_forecast" },
-  { src: "/screenshots/history.jpg", altKey: "screenshots.alt_history", labelKey: "screenshots.shot_history" },
-  { src: "/screenshots/stats.jpg", altKey: "screenshots.alt_stats", labelKey: "screenshots.shot_stats" },
-  { src: "/screenshots/offline_maps.jpg", altKey: "screenshots.alt_offline", labelKey: "screenshots.shot_offline" },
-  { src: "/screenshots/permission_vault.jpg", altKey: "screenshots.alt_permission", labelKey: "screenshots.shot_permission" },
-  { src: "/screenshots/waypoints.jpg", altKey: "screenshots.alt_waypoints", labelKey: "screenshots.shot_waypoints" },
-  { src: "/screenshots/radar.jpg", altKey: "screenshots.alt_livegroup", labelKey: "screenshots.shot_livegroup" },
-  { src: "/screenshots/gallery.jpg", altKey: "screenshots.alt_gallery", labelKey: "screenshots.shot_gallery" },
-  { src: "/screenshots/caliper.jpg", altKey: "screenshots.alt_caliper", labelKey: "screenshots.shot_caliper" },
-  { src: "/screenshots/cloud_backup.jpg", altKey: "screenshots.alt_backup", labelKey: "screenshots.shot_backup" },
-  { src: "/screenshots/night_vision.jpg", altKey: "screenshots.alt_nightvision", labelKey: "screenshots.shot_nightvision" },
-  { src: "/screenshots/tide.jpg", altKey: "screenshots.alt_tide", labelKey: "screenshots.shot_tide" },
-  { src: "/screenshots/presets.jpg", altKey: "screenshots.alt_presets", labelKey: "screenshots.shot_presets" },
-  { src: "/screenshots/detector_list.jpg", altKey: "screenshots.alt_detectorlib", labelKey: "screenshots.shot_detectorlib" },
-  { src: "/screenshots/settings.jpg", altKey: "screenshots.alt_settings", labelKey: "screenshots.shot_settings" },
-  { src: "/screenshots/more_menu.jpg", altKey: "screenshots.alt_moremenu", labelKey: "screenshots.shot_moremenu" },
-] as const;
+  {
+    src: "/screenshots/home.jpg",
+    altKey: "screenshots.alt_livemap",
+    labelKey: "screenshots.shot_livemap",
+    capKey: "screenshots.cap_livemap",
+  },
+  {
+    src: "/screenshots/forecast.jpg",
+    altKey: "screenshots.alt_forecast",
+    labelKey: "screenshots.shot_forecast",
+    capKey: "screenshots.cap_forecast",
+  },
+  {
+    src: "/screenshots/measure2.jpg",
+    altKey: "screenshots.alt_measure",
+    labelKey: "screenshots.shot_measure",
+    capKey: "screenshots.cap_measure",
+  },
+  {
+    src: "/screenshots/permission_vault.jpg",
+    altKey: "screenshots.alt_permission",
+    labelKey: "screenshots.shot_permission",
+    capKey: "screenshots.cap_permission",
+  },
+  {
+    src: "/screenshots/radar.jpg",
+    altKey: "screenshots.alt_livegroup",
+    labelKey: "screenshots.shot_livegroup",
+    capKey: "screenshots.cap_livegroup",
+  },
+  {
+    src: "/screenshots/waypoints.jpg",
+    altKey: "screenshots.alt_waypoints",
+    labelKey: "screenshots.shot_waypoints",
+    capKey: "screenshots.cap_waypoints",
+  },
+  {
+    src: "/screenshots/night_vision.jpg",
+    altKey: "screenshots.alt_nightvision",
+    labelKey: "screenshots.shot_nightvision",
+    capKey: "screenshots.cap_nightvision",
+  },
+  {
+    src: "/screenshots/stats.jpg",
+    altKey: "screenshots.alt_stats",
+    labelKey: "screenshots.shot_stats",
+    capKey: "screenshots.cap_stats",
+  },
+] as const satisfies ReadonlyArray<{
+  src: string;
+  altKey: TranslationKey;
+  labelKey: TranslationKey;
+  capKey: TranslationKey;
+}>;
 
+const COUNT = screenshots.length;
+
+/* Map a slide's distance from the active index to the 3D pose classes that
+ * already live in globals.css. */
 function get3DClass(index: number, active: number) {
   const diff = index - active;
   if (diff === 0) return "is-active";
@@ -42,54 +83,70 @@ export default function Screenshots() {
   const { ref: sectionRef, visible } = useReveal();
   const activeRef = useRef(activeIndex);
 
-  // Drag to scroll refs
+  // Drag-to-scroll refs.
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
   const hasDragged = useRef(false);
-  // Tracks the "resume autoplay" timer so rapid touch interactions don't
-  // stack timers and resume mid-gesture.
+  // Tracks the "resume autoplay" timer so rapid touch interactions don't stack
+  // timers and resume mid-gesture.
   const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => { activeRef.current = activeIndex; }, [activeIndex]);
+  useEffect(() => {
+    activeRef.current = activeIndex;
+  }, [activeIndex]);
 
-  // Clear any pending resume timer when the component unmounts so a
-  // late-firing setTimeout doesn't try to update state on an unmounted tree.
-  useEffect(() => () => {
-    if (resumeTimer.current) clearTimeout(resumeTimer.current);
-  }, []);
+  // Clear any pending resume timer on unmount so a late setTimeout doesn't try
+  // to update state on a torn-down tree.
+  useEffect(
+    () => () => {
+      if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    },
+    [],
+  );
 
   const scrollTo = useCallback((index: number) => {
     const el = scrollRef.current;
     if (!el || !el.firstElementChild) return;
+    const clamped = Math.max(0, Math.min(index, COUNT - 1));
     const itemWidth = (el.firstElementChild as HTMLElement).offsetWidth + 24;
-    el.scrollTo({ left: itemWidth * index, behavior: "smooth" });
+    el.scrollTo({ left: itemWidth * clamped, behavior: "smooth" });
   }, []);
 
+  // Keep the active index in sync with whatever slide the scroll container has
+  // settled on (drag, snap, arrow, or autoplay all funnel through here).
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
     const handleScroll = () => {
-      // Don't update active index if we're actively dragging, 
-      // let it settle visually or calculate dynamically if needed.
-      // But it's usually fine since the UI indicator updates.
       const scrollPos = el.scrollLeft;
       const itemWidth = el.firstElementChild
-        ? (el.firstElementChild as HTMLElement).offsetWidth + 24 : 280;
-      setActiveIndex(Math.round(scrollPos / itemWidth));
+        ? (el.firstElementChild as HTMLElement).offsetWidth + 24
+        : 280;
+      const next = Math.round(scrollPos / itemWidth);
+      setActiveIndex(Math.max(0, Math.min(next, COUNT - 1)));
     };
     el.addEventListener("scroll", handleScroll, { passive: true });
     return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Autoplay ~4s, only while the section is on screen and not paused.
   useEffect(() => {
     if (paused || !visible) return;
     const timer = setInterval(() => {
-      const next = (activeRef.current + 1) % screenshots.length;
+      const next = (activeRef.current + 1) % COUNT;
       scrollTo(next);
     }, 4000);
     return () => clearInterval(timer);
   }, [paused, visible, scrollTo]);
+
+  const goPrev = useCallback(() => {
+    scrollTo((activeRef.current - 1 + COUNT) % COUNT);
+  }, [scrollTo]);
+
+  const goNext = useCallback(() => {
+    scrollTo((activeRef.current + 1) % COUNT);
+  }, [scrollTo]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
@@ -97,8 +154,8 @@ export default function Screenshots() {
     if (scrollRef.current) {
       startX.current = e.pageX - scrollRef.current.offsetLeft;
       scrollLeft.current = scrollRef.current.scrollLeft;
-      scrollRef.current.style.scrollSnapType = 'none'; // Prevent jitter when dragging
-      scrollRef.current.style.cursor = 'grabbing';
+      scrollRef.current.style.scrollSnapType = "none"; // prevent jitter mid-drag
+      scrollRef.current.style.cursor = "grabbing";
     }
     setPaused(true);
   };
@@ -108,31 +165,35 @@ export default function Screenshots() {
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
     const walk = (x - startX.current) * 1.5;
-    if (Math.abs(walk) > 5) {
-      hasDragged.current = true;
-    }
+    if (Math.abs(walk) > 5) hasDragged.current = true;
     scrollRef.current.scrollLeft = scrollLeft.current - walk;
   };
 
   const handleMouseUpOrLeave = () => {
+    if (!isDragging.current) return;
     isDragging.current = false;
     setPaused(false);
     if (scrollRef.current) {
-      scrollRef.current.style.scrollSnapType = ''; // Re-enable snap
-      scrollRef.current.style.cursor = '';
+      scrollRef.current.style.scrollSnapType = ""; // re-enable snap
+      scrollRef.current.style.cursor = "";
     }
   };
 
+  const activeCap = screenshots[activeIndex].capKey;
+
   return (
     <section id="screenshots" className="py-16 md:py-20 relative overflow-hidden cv-auto">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-transparent" aria-hidden="true" />
 
       <div ref={sectionRef} className={`relative reveal ${visible ? "visible" : ""}`}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("screenshots.label")}</p>
+            <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">
+              {t("screenshots.label")}
+            </p>
             <h2 className="font-display text-3xl md:text-4xl mb-4">
-              {t("screenshots.heading")} <span className="text-accent accent-underline">{t("screenshots.heading_accent")}</span>
+              {t("screenshots.heading")}{" "}
+              <span className="text-accent accent-underline">{t("screenshots.heading_accent")}</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               {t("screenshots.description")}
@@ -142,7 +203,7 @@ export default function Screenshots() {
 
         <div
           ref={scrollRef}
-          className="screenshot-perspective flex gap-6 overflow-x-auto py-16 md:py-24 screenshot-scroll snap-x snap-mandatory px-[calc(50%-80px)] sm:px-[calc(50%-100px)] md:px-[calc(50%-115px)] cursor-grab active:cursor-grabbing"
+          className="screenshot-perspective flex gap-6 overflow-x-auto py-16 md:py-24 screenshot-scroll snap-x snap-mandatory px-[calc(50%-80px)] sm:px-[calc(50%-100px)] md:px-[calc(50%-150px)] cursor-grab active:cursor-grabbing"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
@@ -159,35 +220,67 @@ export default function Screenshots() {
           {screenshots.map((shot, i) => (
             <button
               key={shot.labelKey}
+              type="button"
               onClick={() => {
                 if (!hasDragged.current) scrollTo(i);
               }}
+              aria-label={t(shot.labelKey)}
+              aria-current={activeIndex === i ? "true" : undefined}
               className={`flex-shrink-0 snap-center flex flex-col items-center gap-3 screenshot-3d ${get3DClass(i, activeIndex)}`}
             >
               <div className="phone-frame w-[160px] sm:w-[200px] md:w-[230px] aspect-[320/693] pointer-events-none">
-                <Image src={shot.src} alt={t(shot.altKey)} width={320} height={693} sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 280px" className="w-full h-auto screenshot-crop" />
+                <Image
+                  src={shot.src}
+                  alt={t(shot.altKey)}
+                  width={320}
+                  height={693}
+                  sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 300px"
+                  className="w-full h-auto screenshot-crop"
+                />
               </div>
-              <span className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"} pointer-events-none`}>
+              <span
+                className={`text-sm font-medium transition-colors ${activeIndex === i ? "text-accent" : "text-muted"} pointer-events-none`}
+              >
                 {t(shot.labelKey)}
               </span>
             </button>
           ))}
         </div>
 
-        <div className="flex justify-center gap-2 mt-4">
-          {screenshots.map((shot, i) => (
-            <button
-              key={shot.labelKey}
-              onClick={() => scrollTo(i)}
-              className={`dot-indicator h-2 rounded-full transition-all ${
-                activeIndex === i ? "bg-accent w-6" : "bg-white/20 w-2 hover:bg-white/40"
-              }`}
-              // The slide's own translated label reads better than a generic
-              // "Screenshot N" — screen-reader users hear what each dot
-              // jumps to, in their language.
-              aria-label={t(shot.labelKey)}
-            />
-          ))}
+        {/* Benefit caption for the active slide. Keyed so it re-mounts and
+            fades on each change. */}
+        <p key={activeCap} className="scrx-caption text-sm text-muted text-center max-w-md mx-auto px-6 min-h-[2.5rem]">
+          {t(activeCap)}
+        </p>
+
+        {/* Chrome: prev / counter / next */}
+        <div className="flex items-center justify-center gap-4 mt-6">
+          <button
+            type="button"
+            onClick={goPrev}
+            aria-label={t("screenshots.prev")}
+            className="scrx-arrow"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          <span className="scrx-counter font-mono text-sm tabular-nums select-none" aria-live="polite">
+            <span className="text-accent">{activeIndex + 1}</span>
+            <span className="text-muted"> / {COUNT}</span>
+          </span>
+
+          <button
+            type="button"
+            onClick={goNext}
+            aria-label={t("screenshots.next")}
+            className="scrx-arrow"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
