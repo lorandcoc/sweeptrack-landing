@@ -229,25 +229,28 @@ export default function PricingTable() {
                   <p className="text-muted text-xs sm:text-sm leading-relaxed">{t("pricing.founder_description")}</p>
                 </div>
               </div>
-              <a
-                href="#community"
-                onClick={scrollToHash}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-[#0A0A1A] text-sm font-semibold hover:bg-amber-300 transition-colors shrink-0 self-start sm:self-auto"
-              >
-                {t("pricing.founder_cta")}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M13 5l7 7-7 7"/>
-                </svg>
-              </a>
+              <div className="flex flex-col items-start sm:items-end gap-2.5 shrink-0 self-start sm:self-auto">
+                <div className="font-display font-bold text-2xl sm:text-3xl text-amber-200 leading-none">{t("pricing.founder_price")}</div>
+                <a
+                  href="#community"
+                  onClick={scrollToHash}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-[#0A0A1A] text-sm font-semibold hover:bg-amber-300 transition-colors"
+                >
+                  {t("pricing.founder_cta")}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
             </div>
 
             {/* Spots bar — static visual promise. The offer opens at launch, so all
-                1,000 spots are still available: the bar renders full, not as a fake
-                live counter. */}
+                1,000 spots are still available: a full bar means 1,000 left, not
+                sold out. Not a live counter. */}
             <div className="mt-5 pt-4 border-t border-amber-400/10">
               <div className="flex items-center justify-between gap-3 mb-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider">
                 <span className="text-amber-300/90">{t("pricing.founder_badge")}</span>
-                <span className="text-amber-200/80">1,000 / 1,000</span>
+                <span className="text-amber-200/80">{t("pricing.founder_spots_left")}</span>
               </div>
               <div className="prx-spots-track" aria-hidden="true">
                 <span className="prx-spots-fill" />

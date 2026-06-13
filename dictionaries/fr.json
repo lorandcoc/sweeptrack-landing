@@ -458,6 +458,8 @@
   "pricing.founder_sub": "Achat unique. Accès à vie. Badge Founder dans l'application.",
   "pricing.founder_description": "Disponible le jour du lancement de SweepTrack Pro sur Google Play. Limité aux 1 000 premiers clients. La liste de lancement reçoit le lien d'achat dès que l'offre est active.",
   "pricing.founder_cta": "Rejoindre la liste de lancement",
+  "pricing.founder_price": "$39.99",
+  "pricing.founder_spots_left": "1 000 places restantes",
   "faq.q11": "Le suivi GPS va-t-il vider ma batterie ?",
   "faq.a11": "Le suivi GPS actif consomme environ 10 à 15 % de batterie par heure, comparable à Google Maps en mode navigation. Une batterie externe couvre une session d'une journée entière. Sur Xiaomi, Samsung, OnePlus et autres appareils qui limitent agressivement les applications en arrière-plan, SweepTrack Pro détecte le fabricant et indique le réglage exact de batterie nécessaire pour maintenir le suivi en cours avec l'écran éteint.",
   "faq.q12": "Je débute en détection. Cela me conviendra-t-il ?",

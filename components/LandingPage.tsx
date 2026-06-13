@@ -84,6 +84,14 @@ const jsonLdGraph = [
         name: "Pro Monthly",
         description: "$3.49/month with 14-day free trial",
       },
+      {
+        "@type": "Offer",
+        price: "39.99",
+        priceCurrency: "USD",
+        name: "Founder's Lifetime",
+        description:
+          "One-time purchase, lifetime access. Limited to the first 1,000 customers. Available at launch on Google Play.",
+      },
     ],
     featureList: [
       "GPS tracking with 3 base map types (Street, Satellite, Terrain) plus USGS Historical Topographic overlay (Pro)",

@@ -458,6 +458,8 @@
   "pricing.founder_sub": "Einmalkauf. Lebenslanger Zugriff. Founder-Abzeichen in der App.",
   "pricing.founder_description": "Verfügbar am Tag des Starts von SweepTrack Pro auf Google Play. Begrenzt auf die ersten 1.000 Kunden. Die Launch-Liste erhält den Kauflink, sobald das Angebot live geht.",
   "pricing.founder_cta": "Auf die Launch-Liste eintragen",
+  "pricing.founder_price": "$39.99",
+  "pricing.founder_spots_left": "1.000 Plätze frei",
   "faq.q11": "Verbraucht GPS-Aufzeichnung viel Akku?",
   "faq.a11": "Aktive GPS-Aufzeichnung verbraucht etwa 10–15 % Akku pro Stunde, vergleichbar mit Google Maps im Navigationsmodus. Eine Powerbank reicht für eine ganztägige Suche. Auf Geräten von Xiaomi, Samsung, OnePlus und anderen, die Hintergrund-Apps stark einschränken, erkennt SweepTrack Pro den Hersteller und zeigt die genaue Akkueinstellung an, mit der die Aufzeichnung bei ausgeschaltetem Bildschirm weiterläuft.",
   "faq.q12": "Ich bin neu in der Sondensuche. Funktioniert das für mich?",

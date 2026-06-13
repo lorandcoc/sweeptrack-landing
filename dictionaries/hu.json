@@ -458,6 +458,8 @@
   "pricing.founder_sub": "Egyszeri vásárlás. Élethosszig tartó hozzáférés. Founder jelvény az alkalmazásban.",
   "pricing.founder_description": "Elérhető azon a napon, amikor a SweepTrack Pro elindul a Google Play-en. Az első 1000 vásárlóra korlátozva. A launch lista feliratkozói kapják meg a vásárlási linket az ajánlat élesítésekor.",
   "pricing.founder_cta": "Csatlakozás a launch listához",
+  "pricing.founder_price": "$39.99",
+  "pricing.founder_spots_left": "1000 hely maradt",
   "faq.q11": "Lemeríti a GPS-követés az akkumulátort?",
   "faq.a11": "Az aktív GPS-követés körülbelül 10–15% akkumulátort fogyaszt óránként, a Google Maps navigációs módjához hasonlóan. Egy power bank lefed egy egész napos menetet. Xiaomi, Samsung, OnePlus és más, háttéralkalmazásokat agresszíven korlátozó eszközökön a SweepTrack Pro felismeri a gyártót, és megmutatja a pontos akkubeállítást, amely a követést kikapcsolt képernyő mellett is fenntartja.",
   "faq.q12": "Új vagyok a fémkeresésben. Nekem is működni fog?",
