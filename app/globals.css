@@ -3263,3 +3263,271 @@ details:focus-visible > summary {
 @media (prefers-reduced-motion: reduce) {
   .accent-underline::after { transition: none; transform: scaleX(1); }
 }
+
+/* ════════════════════════════════════════════════════════════════════
+   Pro 2.0 spotlights — SpotlightFindsIntel (sfi-) · SpotlightMapOverlay (smo-)
+   Hot-zone scatter + own-map alignment demos.
+   transform / opacity only · reduced-motion → end state.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ───────────────────── SpotlightFindsIntel · sfi- ───────────────────── */
+.sfi-map {
+  position: relative;
+  height: 152px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 38% 50% at 72% 34%, rgba(255, 176, 0, 0.14), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px) 0 0 / 100% 25%,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px) 0 0 / 20% 100%,
+    linear-gradient(160deg, rgba(0, 221, 255, 0.05), rgba(5, 5, 16, 0.25));
+}
+@media (min-width: 768px) { .sfi-map { height: 172px; } }
+
+.sfi-find {
+  position: absolute;
+  width: 7px; height: 7px;
+  margin: -3.5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  transform: scale(0);
+}
+.sfi-find--gold {
+  width: 9px; height: 9px;
+  margin: -4.5px;
+  background: var(--st-amber);
+  box-shadow: 0 0 10px rgba(255, 176, 0, 0.7);
+}
+.sfi-on .sfi-find { animation: sfi-pop 0.5s var(--st-ease-out) both; }
+@keyframes sfi-pop {
+  from { opacity: 0; transform: scale(0); }
+  60%  { opacity: 1; transform: scale(1.25); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.sfi-hot {
+  position: absolute;
+  width: 90px; height: 90px;
+  margin: -45px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 176, 0, 0.7);
+  background: radial-gradient(circle, rgba(255, 176, 0, 0.16), transparent 65%);
+  opacity: 0;
+  transform: scale(0.4);
+}
+.sfi-on .sfi-hot {
+  animation:
+    sfi-hot-in 0.7s var(--st-ease-out) 0.95s both,
+    sfi-hot-pulse 2.4s var(--st-ease) 1.7s infinite;
+}
+@keyframes sfi-hot-in {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes sfi-hot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0); }
+  50%      { box-shadow: 0 0 0 7px rgba(255, 176, 0, 0.10); }
+}
+.sfi-hot__label {
+  position: absolute;
+  left: 50%; top: 100%;
+  transform: translate(-50%, 5px);
+  white-space: nowrap;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--st-amber);
+  background: rgba(5, 5, 16, 0.8);
+  border: 1px solid var(--st-amber-edge);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.sfi-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+.sfi-metric {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 10px 6px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px);
+}
+.sfi-on .sfi-metric { animation: sfi-rise 0.5s var(--st-ease-out) both; }
+@keyframes sfi-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+.sfi-metric__val {
+  display: block;
+  font-size: 17px;
+  line-height: 1.1;
+  color: var(--st-text);
+  letter-spacing: -0.01em;
+}
+.sfi-metric__label {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.sfi-value {
+  font-size: clamp(22px, 5vw, 28px);
+  color: var(--st-accent);
+  text-shadow: 0 0 18px rgba(0, 255, 106, 0.35);
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sfi-find { animation: none !important; opacity: 1; transform: scale(1); }
+  .sfi-hot { animation: none !important; opacity: 1; transform: scale(1); }
+  .sfi-metric { animation: none !important; opacity: 1; transform: none; }
+}
+
+/* ───────────────────── SpotlightMapOverlay · smo- ───────────────────── */
+.smo-stage {
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+@media (min-width: 768px) { .smo-stage { height: 224px; } }
+
+.smo-base {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 25% 20%, rgba(40, 90, 60, 0.55), transparent 60%),
+    radial-gradient(120% 90% at 80% 85%, rgba(30, 60, 90, 0.5), transparent 60%),
+    #0b1f1a;
+}
+.smo-base::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(90deg, transparent 49.5%, rgba(255, 255, 255, 0.06) 50%, transparent 50.5%),
+    linear-gradient(0deg, transparent 49.5%, rgba(255, 255, 255, 0.05) 50%, transparent 50.5%);
+  background-size: 60% 100%, 100% 55%;
+  background-repeat: no-repeat;
+}
+
+.smo-overlay {
+  position: absolute;
+  left: 18%; top: 15%;
+  width: 64%; height: 68%;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 200, 120, 0.55);
+  background:
+    repeating-linear-gradient(45deg, transparent 0 8px, rgba(150, 110, 50, 0.12) 8px 9px),
+    linear-gradient(160deg, rgba(214, 184, 130, 0.85), rgba(176, 140, 96, 0.78));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transform: translate(14px, -10px) rotate(-7deg) scale(1.12);
+  opacity: 0.92;
+}
+.smo-on .smo-overlay { animation: smo-align 2.2s var(--st-ease-out) 0.2s both; }
+@keyframes smo-align {
+  from { transform: translate(14px, -10px) rotate(-7deg) scale(1.12); opacity: 0.92; }
+  to   { transform: translate(0, 0) rotate(0) scale(1); opacity: 0.6; }
+}
+
+.smo-handle {
+  position: absolute;
+  width: 9px; height: 9px;
+  border-radius: 2px;
+  background: var(--st-accent);
+  box-shadow: 0 0 8px rgba(0, 255, 106, 0.7);
+  opacity: 0;
+}
+.smo-handle--tl { left: -4px; top: -4px; }
+.smo-handle--tr { right: -4px; top: -4px; }
+.smo-handle--bl { left: -4px; bottom: -4px; }
+.smo-handle--br { right: -4px; bottom: -4px; }
+.smo-on .smo-handle { animation: smo-handle-in 0.4s var(--st-ease-out) 2.2s both; }
+@keyframes smo-handle-in {
+  from { opacity: 0; transform: scale(0); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.smo-tag {
+  position: absolute;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.smo-tag--base {
+  left: 8px; bottom: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(5, 5, 16, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.smo-tag--your {
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  color: #2a1c08;
+  background: rgba(255, 210, 140, 0.92);
+  border: 1px solid rgba(150, 110, 50, 0.5);
+  opacity: 0;
+}
+.smo-on .smo-tag--your { animation: smo-fade 0.5s var(--st-ease-out) 1.8s both; }
+@keyframes smo-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.smo-caption {
+  position: absolute;
+  right: 8px; top: 8px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--st-accent);
+  background: rgba(5, 5, 16, 0.7);
+  border: 1px solid var(--st-accent-edge);
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+.smo-opacity__track {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.smo-opacity__fill {
+  height: 100%;
+  width: 65%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--st-accent-dim), var(--st-accent));
+  box-shadow: 0 0 10px rgba(0, 255, 106, 0.4);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.smo-on .smo-opacity__fill { animation: smo-bar 0.9s var(--st-ease-out) 1.2s both; }
+@keyframes smo-bar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smo-overlay { animation: none !important; transform: none; opacity: 0.6; }
+  .smo-handle { animation: none !important; opacity: 1; }
+  .smo-tag--your { animation: none !important; opacity: 1; }
+  .smo-opacity__fill { animation: none !important; transform: scaleX(1); }
+}

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import FieldLogTicker from "@/components/FieldLogTicker";
 import FeaturesAll from "@/components/FeaturesAll";
 import ForteSpotlights from "@/components/ForteSpotlights";
+import ProSpotlights from "@/components/ProSpotlights";
 import HowItWorks from "@/components/HowItWorks";
 import MapCompareSlider from "@/components/MapCompareSlider";
 import StatsBar from "@/components/StatsBar";
@@ -65,7 +66,7 @@ const jsonLdGraph = [
       "Metal Detector GPS App",
     ],
     description:
-      "Metal detecting GPS app with USGS historical topographic map overlay, offline maps (4 sources), track overlay, perimeter guard, Waypoints, Radar live group positioning, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 60+ detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
+      "Metal detecting GPS app with USGS historical topographic map overlay, custom import-your-own map overlays, Finds Intelligence dashboard, offline maps (4 sources), track overlay, perimeter guard, Waypoints, Radar live group positioning, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 60+ detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
     offers: [
       {
         "@type": "Offer",
@@ -75,7 +76,7 @@ const jsonLdGraph = [
         availability: "https://schema.org/PreOrder",
         priceValidUntil: "2027-12-31",
         description:
-          "Core GPS tracking, unlimited sessions, unlimited finds, 1 detector preset, 1 Permission Vault entry, 3 themes",
+          "Core GPS tracking, 10 sessions/month, basic find logging, 5 waypoints, 1 detector preset, 1 Permission Vault entry, 3 themes",
       },
       {
         "@type": "Offer",
@@ -117,12 +118,14 @@ const jsonLdGraph = [
       "NOAA tide table with 3, 7, or 14 day ranges from the nearest station",
       "Google Drive backup and restore of sessions, presets, and settings",
       "10 detector preset slots with JSON import/export and templates for 60+ detectors across 12 brands",
-      "Find logging with 6 types (Treasure, Gold, Coin, Relic, Jewelry, Trash), 0-40 cm depth, photo, video, and audio notes",
+      "Find logging: free basic record (type, name, notes, 1 photo); Pro full record with value, 0-40 cm depth, weight, signal/VDI, soil type, video, audio notes, and multiple photos",
+      "Finds Intelligence dashboard (Pro): finds-per-hour, best time of day, breakdowns by detector and site, total collection value over time, and a value-weighted hot-zone map of your most productive ground",
+      "Custom map overlays (Pro): import your own scanned map, parcel sketch, or aerial photo and align it on the live satellite map by drag, pinch, and rotate (1 free, unlimited with Pro)",
       "Quick pin drop for instant find marking",
       "Coverage heatmap overlay",
       "Session comparison: overlay (with blend slider) or split view, 2 to 5 sessions",
       "Elevation profile per session",
-      "Personal Waypoints: drop, name, categorize (11 categories), and navigate to saved map pins; export to GPX, KML, or CSV",
+      "Personal Waypoints: drop, name, categorize (11 categories), and navigate to saved map pins; export to GPX, KML, or CSV (5 free, unlimited with Pro)",
       "Radar live group positioning from a button on the home map: see your whole detecting group on one live map (join free, host with Pro) with shared waypoints, pings, base point, SOS, and a leave-before-dark countdown",
       "Coin caliper with built-in database of 130 coins across 9 regions",
       "Night vision red monochromatic override for dawn and dusk detecting",
@@ -216,6 +219,7 @@ export default function LandingPage() {
         <HowItWorks />
         <FounderNote />
         <ForteSpotlights />
+        <ProSpotlights />
         <StatsBar />
         <FeaturesAll />
         <Screenshots />

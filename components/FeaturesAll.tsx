@@ -21,14 +21,14 @@ const CATEGORIES: {
     id: "map",
     labelKey: "featuresall.cat_map",
     color: "#00FF6A",
-    keys: ["heatmap", "nightvision", "compass", "backtostart", "ruler"],
+    keys: ["mapoverlay", "heatmap", "nightvision", "compass", "backtostart", "ruler"],
   },
   {
     id: "finds",
     labelKey: "featuresall.cat_finds",
     color: "#FFB000",
     keys: [
-      "findlogger", "pindrop", "colorpins", "photogallery",
+      "findlogger", "findsintel", "pindrop", "colorpins", "photogallery",
       "editfinds", "findsearch", "signaldiary",
     ],
   },
@@ -69,10 +69,10 @@ const TOTAL_COUNT = CATEGORIES.reduce((n, c) => n + c.keys.length, 0);
 const COLOR_BY_KEY: Record<string, string> = {};
 for (const c of CATEGORIES) for (const k of c.keys) COLOR_BY_KEY[k] = c.color;
 
-/* Collapsed default — the ten strongest tiles, two per category */
+/* Collapsed default — the ten strongest tiles, leading with the two new Pro features */
 const TOP_PICKS = [
-  "findlogger", "forecast", "heatmap", "coincaliper", "careerstats",
-  "nightvision", "photogallery", "sessioncompare", "colorthemes", "detectorlib",
+  "findsintel", "mapoverlay", "findlogger", "forecast", "heatmap",
+  "coincaliper", "careerstats", "nightvision", "sessioncompare", "detectorlib",
 ];
 
 /* Tiles with a matching blog guide keep their link */

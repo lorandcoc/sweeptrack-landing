@@ -67,12 +67,15 @@ const groups: FeatureGroup[] = [
   {
     labelKey: "pricing.group_finds",
     rows: [
-      // Finds — all free (no isPremium check in MediaCapture or the gallery / search screens)
+      // Pro 2.0 split: free find logging is basic (type, name, notes, 1 photo).
+      // The rich record fields (depth, value, weight, signal/VDI, soil, audio,
+      // video, multi-photo) are Pro.
       { key: "findtypes", free: true, pro: true },
       { key: "pindrop", free: true, pro: true },
-      { key: "depth", free: true, pro: true },
-      { key: "photo", free: true, pro: true },
-      { key: "audio", free: true, pro: true },
+      { key: "photo", free: true, pro: true }, // 1 photo free; multi-photo is Pro
+      { key: "depth", free: false, pro: true },
+      { key: "audio", free: false, pro: true },
+      { key: "findsintel", free: false, pro: true }, // NEW · Finds Intelligence dashboard
       { key: "gallery", free: true, pro: true },
       { key: "findsearch", free: true, pro: true },
       { key: "editfinds", free: true, pro: true },
@@ -83,10 +86,12 @@ const groups: FeatureGroup[] = [
     rows: [
       // Forecast: free shows today + tomorrow (2 days); premium shows full 7-day.
       { key: "forecast", free: "string", freeKey: "pricing.feat_forecast_free", pro: "string", proKey: "pricing.feat_forecast_pro" },
-      { key: "tidetable", free: true, pro: true },
-      // Waypoints — personal saved map pins (11 categories); free for all users, no premium gate
-      // (MapFeaturesSheet.kt:310-313 "waypoints are a core map utility, no premium gate").
-      { key: "waypoints", free: true, pro: true },
+      // Tides are Pro in 2.0.
+      { key: "tidetable", free: false, pro: true },
+      // Waypoints — personal saved map pins (11 categories). 2.0 caps free at 5; Pro is unlimited.
+      { key: "waypoints", free: "string", freeKey: "pricing.feat_waypoints_free", pro: "string", proKey: "pricing.feat_waypoints_pro" },
+      // Map Overlays — import your own map/aerial and align it. NEW in 2.0: 1 free (teaser), unlimited Pro.
+      { key: "mapoverlay", free: "string", freeKey: "pricing.feat_mapoverlay_free", pro: "string", proKey: "pricing.feat_mapoverlay_pro" },
       { key: "coincaliper", free: true, pro: true },
       { key: "detectorlib", free: true, pro: true },
       { key: "locationsearch", free: true, pro: true },
@@ -103,7 +108,8 @@ const groups: FeatureGroup[] = [
       { key: "sessionmerge", free: true, pro: true },
       { key: "batchactions", free: true, pro: true },
       { key: "elevation", free: true, pro: true },
-      { key: "advancedstats", free: true, pro: true },
+      // Basic lifetime totals stay free; advanced stats (trends, deltas, top sites, insights) are Pro.
+      { key: "advancedstats", free: false, pro: true },
       { key: "summaryscore", free: true, pro: true },
       { key: "sharecard", free: true, pro: true },
       { key: "weathersnapshot", free: true, pro: true },
@@ -140,17 +146,19 @@ const groups: FeatureGroup[] = [
   },
 ];
 
-/* Collapsed view — the ~10 rows that carry the most emotional weight for a detectorist. */
+/* Collapsed view — the ~10 rows that carry the most emotional weight for a
+ * detectorist. Leads with the Pro 2.0 free/Pro split (sessions, finds) and the
+ * two new Pro features, then the strongest paid pulls. */
 const highlightKeys = [
+  "sessions",
+  "finds",
+  "findsintel",
+  "mapoverlay",
   "historicalmap",
   "perimeter",
-  "vault",
   "forecast",
-  "offline",
-  "livegroup_host",
-  "coincaliper",
+  "tidetable",
   "export",
-  "themes",
   "cloudbackup",
 ];
 
