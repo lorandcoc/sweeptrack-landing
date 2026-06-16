@@ -92,7 +92,6 @@ const groups: FeatureGroup[] = [
       { key: "waypoints", free: "string", freeKey: "pricing.feat_waypoints_free", pro: "string", proKey: "pricing.feat_waypoints_pro" },
       // Map Overlays — import your own map/aerial and align it. NEW in 2.0: 1 free (teaser), unlimited Pro.
       { key: "mapoverlay", free: "string", freeKey: "pricing.feat_mapoverlay_free", pro: "string", proKey: "pricing.feat_mapoverlay_pro" },
-      { key: "coincaliper", free: true, pro: true },
       { key: "detectorlib", free: true, pro: true },
       { key: "locationsearch", free: true, pro: true },
     ],

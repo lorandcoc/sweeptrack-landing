@@ -78,6 +78,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/blog/using-coin-caliper",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
         source: "/blog/permission-request-thank-you-letters",
         destination: "/blog/metal-detecting-permission-letter-template",
         permanent: true,

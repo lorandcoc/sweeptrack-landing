@@ -38,7 +38,7 @@ const CATEGORIES: {
     color: "#00DDFF",
     keys: [
       "forecast", "verdict", "moon", "tidetable", "waypoints",
-      "locationsearch", "coincaliper", "permissionletter",
+      "locationsearch", "permissionletter",
       "calendarreminder", "permitreminders",
     ],
   },
@@ -72,7 +72,7 @@ for (const c of CATEGORIES) for (const k of c.keys) COLOR_BY_KEY[k] = c.color;
 /* Collapsed default — the ten strongest tiles, leading with the two new Pro features */
 const TOP_PICKS = [
   "findsintel", "mapoverlay", "findlogger", "forecast", "heatmap",
-  "coincaliper", "careerstats", "nightvision", "sessioncompare", "detectorlib",
+  "careerstats", "nightvision", "sessioncompare", "detectorlib",
 ];
 
 /* Tiles with a matching blog guide keep their link */
@@ -86,7 +86,6 @@ const GUIDES: Record<string, string> = {
   nightvision: "/blog/night-vision-mode",
   forecast: "/blog/detecting-forecast-guide",
   tidetable: "/blog/beach-metal-detecting-tide-timing",
-  coincaliper: "/blog/using-coin-caliper",
   heatmap: "/blog/how-to-track-metal-detecting-sessions-gps",
   careerstats: "/blog/understanding-session-statistics",
   permissionletter: "/blog/metal-detecting-permission-letter-template",

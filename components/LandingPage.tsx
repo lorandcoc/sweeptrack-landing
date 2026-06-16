@@ -127,7 +127,6 @@ const jsonLdGraph = [
       "Elevation profile per session",
       "Personal Waypoints: drop, name, categorize (11 categories), and navigate to saved map pins; export to GPX, KML, or CSV (5 free, unlimited with Pro)",
       "Radar live group positioning from a button on the home map: see your whole detecting group on one live map (join free, host with Pro) with shared waypoints, pings, base point, SOS, and a leave-before-dark countdown",
-      "Coin caliper with built-in database of 130 coins across 9 regions",
       "Night vision red monochromatic override for dawn and dusk detecting",
       "On-screen compass with return-bearing arrow and 10 cm / 4 in calibrated ruler",
       "Export sessions as GPX, KML, CSV, or SweepTrack JSON",

@@ -53,7 +53,6 @@ export const POSTS: readonly PostMeta[] = [
   { slug: "cloud-backup-google-drive", title: "Cloud Backup: Never Lose Your Detecting Data", publishedDate: "2026-02-07", category: "tutorials" },
   { slug: "night-vision-mode", title: "Night Vision Mode for Dawn and Dusk Detecting", publishedDate: "2026-03-21", category: "tutorials" },
   { slug: "logging-finds-photo-video-audio", title: "Logging Finds with Photos, Videos, and Audio Notes", publishedDate: "2026-03-03", category: "tutorials" },
-  { slug: "using-coin-caliper", title: "Using the Coin Caliper to Identify Dirty or Worn Coins", publishedDate: "2026-04-05", category: "tutorials" },
   { slug: "comparing-sessions-overlay-split", title: "Comparing Sessions: Overlay and Split View", publishedDate: "2026-02-10", category: "tutorials" },
   { slug: "exporting-sessions-gpx-kml-csv", title: "Exporting Sessions as GPX, KML, or CSV", publishedDate: "2026-02-19", category: "tutorials" },
   { slug: "understanding-session-statistics", title: "Understanding Your Session Statistics", publishedDate: "2026-04-02", category: "tutorials" },
