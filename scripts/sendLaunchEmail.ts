@@ -9,6 +9,9 @@
  *   # one test send to yourself
  *   npx tsx scripts/sendLaunchEmail.ts --test lorand.83@gmail.com --link "https://play.google.com/apps/internaltest/XXXX"
  *
+ *   # send to specific addresses, comma-separated (needs a verified-domain sender)
+ *   npx tsx scripts/sendLaunchEmail.ts --emails "a@x.com,b@y.com" --link "https://play.google.com/apps/internaltest/XXXX"
+ *
  *   # real batch send to a list (one email per line in recipients.txt)
  *   npx tsx scripts/sendLaunchEmail.ts --file recipients.txt --link "https://play.google.com/apps/internaltest/XXXX"
  *
@@ -46,16 +49,17 @@ function arg(name: string): string | undefined {
 }
 
 const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,24}$/;
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SweepTrack Pro <onboarding@resend.dev>";
 const UNSUB = "support@sweeptrack.pro";
-
-// Resend's shared sandbox sender (onboarding@resend.dev) can only deliver to the
-// account owner's own address. A real broadcast needs a verified domain sender
-// set via RESEND_FROM_EMAIL — guard against silently failing the batch.
-const usingSandbox = FROM_EMAIL.includes("onboarding@resend.dev");
 
 async function main() {
   loadEnvLocal();
+
+  // Resolve the sender AFTER loadEnvLocal() so a RESEND_FROM_EMAIL that lives only
+  // in .env.local is honored (not just one exported in the shell). The shared sandbox
+  // sender (onboarding@resend.dev) only delivers to the account owner's own address;
+  // a real send needs a verified-domain sender via RESEND_FROM_EMAIL, so we guard on it.
+  const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SweepTrack Pro <onboarding@resend.dev>";
+  const usingSandbox = FROM_EMAIL.includes("onboarding@resend.dev");
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
@@ -71,8 +75,9 @@ async function main() {
 
   const testTo = arg("test");
   const file = arg("file");
-  if (!testTo && !file) {
-    console.error("✗ Provide either --test <email> or --file <path-to-list>.");
+  const emails = arg("emails");
+  if (!testTo && !file && !emails) {
+    console.error("✗ Provide --test <email>, --emails <a@x.com,b@y.com>, or --file <path-to-list>.");
     process.exit(1);
   }
 
@@ -80,6 +85,11 @@ async function main() {
   let recipients: string[];
   if (testTo) {
     recipients = [testTo.trim().toLowerCase()];
+  } else if (emails) {
+    recipients = emails
+      .split(",")
+      .map((e) => e.trim().toLowerCase())
+      .filter((e) => e.length > 0);
   } else {
     recipients = readFileSync(file!, "utf8")
       .split(/\r?\n/)
