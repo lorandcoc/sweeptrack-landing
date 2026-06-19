@@ -119,7 +119,7 @@ const groups: FeatureGroup[] = [
     labelKey: "pricing.group_safety",
     rows: [
       { key: "cloudbackup", free: false, pro: true },
-      // Export — JSON is free (the only reimportable format); GPX/KML/CSV are premium.
+      // Export — Pro 2.0 re-tier: all formats (JSON/GPX/KML/CSV) are Pro; free tier has no export.
       { key: "export", free: "string", freeKey: "pricing.feat_export_free", pro: "string", proKey: "pricing.feat_export_pro" },
       // Permissions — calendar reminder works on any vault entry (free), PDF letter is premium.
       { key: "permitreminder", free: true, pro: true },
