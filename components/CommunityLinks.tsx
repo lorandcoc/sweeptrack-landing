@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import { useReveal } from "./useReveal";
 import { useI18n } from "@/lib/i18n";
-import { joinWaitlist } from "@/lib/waitlist";
 
 // Brand icons (lucide doesn't include social/brand icons)
 const FacebookIcon = () => (
@@ -30,45 +28,6 @@ export default function CommunityLinks() {
   const { t } = useI18n();
   const { ref, visible } = useReveal();
 
-  // Waitlist form state — reuses the shared joinWaitlist wiring + honeypot,
-  // exactly like ComingSoonButton / the old NewsletterForm.
-  const [email, setEmail] = useState("");
-  const [honeypot, setHoneypot] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "duplicate" | "error">("idle");
-
-  // Glow the input when the user arrives via #community.
-  const [glow, setGlow] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const glowTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const triggerGlow = () => {
-      if (window.location.hash !== "#community") return;
-      setGlow(true);
-      // Drop the caret in the field so keyboard arrivals can type immediately.
-      inputRef.current?.focus({ preventScroll: true });
-      if (glowTimer.current) clearTimeout(glowTimer.current);
-      glowTimer.current = setTimeout(() => setGlow(false), 2000);
-    };
-    triggerGlow();
-    window.addEventListener("hashchange", triggerGlow);
-    return () => {
-      window.removeEventListener("hashchange", triggerGlow);
-      if (glowTimer.current) clearTimeout(glowTimer.current);
-    };
-  }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || status === "sending") return;
-    setStatus("sending");
-    const result = await joinWaitlist(email, honeypot);
-    setStatus(result === "invalid" ? "error" : result);
-    if (result === "ok") setHoneypot("");
-  };
-
-  const done = status === "ok" || status === "duplicate";
-
   return (
     <section id="community" className="py-20 md:py-28 relative">
       <div className="absolute inset-0 bg-gradient-to-t from-surface via-background to-background" aria-hidden="true" />
@@ -84,57 +43,8 @@ export default function CommunityLinks() {
           </p>
         </div>
 
-        {/* Waitlist form — front and center */}
-        <div className="max-w-xl mx-auto">
-          {done ? (
-            <div className="ctx-form-done inline-flex w-full items-center justify-center gap-2 h-14 rounded-2xl bg-accent/15 border border-accent/30 text-accent font-semibold">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              {status === "ok" ? t("comingsoon.success") : t("comingsoon.duplicate")}
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-              <input
-                ref={inputRef}
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t("comingsoon.placeholder")}
-                disabled={status === "sending"}
-                className={`ctx-form-input h-14 flex-1 px-5 rounded-2xl bg-black/30 border border-white/10 text-base text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/40 transition-colors disabled:opacity-50 ${glow ? "ctx-form-input--glow" : ""}`}
-              />
-              {/* Honeypot: off-screen, tabIndex=-1, aria-hidden. Real users can't
-                  reach it; bots filling every visible field hit it. */}
-              <input
-                type="text"
-                name="website"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
-                style={{ position: "absolute", left: "-9999px", top: "-9999px", width: 1, height: 1, opacity: 0 }}
-              />
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="h-14 px-7 rounded-2xl bg-accent text-[#050510] text-base font-semibold hover:bg-accent-dim transition-all hover:scale-[1.02] active:scale-[0.98] shrink-0 disabled:opacity-50"
-              >
-                {status === "sending" ? t("comingsoon.joining") : status === "error" ? t("comingsoon.error") : t("comingsoon.join")}
-              </button>
-            </form>
-          )}
-          {!done && (
-            <p className="text-[11px] text-muted/60 text-center mt-3">
-              {t("comingsoon.privacy_note")}
-            </p>
-          )}
-        </div>
-
-        {/* Demoted socials — compact icon row */}
-        <div className="mt-14 text-center">
+        {/* Social channels */}
+        <div className="text-center">
           <p className="text-muted/70 text-[11px] font-mono uppercase tracking-[0.2em] mb-4">
             {t("community.socials_heading")}
           </p>

@@ -57,7 +57,7 @@ export default function InternalTestingPage() {
           </p>
 
           <p className="text-muted text-base md:text-lg mb-10 leading-relaxed [text-wrap:pretty]">
-            v1.0.1 is live: GPS tracking, four offline tile sources, USGS historical overlays, Permission Vault with PDF authorization letters, Google Drive backup, Arsenal of 55 detector models, Detecting Forecast, Perimeter Guard, 12-theme tactical interface. Some edges are still rough. That&apos;s the point.
+            GPS tracking, four offline tile sources, USGS historical overlays, Permission Vault with PDF authorization letters, Google Drive backup, Arsenal of 60+ detector models, Detecting Forecast, Perimeter Guard, 9-theme tactical interface. Some edges are still rough. That&apos;s the point.
           </p>
 
           <a

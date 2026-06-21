@@ -86,7 +86,7 @@ export default function Footer() {
               <a href="/#community" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.community")}</a>
               <a href="/blog" className="hover:text-foreground transition-colors">{t("footer.guides")}</a>
               <a
-                href="/#community"
+                href="/#pricing"
                 onClick={scrollToHash}
                 className="mt-1 text-amber-300/80 hover:text-amber-300 transition-colors"
               >

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle";
+import { PLAY_URL } from "./GooglePlayButton";
 
 /**
  * Smooth-scroll to the hash target without modifying window.location.hash.
@@ -116,11 +117,12 @@ export default function Header() {
           ))}
           <LanguageToggle />
           <a
-            href="#community"
-            onClick={scrollToHash}
+            href={PLAY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#050510] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
-            {t("comingsoon.button")}
+            {t("cta.google_play")}
           </a>
         </nav>
 
@@ -167,14 +169,13 @@ export default function Header() {
             <LanguageToggle />
           </div>
           <a
-            href="#community"
+            href={PLAY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#050510] text-center hover:bg-accent-dim transition-colors"
-            onClick={(e) => {
-              setMenuOpen(false);
-              scrollToHash(e);
-            }}
+            onClick={() => setMenuOpen(false)}
           >
-            {t("comingsoon.button")}
+            {t("cta.google_play")}
           </a>
         </nav>
       </div>

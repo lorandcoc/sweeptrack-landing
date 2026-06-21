@@ -2,18 +2,8 @@
 
 import { useState } from "react";
 import { useReveal } from "./useReveal";
-import ComingSoonButton from "./ComingSoonButton";
+import GooglePlayButton, { PLAY_URL } from "./GooglePlayButton";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
-
-function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
-  const href = e.currentTarget.getAttribute("href") || "";
-  const id = href.replace(/^[/#]+/, "");
-  if (!id) return;
-  const target = document.getElementById(id);
-  if (!target) return;
-  e.preventDefault();
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
 
 type FeatureRow = {
   key: string;
@@ -239,8 +229,9 @@ export default function PricingTable() {
               <div className="flex flex-col items-start sm:items-end gap-2.5 shrink-0 self-start sm:self-auto">
                 <div className="font-display font-bold text-2xl sm:text-3xl text-amber-200 leading-none">{t("pricing.founder_price")}</div>
                 <a
-                  href="#community"
-                  onClick={scrollToHash}
+                  href={PLAY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-[#0A0A1A] text-sm font-semibold hover:bg-amber-300 transition-colors"
                 >
                   {t("pricing.founder_cta")}
@@ -346,7 +337,7 @@ export default function PricingTable() {
         </div>
 
         <div className="flex justify-center mt-8">
-          <ComingSoonButton />
+          <GooglePlayButton />
         </div>
       </div>
     </section>

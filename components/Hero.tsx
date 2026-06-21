@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import ParallaxPhone from "./ParallaxPhone";
 import HeroTrackDemo from "./HeroTrackDemo";
-import ComingSoonButton from "./ComingSoonButton";
+import GooglePlayButton from "./GooglePlayButton";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 // Smooth-scroll without writing to window.location.hash so the back button
@@ -88,7 +88,7 @@ export default function Hero() {
             </p>
 
             <div className="hero-enter flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8" style={{ animationDelay: "0.55s" }}>
-              <ComingSoonButton />
+              <GooglePlayButton />
               <a
                 href="#features"
                 onClick={scrollToHash}
@@ -101,7 +101,7 @@ export default function Hero() {
               </a>
             </div>
             <div className="hero-enter mt-5 flex justify-center md:justify-start" style={{ animationDelay: "0.6s" }}>
-              <a href="#community" onClick={scrollToHash} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-amber-500/12 border border-amber-400/55 text-amber-200 text-sm font-medium hover:bg-amber-500/18 hover:border-amber-400/70 transition-colors">
+              <a href="#pricing" onClick={scrollToHash} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-amber-500/12 border border-amber-400/55 text-amber-200 text-sm font-medium hover:bg-amber-500/18 hover:border-amber-400/70 transition-colors">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" /></svg>
                 {t("hero.pill_founder")}
               </a>

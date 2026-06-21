@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "./useReveal";
 import { useI18n } from "@/lib/i18n";
+import { PLAY_URL } from "./GooglePlayButton";
 
 export default function FounderNote() {
   const { ref: revealRef, visible } = useReveal();
@@ -76,8 +77,8 @@ export default function FounderNote() {
                 className="founder-term__quote transition-opacity duration-700"
                 style={{ opacity: typed.length >= quote.length ? 1 : 0 }}
               >
-                <a href="#community" className="hover:text-accent transition-colors">
-                  {t("foundernote.cta")} ↓
+                <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  {t("foundernote.cta")} →
                 </a>
               </p>
               <div className="founder-term__attr">

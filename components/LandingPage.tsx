@@ -73,7 +73,7 @@ const jsonLdGraph = [
         price: "0",
         priceCurrency: "USD",
         name: "Free",
-        availability: "https://schema.org/PreOrder",
+        availability: "https://schema.org/InStock",
         priceValidUntil: "2027-12-31",
         description:
           "Core GPS tracking, 10 sessions/month, basic find logging, 5 waypoints, 1 detector preset, 1 Permission Vault entry, 3 themes",
@@ -83,7 +83,7 @@ const jsonLdGraph = [
         price: "19.99",
         priceCurrency: "USD",
         name: "Pro Annual",
-        availability: "https://schema.org/PreOrder",
+        availability: "https://schema.org/InStock",
         description: "Everything unlimited. $19.99/year (save 52% vs monthly). 14-day free trial.",
         priceValidUntil: "2027-12-31",
       },
@@ -92,7 +92,7 @@ const jsonLdGraph = [
         price: "3.49",
         priceCurrency: "USD",
         name: "Pro Monthly",
-        availability: "https://schema.org/PreOrder",
+        availability: "https://schema.org/InStock",
         priceValidUntil: "2027-12-31",
         description: "$3.49/month with 14-day free trial",
       },
@@ -101,10 +101,10 @@ const jsonLdGraph = [
         price: "39.99",
         priceCurrency: "USD",
         name: "Founder's Lifetime",
-        availability: "https://schema.org/PreOrder",
+        availability: "https://schema.org/InStock",
         priceValidUntil: "2027-12-31",
         description:
-          "One-time purchase, lifetime access. Limited to the first 1,000 customers. Available at launch on Google Play.",
+          "One-time purchase, lifetime access. Limited to the first 1,000 customers. Available now on Google Play.",
       },
     ],
     featureList: [
@@ -135,6 +135,7 @@ const jsonLdGraph = [
       "Ad-free: no ads, no analytics, no tracking",
     ],
     url: "https://sweeptrack.pro",
+    downloadUrl: "https://play.google.com/store/apps/details?id=com.sweeptrack.native",
     image: "https://sweeptrack.pro/icon-512.png",
     screenshot: [
       "https://sweeptrack.pro/screenshots/home.jpg",

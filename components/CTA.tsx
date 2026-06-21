@@ -2,7 +2,7 @@
 
 import { useReveal } from "./useReveal";
 import { useI18n } from "@/lib/i18n";
-import ComingSoonButton from "./ComingSoonButton";
+import GooglePlayButton from "./GooglePlayButton";
 import CoinEasterEgg from "./CoinEasterEgg";
 
 export default function CTA() {
@@ -42,7 +42,7 @@ export default function CTA() {
             </div>
 
             <div className="flex justify-center mb-10">
-              <ComingSoonButton size="large" />
+              <GooglePlayButton size="large" />
             </div>
 
             <p className="ctx-closing font-display text-lg md:text-xl max-w-xl mx-auto">
