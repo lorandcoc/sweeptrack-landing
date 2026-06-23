@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import BlogPostFrame from "@/components/BlogPostFrame";
 
@@ -81,7 +82,7 @@ export default function Post() {
             Once you have a few permissions, keeping track of them becomes important. You need to know which sites are approved, which are expiring, and where the boundaries are. Some detectorists use spreadsheets. Others use sticky notes. Neither is great when you&apos;re standing in a field.
           </p>
           <p>
-            A dedicated permission tracker that stores site names, landowner details, expiry dates, boundary maps, and generates PDF letters when you need them is the practical solution.
+            SweepTrack Pro&apos;s <Link href="/blog/using-the-permission-vault" className="text-accent hover:underline">Permission Vault</Link> is built for exactly this. It stores site names, landowner details, and expiry dates with reminders, draws each property boundary on a map that feeds Perimeter Guard, and generates two PDFs on demand: a Request letter to ask, and a Thank You letter to send after a good visit.
           </p>
       </BlogPostFrame>
     </>

@@ -29,10 +29,10 @@ export default function Post() {
           <p>Ever returned to a field and had no idea which parts you already covered? You end up detecting the same strip twice while missing a corner entirely. Track Overlay fixes this by layering your past sessions directly onto the live map.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Loading Past Sessions</h2>
-          <p>Open the Map Features sheet and find the Overlay Paths dialog. It shows a list of your recent sessions. Tap any session to add its path to the live map. The track draws as a coloured line showing exactly where you walked.</p>
+          <p>Open the Map Features sheet and find the Overlay Paths dialog. It shows a list of your recent sessions. Tap any session to add its path to the live map. The track draws as a coloured line showing exactly where you walked. Loading past tracks onto the live map this way is a Pro feature.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Color-Coded Tracks</h2>
-          <p>Each overlay gets a color from a fixed palette of six — Neon Green, Pink, Slate Blue, Orange, Gold, and White. With each new overlay added, the color cycles through the palette so neighboring tracks always stand out from each other.</p>
+          <p>Each overlay takes the next color from a palette of ten, including blue, orange, purple, yellow, teal, red, and green. Every new overlay you add steps to the next color, so neighboring tracks always stand out from each other, and you can load up to seven at once.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Remove Tracks Individually</h2>
           <p>Loaded tracks appear in the overlay dialog with a remove action. Pull them off the map one by one, or clear all overlays at once. Your current session path stays untouched regardless.</p>

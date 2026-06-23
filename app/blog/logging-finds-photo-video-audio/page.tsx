@@ -3,7 +3,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "logging-finds-photo-video-audio";
 const TITLE = "Logging Finds with Photos, Videos, and Audio Notes";
-const DESCRIPTION = "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, videos, and audio recordings. Six find categories in SweepTrack Pro.";
+const DESCRIPTION = "Log metal detecting finds with GPS location, type, depth, value, weight, notes, photos, videos, and audio in SweepTrack Pro, with a one-tap Quick Drop to classify later.";
 const IMAGE = "/screenshots/stats.jpg";
 const PUBLISHED = "2026-03-03";
 
@@ -40,7 +40,7 @@ export default function Post() {
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Quick Pin Drop</h2>
-          <p>For a fast log, tap the find button while tracking. It drops a pin at your current GPS position with a timestamp. You can fill in the details later, but the location is captured immediately. This is perfect mid-session when you don&apos;t want to stop swinging.</p>
+          <p>For a fast log, tap the find button while tracking. It drops a pin at your current GPS position with a timestamp. You can fill in the details later, but the location is captured immediately. This is perfect mid-session when you don&apos;t want to stop swinging. The find is filed as Unsorted until you set its type, so the quick drop never breaks your rhythm.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Full Logging</h2>
           <p>When you have a moment, open the find and add the details:</p>
@@ -51,6 +51,7 @@ export default function Post() {
             <li><strong>Weight</strong> — in grams, useful for jewelry and gold</li>
             <li><strong>Notes</strong> — free text for context like detector settings, signal behaviour, soil</li>
           </ul>
+          <p>On the free plan, a find keeps its type, name, notes, and one photo. The depth, value, and weight fields, plus extra photos, video, and audio notes, are part of Pro.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Attaching Photo, Video, and Audio</h2>
           <p>Each find can have a photo, a short video clip, and an audio note attached to it:</p>

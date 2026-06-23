@@ -3,7 +3,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "metal-detecting-laws-in-the-us";
 const TITLE = "Metal Detecting Laws in the US";
-const DESCRIPTION = "There";
+const DESCRIPTION = "Metal detecting laws in the US explained: ARPA on federal land, national parks, BLM, state and city parks, beaches, and private land with permission.";
 const IMAGE = "/screenshots/permission_vault.jpg";
 const PUBLISHED = "2026-03-15";
 
@@ -51,7 +51,7 @@ export default function Post() {
           <p>Public ocean beaches are generally the most detecting-friendly public land in the US. Most coastal communities allow detecting on public beaches, though some have restrictions on digging tools or hours. Freshwater beaches and lakeshores may have different rules. Always check local ordinances.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Private Land</h2>
-          <p>Private land with the landowner&apos;s explicit permission is always the safest and most productive place to detect. There are no federal restrictions on detecting on private land (assuming the land doesn&apos;t contain registered archaeological sites). Get permission in writing, agree on how finds will be handled, and you&apos;re good to go.</p>
+          <p>Private land with the landowner&apos;s explicit permission is always the safest and most productive place to detect. There are no federal restrictions on detecting on private land (assuming the land doesn&apos;t contain registered archaeological sites). Get permission in writing, agree on how finds will be handled, and you&apos;re good to go. SweepTrack Pro&apos;s Permission Vault stores that written permission and generates a PDF letter you can carry as proof in the field.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">State-by-State Variation</h2>
           <p>Beyond federal law, individual states have their own archaeological protection statutes. Some states are quite permissive (Texas has no state-level ban). Others have strict heritage protection laws (Virginia enforces the Virginia Antiquities Act on state land). Always research the specific state&apos;s rules before detecting there.</p>

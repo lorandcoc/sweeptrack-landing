@@ -3,7 +3,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "best-places-to-metal-detect-in-ohio";
 const TITLE = "Best Places to Metal Detect in Ohio";
-const DESCRIPTION = "Ohio";
+const DESCRIPTION = "Where to metal detect in Ohio: Civil War camps, canal towpaths, old farmsteads, Lake Erie beaches, county fairgrounds, and schoolhouse sites, plus Ohio's detecting laws.";
 const IMAGE = "/screenshots/nearby.jpg";
 const PUBLISHED = "2026-01-26";
 

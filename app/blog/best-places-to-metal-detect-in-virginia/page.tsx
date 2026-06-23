@@ -3,7 +3,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "best-places-to-metal-detect-in-virginia";
 const TITLE = "Best Places to Metal Detect in Virginia";
-const DESCRIPTION = "Virginia";
+const DESCRIPTION = "Where to metal detect in Virginia: colonial homesteads, river fords, tavern sites, and beaches, plus the strict ARPA and state antiquities rules to know first.";
 const IMAGE = "/screenshots/nearby.jpg";
 const PUBLISHED = "2026-02-01";
 

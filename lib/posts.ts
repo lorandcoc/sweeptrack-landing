@@ -33,6 +33,7 @@ export const POSTS: readonly PostMeta[] = [
   { slug: "how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps to Find Better Metal Detecting Spots", publishedDate: "2026-02-28", category: "guides" },
   { slug: "metal-detecting-permission-letter-template", title: "Metal Detecting Permission Letter: Free Template + What to Include", publishedDate: "2026-03-18", category: "guides" },
   { slug: "how-to-track-metal-detecting-sessions-gps", title: "How to Track Your Metal Detecting Sessions with GPS", publishedDate: "2026-02-25", category: "guides" },
+  { slug: "detecting-as-a-group-with-radar", title: "Detecting as a Group: Live Positions with Radar", publishedDate: "2026-06-24", category: "guides" },
 
   // Beginners
   { slug: "metal-detecting-for-beginners", title: "Metal Detecting for Beginners: What You Need to Know", publishedDate: "2026-03-06", category: "beginners" },
@@ -57,6 +58,12 @@ export const POSTS: readonly PostMeta[] = [
   { slug: "exporting-sessions-gpx-kml-csv", title: "Exporting Sessions as GPX, KML, or CSV", publishedDate: "2026-02-19", category: "tutorials" },
   { slug: "understanding-session-statistics", title: "Understanding Your Session Statistics", publishedDate: "2026-04-02", category: "tutorials" },
   { slug: "share-card", title: "Share Card: A Vertical Summary of Your Session", publishedDate: "2026-03-30", category: "tutorials" },
+  { slug: "import-and-georeference-your-own-maps", title: "Import and Align Your Own Maps Over Satellite", publishedDate: "2026-06-24", category: "tutorials" },
+  { slug: "finds-intelligence-dashboard", title: "Finds Intelligence: See What Your Data Is Telling You", publishedDate: "2026-06-24", category: "tutorials" },
+  { slug: "using-the-tide-table", title: "Using the Tide Table to Time Beach Sessions", publishedDate: "2026-06-24", category: "tutorials" },
+  { slug: "marking-sites-with-waypoints", title: "Marking Sites with Waypoints You Can Navigate Back To", publishedDate: "2026-06-24", category: "tutorials" },
+  { slug: "reading-session-elevation-profiles", title: "Reading the Elevation Profile of a Session", publishedDate: "2026-06-24", category: "tutorials" },
+  { slug: "browsing-your-finds-photo-gallery", title: "Browsing Every Find Photo in One Gallery", publishedDate: "2026-06-24", category: "tutorials" },
 
   // Location / Laws
   { slug: "best-places-to-metal-detect-in-texas", title: "Best Places to Metal Detect in Texas", publishedDate: "2026-01-29", category: "location" },

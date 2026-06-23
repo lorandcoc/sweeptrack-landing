@@ -3,7 +3,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "best-places-to-metal-detect-in-california";
 const TITLE = "Best Places to Metal Detect in California";
-const DESCRIPTION = "California";
+const DESCRIPTION = "Where to metal detect in California: Gold Rush sites and mining towns, 800 miles of beaches, river beds, and desert ghost towns, plus the state's detecting laws.";
 const IMAGE = "/screenshots/nearby.jpg";
 const PUBLISHED = "2026-01-20";
 

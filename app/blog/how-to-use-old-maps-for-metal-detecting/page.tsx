@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import BlogPostFrame from "@/components/BlogPostFrame";
 
@@ -53,6 +54,9 @@ export default function Post() {
           </p>
           <p>
             In SweepTrack Pro, the USGS Historical Map Overlay does this automatically. You can adjust the opacity slider to blend between old and new, spot features that no longer exist, and then detect right on the coordinate.
+          </p>
+          <p>
+            USGS does not cover everything. If you have a county plat, an estate map, or an old aerial photo that is not in the federal set, you can <Link href="/blog/import-and-georeference-your-own-maps" className="text-accent hover:underline">import it and align it over the satellite map yourself</Link>, by hand or with control points, and detect from your own source.
           </p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Tips for Using Old Maps Effectively</h2>

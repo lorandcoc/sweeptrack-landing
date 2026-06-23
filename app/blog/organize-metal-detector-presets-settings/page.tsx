@@ -30,6 +30,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">Why Presets Matter</h2>
           <p>Instead of fiddling with your detector for 10 minutes every time you change sites, save your settings as named presets. When you arrive at a new field, load the right preset and start swinging in seconds.</p>
+          <p>SweepTrack Pro also ships with a library of over 60 detector models across 12 brands, each with manufacturer factory ranges to start from. The free plan keeps one saved preset, and Pro removes the cap so you can build a set for every site and machine you run.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">How to Name Your Presets</h2>
           <p>Name them by what they&apos;re for, not what they do technically:</p>

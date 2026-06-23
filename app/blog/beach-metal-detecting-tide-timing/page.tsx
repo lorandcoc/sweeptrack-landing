@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { blogMeta, articleJsonLd } from "@/lib/blog-meta";
 import BlogPostFrame from "@/components/BlogPostFrame";
 
@@ -41,6 +42,7 @@ export default function Post() {
 
           <h2 className="text-xl font-semibold text-accent mt-8">How to Read a Tide Chart</h2>
           <p>A tide chart shows you the predicted water level for each hour of the day. You want to arrive 1-2 hours before the lowest predicted tide. This gives you maximum time on the exposed wet sand before the water comes back.</p>
+          <p>You do not need a separate tide app for this. SweepTrack Pro&apos;s <Link href="/blog/using-the-tide-table" className="text-accent hover:underline">built-in Tide Table</Link> pulls highs and lows from the nearest NOAA station for the next 3, 7, or 14 days, so you can read the next low before you leave the house.</p>
           <p>Check for:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li><strong>Tide height</strong> — lower is better. Anything below 0.5m is excellent.</li>

@@ -31,7 +31,7 @@ export default function Post() {
           <h2 className="text-xl font-semibold text-accent mt-8">Four Tile Sources</h2>
           <p>You can download maps in four different styles, depending on what you need:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Street (OpenStreetMap)</strong> &mdash; roads, paths, and field boundaries. Good for navigating to a site.</li>
+            <li><strong>Street Map (OSM data, CartoDB Voyager)</strong> &mdash; roads, paths, and field boundaries. Good for navigating to a site.</li>
             <li><strong>Satellite</strong> &mdash; aerial imagery so you can see hedgerows, ditches, and field shapes. Best for planning where to swing.</li>
             <li><strong>Terrain</strong> &mdash; elevation contours and hill shading. Useful for spotting old earthworks, moats, and ridge-and-furrow patterns.</li>
             <li><strong>Historical Topo</strong> &mdash; older topographical maps that show features that no longer exist: demolished buildings, old railways, abandoned settlements.</li>

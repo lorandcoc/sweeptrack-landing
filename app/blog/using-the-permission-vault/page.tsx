@@ -37,7 +37,7 @@ export default function Post() {
             <li><strong>Permit number and dates</strong> &mdash; for sites where the permission is time-bound</li>
             <li><strong>Notes</strong> &mdash; any conditions like &ldquo;avoid the crop field east of the barn&rdquo;</li>
           </ul>
-          <p>Free users can store 2 entries; Pro unlocks unlimited.</p>
+          <p>Free users can store 1 entry; Pro unlocks unlimited.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Drawing the Boundary</h2>
           <p>Each permission entry can have a boundary drawn on a full-screen map. Tap the map icon on the entry, and you&apos;ll get a satellite view where you tap to mark the corners of your permitted area. This boundary feeds directly into Perimeter Guard, so when you&apos;re detecting at this site, your phone vibrates if you stray outside.</p>
