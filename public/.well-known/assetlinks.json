@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sweeptrack.radar",
+      "sha256_cert_fingerprints": [
+        "0A:E9:38:BB:D3:15:F8:79:0C:40:97:40:3D:72:38:FB:46:1D:9A:57:58:4F:73:67:D3:29:98:4E:6A:3F:5B:70",
+        "A4:82:1D:9B:25:C5:60:51:F9:D8:F4:37:A5:38:86:11:F1:B3:58:08:00:8D:E2:FF:5F:31:41:99:98:0F:33:75"
+      ]
+    }
+  }
+]

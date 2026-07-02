@@ -44,3 +44,59 @@ export function sanitizeBandCode(raw: string | undefined | null): string {
       .toUpperCase() || "BAND"
   );
 }
+
+/* ────────────────────────── SweepTrack Radar ────────────────────────── */
+
+/** Google Play listing for the free companion app, SweepTrack Radar. */
+export const RADAR_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.sweeptrack.radar";
+
+/**
+ * Deep link the Radar app registers (AndroidManifest intent-filter):
+ * `sweeptrackradar://join/{CODE}`.
+ */
+export function radarJoinDeepLink(code: string): string {
+  return `sweeptrackradar://join/${code}`;
+}
+
+/**
+ * Campaign-attributed Play URL for a Radar invite link — same Install Referrer
+ * trick as {@link bandReferrerUrl}, so invite-driven installs show up per-code
+ * in Play Console with no backend.
+ */
+export function radarInviteReferrerUrl(
+  code: string,
+  source = "invite",
+  medium = "link",
+): string {
+  const referrer = `utm_source=${source}&utm_medium=${medium}&utm_campaign=${code}`;
+  return `${RADAR_PLAY_URL}&referrer=${encodeURIComponent(referrer)}`;
+}
+
+/**
+ * Radar hunt codes: 8 chars from a 32-symbol Crockford-style alphabet (no
+ * I/L/O/U). Mirrors the app's `GroupCode` object exactly — same alphabet, same
+ * look-alike mapping — so a code that the app would accept is exactly the code
+ * this site deep-links.
+ */
+const RADAR_CODE_ALPHABET = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
+export const RADAR_CODE_LENGTH = 8;
+
+/** Uppercase, map common look-alikes (I/L→1, O→0, U→V), strip junk. */
+export function normalizeRadarCode(raw: string | undefined | null): string {
+  let out = "";
+  for (const c of (raw ?? "").trim().toUpperCase()) {
+    const mapped =
+      c === "I" || c === "L" ? "1" : c === "O" ? "0" : c === "U" ? "V" : c;
+    if (RADAR_CODE_ALPHABET.includes(mapped)) out += mapped;
+    if (out.length >= 32) break; // sanity cap on garbled input
+  }
+  return out;
+}
+
+export function isValidRadarCode(code: string): boolean {
+  return (
+    code.length === RADAR_CODE_LENGTH &&
+    [...code].every((c) => RADAR_CODE_ALPHABET.includes(c))
+  );
+}
