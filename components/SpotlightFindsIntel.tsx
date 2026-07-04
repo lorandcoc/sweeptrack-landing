@@ -115,10 +115,6 @@ export default function SpotlightFindsIntel() {
           <span className="font-mono text-[10px] tracking-[0.14em] text-white/40">
             FIND LOG · 142 finds
           </span>
-          <span className="st-hud">
-            <span className="st-hud__dot" />
-            {t("spotlight.demo_badge")}
-          </span>
         </div>
 
         {/* Hot-zone map */}

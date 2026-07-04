@@ -224,13 +224,6 @@ export default function SpotlightArsenal() {
       {/* Demo — left on desktop, below copy on mobile */}
       <div className="order-2 md:order-1">
         <div className="relative rounded-3xl border border-white/[0.08] bg-white/[0.02] p-5 sm:p-7">
-          <span className="st-hud absolute -top-3.5 left-6 z-10">
-            <span className="st-hud__dot" />
-            <span className="text-[11px] uppercase tracking-[0.14em]">
-              {t("spotlight.demo_badge")}
-            </span>
-          </span>
-
           <PresetCard active={active} />
 
           {/* QR share tile + caption */}

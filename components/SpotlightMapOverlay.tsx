@@ -71,10 +71,6 @@ export default function SpotlightMapOverlay() {
           <span className="font-mono text-[10px] tracking-[0.14em] text-white/40">
             OVERLAY · parcel_1903.jpg
           </span>
-          <span className="st-hud">
-            <span className="st-hud__dot" />
-            {t("spotlight.demo_badge")}
-          </span>
         </div>
 
         {/* Alignment stage */}

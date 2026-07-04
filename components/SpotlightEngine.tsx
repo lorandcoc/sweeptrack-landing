@@ -101,11 +101,6 @@ export default function SpotlightEngine() {
       {/* ── Demo (right on desktop) ── */}
       <div>
         <div className="relative">
-          <span className="absolute -top-3 right-5 z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/[0.1] bg-[#0A0A18] font-mono text-[10px] uppercase tracking-[0.14em] text-white/80">
-            <span className="st-hud__dot" aria-hidden="true" />
-            {t("spotlight.demo_badge")}
-          </span>
-
           <div
             className={`sex-demo rounded-2xl border border-white/[0.08] bg-[#0A0A18] overflow-hidden ${visible ? "sex-run" : ""}`}
           >

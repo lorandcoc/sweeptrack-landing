@@ -167,11 +167,6 @@ export default function SpotlightPerimeter() {
             ))}
           </div>
 
-          {/* live-demo badge */}
-          <span className="spx-badge">
-            <span className="spx-badge__dot" aria-hidden="true" />
-            {t("spotlight.demo_badge")}
-          </span>
         </div>
       </div>
     </div>

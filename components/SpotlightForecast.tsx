@@ -104,14 +104,10 @@ export default function SpotlightForecast() {
           aria-hidden="true"
         />
 
-        {/* Panel header: mono coordinates + live-demo badge */}
+        {/* Panel header: mono coordinates */}
         <div className="relative z-[1] flex items-center justify-between gap-3 mb-5">
           <span className="font-mono text-[10px] tracking-[0.14em] text-white/40">
             47°41′N 23°34′E · +24 H
-          </span>
-          <span className="st-hud">
-            <span className="st-hud__dot" />
-            {t("spotlight.demo_badge")}
           </span>
         </div>
 

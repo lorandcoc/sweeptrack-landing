@@ -70,14 +70,6 @@ export default function SpotlightVault() {
       {/* ── Demo — left column on desktop ── */}
       <div className="md:order-1">
         <div className="svx-stage px-6 py-12 sm:px-10 sm:py-14">
-          {/* Live demo badge */}
-          <span className="st-hud absolute left-4 top-4 z-10">
-            <span className="st-hud__dot" />
-            <span style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase" }}>
-              {t("spotlight.demo_badge")}
-            </span>
-          </span>
-
           {/* The A4 letter — the one bright object on the page */}
           <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[330px]">
             <div className="svx-doc svx-paper relative w-full aspect-[210/297] overflow-hidden">

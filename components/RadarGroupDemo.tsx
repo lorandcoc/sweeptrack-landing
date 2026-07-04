@@ -97,12 +97,6 @@ export default function RadarGroupDemo() {
         </g>
       </svg>
 
-      {/* Mono badge — top-left */}
-      <span className="rgx-chip rgx-chip--label">
-        <span className="rgx-chip__dot" aria-hidden="true" />
-        {t("radar.demo_label")}
-      </span>
-
       {/* Daylight chip — top-right */}
       <span className="rgx-chip rgx-chip--day">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
