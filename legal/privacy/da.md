@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS-sporingsapplikation til metaldetektering
 
-Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 4. juni 2026
+Ikrafttrædelsesdato: 12. maj 2026 · Sidst opdateret: 3. juli 2026
 
-Drives af: Coc Lorand Adrian P.F.A., der handler som "Loriba"
+Drives af: Coc Lorand-Adrian P.F.A., der handler som "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -16,13 +16,13 @@ Website: sweeptrack.pro
 
 Denne privatlivspolitik forklarer, hvordan SweepTrack Pro ("Appen") og websitet sweeptrack.pro ("Websitet") indsamler, bruger, gemmer og beskytter dine oplysninger. Vi er forpligtede til at beskytte dit privatliv og sikre gennemsigtighed omkring vores datapraksis.
 
-Appen er designet med en **arkitektur, hvor privatlivet kommer først**: Alle detekteringsdata gemmes lokalt på din enhed, vi driver ingen backend-servere, der gemmer dine detekteringsdata, og vi indsamler, overfører eller sælger ikke dine personlige detekteringsdata. En lille mængde data forlader kun din enhed til de brugerinitierede funktioner, der er beskrevet i Afsnit 3.2 og 3.3 (realtids-API-funktioner, valgfri sikkerhedskopiering, valgfri diagnostik og valgfri feedback). Websitet drives separat og har sin egen datapraksis, beskrevet i Afsnit 4.
+Appen er designet med en **arkitektur, hvor privatlivet kommer først**: Dine gemte detekteringsdata — sessioner, fund, boksindgange — gemmes lokalt på din enhed, vi sælger dem ikke, og vi bruger dem ikke til at profilere dig. Nogle data forlader kun din enhed til de brugerinitierede funktioner, der er beskrevet i Afsnit 3.2, 3.3 og 3.5: realtids-API-funktioner, valgfri sikkerhedskopiering, valgfri diagnostik, valgfri feedback og — hvis du vælger at oprette eller deltage i en gruppe — den valgfrie deling af live-placering i en gruppe, som er hele formålet med Radar-funktionen. Websitet drives separat og har sin egen datapraksis, beskrevet i Afsnit 4.
 
 ## 2. Dataansvarlig
 
 I forbindelse med EU's generelle forordning om databeskyttelse (GDPR) og den rumænske databeskyttelseslov (lov 190/2018) er den dataansvarlige:
 
-**Coc Lorand Adrian P.F.A.** (der handler som Loriba)  
+**Coc Lorand-Adrian P.F.A.** (der handler som Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -45,7 +45,7 @@ Følgende data oprettes af dig og gemmes **udelukkende på din enhed**. Vi har a
 - Type af fund (Skat, Guld, Mønt, Relikvie, Smykke, Affald, Usorteret/Hurtig placering)
 - Fundsted (GPS-koordinater på registreringstidspunktet)
 - Valgfri metadata: navn, noter, dybde, anslået værdi, vægt
-- Mediefiler: fotografier og lydoptagelser
+- Mediefiler: fotografier, lydoptagelser og videooptagelser
 
 **Data fra tilladelsesboksen:**
 
@@ -66,9 +66,7 @@ Følgende data sendes til tredjeparts API'er for realtidsfunktionalitet og **gem
 
 - Omtrentlige GPS-koordinater sendt til Open-Meteo for vejrudsigter og højdedata
 - Koordinater omdannet til stednavne via Androids platforms-geokoder (leveret af Google Play Services på de fleste enheder) til omvendt geokodning — bruges til at mærke sessioner og fund med et stednavn
-- Omtrentlige GPS-koordinater sendt til Overpass API for nærliggende historiske POI'er
-- Omtrentlige GPS-koordinater sendt til Wikipedia API til geografisk søgning af nærliggende artikler
-- Tidevands-station-ID'er sendt til NOAA for tidevandsudsigter
+- Tidevands-station-ID'er sendt til NOAA for tidevandsudsigter (amerikanske kyststationer)
 - Lokationssøgeforespørgsler sendt til Open-Meteo Geocoding
 - Kortfliseanmodninger (som afslører det omtrentlige område af kortet, du ser på) sendt til den aktive korttypes flise-leverandør: Esri/ArcGIS (satellitbilleder og USGS-topografiske kort), OpenStreetMap og OpenTopoMap (offline/downloadbare kortpakker) og — for det rumænske historiske "Gammelt kort"-overlay — en caching-proxy, vi driver på Cloudflare, der henter fliser fra geo-spatial.org (eHarta). Standard Google-kortbaggrunden er dækket under Google Maps SDK i Afsnit 3.3
 
@@ -98,10 +96,27 @@ Begge tjenester er underlagt [Googles privatlivspolitik](https://policies.google
 - **Appen** bruger ikke annonceframeworks eller reklame-identifikatorer
 - **Appen** sporer ikke brugsmønstre, sessionsfrekvens eller funktionsanvendelse
 - **Appen** opretter ikke brugerprofiler eller adfærdsmæssige fingeraftryk
-- **Appen** sælger, udlejer eller bytter ikke dine data og deler dem kun, hvor du selv iværksætter det: realtids-API-opkaldene i Afsnit 3.2, valgfri Google Drive-sikkerhedskopiering, opt-in Firebase-diagnostik og feedback, du vælger at indsende (Afsnit 3.3)
-- **Appen** driver ingen servere, der modtager, behandler eller gemmer dine detekteringsdata (lokation, fund, boksindgange, sessioner); det eneste indhold, du indtaster, som når en server, vi driver, er feedback, du vælger at indsende (Afsnit 3.3)
+- **Appen** sælger, udlejer eller bytter ikke dine data og deler dem kun, hvor du selv iværksætter det: realtids-API-opkaldene i Afsnit 3.2, valgfri Google Drive-sikkerhedskopiering, opt-in Firebase-diagnostik, valgfri deling af live-placering i en gruppe (Afsnit 3.5) og feedback, du vælger at indsende (Afsnit 3.3)
+- **Appen** driver ingen servere, der gemmer dine gemte detekteringsdata (sessioner, fund, boksindgange) — med én undtagelse, du kontrollerer: den valgfrie live-gruppe-funktion (Afsnit 3.5) deler din live-placering med en gruppe, du opretter eller deltager i, via Googles Firebase Realtime Database, mens du er i den gruppe. Bortset fra live-gruppe er det eneste indhold, der når en server, vi driver, feedback, du vælger at indsende (Afsnit 3.3)
 
 Websitets datapraksis dækkes separat i Afsnit 4.
+
+### 3.5 Deling af live-placering i en gruppe (valgfrit — Radar-funktionen)
+
+SweepTrack Pro indeholder **Radar**, en funktion til live-gruppepositionering, som åbnes fra RADAR-knappen på hjemmekortet. Den forbliver slået fra, medmindre du **opretter eller deltager i en gruppe**. At oprette (være vært for) en gruppe er en Pro-funktion; at deltage i en gruppe er gratis. Mens du er i en gruppe, overføres følgende til Googles **Firebase Realtime Database** og gøres synligt i realtid for de øvrige medlemmer af netop den gruppe:
+
+- **Dit visningsnavn** — et navn, du vælger; det behøver ikke være dit rigtige navn.
+- **Din præcise placering** — GPS-breddegrad og -længdegrad med nøjagtighed og kurs, opdateret mens du er i gruppen (cirka hvert 30. sekund på gratis-niveauet, hyppigere med et abonnement, og hvert par sekunder under en SOS).
+- **Din status** — online, på pause eller stationær, og hvorvidt du har udløst en **SOS** (inklusive din placering på det tidspunkt).
+- **Din enheds batteriniveau, kortmarkørfarve og -ikon** samt eventuelle **delte vejpunkter, ping eller base-/samlingspunkter**, du opretter, hver mærket med dit visningsnavn og dine koordinater.
+
+**Hvem kan se det:** kun medlemmer af gruppen. Enhver med gruppens deltagelseskode eller QR kan deltage og se live-kortet, så del kun en kode med personer, du har til hensigt at dele din placering med. Adgang håndhæves af serverside-sikkerhedsregler; en person skal deltage i gruppen (og blive synlig selv) før vedkommende kan læse positioner.
+
+**Autentificering:** gruppens backend bruger **Firebase Anonymous Authentication** — en tilfældig identifikator for din app-installation, ikke knyttet til dit navn, din e-mail, dit telefonnummer eller din Google-konto.
+
+**Hvor længe det opbevares:** gruppens placeringsdata er forbigående. En gruppe **udløber** (typisk efter cirka 12 timer; prøvegrupper hurtigere), hvorefter den holder op med at acceptere nye positioner og ikke længere kan tilgås. At forlade en gruppe sletter din medlemsindgang med det samme, og gruppen slettes, når dens sidste medlem forlader den. Hvis en gruppe forlades uden at nogen aktivt forlader den, forbliver de sidste positioner, der blev delt før udløb, gemt i den udløbne gruppe, indtil den slettes. Vi opbevarer ingen langsigtet historik over dine bevægelser på vores servere, og du kan til enhver tid anmode om sletning (Afsnit 18).
+
+Den selvstændige gratis følgeapp har sin egen, mere udførlige oplysning i [SweepTrack Radar Privatlivspolitik](https://sweeptrack.pro/privacy-radar).
 
 ## 4. Websitets datapraksis (sweeptrack.pro)
 
@@ -157,6 +172,7 @@ De samme GDPR, UK GDPR, australske, canadiske, CCPA, LGPD og NZ Privacy Act-rett
 - **Google Drive-sikkerhedskopiering:** Samtykke (Art. 6(1)(a)) — du aktiverer og autentificerer udtrykkeligt
 - **Abonnementsverifikation:** Kontraktopfyldelse (Art. 6(1)(b)) — nødvendigt for at levere betalte funktioner
 - **Firebase Analytics og Crashlytics (valgfrit):** Samtykke (Art. 6(1)(a)) — aktiveret via prompten ved første opstart eller i Indstillinger, kan til enhver tid tilbagekaldes
+- **Deling af live-placering i en gruppe (valgfrit):** Samtykke (Art. 6(1)(a)) — du opretter eller deltager aktivt i en gruppe, med en forgrundsnotifikation vist mens delingen er aktiv; træk tilbage ved at forlade gruppen eller lukke funktionen
 - **Feedback i appen (valgfrit):** Samtykke (Art. 6(1)(a)) — sendes kun, når du indsender feedbackformularen
 - **Venteliste-e-mail (Website):** Samtykke (Art. 6(1)(a)) — se Afsnit 4.1
 
@@ -173,13 +189,13 @@ Website-data (din venteliste-e-mail) bruges kun til at sende lancerings- og før
 **App-data:**
 
 - Sessions- og funddata gemmes i en Room-database (SQLite) i Appens sandboxede private lagring på din enhed — beskyttet af Androids app-isolationsmodel og enhedens kryptering af brugerdata i hvile
-- Følsomme præferencer bruger Androids EncryptedSharedPreferences (AES-256)
+- På understøttede enheder bruger følsomme præferencer og data fra tilladelsesboksen Androids EncryptedSharedPreferences (AES-256) understøttet af Android Keystore. Hvis Keystore eller EncryptedSharedPreferences ikke er tilgængeligt på en enhed, falder Appen tilbage til app-privat (sandboxet) lagring og viser en vedvarende advarsel i appen om, at disse data ikke er separat krypteret på den enhed
 - Mediefiler gemmes i Appens private interne lager, utilgængeligt for andre apps
 - Android-cloudsikkerhedskopiering er **deaktiveret** (`android:allowBackup="false"`) for at forhindre utilsigtet dataeksponering
-- Google Drive-sikkerhedskopier bruger Googles krypterede API'er (HTTPS/TLS) og eksisterer kun på din konto
+- Google Drive-sikkerhedskopier overføres over HTTPS/TLS og gemmes udelukkende på din egen konto. Du kan valgfrit beskytte en sikkerhedskopi med en adgangssætning, som krypterer arkivet (AES-256-GCM) på din enhed før upload, så det ikke kan læses uden din adgangssætning
 - Valgfri feedback i appen, du indsender, overføres over HTTPS/TLS til en Supabase Edge Function (EU-regionen)
 
-For Appen driver vi ingen servere, databaser eller cloud-infrastruktur, der gemmer dine detekteringsdata.
+For Appen driver vi ingen servere, der gemmer dine gemte detekteringsdata. Den ene undtagelse er den valgfrie live-gruppe-funktion (Afsnit 3.5), som opbevarer forbigående, automatisk udløbende gruppe-placeringsdata i Googles Firebase, mens du er i en gruppe.
 
 **Website-data:** Venteliste-e-mails opbevares i en Supabase Postgres-database hostet i EU (Irland). Forbindelser er krypterede (TLS). Adgang er begrænset til administrative formål. Udgående e-mail sendes via Resend (EU, Irland) over TLS. Se Afsnit 4.
 
@@ -191,7 +207,7 @@ For Appen driver vi ingen servere, databaser eller cloud-infrastruktur, der gemm
 
 ## 9. Datadeling og videregivelse
 
-Vi sælger, udlejer eller bytter ikke dine personlige data. Du kan vælge at dele app-data gennem eksport (GPX, KML, CSV, JSON), sessionsdelingskort eller Google Drive-sikkerhedskopiering — alle initieret af brugeren. Hvis du indsender feedback i appen, behandles den på vores vegne af Supabase (se Afsnit 3.3). Websitets venteliste-data behandles kun af vores navngivne databehandlere (Supabase, Resend) til de formål, der er beskrevet i Afsnit 4.
+Vi sælger, udlejer eller bytter ikke dine personlige data. Du kan vælge at dele app-data gennem eksport (GPX, KML, CSV, JSON), sessionsdelingskort, Google Drive-sikkerhedskopiering eller deling af live-placering i en Radar-gruppe (Afsnit 3.5) — alle initieret af brugeren. Hvis du indsender feedback i appen, behandles den på vores vegne af Supabase (se Afsnit 3.3). Websitets venteliste-data behandles kun af vores navngivne databehandlere (Supabase, Resend) til de formål, der er beskrevet i Afsnit 4.
 
 ## 10. Dine rettigheder (GDPR og internationalt)
 
@@ -259,13 +275,13 @@ Du kan til enhver tid tilbagekalde enhver tilladelse via Android-indstillinger.
 
 ## 14. Internationale dataoverførsler
 
-**App-data:** Da alle detekteringsdata gemmes lokalt på din enhed, foregår ingen internationale dataoverførsler under vores kontrol. API-opkald til tredjeparter (Afsnit 3.2), valgfri Google Drive-sikkerhedskopiering, valgfri Firebase-diagnostik og valgfri feedback kan behandles i de jurisdiktioner, hvor disse tjenester opererer.
+**App-data:** Da alle detekteringsdata gemmes lokalt på din enhed, foregår ingen internationale dataoverførsler under vores kontrol. API-opkald til tredjeparter (Afsnit 3.2), valgfri Google Drive-sikkerhedskopiering, valgfri Firebase-diagnostik, valgfri deling af live-placering i en gruppe (Afsnit 3.5, via Googles Firebase) og valgfri feedback kan behandles i de jurisdiktioner, hvor disse tjenester opererer.
 
 **Website-data:** Venteliste-e-mails gemmes i EU (Irland) af Supabase og behandles af Resend (EU, Irland). Hvis du tilgår Websitet uden for EU, overføres din e-mail til EU til behandling.
 
 ## 15. Underretning om databrud
 
-**App:** Da vi ikke gemmer dine detekteringsdata på nogen server, vi driver, er et databrud, der påvirker app-data fra vores side, ikke muligt. Hvis vi bliver bekendt med en sårbarhed i Appen, udsender vi en opdatering og underretter brugerne via Appen eller websitet. Valgfri feedback, du indsender, opbevares af vores databehandler Supabase under dennes egne protokoller for brudunderretning.
+**App:** Dine gemte detekteringsdata gemmes på din enhed, ikke på servere, vi driver, så de eksponeres ikke af et brud på vores infrastruktur. Den ene undtagelse er den valgfrie live-gruppe-funktion (Afsnit 3.5): mens du er i en gruppe, opbevares din live-placering forbigående i Googles Firebase, adgangsbegrænset af serverside-regler til medlemmer af den gruppe. Hvis vi bliver bekendt med en sårbarhed i Appen, udsender vi en opdatering og underretter brugerne via Appen eller websitet. Valgfri feedback, du indsender, opbevares af vores databehandler Supabase under dennes egne protokoller for brudunderretning.
 
 **Website:** Vores databehandlere (Supabase, Resend) opretholder deres egne protokoller for brudunderretning. I det usandsynlige tilfælde af et brud, der påvirker din venteliste-e-mail, underretter vi dig og den relevante tilsynsmyndighed (ANSPDCP) inden for 72 timer som krævet af GDPR.
 
@@ -284,7 +300,6 @@ Vi kan opdatere denne privatlivspolitik for at afspejle ændringer i funktionali
 - [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
 - [eHarta / geo-spatial.org](https://www.geo-spatial.org)
 - [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy til historiske kortfliser)
-- [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Website-hosting + analyse)
 - [Supabase](https://supabase.com/privacy) (Website-database + feedback i appen)
@@ -292,7 +307,7 @@ Vi kan opdatere denne privatlivspolitik for at afspejle ændringer i funktionali
 
 ## 18. Kontakt os
 
-**Coc Lorand Adrian P.F.A.** (der handler som Loriba)  
+**Coc Lorand-Adrian P.F.A.** (der handler som Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — Metal Arama için GPS Takip Uygulaması
 
-Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 4 Haziran 2026
+Yürürlük Tarihi: 12 Mayıs 2026 · Son Güncelleme: 3 Temmuz 2026
 
-İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand Adrian P.F.A.
+İşleten: "Loriba" ticari adıyla faaliyet gösteren Coc Lorand-Adrian P.F.A.
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -16,13 +16,13 @@ Web sitesi: sweeptrack.pro
 
 Bu Gizlilik Politikası, SweepTrack Pro'nun ("Uygulama") ve sweeptrack.pro web sitesinin ("Web Sitesi") bilgilerinizi nasıl topladığını, kullandığını, sakladığını ve koruduğunu açıklar. Gizliliğinizi korumayı ve veri uygulamalarımız hakkında şeffaflık sağlamayı taahhüt ediyoruz.
 
-Uygulama, **önce gizlilik (privacy-first) mimarisi** ile tasarlanmıştır: tüm arama verileri yerel olarak cihazınızda saklanır, arama verilerinizi saklayan arka uç sunucuları işletmiyoruz ve kişisel arama verilerinizi toplamıyoruz, iletmiyoruz veya satmıyoruz. Az miktarda veri yalnızca Bölüm 3.2 ve 3.3'te açıklanan, kullanıcı tarafından başlatılan işlevler için cihazınızdan ayrılır (gerçek zamanlı API özellikleri, isteğe bağlı yedekleme, isteğe bağlı tanılama ve isteğe bağlı geri bildirim). Web Sitesi ayrı çalışır ve Bölüm 4'te açıklanan kendi veri uygulamalarına sahiptir.
+Uygulama, **önce gizlilik (privacy-first) mimarisi** ile tasarlanmıştır: kaydettiğiniz arama verileriniz — oturumlar, buluntular, kasa girişleri — yerel olarak cihazınızda saklanır, bunları satmıyoruz ve sizi profillemek için kullanmıyoruz. Bazı veriler cihazınızdan yalnızca Bölüm 3.2, 3.3 ve 3.5'te açıklanan, kullanıcı tarafından başlatılan işlevler için ayrılır: gerçek zamanlı API özellikleri, isteğe bağlı yedekleme, isteğe bağlı tanılama, isteğe bağlı geri bildirim ve — bir grup oluşturmayı veya bir gruba katılmayı seçerseniz — Radar özelliğinin bütün amacı olan isteğe bağlı Canlı Grup konum paylaşımı. Web Sitesi ayrı çalışır ve Bölüm 4'te açıklanan kendi veri uygulamalarına sahiptir.
 
 ## 2. Veri Sorumlusu
 
 AB Genel Veri Koruma Yönetmeliği (GDPR) ve Romanya veri koruma yasası (Yasa 190/2018) amaçları doğrultusunda, veri sorumlusu şudur:
 
-**Coc Lorand Adrian P.F.A.** (Loriba olarak faaliyet gösteren)  
+**Coc Lorand-Adrian P.F.A.** (Loriba olarak faaliyet gösteren)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-posta: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -45,7 +45,7 @@ Aşağıdaki veriler sizin tarafınızdan oluşturulur ve **yalnızca cihazını
 - Buluntu türü (Hazine, Altın, Madeni Para, Eser, Mücevher, Çöp, Sınıflandırılmamış/Hızlı Bırakma)
 - Buluntu konumu (kayıt anındaki GPS koordinatları)
 - İsteğe bağlı meta veriler: ad, notlar, derinlik, tahmini değer, ağırlık
-- Medya ekleri: fotoğraflar ve ses kayıtları
+- Medya ekleri: fotoğraflar, ses kayıtları ve video kayıtları
 
 **İzin kasası verileri:**
 
@@ -66,9 +66,7 @@ Aşağıdaki veriler gerçek zamanlı işlevsellik için üçüncü taraf API'le
 
 - Hava durumu tahminleri ve irtifa verileri için Open-Meteo'ya gönderilen yaklaşık GPS koordinatları
 - Ters geocoding için Android'in platform geocoder'ı (çoğu cihazda Google Play Services tarafından sağlanır) aracılığıyla yer adlarına çözümlenen koordinatlar — oturumları ve buluntuları bir yer adıyla etiketlemek için kullanılır
-- Yakındaki tarihi POI keşifleri için Overpass API'ye gönderilen yaklaşık GPS koordinatları
-- Yakındaki makale coğrafi araması için Wikipedia API'ye gönderilen yaklaşık GPS koordinatları
-- Gelgit tahminleri için NOAA'ya gönderilen gelgit istasyonu tanımlayıcıları
+- Gelgit tahminleri için NOAA'ya gönderilen gelgit istasyonu tanımlayıcıları (ABD kıyı istasyonları)
 - Open-Meteo Geocoding'e gönderilen konum arama sorguları
 - Harita döşemesi (tile) istekleri (görüntülediğiniz haritanın yaklaşık alanını açığa çıkarır) etkin harita türünün döşeme sağlayıcısına gönderilir: Esri/ArcGIS (uydu görüntüleri ve USGS topografik haritaları), OpenStreetMap ve OpenTopoMap (çevrimdışı/indirilebilir harita paketleri) ve — Romanya tarihi "Eski Harita" katmanı için — geo-spatial.org'dan (eHarta) döşemeler getiren, Cloudflare üzerinde işlettiğimiz bir önbellekleme proxy'si. Varsayılan Google harita tabanı, Bölüm 3.3'teki Google Maps SDK kapsamındadır
 
@@ -98,10 +96,27 @@ Her iki hizmet de [Google Gizlilik Politikası'na](https://policies.google.com/p
 - **Uygulama** reklam çerçeveleri veya reklam tanımlayıcıları kullanmaz
 - **Uygulama** kullanım modellerini, oturum sıklığını veya özellik kullanımını izlemez
 - **Uygulama** kullanıcı profilleri veya davranışsal parmak izleri oluşturmaz
-- **Uygulama** verilerinizi satmaz, kiralamaz veya takas etmez ve yalnızca sizin başlattığınız durumlarda paylaşır: Bölüm 3.2'deki gerçek zamanlı API çağrıları, isteğe bağlı Google Drive yedeklemesi, opt-in Firebase tanılaması ve göndermeyi seçtiğiniz geri bildirim (Bölüm 3.3)
-- **Uygulama** arama verilerinizi (konum, buluntular, kasa girişleri, oturumlar) alan, işleyen veya saklayan herhangi bir sunucu işletmez; işlettiğimiz bir sunucuya ulaşan, yazdığınız tek içerik göndermeyi seçtiğiniz geri bildirimdir (Bölüm 3.3)
+- **Uygulama** verilerinizi satmaz, kiralamaz veya takas etmez ve yalnızca sizin başlattığınız durumlarda paylaşır: Bölüm 3.2'deki gerçek zamanlı API çağrıları, isteğe bağlı Google Drive yedeklemesi, opt-in Firebase tanılaması, isteğe bağlı Canlı Grup konum paylaşımı (Bölüm 3.5) ve göndermeyi seçtiğiniz geri bildirim (Bölüm 3.3)
+- **Uygulama**, kaydettiğiniz arama verilerinizi (oturumlar, buluntular, kasa girişleri) saklayan sunucular işletmez — kontrol ettiğiniz bir istisna dışında: isteğe bağlı Canlı Grup özelliği (Bölüm 3.5), o grupta bulunduğunuz süre boyunca, Google'ın Firebase Realtime Database'i aracılığıyla canlı konumunuzu oluşturduğunuz veya katıldığınız bir grupla paylaşır. Canlı Grup dışında, işlettiğimiz bir sunucuya ulaşan tek içerik göndermeyi seçtiğiniz geri bildirimdir (Bölüm 3.3)
 
 Web Sitesi veri uygulamaları ayrı olarak Bölüm 4'te ele alınır.
+
+### 3.5 Canlı Grup konum paylaşımı (isteğe bağlı — Radar özelliği)
+
+SweepTrack Pro, ana haritadaki RADAR düğmesinden erişilen canlı bir grup konumlandırma özelliği olan **Radar**'ı içerir. Bir **grup oluşturmadığınız veya bir gruba katılmadığınız** sürece kapalı kalır. Bir grup oluşturmak (barındırmak) bir Pro özelliğidir; bir gruba katılmak ücretsizdir. Bir grupta bulunduğunuz sürece, aşağıdakiler Google'ın **Firebase Realtime Database**'ine iletilir ve gerçek zamanlı olarak aynı grubun diğer üyelerine görünür kılınır:
+
+- **Görünen adınız** — seçtiğiniz bir ad; gerçek adınız olması gerekmez.
+- **Kesin konumunuz** — doğruluk ve yön ile GPS enlemi ve boylamı, grupta bulunduğunuz süre boyunca güncellenir (ücretsiz katmanda yaklaşık her 30 saniyede bir, abonelikle daha sık ve bir SOS sırasında her birkaç saniyede bir).
+- **Durumunuz** — çevrimiçi, duraklatılmış veya sabit ve bir **SOS** tetikleyip tetiklemediğiniz (o andaki konumunuz dahil).
+- **Cihaz pil seviyeniz, harita işaretçi renginiz ve simgeniz** ve oluşturduğunuz herhangi bir **paylaşılan ara nokta, ping veya üs/toplanma noktası**; her biri görünen adınız ve koordinatlarınızla etiketlenir.
+
+**Bunu kimler görebilir:** yalnızca grubun üyeleri. Grubun katılım kodu veya QR'ına sahip olan herkes katılabilir ve canlı haritayı görebilir, bu nedenle bir kodu yalnızca konumunuzu paylaşmayı düşündüğünüz kişilerle paylaşın. Erişim, sunucu tarafı güvenlik kurallarıyla uygulanır; bir kişinin konumları okuyabilmesi için önce gruba katılması (kendisinin de görünür hale gelmesi) gerekir.
+
+**Kimlik doğrulama:** grup arka ucu **Firebase Anonymous Authentication** kullanır — adınıza, e-postanıza, telefon numaranıza veya Google hesabınıza bağlı olmayan, uygulama kurulumunuz için rastgele bir tanımlayıcı.
+
+**Ne kadar süreyle saklanır:** grup konum verileri geçicidir. Bir grup **sona erer** (genellikle yaklaşık 12 saat sonra; deneme grupları daha erken), ardından yeni konumları kabul etmeyi bırakır ve artık katılınamaz. Bir gruptan ayrılmak, üye kaydınızı hemen siler ve son üye ayrıldığında grup silinir. Bir grup, kimse ayrılmadan terk edilirse, sona ermeden önce paylaşılan son konumlar, silinene kadar sona ermiş grupta saklı kalır. Sunucularımızda hareketlerinizin uzun vadeli bir geçmişini tutmayız ve istediğiniz zaman silme talep edebilirsiniz (Bölüm 18).
+
+Bağımsız ücretsiz yardımcı uygulamanın kendi, daha ayrıntılı açıklaması [SweepTrack Radar Gizlilik Politikası'nda](https://sweeptrack.pro/privacy-radar) bulunur.
 
 ## 4. Web Sitesi Veri Uygulamaları (sweeptrack.pro)
 
@@ -157,6 +172,7 @@ Bölüm 10'da açıklanan aynı GDPR, UK GDPR, Avustralya, Kanada, CCPA, LGPD ve
 - **Google Drive yedeklemesi:** Onay (Madde 6(1)(a)) — açıkça etkinleştirir ve kimlik doğrularsınız
 - **Abonelik doğrulaması:** Sözleşmenin ifası (Madde 6(1)(b)) — ücretli özellikler sağlamak için gereklidir
 - **Firebase Analytics ve Crashlytics (isteğe bağlı):** Onay (Madde 6(1)(a)) — ilk açılıştaki istem veya Ayarlar üzerinden etkinleştirilir, istediğiniz zaman geri alınabilir
+- **Canlı Grup konum paylaşımı (isteğe bağlı):** Onay (Madde 6(1)(a)) — bir grubu aktif olarak oluşturur veya bir gruba katılırsınız; paylaşım etkinken bir ön plan bildirimi gösterilir; gruptan ayrılarak veya özelliği kapatarak geri çekilir
 - **Uygulama içi geri bildirim (isteğe bağlı):** Onay (Madde 6(1)(a)) — yalnızca geri bildirim formunu gönderdiğinizde gönderilir
 - **Bekleme listesi e-postası (Web Sitesi):** Onay (Madde 6(1)(a)) — Bölüm 4.1'e bakın
 
@@ -173,13 +189,13 @@ Web Sitesi verileri (bekleme listesi e-postanız) yalnızca Bölüm 4'te açıkl
 **Uygulama verileri:**
 
 - Oturum ve buluntu verileri, cihazınızdaki Uygulamanın yalıtılmış özel depolama alanındaki bir Room (SQLite) veritabanında saklanır — Android'in uygulama yalıtım modeli ve cihazın bekleyen kullanıcı verisi şifrelemesi tarafından korunur
-- Hassas tercihler Android'in EncryptedSharedPreferences (AES-256) özelliğini kullanır
+- Desteklenen cihazlarda, hassas tercihler ve İzin Kasası verileri, Android Keystore ile desteklenen Android'in EncryptedSharedPreferences (AES-256) özelliğini kullanır. Bir cihazda Keystore veya EncryptedSharedPreferences kullanılamıyorsa, Uygulama uygulamaya özel (yalıtılmış) depolamaya geri döner ve bu verilerin o cihazda ayrıca şifrelenmediğine dair kalıcı bir uygulama içi uyarı gösterir
 - Medya dosyaları, diğer uygulamalar tarafından erişilemeyen Uygulamanın özel dahili depolama alanında saklanır
 - Android bulut yedeklemesi, istemsiz veri ifşasını önlemek için **devre dışı bırakılmıştır** (`android:allowBackup="false"`)
-- Google Drive yedeklemeleri Google'ın şifrelenmiş API'lerini (HTTPS/TLS) kullanır ve yalnızca hesabınızda bulunur
+- Google Drive yedeklemeleri HTTPS/TLS üzerinden iletilir ve yalnızca kendi hesabınızda saklanır. Bir yedeklemeyi isteğe bağlı olarak bir parola ile koruyabilirsiniz; bu, arşivi yüklemeden önce cihazınızda şifreler (AES-256-GCM), böylece parolanız olmadan okunamaz
 - Gönderdiğiniz isteğe bağlı uygulama içi geri bildirim, HTTPS/TLS üzerinden bir Supabase Edge Function'a (AB bölgesi) iletilir
 
-Uygulama için arama verilerinizi depolayan herhangi bir sunucu, veritabanı veya bulut altyapısı işletmiyoruz.
+Uygulama için, kaydettiğiniz arama verilerinizi saklayan herhangi bir sunucu işletmiyoruz. Tek istisna, bir grupta bulunduğunuz süre boyunca geçici, otomatik olarak sona eren grup konum verilerini Google'ın Firebase'inde tutan isteğe bağlı Canlı Grup özelliğidir (Bölüm 3.5).
 
 **Web Sitesi verileri:** Bekleme listesi e-postaları AB'de (İrlanda) barındırılan bir Supabase Postgres veritabanında saklanır. Bağlantılar şifrelenmiştir (TLS). Erişim yalnızca yönetimsel amaçlarla kısıtlanmıştır. Giden e-posta, TLS üzerinden Resend (AB, İrlanda) aracılığıyla gönderilir. Bölüm 4'e bakın.
 
@@ -191,7 +207,7 @@ Uygulama için arama verilerinizi depolayan herhangi bir sunucu, veritabanı vey
 
 ## 9. Veri paylaşımı ve açıklama
 
-Kişisel verilerinizi satmıyoruz, kiralamıyoruz veya takas etmiyoruz. Dışa aktarımlar (GPX, KML, CSV, JSON), oturum paylaşım kartları veya Google Drive yedeklemesi yoluyla Uygulama verilerini paylaşmayı seçebilirsiniz — tümü kullanıcı tarafından başlatılır. Uygulama içi geri bildirim gönderirseniz, bu bizim adımıza Supabase tarafından işlenir (Bölüm 3.3'e bakın). Web Sitesi bekleme listesi verileri yalnızca Bölüm 4'te açıklanan amaçlar için belirtilen işleyicilerimiz (Supabase, Resend) tarafından işlenir.
+Kişisel verilerinizi satmıyoruz, kiralamıyoruz veya takas etmiyoruz. Dışa aktarımlar (GPX, KML, CSV, JSON), oturum paylaşım kartları, Google Drive yedeklemesi veya bir Radar grubunda canlı konum paylaşımı (Bölüm 3.5) yoluyla Uygulama verilerini paylaşmayı seçebilirsiniz — tümü kullanıcı tarafından başlatılır. Uygulama içi geri bildirim gönderirseniz, bu bizim adımıza Supabase tarafından işlenir (Bölüm 3.3'e bakın). Web Sitesi bekleme listesi verileri yalnızca Bölüm 4'te açıklanan amaçlar için belirtilen işleyicilerimiz (Supabase, Resend) tarafından işlenir.
 
 ## 10. Haklarınız (GDPR ve uluslararası)
 
@@ -259,13 +275,13 @@ Android Ayarları aracılığıyla herhangi bir izni istediğiniz zaman iptal ed
 
 ## 14. Uluslararası veri aktarımları
 
-**Uygulama verileri:** Tüm arama verileri cihazınızda yerel olarak saklandığından, kontrolümüz altında uluslararası veri aktarımları gerçekleşmez. Üçüncü taraflara yapılan API çağrıları (Bölüm 3.2), isteğe bağlı Google Drive yedeklemesi, isteğe bağlı Firebase tanılaması ve isteğe bağlı geri bildirim, bu hizmetlerin faaliyet gösterdiği yargı bölgelerinde işlenebilir.
+**Uygulama verileri:** Tüm arama verileri cihazınızda yerel olarak saklandığından, kontrolümüz altında uluslararası veri aktarımları gerçekleşmez. Üçüncü taraflara yapılan API çağrıları (Bölüm 3.2), isteğe bağlı Google Drive yedeklemesi, isteğe bağlı Firebase tanılaması, isteğe bağlı Canlı Grup konum paylaşımı (Bölüm 3.5, Google'ın Firebase'i aracılığıyla) ve isteğe bağlı geri bildirim, bu hizmetlerin faaliyet gösterdiği yargı bölgelerinde işlenebilir.
 
 **Web Sitesi verileri:** Bekleme listesi e-postaları Supabase tarafından AB'de (İrlanda) saklanır ve Resend (AB, İrlanda) tarafından işlenir. Web Sitesine AB dışından erişiyorsanız, e-postanız işleme için AB'ye aktarılır.
 
 ## 15. Veri ihlali bildirimi
 
-**Uygulama:** Arama verilerinizi işlettiğimiz herhangi bir sunucuda saklamadığımız için, tarafımızdan Uygulama verilerini etkileyen bir veri ihlali mümkün değildir. Uygulamada bir güvenlik açığından haberdar olursak, bir güncelleme yayınlayacak ve kullanıcıları Uygulama veya web sitesi aracılığıyla bilgilendireceğiz. Gönderdiğiniz isteğe bağlı geri bildirim, işleyicimiz Supabase tarafından kendi ihlal bildirim protokolleri kapsamında tutulur.
+**Uygulama:** Kaydettiğiniz arama verileriniz, işlettiğimiz sunucularda değil, cihazınızda saklanır, bu nedenle altyapımızın ihlaliyle ifşa edilmez. Tek istisna, isteğe bağlı Canlı Grup özelliğidir (Bölüm 3.5): bir grupta bulunduğunuz süre boyunca, canlı konumunuz Google'ın Firebase'inde geçici olarak tutulur ve sunucu tarafı kurallarla erişimi o grubun üyeleriyle sınırlandırılır. Uygulamada bir güvenlik açığından haberdar olursak, bir güncelleme yayınlayacak ve kullanıcıları Uygulama veya web sitesi aracılığıyla bilgilendireceğiz. Gönderdiğiniz isteğe bağlı geri bildirim, işleyicimiz Supabase tarafından kendi ihlal bildirim protokolleri kapsamında tutulur.
 
 **Web Sitesi:** İşleyicilerimiz (Supabase, Resend) kendi ihlal bildirim protokollerini sürdürür. Bekleme listesi e-postanızı etkileyen bir ihlalin olası olmayan durumunda, GDPR'nin gerektirdiği şekilde 72 saat içinde sizi ve ilgili denetim makamını (ANSPDCP) bilgilendireceğiz.
 
@@ -284,7 +300,6 @@ Bu Gizlilik Politikasını işlevsellik veya geçerli yasalardaki değişiklikle
 - [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
 - [eHarta / geo-spatial.org](https://www.geo-spatial.org)
 - [Cloudflare](https://www.cloudflare.com/privacypolicy/) (tarihi harita döşeme proxy'si)
-- [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Web Sitesi barındırma + analitik)
 - [Supabase](https://supabase.com/privacy) (Web Sitesi veritabanı + uygulama içi geri bildirim)
@@ -292,7 +307,7 @@ Bu Gizlilik Politikasını işlevsellik veya geçerli yasalardaki değişiklikle
 
 ## 18. Bize ulaşın
 
-**Coc Lorand Adrian P.F.A.** (Loriba olarak faaliyet gösteren)  
+**Coc Lorand-Adrian P.F.A.** (Loriba olarak faaliyet gösteren)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-posta: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Web sitesi: [https://sweeptrack.pro](https://sweeptrack.pro)

@@ -87,7 +87,7 @@ const freeForever = [
   "Shared base point (where the car is)",
   "Retrace your route back to the start",
   "Shared waypoints (Dig / Found / Rally / Hazard)",
-  "Quick pings: Look here, Regroup, Dig here, Help",
+  "Quick pings: Look here, Regroup, Need a hand",
   "Compass guide arrow + live distance to any target",
   "Daylight “leave before dark” countdown",
   "Up to 10 private saved spots",
@@ -248,7 +248,7 @@ export default function RadarPage() {
               />
               <Pillar
                 title="Work the site together"
-                body="Drop shared waypoints, fire off quick pings (Look here, Regroup, Dig here, Help), and keep everyone on the same page."
+                body="Drop shared waypoints, fire off quick pings (Look here, Regroup, Need a hand), and keep everyone on the same page."
                 icon={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3" /><path d="M12 2a8 8 0 00-8 8c0 4.5 8 12 8 12s8-7.5 8-12a8 8 0 00-8-8z" /></svg>}
               />
               <Pillar
@@ -317,7 +317,7 @@ export default function RadarPage() {
               {[
                 ["No account, ever", "Radar signs in anonymously. No name, email, phone number, or Google account. There's nothing to log into."],
                 ["Visible only to your group", "Live positions are only visible to people who joined with your code. Nothing is public, and guessing a code won't quietly scrape locations."],
-                ["Nothing sticks around", "Groups expire on their own, usually within about 12 hours, and your entry is deleted the moment you leave. We don't keep a history of where you've been."],
+                ["Built to expire", "Groups expire on their own, usually within about 12 hours, and your entry is deleted the moment you leave. We don't keep a history of where you've been. If a group is abandoned without anyone leaving, the last shared positions stay in that expired group until it's deleted — full details in the privacy policy."],
                 ["While-in-use GPS only", "Radar shares your location only while you're in a group with the app open. No background tracking."],
               ].map(([t, b]) => (
                 <div key={t} className="rounded-2xl p-5 bg-surface border border-white/[0.07]">

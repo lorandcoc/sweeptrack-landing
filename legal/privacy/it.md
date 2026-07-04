@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — Applicazione di monitoraggio GPS per la ricerca di metalli
 
-Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 4 giugno 2026
+Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 3 luglio 2026
 
-Gestito da: Coc Lorand Adrian P.F.A., operante come "Loriba"
+Gestito da: Coc Lorand-Adrian P.F.A., operante come "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -16,13 +16,13 @@ Sito web: sweeptrack.pro
 
 La presente Informativa sulla Privacy spiega come SweepTrack Pro ("l'App") e il sito web sweeptrack.pro ("il Sito Web") raccolgono, utilizzano, memorizzano e proteggono le informazioni dell'utente. Ci impegniamo a proteggere la vostra privacy e a garantire la trasparenza delle nostre pratiche relative ai dati.
 
-L'App è progettata con un'**architettura orientata alla privacy**: tutti i dati di rilevamento sono memorizzati localmente sul vostro dispositivo, non gestiamo server backend che memorizzano i vostri dati di rilevamento e non raccogliamo, trasmettiamo o vendiamo i vostri dati personali di rilevamento. Una piccola quantità di dati lascia il vostro dispositivo solo per le funzioni avviate dall'utente descritte nelle Sezioni 3.2 e 3.3 (funzionalità API in tempo reale, backup opzionale, diagnostica opzionale e feedback opzionale). Il Sito Web opera separatamente e ha le proprie pratiche relative ai dati, descritte nella Sezione 4.
+L'App è progettata con un'**architettura orientata alla privacy**: i vostri dati di rilevamento salvati — sessioni, ritrovamenti, voci del caveau — sono memorizzati localmente sul vostro dispositivo, non li vendiamo e non li utilizziamo per profilarvi. Alcuni dati lasciano il vostro dispositivo solo per le funzioni avviate dall'utente descritte nelle Sezioni 3.2, 3.3 e 3.5: funzionalità API in tempo reale, backup opzionale, diagnostica opzionale, feedback opzionale e — se scegliete di creare o unirvi a un gruppo — la condivisione opzionale della posizione tramite Gruppo Live, che è l'intero scopo della funzionalità Radar. Il Sito Web opera separatamente e ha le proprie pratiche relative ai dati, descritte nella Sezione 4.
 
 ## 2. Titolare del Trattamento dei Dati
 
 Ai fini del Regolamento Generale sulla Protezione dei Dati dell'UE (GDPR) e della legge rumena sulla protezione dei dati (Legge 190/2018), il titolare del trattamento dei dati è:
 
-**Coc Lorand Adrian P.F.A.** (operante come Loriba)  
+**Coc Lorand-Adrian P.F.A.** (operante come Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -45,7 +45,7 @@ I seguenti dati sono creati da voi e memorizzati **esclusivamente sul vostro dis
 - Tipo di ritrovamento (Tesoro, Oro, Moneta, Reliquia, Gioiello, Rifiuti, Non ordinato/Inserimento rapido)
 - Posizione del ritrovamento (coordinate GPS al momento della registrazione)
 - Metadati opzionali: nome, note, profondità, valore stimato, peso
-- Allegati multimediali: fotografie e registrazioni audio
+- Allegati multimediali: fotografie, registrazioni audio e registrazioni video
 
 **Dati del caveau dei permessi:**
 
@@ -66,9 +66,7 @@ I seguenti dati vengono inviati ad API di terze parti per funzionalità in tempo
 
 - Coordinate GPS approssimative inviate a Open-Meteo per previsioni meteo e dati di altitudine
 - Coordinate risolte in nomi di luoghi tramite il geocoder della piattaforma Android (fornito da Google Play Services sulla maggior parte dei dispositivi) per la geocodifica inversa — utilizzato per etichettare sessioni e ritrovamenti con un nome di luogo
-- Coordinate GPS approssimative inviate a Overpass API per la scoperta di punti di interesse storici nelle vicinanze
-- Coordinate GPS approssimative inviate a Wikipedia API per la ricerca geografica di articoli nelle vicinanze
-- Identificatori delle stazioni di marea inviati a NOAA per le previsioni delle maree
+- Identificatori delle stazioni di marea inviati a NOAA per le previsioni delle maree (stazioni costiere degli Stati Uniti)
 - Query di ricerca della posizione inviate a Open-Meteo Geocoding per la ricerca di nomi di luoghi
 - Richieste di tessere della mappa (che rivelano l'area approssimativa della mappa che state visualizzando) inviate al fornitore di tessere del tipo di mappa attivo: Esri/ArcGIS (immagini satellitari e mappe topografiche USGS), OpenStreetMap e OpenTopoMap (pacchetti mappe offline/scaricabili) e — per la sovrapposizione storica rumena "Mappa antica" — un proxy di caching che gestiamo su Cloudflare che recupera le tessere da geo-spatial.org (eHarta). La mappa di base predefinita di Google è trattata nell'ambito di Google Maps SDK nella Sezione 3.3
 
@@ -98,10 +96,27 @@ Entrambi i servizi sono soggetti alla [Politica sulla Privacy di Google](https:/
 - **L'App** non utilizza framework pubblicitari o identificativi pubblicitari
 - **L'App** non traccia modelli di utilizzo, frequenza delle sessioni o utilizzo delle funzionalità
 - **L'App** non crea profili utente o impronte digitali comportamentali
-- **L'App** non vende, affitta o scambia i vostri dati e li condivide solo dove siete voi a iniziare l'operazione: le chiamate API in tempo reale della Sezione 3.2, il backup opzionale di Google Drive, la diagnostica Firebase opt-in e il feedback che scegliete di inviare (Sezione 3.3)
-- **L'App** non gestisce server che ricevono, elaborano o memorizzano i vostri dati di rilevamento (posizione, ritrovamenti, voci del caveau, sessioni); l'unico contenuto che digitate che raggiunge un server da noi gestito è il feedback che scegliete di inviare (Sezione 3.3)
+- **L'App** non vende, affitta o scambia i vostri dati e li condivide solo dove siete voi a iniziare l'operazione: le chiamate API in tempo reale della Sezione 3.2, il backup opzionale di Google Drive, la diagnostica Firebase opt-in, la condivisione opzionale della posizione tramite Gruppo Live (Sezione 3.5) e il feedback che scegliete di inviare (Sezione 3.3)
+- **L'App** non gestisce server che memorizzano i vostri dati di rilevamento salvati (sessioni, ritrovamenti, voci del caveau) — con un'unica eccezione che controllate voi: la funzionalità opzionale Gruppo Live (Sezione 3.5) condivide la vostra posizione in tempo reale con un gruppo che create o a cui vi unite, tramite il Firebase Realtime Database di Google, mentre siete in quel gruppo. A parte il Gruppo Live, l'unico contenuto che raggiunge un server da noi gestito è il feedback che scegliete di inviare (Sezione 3.3)
 
 Le pratiche relative ai dati del Sito Web sono trattate separatamente nella Sezione 4.
+
+### 3.5 Condivisione della posizione tramite Gruppo Live (opzionale — la funzionalità Radar)
+
+SweepTrack Pro include **Radar**, una funzionalità di posizionamento di gruppo in tempo reale raggiungibile dal pulsante RADAR sulla mappa principale. Rimane disattivata finché non **create o vi unite a un gruppo**. Creare (ospitare) un gruppo è una funzionalità Pro; unirsi a un gruppo è gratuito. Mentre siete in un gruppo, i seguenti dati vengono trasmessi al **Firebase Realtime Database** di Google e resi visibili, in tempo reale, agli altri membri di quello stesso gruppo:
+
+- **Il vostro nome visualizzato** — un nome che scegliete voi; non deve necessariamente essere il vostro vero nome.
+- **La vostra posizione precisa** — latitudine e longitudine GPS con precisione e direzione, aggiornate mentre siete nel gruppo (circa ogni 30 secondi nel piano gratuito, più frequentemente con un abbonamento e ogni pochi secondi durante un SOS).
+- **Il vostro stato** — online, in pausa o fermo, e se avete attivato un **SOS** (inclusa la vostra posizione in quel momento).
+- **Il livello della batteria del vostro dispositivo, il colore e l'icona del marcatore sulla mappa** e qualsiasi **waypoint condiviso, ping o punto base/di raduno** che create, ciascuno etichettato con il vostro nome visualizzato e le vostre coordinate.
+
+**Chi può vederli:** solo i membri del gruppo. Chiunque disponga del codice di adesione o del QR del gruppo può unirsi e vedere la mappa in tempo reale, quindi condividete un codice solo con le persone con cui intendete condividere la vostra posizione. L'accesso è imposto da regole di sicurezza lato server; una persona deve unirsi al gruppo (diventando essa stessa visibile) prima di poter leggere le posizioni.
+
+**Autenticazione:** il backend del gruppo utilizza **Firebase Anonymous Authentication** — un identificatore casuale per l'installazione della vostra app, non collegato al vostro nome, email, numero di telefono o account Google.
+
+**Per quanto tempo vengono conservati:** i dati di posizione del gruppo sono transitori. Un gruppo **scade** (in genere dopo circa 12 ore; i gruppi di prova prima), dopodiché smette di accettare nuove posizioni e non può più essere raggiunto. Uscire da un gruppo elimina immediatamente la vostra voce di membro, e il gruppo viene eliminato quando l'ultimo membro lo lascia. Se un gruppo viene abbandonato senza che nessuno lo lasci, le ultime posizioni condivise prima della scadenza rimangono memorizzate nel gruppo scaduto fino alla sua eliminazione. Non conserviamo una cronologia a lungo termine dei vostri spostamenti sui nostri server e potete richiederne l'eliminazione in qualsiasi momento (Sezione 18).
+
+L'app companion gratuita e autonoma dispone di una propria informativa più completa nell'[Informativa sulla Privacy di SweepTrack Radar](https://sweeptrack.pro/privacy-radar).
 
 ## 4. Pratiche relative ai dati del Sito Web (sweeptrack.pro)
 
@@ -157,6 +172,7 @@ Gli stessi diritti GDPR, UK GDPR, australiani, canadesi, CCPA, LGPD e NZ Privacy
 - **Backup di Google Drive:** Consenso (Art. 6(1)(a)) — abilitate e autenticate esplicitamente
 - **Verifica dell'abbonamento:** Esecuzione del contratto (Art. 6(1)(b)) — necessaria per fornire le funzionalità a pagamento
 - **Firebase Analytics e Crashlytics (opzionale):** Consenso (Art. 6(1)(a)) — attivato tramite la richiesta al primo avvio o dalle Impostazioni, revocabile in qualsiasi momento
+- **Condivisione della posizione tramite Gruppo Live (opzionale):** Consenso (Art. 6(1)(a)) — create attivamente o vi unite a un gruppo, con una notifica in primo piano mostrata mentre la condivisione è attiva; revocate uscendo dal gruppo o chiudendo la funzionalità
 - **Feedback nell'app (opzionale):** Consenso (Art. 6(1)(a)) — inviato solo quando inviate il modulo di feedback
 - **Email della lista d'attesa (Sito Web):** Consenso (Art. 6(1)(a)) — vedere Sezione 4.1
 
@@ -173,13 +189,13 @@ I dati del Sito Web (la vostra email della lista d'attesa) sono utilizzati solo 
 **Dati dell'App:**
 
 - I dati delle sessioni e dei ritrovamenti sono memorizzati in un database Room (SQLite) nello spazio di archiviazione privato isolato dell'App sul vostro dispositivo — protetti dal modello di isolamento delle app di Android e dalla cifratura dei dati utente a riposo del dispositivo
-- Le preferenze sensibili utilizzano EncryptedSharedPreferences (AES-256) di Android
+- Sui dispositivi supportati, le preferenze sensibili e i dati del caveau dei permessi utilizzano EncryptedSharedPreferences (AES-256) di Android, supportato dall'Android Keystore. Se il Keystore o EncryptedSharedPreferences non è disponibile su un dispositivo, l'App ricorre all'archiviazione privata dell'app (isolata) e mostra un avviso persistente nell'app che indica che questi dati non sono cifrati separatamente su quel dispositivo
 - I file multimediali sono memorizzati nello storage interno privato dell'App, inaccessibile ad altre applicazioni
 - Il backup cloud di Android è **disabilitato** (`android:allowBackup="false"`) per prevenire l'esposizione involontaria dei dati
-- I backup di Google Drive utilizzano le API crittografate di Google (HTTPS/TLS) ed esistono solo nel vostro account
+- I backup di Google Drive sono trasmessi tramite HTTPS/TLS e memorizzati esclusivamente nel vostro account. Potete facoltativamente proteggere un backup con una passphrase, che cifra l'archivio (AES-256-GCM) sul vostro dispositivo prima del caricamento, in modo che non possa essere letto senza la vostra passphrase
 - Il feedback opzionale nell'app che inviate viene trasmesso tramite HTTPS/TLS a una Edge Function di Supabase (regione UE)
 
-Per l'App, non gestiamo server, database o infrastruttura cloud che memorizzano i vostri dati di rilevamento.
+Per l'App, non gestiamo server che memorizzano i vostri dati di rilevamento salvati. L'unica eccezione è la funzionalità opzionale Gruppo Live (Sezione 3.5), che conserva dati di posizione del gruppo transitori e a scadenza automatica nel Firebase di Google mentre siete in un gruppo.
 
 **Dati del Sito Web:** Le email della lista d'attesa sono memorizzate in un database Supabase Postgres ospitato nell'UE (Irlanda). Le connessioni sono crittografate (TLS). L'accesso è limitato a scopi amministrativi. L'email in uscita è inviata tramite Resend (UE, Irlanda) tramite TLS. Vedere Sezione 4.
 
@@ -191,7 +207,7 @@ Per l'App, non gestiamo server, database o infrastruttura cloud che memorizzano 
 
 ## 9. Condivisione e divulgazione dei dati
 
-Non vendiamo, affittiamo o scambiamo i vostri dati personali. Potete scegliere di condividere i dati dell'App tramite esportazioni (GPX, KML, CSV, JSON), carte di condivisione della sessione o backup di Google Drive — tutti iniziati dall'utente. Se inviate un feedback nell'app, viene elaborato per nostro conto da Supabase (vedere Sezione 3.3). I dati della lista d'attesa del Sito Web sono elaborati solo dai nostri responsabili nominati (Supabase, Resend) per gli scopi descritti nella Sezione 4.
+Non vendiamo, affittiamo o scambiamo i vostri dati personali. Potete scegliere di condividere i dati dell'App tramite esportazioni (GPX, KML, CSV, JSON), carte di condivisione della sessione, backup di Google Drive o condivisione della posizione in tempo reale in un gruppo Radar (Sezione 3.5) — tutti iniziati dall'utente. Se inviate un feedback nell'app, viene elaborato per nostro conto da Supabase (vedere Sezione 3.3). I dati della lista d'attesa del Sito Web sono elaborati solo dai nostri responsabili nominati (Supabase, Resend) per gli scopi descritti nella Sezione 4.
 
 ## 10. I vostri diritti (GDPR e internazionali)
 
@@ -259,13 +275,13 @@ Potete revocare qualsiasi autorizzazione in qualsiasi momento tramite le Imposta
 
 ## 14. Trasferimenti internazionali di dati
 
-**Dati dell'App:** Poiché tutti i dati di rilevamento sono memorizzati localmente sul vostro dispositivo, non si verificano trasferimenti internazionali dei vostri dati di rilevamento sotto il nostro controllo. Le chiamate API a terze parti (Sezione 3.2), il backup opzionale di Google Drive, la diagnostica Firebase opzionale e il feedback opzionale possono essere elaborati nelle giurisdizioni in cui operano tali servizi.
+**Dati dell'App:** Poiché tutti i dati di rilevamento sono memorizzati localmente sul vostro dispositivo, non si verificano trasferimenti internazionali dei vostri dati di rilevamento sotto il nostro controllo. Le chiamate API a terze parti (Sezione 3.2), il backup opzionale di Google Drive, la diagnostica Firebase opzionale, la condivisione opzionale della posizione tramite Gruppo Live (Sezione 3.5, tramite il Firebase di Google) e il feedback opzionale possono essere elaborati nelle giurisdizioni in cui operano tali servizi.
 
 **Dati del Sito Web:** Le email della lista d'attesa sono memorizzate nell'UE (Irlanda) da Supabase ed elaborate da Resend (UE, Irlanda). Se accedete al Sito Web dall'esterno dell'UE, la vostra email viene trasferita nell'UE per l'elaborazione.
 
 ## 15. Notifica di violazione dei dati
 
-**App:** Poiché non memorizziamo i vostri dati di rilevamento su nessun server che gestiamo, una violazione dei dati che riguarda i dati dell'App da parte nostra non è possibile. Se veniamo a conoscenza di una vulnerabilità nell'App, rilasceremo un aggiornamento e notificheremo gli utenti tramite l'App o il sito web. Il feedback opzionale che inviate è conservato dal nostro responsabile del trattamento Supabase secondo i suoi protocolli di notifica delle violazioni.
+**App:** I vostri dati di rilevamento salvati sono memorizzati sul vostro dispositivo, non su server che gestiamo, quindi non sono esposti da una violazione della nostra infrastruttura. L'unica eccezione è la funzionalità opzionale Gruppo Live (Sezione 3.5): mentre siete in un gruppo, la vostra posizione in tempo reale è conservata in modo transitorio nel Firebase di Google, con accesso limitato dalle regole lato server ai membri di quel gruppo. Se veniamo a conoscenza di una vulnerabilità nell'App, rilasceremo un aggiornamento e notificheremo gli utenti tramite l'App o il sito web. Il feedback opzionale che inviate è conservato dal nostro responsabile del trattamento Supabase secondo i suoi protocolli di notifica delle violazioni.
 
 **Sito Web:** I nostri responsabili (Supabase, Resend) mantengono i propri protocolli di notifica delle violazioni. Nell'improbabile caso di una violazione che riguardi la vostra email della lista d'attesa, vi notificheremo voi e l'autorità di controllo competente (ANSPDCP) entro 72 ore come richiesto dal GDPR.
 
@@ -284,7 +300,6 @@ Possiamo aggiornare questa Informativa sulla Privacy per riflettere modifiche ne
 - [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
 - [eHarta / geo-spatial.org](https://www.geo-spatial.org)
 - [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy tessere mappe storiche)
-- [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Hosting Sito Web + analisi)
 - [Supabase](https://supabase.com/privacy) (Database Sito Web + feedback nell'app)
@@ -292,7 +307,7 @@ Possiamo aggiornare questa Informativa sulla Privacy per riflettere modifiche ne
 
 ## 18. Contattateci
 
-**Coc Lorand Adrian P.F.A.** (operante come Loriba)  
+**Coc Lorand-Adrian P.F.A.** (operante come Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Sito web: [https://sweeptrack.pro](https://sweeptrack.pro)

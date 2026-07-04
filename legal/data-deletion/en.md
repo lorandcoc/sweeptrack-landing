@@ -4,7 +4,7 @@
 **Operated by:** Coc Lorand-Adrian P.F.A., trading as "Loriba"
 **Contact:** [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
-Last updated: June 4, 2026
+Last updated: July 3, 2026
 
 ---
 
@@ -12,7 +12,7 @@ This page explains exactly how to request that your SweepTrack Pro data is delet
 
 ## 1. How to delete on-device data
 
-All session, find, vault, preset, and media data lives **on your device only**. We do not operate servers that store this data. You can delete it at any time, without contacting us:
+Almost all of your data — sessions, finds, vault entries, presets, and media — lives **on your device only** (the one exception is the optional Live Group feature; see §2.6). You can delete on-device data at any time, without contacting us:
 
 - **Delete a single find or session** — open the item inside the App and tap the trash icon. Deletion removes the database row and the associated photos, audio, and video files.
 - **Delete a detector preset** — open Arsenal → choose preset → tap the trash icon.
@@ -57,15 +57,23 @@ If you used the App's **Feedback / Report a bug** form, your message is sent to 
 
 - Email us at the address below to request deletion of feedback you submitted; telling us roughly when you sent it helps us find it.
 
+### 2.6 Live Group shared location (only if you hosted or joined a Radar group)
+
+If you used SweepTrack Pro's optional **Live Group** feature (the Radar button), your live GPS position, chosen display name, coarse battery/status, marker color, and any shared waypoints, base point, or pings were written to a Firebase Realtime Database we operate and shared with the other members of that group — but only while you were actively in the group.
+
+- **Leave the group** to delete your own member entry (position and status) immediately.
+- A group is fully removed once its **last member leaves**. If a group is abandoned without anyone leaving, it stops accepting new positions after it expires (typically about 12 hours), but the last positions shared before expiry remain stored in the expired group until it is deleted.
+- Email us at the address below to request deletion of any residual Live Group data tied to your install.
+
 ## 3. How to request server-side deletion by email
 
-For anything in §2.1–2.5 above, email:
+For anything in §2.1–2.6 above, email:
 
 **[support@sweeptrack.pro](mailto:support@sweeptrack.pro)**
 
 Subject: **Data deletion request — SweepTrack Pro**
 
-Body: tell us which data you want deleted (Drive backups, Crashlytics reports, RevenueCat record, support emails, in-app feedback, or any combination). We will respond within **30 days** as required by GDPR Article 12.
+Body: tell us which data you want deleted (Drive backups, Crashlytics reports, RevenueCat record, Live Group data, support emails, in-app feedback, or any combination). We will respond within **30 days** as required by GDPR Article 12.
 
 ## 4. What we do NOT keep
 

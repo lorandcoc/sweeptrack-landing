@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS nyomkövető alkalmazás fémkeresőzéshez
 
-Hatálybalépés napja: 2026. május 12. · Utolsó frissítés: 2026. május 26.
+Hatálybalépés napja: 2026. május 12. · Utolsó frissítés: 2026. július 3.
 
-Üzemeltető: Coc Lorand Adrian P.F.A., kereskedelmi neve: "Loriba"
+Üzemeltető: Coc Lorand-Adrian P.F.A., kereskedelmi neve: "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Weboldal: sweeptrack.pro
 
 ## 1. A feltételek elfogadása
 
-A SweepTrack Pro („Alkalmazás") vagy a sweeptrack.pro weboldal („Weboldal") letöltésével, telepítésével, elérésével vagy használatával Ön beleegyezik a jelen Általános Szerződési Feltételek („Feltételek") betartásába. Ha nem ért egyet ezekkel a Feltételekkel, ne használja az Alkalmazást vagy a Weboldalt. A „mi", „minket" és „miénk" kifejezések a Loriba néven tevékenykedő Coc Lorand Adrian P.F.A.-ra vonatkoznak.
+A SweepTrack Pro („Alkalmazás") vagy a sweeptrack.pro weboldal („Weboldal") letöltésével, telepítésével, elérésével vagy használatával Ön beleegyezik a jelen Általános Szerződési Feltételek („Feltételek") betartásába. Ha nem ért egyet ezekkel a Feltételekkel, ne használja az Alkalmazást vagy a Weboldalt. A „mi", „minket" és „miénk" kifejezések a Loriba néven tevékenykedő Coc Lorand-Adrian P.F.A.-ra vonatkoznak.
 
 Fenntartjuk a jogot, hogy ezeket a Feltételeket bármikor módosítsuk. Az Alkalmazás vagy a Weboldal módosítások utáni folyamatos használata a módosítások elfogadását jelenti. A lényeges változásokról az Alkalmazáson vagy weboldalunkon keresztül értesítjük.
 
@@ -24,10 +24,10 @@ A SweepTrack Pro egy GPS-alapú nyomkövető és munkamenet-naplózó alkalmazá
 
 - Valós idejű GPS nyomkövetés és útvonalrögzítés
 - Munkamenet-naplózás távolság, sebesség, magasság és időtartam mérésekkel
-- Találatok/felfedezések naplózása fotó- és audiomellékletekkel
+- Találatok/felfedezések naplózása fotó-, audio- és videomellékletekkel
 - Időjárás-előrejelzés és keresési körülmények pontozása
 - Árapály-táblázat előrejelzések (amerikai parti állomások a NOAA-n keresztül)
-- Közeli történelmi és régészeti nevezetességek felfedezése
+- Élő csoportos helymeghatározás (Radar): megosztott élő térkép egy Ön által létrehozott vagy csatlakozott keresőcsoporttal
 - Detektor-előbeállítások kezelése több mint 60 fémkereső modellhez
 - Engedélykassza a földtulajdonosi engedélyek és helyszín-hozzáférések kezelésére
 - Perimeter-őrség határriasztásokkal
@@ -62,14 +62,15 @@ Nem tároljuk az Ön Google-fiókjának jelszavát. A hitelesítést teljes mér
 
 Az Alkalmazás díjmentesen korlátozott funkcionalitást kínál, beleértve:
 
-- Korlátlan munkamenet
-- Legfeljebb 5 találat
+- Legfeljebb 10 nyomkövető munkamenet havonta
+- Korlátlan találat, mindegyik egy fotóval (a Pro feloldja a mélység-, érték-, súly-, jel- és talajjegyzeteket, valamint az audio-, videó- és többfotós rögzítést)
 - 1 detektor-előbeállítás hely
+- Ingyenes csatlakozás egy Radar élő csoporthoz
 - Hozzáférés az alapvető nyomkövetési és térképezési funkciókhoz
 
 ### 5.2 Premium előfizetés
 
-A Google Play Store-on keresztül kezelt és a RevenueCat, Inc. által feldolgozott prémium előfizetés feloldja a korlátlan találatokat, munkameneteket és detektor-előbeállításokat, plusz olyan fejlett funkciókat, mint a történelmi térkép-átfedések, az offline térképek, a perimeter-őrség, a felhő-biztonsági mentés és további eszközök.
+A Google Play Store-on keresztül kezelt és a RevenueCat, Inc. által feldolgozott prémium előfizetés feloldja a teljes lelet-rekordot (mélység-, érték-, súly-, jel- és talajjegyzetek, valamint audio-, videó- és többfotós rögzítés), a korlátlan munkameneteket és a korlátlan detektor-előbeállításokat, plusz olyan fejlett funkciókat, mint a történelmi térkép-átfedések, az offline térképek, a perimeter-őrség, a felhő-biztonsági mentés, a saját Radar csoportok üzemeltetése és további eszközök.
 
 ### 5.3 Founder's Lifetime
 
@@ -107,8 +108,8 @@ Az Alkalmazás a következő adatokat gyűjti és tárolja **helyben az Ön eszk
 ### 6.2 Adattárolás (Alkalmazás)
 
 - **Az Alkalmazás összes adatát helyben tároljuk az Ön eszközén** egy helyi Room/SQLite adatbázisban és az alkalmazás privát fájltárolójában az Android privát sandboxján belül. Az adatbázisfájlt az Alkalmazás nem titkosítja külön, bár a támogatott eszközökön az Android platform tárolásvédelmi mechanizmusai érvényesülnek
-- **Az Alkalmazás adatai nem továbbítódnak szervereinkre** — nem üzemeltetünk háttér-szervereket vagy adatbázisokat az Alkalmazás funkcionalitásához
-- **Google Drive biztonsági mentés** (opcionális, felhasználó által kezdeményezett) az adatairól biztonsági másolatot tárol az Ön személyes Google Drive-fiókjában egy „SweepTrack Backups" mappában. Ha engedélyezi a jelszavas biztonsági mentés titkosítását, a biztonsági másolat a feltöltés előtt titkosításra kerül
+- **A mentett Alkalmazás-adatok (munkamenetek, találatok, kassza) nem továbbítódnak az általunk üzemeltetett szerverekre.** Az opcionális Élő csoport funkció (Radar) az egyetlen kivétel: amíg egy Ön által létrehozott vagy csatlakozott csoportban tartózkodik, az élő helyzetét és a megosztott térképelemeket a Google Firebase Realtime Database-én keresztül osztja meg — lásd az Adatvédelmi szabályzatunk §3.5 pontját
+- **Google Drive biztonsági mentés** (opcionális, felhasználó által kezdeményezett) az adatairól biztonsági másolatot tárol az Ön személyes Google Drive-fiókjában egy „SweepTrack Backups" mappában. Ha engedélyezi a jelszavas biztonsági mentés titkosítását, a biztonsági másolat az Ön eszközén titkosításra kerül a feltöltés előtt
 - Az Android felhőalapú biztonsági mentését letiltottuk az adatai védelme érdekében
 
 A Weboldal adatkezelési gyakorlatát (e-mail-cím gyűjtése a várólistához, elemzés, tárhelyszolgáltatás) külön a §6.7 ismerteti az alábbiakban, és teljes részletességgel az Adatvédelmi szabályzatunk 4. szakaszában.
@@ -118,12 +119,12 @@ A Weboldal adatkezelési gyakorlatát (e-mail-cím gyűjtése a várólistához,
 Az Alkalmazás hálózati kéréseket küld a következő harmadik féltől származó szolgáltatásokhoz kizárólag funkcionalitási célokra. Semmilyen személyes vagy azonosító adat nem kerül elküldésre, kivéve, ha kifejezetten jelezzük:
 
 - **Google Maps SDK** — Térkép megjelenítése
-- **Open-Meteo** — Időjárási adatok (hozzávetőleges koordináták küldve, nincs személyes információ)
-- **OpenStreetMap / Nominatim** — Fordított geokódolás (koordináták küldve, nincs személyes információ)
-- **Overpass API** — Közeli történelmi POI-k lekérdezései (koordináták küldve, nincs személyes információ)
-- **Wikipedia API** — Közeli cikkek (koordináták küldve, nincs személyes információ)
-- **NOAA** — Árapály-előrejelzések (állomás-azonosító küldve, nincs személyes információ)
+- **Open-Meteo** — Időjárási adatok és helykeresés (hozzávetőleges koordináták küldve, nincs személyes információ)
+- **NOAA** — Árapály-előrejelzések, amerikai parti állomások (állomás-azonosító küldve, nincs személyes információ)
+- **Firebase Realtime Database** (Google) — az Élő csoport háttere, kizárólag amíg Ön Radar csoportot hoz létre vagy csatlakozik ahhoz (lásd §6.2 és Adatvédelmi szabályzat §3.5)
 - **RevenueCat** — Előfizetés-ellenőrzés (anonim alkalmazás-felhasználó azonosító, nincs személyes információ)
+
+A fordított geokódolás (koordináták helynévvé alakítása) az eszközön fut az Android platform geokódolóján keresztül, és nem harmadik féltől származó hálózati hívás.
 
 ### 6.4 Diagnosztikai telemetria — csak hozzájárulással (Alkalmazás)
 
@@ -196,7 +197,7 @@ Az Alkalmazásban található találat-kategóriák (Kincs, Arany, Érme stb.) c
 
 ### 8.5 Nincs jogi tanácsadás
 
-Az Alkalmazásban semmi — beleértve az engedélykasszát, az időjárási pontozást, a keresési előrejelzést, a közeli helyszíneket, a történelmi térkép-átfedéseket, a találatok osztályozását vagy bármilyen szöveget — nem minősül jogi, pénzügyi, régészeti vagy szakmai tanácsadásnak semmilyen formában.
+Az Alkalmazásban semmi — beleértve az engedélykasszát, az időjárási pontozást, a keresési előrejelzést, a történelmi térkép-átfedéseket, a találatok osztályozását vagy bármilyen szöveget — nem minősül jogi, pénzügyi, régészeti vagy szakmai tanácsadásnak semmilyen formában.
 
 ## 9. GPS, helymeghatározás és biztonság
 
@@ -210,15 +211,15 @@ A nyomvonal-átfedés és a hőtérkép vizualizációi hozzávetőlegesek. A GP
 
 ## 10. Harmadik fél szolgáltatásai és tartalma
 
-Az Alkalmazás a Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA és Wikipedia adatait használja. A térképadatokat **soha** nem szabad jogi tulajdonhatárok vagy hozzáférési jogok meghatározására használni.
+Az Alkalmazás a Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo és NOAA adatait használja. A térképadatokat **soha** nem szabad jogi tulajdonhatárok vagy hozzáférési jogok meghatározására használni.
 
 **USGS történelmi térkép-átfedés:** A történelmi térképek évtizedekkel vagy évszázadokkal ezelőtti állapotokat ábrázolnak. A bemutatott jellemzők már nem létezhetnek, vagy más ingatlanon helyezkedhetnek el. A történelmi térképek nem tükrözik a jelenlegi határokat, tulajdonjogokat vagy hozzáférési jogokat. Egy történelmi jellemző jelenléte nem hatalmaz fel a keresésre.
 
-**Az árapály-előrejelzések** nem vehetik figyelembe a viharhullámokat, a szelet vagy a helyi anomáliákat. **A közeli helyszínekre vonatkozó adatok** közösségi hozzájárulások, és pontatlanok lehetnek — egy jelölő jelenléte nem hatalmaz fel a keresésre. **Az offline térképek** elavulhatnak. **A detektor-előbeállítások** szervezési eszközök, amelyeket a gyártók nem hagytak jóvá.
+**Az árapály-előrejelzések** nem vehetik figyelembe a viharhullámokat, a szelet vagy a helyi anomáliákat. **Az offline térképek** elavulhatnak. **A detektor-előbeállítások** szervezési eszközök, amelyeket a gyártók nem hagytak jóvá.
 
 ## 11. Szellemi tulajdon
 
-A SweepTrack Pro, beleértve annak tervét, kódját, grafikáját, UI komponenseit és márkajelzését, a Loriba néven tevékenykedő Coc Lorand Adrian P.F.A. szellemi tulajdona. Minden jog fenntartva.
+A SweepTrack Pro, beleértve annak tervét, kódját, grafikáját, UI komponenseit és márkajelzését, a Loriba néven tevékenykedő Coc Lorand-Adrian P.F.A. szellemi tulajdona. Minden jog fenntartva.
 
 Ön megőrzi a tulajdonjogot minden olyan tartalom felett, amelyet az Alkalmazás használatával hoz létre. Nem támasztunk igényt semmilyen jogra az Ön tartalma felett.
 
@@ -230,13 +231,13 @@ AZ ALKALMAZÁS „AHOGY VAN" ÉS „AHOGY ELÉRHETŐ" ALAPON KERÜL BIZTOSÍTÁS
 
 ## 13. Felelősség korlátozása
 
-AZ ALKALMAZANDÓ JOG ÁLTAL MEGENGEDETT LEGTELJESEBB MÉRTÉKBEN A LORIBA NÉVEN TEVÉKENYKEDŐ COC LORAND ADRIAN P.F.A. NEM FELELŐS SEMMILYEN KÖZVETETT, JÁRULÉKOS, KÜLÖNLEGES, KÖVETKEZMÉNYES VAGY BÜNTETŐ JELLEGŰ KÁRÉRT, BELEÉRTVE, DE NEM KIZÁRÓLAGOSAN: A GPS-PONTATLANSÁGBÓL, AZ INGATLANHATÁROK VITÁJÁBÓL VAGY A BEHATOLÁSI KÖVETELÉSEKBŐL EREDŐ KÁROKAT; AZ IDŐJÁRÁSI, ÁRAPÁLY VAGY KÖRNYEZETI ADATOKRA VALÓ TÁMASZKODÁSBÓL EREDŐ KÁROKAT; AZ ÁRAPÁLY-FELTÉTELEKET, BELEÉRTVE A SÉRÜLÉST VAGY VÍZBEFULLADÁST; A KERESÉSI TEVÉKENYSÉGEK JOGI KÖVETKEZMÉNYEIT, BELEÉRTVE A BÍRSÁGOKAT, BÜNTETŐELJÁRÁST VAGY ELKOBZÁST; A TREASURE ACT 1996, ARPA VAGY BÁRMELY KULTURÁLIS ÖRÖKSÉG TÖRVÉNY BE NEM TARTÁSÁT; A TÖRTÉNELMI TÉRKÉP-ÁTFEDÉSEKRE, A KÖZELI HELYSZÍNEKRE, AZ ENGEDÉLYKASSZÁRA, A PDF-LEVELEKRE, A DIGITÁLIS ALÁÍRÁSOKRA VAGY A LELET-AZONOSÍTÁSRA VALÓ TÁMASZKODÁST; A PERIMETER-ŐRSÉG, A NYOMVONAL-ÁTFEDÉS VAGY A HŐTÉRKÉP PONTATLANSÁGÁT; AZ ELAVULT OFFLINE TÉRKÉPEKET VAGY DETEKTOR-ELŐBEÁLLÍTÁSOKAT; A SZEMÉLYI SÉRÜLÉST, HALÁLT VAGY VAGYONI KÁRT A KERESÉSI TEVÉKENYSÉGEK SORÁN; VAGY A FÖLDTULAJDONOSOKKAL, A RENDŐRSÉGGEL VAGY HARMADIK FELEKKEL VALÓ INTERAKCIÓKAT.
+AZ ALKALMAZANDÓ JOG ÁLTAL MEGENGEDETT LEGTELJESEBB MÉRTÉKBEN A LORIBA NÉVEN TEVÉKENYKEDŐ COC LORAND-ADRIAN P.F.A. NEM FELELŐS SEMMILYEN KÖZVETETT, JÁRULÉKOS, KÜLÖNLEGES, KÖVETKEZMÉNYES VAGY BÜNTETŐ JELLEGŰ KÁRÉRT, BELEÉRTVE, DE NEM KIZÁRÓLAGOSAN: A GPS-PONTATLANSÁGBÓL, AZ INGATLANHATÁROK VITÁJÁBÓL VAGY A BEHATOLÁSI KÖVETELÉSEKBŐL EREDŐ KÁROKAT; AZ IDŐJÁRÁSI, ÁRAPÁLY VAGY KÖRNYEZETI ADATOKRA VALÓ TÁMASZKODÁSBÓL EREDŐ KÁROKAT; AZ ÁRAPÁLY-FELTÉTELEKET, BELEÉRTVE A SÉRÜLÉST VAGY VÍZBEFULLADÁST; A KERESÉSI TEVÉKENYSÉGEK JOGI KÖVETKEZMÉNYEIT, BELEÉRTVE A BÍRSÁGOKAT, BÜNTETŐELJÁRÁST VAGY ELKOBZÁST; A TREASURE ACT 1996, ARPA VAGY BÁRMELY KULTURÁLIS ÖRÖKSÉG TÖRVÉNY BE NEM TARTÁSÁT; A TÖRTÉNELMI TÉRKÉP-ÁTFEDÉSEKRE, AZ ENGEDÉLYKASSZÁRA, A PDF-LEVELEKRE, A DIGITÁLIS ALÁÍRÁSOKRA VAGY A LELET-AZONOSÍTÁSRA VALÓ TÁMASZKODÁST; A PERIMETER-ŐRSÉG, A NYOMVONAL-ÁTFEDÉS VAGY A HŐTÉRKÉP PONTATLANSÁGÁT; AZ ELAVULT OFFLINE TÉRKÉPEKET VAGY DETEKTOR-ELŐBEÁLLÍTÁSOKAT; A SZEMÉLYI SÉRÜLÉST, HALÁLT VAGY VAGYONI KÁRT A KERESÉSI TEVÉKENYSÉGEK SORÁN; VAGY A FÖLDTULAJDONOSOKKAL, A RENDŐRSÉGGEL VAGY HARMADIK FELEKKEL VALÓ INTERAKCIÓKAT.
 
 Teljes felelősségünk semmilyen körülmények között nem haladhatja meg azt az összeget, amelyet Ön az Alkalmazásért a követelést megelőző tizenkét (12) hónapban fizetett.
 
 ## 14. Kártalanítás
 
-Ön beleegyezik abba, hogy kártalanítja, megvédi és mentesíti a Loriba néven tevékenykedő Coc Lorand Adrian P.F.A.-t minden követeléstől, kártól, veszteségtől, kötelezettségtől, költségtől és kiadástól, amely az Alkalmazás használatából, a jelen Feltételek megsértéséből, bármely alkalmazandó törvény megsértéséből vagy az Ön fémkereső tevékenységeiből származik.
+Ön beleegyezik abba, hogy kártalanítja, megvédi és mentesíti a Loriba néven tevékenykedő Coc Lorand-Adrian P.F.A.-t minden követeléstől, kártól, veszteségtől, kötelezettségtől, költségtől és kiadástól, amely az Alkalmazás használatából, a jelen Feltételek megsértéséből, bármely alkalmazandó törvény megsértéséből vagy az Ön fémkereső tevékenységeiből származik.
 
 ## 15. Megszüntetés
 
@@ -264,13 +265,13 @@ A jelen Feltételek az Adatvédelmi szabályzatunkkal együtt az Ön és a Lorib
 
 ## 18. Nyílt forráskódú és harmadik fél licencei
 
-Az Alkalmazás nyílt forráskódú komponenseket használ. Kulcsfontosságú hozzárendelések: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (közkincs), USGS (közkincs), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+Az Alkalmazás nyílt forráskódú komponenseket használ. Kulcsfontosságú hozzárendelések: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (közkincs), USGS (közkincs), Jetpack Compose/Room/Hilt (Apache 2.0), Firebase SDK (Google), RevenueCat SDK (MIT).
 
 ## 19. Kapcsolat
 
 Kérdéseit a jelen Feltételekkel kapcsolatban kérjük, intézze a következő címre:
 
-**Coc Lorand Adrian P.F.A.** (kereskedelmi neve: Loriba)
+**Coc Lorand-Adrian P.F.A.** (kereskedelmi neve: Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Weboldal: [https://sweeptrack.pro](https://sweeptrack.pro)

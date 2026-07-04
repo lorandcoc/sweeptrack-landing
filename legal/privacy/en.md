@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS Tracking Application for Metal Detecting
 
-Effective Date: May 12, 2026 · Last Updated: June 4, 2026
+Effective Date: May 12, 2026 · Last Updated: July 3, 2026
 
-Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
+Operated by: Coc Lorand-Adrian P.F.A., trading as "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -16,13 +16,13 @@ Website: sweeptrack.pro
 
 This Privacy Policy explains how SweepTrack Pro ("the App") and the website at sweeptrack.pro ("the Website") collect, use, store, and protect your information. We are committed to protecting your privacy and ensuring transparency about our data practices.
 
-The App is designed with a **privacy-first architecture**: all detecting data is stored locally on your device, we do not operate backend servers that store your detecting data, and we do not collect, transmit, or sell your personal detecting data. A small amount of data leaves your device only for the user-initiated functions described in Sections 3.2 and 3.3 (real-time API features, optional backup, optional diagnostics, and optional feedback). The Website operates separately and has its own data practices, described in Section 4.
+The App is designed with a **privacy-first architecture**: your saved detecting data — sessions, finds, vault entries — is stored locally on your device, we do not sell it, and we do not use it to profile you. Some data leaves your device only for the user-initiated functions described in Sections 3.2, 3.3, and 3.5: real-time API features, optional backup, optional diagnostics, optional feedback, and — if you choose to create or join a group — the optional Live Group location sharing that is the whole purpose of the Radar feature. The Website operates separately and has its own data practices, described in Section 4.
 
 ## 2. Data Controller
 
 For the purposes of the EU General Data Protection Regulation (GDPR) and Romanian data protection law (Law 190/2018), the data controller is:
 
-**Coc Lorand Adrian P.F.A.** (trading as Loriba)
+**Coc Lorand-Adrian P.F.A.** (trading as Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -45,7 +45,7 @@ The following data is created by you and stored **exclusively on your device**. 
 - Find type (Treasure, Gold, Coin, Relic, Jewelry, Trash, Unsorted/Quick Drop)
 - Find location (GPS coordinates at time of logging)
 - Optional metadata: name, notes, depth, estimated value, weight
-- Media attachments: photographs and audio recordings
+- Media attachments: photographs, audio recordings, and video recordings
 
 **Permission Vault Data:**
 
@@ -66,9 +66,7 @@ The following data is sent to third-party APIs for real-time functionality and i
 
 - Approximate GPS coordinates sent to Open-Meteo for weather forecasts and elevation data
 - Coordinates resolved to place names via Android's platform geocoder (provided by Google Play Services on most devices) for reverse geocoding — used to label sessions and finds with a place name
-- Approximate GPS coordinates sent to Overpass API for nearby historical POI discovery
-- Approximate GPS coordinates sent to Wikipedia API for nearby article geosearch
-- Tide station identifiers sent to NOAA for tide predictions
+- Tide station identifiers sent to NOAA for tide predictions (U.S. coastal stations)
 - Location search queries sent to Open-Meteo Geocoding for place name search
 - Map tile requests (which reveal the approximate area of the map you are viewing) sent to the active map type's tile provider: Esri/ArcGIS (satellite imagery and USGS topographic maps), OpenStreetMap and OpenTopoMap (offline/downloadable map packs), and — for the Romanian historical "Old Map" overlay — a caching proxy we operate on Cloudflare that fetches tiles from geo-spatial.org (eHarta). The default Google map base is covered under Google Maps SDK in Section 3.3
 
@@ -98,10 +96,27 @@ Both services are subject to [Google's Privacy Policy](https://policies.google.c
 - **The App** does not use advertising frameworks or ad identifiers
 - **The App** does not track usage patterns, session frequency, or feature usage
 - **The App** does not create user profiles or behavioral fingerprints
-- **The App** does not sell, rent, or trade your data, and shares it only where you initiate it: the real-time API calls in Section 3.2, optional Google Drive backup, opt-in Firebase diagnostics, and feedback you choose to submit (Section 3.3)
-- **The App** does not operate any servers that receive, process, or store your detecting data (location, finds, vault entries, sessions); the only content you type that reaches a server we operate is feedback you choose to submit (Section 3.3)
+- **The App** does not sell, rent, or trade your data, and shares it only where you initiate it: the real-time API calls in Section 3.2, optional Google Drive backup, opt-in Firebase diagnostics, optional Live Group location sharing (Section 3.5), and feedback you choose to submit (Section 3.3)
+- **The App** does not operate servers that store your saved detecting data (sessions, finds, vault entries) — with one exception you control: the optional Live Group feature (Section 3.5) shares your live location with a group you create or join, via Google's Firebase Realtime Database, while you are in that group. Aside from Live Group, the only content that reaches a server we operate is feedback you choose to submit (Section 3.3)
 
 Website data practices are covered separately in Section 4.
+
+### 3.5 Live Group Location Sharing (optional — the Radar feature)
+
+SweepTrack Pro includes **Radar**, a live group-positioning feature reached from the RADAR button on the home map. It stays off unless you **create or join a group**. Creating (hosting) a group is a Pro feature; joining a group is free. While you are in a group, the following is transmitted to Google's **Firebase Realtime Database** and made visible, in real time, to the other members of that same group:
+
+- **Your display name** — a name you choose; it need not be your real name.
+- **Your precise location** — GPS latitude and longitude with accuracy and heading, updated while you are in the group (about every 30 seconds on the free tier, more frequently with a subscription, and every few seconds during an SOS).
+- **Your status** — online, paused, or stationary, and whether you have triggered an **SOS** (including your location at that moment).
+- **Your device battery level, map marker color and icon**, and any **shared waypoints, pings, or base/rally point** you create, each tagged with your display name and coordinates.
+
+**Who can see it:** only members of the group. Anyone with the group's join code or QR can join and see the live map, so share a code only with people you intend to share your location with. Access is enforced by server-side security rules; a person must join the group (becoming visible themselves) before they can read positions.
+
+**Authentication:** the group backend uses **Firebase Anonymous Authentication** — a random identifier for your app installation, not linked to your name, email, phone number, or Google account.
+
+**How long it is kept:** group location data is transient. A group **expires** (typically after about 12 hours; trial groups sooner), after which it stops accepting new positions and can no longer be joined. Leaving a group deletes your member entry immediately, and the group is deleted when its last member leaves. If a group is abandoned without anyone leaving, the last positions shared before expiry remain stored in the expired group until it is deleted. We do not keep a long-term history of your movements on our servers, and you can request deletion at any time (Section 18).
+
+The standalone free companion app has its own, fuller disclosure in the [SweepTrack Radar Privacy Policy](https://sweeptrack.pro/privacy-radar).
 
 ## 4. Website Data Practices (sweeptrack.pro)
 
@@ -157,6 +172,7 @@ The same GDPR, UK GDPR, Australian, Canadian, CCPA, LGPD, and NZ Privacy Act rig
 - **Google Drive backup:** Consent (Art. 6(1)(a)) — you explicitly enable and authenticate
 - **Subscription verification:** Contract performance (Art. 6(1)(b)) — necessary to provide paid features
 - **Firebase Analytics and Crashlytics (optional):** Consent (Art. 6(1)(a)) — opted in via the first-run prompt or Settings, revocable at any time
+- **Live Group location sharing (optional):** Consent (Art. 6(1)(a)) — you actively create or join a group, with a foreground notification shown while sharing is active; withdraw by leaving the group or closing the feature
 - **In-app feedback (optional):** Consent (Art. 6(1)(a)) — sent only when you submit the feedback form
 - **Waitlist email (Website):** Consent (Art. 6(1)(a)) — see Section 4.1
 
@@ -173,13 +189,13 @@ Website data (your waitlist email) is used only to send launch and pre-launch co
 **App data:**
 
 - Session and find data stored in a Room (SQLite) database in the App's sandboxed private storage on your device — protected by Android's app-isolation model and the device's user-data encryption at rest
-- Sensitive preferences use Android's EncryptedSharedPreferences (AES-256)
+- On supported devices, sensitive preferences and Permission Vault data use Android's EncryptedSharedPreferences (AES-256) backed by the Android Keystore. If the Keystore or EncryptedSharedPreferences is unavailable on a device, the App falls back to app-private (sandboxed) storage and shows a persistent in-app warning that this data is not separately encrypted on that device
 - Media files stored in the App's private internal storage, inaccessible to other apps
 - Android cloud backup **disabled** (`android:allowBackup="false"`) to prevent unintended data exposure
-- Google Drive backups use Google's encrypted APIs (HTTPS/TLS) and exist solely in your account
+- Google Drive backups are transmitted over HTTPS/TLS and stored solely in your own account. You can optionally protect a backup with a passphrase, which encrypts the archive (AES-256-GCM) on your device before upload so it cannot be read without your passphrase
 - Optional in-app feedback you submit is transmitted over HTTPS/TLS to a Supabase Edge Function (EU region)
 
-For the App, we do not operate any servers, databases, or cloud infrastructure that store your detecting data.
+For the App, we do not operate servers that store your saved detecting data. The one exception is the optional Live Group feature (Section 3.5), which holds transient, auto-expiring group location data in Google's Firebase while you are in a group.
 
 **Website data:** Waitlist emails are stored in a Supabase Postgres database hosted in the EU (Ireland). Connections are encrypted (TLS). Access is restricted to administrative purposes only. Outbound email is sent via Resend (EU, Ireland) over TLS. See Section 4.
 
@@ -191,7 +207,7 @@ For the App, we do not operate any servers, databases, or cloud infrastructure t
 
 ## 9. Data Sharing and Disclosure
 
-We do not sell, rent, or trade your personal data. You may choose to share App data through exports (GPX, KML, CSV, JSON), session share cards, or Google Drive backup — all user-initiated. If you submit in-app feedback, it is processed on our behalf by Supabase (see Section 3.3). Website waitlist data is processed only by our named processors (Supabase, Resend) for the purposes described in Section 4.
+We do not sell, rent, or trade your personal data. You may choose to share App data through exports (GPX, KML, CSV, JSON), session share cards, Google Drive backup, or live location sharing in a Radar group (Section 3.5) — all user-initiated. If you submit in-app feedback, it is processed on our behalf by Supabase (see Section 3.3). Website waitlist data is processed only by our named processors (Supabase, Resend) for the purposes described in Section 4.
 
 ## 10. Your Rights (GDPR and International)
 
@@ -259,13 +275,13 @@ You may revoke any permission at any time through Android Settings.
 
 ## 14. International Data Transfers
 
-**App data:** Since all detecting data is stored locally on your device, no international transfers of your detecting data occur under our control. Third-party API calls (Section 3.2), optional Google Drive backup, optional Firebase diagnostics, and optional feedback may be processed in jurisdictions where those services operate.
+**App data:** Since your saved detecting data is stored locally on your device, no international transfers of that data occur under our control. Third-party API calls (Section 3.2), optional Google Drive backup, optional Firebase diagnostics, optional Live Group location sharing (Section 3.5, via Google's Firebase), and optional feedback may be processed in jurisdictions where those services operate.
 
 **Website data:** Waitlist emails are stored in the EU (Ireland) by Supabase and processed by Resend (EU, Ireland). If you are accessing the Website from outside the EU, your email is transferred to the EU for processing.
 
 ## 15. Data Breach Notification
 
-**App:** Since we do not store your detecting data on any server we operate, a data breach affecting your detecting data on our end is not possible. If we become aware of a vulnerability in the App, we will issue an update and notify users through the App or website. Optional feedback you submit is held by our processor Supabase under its own breach-notification protocols.
+**App:** Your saved detecting data is stored on your device, not on servers we operate, so it is not exposed by a breach of our infrastructure. The one exception is the optional Live Group feature (Section 3.5): while you are in a group, your live location is held transiently in Google's Firebase, access-restricted by server-side rules to members of that group. If we become aware of a vulnerability in the App, we will issue an update and notify users through the App or website. Optional feedback you submit is held by our processor Supabase under its own breach-notification protocols.
 
 **Website:** Our processors (Supabase, Resend) maintain their own breach notification protocols. In the unlikely event of a breach affecting your waitlist email, we will notify you and the relevant supervisory authority (ANSPDCP) within 72 hours as required by GDPR.
 
@@ -284,7 +300,6 @@ We may update this Privacy Policy to reflect changes in functionality or applica
 - [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
 - [eHarta / geo-spatial.org](https://www.geo-spatial.org)
 - [Cloudflare](https://www.cloudflare.com/privacypolicy/) (historical-map tile proxy)
-- [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Website hosting + analytics)
 - [Supabase](https://supabase.com/privacy) (Website database + in-app feedback)
@@ -292,7 +307,7 @@ We may update this Privacy Policy to reflect changes in functionality or applica
 
 ## 18. Contact Us
 
-**Coc Lorand Adrian P.F.A.** (trading as Loriba)
+**Coc Lorand-Adrian P.F.A.** (trading as Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

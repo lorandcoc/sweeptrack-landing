@@ -4,7 +4,7 @@
 
 Effective Date: June 8, 2026 · Last Updated: June 12, 2026
 
-Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
+Operated by: Coc Lorand-Adrian P.F.A., trading as "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -24,7 +24,7 @@ SweepTrack Radar is free to download and use. **Joining a group is always free; 
 
 For the purposes of the EU General Data Protection Regulation (GDPR) and Romanian data protection law (Law 190/2018), the data controller is:
 
-**Coc Lorand Adrian P.F.A.** (trading as Loriba)
+**Coc Lorand-Adrian P.F.A.** (trading as Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -35,7 +35,7 @@ Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 This is the App's core function. **When you create or join a group, the following data is transmitted to Google's Firebase Realtime Database and made visible, in real time, to every other member of that same group:**
 
 - **Your display name** — a name you choose when you join. It does not have to be your real name.
-- **Your precise location** — GPS latitude and longitude, together with accuracy and heading, updated continuously while sharing is active.
+- **Your precise location** — GPS latitude and longitude, together with accuracy and heading, updated while sharing is active (about every 30 seconds on the free tier, more frequently with Premium, and every few seconds during an SOS).
 - **Your status** — whether you are online, paused, or stationary, and whether you have triggered an **SOS** (including your location at the moment of the SOS).
 - **Your device battery level** — so the group can see if a member's phone is about to die.
 - **Your map marker color and icon** — so members can tell one another apart on the map.
@@ -185,7 +185,7 @@ We may update this Privacy Policy to reflect changes in functionality or applica
 
 ## 17. Contact Us
 
-**Coc Lorand Adrian P.F.A.** (trading as Loriba)
+**Coc Lorand-Adrian P.F.A.** (trading as Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

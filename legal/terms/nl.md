@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 26 mei 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 3 juli 2026
 
-Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
+Geëxploiteerd door: Coc Lorand-Adrian P.F.A., handelend onder de naam "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Website: sweeptrack.pro
 
 ## 1. Acceptatie van de voorwaarden
 
-Door SweepTrack Pro ("de App") of de website sweeptrack.pro ("de Website") te downloaden, installeren, openen of gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Gebruiksvoorwaarden ("Voorwaarden"). Als u niet akkoord gaat met deze Voorwaarden, gebruik de App of de Website dan niet. "Wij", "ons" en "onze" verwijzen naar Coc Lorand Adrian P.F.A., handelend onder de naam Loriba.
+Door SweepTrack Pro ("de App") of de website sweeptrack.pro ("de Website") te downloaden, installeren, openen of gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Gebruiksvoorwaarden ("Voorwaarden"). Als u niet akkoord gaat met deze Voorwaarden, gebruik de App of de Website dan niet. "Wij", "ons" en "onze" verwijzen naar Coc Lorand-Adrian P.F.A., handelend onder de naam Loriba.
 
 Wij behouden ons het recht voor om deze Voorwaarden op elk gewenst moment te wijzigen. Voortgezet gebruik van de App of Website na wijzigingen houdt acceptatie in. Materiële wijzigingen zullen worden gecommuniceerd via de App of onze website.
 
@@ -24,10 +24,10 @@ SweepTrack Pro is een op GPS gebaseerde tracking- en sessielogboek-applicatie on
 
 - Real-time GPS-tracking en route-opname
 - Sessielogboek met statistieken voor afstand, snelheid, hoogte en duur
-- Logboek voor vondsten/ontdekkingen met foto- en audiobijlagen
+- Logboek voor vondsten/ontdekkingen met foto-, audio- en videobijlagen
 - Weersverwachting en score voor detectie-omstandigheden
 - Getijdevoorspellingen (Amerikaanse kuststations via NOAA)
-- Ontdekking van nabijgelegen historische en archeologische bezienswaardigheden
+- Live groepspositionering (Radar): een gedeelde live kaart met een detectiegroep die u aanmaakt of waaraan u deelneemt
 - Beheer van detector-presets voor meer dan 60 modellen metaaldetectoren
 - Toestemmingenkluis voor het beheren van toestemmingen van landeigenaren en sitetoegang
 - Perimeterbewaking met grenswaarschuwingen
@@ -62,14 +62,15 @@ Wij slaan uw Google-accountwachtwoord niet op. Authenticatie wordt volledig afge
 
 De App biedt beperkte functionaliteit kosteloos, waaronder:
 
-- Onbeperkte sessies
-- Tot 5 vondsten
+- Tot 10 trackingsessies per maand
+- Onbeperkte vondsten, elk met één foto (Pro ontgrendelt notities voor diepte, waarde, gewicht, signaal en bodem, plus audio-, video- en meervoudige foto-opname)
 - 1 detector-presetslot
+- Gratis deelnemen aan een Radar live groep
 - Toegang tot basis tracking- en kaartfuncties
 
 ### 5.2 Premium-abonnement
 
-Een premium-abonnement, beheerd via Google Play Store en verwerkt door RevenueCat, Inc., ontgrendelt onbeperkte vondsten, sessies en detector-presets, plus geavanceerde functies waaronder historische kaartoverlays, offline kaarten, perimeterbewaking, cloudback-up en aanvullende hulpmiddelen.
+Een premium-abonnement, beheerd via Google Play Store en verwerkt door RevenueCat, Inc., ontgrendelt de volledige vondstregistratie (notities voor diepte, waarde, gewicht, signaal en bodem, plus audio-, video- en meervoudige foto-opname), onbeperkte sessies en onbeperkte detector-presets, plus geavanceerde functies waaronder historische kaartoverlays, offline kaarten, perimeterbewaking, cloudback-up, het hosten van uw eigen Radar-groepen en aanvullende hulpmiddelen.
 
 ### 5.3 Founder's Lifetime
 
@@ -107,8 +108,8 @@ De App verzamelt en slaat de volgende gegevens **lokaal op uw apparaat** op:
 ### 6.2 Gegevensopslag (App)
 
 - **Alle App-gegevens worden lokaal op uw apparaat opgeslagen** in een lokale Room/SQLite-database en app-privé bestandsopslag binnen de afgeschermde privé-sandbox van Android. Het databasebestand wordt niet afzonderlijk door de App versleuteld, hoewel de platformopslagbescherming van Android op ondersteunde apparaten van toepassing is.
-- **Geen App-gegevens worden verzonden naar onze servers** — wij beheren geen backend-servers of databases voor App-functionaliteit
-- **Google Drive-back-up** (optioneel, door de gebruiker geïnitieerd) slaat een back-upkopie van uw gegevens op in uw persoonlijke Google Drive-account in een "SweepTrack Backups"-map. Als u back-upversleuteling met wachtwoordzin inschakelt, wordt de back-up vóór het uploaden versleuteld.
+- **Geen opgeslagen App-gegevens (sessies, vondsten, kluis) worden verzonden naar servers die wij beheren.** De optionele Live Groep-functie (Radar) is de enige uitzondering: terwijl u in een groep zit die u aanmaakt of waaraan u deelneemt, deelt deze uw live locatie en gedeelde kaartitems via de Firebase Realtime Database van Google — zie ons Privacybeleid, §3.5
+- **Google Drive-back-up** (optioneel, door de gebruiker geïnitieerd) slaat een back-upkopie van uw gegevens op in uw persoonlijke Google Drive-account in een "SweepTrack Backups"-map. Als u back-upversleuteling met wachtwoordzin inschakelt, wordt de back-up op uw apparaat versleuteld vóór het uploaden.
 - Android-cloudback-up is uitgeschakeld om uw gegevens te beschermen
 
 Gegevenspraktijken van de Website (e-mailadres-verzameling voor de wachtlijst, analytics, hosting) worden apart beschreven in §6.7 hieronder en in volledig detail in ons Privacybeleid, Sectie 4.
@@ -118,12 +119,12 @@ Gegevenspraktijken van de Website (e-mailadres-verzameling voor de wachtlijst, a
 De App doet netwerkverzoeken aan de volgende diensten van derden, uitsluitend voor functionaliteitsdoeleinden. Er worden geen persoonlijke of identificerende gegevens verzonden, tenzij anders aangegeven:
 
 - **Google Maps SDK** — Kaartweergave
-- **Open-Meteo** — Weersgegevens (geschatte coördinaten verzonden, geen persoonlijke informatie)
-- **OpenStreetMap / Nominatim** — Omgekeerde geocodering (coördinaten verzonden, geen persoonlijke informatie)
-- **Overpass API** — Zoekopdrachten naar nabijgelegen historische bezienswaardigheden (coördinaten verzonden, geen persoonlijke informatie)
-- **Wikipedia API** — Artikelen in de buurt (coördinaten verzonden, geen persoonlijke informatie)
-- **NOAA** — Getijvoorspellingen (station-ID verzonden, geen persoonlijke informatie)
+- **Open-Meteo** — Weersgegevens en plaatszoekopdracht (geschatte coördinaten verzonden, geen persoonlijke informatie)
+- **NOAA** — Getijvoorspellingen, Amerikaanse kuststations (station-ID verzonden, geen persoonlijke informatie)
+- **Firebase Realtime Database** (Google) — de Live Groep-backend, alleen terwijl u een Radar-groep aanmaakt of eraan deelneemt (zie §6.2 en Privacybeleid §3.5)
 - **RevenueCat** — Abonnementsverificatie (anonieme app-gebruikers-ID, geen persoonlijke informatie)
+
+Omgekeerde geocodering (het omzetten van coördinaten in een plaatsnaam) wordt op het apparaat uitgevoerd via de platform-geocoder van Android en is geen netwerkoproep aan derden.
 
 ### 6.4 Diagnostische telemetrie — alleen opt-in (App)
 
@@ -196,7 +197,7 @@ Vondstcategorieën in de App (Schat, Goud, Munt, enz.) zijn alleen voor persoonl
 
 ### 8.5 Geen juridisch advies
 
-Niets in de App — inclusief de toestemmingenkluis, weerscore, detectievoorspelling, nabijgelegen sites, historische kaartoverlays, vondstcategorisering of enige tekst — vormt juridisch, financieel, archeologisch of professioneel advies van welke aard dan ook.
+Niets in de App — inclusief de toestemmingenkluis, weerscore, detectievoorspelling, historische kaartoverlays, vondstcategorisering of enige tekst — vormt juridisch, financieel, archeologisch of professioneel advies van welke aard dan ook.
 
 ## 9. GPS, locatie en veiligheid
 
@@ -210,15 +211,15 @@ Routeoverlay- en heatmap-visualisaties zijn benaderend. GPS-drift en signaalverl
 
 ## 10. Diensten en inhoud van derden
 
-De App gebruikt gegevens van Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA en Wikipedia. Kaartgegevens mogen **nooit** worden gebruikt om wettelijke eigendomsgrenzen of toegangsrechten te bepalen.
+De App gebruikt gegevens van Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo en NOAA. Kaartgegevens mogen **nooit** worden gebruikt om wettelijke eigendomsgrenzen of toegangsrechten te bepalen.
 
 **USGS historische kaartoverlay:** Historische kaarten beelden omstandigheden af van decennia of eeuwen geleden. Getoonde kenmerken bestaan mogelijk niet meer of bevinden zich op andere eigendommen. Historische kaarten weerspiegelen geen huidige grenzen, eigendom of toegangsrechten. De aanwezigheid van een historisch kenmerk geeft geen toestemming voor detectie.
 
-**Getijvoorspellingen** houden mogelijk geen rekening met stormvloed, wind of lokale anomalieën. **Nabijgelegen sites-gegevens** zijn bijdragen van de gemeenschap en kunnen onnauwkeurig zijn — de aanwezigheid van een marker geeft geen toestemming voor detectie. **Offline kaarten** kunnen verouderen. **Detector-presets** zijn organisatorische hulpmiddelen, niet goedgekeurd door fabrikanten.
+**Getijvoorspellingen** houden mogelijk geen rekening met stormvloed, wind of lokale anomalieën. **Offline kaarten** kunnen verouderen. **Detector-presets** zijn organisatorische hulpmiddelen, niet goedgekeurd door fabrikanten.
 
 ## 11. Intellectueel eigendom
 
-SweepTrack Pro, inclusief het ontwerp, de code, de grafische elementen, UI-componenten en branding, is intellectueel eigendom van Coc Lorand Adrian P.F.A. (handelend onder de naam Loriba). Alle rechten voorbehouden.
+SweepTrack Pro, inclusief het ontwerp, de code, de grafische elementen, UI-componenten en branding, is intellectueel eigendom van Coc Lorand-Adrian P.F.A. (handelend onder de naam Loriba). Alle rechten voorbehouden.
 
 U behoudt het eigendom van alle inhoud die u maakt met behulp van de App. Wij claimen geen rechten op uw inhoud.
 
@@ -230,13 +231,13 @@ DE APP WORDT GELEVERD "AS IS" EN "ZOALS BESCHIKBAAR" ZONDER GARANTIES VAN WELKE 
 
 ## 13. Beperking van aansprakelijkheid
 
-VOOR ZOVER MAXIMAAL TOEGESTAAN DOOR DE TOEPASSELIJKE WET, IS COC LORAND ADRIAN P.F.A. (HANDELEND ONDER DE NAAM LORIBA) NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, SPECIALE, GEVOLG- OF PUNITIEVE SCHADE, INCLUSIEF MAAR NIET BEPERKT TOT: SCHADE DOOR GPS-ONNAUWKEURIGHEID, GESCHILLEN OVER EIGENDOMSGRENZEN OF CLAIMS VAN BETREDEN; SCHADE DOOR VERTROUWEN OP WEER-, GETIJDE- OF MILIEUGEGEVENS; GETIJDEOMSTANDIGHEDEN INCLUSIEF LETSEL OF VERDRINKING; JURIDISCHE GEVOLGEN VAN DETECTIEACTIVITEITEN INCLUSIEF BOETES, VERVOLGING OF INBESLAGNEMING; HET NIET NALEVEN VAN DE TREASURE ACT 1996, ARPA OF ENIGE WET INZAKE CULTUREEL ERFGOED; VERTROUWEN OP HISTORISCHE KAARTOVERLAYS, NABIJGELEGEN SITES, TOESTEMMINGENKLUIS, PDF-BRIEVEN, DIGITALE HANDTEKENINGEN OF VONDSTIDENTIFICATIE; ONNAUWKEURIGHEID VAN PERIMETERBEWAKING, ROUTEOVERLAY OF HEATMAP; VEROUDERDE OFFLINE KAARTEN OF DETECTOR-PRESETS; PERSOONLIJK LETSEL, OVERLIJDEN OF SCHADE AAN EIGENDOMMEN TIJDENS DETECTIEACTIVITEITEN; OF INTERACTIES MET LANDEIGENAREN, RECHTSHANDHAVING OF DERDEN.
+VOOR ZOVER MAXIMAAL TOEGESTAAN DOOR DE TOEPASSELIJKE WET, IS COC LORAND-ADRIAN P.F.A. (HANDELEND ONDER DE NAAM LORIBA) NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, SPECIALE, GEVOLG- OF PUNITIEVE SCHADE, INCLUSIEF MAAR NIET BEPERKT TOT: SCHADE DOOR GPS-ONNAUWKEURIGHEID, GESCHILLEN OVER EIGENDOMSGRENZEN OF CLAIMS VAN BETREDEN; SCHADE DOOR VERTROUWEN OP WEER-, GETIJDE- OF MILIEUGEGEVENS; GETIJDEOMSTANDIGHEDEN INCLUSIEF LETSEL OF VERDRINKING; JURIDISCHE GEVOLGEN VAN DETECTIEACTIVITEITEN INCLUSIEF BOETES, VERVOLGING OF INBESLAGNEMING; HET NIET NALEVEN VAN DE TREASURE ACT 1996, ARPA OF ENIGE WET INZAKE CULTUREEL ERFGOED; VERTROUWEN OP HISTORISCHE KAARTOVERLAYS, TOESTEMMINGENKLUIS, PDF-BRIEVEN, DIGITALE HANDTEKENINGEN OF VONDSTIDENTIFICATIE; ONNAUWKEURIGHEID VAN PERIMETERBEWAKING, ROUTEOVERLAY OF HEATMAP; VEROUDERDE OFFLINE KAARTEN OF DETECTOR-PRESETS; PERSOONLIJK LETSEL, OVERLIJDEN OF SCHADE AAN EIGENDOMMEN TIJDENS DETECTIEACTIVITEITEN; OF INTERACTIES MET LANDEIGENAREN, RECHTSHANDHAVING OF DERDEN.
 
 In geen geval zal onze totale aansprakelijkheid het bedrag overschrijden dat u voor de App heeft betaald in de twaalf (12) maanden voorafgaand aan de claim.
 
 ## 14. Schadeloosstelling
 
-U gaat ermee akkoord Coc Lorand Adrian P.F.A. (handelend onder de naam Loriba) schadeloos te stellen, te verdedigen en te vrijwaren van alle claims, schade, verliezen, aansprakelijkheden, kosten en uitgaven die voortvloeien uit uw gebruik van de App, schending van deze Voorwaarden, schending van enige toepasselijke wet of uw metaaldetectie-activiteiten.
+U gaat ermee akkoord Coc Lorand-Adrian P.F.A. (handelend onder de naam Loriba) schadeloos te stellen, te verdedigen en te vrijwaren van alle claims, schade, verliezen, aansprakelijkheden, kosten en uitgaven die voortvloeien uit uw gebruik van de App, schending van deze Voorwaarden, schending van enige toepasselijke wet of uw metaaldetectie-activiteiten.
 
 ## 15. Beëindiging
 
@@ -264,13 +265,13 @@ Deze Voorwaarden, samen met ons Privacybeleid, vormen de volledige overeenkomst 
 
 ## 18. Open source- en derde-partijlicenties
 
-De App gebruikt open-sourcecomponenten. Belangrijke toeschrijvingen: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (publiek domein), USGS (publiek domein), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+De App gebruikt open-sourcecomponenten. Belangrijke toeschrijvingen: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (publiek domein), USGS (publiek domein), Jetpack Compose/Room/Hilt (Apache 2.0), Firebase SDK (Google), RevenueCat SDK (MIT).
 
 ## 19. Contact
 
 Voor vragen over deze Voorwaarden kunt u contact opnemen met:
 
-**Coc Lorand Adrian P.F.A.** (handelend onder de naam Loriba)
+**Coc Lorand-Adrian P.F.A.** (handelend onder de naam Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

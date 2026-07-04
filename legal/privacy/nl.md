@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS-tracking-applicatie voor metaaldetectie
 
-Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 4 juni 2026
+Ingangsdatum: 12 mei 2026 · Laatst bijgewerkt: 3 juli 2026
 
-Geëxploiteerd door: Coc Lorand Adrian P.F.A., handelend onder de naam "Loriba"
+Geëxploiteerd door: Coc Lorand-Adrian P.F.A., handelend onder de naam "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -16,13 +16,13 @@ Website: sweeptrack.pro
 
 Dit Privacybeleid legt uit hoe SweepTrack Pro ("de App") en de website sweeptrack.pro ("de Website") uw informatie verzamelen, gebruiken, opslaan en beschermen. Wij doen er alles aan om uw privacy te beschermen en transparantie te bieden over onze gegevenspraktijken.
 
-De App is ontworpen met een **privacy-first architectuur**: alle detectiegegevens worden lokaal op uw apparaat opgeslagen, wij beheren geen backend-servers die uw detectiegegevens opslaan en wij verzamelen, verzenden of verkopen uw persoonlijke detectiegegevens niet. Een kleine hoeveelheid gegevens verlaat uw apparaat uitsluitend voor de door de gebruiker geïnitieerde functies beschreven in Secties 3.2 en 3.3 (realtime API-functies, optionele back-up, optionele diagnostiek en optionele feedback). De Website werkt apart en heeft zijn eigen gegevenspraktijken, beschreven in Sectie 4.
+De App is ontworpen met een **privacy-first architectuur**: uw opgeslagen detectiegegevens — sessies, vondsten, kluisitems — worden lokaal op uw apparaat opgeslagen, wij verkopen ze niet en wij gebruiken ze niet om u te profileren. Bepaalde gegevens verlaten uw apparaat uitsluitend voor de door de gebruiker geïnitieerde functies beschreven in Secties 3.2, 3.3 en 3.5: realtime API-functies, optionele back-up, optionele diagnostiek, optionele feedback en — als u ervoor kiest een groep aan te maken of eraan deel te nemen — het optioneel delen van live groepslocatie dat het hele doel van de Radar-functie vormt. De Website werkt apart en heeft zijn eigen gegevenspraktijken, beschreven in Sectie 4.
 
 ## 2. Verwerkingsverantwoordelijke
 
 Voor de doeleinden van de Algemene Verordening Gegevensbescherming van de EU (AVG/GDPR) en de Roemeense wet op de gegevensbescherming (Wet 190/2018), is de verwerkingsverantwoordelijke:
 
-**Coc Lorand Adrian P.F.A.** (handelend onder de naam Loriba)  
+**Coc Lorand-Adrian P.F.A.** (handelend onder de naam Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -45,7 +45,7 @@ De volgende gegevens worden door u aangemaakt en **uitsluitend op uw apparaat** 
 - Type vondst (Schat, Goud, Munt, Relict, Sieraad, Afval, Ongesorteerd/Snelle invoer)
 - Locatie van de vondst (GPS-coördinaten op het moment van registratie)
 - Optionele metadata: naam, notities, diepte, geschatte waarde, gewicht
-- Mediabijlagen: foto's en audio-opnamen
+- Mediabijlagen: foto's, audio-opnamen en video-opnamen
 
 **Gegevens van de toestemmingenkluis:**
 
@@ -66,9 +66,7 @@ De volgende gegevens worden naar API's van derden verzonden voor realtime functi
 
 - Geschatte GPS-coördinaten verzonden naar Open-Meteo voor weersvoorspellingen en hoogtegegevens
 - Coördinaten omgezet naar plaatsnamen via de platform-geocoder van Android (op de meeste apparaten geleverd door Google Play Services) voor omgekeerde geocodering — gebruikt om sessies en vondsten van een plaatsnaam te voorzien
-- Geschatte GPS-coördinaten verzonden naar Overpass API voor het ontdekken van nabijgelegen historische bezienswaardigheden
-- Geschatte GPS-coördinaten verzonden naar Wikipedia API voor geografische zoekopdrachten naar artikelen in de buurt
-- Identifiers van getijdestations verzonden naar NOAA voor getijvoorspellingen
+- Identifiers van getijdestations verzonden naar NOAA voor getijvoorspellingen (kuststations in de VS)
 - Locatiezoekopdrachten verzonden naar Open-Meteo Geocoding
 - Aanvragen van kaarttegels (die het globale gebied van de kaart die u bekijkt prijsgeven) verzonden naar de tegelprovider van het actieve kaarttype: Esri/ArcGIS (satellietbeelden en USGS-topografische kaarten), OpenStreetMap en OpenTopoMap (offline/downloadbare kaartpakketten), en — voor de Roemeense historische "Oude kaart"-overlay — een caching-proxy die wij op Cloudflare beheren en die tegels ophaalt van geo-spatial.org (eHarta). De standaard Google-kaartbasis valt onder Google Maps SDK in Sectie 3.3
 
@@ -98,10 +96,27 @@ Beide diensten zijn onderworpen aan het [Privacybeleid van Google](https://polic
 - **De App** gebruikt geen advertentieframeworks of reclame-identifiers
 - **De App** volgt geen gebruikspatronen, sessiefrequentie of functiegebruik
 - **De App** maakt geen gebruikersprofielen of gedragsvingerafdrukken
-- **De App** verkoopt, verhuurt of ruilt uw gegevens niet en deelt deze uitsluitend wanneer u dit zelf initieert: de realtime API-oproepen in Sectie 3.2, optionele Google Drive-back-up, opt-in Firebase-diagnostiek en feedback die u verkiest in te dienen (Sectie 3.3)
-- **De App** beheert geen servers die uw detectiegegevens (locatie, vondsten, kluisitems, sessies) ontvangen, verwerken of opslaan; de enige door u getypte inhoud die een server bereikt die wij beheren, is feedback die u verkiest in te dienen (Sectie 3.3)
+- **De App** verkoopt, verhuurt of ruilt uw gegevens niet en deelt deze uitsluitend wanneer u dit zelf initieert: de realtime API-oproepen in Sectie 3.2, optionele Google Drive-back-up, opt-in Firebase-diagnostiek, het optioneel delen van live groepslocatie (Sectie 3.5) en feedback die u verkiest in te dienen (Sectie 3.3)
+- **De App** beheert geen servers die uw opgeslagen detectiegegevens (sessies, vondsten, kluisitems) opslaan — op één uitzondering na die u zelf beheert: de optionele Live Group-functie (Sectie 3.5) deelt uw live locatie met een groep die u aanmaakt of waaraan u deelneemt, via de Firebase Realtime Database van Google, terwijl u in die groep zit. Afgezien van Live Group is de enige inhoud die een server bereikt die wij beheren, feedback die u verkiest in te dienen (Sectie 3.3)
 
 De gegevenspraktijken van de Website worden apart behandeld in Sectie 4.
+
+### 3.5 Delen van live groepslocatie (optioneel — de Radar-functie)
+
+SweepTrack Pro bevat **Radar**, een functie voor live groepspositionering die bereikbaar is via de RADAR-knop op de startkaart. Deze blijft uitgeschakeld tenzij u **een groep aanmaakt of aan een groep deelneemt**. Het aanmaken (hosten) van een groep is een Pro-functie; deelnemen aan een groep is gratis. Terwijl u in een groep zit, wordt het volgende verzonden naar de **Firebase Realtime Database** van Google en in realtime zichtbaar gemaakt voor de andere leden van diezelfde groep:
+
+- **Uw weergavenaam** — een naam die u kiest; deze hoeft niet uw echte naam te zijn.
+- **Uw nauwkeurige locatie** — GPS-breedtegraad en -lengtegraad met nauwkeurigheid en koers, bijgewerkt terwijl u in de groep zit (ongeveer elke 30 seconden op het gratis niveau, vaker met een abonnement, en om de paar seconden tijdens een SOS).
+- **Uw status** — online, gepauzeerd of stationair, en of u een **SOS** heeft geactiveerd (inclusief uw locatie op dat moment).
+- **Het batterijniveau van uw apparaat, de kleur en het pictogram van uw kaartmarkering**, en alle **gedeelde routepunten, pings of basis-/verzamelpunten** die u aanmaakt, elk voorzien van uw weergavenaam en coördinaten.
+
+**Wie het kan zien:** uitsluitend leden van de groep. Iedereen met de toetredingscode of QR van de groep kan deelnemen en de live kaart bekijken, dus deel een code alleen met mensen met wie u uw locatie wilt delen. De toegang wordt afgedwongen door beveiligingsregels aan de serverzijde; iemand moet aan de groep deelnemen (waardoor die zelf zichtbaar wordt) voordat die posities kan lezen.
+
+**Authenticatie:** de backend van de groep gebruikt **Firebase Anonymous Authentication** — een willekeurige identifier voor uw app-installatie, niet gekoppeld aan uw naam, e-mailadres, telefoonnummer of Google-account.
+
+**Hoe lang het wordt bewaard:** groepslocatiegegevens zijn kortstondig. Een groep **verloopt** (doorgaans na ongeveer 12 uur; proefgroepen eerder), waarna deze geen nieuwe posities meer accepteert en er niet meer aan kan worden deelgenomen. Het verlaten van een groep verwijdert uw lidmaatschapsvermelding onmiddellijk, en de groep wordt verwijderd wanneer het laatste lid vertrekt. Als een groep wordt verlaten zonder dat iemand vertrekt, blijven de laatste posities die vóór het verlopen zijn gedeeld opgeslagen in de verlopen groep totdat deze wordt verwijderd. Wij bewaren geen langdurige geschiedenis van uw bewegingen op onze servers, en u kunt op elk moment om verwijdering verzoeken (Sectie 18).
+
+De op zichzelf staande gratis begeleidende app heeft zijn eigen, uitgebreidere toelichting in het [Privacybeleid van SweepTrack Radar](https://sweeptrack.pro/privacy-radar).
 
 ## 4. Gegevenspraktijken van de Website (sweeptrack.pro)
 
@@ -157,6 +172,7 @@ Dezelfde GDPR, UK GDPR, Australische, Canadese, CCPA, LGPD en NZ Privacy Act-rec
 - **Google Drive-back-up:** Toestemming (Art. 6(1)(a)) — u activeert en authenticeert expliciet
 - **Abonnementsverificatie:** Uitvoering van overeenkomst (Art. 6(1)(b)) — noodzakelijk om betaalde functies te bieden
 - **Firebase Analytics en Crashlytics (optioneel):** Toestemming (Art. 6(1)(a)) — geactiveerd via het verzoek bij de eerste start of in de Instellingen, op elk moment intrekbaar
+- **Delen van live groepslocatie (optioneel):** Toestemming (Art. 6(1)(a)) — u maakt actief een groep aan of neemt er actief aan deel, waarbij een voorgrondmelding wordt getoond terwijl het delen actief is; intrekken door de groep te verlaten of de functie te sluiten
 - **In-app feedback (optioneel):** Toestemming (Art. 6(1)(a)) — uitsluitend verzonden wanneer u het feedbackformulier indient
 - **Wachtlijst-e-mail (Website):** Toestemming (Art. 6(1)(a)) — zie Sectie 4.1
 
@@ -173,13 +189,13 @@ Website-gegevens (uw wachtlijst-e-mail) worden alleen gebruikt om de lancerings-
 **App-gegevens:**
 
 - Sessie- en vondstgegevens worden opgeslagen in een Room-database (SQLite) in de afgeschermde privé-opslag van de App op uw apparaat — beschermd door Androids app-isolatiemodel en de versleuteling van gebruikersgegevens in rust van het apparaat
-- Gevoelige voorkeuren gebruiken EncryptedSharedPreferences (AES-256) van Android
+- Op ondersteunde apparaten gebruiken gevoelige voorkeuren en gegevens van de toestemmingenkluis Androids EncryptedSharedPreferences (AES-256), ondersteund door de Android Keystore. Als de Keystore of EncryptedSharedPreferences op een apparaat niet beschikbaar is, valt de App terug op app-privé (afgeschermde) opslag en toont een blijvende waarschuwing in de App dat deze gegevens op dat apparaat niet afzonderlijk zijn versleuteld
 - Mediabestanden worden opgeslagen in de privé interne opslag van de App, ontoegankelijk voor andere apps
 - Android-cloudback-up is **uitgeschakeld** (`android:allowBackup="false"`) om onbedoelde gegevensblootstelling te voorkomen
-- Google Drive-back-ups gebruiken de versleutelde API's van Google (HTTPS/TLS) en bestaan alleen in uw account
+- Google Drive-back-ups worden via HTTPS/TLS verzonden en bestaan uitsluitend in uw eigen account. U kunt een back-up optioneel beschermen met een wachtwoordzin, die het archief (AES-256-GCM) op uw apparaat versleutelt vóór het uploaden, zodat het niet gelezen kan worden zonder uw wachtwoordzin
 - Optionele in-app feedback die u indient, wordt via HTTPS/TLS verzonden naar een Supabase Edge Function (EU-regio)
 
-Voor de App beheren wij geen servers, databases of cloudinfrastructuur die uw detectiegegevens opslaan.
+Voor de App beheren wij geen servers die uw opgeslagen detectiegegevens opslaan. De enige uitzondering is de optionele Live Group-functie (Sectie 3.5), die kortstondige, automatisch verlopende groepslocatiegegevens in de Firebase van Google bewaart terwijl u in een groep zit.
 
 **Website-gegevens:** Wachtlijst-e-mails worden opgeslagen in een Supabase Postgres-database gehost in de EU (Ierland). Verbindingen zijn versleuteld (TLS). Toegang is beperkt tot administratieve doeleinden. Uitgaande e-mail wordt verzonden via Resend (EU, Ierland) via TLS. Zie Sectie 4.
 
@@ -191,7 +207,7 @@ Voor de App beheren wij geen servers, databases of cloudinfrastructuur die uw de
 
 ## 9. Gegevensdeling en openbaarmaking
 
-Wij verkopen, verhuren of ruilen uw persoonlijke gegevens niet. U kunt ervoor kiezen App-gegevens te delen via exports (GPX, KML, CSV, JSON), sessie-share-kaarten of Google Drive-back-up — allemaal door de gebruiker geïnitieerd. Als u in-app feedback indient, wordt deze namens ons verwerkt door Supabase (zie Sectie 3.3). Wachtlijst-gegevens van de Website worden alleen verwerkt door onze genoemde verwerkers (Supabase, Resend) voor de doeleinden beschreven in Sectie 4.
+Wij verkopen, verhuren of ruilen uw persoonlijke gegevens niet. U kunt ervoor kiezen App-gegevens te delen via exports (GPX, KML, CSV, JSON), sessie-share-kaarten, Google Drive-back-up of het delen van live locatie in een Radar-groep (Sectie 3.5) — allemaal door de gebruiker geïnitieerd. Als u in-app feedback indient, wordt deze namens ons verwerkt door Supabase (zie Sectie 3.3). Wachtlijst-gegevens van de Website worden alleen verwerkt door onze genoemde verwerkers (Supabase, Resend) voor de doeleinden beschreven in Sectie 4.
 
 ## 10. Uw rechten (GDPR en internationaal)
 
@@ -259,13 +275,13 @@ U kunt elke toestemming op elk moment intrekken via de Android-instellingen.
 
 ## 14. Internationale gegevensoverdrachten
 
-**App-gegevens:** Aangezien alle detectiegegevens lokaal op uw apparaat worden opgeslagen, vinden er geen internationale gegevensoverdrachten van uw detectiegegevens plaats onder onze controle. API-oproepen naar derden (Sectie 3.2), optionele Google Drive-back-up, optionele Firebase-diagnostiek en optionele feedback kunnen worden verwerkt in de jurisdicties waar die diensten opereren.
+**App-gegevens:** Aangezien alle detectiegegevens lokaal op uw apparaat worden opgeslagen, vinden er geen internationale gegevensoverdrachten van uw detectiegegevens plaats onder onze controle. API-oproepen naar derden (Sectie 3.2), optionele Google Drive-back-up, optionele Firebase-diagnostiek, het optioneel delen van live groepslocatie (Sectie 3.5, via de Firebase van Google) en optionele feedback kunnen worden verwerkt in de jurisdicties waar die diensten opereren.
 
 **Website-gegevens:** Wachtlijst-e-mails worden opgeslagen in de EU (Ierland) door Supabase en verwerkt door Resend (EU, Ierland). Als u de Website buiten de EU bezoekt, wordt uw e-mailadres voor verwerking naar de EU overgedragen.
 
 ## 15. Kennisgeving van gegevenslekken
 
-**App:** Aangezien wij uw detectiegegevens niet op enige server opslaan die wij beheren, is een gegevenslek dat App-gegevens aan onze kant beïnvloedt niet mogelijk. Als wij op de hoogte raken van een kwetsbaarheid in de App, brengen wij een update uit en informeren wij gebruikers via de App of website. Optionele feedback die u indient, wordt bewaard door onze verwerker Supabase onder diens eigen meldingsprotocollen voor gegevenslekken.
+**App:** Uw opgeslagen detectiegegevens worden op uw apparaat opgeslagen, niet op servers die wij beheren, waardoor ze niet worden blootgesteld door een lek in onze infrastructuur. De enige uitzondering is de optionele Live Group-functie (Sectie 3.5): terwijl u in een groep zit, wordt uw live locatie kortstondig bewaard in de Firebase van Google, met toegang die via regels aan de serverzijde is beperkt tot de leden van die groep. Als wij op de hoogte raken van een kwetsbaarheid in de App, brengen wij een update uit en informeren wij gebruikers via de App of website. Optionele feedback die u indient, wordt bewaard door onze verwerker Supabase onder diens eigen meldingsprotocollen voor gegevenslekken.
 
 **Website:** Onze verwerkers (Supabase, Resend) hanteren hun eigen meldingsprotocollen voor gegevenslekken. In het onwaarschijnlijke geval van een lek dat uw wachtlijst-e-mail beïnvloedt, zullen wij u en de relevante toezichthoudende autoriteit (ANSPDCP) binnen 72 uur informeren zoals vereist door de GDPR.
 
@@ -284,7 +300,6 @@ Wij kunnen dit Privacybeleid bijwerken om wijzigingen in functionaliteit of toep
 - [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
 - [eHarta / geo-spatial.org](https://www.geo-spatial.org)
 - [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy voor historische-kaarttegels)
-- [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Website-hosting + analytics)
 - [Supabase](https://supabase.com/privacy) (Website-database + in-app feedback)
@@ -292,7 +307,7 @@ Wij kunnen dit Privacybeleid bijwerken om wijzigingen in functionaliteit of toep
 
 ## 18. Contact
 
-**Coc Lorand Adrian P.F.A.** (handelend onder de naam Loriba)  
+**Coc Lorand-Adrian P.F.A.** (handelend onder de naam Loriba)  
 CUI: 41299288 · Reg. F24/646/2019  
 E-mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

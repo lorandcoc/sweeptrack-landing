@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS-Tracking-Anwendung für die Metalldetektion
 
-Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 4. Juni 2026
+Inkrafttreten: 12. Mai 2026 · Letzte Aktualisierung: 3. Juli 2026
 
-Betrieben von: Coc Lorand Adrian P.F.A., firmierend unter „Loriba"
+Betrieben von: Coc Lorand-Adrian P.F.A., firmierend unter „Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -16,13 +16,13 @@ Website: sweeptrack.pro
 
 Diese Datenschutzerklärung erläutert, wie SweepTrack Pro („die App") und die Website unter sweeptrack.pro („die Website") Ihre Informationen sammeln, verwenden, speichern und schützen. Wir setzen uns für den Schutz Ihrer Privatsphäre ein und sorgen für Transparenz bei unseren Datenpraktiken.
 
-Die App basiert auf einer **Privacy-First-Architektur**: Alle Detektionsdaten werden lokal auf Ihrem Gerät gespeichert, wir betreiben keine Backend-Server, die Ihre Detektionsdaten speichern, und wir sammeln, übertragen oder verkaufen Ihre personenbezogenen Detektionsdaten nicht. Eine geringe Menge an Daten verlässt Ihr Gerät nur für die vom Nutzer initiierten Funktionen, die in den Abschnitten 3.2 und 3.3 beschrieben werden (Echtzeit-API-Funktionen, optionale Sicherung, optionale Diagnose und optionales Feedback). Die Website wird separat betrieben und hat ihre eigenen Datenpraktiken, die in Abschnitt 4 beschrieben werden.
+Die App basiert auf einer **Privacy-First-Architektur**: Ihre gespeicherten Detektionsdaten — Sitzungen, Funde, Tresoreinträge — werden lokal auf Ihrem Gerät gespeichert, wir verkaufen sie nicht und wir verwenden sie nicht, um Sie zu profilieren. Einige Daten verlassen Ihr Gerät nur für die vom Nutzer initiierten Funktionen, die in den Abschnitten 3.2, 3.3 und 3.5 beschrieben werden: Echtzeit-API-Funktionen, optionale Sicherung, optionale Diagnose, optionales Feedback und — falls Sie sich entscheiden, eine Gruppe zu erstellen oder ihr beizutreten — die optionale Live-Gruppen-Standortfreigabe, die der eigentliche Zweck der Radar-Funktion ist. Die Website wird separat betrieben und hat ihre eigenen Datenpraktiken, die in Abschnitt 4 beschrieben werden.
 
 ## 2. Verantwortlicher für die Datenverarbeitung
 
 Im Sinne der EU-Datenschutz-Grundverordnung (GDPR) und des rumänischen Datenschutzgesetzes (Gesetz 190/2018) ist der Verantwortliche für die Datenverarbeitung:
 
-**Coc Lorand Adrian P.F.A.** (firmierend als Loriba)
+**Coc Lorand-Adrian P.F.A.** (firmierend als Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -45,7 +45,7 @@ Die folgenden Daten werden von Ihnen erstellt und **ausschließlich auf Ihrem Ge
 * Fundtyp (Schatz, Gold, Münze, Relikt, Schmuck, Müll, Unsortiert/Schnellablage)
 * Fundort (GPS-Koordinaten zum Zeitpunkt der Protokollierung)
 * Optionale Metadaten: Name, Notizen, Tiefe, geschätzter Wert, Gewicht
-* Medienanhänge: Fotos und Audioaufnahmen
+* Medienanhänge: Fotos, Audioaufnahmen und Videoaufnahmen
 
 **Daten des Berechtigungstresors:**
 
@@ -66,9 +66,7 @@ Die folgenden Daten werden zur Echtzeit-Funktionalität an Drittanbieter-APIs ge
 
 * Ungefähre GPS-Koordinaten an Open-Meteo für Wettervorhersagen und Höhendaten
 * Koordinaten, die über den Plattform-Geocoder von Android (auf den meisten Geräten von Google Play Services bereitgestellt) in Ortsnamen aufgelöst werden, zum Reverse-Geocoding — verwendet, um Sitzungen und Funde mit einem Ortsnamen zu versehen
-* Ungefähre GPS-Koordinaten an Overpass API zur Entdeckung nahegelegener historischer Points-of-Interest
-* Ungefähre GPS-Koordinaten an Wikipedia API für die geografische Suche nach Artikeln in der Nähe
-* Gezeitenstationskennungen an NOAA für Gezeitenvorhersagen
+* Gezeitenstationskennungen an NOAA für Gezeitenvorhersagen (US-Küstenstationen)
 * Standortsuchanfragen an Open-Meteo Geocoding zur Namenssuche von Orten
 * Kartenkachel-Anfragen (die das ungefähre Gebiet der von Ihnen angezeigten Karte verraten) an den Kachelanbieter des aktiven Kartentyps: Esri/ArcGIS (Satellitenbilder und USGS-topografische Karten), OpenStreetMap und OpenTopoMap (Offline-/herunterladbare Kartenpakete) und — für das rumänische historische „Alte Karte"-Overlay — einen von uns betriebenen Caching-Proxy auf Cloudflare, der Kacheln von geo-spatial.org (eHarta) abruft. Die standardmäßige Google-Kartenbasis ist unter Google Maps SDK in Abschnitt 3.3 abgedeckt
 
@@ -98,10 +96,27 @@ Beide Dienste unterliegen der [Google-Datenschutzerklärung](https://policies.go
 * **Die App** verwendet keine Werberahmen oder Werbeidentifikatoren
 * **Die App** verfolgt keine Nutzungsmuster, Sitzungshäufigkeit oder Funktionsnutzung
 * **Die App** erstellt keine Benutzerprofile oder Verhaltens-Fingerabdrücke
-* **Die App** verkauft, vermietet oder handelt Ihre Daten nicht und teilt sie nur dort, wo Sie es initiieren: die Echtzeit-API-Aufrufe in Abschnitt 3.2, die optionale Google Drive-Sicherung, die Opt-in-Firebase-Diagnose und das Feedback, das Sie absenden (Abschnitt 3.3)
-* **Die App** betreibt keine Server, die Ihre Detektionsdaten (Standort, Funde, Tresoreinträge, Sitzungen) empfangen, verarbeiten oder speichern; der einzige von Ihnen eingegebene Inhalt, der einen von uns betriebenen Server erreicht, ist das Feedback, das Sie absenden möchten (Abschnitt 3.3)
+* **Die App** verkauft, vermietet oder handelt Ihre Daten nicht und teilt sie nur dort, wo Sie es initiieren: die Echtzeit-API-Aufrufe in Abschnitt 3.2, die optionale Google Drive-Sicherung, die Opt-in-Firebase-Diagnose, die optionale Live-Gruppen-Standortfreigabe (Abschnitt 3.5) und das Feedback, das Sie absenden (Abschnitt 3.3)
+* **Die App** betreibt keine Server, die Ihre gespeicherten Detektionsdaten (Sitzungen, Funde, Tresoreinträge) speichern — mit einer Ausnahme, die Sie kontrollieren: Die optionale Live-Gruppen-Funktion (Abschnitt 3.5) teilt Ihren Live-Standort mit einer Gruppe, die Sie erstellen oder der Sie beitreten, über Googles Firebase Realtime Database, solange Sie sich in dieser Gruppe befinden. Abgesehen von der Live-Gruppe ist der einzige Inhalt, der einen von uns betriebenen Server erreicht, das Feedback, das Sie absenden möchten (Abschnitt 3.3)
 
 Die Datenpraktiken der Website werden separat in Abschnitt 4 behandelt.
+
+### 3.5 Live-Gruppen-Standortfreigabe (optional — die Radar-Funktion)
+
+SweepTrack Pro enthält **Radar**, eine Funktion zur Live-Positionierung von Gruppen, die über die RADAR-Schaltfläche auf der Startkarte erreichbar ist. Sie bleibt deaktiviert, sofern Sie nicht eine **Gruppe erstellen oder ihr beitreten**. Das Erstellen (Hosten) einer Gruppe ist eine Pro-Funktion; der Beitritt zu einer Gruppe ist kostenlos. Solange Sie sich in einer Gruppe befinden, wird Folgendes an Googles **Firebase Realtime Database** übermittelt und in Echtzeit für die anderen Mitglieder derselben Gruppe sichtbar gemacht:
+
+* **Ihr Anzeigename** — ein von Ihnen gewählter Name; er muss nicht Ihr echter Name sein.
+* **Ihr genauer Standort** — GPS-Breitengrad und -Längengrad mit Genauigkeit und Kurs, aktualisiert, solange Sie sich in der Gruppe befinden (etwa alle 30 Sekunden im kostenlosen Tarif, häufiger mit einem Abonnement und alle paar Sekunden während eines SOS).
+* **Ihr Status** — online, pausiert oder stationär, sowie ob Sie einen **SOS** ausgelöst haben (einschließlich Ihres Standorts zu diesem Zeitpunkt).
+* **Der Akkustand Ihres Geräts, die Farbe und das Symbol Ihrer Kartenmarkierung** sowie alle **geteilten Wegpunkte, Pings oder Basis-/Sammelpunkte**, die Sie erstellen, jeweils mit Ihrem Anzeigenamen und Ihren Koordinaten versehen.
+
+**Wer es sehen kann:** nur Mitglieder der Gruppe. Jeder mit dem Beitrittscode oder QR-Code der Gruppe kann beitreten und die Live-Karte sehen; teilen Sie einen Code daher nur mit Personen, mit denen Sie Ihren Standort teilen möchten. Der Zugriff wird durch serverseitige Sicherheitsregeln durchgesetzt; eine Person muss der Gruppe beitreten (und wird dabei selbst sichtbar), bevor sie Positionen lesen kann.
+
+**Authentifizierung:** Das Gruppen-Backend verwendet **Firebase Anonymous Authentication** — eine zufällige Kennung für Ihre App-Installation, die nicht mit Ihrem Namen, Ihrer E-Mail-Adresse, Ihrer Telefonnummer oder Ihrem Google-Konto verknüpft ist.
+
+**Wie lange sie gespeichert werden:** Gruppen-Standortdaten sind vorübergehend. Eine Gruppe **läuft ab** (in der Regel nach etwa 12 Stunden; Testgruppen früher), woraufhin sie keine neuen Positionen mehr annimmt und ihr nicht mehr beigetreten werden kann. Das Verlassen einer Gruppe löscht Ihren Mitgliedseintrag sofort, und die Gruppe wird gelöscht, wenn ihr letztes Mitglied sie verlässt. Wird eine Gruppe aufgegeben, ohne dass jemand sie verlässt, bleiben die letzten vor dem Ablauf geteilten Positionen in der abgelaufenen Gruppe gespeichert, bis diese gelöscht wird. Wir führen keinen langfristigen Verlauf Ihrer Bewegungen auf unseren Servern und Sie können jederzeit die Löschung verlangen (Abschnitt 18).
+
+Die eigenständige kostenlose Begleit-App verfügt über ihre eigene, ausführlichere Offenlegung in der [SweepTrack Radar Datenschutzerklärung](https://sweeptrack.pro/privacy-radar).
 
 ## 4. Datenpraktiken der Website (sweeptrack.pro)
 
@@ -157,6 +172,7 @@ Die gleichen GDPR-, UK GDPR-, australischen, kanadischen, CCPA-, LGPD- und NZ Pr
 * **Google Drive Sicherung:** Einwilligung (Art. 6(1)(a)) — Sie aktivieren und authentifizieren ausdrücklich
 * **Abonnementverifizierung:** Vertragserfüllung (Art. 6(1)(b)) — erforderlich, um kostenpflichtige Funktionen bereitzustellen
 * **Firebase Analytics und Crashlytics (optional):** Einwilligung (Art. 6(1)(a)) — über die Abfrage beim ersten Start oder in den Einstellungen aktiviert, jederzeit widerrufbar
+* **Live-Gruppen-Standortfreigabe (optional):** Einwilligung (Art. 6(1)(a)) — Sie erstellen aktiv eine Gruppe oder treten ihr bei, wobei während der aktiven Freigabe eine Vordergrund-Benachrichtigung angezeigt wird; Widerruf durch Verlassen der Gruppe oder Schließen der Funktion
 * **In-App-Feedback (optional):** Einwilligung (Art. 6(1)(a)) — nur gesendet, wenn Sie das Feedback-Formular absenden
 * **Warteliste-E-Mail (Website):** Einwilligung (Art. 6(1)(a)) — siehe Abschnitt 4.1
 
@@ -173,13 +189,13 @@ Website-Daten (Ihre Warteliste-E-Mail) werden nur zum Versand der in Abschnitt 4
 **App-Daten:**
 
 * Sitzungs- und Funddaten werden in einer Room-Datenbank (SQLite) im sandboxed privaten Speicher der App auf Ihrem Gerät gespeichert — geschützt durch Androids App-Isolationsmodell und die geräteseitige Verschlüsselung der Nutzerdaten im Ruhezustand
-* Sensible Einstellungen verwenden Androids EncryptedSharedPreferences (AES-256)
+* Auf unterstützten Geräten verwenden sensible Einstellungen und Daten des Berechtigungstresors Androids EncryptedSharedPreferences (AES-256), gestützt auf den Android Keystore. Falls der Keystore oder EncryptedSharedPreferences auf einem Gerät nicht verfügbar ist, greift die App auf app-privaten (sandboxed) Speicher zurück und zeigt eine dauerhafte In-App-Warnung an, dass diese Daten auf diesem Gerät nicht separat verschlüsselt sind
 * Mediendateien werden im privaten internen Speicher der App gespeichert und sind für andere Apps nicht zugänglich
 * Android-Cloud-Sicherung **deaktiviert** (`android:allowBackup="false"`), um unbeabsichtigte Datenexposition zu verhindern
-* Google Drive-Sicherungen verwenden die verschlüsselten APIs von Google (HTTPS/TLS) und existieren ausschließlich in Ihrem Konto
+* Google Drive-Sicherungen werden über HTTPS/TLS übertragen und ausschließlich in Ihrem eigenen Konto gespeichert. Sie können eine Sicherung optional mit einer Passphrase schützen, die das Archiv (AES-256-GCM) auf Ihrem Gerät verschlüsselt, bevor es hochgeladen wird, sodass es ohne Ihre Passphrase nicht gelesen werden kann
 * Optionales In-App-Feedback, das Sie absenden, wird über HTTPS/TLS an eine Supabase Edge Function (EU-Region) übermittelt
 
-Für die App betreiben wir keine Server, Datenbanken oder Cloud-Infrastruktur, die Ihre Detektionsdaten speichern.
+Für die App betreiben wir keine Server, die Ihre gespeicherten Detektionsdaten speichern. Die einzige Ausnahme ist die optionale Live-Gruppen-Funktion (Abschnitt 3.5), die vorübergehende, automatisch ablaufende Gruppen-Standortdaten in Googles Firebase vorhält, solange Sie sich in einer Gruppe befinden.
 
 **Website-Daten:** Warteliste-E-Mails werden in einer in der EU (Irland) gehosteten Supabase Postgres-Datenbank gespeichert. Verbindungen sind verschlüsselt (TLS). Der Zugriff ist auf administrative Zwecke beschränkt. Ausgehende E-Mails werden über Resend (EU, Irland) per TLS gesendet. Siehe Abschnitt 4.
 
@@ -191,7 +207,7 @@ Für die App betreiben wir keine Server, Datenbanken oder Cloud-Infrastruktur, d
 
 ## 9. Datenweitergabe und Offenlegung
 
-Wir verkaufen, vermieten oder handeln Ihre personenbezogenen Daten nicht. Sie können sich entscheiden, App-Daten über Exporte (GPX, KML, CSV, JSON), Sitzungsfreigabekarten oder Google Drive-Sicherung zu teilen — alle vom Benutzer initiiert. Wenn Sie In-App-Feedback absenden, wird es in unserem Auftrag von Supabase verarbeitet (siehe Abschnitt 3.3). Website-Warteliste-Daten werden nur von unseren benannten Auftragsverarbeitern (Supabase, Resend) für die in Abschnitt 4 beschriebenen Zwecke verarbeitet.
+Wir verkaufen, vermieten oder handeln Ihre personenbezogenen Daten nicht. Sie können sich entscheiden, App-Daten über Exporte (GPX, KML, CSV, JSON), Sitzungsfreigabekarten, Google Drive-Sicherung oder Live-Standortfreigabe in einer Radar-Gruppe (Abschnitt 3.5) zu teilen — alle vom Benutzer initiiert. Wenn Sie In-App-Feedback absenden, wird es in unserem Auftrag von Supabase verarbeitet (siehe Abschnitt 3.3). Website-Warteliste-Daten werden nur von unseren benannten Auftragsverarbeitern (Supabase, Resend) für die in Abschnitt 4 beschriebenen Zwecke verarbeitet.
 
 ## 10. Ihre Rechte (GDPR und international)
 
@@ -259,13 +275,13 @@ Sie können jede Berechtigung jederzeit über die Android-Einstellungen widerruf
 
 ## 14. Internationale Datenübermittlungen
 
-**App-Daten:** Da alle Detektionsdaten lokal auf Ihrem Gerät gespeichert werden, finden keine internationalen Datenübermittlungen unter unserer Kontrolle statt. API-Aufrufe an Drittanbieter (Abschnitt 3.2), die optionale Google Drive-Sicherung, die optionale Firebase-Diagnose und das optionale Feedback können in den Gerichtsbarkeiten verarbeitet werden, in denen diese Dienste tätig sind.
+**App-Daten:** Da alle Detektionsdaten lokal auf Ihrem Gerät gespeichert werden, finden keine internationalen Datenübermittlungen unter unserer Kontrolle statt. API-Aufrufe an Drittanbieter (Abschnitt 3.2), die optionale Google Drive-Sicherung, die optionale Firebase-Diagnose, die optionale Live-Gruppen-Standortfreigabe (Abschnitt 3.5, über Googles Firebase) und das optionale Feedback können in den Gerichtsbarkeiten verarbeitet werden, in denen diese Dienste tätig sind.
 
 **Website-Daten:** Warteliste-E-Mails werden in der EU (Irland) von Supabase gespeichert und von Resend (EU, Irland) verarbeitet. Wenn Sie von außerhalb der EU auf die Website zugreifen, wird Ihre E-Mail-Adresse zur Verarbeitung in die EU übermittelt.
 
 ## 15. Benachrichtigung über Datenschutzverletzungen
 
-**App:** Da wir Ihre Detektionsdaten nicht auf einem von uns betriebenen Server speichern, ist eine Datenschutzverletzung in Bezug auf App-Daten auf unserer Seite nicht möglich. Wenn wir auf eine Schwachstelle in der App aufmerksam werden, werden wir ein Update herausgeben und die Benutzer über die App oder Website benachrichtigen. Optionales Feedback, das Sie absenden, wird von unserem Auftragsverarbeiter Supabase im Rahmen seiner eigenen Benachrichtigungsprotokolle bei Datenpannen verwahrt.
+**App:** Ihre gespeicherten Detektionsdaten werden auf Ihrem Gerät gespeichert, nicht auf von uns betriebenen Servern, sodass sie durch eine Verletzung unserer Infrastruktur nicht offengelegt werden. Die einzige Ausnahme ist die optionale Live-Gruppen-Funktion (Abschnitt 3.5): Solange Sie sich in einer Gruppe befinden, wird Ihr Live-Standort vorübergehend in Googles Firebase vorgehalten, wobei der Zugriff durch serverseitige Regeln auf die Mitglieder dieser Gruppe beschränkt ist. Wenn wir auf eine Schwachstelle in der App aufmerksam werden, werden wir ein Update herausgeben und die Benutzer über die App oder Website benachrichtigen. Optionales Feedback, das Sie absenden, wird von unserem Auftragsverarbeiter Supabase im Rahmen seiner eigenen Benachrichtigungsprotokolle bei Datenpannen verwahrt.
 
 **Website:** Unsere Auftragsverarbeiter (Supabase, Resend) unterhalten ihre eigenen Benachrichtigungsprotokolle bei Datenpannen. Im unwahrscheinlichen Fall einer Verletzung, die Ihre Warteliste-E-Mail betrifft, werden wir Sie und die zuständige Aufsichtsbehörde (ANSPDCP) gemäß den GDPR-Anforderungen innerhalb von 72 Stunden benachrichtigen.
 
@@ -284,7 +300,6 @@ Wir können diese Datenschutzerklärung aktualisieren, um Änderungen der Funkti
 * [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
 * [eHarta / geo-spatial.org](https://www.geo-spatial.org)
 * [Cloudflare](https://www.cloudflare.com/privacypolicy/) (Proxy für historische Kartenkacheln)
-* [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 * [NOAA](https://www.noaa.gov/privacy-policy)
 * [Vercel](https://vercel.com/legal/privacy-policy) (Website-Hosting + Analyse)
 * [Supabase](https://supabase.com/privacy) (Website-Datenbank + In-App-Feedback)
@@ -292,7 +307,7 @@ Wir können diese Datenschutzerklärung aktualisieren, um Änderungen der Funkti
 
 ## 18. Kontakt
 
-**Coc Lorand Adrian P.F.A.** (firmierend als Loriba)
+**Coc Lorand-Adrian P.F.A.** (firmierend als Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

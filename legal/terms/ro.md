@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — Aplicație de monitorizare GPS pentru detecția de metale
 
-Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 26 mai 2026
+Data intrării în vigoare: 12 mai 2026 · Ultima actualizare: 3 iulie 2026
 
-Operat de: Coc Lorand Adrian P.F.A., activând sub denumirea comercială "Loriba"
+Operat de: Coc Lorand-Adrian P.F.A., activând sub denumirea comercială "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Website: sweeptrack.pro
 
 ## 1. Acceptarea Termenilor
 
-Prin descărcarea, instalarea, accesarea sau utilizarea SweepTrack Pro ("Aplicația") sau a site-ului web sweeptrack.pro ("Website-ul"), sunteți de acord să respectați acești Termeni și Condiții ("Termeni"). Dacă nu sunteți de acord cu acești Termeni, nu utilizați Aplicația sau Website-ul. "Noi", "ne" și "al nostru" se referă la Coc Lorand Adrian P.F.A., activând sub denumirea Loriba.
+Prin descărcarea, instalarea, accesarea sau utilizarea SweepTrack Pro ("Aplicația") sau a site-ului web sweeptrack.pro ("Website-ul"), sunteți de acord să respectați acești Termeni și Condiții ("Termeni"). Dacă nu sunteți de acord cu acești Termeni, nu utilizați Aplicația sau Website-ul. "Noi", "ne" și "al nostru" se referă la Coc Lorand-Adrian P.F.A., activând sub denumirea Loriba.
 
 Ne rezervăm dreptul de a modifica acești Termeni în orice moment. Utilizarea continuă a Aplicației sau Website-ului după modificări constituie acceptarea acestora. Modificările materiale vor fi comunicate prin intermediul Aplicației sau al site-ului nostru web.
 
@@ -24,10 +24,10 @@ SweepTrack Pro este o aplicație de monitorizare GPS și înregistrare a sesiuni
 
 - Monitorizare GPS în timp real și înregistrarea traseului
 - Jurnal de sesiune cu metrici de distanță, viteză, altitudine și durată
-- Înregistrarea descoperirilor cu atașamente foto și audio
+- Înregistrarea descoperirilor cu atașamente foto, audio și video
 - Prognoza meteo și scorul condițiilor de detecție
 - Predicții pentru tabelele de maree (stații de coastă din S.U.A. via NOAA)
-- Descoperirea punctelor de interes istorice și arheologice din apropiere
+- Poziționare live de grup (Radar): o hartă live partajată cu un grup de detecție pe care îl creați sau la care vă alăturați
 - Gestionarea setărilor pentru peste 60 de modele de detectoare de metale
 - Seif de permisiuni pentru gestionarea acordurilor cu proprietarii de terenuri și accesul la situri
 - Gardă de perimetru cu alerte de limită
@@ -62,14 +62,15 @@ Nu stocăm parola contului dumneavoastră Google. Autentificarea este gestionat�
 
 Aplicația oferă funcționalitate limitată fără costuri, incluzând:
 
-- Sesiuni nelimitate
-- Până la 5 descoperiri
+- Până la 10 sesiuni de monitorizare pe lună
+- Descoperiri nelimitate, fiecare cu o singură fotografie (Pro deblochează notele de adâncime, valoare, greutate, semnal și sol, plus capturarea audio, video și multi-foto)
 - 1 slot pentru presetări de detector
+- Gratuit pentru a vă alătura unui grup live Radar
 - Acces la funcțiile de bază de monitorizare și cartografiere
 
 ### 5.2 Abonament Premium
 
-Un abonament premium, gestionat prin Google Play Store și procesat de RevenueCat, Inc., deblochează descoperiri, sesiuni și presetări de detector nelimitate, plus funcții avansate, inclusiv suprapuneri de hărți istorice, hărți offline, gardă de perimetru, backup în cloud și instrumente suplimentare.
+Un abonament premium, gestionat prin Google Play Store și procesat de RevenueCat, Inc., deblochează înregistrarea completă a descoperirii (note de adâncime, valoare, greutate, semnal și sol, plus capturare audio, video și multi-foto), sesiuni nelimitate și presetări de detector nelimitate, plus funcții avansate, inclusiv suprapuneri de hărți istorice, hărți offline, gardă de perimetru, backup în cloud, găzduirea propriilor grupuri Radar și instrumente suplimentare.
 
 ### 5.3 Founder's Lifetime
 
@@ -107,8 +108,8 @@ Aplicația colectează și stochează următoarele date **local pe dispozitivul 
 ### 6.2 Stocarea Datelor (Aplicație)
 
 - **Toate datele Aplicației sunt stocate local pe dispozitivul dumneavoastră** într-o bază de date locală Room/SQLite și în stocarea de fișiere privată a aplicației, în interiorul mediului izolat privat (sandbox) al Android. Fișierul bazei de date nu este criptat separat de către Aplicație, deși protecțiile de stocare ale platformei Android se aplică pe dispozitivele compatibile
-- **Nicio dată a Aplicației nu este transmisă către serverele noastre** — nu operăm servere sau baze de date backend pentru funcționalitatea Aplicației
-- **Backup Google Drive** (opțional, inițiat de utilizator) stochează o copie de rezervă a datelor dumneavoastră în contul personal Google Drive într-un folder "SweepTrack Backups". Dacă activați criptarea backup-ului cu frază de acces, copia de rezervă este criptată înainte de încărcare
+- **Nicio dată salvată a Aplicației (sesiuni, descoperiri, seif) nu este transmisă către servere pe care le operăm.** Funcția opțională de Grup Live (Radar) este singura excepție: cât timp vă aflați într-un grup pe care îl creați sau la care vă alăturați, aceasta partajează locația dumneavoastră live și elementele de hartă partajate prin Firebase Realtime Database de la Google — consultați Politica noastră de Confidențialitate, §3.5
+- **Backup Google Drive** (opțional, inițiat de utilizator) stochează o copie de rezervă a datelor dumneavoastră în contul personal Google Drive într-un folder "SweepTrack Backups". Dacă activați criptarea backup-ului cu frază de acces, copia de rezervă este criptată pe dispozitivul dumneavoastră înainte de încărcare
 - Backup-ul în cloud Android a fost dezactivat pentru a vă proteja datele
 
 Practicile de date ale Website-ului (colectarea adresei de email pentru lista de așteptare, analize, găzduire) sunt descrise separat în §6.7 de mai jos și în detaliu complet în Politica noastră de Confidențialitate, Secțiunea 4.
@@ -118,12 +119,12 @@ Practicile de date ale Website-ului (colectarea adresei de email pentru lista de
 Aplicația efectuează cereri de rețea către următoarele servicii terțe numai în scopuri de funcționalitate. Nu sunt trimise date personale sau de identificare, cu excepția cazului în care se specifică altfel:
 
 - **Google Maps SDK** — Afișarea hărții
-- **Open-Meteo** — Date meteo (coordonate aproximative trimise, nicio informație personală)
-- **OpenStreetMap / Nominatim** — Geocodare inversă (coordonate trimise, nicio informație personală)
-- **Overpass API** — Interogări pentru puncte de interes istorice din apropiere (coordonate trimise, nicio informație personală)
-- **Wikipedia API** — Articole din apropiere (coordonate trimise, nicio informație personală)
-- **NOAA** — Predicții ale mareelor (ID-ul stației trimis, nicio informație personală)
+- **Open-Meteo** — Date meteo și căutare de locuri (coordonate aproximative trimise, nicio informație personală)
+- **NOAA** — Predicții ale mareelor, stații de coastă din S.U.A. (ID-ul stației trimis, nicio informație personală)
+- **Firebase Realtime Database** (Google) — backend-ul pentru Grupul Live, doar cât timp creați sau vă alăturați unui grup Radar (consultați §6.2 și Politica de Confidențialitate §3.5)
 - **RevenueCat** — Verificarea abonamentului (ID utilizator anonim al aplicației, nicio informație personală)
+
+Geocodarea inversă (transformarea coordonatelor într-un nume de loc) se execută pe dispozitiv prin geocoderul platformei Android și nu este un apel de rețea către terți.
 
 ### 6.4 Telemetrie de diagnostic — doar opt-in (Aplicație)
 
@@ -196,7 +197,7 @@ Categoriile de descoperiri din Aplicație (Tezaur, Aur, Monedă etc.) sunt doar 
 
 ### 8.5 Fără Consultanță Juridică
 
-Nimic din Aplicație — inclusiv seiful de permisiuni, scorul meteo, prognoza de detecție, siturile din apropiere, suprapunerile de hărți istorice, clasificarea descoperirilor sau orice text — nu constituie consultanță juridică, financiară, arheologică sau profesională de niciun fel.
+Nimic din Aplicație — inclusiv seiful de permisiuni, scorul meteo, prognoza de detecție, suprapunerile de hărți istorice, clasificarea descoperirilor sau orice text — nu constituie consultanță juridică, financiară, arheologică sau profesională de niciun fel.
 
 ## 9. GPS, Locație și Siguranță
 
@@ -210,15 +211,15 @@ Vizualizările de suprapunere a traseului și heatmap-ul sunt aproximative. Devi
 
 ## 10. Servicii și Conținut de la Terți
 
-Aplicația folosește date de la Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA și Wikipedia. Datele hărților nu trebuie utilizate **niciodată** pentru a determina limitele legale de proprietate sau drepturile de acces.
+Aplicația folosește date de la Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo și NOAA. Datele hărților nu trebuie utilizate **niciodată** pentru a determina limitele legale de proprietate sau drepturile de acces.
 
 **Suprapunerea hărților istorice USGS:** Hărțile istorice descriu condiții de acum zeci sau sute de ani. Caracteristicile prezentate pot să nu mai existe sau pot fi pe o altă proprietate. Hărțile istorice nu reflectă limitele actuale, proprietatea sau drepturile de acces. Prezența unei caracteristici istorice nu autorizează detecția.
 
-**Predicțiile de maree** pot să nu ia în considerare valurile de furtună, vântul sau anomaliile locale. Datele despre **siturile din apropiere** sunt contribuții ale comunității și pot fi inexacte — prezența unui marker nu autorizează detecția. **Hărțile offline** pot deveni învechite. **Presetările detectoarelor** sunt instrumente organizaționale, nefiind aprobate de producători.
+**Predicțiile de maree** pot să nu ia în considerare valurile de furtună, vântul sau anomaliile locale. **Hărțile offline** pot deveni învechite. **Presetările detectoarelor** sunt instrumente organizaționale, nefiind aprobate de producători.
 
 ## 11. Proprietate Intelectuală
 
-SweepTrack Pro, inclusiv designul, codul, grafica, componentele UI și branding-ul său, reprezintă proprietatea intelectuală a Coc Lorand Adrian P.F.A. (activând sub denumirea Loriba). Toate drepturile rezervate.
+SweepTrack Pro, inclusiv designul, codul, grafica, componentele UI și branding-ul său, reprezintă proprietatea intelectuală a Coc Lorand-Adrian P.F.A. (activând sub denumirea Loriba). Toate drepturile rezervate.
 
 Vă păstrați proprietatea asupra întregului conținut pe care îl creați utilizând Aplicația. Nu revendicăm niciun drept asupra conținutului dumneavoastră.
 
@@ -230,13 +231,13 @@ APLICAȚIA ESTE FURNIZATĂ „CA ATARE" ȘI „AȘA CUM ESTE DISPONIBILĂ", FĂR
 
 ## 13. Limitarea Răspunderii
 
-ÎN MĂSURĂ MAXIMĂ PERMISĂ DE LEGEA APLICABILĂ, COC LORAND ADRIAN P.F.A. (ACTIVÂND CA LORIBA) NU VA FI RĂSPUNZĂTOARE PENTRU NICIO DAUNĂ INDIRECTĂ, INCIDENTALĂ, SPECIALĂ, CONSECVENȚIALĂ SAU PUNITIVĂ, INCLUSIV, DAR FĂRĂ A SE LIMITA LA: DAUNE PROVENITE DIN INACURATEȚEA GPS, DISPUTE PRIVIND LIMITELE DE PROPRIETATE SAU RECLAMAȚII DE ÎNCĂLCARE A PROPRIETĂȚII; DAUNE DIN BAZAREA PE DATELE METEO, DE MAREE SAU DE MEDIU; CONDIȚII DE MAREE, INCLUSIV VĂTĂMARE SAU ÎNEC; CONSECINȚE JURIDICE ALE ACTIVITĂȚILOR DE DETECȚIE, INCLUSIV AMENZI, URMĂRIRE PENALĂ SAU CONFISCARE; NERESPECTAREA TREASURE ACT 1996, ARPA SAU A ORICĂREI LEGI PRIVIND PATRIMONIUL CULTURAL; BAZAREA PE SUPRAPUNERILE DE HĂRȚI ISTORICE, SITURI DIN APROPIERE, SEIFUL DE PERMISIUNI, SCRISORI PDF, SEMNĂTURI DIGITALE SAU IDENTIFICAREA DESCOPERIRILOR; INACURATEȚEA GĂRZII DE PERIMETRU, A SUPRAPUNERII TRASEULUI SAU A HEATMAP-ULUI; HĂRȚI OFFLINE SAU PRESETĂRI DE DETECTOR ÎNVECHITE; VĂTĂMARE CORPORALĂ, DECES SAU DAUNE MATERIALE ÎN TIMPUL ACTIVITĂȚILOR DE DETECȚIE; SAU INTERACȚIUNI CU PROPRIETARII DE TERENURI, FORȚELE DE ORDINE SAU TERȚI.
+ÎN MĂSURĂ MAXIMĂ PERMISĂ DE LEGEA APLICABILĂ, COC LORAND-ADRIAN P.F.A. (ACTIVÂND CA LORIBA) NU VA FI RĂSPUNZĂTOARE PENTRU NICIO DAUNĂ INDIRECTĂ, INCIDENTALĂ, SPECIALĂ, CONSECVENȚIALĂ SAU PUNITIVĂ, INCLUSIV, DAR FĂRĂ A SE LIMITA LA: DAUNE PROVENITE DIN INACURATEȚEA GPS, DISPUTE PRIVIND LIMITELE DE PROPRIETATE SAU RECLAMAȚII DE ÎNCĂLCARE A PROPRIETĂȚII; DAUNE DIN BAZAREA PE DATELE METEO, DE MAREE SAU DE MEDIU; CONDIȚII DE MAREE, INCLUSIV VĂTĂMARE SAU ÎNEC; CONSECINȚE JURIDICE ALE ACTIVITĂȚILOR DE DETECȚIE, INCLUSIV AMENZI, URMĂRIRE PENALĂ SAU CONFISCARE; NERESPECTAREA TREASURE ACT 1996, ARPA SAU A ORICĂREI LEGI PRIVIND PATRIMONIUL CULTURAL; BAZAREA PE SUPRAPUNERILE DE HĂRȚI ISTORICE, SEIFUL DE PERMISIUNI, SCRISORI PDF, SEMNĂTURI DIGITALE SAU IDENTIFICAREA DESCOPERIRILOR; INACURATEȚEA GĂRZII DE PERIMETRU, A SUPRAPUNERII TRASEULUI SAU A HEATMAP-ULUI; HĂRȚI OFFLINE SAU PRESETĂRI DE DETECTOR ÎNVECHITE; VĂTĂMARE CORPORALĂ, DECES SAU DAUNE MATERIALE ÎN TIMPUL ACTIVITĂȚILOR DE DETECȚIE; SAU INTERACȚIUNI CU PROPRIETARII DE TERENURI, FORȚELE DE ORDINE SAU TERȚI.
 
 În niciun caz răspunderea noastră totală nu va depăși suma plătită de dumneavoastră pentru Aplicație în cele douăsprezece (12) luni premergătoare cererii.
 
 ## 14. Despăgubiri
 
-Sunteți de acord să despăgubiți, să apărați și să exonerați Coc Lorand Adrian P.F.A. (activând sub denumirea Loriba) de orice reclamații, daune, pierderi, răspunderi, costuri și cheltuieli rezultate din utilizarea de către dumneavoastră a Aplicației, încălcarea acestor Termeni, încălcarea oricărei legi aplicabile sau activitățile dumneavoastră de detecție de metale.
+Sunteți de acord să despăgubiți, să apărați și să exonerați Coc Lorand-Adrian P.F.A. (activând sub denumirea Loriba) de orice reclamații, daune, pierderi, răspunderi, costuri și cheltuieli rezultate din utilizarea de către dumneavoastră a Aplicației, încălcarea acestor Termeni, încălcarea oricărei legi aplicabile sau activitățile dumneavoastră de detecție de metale.
 
 ## 15. Reziliere
 
@@ -264,13 +265,13 @@ Acești Termeni, împreună cu Politica noastră de Confidențialitate, constitu
 
 ## 18. Licențe Open Source și de la Terți
 
-Aplicația folosește componente open-source. Atribuiri cheie: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (domeniu public), USGS (domeniu public), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+Aplicația folosește componente open-source. Atribuiri cheie: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (domeniu public), USGS (domeniu public), Jetpack Compose/Room/Hilt (Apache 2.0), Firebase SDK (Google), RevenueCat SDK (MIT).
 
 ## 19. Contact
 
 Pentru întrebări despre acești Termeni, vă rugăm să contactați:
 
-**Coc Lorand Adrian P.F.A.** (activând sub denumirea Loriba)
+**Coc Lorand-Adrian P.F.A.** (activând sub denumirea Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

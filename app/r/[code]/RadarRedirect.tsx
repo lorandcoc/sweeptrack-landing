@@ -25,7 +25,7 @@ export default function RadarRedirect({
   appLink,
   playTarget,
 }: {
-  /** Normalized 8-char hunt code, or null when the URL segment was invalid. */
+  /** Normalized 8-char invite code, or null when the URL segment was invalid. */
   code: string | null;
   /** `sweeptrackradar://join/{CODE}`, or null when the code is invalid. */
   appLink: string | null;

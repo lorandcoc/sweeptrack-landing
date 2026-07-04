@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS Tracking Application for Metal Detecting
 
-Effective Date: May 12, 2026 · Last Updated: May 26, 2026
+Effective Date: May 12, 2026 · Last Updated: July 3, 2026
 
-Operated by: Coc Lorand Adrian P.F.A., trading as "Loriba"
+Operated by: Coc Lorand-Adrian P.F.A., trading as "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Website: sweeptrack.pro
 
 ## 1. Acceptance of Terms
 
-By downloading, installing, accessing, or using SweepTrack Pro ("the App") or the website at sweeptrack.pro ("the Website"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App or the Website. "We," "us," and "our" refer to Coc Lorand Adrian P.F.A., trading as Loriba.
+By downloading, installing, accessing, or using SweepTrack Pro ("the App") or the website at sweeptrack.pro ("the Website"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App or the Website. "We," "us," and "our" refer to Coc Lorand-Adrian P.F.A., trading as Loriba.
 
 We reserve the right to modify these Terms at any time. Continued use of the App or Website after changes constitutes acceptance. Material changes will be communicated via the App or our website.
 
@@ -24,10 +24,10 @@ SweepTrack Pro is a GPS-based tracking and session logging application designed 
 
 - Real-time GPS tracking and path recording
 - Session logging with distance, speed, altitude, and duration metrics
-- Find/discovery logging with photo and audio attachments
+- Find/discovery logging with photo, audio, and video attachments
 - Weather forecasting and detecting condition scoring
 - Tide table predictions (U.S. coastal stations via NOAA)
-- Nearby historical and archaeological point-of-interest discovery
+- Live group positioning (Radar): a shared live map with a detecting group you create or join
 - Detector preset management for 60+ metal detector models
 - Permission vault for managing landowner permissions and site access
 - Perimeter guard with boundary alerts
@@ -62,14 +62,15 @@ We do not store your Google account password. Authentication is handled entirely
 
 The App offers limited functionality at no cost, including:
 
-- Unlimited sessions
-- Up to 5 finds
+- Up to 10 tracking sessions per month
+- Unlimited finds, each with one photo (Pro unlocks depth, value, weight, signal, and soil notes, plus audio, video, and multi-photo capture)
 - 1 detector preset slot
+- Free to join a Radar live group
 - Access to core tracking and mapping features
 
 ### 5.2 Premium Subscription
 
-A premium subscription, managed through the Google Play Store and processed by RevenueCat, Inc., unlocks unlimited finds, sessions, and detector presets, plus advanced features including historical map overlays, offline maps, perimeter guard, cloud backup, and additional tools.
+A premium subscription, managed through the Google Play Store and processed by RevenueCat, Inc., unlocks the full find record (depth, value, weight, signal, and soil notes, plus audio, video, and multi-photo capture), unlimited sessions, and unlimited detector presets, plus advanced features including historical map overlays, offline maps, perimeter guard, cloud backup, hosting your own Radar groups, and additional tools.
 
 ### 5.3 Founder's Lifetime
 
@@ -107,8 +108,8 @@ The App collects and stores the following data **locally on your device**:
 ### 6.2 Data Storage (App)
 
 - **All App data is stored locally on your device** in a local Room/SQLite database and app-private file storage within Android's private sandbox. The database file is not separately encrypted by the App, though Android's platform storage protections apply on supported devices
-- **No App data is transmitted to our servers** — we do not operate backend servers or databases for App functionality
-- **Google Drive backup** (optional, user-initiated) stores a backup copy of your data in your personal Google Drive account under a "SweepTrack Backups" folder. If you enable passphrase backup encryption, the backup is encrypted before upload
+- **No saved App data (sessions, finds, vault) is transmitted to servers we operate.** The optional Live Group feature (Radar) is the one exception: while you are in a group you create or join, it shares your live location and shared map items via Google's Firebase Realtime Database — see our Privacy Policy, §3.5
+- **Google Drive backup** (optional, user-initiated) stores a backup copy of your data in your personal Google Drive account under a "SweepTrack Backups" folder. If you enable passphrase backup encryption, the backup is encrypted on your device before upload
 - Android cloud backup has been disabled to protect your data
 
 Website data practices (waitlist email collection, analytics, hosting) are described separately in §6.7 below and in full detail in our Privacy Policy, Section 4.
@@ -118,12 +119,12 @@ Website data practices (waitlist email collection, analytics, hosting) are descr
 The App makes network requests to the following third-party services for functionality purposes only. No personal or identifying data is sent unless explicitly noted:
 
 - **Google Maps SDK** — Map display
-- **Open-Meteo** — Weather data (approximate coordinates sent, no personal info)
-- **OpenStreetMap / Nominatim** — Reverse geocoding (coordinates sent, no personal info)
-- **Overpass API** — Nearby historical POI queries (coordinates sent, no personal info)
-- **Wikipedia API** — Nearby articles (coordinates sent, no personal info)
-- **NOAA** — Tide predictions (station ID sent, no personal info)
+- **Open-Meteo** — Weather data and place search (approximate coordinates sent, no personal info)
+- **NOAA** — Tide predictions, U.S. coastal stations (station ID sent, no personal info)
+- **Firebase Realtime Database** (Google) — the Live Group backend, only while you create or join a Radar group (see §6.2 and Privacy Policy §3.5)
 - **RevenueCat** — Subscription verification (anonymous app user ID, no personal info)
+
+Reverse geocoding (turning coordinates into a place name) runs on-device via Android's platform geocoder and is not a third-party network call.
 
 ### 6.4 Diagnostic Telemetry — Opt-In Only (App)
 
@@ -196,7 +197,7 @@ Find categories in the App (Treasure, Gold, Coin, etc.) are for personal organiz
 
 ### 8.5 No Legal Advice
 
-Nothing in the App — including the Permission Vault, weather scoring, detecting forecast, nearby sites, historical map overlays, find categorization, or any text — constitutes legal, financial, archaeological, or professional advice of any kind.
+Nothing in the App — including the Permission Vault, weather scoring, detecting forecast, historical map overlays, find categorization, or any text — constitutes legal, financial, archaeological, or professional advice of any kind.
 
 ## 9. GPS, Location, and Safety
 
@@ -210,15 +211,15 @@ Track overlay and heatmap visualizations are approximate. GPS drift and signal l
 
 ## 10. Third-Party Services and Content
 
-The App uses data from Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA, and Wikipedia. Map data should **never** be used to determine legal property boundaries or access rights.
+The App uses data from Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, and NOAA. Map data should **never** be used to determine legal property boundaries or access rights.
 
 **USGS Historical Map Overlay:** Historical maps depict conditions from decades or centuries ago. Features shown may no longer exist or may be on different property. Historical maps do not reflect current boundaries, ownership, or access rights. The presence of a historical feature does not authorize detecting.
 
-**Tide predictions** may not account for storm surge, wind, or local anomalies. **Nearby sites** data is community-contributed and may be inaccurate — the presence of a marker does not authorize detecting. **Offline maps** may become outdated. **Detector presets** are organizational tools, not endorsed by manufacturers.
+**Tide predictions** may not account for storm surge, wind, or local anomalies. **Offline maps** may become outdated. **Detector presets** are organizational tools, not endorsed by manufacturers.
 
 ## 11. Intellectual Property
 
-SweepTrack Pro, including its design, code, graphics, UI components, and branding, is the intellectual property of Coc Lorand Adrian P.F.A. (trading as Loriba). All rights reserved.
+SweepTrack Pro, including its design, code, graphics, UI components, and branding, is the intellectual property of Coc Lorand-Adrian P.F.A. (trading as Loriba). All rights reserved.
 
 You retain ownership of all content you create using the App. We do not claim any rights over your content.
 
@@ -230,13 +231,13 @@ THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, E
 
 ## 13. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, COC LORAND ADRIAN P.F.A. (TRADING AS LORIBA) SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO: DAMAGES FROM GPS INACCURACY, PROPERTY BOUNDARY DISPUTES, OR TRESPASSING CLAIMS; DAMAGES FROM RELIANCE ON WEATHER, TIDE, OR ENVIRONMENTAL DATA; TIDAL CONDITIONS INCLUDING INJURY OR DROWNING; LEGAL CONSEQUENCES OF DETECTING ACTIVITIES INCLUDING FINES, PROSECUTION, OR CONFISCATION; FAILURE TO COMPLY WITH THE TREASURE ACT 1996, ARPA, OR ANY CULTURAL HERITAGE LAW; RELIANCE ON HISTORICAL MAP OVERLAYS, NEARBY SITES, PERMISSION VAULT, PDF LETTERS, DIGITAL SIGNATURES, OR FIND IDENTIFICATION; PERIMETER GUARD, TRACK OVERLAY, OR HEATMAP INACCURACY; OUTDATED OFFLINE MAPS OR DETECTOR PRESETS; PERSONAL INJURY, DEATH, OR PROPERTY DAMAGE DURING DETECTING ACTIVITIES; OR INTERACTIONS WITH LANDOWNERS, LAW ENFORCEMENT, OR THIRD PARTIES.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, COC LORAND-ADRIAN P.F.A. (TRADING AS LORIBA) SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO: DAMAGES FROM GPS INACCURACY, PROPERTY BOUNDARY DISPUTES, OR TRESPASSING CLAIMS; DAMAGES FROM RELIANCE ON WEATHER, TIDE, OR ENVIRONMENTAL DATA; TIDAL CONDITIONS INCLUDING INJURY OR DROWNING; LEGAL CONSEQUENCES OF DETECTING ACTIVITIES INCLUDING FINES, PROSECUTION, OR CONFISCATION; FAILURE TO COMPLY WITH THE TREASURE ACT 1996, ARPA, OR ANY CULTURAL HERITAGE LAW; RELIANCE ON HISTORICAL MAP OVERLAYS, PERMISSION VAULT, PDF LETTERS, DIGITAL SIGNATURES, OR FIND IDENTIFICATION; PERIMETER GUARD, TRACK OVERLAY, OR HEATMAP INACCURACY; OUTDATED OFFLINE MAPS OR DETECTOR PRESETS; PERSONAL INJURY, DEATH, OR PROPERTY DAMAGE DURING DETECTING ACTIVITIES; OR INTERACTIONS WITH LANDOWNERS, LAW ENFORCEMENT, OR THIRD PARTIES.
 
 In no event shall our total liability exceed the amount you paid for the App in the twelve (12) months preceding the claim.
 
 ## 14. Indemnification
 
-You agree to indemnify, defend, and hold harmless Coc Lorand Adrian P.F.A. (trading as Loriba) from any claims, damages, losses, liabilities, costs, and expenses arising from your use of the App, violation of these Terms, violation of any applicable law, or your metal detecting activities.
+You agree to indemnify, defend, and hold harmless Coc Lorand-Adrian P.F.A. (trading as Loriba) from any claims, damages, losses, liabilities, costs, and expenses arising from your use of the App, violation of these Terms, violation of any applicable law, or your metal detecting activities.
 
 ## 15. Termination
 
@@ -264,13 +265,13 @@ These Terms, together with our Privacy Policy, constitute the entire agreement b
 
 ## 18. Open Source and Third-Party Licenses
 
-The App uses open-source components. Key attributions: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (public domain), USGS (public domain), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+The App uses open-source components. Key attributions: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (public domain), USGS (public domain), Jetpack Compose/Room/Hilt (Apache 2.0), Firebase SDK (Google), RevenueCat SDK (MIT).
 
 ## 19. Contact
 
 For questions about these Terms, please contact:
 
-**Coc Lorand Adrian P.F.A.** (trading as Loriba)
+**Coc Lorand-Adrian P.F.A.** (trading as Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-Mail: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Website: [https://sweeptrack.pro](https://sweeptrack.pro)

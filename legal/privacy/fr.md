@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — Application de suivi GPS pour la détection de métaux
 
-Date d'entrée en vigueur : 12 mai 2026 · Dernière mise à jour : 4 juin 2026
+Date d'entrée en vigueur : 12 mai 2026 · Dernière mise à jour : 3 juillet 2026
 
-Exploité par : Coc Lorand Adrian P.F.A., exerçant sous le nom commercial « Loriba »
+Exploité par : Coc Lorand-Adrian P.F.A., exerçant sous le nom commercial « Loriba »
 
 CUI : 41299288 · Reg. F24/646/2019
 
@@ -16,13 +16,13 @@ Site web : sweeptrack.pro
 
 Cette Politique de Confidentialité explique comment SweepTrack Pro (« l'Application ») et le site web sweeptrack.pro (« le Site Web ») collectent, utilisent, stockent et protègent vos informations. Nous nous engageons à protéger votre vie privée et à assurer la transparence de nos pratiques en matière de données.
 
-L'Application est conçue avec une **architecture axée sur la confidentialité** : toutes les données de détection sont stockées localement sur votre appareil, nous n'exploitons pas de serveurs backend qui stockent vos données de détection, et nous ne collectons, ne transmettons ni ne vendons vos données personnelles de détection. Une petite quantité de données quitte votre appareil uniquement pour les fonctions initiées par l'utilisateur décrites aux Sections 3.2 et 3.3 (fonctionnalités d'API en temps réel, sauvegarde facultative, diagnostics facultatifs et commentaires facultatifs). Le Site Web fonctionne séparément et a ses propres pratiques en matière de données, décrites à la Section 4.
+L'Application est conçue avec une **architecture axée sur la confidentialité** : vos données de détection enregistrées — sessions, trouvailles, entrées du coffre-fort — sont stockées localement sur votre appareil, nous ne les vendons pas et nous ne les utilisons pas pour vous profiler. Certaines données ne quittent votre appareil que pour les fonctions initiées par l'utilisateur décrites aux Sections 3.2, 3.3 et 3.5 : fonctionnalités d'API en temps réel, sauvegarde facultative, diagnostics facultatifs, commentaires facultatifs et — si vous choisissez de créer ou de rejoindre un groupe — le partage de localisation facultatif du Groupe en Direct qui constitue tout l'objet de la fonctionnalité Radar. Le Site Web fonctionne séparément et a ses propres pratiques en matière de données, décrites à la Section 4.
 
 ## 2. Responsable du traitement
 
 Aux fins du Règlement Général sur la Protection des Données de l'UE (GDPR) et de la loi roumaine sur la protection des données (Loi 190/2018), le responsable du traitement est :
 
-**Coc Lorand Adrian P.F.A.** (exerçant sous le nom de Loriba)  
+**Coc Lorand-Adrian P.F.A.** (exerçant sous le nom de Loriba)  
 CUI : 41299288 · Reg. F24/646/2019  
 E-mail : [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 
@@ -45,7 +45,7 @@ Les données suivantes sont créées par vous et stockées **exclusivement sur v
 - Type de trouvaille (Trésor, Or, Pièce, Relique, Bijou, Déchet, Non trié/Dépôt rapide)
 - Emplacement de la trouvaille (coordonnées GPS au moment de l'enregistrement)
 - Métadonnées facultatives : nom, notes, profondeur, valeur estimée, poids
-- Pièces jointes multimédias : photos et enregistrements audio
+- Pièces jointes multimédias : photos, enregistrements audio et enregistrements vidéo
 
 **Données du coffre-fort des autorisations :**
 
@@ -66,9 +66,7 @@ Les données suivantes sont envoyées à des API tierces pour la fonctionnalité
 
 - Coordonnées GPS approximatives envoyées à Open-Meteo pour les prévisions météo et les données d'altitude
 - Coordonnées résolues en noms de lieux via le géocodeur de la plateforme Android (fourni par les services Google Play sur la plupart des appareils) pour le géocodage inverse — utilisé pour étiqueter les sessions et les trouvailles avec un nom de lieu
-- Coordonnées GPS approximatives envoyées à Overpass API pour la découverte de points d'intérêt historiques à proximité
-- Coordonnées GPS approximatives envoyées à Wikipedia API pour la recherche géographique d'articles à proximité
-- Identifiants de stations de marée envoyés à NOAA pour les prédictions de marées
+- Identifiants de stations de marée envoyés à NOAA pour les prédictions de marées (stations côtières des États-Unis)
 - Requêtes de recherche de lieu envoyées à Open-Meteo Geocoding
 - Requêtes de tuiles de carte (qui révèlent la zone approximative de la carte que vous consultez) envoyées au fournisseur de tuiles du type de carte actif : Esri/ArcGIS (imagerie satellite et cartes topographiques USGS), OpenStreetMap et OpenTopoMap (packs de cartes hors ligne/téléchargeables), et — pour la superposition historique roumaine « Old Map » — un proxy de mise en cache que nous exploitons sur Cloudflare qui récupère les tuiles auprès de geo-spatial.org (eHarta). La carte de base Google par défaut est couverte par le SDK Google Maps à la Section 3.3
 
@@ -98,10 +96,27 @@ Les deux services sont soumis à la [Politique de Confidentialité de Google](ht
 - **L'Application** n'utilise pas de cadres publicitaires ou d'identifiants publicitaires
 - **L'Application** ne suit pas les modèles d'utilisation, la fréquence des sessions ou l'utilisation des fonctionnalités
 - **L'Application** ne crée pas de profils d'utilisateur ou d'empreintes comportementales
-- **L'Application** ne vend, ne loue ni n'échange vos données, et ne les partage que lorsque vous l'initiez : les appels API en temps réel de la Section 3.2, la sauvegarde Google Drive facultative, les diagnostics Firebase optionnels et les commentaires que vous choisissez de soumettre (Section 3.3)
-- **L'Application** n'exploite aucun serveur qui reçoit, traite ou stocke vos données de détection (localisation, trouvailles, entrées du coffre-fort, sessions) ; le seul contenu que vous saisissez qui atteint un serveur que nous exploitons sont les commentaires que vous choisissez de soumettre (Section 3.3)
+- **L'Application** ne vend, ne loue ni n'échange vos données, et ne les partage que lorsque vous l'initiez : les appels API en temps réel de la Section 3.2, la sauvegarde Google Drive facultative, les diagnostics Firebase optionnels, le partage de localisation facultatif du Groupe en Direct (Section 3.5) et les commentaires que vous choisissez de soumettre (Section 3.3)
+- **L'Application** n'exploite aucun serveur qui stocke vos données de détection enregistrées (sessions, trouvailles, entrées du coffre-fort) — à une exception près que vous contrôlez : la fonctionnalité facultative Groupe en Direct (Section 3.5) partage votre localisation en direct avec un groupe que vous créez ou rejoignez, via la Firebase Realtime Database de Google, pendant que vous êtes dans ce groupe. En dehors du Groupe en Direct, le seul contenu qui atteint un serveur que nous exploitons sont les commentaires que vous choisissez de soumettre (Section 3.3)
 
 Les pratiques de données du Site Web sont couvertes séparément à la Section 4.
+
+### 3.5 Partage de localisation en Groupe en Direct (facultatif — la fonctionnalité Radar)
+
+SweepTrack Pro inclut **Radar**, une fonctionnalité de positionnement de groupe en direct accessible depuis le bouton RADAR sur la carte d'accueil. Elle reste désactivée sauf si vous **créez ou rejoignez un groupe**. Créer (héberger) un groupe est une fonctionnalité Pro ; rejoindre un groupe est gratuit. Pendant que vous êtes dans un groupe, les éléments suivants sont transmis à la **Firebase Realtime Database** de Google et rendus visibles, en temps réel, aux autres membres de ce même groupe :
+
+- **Votre nom d'affichage** — un nom que vous choisissez ; il n'a pas besoin d'être votre vrai nom.
+- **Votre localisation précise** — latitude et longitude GPS avec précision et cap, mise à jour pendant que vous êtes dans le groupe (environ toutes les 30 secondes sur l'offre gratuite, plus fréquemment avec un abonnement, et toutes les quelques secondes pendant un SOS).
+- **Votre statut** — en ligne, en pause ou immobile, et si vous avez déclenché un **SOS** (y compris votre localisation à ce moment-là).
+- **Le niveau de batterie de votre appareil, la couleur et l'icône de votre marqueur de carte**, ainsi que tout **point de repère, ping ou point de base/ralliement partagé** que vous créez, chacun étiqueté avec votre nom d'affichage et vos coordonnées.
+
+**Qui peut le voir :** uniquement les membres du groupe. Toute personne disposant du code de participation ou du QR du groupe peut le rejoindre et voir la carte en direct, alors ne partagez un code qu'avec les personnes avec lesquelles vous avez l'intention de partager votre localisation. L'accès est appliqué par des règles de sécurité côté serveur ; une personne doit rejoindre le groupe (devenant elle-même visible) avant de pouvoir lire les positions.
+
+**Authentification :** le backend du groupe utilise l'**Authentification Anonyme Firebase** — un identifiant aléatoire pour l'installation de votre application, non lié à votre nom, e-mail, numéro de téléphone ou compte Google.
+
+**Durée de conservation :** les données de localisation du groupe sont transitoires. Un groupe **expire** (généralement après environ 12 heures ; les groupes d'essai plus tôt), après quoi il cesse d'accepter de nouvelles positions et ne peut plus être rejoint. Quitter un groupe supprime immédiatement votre entrée de membre, et le groupe est supprimé lorsque son dernier membre le quitte. Si un groupe est abandonné sans que personne ne le quitte, les dernières positions partagées avant l'expiration restent stockées dans le groupe expiré jusqu'à sa suppression. Nous ne conservons pas d'historique à long terme de vos déplacements sur nos serveurs, et vous pouvez demander la suppression à tout moment (Section 18).
+
+L'application compagne gratuite autonome dispose de sa propre divulgation, plus complète, dans la [Politique de Confidentialité de SweepTrack Radar](https://sweeptrack.pro/privacy-radar).
 
 ## 4. Pratiques de données du Site Web (sweeptrack.pro)
 
@@ -157,6 +172,7 @@ Les mêmes droits GDPR, UK GDPR, australiens, canadiens, CCPA, LGPD et NZ Privac
 - **Sauvegarde Google Drive :** consentement (Art. 6(1)(a)) — vous activez et vous authentifiez explicitement
 - **Vérification de l'abonnement :** exécution du contrat (Art. 6(1)(b)) — nécessaire pour fournir les fonctionnalités payantes
 - **Firebase Analytics et Crashlytics (optionnel) :** consentement (Art. 6(1)(a)) — activé via la demande au premier lancement ou depuis les Paramètres, révocable à tout moment
+- **Partage de localisation en Groupe en Direct (optionnel) :** consentement (Art. 6(1)(a)) — vous créez ou rejoignez activement un groupe, avec une notification de premier plan affichée pendant que le partage est actif ; retirez votre consentement en quittant le groupe ou en fermant la fonctionnalité
 - **Commentaires dans l'application (optionnel) :** consentement (Art. 6(1)(a)) — envoyés uniquement lorsque vous soumettez le formulaire de commentaires
 - **E-mail de la liste d'attente (Site Web) :** consentement (Art. 6(1)(a)) — voir Section 4.1
 
@@ -173,13 +189,13 @@ Les données du Site Web (votre e-mail de la liste d'attente) ne sont utilisées
 **Données de l'Application :**
 
 - Les données de session et de trouvailles sont stockées dans une base de données Room (SQLite) dans le stockage privé cloisonné de l'Application sur votre appareil — protégées par le modèle d'isolation des applications d'Android et le chiffrement des données utilisateur de l'appareil au repos
-- Les préférences sensibles utilisent EncryptedSharedPreferences (AES-256) d'Android
+- Sur les appareils compatibles, les préférences sensibles et les données du coffre-fort des autorisations utilisent EncryptedSharedPreferences (AES-256) d'Android, adossé à l'Android Keystore. Si le Keystore ou EncryptedSharedPreferences n'est pas disponible sur un appareil, l'Application se rabat sur le stockage privé (cloisonné) de l'application et affiche un avertissement persistant dans l'application indiquant que ces données ne sont pas chiffrées séparément sur cet appareil
 - Les fichiers multimédias sont stockés dans le stockage interne privé de l'Application, inaccessible aux autres applications
 - La sauvegarde cloud Android est **désactivée** (`android:allowBackup="false"`) pour éviter une exposition involontaire des données
-- Les sauvegardes Google Drive utilisent les API chiffrées de Google (HTTPS/TLS) et n'existent que dans votre compte
+- Les sauvegardes Google Drive sont transmises via HTTPS/TLS et stockées uniquement dans votre propre compte. Vous pouvez facultativement protéger une sauvegarde avec une phrase secrète, qui chiffre l'archive (AES-256-GCM) sur votre appareil avant le téléversement, de sorte qu'elle ne puisse pas être lue sans votre phrase secrète
 - Les commentaires facultatifs que vous soumettez dans l'application sont transmis via HTTPS/TLS à une Edge Function Supabase (région UE)
 
-Pour l'Application, nous n'exploitons aucun serveur, base de données ou infrastructure cloud qui stocke vos données de détection.
+Pour l'Application, nous n'exploitons aucun serveur qui stocke vos données de détection enregistrées. La seule exception est la fonctionnalité facultative Groupe en Direct (Section 3.5), qui conserve des données de localisation de groupe transitoires et à expiration automatique dans la Firebase de Google pendant que vous êtes dans un groupe.
 
 **Données du Site Web :** les e-mails de la liste d'attente sont stockés dans une base de données Supabase Postgres hébergée dans l'UE (Irlande). Les connexions sont chiffrées (TLS). L'accès est restreint à des fins administratives uniquement. L'e-mail sortant est envoyé via Resend (UE, Irlande) par TLS. Voir Section 4.
 
@@ -191,7 +207,7 @@ Pour l'Application, nous n'exploitons aucun serveur, base de données ou infrast
 
 ## 9. Partage et divulgation des données
 
-Nous ne vendons, ne louons ni n'échangeons vos données personnelles. Vous pouvez choisir de partager les données de l'Application via des exportations (GPX, KML, CSV, JSON), des cartes de partage de session ou la sauvegarde Google Drive — toutes initiées par l'utilisateur. Si vous soumettez des commentaires dans l'application, ils sont traités pour notre compte par Supabase (voir Section 3.3). Les données de la liste d'attente du Site Web sont traitées uniquement par nos sous-traitants nommés (Supabase, Resend) aux fins décrites à la Section 4.
+Nous ne vendons, ne louons ni n'échangeons vos données personnelles. Vous pouvez choisir de partager les données de l'Application via des exportations (GPX, KML, CSV, JSON), des cartes de partage de session, la sauvegarde Google Drive ou le partage de localisation en direct dans un groupe Radar (Section 3.5) — toutes initiées par l'utilisateur. Si vous soumettez des commentaires dans l'application, ils sont traités pour notre compte par Supabase (voir Section 3.3). Les données de la liste d'attente du Site Web sont traitées uniquement par nos sous-traitants nommés (Supabase, Resend) aux fins décrites à la Section 4.
 
 ## 10. Vos droits (GDPR et internationaux)
 
@@ -259,13 +275,13 @@ Vous pouvez révoquer toute autorisation à tout moment via les Paramètres Andr
 
 ## 14. Transferts internationaux de données
 
-**Données de l'Application :** étant donné que toutes les données de détection sont stockées localement sur votre appareil, aucun transfert international de vos données de détection ne se produit sous notre contrôle. Les appels API vers des tiers (Section 3.2), la sauvegarde Google Drive facultative, les diagnostics Firebase facultatifs et les commentaires facultatifs peuvent être traités dans les juridictions où ces services opèrent.
+**Données de l'Application :** étant donné que toutes les données de détection sont stockées localement sur votre appareil, aucun transfert international de vos données de détection ne se produit sous notre contrôle. Les appels API vers des tiers (Section 3.2), la sauvegarde Google Drive facultative, les diagnostics Firebase facultatifs, le partage de localisation facultatif du Groupe en Direct (Section 3.5, via la Firebase de Google) et les commentaires facultatifs peuvent être traités dans les juridictions où ces services opèrent.
 
 **Données du Site Web :** les e-mails de la liste d'attente sont stockés dans l'UE (Irlande) par Supabase et traités par Resend (UE, Irlande). Si vous accédez au Site Web depuis l'extérieur de l'UE, votre e-mail est transféré vers l'UE pour traitement.
 
 ## 15. Notification de violation de données
 
-**Application :** étant donné que nous ne stockons pas vos données de détection sur un serveur que nous exploitons, une violation de données affectant les données de l'Application de notre côté n'est pas possible. Si nous prenons connaissance d'une vulnérabilité dans l'Application, nous publierons une mise à jour et notifierons les utilisateurs via l'Application ou le site web. Les commentaires facultatifs que vous soumettez sont détenus par notre sous-traitant Supabase selon ses propres protocoles de notification de violation.
+**Application :** vos données de détection enregistrées sont stockées sur votre appareil, et non sur des serveurs que nous exploitons, de sorte qu'elles ne sont pas exposées par une violation de notre infrastructure. La seule exception est la fonctionnalité facultative Groupe en Direct (Section 3.5) : pendant que vous êtes dans un groupe, votre localisation en direct est conservée de manière transitoire dans la Firebase de Google, avec un accès restreint par des règles côté serveur aux membres de ce groupe. Si nous prenons connaissance d'une vulnérabilité dans l'Application, nous publierons une mise à jour et notifierons les utilisateurs via l'Application ou le site web. Les commentaires facultatifs que vous soumettez sont détenus par notre sous-traitant Supabase selon ses propres protocoles de notification de violation.
 
 **Site Web :** nos sous-traitants (Supabase, Resend) maintiennent leurs propres protocoles de notification de violation. Dans le cas peu probable d'une violation affectant votre e-mail de la liste d'attente, nous vous notifierons ainsi que l'autorité de contrôle compétente (ANSPDCP) dans les 72 heures comme l'exige le GDPR.
 
@@ -284,7 +300,6 @@ Nous pouvons mettre à jour cette Politique de Confidentialité pour refléter l
 - [Esri/ArcGIS](https://www.esri.com/en-us/privacy/overview)
 - [eHarta / geo-spatial.org](https://www.geo-spatial.org)
 - [Cloudflare](https://www.cloudflare.com/privacypolicy/) (proxy de tuiles de carte historique)
-- [Wikipedia](https://foundation.wikimedia.org/wiki/Privacy_policy)
 - [NOAA](https://www.noaa.gov/privacy-policy)
 - [Vercel](https://vercel.com/legal/privacy-policy) (Hébergement Site Web + analyses)
 - [Supabase](https://supabase.com/privacy) (Base de données Site Web + commentaires dans l'application)
@@ -292,7 +307,7 @@ Nous pouvons mettre à jour cette Politique de Confidentialité pour refléter l
 
 ## 18. Nous contacter
 
-**Coc Lorand Adrian P.F.A.** (exerçant sous le nom de Loriba)  
+**Coc Lorand-Adrian P.F.A.** (exerçant sous le nom de Loriba)  
 CUI : 41299288 · Reg. F24/646/2019  
 E-mail : [support@sweeptrack.pro](mailto:support@sweeptrack.pro)  
 Site web : [https://sweeptrack.pro](https://sweeptrack.pro)

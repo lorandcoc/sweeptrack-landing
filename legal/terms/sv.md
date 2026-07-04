@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — GPS-spårningsapplikation för metallsökning
 
-Ikraftträdandedatum: 12 maj 2026 · Senast uppdaterad: 26 maj 2026
+Ikraftträdandedatum: 12 maj 2026 · Senast uppdaterad: 3 juli 2026
 
-Drivs av: Coc Lorand Adrian P.F.A., som verkar under namnet "Loriba"
+Drivs av: Coc Lorand-Adrian P.F.A., som verkar under namnet "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Webbplats: sweeptrack.pro
 
 ## 1. Godkännande av villkor
 
-Genom att ladda ner, installera, få åtkomst till eller använda SweepTrack Pro ("Appen") eller webbplatsen sweeptrack.pro ("Webbplatsen") samtycker du till att vara bunden av dessa Användarvillkor ("Villkor"). Om du inte godkänner dessa Villkor, använd inte Appen eller Webbplatsen. "Vi", "oss" och "vår" avser Coc Lorand Adrian P.F.A., som verkar som Loriba.
+Genom att ladda ner, installera, få åtkomst till eller använda SweepTrack Pro ("Appen") eller webbplatsen sweeptrack.pro ("Webbplatsen") samtycker du till att vara bunden av dessa Användarvillkor ("Villkor"). Om du inte godkänner dessa Villkor, använd inte Appen eller Webbplatsen. "Vi", "oss" och "vår" avser Coc Lorand-Adrian P.F.A., som verkar som Loriba.
 
 Vi förbehåller oss rätten att när som helst ändra dessa Villkor. Fortsatt användning av Appen eller Webbplatsen efter ändringar utgör ett godkännande. Väsentliga ändringar kommer att kommuniceras via Appen eller vår webbplats.
 
@@ -24,10 +24,10 @@ SweepTrack Pro är en GPS-baserad spårnings- och sessionsloggningsapplikation d
 
 - GPS-spårning i realtid och ruttinspelning
 - Sessionsloggning med mätvärden för avstånd, hastighet, höjd och varaktighet
-- Loggning av fynd/upptäckter med foto- och ljudbilagor
+- Loggning av fynd/upptäckter med foto-, ljud- och videobilagor
 - Väderprognoser och poängsättning av sökförhållanden
 - Tidvattensprognoser (amerikanska kuststationer via NOAA)
-- Upptäckt av närliggande historiska och arkeologiska intressepunkter
+- Live-grupppositionering (Radar): en delad livekarta med en sökgrupp du skapar eller går med i
 - Hantering av detektorinställningar för över 60 metalldetektormodeller
 - Tillståndsvalv för att hantera markägartillstånd och platsåtkomst
 - Perimeterväktare med gränsvarningar
@@ -62,14 +62,15 @@ Vi lagrar inte ditt Google-kontolösenord. Autentisering hanteras helt av Google
 
 Appen erbjuder begränsad funktionalitet utan kostnad, inklusive:
 
-- Obegränsade sessioner
-- Upp till 5 fynd
+- Upp till 10 spårningssessioner per månad
+- Obegränsade fynd, vart och ett med ett foto (Pro låser upp djup, värde, vikt, signal och jordmånsanteckningar, plus ljud-, video- och flerfotoinspelning)
 - 1 detektorinställningsplats
+- Gratis att gå med i en Radar-livegrupp
 - Tillgång till grundläggande spårnings- och kartfunktioner
 
 ### 5.2 Premium-abonnemang
 
-Ett premium-abonnemang, som hanteras via Google Play Store och bearbetas av RevenueCat, Inc., låser upp obegränsade fynd, sessioner och detektorinställningar, plus avancerade funktioner inklusive historiska kartöverlägg, offline-kartor, perimeterväktare, molnsäkerhetskopiering och ytterligare verktyg.
+Ett premium-abonnemang, som hanteras via Google Play Store och bearbetas av RevenueCat, Inc., låser upp den fullständiga fyndregistreringen (djup, värde, vikt, signal och jordmånsanteckningar, plus ljud-, video- och flerfotoinspelning), obegränsade sessioner och obegränsade detektorinställningar, plus avancerade funktioner inklusive historiska kartöverlägg, offline-kartor, perimeterväktare, molnsäkerhetskopiering, värdskap för egna Radar-grupper och ytterligare verktyg.
 
 ### 5.3 Founder's Lifetime
 
@@ -107,8 +108,8 @@ Appen samlar in och lagrar följande data **lokalt på din enhet**:
 ### 6.2 Datalagring (App)
 
 - **All appdata lagras lokalt på din enhet** i en lokal Room/SQLite-databas och app-privat fillagring inom Androids privata sandlåda. Databasfilen krypteras inte separat av Appen, men Androids plattformsskydd för lagring tillämpas på enheter som stöder det
-- **Ingen appdata överförs till våra servrar** — vi driver inga backend-servrar eller databaser för app-funktionalitet
-- **Google Drive-säkerhetskopiering** (valfri, användarinitierad) lagrar en säkerhetskopia av dina data i ditt personliga Google Drive-konto i en "SweepTrack Backups"-mapp. Om du aktiverar lösenfraskryptering av säkerhetskopian krypteras säkerhetskopian innan den laddas upp
+- **Ingen sparad appdata (sessioner, fynd, valv) överförs till servrar som vi driver.** Den valfria Live-grupp-funktionen (Radar) är det enda undantaget: medan du befinner dig i en grupp som du skapar eller går med i, delar den din liveposition och delade kartobjekt via Googles Firebase Realtime Database — se vår integritetspolicy, §3.5
+- **Google Drive-säkerhetskopiering** (valfri, användarinitierad) lagrar en säkerhetskopia av dina data i ditt personliga Google Drive-konto i en "SweepTrack Backups"-mapp. Om du aktiverar lösenfraskryptering av säkerhetskopian krypteras säkerhetskopian på din enhet innan den laddas upp
 - Android-molnsäkerhetskopiering har inaktiverats för att skydda dina data
 
 Webbplatsens datahantering (e-postinsamling för väntelista, analys, hosting) beskrivs separat i §6.7 nedan och i fullständig detalj i vår integritetspolicy, Avsnitt 4.
@@ -118,12 +119,12 @@ Webbplatsens datahantering (e-postinsamling för väntelista, analys, hosting) b
 Appen gör nätverksbegäranden till följande tredjepartstjänster endast för funktionalitetsändamål. Ingen personlig eller identifierande data skickas om inte annat anges:
 
 - **Google Maps SDK** — Kartvisning
-- **Open-Meteo** — Väderdata (ungefärliga koordinater skickade, ingen personlig information)
-- **OpenStreetMap / Nominatim** — Omvänd geokodning (koordinater skickade, ingen personlig information)
-- **Overpass API** — Frågor om närliggande historiska intressepunkter (koordinater skickade, ingen personlig information)
-- **Wikipedia API** — Närliggande artiklar (koordinater skickade, ingen personlig information)
-- **NOAA** — Tidvattensprognoser (station-ID skickas, ingen personlig information)
+- **Open-Meteo** — Väderdata och platssökning (ungefärliga koordinater skickade, ingen personlig information)
+- **NOAA** — Tidvattensprognoser, amerikanska kuststationer (station-ID skickas, ingen personlig information)
+- **Firebase Realtime Database** (Google) — Live-grupp-backend, endast medan du skapar eller går med i en Radar-grupp (se §6.2 och integritetspolicyn §3.5)
 - **RevenueCat** — Abonnemangsverifiering (anonymt app-användar-ID, ingen personlig information)
+
+Omvänd geokodning (att omvandla koordinater till ett platsnamn) körs på enheten via Androids plattformsgeokodare och är inte ett nätverksanrop till tredje part.
 
 ### 6.4 Diagnostisk telemetri — endast opt-in (App)
 
@@ -196,7 +197,7 @@ Fyndkategorier i Appen (Skatt, Guld, Mynt etc.) är endast för personlig organi
 
 ### 8.5 Ingen juridisk rådgivning
 
-Inget i Appen — inklusive tillståndsvalvet, väderpoäng, sökprognoser, närliggande platser, historiska kartöverlägg, fyndkategorisering eller någon text — utgör juridisk, finansiell, arkeologisk eller professionell rådgivning av något slag.
+Inget i Appen — inklusive tillståndsvalvet, väderpoäng, sökprognoser, historiska kartöverlägg, fyndkategorisering eller någon text — utgör juridisk, finansiell, arkeologisk eller professionell rådgivning av något slag.
 
 ## 9. GPS, plats och säkerhet
 
@@ -210,15 +211,15 @@ Vägöverlägg och heatmap-visualiseringar är ungefärliga. GPS-drift och signa
 
 ## 10. Tredjepartstjänster och innehåll
 
-Appen använder data från Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA och Wikipedia. Kartdata bör **aldrig** användas för att fastställa rättsliga egendomsgränser eller åtkomsträttigheter.
+Appen använder data från Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo och NOAA. Kartdata bör **aldrig** användas för att fastställa rättsliga egendomsgränser eller åtkomsträttigheter.
 
 **USGS historiska kartöverlägg:** Historiska kartor avbildar förhållanden från decennier eller århundraden sedan. Funktioner som visas kanske inte längre existerar eller kan vara på annan egendom. Historiska kartor återspeglar inte nuvarande gränser, ägande eller åtkomsträttigheter. Förekomsten av en historisk funktion ger ingen rätt till sökning.
 
-**Tidvattensprognoser** kanske inte tar hänsyn till stormflod, vind eller lokala anomalier. **Data om närliggande platser** är gemenskapsbidrag och kan vara felaktiga — förekomsten av en markör ger ingen rätt till sökning. **Offline-kartor** kan bli föråldrade. **Detektorinställningar** är organisatoriska verktyg, inte godkända av tillverkare.
+**Tidvattensprognoser** kanske inte tar hänsyn till stormflod, vind eller lokala anomalier. **Offline-kartor** kan bli föråldrade. **Detektorinställningar** är organisatoriska verktyg, inte godkända av tillverkare.
 
 ## 11. Immateriella rättigheter
 
-SweepTrack Pro, inklusive dess design, kod, grafik, UI-komponenter och varumärke, är Coc Lorand Adrian P.F.A.:s (verkar som Loriba) immateriella rättigheter. Alla rättigheter förbehållna.
+SweepTrack Pro, inklusive dess design, kod, grafik, UI-komponenter och varumärke, är Coc Lorand-Adrian P.F.A.:s (verkar som Loriba) immateriella rättigheter. Alla rättigheter förbehållna.
 
 Du behåller äganderätten till allt innehåll du skapar med hjälp av Appen. Vi gör inga anspråk på rättigheter över ditt innehåll.
 
@@ -230,13 +231,13 @@ APPEN TILLHANDAHÅLLS "SOM ÄR" OCH "SOM TILLGÄNGLIG" UTAN GARANTIER AV NÅGOT 
 
 ## 13. Ansvarsbegränsning
 
-I DEN MAXIMALA UTSTRÄCKNING SOM TILLÅTS AV TILLÄMPLIG LAG, KOMMER COC LORAND ADRIAN P.F.A. (VERKAR SOM LORIBA) INTE ATT VARA ANSVARIG FÖR INDIREKTA, OAVSIKTLIGA, SÄRSKILDA, FÖLJD- ELLER STRAFFSKADESTÅND, INKLUSIVE MEN INTE BEGRÄNSAT TILL: SKADOR FRÅN GPS-INNOGGRANNHET, EGENDOMSGRÄNSTVISTER ELLER INTRÅNGSANSPRÅK; SKADOR FRÅN FÖRLITAN PÅ VÄDER-, TIDVATTENS- ELLER MILJÖDATA; TIDVATTENFÖRHÅLLANDEN INKLUSIVE SKADA ELLER DRUNKNING; RÄTTSLIGA KONSEKVENSER AV SÖKAKTIVITETER INKLUSIVE BÖTER, ÅTAL ELLER KONFISKERING; UNDERLÅTENHET ATT FÖLJA TREASURE ACT 1996, ARPA ELLER NÅGON KULTURARVSLAG; FÖRLITAN PÅ HISTORISKA KARTÖVERLÄGG, NÄRLIGGANDE PLATSER, TILLSTÅNDSVALV, PDF-BREV, DIGITALA SIGNATURER ELLER FYNDIDENTIFIERING; INNOGGRANNHET HOS PERIMETERVÄKTARE, SPÅRÖVERLÄGG ELLER HEATMAP; FÖRÅLDRADE OFFLINE-KARTOR ELLER DETEKTORINSTÄLLNINGAR; PERSONSKADA, DÖD ELLER EGENDOMSSKADA UNDER SÖKAKTIVITETER; ELLER INTERAKTIONER MED MARKÄGARE, BROTTSBEKÄMPNING ELLER TREDJE PARTER.
+I DEN MAXIMALA UTSTRÄCKNING SOM TILLÅTS AV TILLÄMPLIG LAG, KOMMER COC LORAND-ADRIAN P.F.A. (VERKAR SOM LORIBA) INTE ATT VARA ANSVARIG FÖR INDIREKTA, OAVSIKTLIGA, SÄRSKILDA, FÖLJD- ELLER STRAFFSKADESTÅND, INKLUSIVE MEN INTE BEGRÄNSAT TILL: SKADOR FRÅN GPS-INNOGGRANNHET, EGENDOMSGRÄNSTVISTER ELLER INTRÅNGSANSPRÅK; SKADOR FRÅN FÖRLITAN PÅ VÄDER-, TIDVATTENS- ELLER MILJÖDATA; TIDVATTENFÖRHÅLLANDEN INKLUSIVE SKADA ELLER DRUNKNING; RÄTTSLIGA KONSEKVENSER AV SÖKAKTIVITETER INKLUSIVE BÖTER, ÅTAL ELLER KONFISKERING; UNDERLÅTENHET ATT FÖLJA TREASURE ACT 1996, ARPA ELLER NÅGON KULTURARVSLAG; FÖRLITAN PÅ HISTORISKA KARTÖVERLÄGG, TILLSTÅNDSVALV, PDF-BREV, DIGITALA SIGNATURER ELLER FYNDIDENTIFIERING; INNOGGRANNHET HOS PERIMETERVÄKTARE, SPÅRÖVERLÄGG ELLER HEATMAP; FÖRÅLDRADE OFFLINE-KARTOR ELLER DETEKTORINSTÄLLNINGAR; PERSONSKADA, DÖD ELLER EGENDOMSSKADA UNDER SÖKAKTIVITETER; ELLER INTERAKTIONER MED MARKÄGARE, BROTTSBEKÄMPNING ELLER TREDJE PARTER.
 
 Under inga omständigheter kommer vårt totala ansvar att överstiga det belopp du har betalat för Appen under de tolv (12) månaderna före anspråket.
 
 ## 14. Skadeersättning
 
-Du samtycker till att hålla Coc Lorand Adrian P.F.A. (verkar som Loriba) skadelös från alla anspråk, skador, förluster, skulder, kostnader och utgifter som uppstår från din användning av Appen, brott mot dessa Villkor, brott mot någon tillämplig lag eller dina metallsökningsaktiviteter.
+Du samtycker till att hålla Coc Lorand-Adrian P.F.A. (verkar som Loriba) skadelös från alla anspråk, skador, förluster, skulder, kostnader och utgifter som uppstår från din användning av Appen, brott mot dessa Villkor, brott mot någon tillämplig lag eller dina metallsökningsaktiviteter.
 
 ## 15. Uppsägning
 
@@ -264,13 +265,13 @@ Dessa Villkor, tillsammans med vår integritetspolicy, utgör hela avtalet mella
 
 ## 18. Open source och tredjepartslicenser
 
-Appen använder open-source-komponenter. Viktiga attributioner: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (allmän egendom), USGS (allmän egendom), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+Appen använder open-source-komponenter. Viktiga attributioner: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (allmän egendom), USGS (allmän egendom), Jetpack Compose/Room/Hilt (Apache 2.0), Firebase SDK (Google), RevenueCat SDK (MIT).
 
 ## 19. Kontakt
 
 För frågor om dessa Villkor, kontakta:
 
-**Coc Lorand Adrian P.F.A.** (verkar som Loriba)
+**Coc Lorand-Adrian P.F.A.** (verkar som Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 E-post: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Webbplats: [https://sweeptrack.pro](https://sweeptrack.pro)

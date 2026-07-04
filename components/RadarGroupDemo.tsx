@@ -6,7 +6,7 @@ import { useI18n } from "@/lib/i18n";
 
 /*
  * Live group map demo — a self-running 15s choreography:
- *   t≈2.1s  amber member drops a "Dig here" ping at the NE waypoint
+ *   t≈2.1s  amber member drops a "Look here" ping at the NE waypoint
  *   t≈7.2s  second ping at the lower waypoint
  *   t≈9.0s  violet member triggers SOS — the other paths bend toward it
  *   (the convergence is baked into each member's offset-path)

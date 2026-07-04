@@ -2,9 +2,9 @@
 
 **SweepTrack Pro** — Applicazione di monitoraggio GPS per la ricerca di metalli
 
-Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 26 maggio 2026
+Data di entrata in vigore: 12 maggio 2026 · Ultimo aggiornamento: 3 luglio 2026
 
-Gestito da: Coc Lorand Adrian P.F.A., operante come "Loriba"
+Gestito da: Coc Lorand-Adrian P.F.A., operante come "Loriba"
 
 CUI: 41299288 · Reg. F24/646/2019
 
@@ -14,7 +14,7 @@ Sito web: sweeptrack.pro
 
 ## 1. Accettazione dei Termini
 
-Scaricando, installando, accedendo o utilizzando SweepTrack Pro ("l'App") o il sito web sweeptrack.pro ("il Sito Web"), l'utente accetta di essere vincolato dai presenti Termini di Servizio ("Termini"). Se non si accettano i presenti Termini, non utilizzare l'App o il Sito Web. "Noi", "ci" e "nostro" si riferiscono a Coc Lorand Adrian P.F.A., operante come Loriba.
+Scaricando, installando, accedendo o utilizzando SweepTrack Pro ("l'App") o il sito web sweeptrack.pro ("il Sito Web"), l'utente accetta di essere vincolato dai presenti Termini di Servizio ("Termini"). Se non si accettano i presenti Termini, non utilizzare l'App o il Sito Web. "Noi", "ci" e "nostro" si riferiscono a Coc Lorand-Adrian P.F.A., operante come Loriba.
 
 Ci riserviamo il diritto di modificare i presenti Termini in qualsiasi momento. L'uso continuato dell'App o del Sito Web dopo le modifiche costituisce l'accettazione delle stesse. Le modifiche sostanziali saranno comunicate tramite l'App o il nostro sito web.
 
@@ -24,10 +24,10 @@ SweepTrack Pro è un'applicazione di monitoraggio e registrazione delle sessioni
 
 - Monitoraggio GPS in tempo reale e registrazione del percorso
 - Registrazione della sessione con metriche di distanza, velocità, altitudine e durata
-- Registrazione dei ritrovamenti/scoperte con allegati fotografici e audio
+- Registrazione dei ritrovamenti/scoperte con allegati fotografici, audio e video
 - Previsioni meteorologiche e punteggio delle condizioni di ricerca
 - Previsioni delle tavole di marea (stazioni costiere degli Stati Uniti via NOAA)
-- Scoperta di punti di interesse storici e archeologici nelle vicinanze
+- Posizionamento live del gruppo (Radar): una mappa live condivisa con un gruppo di ricerca che create o a cui vi unite
 - Gestione delle preimpostazioni del rilevatore per oltre 60 modelli di rilevatori di metalli
 - Caveau dei permessi per gestire i permessi dei proprietari di terreni e l'accesso ai siti
 - Guardia perimetrale con avvisi di confine
@@ -62,14 +62,15 @@ Non memorizziamo la password del vostro account Google. L'autenticazione è gest
 
 L'App offre funzionalità limitate senza costi, incluso:
 
-- Sessioni illimitate
-- Fino a 5 ritrovamenti
+- Fino a 10 sessioni di monitoraggio al mese
+- Ritrovamenti illimitati, ciascuno con una foto (Pro sblocca note su profondità, valore, peso, segnale e terreno, oltre alla cattura audio, video e multi-foto)
 - 1 slot per preimpostazioni del rilevatore
+- Adesione gratuita a un gruppo live Radar
 - Accesso alle funzionalità principali di monitoraggio e mappatura
 
 ### 5.2 Abbonamento Premium
 
-Un abbonamento premium, gestito tramite Google Play Store ed elaborato da RevenueCat, Inc., sblocca ritrovamenti, sessioni e preimpostazioni del rilevatore illimitati, oltre a funzionalità avanzate inclusi sovrapposizioni di mappe storiche, mappe offline, guardia perimetrale, backup cloud e strumenti aggiuntivi.
+Un abbonamento premium, gestito tramite Google Play Store ed elaborato da RevenueCat, Inc., sblocca la scheda completa del ritrovamento (note su profondità, valore, peso, segnale e terreno, oltre alla cattura audio, video e multi-foto), sessioni illimitate e preimpostazioni del rilevatore illimitate, oltre a funzionalità avanzate inclusi sovrapposizioni di mappe storiche, mappe offline, guardia perimetrale, backup cloud, l'hosting dei vostri gruppi Radar e strumenti aggiuntivi.
 
 ### 5.3 Founder's Lifetime
 
@@ -107,8 +108,8 @@ L'App raccoglie e memorizza i seguenti dati **localmente sul vostro dispositivo*
 ### 6.2 Memorizzazione dei Dati (App)
 
 - **Tutti i dati dell'App sono memorizzati localmente sul vostro dispositivo** in un database locale Room/SQLite e nell'archiviazione di file privata dell'app all'interno del sandbox privato di Android. Il file del database non è cifrato separatamente dall'App, sebbene si applichino le protezioni di archiviazione della piattaforma Android sui dispositivi supportati
-- **Nessun dato dell'App viene trasmesso ai nostri server** — non gestiamo server o database backend per la funzionalità dell'App
-- **Backup Google Drive** (opzionale, avviato dall'utente) memorizza una copia di backup dei vostri dati nel vostro account personale Google Drive in una cartella "SweepTrack Backups". Se attivate la cifratura del backup tramite passphrase, il backup viene cifrato prima del caricamento
+- **Nessun dato salvato dell'App (sessioni, ritrovamenti, caveau) viene trasmesso a server da noi gestiti.** La funzione opzionale Gruppo Live (Radar) è l'unica eccezione: mentre siete in un gruppo che create o a cui vi unite, essa condivide la vostra posizione in tempo reale e gli elementi della mappa condivisa tramite Firebase Realtime Database di Google — vedi la nostra Informativa sulla Privacy, §3.5
+- **Backup Google Drive** (opzionale, avviato dall'utente) memorizza una copia di backup dei vostri dati nel vostro account personale Google Drive in una cartella "SweepTrack Backups". Se attivate la cifratura del backup tramite passphrase, il backup viene cifrato sul vostro dispositivo prima del caricamento
 - Il backup cloud Android è stato disabilitato per proteggere i vostri dati
 
 Le pratiche relative ai dati del Sito Web (raccolta di email per la lista d'attesa, analisi, hosting) sono descritte separatamente in §6.7 di seguito e in dettaglio completo nella nostra Informativa sulla Privacy, Sezione 4.
@@ -118,12 +119,12 @@ Le pratiche relative ai dati del Sito Web (raccolta di email per la lista d'atte
 L'App effettua richieste di rete ai seguenti servizi di terze parti solo per scopi di funzionalità. Nessun dato personale o di identificazione viene inviato salvo diversamente specificato:
 
 - **Google Maps SDK** — Visualizzazione della mappa
-- **Open-Meteo** — Dati meteorologici (coordinate approssimative inviate, nessuna informazione personale)
-- **OpenStreetMap / Nominatim** — Geocodifica inversa (coordinate inviate, nessuna informazione personale)
-- **Overpass API** — Query per punti di interesse storici nelle vicinanze (coordinate inviate, nessuna informazione personale)
-- **Wikipedia API** — Articoli nelle vicinanze (coordinate inviate, nessuna informazione personale)
-- **NOAA** — Previsioni delle maree (ID stazione inviato, nessuna informazione personale)
+- **Open-Meteo** — Dati meteorologici e ricerca di luoghi (coordinate approssimative inviate, nessuna informazione personale)
+- **NOAA** — Previsioni delle maree, stazioni costiere degli Stati Uniti (ID stazione inviato, nessuna informazione personale)
+- **Firebase Realtime Database** (Google) — il backend del Gruppo Live, solo mentre create o vi unite a un gruppo Radar (vedi §6.2 e Informativa sulla Privacy §3.5)
 - **RevenueCat** — Verifica abbonamento (ID utente anonimo dell'app, nessuna informazione personale)
+
+La geocodifica inversa (trasformazione delle coordinate in un nome di luogo) avviene sul dispositivo tramite il geocodificatore della piattaforma Android e non è una chiamata di rete a terze parti.
 
 ### 6.4 Telemetria di diagnostica — solo opt-in (App)
 
@@ -195,7 +196,7 @@ Il Caveau dei Permessi è uno strumento organizzativo personale. **Non** costitu
 Le categorie di ritrovamenti nell'App (Tesoro, Oro, Moneta, ecc.) sono solo per l'organizzazione personale. L'App **non** determina la classificazione legale, il significato archeologico, il valore o gli obblighi di segnalazione.
 ### 8.5 Nessuna Consulenza Legale
 
-Niente nell'App — inclusi il Caveau dei Permessi, il punteggio meteorologico, le previsioni di rilevamento, i siti vicini, le sovrapposizioni di mappe storiche, la categorizzazione dei ritrovamenti o qualsiasi testo — costituisce consulenza legale, finanziaria, archeologica o professionale di alcun tipo.
+Niente nell'App — inclusi il Caveau dei Permessi, il punteggio meteorologico, le previsioni di rilevamento, le sovrapposizioni di mappe storiche, la categorizzazione dei ritrovamenti o qualsiasi testo — costituisce consulenza legale, finanziaria, archeologica o professionale di alcun tipo.
 
 ## 9. GPS, Posizione e Sicurezza
 
@@ -209,15 +210,15 @@ Le visualizzazioni di sovrapposizione del percorso e della mappa di calore sono 
 
 ## 10. Servizi e Contenuti di Terze Parti
 
-L'App utilizza dati di Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo, NOAA e Wikipedia. I dati della mappa **non** devono mai essere utilizzati per determinare i confini legali di proprietà o i diritti di accesso.
+L'App utilizza dati di Google Maps, OpenStreetMap, Esri, OpenTopoMap, USGS, Open-Meteo e NOAA. I dati della mappa **non** devono mai essere utilizzati per determinare i confini legali di proprietà o i diritti di accesso.
 
 **Sovrapposizione di Mappe Storiche USGS:** Le mappe storiche rappresentano condizioni di decenni o secoli fa. Le caratteristiche mostrate potrebbero non esistere più o trovarsi su un'altra proprietà. Le mappe storiche non riflettono i confini attuali, la proprietà o i diritti di accesso. La presenza di una caratteristica storica non autorizza la ricerca.
 
-**Le previsioni delle maree** potrebbero non tenere conto di mareggiate, vento o anomalie locali. **I dati sui siti vicini** sono contributi della comunità e potrebbero essere imprecisi — la presenza di un marker non autorizza la ricerca. **Le mappe offline** potrebbero diventare obsolete. **Le preimpostazioni del rilevatore** sono strumenti organizzativi, non approvati dai produttori.
+**Le previsioni delle maree** potrebbero non tenere conto di mareggiate, vento o anomalie locali. **Le mappe offline** potrebbero diventare obsolete. **Le preimpostazioni del rilevatore** sono strumenti organizzativi, non approvati dai produttori.
 
 ## 11. Proprietà Intellettuale
 
-SweepTrack Pro, inclusi design, codice, grafica, componenti UI e branding, è di proprietà intellettuale di Coc Lorand Adrian P.F.A. (operante come Loriba). Tutti i diritti riservati.
+SweepTrack Pro, inclusi design, codice, grafica, componenti UI e branding, è di proprietà intellettuale di Coc Lorand-Adrian P.F.A. (operante come Loriba). Tutti i diritti riservati.
 
 Mantenete la proprietà di tutti i contenuti che create utilizzando l'App. Non rivendichiamo alcun diritto sui vostri contenuti.
 
@@ -229,13 +230,13 @@ L'APP È FORNITA "COSÌ COM'È" E "COME DISPONIBILE" SENZA GARANZIE DI ALCUN TIP
 
 ## 13. Limitazione di Responsabilità
 
-NELLA MASSIMA MISURA CONSENTITA DALLA LEGGE APPLICABILE, COC LORAND ADRIAN P.F.A. (OPERANTE COME LORIBA) NON SARÀ RESPONSABILE DI ALCUN DANNO INDIRETTO, INCIDENTALE, SPECIALE, CONSEQUENZIALE O PUNITIVO, INCLUSI MA NON LIMITATI A: DANNI DA INACCURATEZZA GPS, CONTROVERSIE SUI LIMITI DI PROPRIETÀ O RECLAMI DI VIOLAZIONE DI DOMICILIO; DANNI DA AFFIDAMENTO SU DATI METEO, MAREE O AMBIENTALI; CONDIZIONI DI MAREA INCLUSE LESIONI O ANNEGAMENTO; CONSEGUENZE LEGALI DELLE ATTIVITÀ DI RICERCA INCLUSE MULTE, PROCESSI O CONFISCHE; INADEMPIENZA AL TREASURE ACT 1996, ARPA O QUALSIASI LEGGE SUL PATRIMONIO CULTURALE; AFFIDAMENTO SU SOVRAPPOSIZIONI DI MAPPE STORICHE, SITI VICINI, CAVEAU DEI PERMESSI, LETTERE PDF, FIRME DIGITALI O IDENTIFICAZIONE DEI RITROVAMENTI; INACCURATEZZA DELLA GUARDIA PERIMETRALE, SOVRAPPOSIZIONE DEL PERCORSO O MAPPA DI CALORE; MAPPE OFFLINE O PREIMPOSTAZIONI DEL RILEVATORE OBSOLETE; LESIONI PERSONALI, MORTE O DANNI ALLA PROPRIETÀ DURANTE LE ATTIVITÀ DI RICERCA; O INTERAZIONI CON PROPRIETARI DI TERRENI, FORZE DELL'ORDINE O TERZE PARTI.
+NELLA MASSIMA MISURA CONSENTITA DALLA LEGGE APPLICABILE, COC LORAND-ADRIAN P.F.A. (OPERANTE COME LORIBA) NON SARÀ RESPONSABILE DI ALCUN DANNO INDIRETTO, INCIDENTALE, SPECIALE, CONSEQUENZIALE O PUNITIVO, INCLUSI MA NON LIMITATI A: DANNI DA INACCURATEZZA GPS, CONTROVERSIE SUI LIMITI DI PROPRIETÀ O RECLAMI DI VIOLAZIONE DI DOMICILIO; DANNI DA AFFIDAMENTO SU DATI METEO, MAREE O AMBIENTALI; CONDIZIONI DI MAREA INCLUSE LESIONI O ANNEGAMENTO; CONSEGUENZE LEGALI DELLE ATTIVITÀ DI RICERCA INCLUSE MULTE, PROCESSI O CONFISCHE; INADEMPIENZA AL TREASURE ACT 1996, ARPA O QUALSIASI LEGGE SUL PATRIMONIO CULTURALE; AFFIDAMENTO SU SOVRAPPOSIZIONI DI MAPPE STORICHE, CAVEAU DEI PERMESSI, LETTERE PDF, FIRME DIGITALI O IDENTIFICAZIONE DEI RITROVAMENTI; INACCURATEZZA DELLA GUARDIA PERIMETRALE, SOVRAPPOSIZIONE DEL PERCORSO O MAPPA DI CALORE; MAPPE OFFLINE O PREIMPOSTAZIONI DEL RILEVATORE OBSOLETE; LESIONI PERSONALI, MORTE O DANNI ALLA PROPRIETÀ DURANTE LE ATTIVITÀ DI RICERCA; O INTERAZIONI CON PROPRIETARI DI TERRENI, FORZE DELL'ORDINE O TERZE PARTI.
 
 In nessun caso la nostra responsabilità totale supererà l'importo pagato per l'App nei dodici (12) mesi precedenti la richiesta.
 
 ## 14. Indennizzo
 
-Accettate di indennizzare, difendere e tenere indenne Coc Lorand Adrian P.F.A. (operante come Loriba) da qualsiasi reclamo, danno, perdita, responsabilità, costo e spesa derivante dal vostro uso dell'App, violazione dei presenti Termini, violazione di qualsiasi legge applicabile o vostre attività di ricerca di metalli.
+Accettate di indennizzare, difendere e tenere indenne Coc Lorand-Adrian P.F.A. (operante come Loriba) da qualsiasi reclamo, danno, perdita, responsabilità, costo e spesa derivante dal vostro uso dell'App, violazione dei presenti Termini, violazione di qualsiasi legge applicabile o vostre attività di ricerca di metalli.
 
 ## 15. Risoluzione
 
@@ -263,13 +264,13 @@ I presenti Termini, insieme alla nostra Informativa sulla Privacy, costituiscono
 
 ## 18. Licenze Open Source e di Terze Parti
 
-L'App utilizza componenti open source. Attribuzioni chiave: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (dominio pubblico), USGS (dominio pubblico), Wikipedia (CC BY-SA 3.0), Jetpack Compose/Room/Hilt (Apache 2.0), RevenueCat SDK (MIT).
+L'App utilizza componenti open source. Attribuzioni chiave: Google Maps SDK (Copyright Google LLC), OpenStreetMap (ODbL), OpenTopoMap, Open-Meteo (CC BY 4.0), NOAA (dominio pubblico), USGS (dominio pubblico), Jetpack Compose/Room/Hilt (Apache 2.0), Firebase SDK (Google), RevenueCat SDK (MIT).
 
 ## 19. Contatto
 
 Per domande sui presenti Termini, vi preghiamo di contattare:
 
-**Coc Lorand Adrian P.F.A.** (operante come Loriba)
+**Coc Lorand-Adrian P.F.A.** (operante come Loriba)
 CUI: 41299288 · Reg. F24/646/2019
 Email: [support@sweeptrack.pro](mailto:support@sweeptrack.pro)
 Sito web: [https://sweeptrack.pro](https://sweeptrack.pro)
