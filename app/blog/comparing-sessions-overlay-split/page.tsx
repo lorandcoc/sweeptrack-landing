@@ -29,7 +29,7 @@ export default function Post() {
           <p>When you detect the same site over multiple visits, comparing sessions shows you how your coverage, finds, and strategy evolved. Session comparison gives you two ways to do this: overlay mode and split view.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Selecting Sessions to Compare</h2>
-          <p>Open Map Comparison from the More tab. Browse your past sessions and tap any 2 to 5 sessions you want to compare. The screen updates as you add or remove sessions.</p>
+          <p>Open Map Comparison from the More tab. Browse your past sessions and tap any 2 to 4 sessions you want to compare. The screen updates as you add or remove sessions.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Overlay Mode</h2>
           <p>Overlay stacks all selected sessions onto a single map. Each session&apos;s path gets a distinct colour so you can tell them apart, and the camera frames the combined area automatically. This view is ideal for:</p>
@@ -40,7 +40,7 @@ export default function Post() {
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Split View</h2>
-          <p>Split view gives every selected session its own mini-map: a left/right split when you pick two sessions, and a grid layout when you pick three to five. Each tile auto-zooms to its session&apos;s path so you can scan all of them at a glance. Use it to compare:</p>
+          <p>Split view gives every selected session its own mini-map: a left/right split when you pick two sessions, and a grid layout when you pick three or four. Each tile auto-zooms to its session&apos;s path so you can scan all of them at a glance. Use it to compare:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li>Coverage patterns between two visits to the same field</li>
             <li>Find density across different weather conditions</li>

@@ -3,7 +3,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 
 const SLUG = "detecting-forecast-guide";
 const TITLE = "Detecting Forecast: Plan Every Session by the Numbers";
-const DESCRIPTION = "SweepTrack Pro turns weather into a 0-100 Detecting Score. Check any location up to a week ahead with soil moisture, wind, temperature, and humidity tips.";
+const DESCRIPTION = "SweepTrack Pro turns weather into a 0-100 Detecting Score. Check any location up to a week ahead with soil moisture, wind, temperature, and precipitation tips.";
 const IMAGE = "/screenshots/forecast.jpg";
 const PUBLISHED = "2026-02-13";
 
@@ -45,7 +45,7 @@ export default function Post() {
             <li><strong>Temperature</strong> — mild is best. Below 5&deg;C the ground hardens and your battery drains fast.</li>
             <li><strong>Wind</strong> — in km/h. Above 25 km/h you start losing faint targets to wind noise even with headphones.</li>
             <li><strong>Soil Moisture</strong> — a decimal value. Above 0.3 is great conductivity; below 0.1 is bone-dry and signals go weak.</li>
-            <li><strong>Humidity</strong> — a percentage. Mostly a comfort indicator, but high humidity after rain usually means damp ground.</li>
+            <li><strong>Precipitation</strong> — recent or expected rain. A dry window is most comfortable, but the score rewards the damp ground that prior rain leaves behind.</li>
           </ul>
 
           <h2 className="text-xl font-semibold text-accent mt-8">7-Day Date Picker</h2>
