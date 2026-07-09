@@ -81,6 +81,7 @@ export default function Footer() {
               <a href="/#features" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.features")}</a>
               <a href="/#screenshots" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.screenshots")}</a>
               <a href="/radar" className="hover:text-foreground transition-colors">{t("footer.radar")}</a>
+              <a href="/overlays" className="hover:text-foreground transition-colors">{t("footer.overlays")}</a>
               <a href="/#pricing" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.pricing")}</a>
               <a href="/#faq" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.faq")}</a>
               <a href="/#community" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.community")}</a>
@@ -109,6 +110,7 @@ export default function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs text-muted">
+            <a href="/trust" className="hover:text-foreground transition-colors">{t("footer.trust")}</a>
             <a href="/privacy" className="hover:text-foreground transition-colors">{t("footer.privacy")}</a>
             <a href="/terms" className="hover:text-foreground transition-colors">{t("footer.terms")}</a>
             <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/40 transition-colors">by Loriba</a>

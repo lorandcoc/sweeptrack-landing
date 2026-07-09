@@ -5,7 +5,7 @@ import FeaturesAll from "@/components/FeaturesAll";
 import ForteSpotlights from "@/components/ForteSpotlights";
 import ProSpotlights from "@/components/ProSpotlights";
 import HowItWorks from "@/components/HowItWorks";
-import MapCompareSlider from "@/components/MapCompareSlider";
+import MapsOverlays from "@/components/MapsOverlays";
 import StatsBar from "@/components/StatsBar";
 import Screenshots from "@/components/Screenshots";
 import RadarSection from "@/components/RadarSection";
@@ -98,7 +98,7 @@ const jsonLdGraph = [
       },
     ],
     featureList: [
-      "GPS tracking with 3 base map types (Street, Satellite, Terrain) plus USGS Historical Topographic overlay (Pro)",
+      "GPS tracking with 3 base map types (Street, Satellite, Terrain) plus a one-tap USGS Historical Topographic base-map layer covering the US and Romania (Pro)",
       "Measure tool: distance polylines with per-segment labels, or closed-polygon area in hectares/acres using spherical geometry; save to library or convert to Perimeter Guard with one tap",
       "Offline maps from 4 tile sources: OpenStreetMap, Esri Satellite, OpenTopoMap, USGS Topo",
       "Track overlay loads past sessions on the live map with color-coded paths",
@@ -110,7 +110,7 @@ const jsonLdGraph = [
       "10 detector preset slots with JSON import/export and templates for 60+ detectors across 12 brands",
       "Find logging: free basic record (type, name, notes, 1 photo); Pro full record with value, 0-40 cm depth, weight, signal/VDI, soil type, video, audio notes, and multiple photos",
       "Finds Intelligence dashboard (Pro): finds-per-hour, best time of day, breakdowns by detector and site, total collection value over time, and a value-weighted hot-zone map of your most productive ground",
-      "Custom map overlays (Pro): import your own scanned map, parcel sketch, or aerial photo and align it on the live satellite map by drag, pinch, and rotate (1 free, unlimited with Pro)",
+      "Custom map overlays (Pro): import your own scanned map, parcel sketch, or aerial photo and align it on the live satellite map by drag, pinch, and rotate; precision control-point alignment fits the image with an accuracy readout in meters (Pro feature, unlimited imports)",
       "Quick pin drop for instant find marking",
       "Coverage heatmap overlay",
       "Session comparison: overlay (with blend slider) or split view, 2 to 5 sessions",
@@ -179,10 +179,11 @@ const breadcrumbLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://sweeptrack.pro" },
     { "@type": "ListItem", position: 2, name: "Features", item: "https://sweeptrack.pro/#features" },
-    { "@type": "ListItem", position: 3, name: "Radar", item: "https://sweeptrack.pro/radar" },
-    { "@type": "ListItem", position: 4, name: "Pricing", item: "https://sweeptrack.pro/#pricing" },
-    { "@type": "ListItem", position: 5, name: "FAQ", item: "https://sweeptrack.pro/#faq" },
-    { "@type": "ListItem", position: 6, name: "Guides", item: "https://sweeptrack.pro/blog" },
+    { "@type": "ListItem", position: 3, name: "Maps & Overlays", item: "https://sweeptrack.pro/overlays" },
+    { "@type": "ListItem", position: 4, name: "Radar", item: "https://sweeptrack.pro/radar" },
+    { "@type": "ListItem", position: 5, name: "Pricing", item: "https://sweeptrack.pro/#pricing" },
+    { "@type": "ListItem", position: 6, name: "FAQ", item: "https://sweeptrack.pro/#faq" },
+    { "@type": "ListItem", position: 7, name: "Guides", item: "https://sweeptrack.pro/blog" },
   ],
 };
 
@@ -205,15 +206,15 @@ export default function LandingPage() {
         </h2>
         <Hero />
         <FieldLogTicker />
-        <MapCompareSlider />
+        <MapsOverlays />
         <HowItWorks />
         <FounderNote />
         <ForteSpotlights />
         <ProSpotlights />
+        <RadarSection />
         <StatsBar />
         <FeaturesAll />
         <Screenshots />
-        <RadarSection />
         <TrustStrip />
         <PricingTable />
         <FAQ />

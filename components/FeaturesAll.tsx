@@ -21,7 +21,7 @@ const CATEGORIES: {
     id: "map",
     labelKey: "featuresall.cat_map",
     color: "#00FF6A",
-    keys: ["mapoverlay", "heatmap", "nightvision", "compass", "backtostart", "ruler"],
+    keys: ["mapoverlay", "oldmap", "heatmap", "nightvision", "compass", "backtostart", "ruler"],
   },
   {
     id: "finds",
@@ -77,6 +77,8 @@ const TOP_PICKS = [
 
 /* Tiles with a matching blog guide keep their link */
 const GUIDES: Record<string, string> = {
+  mapoverlay: "/blog/import-and-georeference-your-own-maps",
+  oldmap: "/blog/how-to-use-old-maps-for-metal-detecting",
   findlogger: "/blog/logging-finds-photo-video-audio",
   pindrop: "/blog/logging-finds-photo-video-audio",
   backtostart: "/blog/how-to-track-metal-detecting-sessions-gps",

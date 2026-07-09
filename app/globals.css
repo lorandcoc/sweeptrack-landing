@@ -3444,23 +3444,23 @@ details:focus-visible > summary {
   to   { transform: translate(0, 0) rotate(0) scale(1); opacity: 0.6; }
 }
 
-.smo-handle {
+/* Gesture affordance — the overlay is positioned by hand (drag to move,
+   pinch to scale, twist to rotate). No corner drag-handles exist in-app,
+   so the demo shows a free-move glyph, not grab points. */
+.smo-gesture {
   position: absolute;
-  width: 9px; height: 9px;
-  border-radius: 2px;
-  background: var(--st-accent);
-  box-shadow: 0 0 8px rgba(0, 255, 106, 0.7);
+  left: 6px; top: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(5, 5, 16, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   opacity: 0;
 }
-.smo-handle--tl { left: -4px; top: -4px; }
-.smo-handle--tr { right: -4px; top: -4px; }
-.smo-handle--bl { left: -4px; bottom: -4px; }
-.smo-handle--br { right: -4px; bottom: -4px; }
-.smo-on .smo-handle { animation: smo-handle-in 0.4s var(--st-ease-out) 2.2s both; }
-@keyframes smo-handle-in {
-  from { opacity: 0; transform: scale(0); }
-  to   { opacity: 1; transform: scale(1); }
-}
+.smo-on .smo-gesture { animation: smo-fade 0.5s var(--st-ease-out) 1.8s both; }
 
 .smo-tag {
   position: absolute;
@@ -3527,7 +3527,152 @@ details:focus-visible > summary {
 
 @media (prefers-reduced-motion: reduce) {
   .smo-overlay { animation: none !important; transform: none; opacity: 0.6; }
-  .smo-handle { animation: none !important; opacity: 1; }
+  .smo-gesture { animation: none !important; opacity: 1; }
   .smo-tag--your { animation: none !important; opacity: 1; }
   .smo-opacity__fill { animation: none !important; transform: scaleX(1); }
+}
+
+/* ─────────────────── SpotlightPrecisionAlign · spa- ─────────────────── */
+.spa-stage {
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+@media (min-width: 768px) { .spa-stage { height: 224px; } }
+
+.spa-base {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 25% 20%, rgba(40, 90, 60, 0.5), transparent 60%),
+    radial-gradient(120% 90% at 80% 85%, rgba(30, 60, 90, 0.5), transparent 60%),
+    #0b1f1a;
+}
+.spa-base::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(90deg, transparent 49.5%, rgba(255, 255, 255, 0.05) 50%, transparent 50.5%),
+    linear-gradient(0deg, transparent 49.5%, rgba(255, 255, 255, 0.05) 50%, transparent 50.5%);
+  background-size: 33% 100%, 100% 33%;
+}
+
+.spa-overlay {
+  position: absolute;
+  left: 16%; top: 14%;
+  width: 68%; height: 70%;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 200, 120, 0.55);
+  background:
+    repeating-linear-gradient(45deg, transparent 0 8px, rgba(150, 110, 50, 0.12) 8px 9px),
+    linear-gradient(160deg, rgba(214, 184, 130, 0.82), rgba(176, 140, 96, 0.75));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transform: translate(18px, -12px) rotate(-6deg) scale(1.12);
+  opacity: 0.9;
+}
+.spa-on .spa-overlay { animation: spa-align 2.2s var(--st-ease-out) 0.2s both; }
+@keyframes spa-align {
+  from { transform: translate(18px, -12px) rotate(-6deg) scale(1.12); opacity: 0.9; }
+  to   { transform: translate(0, 0) rotate(0) scale(1); opacity: 0.78; }
+}
+
+.spa-cp {
+  position: absolute;
+  width: 12px; height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+}
+.spa-cp--tgt {
+  background: rgba(0, 255, 106, 0.9);
+  box-shadow: 0 0 9px rgba(0, 255, 106, 0.7);
+  border: 2px solid #06210f;
+}
+.spa-cp--src {
+  background: rgba(255, 180, 90, 0.95);
+  box-shadow: 0 0 9px rgba(255, 170, 70, 0.7);
+  border: 2px solid #2a1c08;
+}
+.spa-cp--s1 { left: 28%; top: 34%; }
+.spa-cp--s2 { left: 68%; top: 70%; }
+.spa-cp--t1 { left: 35%; top: 38%; }
+.spa-cp--t2 { left: 62%; top: 63%; }
+.spa-on .spa-cp--tgt { animation: spa-pulse 1.6s ease-in-out 1.6s 2; }
+@keyframes spa-pulse {
+  0%, 100% { box-shadow: 0 0 9px rgba(0, 255, 106, 0.6); }
+  50% { box-shadow: 0 0 15px rgba(0, 255, 106, 0.95); }
+}
+
+.spa-tag {
+  position: absolute;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.spa-tag--ground {
+  left: 8px; bottom: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(5, 5, 16, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.spa-tag--your {
+  left: 8px; top: 8px;
+  color: #2a1c08;
+  background: rgba(255, 210, 140, 0.92);
+  border: 1px solid rgba(150, 110, 50, 0.5);
+}
+
+.spa-locked {
+  position: absolute;
+  right: 8px; bottom: 8px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--st-accent);
+  background: rgba(5, 5, 16, 0.72);
+  border: 1px solid var(--st-accent-edge);
+  border-radius: 5px;
+  padding: 2px 6px;
+  opacity: 0;
+}
+.spa-on .spa-locked { animation: spa-fade 0.5s var(--st-ease-out) 2.5s both; }
+@keyframes spa-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.spa-meter {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.spa-meter__fill {
+  display: block;
+  height: 100%;
+  width: 82%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--st-accent-dim), var(--st-accent));
+  box-shadow: 0 0 10px rgba(0, 255, 106, 0.4);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.spa-on .spa-meter__fill { animation: spa-bar 1s var(--st-ease-out) 2.4s both; }
+@keyframes spa-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.spa-rms { opacity: 0; }
+.spa-on .spa-rms { animation: spa-fade 0.5s var(--st-ease-out) 2.6s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .spa-overlay { animation: none !important; transform: translate(0, 0) rotate(0) scale(1); opacity: 0.78; }
+  .spa-cp--tgt { animation: none !important; }
+  .spa-locked { animation: none !important; opacity: 1; }
+  .spa-meter__fill { animation: none !important; transform: scaleX(1); }
+  .spa-rms { animation: none !important; opacity: 1; }
 }

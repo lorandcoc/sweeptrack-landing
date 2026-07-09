@@ -175,6 +175,24 @@ export default function RadarSection() {
           ))}
         </div>
 
+        {/* More on the map — verified sub-features beyond the demo */}
+        <div className="mb-10 text-center">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/45 mb-4">
+            {t("radar.more_label")}
+          </p>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {(["glyphs", "battery", "trails", "rings", "spots", "pause"] as const).map((k) => (
+              <span
+                key={k}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-sm font-medium bg-white/[0.03] border border-white/[0.08] text-white/75"
+              >
+                <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                {t(`radar.more_${k}` as TranslationKey)}
+              </span>
+            ))}
+          </div>
+        </div>
+
         {/* CTA + pill */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a

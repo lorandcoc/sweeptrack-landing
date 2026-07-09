@@ -82,10 +82,12 @@ export default function SpotlightMapOverlay() {
 
           {/* Imported old-map overlay that aligns into place */}
           <div className="smo-overlay">
-            <span className="smo-handle smo-handle--tl" />
-            <span className="smo-handle smo-handle--tr" />
-            <span className="smo-handle smo-handle--bl" />
-            <span className="smo-handle smo-handle--br" />
+            <span className="smo-gesture" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2v20M2 12h20" />
+                <path d="M12 2l-2.5 2.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5 2.5M2 12l2.5-2.5M2 12l2.5 2.5M22 12l-2.5-2.5M22 12l-2.5 2.5" />
+              </svg>
+            </span>
             <span className="smo-tag smo-tag--your">{t("spotlight.mapoverlay_demo_yourmap")}</span>
           </div>
 
