@@ -4,24 +4,23 @@ import { useReveal } from "./useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 /*
- * Outcomes — the homepage hub. Five large, full-width feature panels, each with
- * a live looping mini-visual + a bulleted detail list, alternating left/right,
- * routing to a dedicated spoke page. The energy of the old spotlight rows, but
- * the deep demos still live on the linked pages.
+ * Outcomes — the homepage hub. A 2-up grid of feature cards, each with a live
+ * looping visual header + a bulleted detail list, routing to a spoke page.
+ * Visuals are aspect-robust (mostly %/centered; the line/polygon SVGs stretch
+ * with preserveAspectRatio="none"), so nothing crops in a landscape header.
  */
 
 /* ─── per-card looping visuals (pure CSS/SVG, accent-driven via --ocv) ─── */
 
 function CoverageViz() {
   return (
-    <svg className="ocv-svg" viewBox="0 0 240 170" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <g className="ocv-grid" strokeWidth="1">
-        <path d="M0 45H240M0 85H240M0 125H240" />
-      </g>
-      <path className="ocv-cov" d="M18 138 C48 42 78 42 108 138 S168 42 198 138 S240 98 240 98" strokeLinecap="round" fill="none" />
-      <circle className="ocv-covpin ocv-covpin--1" cx="63" cy="60" r="4" />
-      <circle className="ocv-covpin ocv-covpin--2" cx="153" cy="60" r="4" />
-    </svg>
+    <div className="ocv-fill" aria-hidden="true">
+      <svg className="ocv-svg" viewBox="0 0 300 130" fill="none" preserveAspectRatio="none">
+        <path className="ocv-cov" d="M0 100 C45 30 75 30 120 100 S195 30 240 100 S300 70 300 70" />
+      </svg>
+      <span className="ocv-covpin" style={{ left: "20%", top: "38%" }} />
+      <span className="ocv-covpin ocv-covpin--2" style={{ left: "60%", top: "38%" }} />
+    </div>
   );
 }
 
@@ -35,8 +34,8 @@ function OverlaysViz() {
 }
 
 const FIND_DOTS = [
-  { x: 20, y: 32 }, { x: 40, y: 64 }, { x: 66, y: 40, hot: true }, { x: 72, y: 55, hot: true },
-  { x: 30, y: 80 }, { x: 82, y: 30 }, { x: 55, y: 70 }, { x: 60, y: 46, hot: true }, { x: 16, y: 54 },
+  { x: 20, y: 30 }, { x: 40, y: 66 }, { x: 64, y: 38, hot: true }, { x: 72, y: 58, hot: true },
+  { x: 30, y: 80 }, { x: 84, y: 28 }, { x: 52, y: 72 }, { x: 58, y: 48, hot: true }, { x: 15, y: 52 },
 ];
 
 function FindsViz() {
@@ -67,8 +66,8 @@ function RadarViz() {
 function PermissionsViz() {
   return (
     <div className="ocv-fill" aria-hidden="true">
-      <svg className="ocv-svg" viewBox="0 0 240 170" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <polygon className="ocv-poly" points="55,35 195,50 205,130 70,140 40,90" />
+      <svg className="ocv-svg" viewBox="0 0 240 150" fill="none" preserveAspectRatio="none">
+        <polygon className="ocv-poly" points="45,30 200,42 210,120 65,132 32,80" />
       </svg>
       <span className="ocv-walker" />
       <span className="ocv-alert" />
@@ -96,62 +95,58 @@ const CARDS: Card[] = [
 
 const BULLETS = ["b1", "b2", "b3", "b4"] as const;
 
-function OutcomePanel({ card, index }: { card: Card; index: number }) {
+function OutcomeCard({ card, index }: { card: Card; index: number }) {
   const { t } = useI18n();
-  const { ref, visible } = useReveal(0.12);
-  const flip = index % 2 === 1;
+  const { ref, visible } = useReveal(0.1);
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "visible" : ""}`}
-      style={{ transitionDelay: visible ? `${Math.min(index * 70, 300)}ms` : "0ms" }}
+      className={`h-full reveal ${visible ? "visible" : ""}`}
+      style={{ transitionDelay: visible ? `${Math.min(index * 70, 280)}ms` : "0ms" }}
     >
       <a
         href={card.href}
-        className="group block rounded-3xl border border-white/[0.07] bg-surface/40 overflow-hidden transition-all hover:-translate-y-0.5 hover:border-white/[0.16] hover:bg-surface/70"
+        className="group flex flex-col h-full rounded-3xl border border-white/[0.07] bg-surface/40 overflow-hidden transition-all hover:-translate-y-1 hover:border-white/[0.16] hover:bg-surface/70"
       >
-        <div className="grid md:grid-cols-2 items-stretch">
-          {/* Content */}
-          <div className={`p-7 md:p-10 flex flex-col justify-center ${flip ? "md:order-2" : ""}`}>
+        {/* Visual header */}
+        <div className="ocv-panel h-36 md:h-40 shrink-0" style={{ ["--ocv" as string]: card.accent }}>
+          {VIZ[card.key]}
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col flex-1 p-6 md:p-7">
+          <div className="flex items-center gap-3 mb-3">
             <span
-              className="inline-flex items-center justify-center w-14 h-14 rounded-2xl border mb-5"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-xl border shrink-0"
               style={{ color: card.accent, borderColor: `${card.accent}45`, background: `${card.accent}16` }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 {card.icon}
               </svg>
             </span>
-            <h3 className="font-display text-2xl md:text-3xl leading-tight mb-3 [text-wrap:balance]">
+            <h3 className="font-display text-xl md:text-2xl leading-tight">
               {t(`outcomes.${card.key}_title` as TranslationKey)}
             </h3>
-            <p className="text-muted text-base md:text-lg leading-relaxed mb-6 max-w-md">
-              {t(`outcomes.${card.key}_desc` as TranslationKey)}
-            </p>
-            <ul className="space-y-2.5 mb-7">
-              {BULLETS.map((b) => (
-                <li key={b} className="flex items-start gap-2.5 text-sm md:text-[15px] text-white/85 leading-relaxed">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-[3px]" style={{ color: card.accent }} aria-hidden="true">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                  {t(`outcomes.${card.key}_${b}` as TranslationKey)}
-                </li>
-              ))}
-            </ul>
-            <span className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: card.accent }}>
-              {t("outcomes.link")}
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </span>
           </div>
-
-          {/* Visual */}
-          <div
-            className={`ocv-panel ${flip ? "md:order-1" : ""}`}
-            style={{ ["--ocv" as string]: card.accent }}
-          >
-            {VIZ[card.key]}
-          </div>
+          <p className="text-muted text-sm leading-relaxed mb-4">
+            {t(`outcomes.${card.key}_desc` as TranslationKey)}
+          </p>
+          <ul className="space-y-2 mb-5">
+            {BULLETS.map((b) => (
+              <li key={b} className="flex items-start gap-2.5 text-sm text-white/85 leading-relaxed">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-[3px]" style={{ color: card.accent }} aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                {t(`outcomes.${card.key}_${b}` as TranslationKey)}
+              </li>
+            ))}
+          </ul>
+          <span className="mt-auto inline-flex items-center gap-2 text-[15px] font-semibold" style={{ color: card.accent }}>
+            {t("outcomes.link")}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </span>
         </div>
       </a>
     </div>
@@ -173,22 +168,21 @@ export default function Outcomes() {
           <p className="text-muted max-w-2xl mx-auto leading-relaxed">{t("outcomes.description")}</p>
         </div>
 
-        <div className="space-y-5 md:space-y-6">
+        <div className="grid md:grid-cols-2 gap-5 items-stretch">
           {CARDS.map((card, i) => (
-            <OutcomePanel key={card.key} card={card} index={i} />
+            <OutcomeCard key={card.key} card={card} index={i} />
           ))}
 
+          {/* Everything else — fills the sixth cell */}
           <a
             href="/features"
-            className="group flex flex-col sm:flex-row items-center justify-between gap-4 rounded-3xl border border-dashed border-white/[0.14] px-7 py-6 md:px-10 md:py-7 hover:border-accent/40 hover:bg-surface/40 transition-all text-center sm:text-left"
+            className="group flex flex-col items-center justify-center text-center h-full min-h-[220px] rounded-3xl border border-dashed border-white/[0.14] p-8 hover:border-accent/40 hover:bg-surface/40 transition-all"
           >
-            <div>
-              <span className="font-display text-xl md:text-2xl">{t("outcomes.more_title")}</span>
-              <span className="text-muted text-sm md:text-base sm:ml-3 block sm:inline">{t("outcomes.more_desc")}</span>
-            </div>
-            <span className="inline-flex items-center gap-2 text-base font-semibold text-accent shrink-0">
+            <span className="font-display text-2xl mb-2">{t("outcomes.more_title")}</span>
+            <span className="text-muted text-sm md:text-base mb-4">{t("outcomes.more_desc")}</span>
+            <span className="inline-flex items-center gap-2 text-[15px] font-semibold text-accent">
               {t("outcomes.more_link")}
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
             </span>

@@ -3680,13 +3680,11 @@ details:focus-visible > summary {
 /* ─────────────────── Outcomes card visuals · ocv- ─────────────────── */
 .ocv-panel {
   position: relative;
-  min-height: 190px;
   overflow: hidden;
   background:
     radial-gradient(120% 90% at 68% 28%, color-mix(in srgb, var(--ocv) 18%, transparent), transparent 70%),
     #0a1017;
 }
-@media (min-width: 768px) { .ocv-panel { min-height: 100%; } }
 .ocv-fill { position: absolute; inset: 0; }
 .ocv-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ocv-grid { stroke: rgba(255, 255, 255, 0.05); }
@@ -3706,14 +3704,14 @@ details:focus-visible > summary {
   80% { stroke-dashoffset: 0; opacity: 1; }
   100% { stroke-dashoffset: -520; opacity: 0.4; }
 }
-.ocv-covpin { fill: var(--ocv); opacity: 0; transform-box: fill-box; transform-origin: center; }
-.ocv-covpin--1 { animation: ocv-pop 4.2s ease-in-out 1s infinite; }
-.ocv-covpin--2 { animation: ocv-pop 4.2s ease-in-out 1.7s infinite; }
+.ocv-covpin { position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--ocv); box-shadow: 0 0 8px color-mix(in srgb, var(--ocv) 70%, transparent); opacity: 0; animation: ocv-pop 4.2s ease-in-out 1s infinite; }
+.ocv-covpin--2 { animation-delay: 1.7s; }
 @keyframes ocv-pop { 0%, 100% { opacity: 0; transform: scale(0); } 22%, 70% { opacity: 1; transform: scale(1); } }
 
 /* overlays — imported tile drifts in and settles square */
 .ocv-ovbase {
-  position: absolute; inset: 24%;
+  position: absolute; left: 50%; top: 50%;
+  width: 142px; height: 92px; margin: -46px 0 0 -71px;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background:
@@ -3722,7 +3720,8 @@ details:focus-visible > summary {
     #0c1620;
 }
 .ocv-ovtile {
-  position: absolute; inset: 28%;
+  position: absolute; left: 50%; top: 50%;
+  width: 116px; height: 74px; margin: -37px 0 0 -58px;
   border-radius: 5px;
   border: 1px solid color-mix(in srgb, var(--ocv) 60%, transparent);
   background: color-mix(in srgb, var(--ocv) 22%, transparent);
