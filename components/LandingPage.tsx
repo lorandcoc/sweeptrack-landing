@@ -1,15 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FieldLogTicker from "@/components/FieldLogTicker";
-import FeaturesAll from "@/components/FeaturesAll";
-import ForteSpotlights from "@/components/ForteSpotlights";
-import ProSpotlights from "@/components/ProSpotlights";
+import Outcomes from "@/components/Outcomes";
 import HowItWorks from "@/components/HowItWorks";
-import MapsOverlays from "@/components/MapsOverlays";
-import StatsBar from "@/components/StatsBar";
-import Screenshots from "@/components/Screenshots";
-import RadarSection from "@/components/RadarSection";
 import FounderNote from "@/components/FounderNote";
+import StatsBar from "@/components/StatsBar";
 import TrustStrip from "@/components/TrustStrip";
 import PricingTable from "@/components/PricingTable";
 import FAQ from "@/components/FAQ";
@@ -29,7 +24,7 @@ const jsonLdGraph = [
       "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Waypoints, Radar live group positioning, Permission Vault, Detecting Forecast, and 45+ field tools.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://sweeptrack.pro/#features",
+      target: "https://sweeptrack.pro/features",
       "query-input": "required name=search_term_string",
     },
   },
@@ -178,12 +173,14 @@ const breadcrumbLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://sweeptrack.pro" },
-    { "@type": "ListItem", position: 2, name: "Features", item: "https://sweeptrack.pro/#features" },
-    { "@type": "ListItem", position: 3, name: "Maps & Overlays", item: "https://sweeptrack.pro/overlays" },
-    { "@type": "ListItem", position: 4, name: "Radar", item: "https://sweeptrack.pro/radar" },
-    { "@type": "ListItem", position: 5, name: "Pricing", item: "https://sweeptrack.pro/#pricing" },
-    { "@type": "ListItem", position: 6, name: "FAQ", item: "https://sweeptrack.pro/#faq" },
-    { "@type": "ListItem", position: 7, name: "Guides", item: "https://sweeptrack.pro/blog" },
+    { "@type": "ListItem", position: 2, name: "Features", item: "https://sweeptrack.pro/features" },
+    { "@type": "ListItem", position: 3, name: "Track & Coverage", item: "https://sweeptrack.pro/coverage" },
+    { "@type": "ListItem", position: 4, name: "Maps & Overlays", item: "https://sweeptrack.pro/overlays" },
+    { "@type": "ListItem", position: 5, name: "Finds Intelligence", item: "https://sweeptrack.pro/finds-intelligence" },
+    { "@type": "ListItem", position: 6, name: "Permissions & Boundaries", item: "https://sweeptrack.pro/permissions" },
+    { "@type": "ListItem", position: 7, name: "Radar", item: "https://sweeptrack.pro/radar" },
+    { "@type": "ListItem", position: 8, name: "Pricing", item: "https://sweeptrack.pro/pricing" },
+    { "@type": "ListItem", position: 9, name: "Guides", item: "https://sweeptrack.pro/blog" },
   ],
 };
 
@@ -206,15 +203,10 @@ export default function LandingPage() {
         </h2>
         <Hero />
         <FieldLogTicker />
-        <MapsOverlays />
+        <Outcomes />
         <HowItWorks />
         <FounderNote />
-        <ForteSpotlights />
-        <ProSpotlights />
-        <RadarSection />
         <StatsBar />
-        <FeaturesAll />
-        <Screenshots />
         <TrustStrip />
         <PricingTable />
         <FAQ />

@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/radar`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/overlays`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/clubs`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/coverage`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/finds-intelligence`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/permissions`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/features`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/pricing`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/iphone`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE}/blog`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "weekly", priority: 0.9 },
     ...POSTS.map((post) => ({
       url: `${BASE}/blog/${post.slug}`,

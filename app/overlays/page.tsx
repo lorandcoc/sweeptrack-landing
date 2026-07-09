@@ -3,6 +3,9 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GooglePlayButton, { PLAY_URL } from "@/components/GooglePlayButton";
+import MapCompareSlider from "@/components/MapCompareSlider";
+import SpotlightMapOverlay from "@/components/SpotlightMapOverlay";
+import SpotlightPrecisionAlign from "@/components/SpotlightPrecisionAlign";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
@@ -197,6 +200,11 @@ export default function OverlaysPage() {
           </div>
         </section>
 
+        {/* Import demo */}
+        <section className="py-8 md:py-12">
+          <div className="max-w-6xl mx-auto px-6"><SpotlightMapOverlay /></div>
+        </section>
+
         {/* Precision align */}
         <section className="py-14 md:py-20">
           <div className="max-w-4xl mx-auto px-6">
@@ -226,6 +234,11 @@ export default function OverlaysPage() {
           </div>
         </section>
 
+        {/* Precision demo */}
+        <section className="py-8 md:py-12 bg-surface/20">
+          <div className="max-w-6xl mx-auto px-6"><SpotlightPrecisionAlign /></div>
+        </section>
+
         {/* Historical layer */}
         <section className="py-14 md:py-20 bg-surface/20">
           <div className="max-w-4xl mx-auto px-6">
@@ -249,10 +262,13 @@ export default function OverlaysPage() {
               </div>
             </div>
             <p className="text-center text-muted text-sm mt-8">
-              See the historical layer in action on the <a href="/#maps" className="text-accent hover:underline">homepage map slider</a>.
+              Drag the map slider just below to see the historical layer against today&apos;s satellite view.
             </p>
           </div>
         </section>
+
+        {/* Historical slider */}
+        <MapCompareSlider />
 
         {/* Free vs Pro */}
         <section className="py-14 md:py-20">
@@ -320,10 +336,10 @@ export default function OverlaysPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <GooglePlayButton />
                 <a
-                  href="/#maps"
+                  href="/coverage"
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base rounded-2xl border border-white/12 text-foreground font-semibold hover:border-accent/40 transition-colors"
                 >
-                  See the maps section
+                  See Track &amp; Coverage
                 </a>
               </div>
               <p className="text-accent/70 text-sm font-medium mt-6">

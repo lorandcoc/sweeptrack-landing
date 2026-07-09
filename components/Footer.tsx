@@ -78,17 +78,17 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4 text-foreground">{t("footer.product")}</h4>
             <div className="flex flex-col gap-2.5 text-sm text-muted">
-              <a href="/#features" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.features")}</a>
-              <a href="/#screenshots" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.screenshots")}</a>
-              <a href="/radar" className="hover:text-foreground transition-colors">{t("footer.radar")}</a>
+              <a href="/features" className="hover:text-foreground transition-colors">{t("footer.features")}</a>
+              <a href="/coverage" className="hover:text-foreground transition-colors">{t("footer.coverage")}</a>
               <a href="/overlays" className="hover:text-foreground transition-colors">{t("footer.overlays")}</a>
-              <a href="/#pricing" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.pricing")}</a>
-              <a href="/#faq" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.faq")}</a>
-              <a href="/#community" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.community")}</a>
+              <a href="/finds-intelligence" className="hover:text-foreground transition-colors">{t("footer.finds")}</a>
+              <a href="/permissions" className="hover:text-foreground transition-colors">{t("footer.permissions")}</a>
+              <a href="/radar" className="hover:text-foreground transition-colors">{t("footer.radar")}</a>
+              <a href="/pricing" className="hover:text-foreground transition-colors">{t("footer.pricing")}</a>
               <a href="/blog" className="hover:text-foreground transition-colors">{t("footer.guides")}</a>
+              <a href="/#community" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.community")}</a>
               <a
-                href="/#pricing"
-                onClick={scrollToHash}
+                href="/pricing"
                 className="mt-1 text-amber-300/80 hover:text-amber-300 transition-colors"
               >
                 {t("footer.founder_echo")}

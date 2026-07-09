@@ -28,12 +28,10 @@ export default function Header() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const navLinks = [
-    { label: t("header.nav_features"), href: "/#features" },
-    { label: t("header.nav_screenshots"), href: "/#screenshots" },
-    { label: t("header.nav_radar"), href: "/#radar" },
-    { label: t("header.nav_clubs"), href: "/clubs" },
-    { label: t("header.nav_pricing"), href: "/#pricing" },
-    { label: t("header.nav_faq"), href: "/#faq" },
+    { label: t("header.nav_features"), href: "/features" },
+    { label: t("header.nav_overlays"), href: "/overlays" },
+    { label: t("header.nav_radar"), href: "/radar" },
+    { label: t("header.nav_pricing"), href: "/pricing" },
     { label: t("header.nav_guides"), href: "/blog" },
   ];
 

@@ -90,7 +90,7 @@ export default function Hero() {
             <div className="hero-enter flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8" style={{ animationDelay: "0.55s" }}>
               <GooglePlayButton />
               <a
-                href="#features"
+                href="#outcomes"
                 onClick={scrollToHash}
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-white/10 text-foreground hover:border-white/20 transition-colors text-base"
               >
