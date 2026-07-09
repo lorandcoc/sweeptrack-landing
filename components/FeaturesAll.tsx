@@ -5,11 +5,19 @@ import { useReveal } from "./useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 /* ─── Categories ───
- * Every tile maps to exactly one category. Colors reuse the site palette
- * (accent / amber / cyan / blue / orange) already used for feature tags.
+ * Every tile maps to exactly one category. Colors + icons give each category
+ * its own identity across the chips and the tiles.
  */
 
 type CategoryId = "map" | "finds" | "research" | "sessions" | "polish";
+
+const CAT_ICON: Record<CategoryId, React.ReactNode> = {
+  map: (<><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z" /><path d="M9 3v15M15 6v15" /></>),
+  finds: (<><rect x="3" y="7" width="18" height="13" rx="2" /><circle cx="12" cy="13.5" r="3.5" /><path d="M8 7l1.5-3h5L16 7" /></>),
+  research: (<><circle cx="12" cy="12" r="9" /><polygon points="14.5 9.5 9.5 11.5 9.5 14.5 14.5 12.5" fill="currentColor" stroke="none" /></>),
+  sessions: (<><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" /></>),
+  polish: (<><path d="M12 3l1.4 4.2L18 9l-4.6 1.8L12 15l-1.4-4.2L6 9l4.6-1.8z" /><path d="M18.5 14l.6 1.9 1.9.6-1.9.6-.6 1.9-.6-1.9-1.9-.6 1.9-.6z" /></>),
+};
 
 const CATEGORIES: {
   id: CategoryId;
@@ -67,9 +75,10 @@ const CATEGORIES: {
 const TOTAL_COUNT = CATEGORIES.reduce((n, c) => n + c.keys.length, 0);
 
 const COLOR_BY_KEY: Record<string, string> = {};
-for (const c of CATEGORIES) for (const k of c.keys) COLOR_BY_KEY[k] = c.color;
+const ICON_BY_KEY: Record<string, React.ReactNode> = {};
+for (const c of CATEGORIES) for (const k of c.keys) { COLOR_BY_KEY[k] = c.color; ICON_BY_KEY[k] = CAT_ICON[c.id]; }
 
-/* Collapsed default — the ten strongest tiles, leading with the two new Pro features */
+/* Collapsed default — the strongest tiles, leading with the two new Pro features */
 const TOP_PICKS = [
   "findsintel", "mapoverlay", "findlogger", "forecast", "heatmap",
   "careerstats", "nightvision", "sessioncompare", "detectorlib",
@@ -105,41 +114,45 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
   );
 }
 
-/* ─── Compact tile ───
- * The outer wrapper owns the entry fade/scale (CSS transition via
- * @starting-style — fires on mount, zeroed out by the global
- * prefers-reduced-motion rule). The inner card owns hover transitions,
- * so the staggered entry delay never bleeds into hover.
- */
+function CatIcon({ id, size = 22, color }: { id: CategoryId; size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={color ? { color } : undefined}>
+      {CAT_ICON[id]}
+    </svg>
+  );
+}
 
-function Tile({
-  featureKey,
-  index,
-  guideLabel,
-}: {
-  featureKey: string;
-  index: number;
-  guideLabel: string;
-}) {
+function Tile({ featureKey, index, guideLabel }: { featureKey: string; index: number; guideLabel: string }) {
   const { t } = useI18n();
   const title = t(`featuresall.sec_${featureKey}_title` as TranslationKey);
   const desc = t(`featuresall.sec_${featureKey}_desc` as TranslationKey);
   const guide = GUIDES[featureKey];
   const color = COLOR_BY_KEY[featureKey];
+  const icon = ICON_BY_KEY[featureKey];
 
   const card = (
-    <div className="h-full px-4 py-3.5 rounded-xl bg-surface/50 border border-white/[0.05] hover:border-white/[0.14] hover:bg-surface/80 transition-colors duration-300 group">
-      <div className="flex items-start gap-2.5">
-        <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full mt-[7px] shrink-0" style={{ background: color }} />
-        <div className="min-w-0">
-          <h3 className="font-semibold text-sm leading-snug text-white/90 group-hover:text-white transition-colors">{title}</h3>
-          <p className="text-muted text-sm leading-snug mt-1 line-clamp-2">{desc}</p>
-          {guide && (
-            <span className="text-accent text-xs font-medium mt-1.5 inline-flex items-center gap-1 group-hover:underline">
-              {guideLabel} &rarr;
-            </span>
-          )}
-        </div>
+    <div
+      className="ic-card group relative h-full p-5 rounded-2xl border border-white/[0.06] bg-surface/40 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-surface/70"
+      style={{ ["--ic" as string]: color }}
+    >
+      <span className="ic-glow" aria-hidden="true" />
+      <span className="ic-topline" aria-hidden="true" />
+      <div className="relative">
+        <span
+          className="inline-flex items-center justify-center w-10 h-10 rounded-xl border mb-3.5"
+          style={{ color, borderColor: `${color}40`, background: `${color}14` }}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            {icon}
+          </svg>
+        </span>
+        <h3 className="font-semibold text-[15px] leading-snug text-white/90 mb-1.5">{title}</h3>
+        <p className="text-muted text-sm leading-relaxed line-clamp-3">{desc}</p>
+        {guide && (
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold group-hover:gap-1.5 transition-all" style={{ color }}>
+            {guideLabel} &rarr;
+          </span>
+        )}
       </div>
     </div>
   );
@@ -147,20 +160,16 @@ function Tile({
   return (
     <div
       className="h-full transition-all duration-300 starting:opacity-0 starting:scale-95"
-      style={{ transitionDelay: `${Math.min(index * 20, 200)}ms` }}
+      style={{ transitionDelay: `${Math.min(index * 25, 250)}ms` }}
     >
-      {guide ? (
-        <a href={guide} className="block h-full">{card}</a>
-      ) : (
-        <div className="h-full cursor-default">{card}</div>
-      )}
+      {guide ? <a href={guide} className="block h-full">{card}</a> : <div className="h-full cursor-default">{card}</div>}
     </div>
   );
 }
 
 function TileGrid({ keys, guideLabel }: { keys: string[]; guideLabel: string }) {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {keys.map((key, i) => (
         <Tile key={key} featureKey={key} index={i} guideLabel={guideLabel} />
       ))}
@@ -186,7 +195,6 @@ export default function FeaturesAll() {
   return (
     <section id="features" className="py-16 md:py-24 cv-auto">
       <div className="max-w-6xl mx-auto px-6">
-
         {/* Section header */}
         <RevealSection>
           <div className="text-center mb-10">
@@ -195,35 +203,33 @@ export default function FeaturesAll() {
               {t("featuresall.heading_prefix")}
               <span className="text-accent">{t("featuresall.heading_accent")}</span>
             </h2>
-            <p className="text-muted text-lg max-w-2xl mx-auto">
-              {t("featuresall.description")}
-            </p>
+            <p className="text-muted text-lg max-w-2xl mx-auto">{t("featuresall.description")}</p>
           </div>
         </RevealSection>
 
         {/* Category filter chips */}
         <RevealSection delay={100}>
-          <div className="flex flex-wrap justify-center gap-2 mb-8" role="group" aria-label={t("featuresall.label")}>
+          <div className="flex flex-wrap justify-center gap-2.5 mb-10" role="group" aria-label={t("featuresall.label")}>
             {chips.map((chip) => {
               const active = activeCat === chip.id;
+              const c = chip.color ?? "#00FF6A";
               return (
                 <button
                   key={chip.id}
                   type="button"
                   aria-pressed={active}
                   onClick={() => setActiveCat(chip.id)}
-                  className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-sm font-medium border transition-colors duration-200 ${
-                    active
-                      ? "bg-accent/10 border-accent/40 text-accent"
-                      : "bg-white/[0.03] border-white/[0.08] text-muted hover:text-white hover:border-white/[0.18]"
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
+                    active ? "" : "bg-white/[0.03] border-white/[0.08] text-muted hover:text-white hover:border-white/[0.2] hover:-translate-y-0.5"
                   }`}
+                  style={active ? { color: c, borderColor: `${c}55`, background: `${c}14` } : undefined}
                 >
                   {chip.color && (
-                    <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: chip.color }} />
+                    <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: active ? c : chip.color }} />
                   )}
                   {chip.label}
                   {typeof chip.count === "number" && (
-                    <span className={`text-xs tabular-nums ${active ? "text-accent/60" : "text-white/35"}`}>{chip.count}</span>
+                    <span className={`text-xs tabular-nums ${active ? "" : "text-white/35"}`} style={active ? { color: `${c}99` } : undefined}>{chip.count}</span>
                   )}
                 </button>
               );
@@ -231,22 +237,23 @@ export default function FeaturesAll() {
           </div>
         </RevealSection>
 
-        {/* Tile grid — keyed by view so switching filters remounts tiles
-            and replays the entry fade/scale */}
+        {/* Tile grid — keyed by view so switching filters replays the entry fade/scale */}
         <RevealSection delay={150}>
           {selected ? (
             <div key={selected.id}>
               <TileGrid keys={selected.keys} guideLabel={guideLabel} />
             </div>
           ) : expanded ? (
-            <div key="all-expanded" className="space-y-10">
+            <div key="all-expanded" className="space-y-12">
               {CATEGORIES.map((cat) => (
                 <div key={cat.id}>
-                  <p className="flex items-center gap-2.5 text-sm font-semibold uppercase tracking-widest text-white/60 mb-4">
-                    <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: cat.color }} />
-                    {t(cat.labelKey)}
-                    <span className="text-white/30 tabular-nums normal-case tracking-normal">{cat.keys.length}</span>
-                  </p>
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg border shrink-0" style={{ color: cat.color, borderColor: `${cat.color}40`, background: `${cat.color}14` }}>
+                      <CatIcon id={cat.id} size={18} />
+                    </span>
+                    <p className="text-sm font-semibold uppercase tracking-widest text-white/70">{t(cat.labelKey)}</p>
+                    <span className="text-white/30 tabular-nums text-sm">{cat.keys.length}</span>
+                  </div>
                   <TileGrid keys={cat.keys} guideLabel={guideLabel} />
                 </div>
               ))}
@@ -259,17 +266,14 @@ export default function FeaturesAll() {
 
           {/* Expander — only meaningful in the "All" view */}
           {!selected && (
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-10">
               <button
                 type="button"
                 onClick={() => setExpanded(!expanded)}
-                className="text-sm text-accent font-medium hover:text-accent-dim transition-colors flex items-center gap-1.5"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border border-white/[0.1] text-sm text-accent font-semibold hover:border-accent/40 hover:bg-accent/[0.06] transition-all"
               >
-                {expanded
-                  ? t("featuresall.show_less")
-                  : t("featuresall.show_all").replace("{count}", String(TOTAL_COUNT))}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                  className={`transition-transform ${expanded ? "rotate-180" : ""}`}>
+                {expanded ? t("featuresall.show_less") : t("featuresall.show_all").replace("{count}", String(TOTAL_COUNT))}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform ${expanded ? "rotate-180" : ""}`}>
                   <path d="M6 9l6 6 6-6" />
                 </svg>
               </button>
