@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import GooglePlayButton, { PLAY_URL } from "@/components/GooglePlayButton";
 import SpotlightVault from "@/components/SpotlightVault";
 import SpotlightPerimeter from "@/components/SpotlightPerimeter";
+import InfoCard from "@/components/InfoCard";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
@@ -31,17 +32,12 @@ const jsonLd = {
   ],
 };
 
-function Tool({ title, body, tier }: { title: string; body: string; tier: "Free" | "Pro" }) {
-  return (
-    <div className="rounded-2xl p-5 bg-surface border border-white/[0.07] h-full">
-      <div className="flex items-center justify-between mb-2">
-        <h3 className="font-semibold text-base">{title}</h3>
-        <span className={`text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border ${tier === "Free" ? "text-accent/90 border-accent/30 bg-accent/[0.06]" : "text-amber-300/90 border-amber-400/30 bg-amber-400/[0.06]"}`}>{tier}</span>
-      </div>
-      <p className="text-muted text-sm leading-relaxed">{body}</p>
-    </div>
-  );
-}
+const ICON = {
+  vault: (<><rect x="4" y="10" width="16" height="10" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /><circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none" /></>),
+  letter: (<><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5" /><path d="M9 13h6M9 17h4" /></>),
+  reminder: (<><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 9h18M8 3v4M16 3v4" /><path d="M12 13v3l2 1" /></>),
+  perimeter: (<><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9 12l2 2 4-4" /></>),
+};
 
 export default function PermissionsPage() {
   const dict = getDictionary("en");
@@ -81,10 +77,10 @@ export default function PermissionsPage() {
               <h2 className="font-display text-3xl md:text-4xl mb-4">Everything a <span className="text-accent">permission</span> needs.</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Tool tier="Free" title="The Vault" body="Every permission with a status color (approved, ask first, denied), landowner details, and the site boundary on the map. Free covers 1 entry; Pro is unlimited." />
-              <Tool tier="Pro" title="PDF permission letter" body="Generate a branded A4 request or thank-you letter with a site map, signed by the landowner on your screen." />
-              <Tool tier="Free" title="Expiry reminders" body="Add any permit's expiry date to your phone's calendar with one tap, and see what's expiring soon in the forecast." />
-              <Tool tier="Pro" title="Perimeter Guard" body="Draw a boundary and get escalating vibration near the edge, plus an alarm if you step outside, even through Do Not Disturb." />
+              <InfoCard icon={ICON.vault} tier="Free" title="The Vault" body="Every permission with a status color (approved, ask first, denied), landowner details, and the site boundary on the map. Free covers 1 entry; Pro is unlimited." />
+              <InfoCard icon={ICON.letter} tier="Pro" title="PDF permission letter" body="Generate a branded A4 request or thank-you letter with a site map, signed by the landowner on your screen." />
+              <InfoCard icon={ICON.reminder} tier="Free" title="Expiry reminders" body="Add any permit's expiry date to your phone's calendar with one tap, and see what's expiring soon in the forecast." />
+              <InfoCard icon={ICON.perimeter} tier="Pro" title="Perimeter Guard" body="Draw a boundary and get escalating vibration near the edge, plus an alarm if you step outside, even through Do Not Disturb." />
             </div>
           </div>
         </section>

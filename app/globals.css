@@ -3796,3 +3796,26 @@ details:focus-visible > summary {
   .ocv-walker { animation: none !important; left: 50%; }
   .ocv-alert { animation: none !important; opacity: 0; }
 }
+
+/* ─────────────────── InfoCard / StepCard · ic- ─────────────────── */
+.ic-glow {
+  position: absolute;
+  top: -45px; right: -45px;
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  background: var(--ic);
+  opacity: 0;
+  filter: blur(48px);
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.ic-card:hover .ic-glow { opacity: 0.16; }
+.ic-card:hover { border-color: color-mix(in srgb, var(--ic) 35%, transparent); }
+.ic-topline {
+  position: absolute; left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ic), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.ic-card:hover .ic-topline { opacity: 0.85; }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InfoCard from "@/components/InfoCard";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
@@ -119,14 +120,19 @@ const MATRIX: [string, string, string, string, string, string][] = [
   ],
 ];
 
-function Principle({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="rounded-2xl p-5 bg-surface border border-white/[0.07] h-full">
-      <h3 className="font-semibold text-base mb-1.5">{title}</h3>
-      <p className="text-muted text-sm leading-relaxed">{body}</p>
-    </div>
-  );
-}
+const ICON = {
+  device: (<><rect x="6" y="2" width="12" height="20" rx="2" /><path d="M10 18h4" /></>),
+  noAds: (<><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></>),
+  toggle: (<><rect x="2" y="8" width="20" height="8" rx="4" /><circle cx="8" cy="12" r="2" /></>),
+  lock: (<><rect x="4" y="11" width="16" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></>),
+};
+
+const PRINCIPLES = [
+  { icon: ICON.device, title: "On your device first", body: "Your sessions, finds, and their locations live on your phone, not on our servers." },
+  { icon: ICON.noAds, title: "No ads, no ad trackers", body: "No advertising, no third-party advertising trackers, and we never sell your data." },
+  { icon: ICON.toggle, title: "Diagnostics are opt-in", body: "Crash and usage diagnostics are off by default, anonymized, and coordinate-scrubbed when you turn them on." },
+  { icon: ICON.lock, title: "Backups only you can open", body: "A backup writes to your own Google Drive, which the app can't read. Add a passphrase and it's AES-256 encrypted on your phone before it uploads." },
+];
 
 export default function TrustPage() {
   const dict = getDictionary("en");
@@ -155,10 +161,9 @@ export default function TrustPage() {
         <section className="py-12 md:py-16">
           <div className="max-w-5xl mx-auto px-6">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Principle title="On your device first" body="Your sessions, finds, and their locations live on your phone, not on our servers." />
-              <Principle title="No ads, no ad trackers" body="No advertising, no third-party advertising trackers, and we never sell your data." />
-              <Principle title="Diagnostics are opt-in" body="Crash and usage diagnostics are off by default, anonymized, and coordinate-scrubbed when you turn them on." />
-              <Principle title="Backups only you can open" body="A backup writes to your own Google Drive, which the app can't read. Add a passphrase and it's AES-256 encrypted on your phone before it uploads." />
+              {PRINCIPLES.map((p) => (
+                <InfoCard key={p.title} icon={p.icon} title={p.title} body={p.body} />
+              ))}
             </div>
           </div>
         </section>

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GooglePlayButton, { PLAY_URL } from "@/components/GooglePlayButton";
 import SpotlightEngine from "@/components/SpotlightEngine";
+import InfoCard from "@/components/InfoCard";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
@@ -30,17 +31,12 @@ const jsonLd = {
   ],
 };
 
-function Tool({ title, body, tier }: { title: string; body: string; tier: "Free" | "Pro" }) {
-  return (
-    <div className="rounded-2xl p-5 bg-surface border border-white/[0.07] h-full">
-      <div className="flex items-center justify-between mb-2">
-        <h3 className="font-semibold text-base">{title}</h3>
-        <span className={`text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border ${tier === "Free" ? "text-accent/90 border-accent/30 bg-accent/[0.06]" : "text-amber-300/90 border-amber-400/30 bg-amber-400/[0.06]"}`}>{tier}</span>
-      </div>
-      <p className="text-muted text-sm leading-relaxed">{body}</p>
-    </div>
-  );
-}
+const ICON = {
+  tracks: (<><circle cx="6" cy="6" r="2" /><circle cx="18" cy="18" r="2" /><path d="M8 6h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h7" /></>),
+  heatmap: (<><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></>),
+  compare: (<><rect x="3" y="4" width="7" height="16" rx="1" /><rect x="14" y="4" width="7" height="16" rx="1" /></>),
+  elevation: (<><path d="M3 17l5-7 4 4 3-6 6 9" /><path d="M3 20h18" /></>),
+};
 
 export default function CoveragePage() {
   const dict = getDictionary("en");
@@ -78,10 +74,10 @@ export default function CoveragePage() {
               <p className="text-muted text-lg max-w-2xl mx-auto">Four ways to read your coverage and find the strip you missed.</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Tool tier="Pro" title="Track overlay" body="Load past sessions onto the live map as colored paths, up to 7 at once, so covered ground stays visible." />
-              <Tool tier="Pro" title="Coverage heatmap" body="A density map of the current session's walked path. See at a glance where you swept hard and where you barely passed." />
-              <Tool tier="Pro" title="Session compare" body="Put two or more past sessions side by side, or overlaid with a blend slider, to spot the gaps between visits." />
-              <Tool tier="Free" title="Elevation profile" body="A per-session terrain chart with min, max, ascent, descent, and average, in meters or feet." />
+              <InfoCard icon={ICON.tracks} tier="Pro" title="Track overlay" body="Load past sessions onto the live map as colored paths, up to 7 at once, so covered ground stays visible." />
+              <InfoCard icon={ICON.heatmap} tier="Pro" title="Coverage heatmap" body="A density map of the current session's walked path. See at a glance where you swept hard and where you barely passed." />
+              <InfoCard icon={ICON.compare} tier="Pro" title="Session compare" body="Put two or more past sessions side by side, or overlaid with a blend slider, to spot the gaps between visits." />
+              <InfoCard icon={ICON.elevation} tier="Free" title="Elevation profile" body="A per-session terrain chart with min, max, ascent, descent, and average, in meters or feet." />
             </div>
           </div>
         </section>

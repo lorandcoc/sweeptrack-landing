@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GooglePlayButton, { PLAY_URL } from "@/components/GooglePlayButton";
 import SpotlightFindsIntel from "@/components/SpotlightFindsIntel";
+import InfoCard from "@/components/InfoCard";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
@@ -30,14 +31,14 @@ const jsonLd = {
   ],
 };
 
-function Metric({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="rounded-2xl p-5 bg-surface border border-white/[0.07] h-full">
-      <h3 className="font-semibold text-base mb-1.5">{title}</h3>
-      <p className="text-muted text-sm leading-relaxed">{body}</p>
-    </div>
-  );
-}
+const ICON = {
+  rate: (<><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2.5 1.5" /><path d="M9 2h6" /><path d="M12 2v2" /></>),
+  clock: (<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.5 2" /></>),
+  breakdown: (<><path d="M3 3v18h18" /><rect x="7" y="11" width="3" height="7" /><rect x="12" y="7" width="3" height="11" /><rect x="17" y="4" width="3" height="14" /></>),
+  trend: (<><path d="M3 3v18h18" /><path d="M7 14l4-4 3 3 5-6" /></>),
+  hotzone: (<><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z" /><path d="M12 13a3 3 0 0 0 0-6c1 1.5 0 2-.5 3-1-.5-1.5-1.5-1-3a3 3 0 0 0 1.5 6z" /></>),
+  records: (<><path d="M6 2h8l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" /><path d="M14 2v5h5" /><path d="M8 13h8M8 17h5" /></>),
+};
 
 export default function FindsIntelligencePage() {
   const dict = getDictionary("en");
@@ -74,12 +75,12 @@ export default function FindsIntelligencePage() {
               <p className="text-muted text-lg max-w-2xl mx-auto">Real numbers from the finds you already recorded. No guessing, no made-up score.</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Metric title="Finds per hour" body="Your true rate, so you can tell a productive site from a slow one." />
-              <Metric title="Best time of day" body="A 24-hour breakdown of when your finds actually come in." />
-              <Metric title="By detector, type, and site" body="Which machine, which target types, and which sites carry their weight, each with count, value, and weight." />
-              <Metric title="Collection value over time" body="Your total collection value charted month by month." />
-              <Metric title="Value-weighted hot zones" body="A heatmap built from find value, so a single gold ring outshines a pile of pull-tabs." />
-              <Metric title="Built from real records" body="Every metric comes from your logged finds. There is no summary score inventing a number." />
+              <InfoCard icon={ICON.rate} title="Finds per hour" body="Your true rate, so you can tell a productive site from a slow one." />
+              <InfoCard icon={ICON.clock} title="Best time of day" body="A 24-hour breakdown of when your finds actually come in." />
+              <InfoCard icon={ICON.breakdown} title="By detector, type, and site" body="Which machine, which target types, and which sites carry their weight, each with count, value, and weight." />
+              <InfoCard icon={ICON.trend} title="Collection value over time" body="Your total collection value charted month by month." />
+              <InfoCard icon={ICON.hotzone} title="Value-weighted hot zones" body="A heatmap built from find value, so a single gold ring outshines a pile of pull-tabs." />
+              <InfoCard icon={ICON.records} title="Built from real records" body="Every metric comes from your logged finds. There is no summary score inventing a number." />
             </div>
           </div>
         </section>
