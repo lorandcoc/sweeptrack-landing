@@ -3676,3 +3676,124 @@ details:focus-visible > summary {
   .spa-meter__fill { animation: none !important; transform: scaleX(1); }
   .spa-rms { animation: none !important; opacity: 1; }
 }
+
+/* ─────────────────── Outcomes card visuals · ocv- ─────────────────── */
+.ocv-panel {
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 68% 28%, color-mix(in srgb, var(--ocv) 18%, transparent), transparent 70%),
+    #0a1017;
+}
+@media (min-width: 768px) { .ocv-panel { min-height: 100%; } }
+.ocv-fill { position: absolute; inset: 0; }
+.ocv-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ocv-grid { stroke: rgba(255, 255, 255, 0.05); }
+
+/* coverage — sweep track draws itself, finds pop in */
+.ocv-cov {
+  stroke: var(--ocv);
+  stroke-width: 3;
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--ocv) 55%, transparent));
+  animation: ocv-cov-draw 4.2s ease-in-out infinite;
+}
+@keyframes ocv-cov-draw {
+  0% { stroke-dashoffset: 520; opacity: 0.4; }
+  45% { stroke-dashoffset: 0; opacity: 1; }
+  80% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: -520; opacity: 0.4; }
+}
+.ocv-covpin { fill: var(--ocv); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.ocv-covpin--1 { animation: ocv-pop 4.2s ease-in-out 1s infinite; }
+.ocv-covpin--2 { animation: ocv-pop 4.2s ease-in-out 1.7s infinite; }
+@keyframes ocv-pop { 0%, 100% { opacity: 0; transform: scale(0); } 22%, 70% { opacity: 1; transform: scale(1); } }
+
+/* overlays — imported tile drifts in and settles square */
+.ocv-ovbase {
+  position: absolute; inset: 24%;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 15px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 15px),
+    #0c1620;
+}
+.ocv-ovtile {
+  position: absolute; inset: 28%;
+  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, var(--ocv) 60%, transparent);
+  background: color-mix(in srgb, var(--ocv) 22%, transparent);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  animation: ocv-ov 4.4s var(--st-ease-out) infinite;
+}
+@keyframes ocv-ov {
+  0% { transform: translate(16px, -12px) rotate(-8deg) scale(1.12); opacity: 0.35; }
+  40% { transform: translate(0, 0) rotate(0) scale(1); opacity: 0.9; }
+  80% { transform: translate(0, 0) rotate(0) scale(1); opacity: 0.9; }
+  100% { transform: translate(16px, -12px) rotate(-8deg) scale(1.12); opacity: 0.35; }
+}
+
+/* finds — scattered finds with a pulsing value hot-zone */
+.ocv-finddot { position: absolute; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: rgba(255, 255, 255, 0.32); }
+.ocv-finddot--hot { background: var(--ocv); box-shadow: 0 0 8px color-mix(in srgb, var(--ocv) 70%, transparent); }
+.ocv-hotring {
+  position: absolute; left: 62%; top: 46%;
+  width: 78px; height: 78px; margin: -39px 0 0 -39px;
+  border-radius: 50%;
+  border: 2px solid var(--ocv);
+  animation: ocv-hot 2.8s ease-in-out infinite;
+}
+@keyframes ocv-hot {
+  0%, 100% { transform: scale(0.65); opacity: 0.15; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+/* radar — pulse rings + rotating sweep + members */
+.ocv-rring {
+  position: absolute; left: 50%; top: 50%;
+  width: 24px; height: 24px; margin: -12px 0 0 -12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ocv);
+  opacity: 0;
+  animation: ocv-rring 3s ease-out infinite;
+}
+.ocv-rring:nth-of-type(2) { animation-delay: 1s; }
+.ocv-rring:nth-of-type(3) { animation-delay: 2s; }
+@keyframes ocv-rring { 0% { transform: scale(0.4); opacity: 0.9; } 100% { transform: scale(5.5); opacity: 0; } }
+.ocv-rsweep {
+  position: absolute; left: 50%; top: 50%;
+  width: 46%; height: 2px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--ocv), transparent);
+  animation: ocv-spin 3s linear infinite;
+}
+@keyframes ocv-spin { to { transform: rotate(360deg); } }
+.ocv-rcore { position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px; border-radius: 50%; background: var(--ocv); box-shadow: 0 0 12px var(--ocv); }
+.ocv-rmember { position: absolute; width: 8px; height: 8px; margin: -4px; border-radius: 50%; background: #fff; box-shadow: 0 0 6px rgba(255, 255, 255, 0.6); }
+.ocv-rmember--1 { left: 32%; top: 34%; animation: ocv-float 4s ease-in-out infinite; }
+.ocv-rmember--2 { left: 70%; top: 64%; animation: ocv-float 4s ease-in-out 1.5s infinite; }
+@keyframes ocv-float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(4px, -5px); } }
+
+/* permissions — boundary polygon + walker approaches the edge, alert fires */
+.ocv-poly { stroke: var(--ocv); stroke-width: 2; stroke-dasharray: 5 5; fill: color-mix(in srgb, var(--ocv) 8%, transparent); animation: ocv-poly 4s ease-in-out infinite; }
+@keyframes ocv-poly { 0%, 42%, 100% { opacity: 0.5; } 52%, 60% { opacity: 1; } }
+.ocv-walker { position: absolute; top: 52%; left: 32%; width: 10px; height: 10px; margin: -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); animation: ocv-walk 4s ease-in-out infinite; }
+@keyframes ocv-walk { 0%, 100% { left: 32%; } 45%, 60% { left: 66%; } }
+.ocv-alert { position: absolute; top: 52%; left: 66%; width: 44px; height: 44px; margin: -22px; border-radius: 50%; border: 2px solid var(--ocv); opacity: 0; animation: ocv-alert 4s ease-in-out infinite; }
+@keyframes ocv-alert { 0%, 42% { opacity: 0; transform: scale(0.4); } 50% { opacity: 0.9; transform: scale(1); } 62%, 100% { opacity: 0; transform: scale(1.4); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ocv-cov { animation: none !important; stroke-dashoffset: 0; opacity: 1; }
+  .ocv-covpin { animation: none !important; opacity: 1; transform: scale(1); }
+  .ocv-ovtile { animation: none !important; transform: translate(0, 0) rotate(0) scale(1); opacity: 0.9; }
+  .ocv-hotring { animation: none !important; transform: scale(1); opacity: 0.7; }
+  .ocv-rring { animation: none !important; opacity: 0; }
+  .ocv-rsweep { animation: none !important; }
+  .ocv-rmember { animation: none !important; }
+  .ocv-poly { animation: none !important; opacity: 0.7; }
+  .ocv-walker { animation: none !important; left: 50%; }
+  .ocv-alert { animation: none !important; opacity: 0; }
+}
