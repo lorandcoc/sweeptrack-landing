@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "metal-detecting-for-beginners";
 const TITLE = "Metal Detecting for Beginners: What You Need to Know";
 const DESCRIPTION = "New to metal detecting? Learn how to pick your first detector, where to search, what signals mean, how to dig properly, and beginner mistakes to avoid.";
-const IMAGE = "/screenshots/presets.jpg";
+const IMAGE = "/screenshots/home.jpg";
 const PUBLISHED = "2026-03-06";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
@@ -37,7 +37,7 @@ export default function Post() {
             <li><strong>Discrimination</strong> — lets you ignore iron and trash signals</li>
             <li><strong>Waterproof coil</strong> — so you can detect in wet grass and shallow water</li>
           </ul>
-          <p>Popular starter machines: Nokta Simplex+, Minelab Vanquish 440, Garrett Ace 400, XP ORX. All of these have preset templates in SweepTrack Pro.</p>
+          <p>Popular starter machines: Nokta Simplex+, Minelab Vanquish 440, Garrett Ace 400, XP ORX.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Where to Detect</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">

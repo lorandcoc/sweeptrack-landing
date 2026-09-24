@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useReveal } from "./useReveal";
-import GooglePlayButton, { PLAY_URL } from "./GooglePlayButton";
+import GooglePlayButton from "./GooglePlayButton";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 type FeatureRow = {
@@ -21,7 +20,7 @@ type FeatureGroup = {
 /**
  * Full comparison table, grouped for scanability.
  * Free/Pro splits come from:
- *  - SubscriptionService.kt constants: FREE_PRESET_LIMIT=1, FREE_VAULT_ENTRY_LIMIT=1
+ *  - SubscriptionService.kt constants: FREE_VAULT_ENTRY_LIMIT=1
  *  - PaywallScreen.kt features list (the in-app Premium highlight list)
  *  - HomeScreenLayers.kt `gate(...)` wrappers for map overlays
  *
@@ -82,7 +81,6 @@ const groups: FeatureGroup[] = [
       { key: "waypoints", free: "string", freeKey: "pricing.feat_waypoints_free", pro: "string", proKey: "pricing.feat_waypoints_pro" },
       // Map Overlays — import your own map/aerial and align it. Pro-only (SubscriptionService FREE_OVERLAY_LIMIT = 0); unlimited with Pro.
       { key: "mapoverlay", free: false, pro: true },
-      { key: "detectorlib", free: true, pro: true },
       { key: "locationsearch", free: true, pro: true },
     ],
   },
@@ -130,14 +128,13 @@ const groups: FeatureGroup[] = [
       { key: "languages", free: true, pro: true },
       { key: "onboarding", free: true, pro: true },
       { key: "aboutfeedback", free: true, pro: true },
-      { key: "presets", free: "string", freeKey: "pricing.feat_presets_free", pro: "string", proKey: "pricing.feat_presets_pro" },
     ],
   },
 ];
 
-/* Collapsed view — the ~10 rows that carry the most emotional weight for a
- * detectorist. Leads with the Pro 2.0 free/Pro split (sessions, finds) and the
- * two new Pro features, then the strongest paid pulls. */
+/* Collapsed view: the ~10 rows that matter most to a detectorist deciding
+ * between Free and Pro. Leads with the Pro 2.0 split (sessions, finds) and the
+ * two newest Pro features, then the rest of the paid tools. */
 const highlightKeys = [
   "sessions",
   "finds",
@@ -159,14 +156,13 @@ const highlightRows = highlightKeys
 const totalCount = allRows.length;
 
 function Cell({ value }: { value: boolean | string }) {
-  if (value === true) return <span className="text-accent font-bold">&#10003;</span>;
-  if (value === false) return <span className="text-white/20">&mdash;</span>;
+  if (value === true) return <span className="text-accent">&#10003;</span>;
+  if (value === false) return <span className="text-white/25">&ndash;</span>;
   return <span className="text-xs text-muted">{value}</span>;
 }
 
-export default function PricingTable() {
+export default function PricingTable({ heading = true }: { heading?: boolean }) {
   const { t } = useI18n();
-  const { ref, visible } = useReveal();
   const [expanded, setExpanded] = useState(false);
 
   function resolveValue(row: FeatureRow, side: "free" | "pro"): boolean | string {
@@ -176,13 +172,13 @@ export default function PricingTable() {
     return val as boolean;
   }
 
-  function renderRow(f: FeatureRow, i: number) {
+  function renderRow(f: FeatureRow) {
     return (
       <div
         key={f.key}
-        className={`grid grid-cols-[1fr_60px_60px] sm:grid-cols-[1fr_80px_80px] px-4 py-2.5 ${i % 2 === 0 ? "bg-white/[0.01]" : "bg-white/[0.03]"}`}
+        className="grid grid-cols-[1fr_76px_76px] sm:grid-cols-[1fr_120px_120px] items-baseline px-4 sm:px-5 py-3 border-t border-white/[0.06]"
       >
-        <div className="text-sm text-white/80">{t(`pricing.feat_${f.key}` as TranslationKey)}</div>
+        <div className="text-sm text-foreground/85">{t(`pricing.feat_${f.key}` as TranslationKey)}</div>
         <div className="text-center"><Cell value={resolveValue(f, "free")} /></div>
         <div className="text-center"><Cell value={resolveValue(f, "pro")} /></div>
       </div>
@@ -190,154 +186,81 @@ export default function PricingTable() {
   }
 
   return (
-    <section id="pricing" className="py-16 md:py-20 cv-auto">
-      <div ref={ref} className={`max-w-3xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
-        <div className="text-center mb-12">
-          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("pricing.label")}</p>
-          <h2 className="font-display text-3xl md:text-4xl mb-4">
-            {t("pricing.heading_prefix")}<span className="text-accent">{t("pricing.heading_accent")}</span>
-          </h2>
-          <p className="text-muted text-lg max-w-xl mx-auto">
-            {t("pricing.description")}
+    <section id="pricing" className={heading ? "st-rule py-20 md:py-28" : "pb-20 md:pb-28"}>
+      <div className="max-w-6xl mx-auto px-6">
+        {heading && <h2 className="font-display st-h2 mb-10 md:mb-14">{t("pricing.heading")}</h2>}
+
+        <div className="max-w-4xl">
+          {/* Plans */}
+          <div className="grid md:grid-cols-2 border border-white/10 rounded-xl overflow-hidden">
+            <div className="p-6 sm:p-8">
+              <div className="font-semibold text-muted">{t("pricing.free_label")}</div>
+              <div className="mt-2 text-4xl font-semibold tracking-tight">{t("pricing.free_price")}</div>
+              <div className="mt-2 text-sm text-muted">{t("pricing.free_sublabel")}</div>
+              <p className="mt-5 text-[15px] text-foreground/80 leading-relaxed">{t("pricing.free_description")}</p>
+            </div>
+            <div className="p-6 sm:p-8 border-t md:border-t-0 md:border-l border-white/10 bg-white/[0.02] shadow-[inset_0_2px_0_0_var(--accent)]">
+              <div className="font-semibold text-accent">{t("pricing.pro_label")}</div>
+              <div className="mt-2 text-4xl font-semibold tracking-tight">
+                {t("pricing.pro_price")}
+                <span className="text-lg font-normal text-muted">{t("pricing.pro_frequency")}</span>
+              </div>
+              <div className="mt-2 text-sm text-muted">{t("pricing.pro_sublabel")}</div>
+              <p className="mt-5 text-[15px] text-foreground/80 leading-relaxed">{t("pricing.pro_description")}</p>
+            </div>
+          </div>
+
+          {/* Founder's Lifetime: one quiet line, not a banner */}
+          <p className="mt-6 text-[15px] leading-relaxed text-muted max-w-3xl">
+            <span className="font-semibold text-amber-200">{t("pricing.founder_title")}.</span>{" "}
+            {t("pricing.founder_description")}
           </p>
-        </div>
 
-        {/* Founder's Lifetime tease — visually continuous with the hero amber pill */}
-        <div className="mb-6 pt-3">
-          <div className="relative rounded-2xl border border-amber-400/30 bg-gradient-to-br from-amber-500/[0.08] via-amber-500/[0.04] to-transparent p-5 sm:p-6">
-            <span className="prx-founder-badge absolute -top-3 left-4 sm:left-6 inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-400/40 text-amber-300 text-[10px] font-mono font-semibold uppercase tracking-wider z-10">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" />
-              </svg>
-              {t("pricing.founder_badge")}
-            </span>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-              <div className="flex items-start gap-3 flex-1">
-                <div className="w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-300 shrink-0">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z" />
-                  </svg>
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-display text-lg sm:text-xl text-amber-200 leading-tight mb-1">
-                    {t("pricing.founder_title")}
-                  </h3>
-                  <p className="text-amber-100/70 text-xs sm:text-sm leading-snug mb-2">{t("pricing.founder_sub")}</p>
-                  <p className="text-muted text-xs sm:text-sm leading-relaxed">{t("pricing.founder_description")}</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-start sm:items-end gap-2.5 shrink-0 self-start sm:self-auto">
-                <div className="font-display font-bold text-2xl sm:text-3xl text-amber-200 leading-none">{t("pricing.founder_price")}</div>
-                <a
-                  href={PLAY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-[#0A0A1A] text-sm font-semibold hover:bg-amber-300 transition-colors"
-                >
-                  {t("pricing.founder_cta")}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
+          {/* Feature comparison */}
+          <div className="mt-12 rounded-xl border border-white/10 overflow-hidden">
+            <div className="grid grid-cols-[1fr_76px_76px] sm:grid-cols-[1fr_120px_120px] px-4 sm:px-5 py-3 bg-white/[0.03] text-sm font-semibold">
+              <div className="text-muted">{t("pricing.col_feature")}</div>
+              <div className="text-center text-muted">{t("pricing.col_free")}</div>
+              <div className="text-center text-accent">{t("pricing.col_pro")}</div>
             </div>
 
-            {/* Spots bar — static visual promise. The offer opens at launch, so all
-                1,000 spots are still available: a full bar means 1,000 left, not
-                sold out. Not a live counter. */}
-            <div className="mt-5 pt-4 border-t border-amber-400/10">
-              <div className="flex items-center justify-between gap-3 mb-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider">
-                <span className="text-amber-300/90">{t("pricing.founder_badge")}</span>
-                <span className="text-amber-200/80">{t("pricing.founder_spots_left")}</span>
-              </div>
-              <div className="prx-spots-track" aria-hidden="true">
-                <span className="prx-spots-fill" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Pricing cards */}
-        <div className="grid md:grid-cols-2 gap-4 mb-5">
-          {/* Free */}
-          <div className="rounded-2xl border border-white/8 bg-surface/50 p-6">
-            <div className="text-sm font-semibold text-muted uppercase tracking-wider mb-1">{t("pricing.free_label")}</div>
-            <div className="text-3xl font-bold mb-1">{t("pricing.free_price")}</div>
-            <div className="text-xs text-muted mb-4">{t("pricing.free_sublabel")}</div>
-            <div className="text-sm text-muted">{t("pricing.free_description")}</div>
-          </div>
-          {/* Pro */}
-          <div className="plan-pro sweep-outline rounded-2xl p-6 relative">
-            <span className="absolute -top-3 right-4 text-[10px] font-bold uppercase tracking-wider bg-accent text-[#0A0A1A] px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(0,255,106,0.4)]">{t("pricing.pro_badge")}</span>
-            <div className="relative z-10">
-              <div className="text-sm font-semibold text-accent uppercase tracking-wider mb-1">{t("pricing.pro_label")}</div>
-              <div className="text-3xl font-bold mb-1">{t("pricing.pro_price")}<span className="text-base font-normal text-muted">{t("pricing.pro_frequency")}</span></div>
-              <div className="text-xs text-muted mb-4">{t("pricing.pro_sublabel")}</div>
-              <div className="text-sm text-muted">{t("pricing.pro_description")}</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Reassurance row — one line of relief under both cards */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10 text-sm text-white/75">
-          {t("pricing.reassurance").split(" · ").map((item) => (
-            <span key={item} className="inline-flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-accent shrink-0">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              {item}
-            </span>
-          ))}
-        </div>
-
-        {/* Feature comparison */}
-        <div className="rounded-2xl border border-white/5 overflow-hidden">
-          <div className="grid grid-cols-[1fr_60px_60px] sm:grid-cols-[1fr_80px_80px] bg-surface/80 px-4 py-3 border-b border-white/5">
-            <div className="text-xs font-semibold text-muted uppercase tracking-wider">{t("pricing.col_feature")}</div>
-            <div className="text-xs font-semibold text-muted uppercase tracking-wider text-center">{t("pricing.col_free")}</div>
-            <div className="text-xs font-semibold text-accent uppercase tracking-wider text-center">{t("pricing.col_pro")}</div>
-          </div>
-
-          {expanded
-            ? groups.map((g) => (
-                <div key={g.labelKey}>
-                  <div className="flex items-center gap-2 px-4 py-2.5 bg-surface/80 border-b border-white/5">
-                    <span className="w-1 h-1 rounded-[1px] bg-accent/80 shrink-0" aria-hidden="true" />
-                    <span className="font-mono text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
+            {expanded
+              ? groups.map((g) => (
+                  <div key={g.labelKey}>
+                    <div className="px-4 sm:px-5 pt-6 pb-2 border-t border-white/10 text-sm font-semibold text-foreground">
                       {t(g.labelKey)}
-                    </span>
+                    </div>
+                    {g.rows.map((f) => renderRow(f))}
                   </div>
-                  {g.rows.map((f, i) => renderRow(f, i))}
-                </div>
-              ))
-            : highlightRows.map((f, i) => renderRow(f, i))}
+                ))
+              : highlightRows.map((f) => renderRow(f))}
 
-          {/* Expand / collapse toggle */}
-          <button
-            onClick={() => setExpanded((e) => !e)}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-semibold text-accent hover:bg-accent/5 transition-colors border-t border-white/5 group"
-            aria-expanded={expanded}
-          >
-            {expanded ? t("pricing.show_less") : t("pricing.show_all").replace("{count}", String(totalCount))}
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
-              aria-hidden
+            <button
+              onClick={() => setExpanded((e) => !e)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-semibold text-foreground hover:bg-white/[0.03] transition-colors border-t border-white/10"
+              aria-expanded={expanded}
             >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </div>
+              {expanded ? t("pricing.show_less") : t("pricing.show_all").replace("{count}", String(totalCount))}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+                aria-hidden
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+          </div>
 
-        <div className="flex justify-center mt-8">
-          <GooglePlayButton />
+          <div className="mt-10">
+            <GooglePlayButton />
+          </div>
         </div>
       </div>
     </section>

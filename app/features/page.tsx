@@ -5,14 +5,14 @@ import GooglePlayButton from "@/components/GooglePlayButton";
 import FeaturesAll from "@/components/FeaturesAll";
 import Screenshots from "@/components/Screenshots";
 import SpotlightForecast from "@/components/SpotlightForecast";
-import SpotlightArsenal from "@/components/SpotlightArsenal";
+import { PageHero, PageSection } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
 const URL = "https://sweeptrack.pro/features";
 const TITLE = "Every Feature in the SweepTrack Pro Metal Detecting App | SweepTrack Pro";
 const DESCRIPTION =
-  "The full toolkit: GPS tracking, map overlays, Finds Intelligence, the Detecting Forecast, 60+ detector presets, offline maps, Radar, Permission Vault, and 45+ more tools in one Android app.";
+  "The full toolkit: GPS tracking, map overlays, Finds Intelligence, the Detecting Forecast, offline maps, Radar, Permission Vault, and 45+ more tools in one Android app.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,26 +40,13 @@ export default function FeaturesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>
-        <section className="relative pt-12 pb-6 md:pt-20 md:pb-8 overflow-hidden">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <p className="font-mono text-[11px] md:text-xs text-accent/80 tracking-[0.15em] uppercase mb-5">The full toolkit</p>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.08] mb-5 [text-wrap:balance]">
-              Every tool in the <span className="text-accent">metal detecting app.</span>
-            </h1>
-            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed [text-wrap:pretty]">
-              The homepage shows the five big jobs. This is everything: the flagship tools and the 45+ quality-of-life
-              features that ship in the app today.
-            </p>
-            <div className="flex justify-center mt-8"><GooglePlayButton /></div>
-          </div>
-        </section>
+        <PageHero title="Every tool in the metal detecting app" actions={<GooglePlayButton />} note="Android only.">
+          <p>The big tools first, then the 45+ smaller ones that ship in the app today.</p>
+        </PageHero>
 
-        <section className="py-8 md:py-12">
-          <div className="max-w-6xl mx-auto px-6 space-y-16 md:space-y-24">
-            <SpotlightForecast />
-            <SpotlightArsenal />
-          </div>
-        </section>
+        <PageSection>
+          <SpotlightForecast />
+        </PageSection>
 
         <FeaturesAll />
         <Screenshots />

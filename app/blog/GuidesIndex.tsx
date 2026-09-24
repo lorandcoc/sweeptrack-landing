@@ -11,11 +11,10 @@ const posts = [
   { slug: "metal-detecting-permission-letter-template", title: "Permission Letter Template + How to Approach Landowners", excerpt: "A free template that works, plus tips on what to say at the door and how to track your permissions.", tag: "Guide", category: "guides", readTime: "6 min", thumbnail: "/screenshots/permission_vault.jpg" },
   { slug: "how-to-track-metal-detecting-sessions-gps", title: "How to Track Your Detecting Sessions with GPS", excerpt: "Stop wondering where you already walked. GPS tracking shows your path and lets you overlay past sessions.", tag: "Guide", category: "guides", readTime: "4 min", thumbnail: "/screenshots/home.jpg" },
   { slug: "detecting-as-a-group-with-radar", title: "Detecting as a Group: Live Positions with Radar", excerpt: "See your detecting buddies on one live map, with distance, shared waypoints, an SOS, and a shared base point.", tag: "Guide", category: "guides", readTime: "4 min", thumbnail: "/screenshots/radar.jpg" },
-  { slug: "metal-detecting-for-beginners", title: "Metal Detecting for Beginners: What You Need to Know", excerpt: "From picking your first detector to digging your first target, without the overwhelm.", tag: "Beginners", category: "beginners", readTime: "7 min", thumbnail: "/screenshots/presets.jpg" },
+  { slug: "metal-detecting-for-beginners", title: "Metal Detecting for Beginners: What You Need to Know", excerpt: "From picking your first detector to digging your first target, without the overwhelm.", tag: "Beginners", category: "beginners", readTime: "7 min", thumbnail: "/screenshots/home.jpg" },
 
   // ── TIPS ──
   { slug: "best-weather-conditions-for-metal-detecting", title: "Best Weather for Detecting (And When to Stay Home)", excerpt: "Soil moisture, temperature, wind, and pressure all affect your detector. Learn what conditions are ideal.", tag: "Tips", category: "tips", readTime: "4 min", thumbnail: "/screenshots/forecast.jpg" },
-  { slug: "organize-metal-detector-presets-settings", title: "How to Organize Your Detector Settings and Presets", excerpt: "Different fields need different settings. Save, name, and share your configurations.", tag: "Tips", category: "tips", readTime: "3 min", thumbnail: "/screenshots/presets.jpg" },
 
   // ── BEACH ──
   { slug: "beach-metal-detecting-tide-timing", title: "Beach Detecting: Tide Timing & Where to Search", excerpt: "Low tide is when the gold comes out. Learn how to time your sessions and where to swing.", tag: "Beach", category: "beach", readTime: "5 min", thumbnail: "/screenshots/forecast.jpg" },
@@ -26,7 +25,7 @@ const posts = [
   { slug: "using-the-permission-vault", title: "Using the Permission Vault to Manage Permissions", excerpt: "Track landowner approvals, draw site boundaries, set expiry alerts, and generate PDF permission letters.", tag: "Tutorial", category: "tutorials", readTime: "5 min", thumbnail: "/screenshots/permission_vault.jpg" },
   { slug: "downloading-offline-maps", title: "Downloading Offline Maps for Areas Without Cell Service", excerpt: "4 tile sources. Pan, zoom, download. Detect confidently with zero cell coverage.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/offline_maps.jpg" },
   { slug: "using-track-overlay", title: "Using Track Overlay to See Where You Already Walked", excerpt: "Load past sessions onto the live map as color-coded overlay paths. Ten cycling colors make coverage gaps obvious.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/home.jpg" },
-  { slug: "cloud-backup-google-drive", title: "Cloud Backup: Never Lose Your Detecting Data", excerpt: "One tap to back up sessions, presets, permissions, and settings to Google Drive.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/cloud_backup.jpg" },
+  { slug: "cloud-backup-google-drive", title: "Cloud Backup: Never Lose Your Detecting Data", excerpt: "One tap to back up sessions, finds, permissions, and settings to Google Drive.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/cloud_backup.jpg" },
   { slug: "night-vision-mode", title: "Night Vision Mode for Dawn and Dusk Detecting", excerpt: "Red-on-black display preserves your eyes. Toggle it for early morning and late evening sessions.", tag: "Tutorial", category: "tutorials", readTime: "2 min", thumbnail: "/screenshots/night_vision.jpg" },
   { slug: "logging-finds-photo-video-audio", title: "Logging Finds with Photos and Audio Notes", excerpt: "Six find types plus a one-tap Unsorted drop. Pin depth, value, weight, photos, and audio notes to every find.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/stats.jpg" },
   { slug: "comparing-sessions-overlay-split", title: "Comparing Sessions: Overlay and Split View", excerpt: "Stack past sessions or compare side by side to track your progress over time.", tag: "Tutorial", category: "tutorials", readTime: "3 min", thumbnail: "/screenshots/stats.jpg" },
@@ -52,7 +51,7 @@ const posts = [
   { slug: "where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me", excerpt: "How to find detecting spots anywhere: old maps, school yards, churches, fairgrounds, river access, and more.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/offline_maps.jpg" },
 
   // ── GEAR ──
-  { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026", excerpt: "Nokta Simplex+, Minelab Vanquish, Garrett Ace 400, XP ORX, Fisher F44, and Nokta Legend compared.", tag: "Gear", category: "gear", readTime: "7 min", thumbnail: "/screenshots/presets.jpg" },
+  { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026", excerpt: "Nokta Simplex+, Minelab Vanquish, Garrett Ace 400, XP ORX, Fisher F44, and Nokta Legend compared.", tag: "Gear", category: "gear", readTime: "7 min", thumbnail: "/screenshots/history.jpg" },
 ];
 
 const categoryKeys: { id: string; labelKey: TranslationKey }[] = [

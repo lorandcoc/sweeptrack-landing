@@ -50,7 +50,7 @@ export default function Footer() {
                 alt="SweepTrack Pro"
                 width={378}
                 height={95}
-                className="h-10 w-auto logo-pulse"
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-sm mb-5">
@@ -66,7 +66,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-muted hover:text-accent hover:border-accent/30 hover:bg-accent/10 transition-all"
+                  className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-muted hover:text-foreground hover:border-white/25 transition-colors"
                 >
                   {s.icon}
                 </a>
@@ -87,33 +87,18 @@ export default function Footer() {
               <a href="/pricing" className="hover:text-foreground transition-colors">{t("footer.pricing")}</a>
               <a href="/blog" className="hover:text-foreground transition-colors">{t("footer.guides")}</a>
               <a href="/#community" onClick={scrollToHash} className="hover:text-foreground transition-colors">{t("footer.community")}</a>
-              <a
-                href="/pricing"
-                className="mt-1 text-amber-300/80 hover:text-amber-300 transition-colors"
-              >
-                {t("footer.founder_echo")}
-              </a>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-xs text-muted flex-wrap">
-            <p>&copy; {new Date().getFullYear()} SweepTrack Pro</p>
-            <span className="text-white/10">&middot;</span>
-            <span className="text-accent/60">{t("footer.adfree")}</span>
-            <span className="text-white/10">&middot;</span>
-            <span className="signal-live" title={`Build ${process.env.NEXT_PUBLIC_BUILD_SHA} · ${process.env.NEXT_PUBLIC_BUILD_DATE}`}>
-              <span className="signal-live__dot" />
-              BUILD {process.env.NEXT_PUBLIC_BUILD_SHA} · {process.env.NEXT_PUBLIC_BUILD_DATE}
-            </span>
-          </div>
+          <p className="text-xs text-muted">&copy; {new Date().getFullYear()} SweepTrack Pro</p>
           <div className="flex items-center gap-4 text-xs text-muted">
             <a href="/trust" className="hover:text-foreground transition-colors">{t("footer.trust")}</a>
             <a href="/privacy" className="hover:text-foreground transition-colors">{t("footer.privacy")}</a>
             <a href="/terms" className="hover:text-foreground transition-colors">{t("footer.terms")}</a>
-            <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/40 transition-colors">by Loriba</a>
+            <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">by Loriba</a>
           </div>
         </div>
       </div>

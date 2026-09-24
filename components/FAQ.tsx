@@ -1,20 +1,7 @@
 "use client";
 
-import { useReveal } from "./useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 import en from "@/dictionaries/en.json";
-
-// Smooth-scroll without writing to window.location.hash so the back button
-// still leaves the site instead of popping to the previous in-page anchor.
-function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
-  const href = e.currentTarget.getAttribute("href") || "";
-  const id = href.replace(/^[/#]+/, "");
-  if (!id) return;
-  const target = document.getElementById(id);
-  if (!target) return;
-  e.preventDefault();
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
 
 const enDict = en as Record<string, string>;
 
@@ -48,22 +35,33 @@ const faqSchema = {
   })),
 };
 
+const SUPPORT_EMAIL = "support@sweeptrack.pro";
+
 export default function FAQ() {
-  const { ref, visible } = useReveal();
   const { t } = useI18n();
+  // The outro carries an {email} placeholder so each locale can put the
+  // address wherever its grammar wants it.
+  const [outroBefore, outroAfter = ""] = t("faq.outro").split("{email}");
 
   return (
-    <section id="faq" className="py-16 md:py-20 cv-auto">
+    <section id="faq" className="st-rule py-20 md:py-28">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div ref={ref} className={`max-w-3xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
-        <div className="text-center mb-12">
-          <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3">{t("faq.label")}</p>
-          <h2 className="font-display text-3xl md:text-4xl mb-4">
-            {t("faq.heading_prefix")}<span className="text-accent">{t("faq.heading_accent")}</span>?
-          </h2>
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-16">
+        <div>
+          <h2 className="font-display st-h2">{t("faq.heading")}</h2>
+          <p className="mt-5 text-muted leading-relaxed max-w-sm">
+            {outroBefore}
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              className="text-foreground underline decoration-white/30 underline-offset-4 hover:decoration-foreground transition-colors"
+            >
+              {SUPPORT_EMAIL}
+            </a>
+            {outroAfter}
+          </p>
         </div>
 
         <div className="faq-list">
@@ -74,17 +72,6 @@ export default function FAQ() {
             </details>
           ))}
         </div>
-
-        <p className="mt-10 text-center text-sm text-muted">
-          {t("faq.outro")}{" "}
-          <a
-            href="#community"
-            onClick={scrollToHash}
-            className="font-mono text-accent hover:underline underline-offset-4 whitespace-nowrap"
-          >
-            &rarr;&nbsp;#community
-          </a>
-        </p>
       </div>
     </section>
   );

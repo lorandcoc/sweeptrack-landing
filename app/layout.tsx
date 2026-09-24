@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import CursorSweepTrail from "@/components/CursorSweepTrail";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-E8V2DG5WMC";
@@ -23,10 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
   preload: false,
 });
 
-const spaceGrotesk = Space_Grotesk({
+// Headings use a serif that echoes the lettering on the old topo maps the app
+// overlays; body text stays a plain sans like the app UI. Source Serif 4 also
+// covers Cyrillic, which Space Grotesk did not (the /ru headings fell back to
+// a system font). The opsz axis gives large headings their display cut.
+const sourceSerif = Source_Serif_4({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  axes: ["opsz"],
   display: "swap",
 });
 
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     template: "%s | SweepTrack Pro",
   },
   description:
-    "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Permission Vault, Detecting Forecast, 60+ detector presets, and Cloud Backup. Free download, ad-free.",
+    "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Permission Vault, Detecting Forecast, and Cloud Backup. Free download, ad-free.",
   keywords: [
     // Primary searches
     "metal detecting app",
@@ -99,9 +102,6 @@ export const metadata: Metadata = {
     "Nokta Legend app",
     "Nokta Simplex app",
     "Fisher F75 app",
-    "metal detector presets",
-    "metal detector settings app",
-    "metal detector preset import export",
     // Activity searches
     "metal detecting tips",
     "metal detecting for beginners",
@@ -154,10 +154,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased overflow-x-hidden`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${sourceSerif.variable} antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full aurora-bg overflow-x-hidden">
-        <CursorSweepTrail />
+      <body className="min-h-full overflow-x-hidden">
         <div className="relative z-10 flex flex-col min-h-full w-full">{children}</div>
         <Analytics />
         <SpeedInsights />

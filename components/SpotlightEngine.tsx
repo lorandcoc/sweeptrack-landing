@@ -1,6 +1,7 @@
 "use client";
 
 import { useReveal } from "./useReveal";
+import SpotlightCopy from "./SpotlightCopy";
 import { useI18n } from "@/lib/i18n";
 
 /*
@@ -60,42 +61,11 @@ export default function SpotlightEngine() {
     >
       {/* ── Copy (left on desktop) ── */}
       <div>
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent mb-3">
-          {t("spotlight.engine_kicker")}
-        </p>
-        <h3 className="font-display text-2xl md:text-3xl leading-tight mb-4 [text-wrap:balance]">
-          {t("spotlight.engine_title")}
-        </h3>
-        <p className="text-muted text-base leading-relaxed mb-6">
-          {t("spotlight.engine_desc")}
-        </p>
-        <ul className="space-y-3">
-          {BULLET_KEYS.map((key) => (
-            <li
-              key={key}
-              className="flex items-start gap-3 text-sm text-foreground/90 leading-relaxed"
-            >
-              <span
-                className="mt-0.5 w-5 h-5 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 text-accent"
-                aria-hidden="true"
-              >
-                <svg
-                  width="11"
-                  height="11"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
-              {t(key)}
-            </li>
-          ))}
-        </ul>
+        <SpotlightCopy
+          title={t("spotlight.engine_title")}
+          desc={t("spotlight.engine_desc")}
+          bullets={BULLET_KEYS.map((k) => t(k))}
+        />
       </div>
 
       {/* ── Demo (right on desktop) ── */}
@@ -153,7 +123,7 @@ export default function SpotlightEngine() {
                   />
                   <path d={CLEAN_PATH} pathLength={1} className="sex-path sex-clean sex-cl" />
                 </svg>
-                <p className="sex-readout font-mono font-semibold text-base sm:text-lg text-center mt-3 text-accent stat-glow">
+                <p className="sex-readout font-mono font-semibold text-base sm:text-lg text-center mt-3 text-accent">
                   4.2 km
                 </p>
               </div>

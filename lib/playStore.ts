@@ -3,9 +3,8 @@
 // so it can be imported from Server Components, route handlers, and client
 // components alike.
 //
-// NOTE: components/GooglePlayButton.tsx still exports its own PLAY_URL for the
-// download CTAs. Migrate those imports here when convenient so there is truly
-// one source of truth for the listing URL.
+// components/GooglePlayButton.tsx re-exports PLAY_URL from here for client
+// components; Server Components should import it from this file.
 
 export const PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.sweeptrack.native";

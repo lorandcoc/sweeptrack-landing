@@ -23,7 +23,7 @@ export default function Post() {
         publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps for Metal Detecting" },
-          { href: "/blog/organize-metal-detector-presets-settings", title: "Organize Your Detector Settings and Presets" },
+          { href: "/blog/understanding-session-statistics", title: "Understanding Your Session Statistics" },
         ]}
       >
           <p>Ever come back to a field and think &ldquo;did I already walk this row?&rdquo; GPS tracking solves that. It records your exact path in real time, so you know precisely what ground you&apos;ve covered — and more importantly, what you missed.</p>

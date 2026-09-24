@@ -1,16 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FieldLogTicker from "@/components/FieldLogTicker";
+import MapCompareSlider from "@/components/MapCompareSlider";
 import Outcomes from "@/components/Outcomes";
 import HowItWorks from "@/components/HowItWorks";
 import FounderNote from "@/components/FounderNote";
-import StatsBar from "@/components/StatsBar";
 import TrustStrip from "@/components/TrustStrip";
 import PricingTable from "@/components/PricingTable";
 import FAQ from "@/components/FAQ";
 import GuidesTeaser from "@/components/GuidesTeaser";
 import CTA from "@/components/CTA";
-import CommunityLinks from "@/components/CommunityLinks";
 import Footer from "@/components/Footer";
 
 const jsonLdGraph = [
@@ -61,7 +59,7 @@ const jsonLdGraph = [
       "Metal Detector GPS App",
     ],
     description:
-      "Metal detecting GPS app with USGS historical topographic map overlay, custom import-your-own map overlays, Finds Intelligence dashboard, offline maps (4 sources), track overlay, perimeter guard, Waypoints, Radar live group positioning, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 60+ detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
+      "Metal detecting GPS app with USGS historical topographic map overlay, custom import-your-own map overlays, Finds Intelligence dashboard, offline maps (4 sources), track overlay, perimeter guard, Waypoints, Radar live group positioning, permission vault, detecting forecast, NOAA tide tables, and Google Drive backup.",
     offers: [
       {
         "@type": "Offer",
@@ -71,7 +69,7 @@ const jsonLdGraph = [
         availability: "https://schema.org/InStock",
         priceValidUntil: "2027-12-31",
         description:
-          "Core GPS tracking, 10 sessions/month, basic find logging, 5 waypoints, 1 detector preset, 1 Permission Vault entry, 3 themes",
+          "Core GPS tracking, 10 sessions/month, basic find logging, 5 waypoints, 1 Permission Vault entry, 3 themes",
       },
       {
         "@type": "Offer",
@@ -101,8 +99,7 @@ const jsonLdGraph = [
       "Permission vault with 4 status colors, boundary drawing, expiry reminders, and a permission letter generator",
       "Detecting Forecast: 0-100 Detecting Score with 7-day outlook, soil moisture, wind, temperature, humidity, and tips",
       "NOAA tide table with 3, 7, or 14 day ranges from the nearest station",
-      "Google Drive backup and restore of sessions, presets, and settings",
-      "10 detector preset slots with JSON import/export and templates for 60+ detectors across 12 brands",
+      "Google Drive backup and restore of sessions, finds, permissions, and settings",
       "Find logging: free basic record (type, name, notes, 1 photo); Pro full record with value, 0-40 cm depth, weight, signal/VDI, soil type, video, audio notes, and multiple photos",
       "Finds Intelligence dashboard (Pro): finds-per-hour, best time of day, breakdowns by detector and site, total collection value over time, and a value-weighted hot-zone map of your most productive ground",
       "Custom map overlays (Pro): import your own scanned map, parcel sketch, or aerial photo and align it on the live satellite map by drag, pinch, and rotate; precision control-point alignment fits the image with an accuracy readout in meters (Pro feature, unlimited imports)",
@@ -127,8 +124,8 @@ const jsonLdGraph = [
       "https://sweeptrack.pro/screenshots/offline_maps.jpg",
       "https://sweeptrack.pro/screenshots/forecast.jpg",
       "https://sweeptrack.pro/screenshots/permission_vault.jpg",
-      "https://sweeptrack.pro/screenshots/waypoints.jpg",
-      "https://sweeptrack.pro/screenshots/radar.jpg",
+      "https://sweeptrack.pro/screenshots/measure2.jpg",
+      "https://sweeptrack.pro/screenshots/history.jpg",
     ],
     inLanguage: ["en", "ro", "de", "es", "fr", "it", "pt", "nl", "pl", "ru", "da", "sv", "tr", "hu"],
     publisher: { "@id": "https://sweeptrack.pro/#org" },
@@ -198,21 +195,16 @@ export default function LandingPage() {
       />
       <Header />
       <main>
-        <h2 className="sr-only">
-          Metal Detecting GPS App for Android: track every sweep, log finds, and overlay historical maps.
-        </h2>
         <Hero />
-        <FieldLogTicker />
+        <MapCompareSlider />
         <Outcomes />
         <HowItWorks />
         <FounderNote />
-        <StatsBar />
         <TrustStrip />
         <PricingTable />
         <FAQ />
         <GuidesTeaser />
         <CTA />
-        <CommunityLinks />
       </main>
       <Footer />
     </>

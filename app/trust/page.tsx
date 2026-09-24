@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InfoCard from "@/components/InfoCard";
+import { ItemGrid, PageHero, PageSection, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
 
@@ -120,18 +121,12 @@ const MATRIX: [string, string, string, string, string, string][] = [
   ],
 ];
 
-const ICON = {
-  device: (<><rect x="6" y="2" width="12" height="20" rx="2" /><path d="M10 18h4" /></>),
-  noAds: (<><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></>),
-  toggle: (<><rect x="2" y="8" width="20" height="8" rx="4" /><circle cx="8" cy="12" r="2" /></>),
-  lock: (<><rect x="4" y="11" width="16" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></>),
-};
 
 const PRINCIPLES = [
-  { icon: ICON.device, title: "On your device first", body: "Your sessions, finds, and their locations live on your phone, not on our servers." },
-  { icon: ICON.noAds, title: "No ads, no ad trackers", body: "No advertising, no third-party advertising trackers, and we never sell your data." },
-  { icon: ICON.toggle, title: "Diagnostics are opt-in", body: "Crash and usage diagnostics are off by default, anonymized, and coordinate-scrubbed when you turn them on." },
-  { icon: ICON.lock, title: "Backups only you can open", body: "A backup writes to your own Google Drive, which the app can't read. Add a passphrase and it's AES-256 encrypted on your phone before it uploads." },
+  { title: "On your device first", body: "Your sessions, finds, and their locations live on your phone, not on our servers." },
+  { title: "No ads, no ad trackers", body: "No advertising, no third-party advertising trackers, and we never sell your data." },
+  { title: "Diagnostics are opt-in", body: "Crash and usage diagnostics are off by default, anonymized, and coordinate-scrubbed when you turn them on." },
+  { title: "Backups only you can open", body: "A backup writes to your own Google Drive, which the app can't read. Add a passphrase and it's AES-256 encrypted on your phone before it uploads." },
 ];
 
 export default function TrustPage() {
@@ -141,113 +136,78 @@ export default function TrustPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>
-        {/* Hero */}
-        <section className="relative pt-12 pb-10 md:pt-20 md:pb-12 overflow-hidden">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <p className="font-mono text-[11px] md:text-xs text-accent/80 tracking-[0.15em] uppercase mb-5">
-              Trust Center
-            </p>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.08] mb-5 [text-wrap:balance]">
-              Your data, <span className="text-accent">in plain English.</span>
-            </h1>
-            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed [text-wrap:pretty]">
-              Detectorists guard their spots. So here is exactly what SweepTrack stores, what stays on your phone, what
-              leaves it and why, and what you control. No policy fog.
-            </p>
-          </div>
-        </section>
+        <PageHero title="What happens to your data">
+          <p>
+            Detectorists guard their spots. So here is exactly what SweepTrack stores, what stays on your phone, what
+            leaves it and why, and what you control.
+          </p>
+        </PageHero>
 
-        {/* Principles */}
-        <section className="py-12 md:py-16">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {PRINCIPLES.map((p) => (
-                <InfoCard key={p.title} icon={p.icon} title={p.title} body={p.body} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <PageSection>
+          <ItemGrid>
+            {PRINCIPLES.map((p) => (
+              <InfoCard key={p.title} title={p.title} body={p.body} />
+            ))}
+          </ItemGrid>
+        </PageSection>
 
-        {/* Data-flow matrix */}
-        <section className="py-12 md:py-16 bg-surface/20">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-10">
-              <h2 className="font-display text-3xl md:text-4xl mb-4">
-                Where every piece of data <span className="text-accent">goes.</span>
-              </h2>
-              <p className="text-muted text-lg max-w-2xl mx-auto">
-                One row per feature. If a row says data leaves your phone, it says exactly where and why.
-              </p>
-            </div>
-
-            <div className="overflow-x-auto rounded-2xl border border-white/[0.07]">
-              <table className="w-full min-w-[820px] text-left text-sm border-collapse">
-                <thead>
-                  <tr className="bg-surface/80">
-                    {["Feature", "Data used", "Where it's stored", "Shared with", "Retention", "Your control"].map((h) => (
-                      <th key={h} className="px-4 py-3 font-semibold text-xs uppercase tracking-wider text-muted border-b border-white/[0.07] whitespace-nowrap">
-                        {h}
-                      </th>
+        <PageSection
+          title="Where each piece of data goes"
+          intro="One row per feature. If a row says data leaves your phone, it says exactly where and why."
+        >
+          <div className="overflow-x-auto rounded-xl border border-white/10">
+            <table className="w-full min-w-[820px] text-left text-sm border-collapse">
+              <thead>
+                <tr className="bg-white/[0.03]">
+                  {["Feature", "Data used", "Where it's stored", "Shared with", "Retention", "Your control"].map((h) => (
+                    <th key={h} className="px-4 py-3 font-semibold text-foreground whitespace-nowrap">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {MATRIX.map((row) => (
+                  <tr key={row[0]} className="border-t border-white/[0.07]">
+                    <td className="px-4 py-3 align-top font-semibold text-foreground/90">{row[0]}</td>
+                    {row.slice(1).map((cell, j) => (
+                      <td key={j} className="px-4 py-3 align-top text-muted leading-relaxed">{cell}</td>
                     ))}
                   </tr>
-                </thead>
-                <tbody>
-                  {MATRIX.map((row, i) => (
-                    <tr key={row[0]} className={i % 2 === 0 ? "bg-white/[0.01]" : "bg-white/[0.03]"}>
-                      <td className="px-4 py-3 align-top font-semibold text-white/90 border-b border-white/[0.05]">{row[0]}</td>
-                      {row.slice(1).map((cell, j) => (
-                        <td key={j} className="px-4 py-3 align-top text-muted leading-relaxed border-b border-white/[0.05]">{cell}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </section>
+        </PageSection>
 
-        {/* What Google Play's labels mean */}
-        <section className="py-12 md:py-16">
-          <div className="max-w-3xl mx-auto px-6">
-            <div className="text-center mb-8">
-              <h2 className="font-display text-2xl md:text-3xl mb-4">
-                What the Google Play labels <span className="text-accent">mean.</span>
-              </h2>
-            </div>
-            <div className="rounded-2xl p-6 bg-surface border border-white/[0.07]">
-              <p className="text-muted text-sm leading-relaxed mb-4">
-                The app&apos;s Google Play listing carries a Data safety section because a few features send data off your
-                phone by design. Radar shares your live position with the group you join. The forecast and tide tools ask
-                a weather provider for data by location. Optional diagnostics, when you switch them on, send anonymized
-                crash and usage data.
-              </p>
-              <p className="text-muted text-sm leading-relaxed">
-                That is the whole of it. Your finds and their locations stay on your device, nothing is sold, and nothing
-                feeds advertising. If a Play label looks broader than what you read here, it is covering those specific,
-                optional flows.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Your controls + links */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <h2 className="font-display text-2xl md:text-3xl mb-4">
-              You&apos;re in <span className="text-accent">control.</span>
-            </h2>
-            <p className="text-muted text-lg max-w-2xl mx-auto mb-8">
-              Export your data to GPX, KML, CSV, or JSON anytime. Delete any session, find, waypoint, or overlay. Leave a
-              Radar group with one tap. Keep diagnostics off for good.
+        <PageSection title="What the Google Play labels mean">
+          <div className="max-w-2xl space-y-4 text-muted leading-relaxed">
+            <p>
+              The app&apos;s Google Play listing carries a Data safety section because a few features send data off your
+              phone by design. Radar shares your live position with the group you join. The forecast and tide tools ask a
+              weather provider for data by location. Optional diagnostics, when you switch them on, send anonymized crash
+              and usage data.
             </p>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm">
-              <a href="/privacy" className="text-accent hover:underline">Privacy Policy</a>
-              <a href="/privacy-radar" className="text-accent hover:underline">Radar Privacy Policy</a>
-              <a href="/data-deletion" className="text-accent hover:underline">Data Deletion</a>
-              <a href="/terms" className="text-accent hover:underline">Terms of Service</a>
-            </div>
+            <p>
+              That is the whole of it. Your finds and their locations stay on your device, nothing is sold, and nothing
+              feeds advertising. If a Play label looks broader than what you read here, it is covering those specific,
+              optional flows.
+            </p>
           </div>
-        </section>
+        </PageSection>
+
+        <PageSection title="What you control">
+          <p className="max-w-2xl text-muted text-lg leading-relaxed">
+            Export your data to GPX, KML, CSV, or JSON anytime. Delete any session, find, waypoint, or overlay. Leave a
+            Radar group with one tap. Keep diagnostics off for good.
+          </p>
+          <p className="mt-8 flex flex-wrap gap-x-7 gap-y-3">
+            <TextLink href="/privacy">Privacy Policy</TextLink>
+            <TextLink href="/privacy-radar">Radar Privacy Policy</TextLink>
+            <TextLink href="/data-deletion">Data Deletion</TextLink>
+            <TextLink href="/terms">Terms of Service</TextLink>
+          </p>
+        </PageSection>
       </main>
       <Footer />
     </I18nProvider>
