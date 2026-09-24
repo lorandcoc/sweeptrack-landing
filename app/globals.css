@@ -103,49 +103,6 @@ body {
    `reveal`/`visible` classes remain on some components only because their
    `visible` flag also starts a demo animation when it scrolls into view. */
 
-/* ── Sweep outline — accent ping orbiting a card border ── */
-@property --sweep-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-@keyframes sweepOrbit {
-  to { --sweep-angle: 360deg; }
-}
-.sweep-outline {
-  position: relative;
-}
-.sweep-outline::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: conic-gradient(
-    from var(--sweep-angle),
-    transparent 0%,
-    rgba(0, 255, 106, 0.4) 3%,
-    var(--accent) 5%,
-    rgba(0, 255, 106, 0.4) 7%,
-    transparent 10%,
-    transparent 100%
-  );
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
-  pointer-events: none;
-  animation: sweepOrbit 8s linear infinite;
-}
-/* Subtle static glow behind the ping card */
-.sweep-outline::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  border: 1px solid rgba(0, 255, 106, 0.12);
-  pointer-events: none;
-}
-
 /* ── Phone mockup frame ── */
 .phone-frame {
   position: relative;
@@ -237,47 +194,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.2);
 }
 
-/* ── Scrollbar hide ── */
-.screenshot-scroll {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.screenshot-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* ── Screenshot 3D carousel ── */
-.screenshot-perspective {
-  perspective: 1200px;
-}
-.screenshot-3d {
-  transition: transform 0.5s ease, opacity 0.3s ease;
-  transform-style: preserve-3d;
-}
-.screenshot-3d.is-before {
-  transform: scale(0.92) rotateY(4deg);
-  opacity: 0.6;
-}
-.screenshot-3d.is-after {
-  transform: scale(0.92) rotateY(-4deg);
-  opacity: 0.6;
-}
-.screenshot-3d.is-active {
-  transform: scale(1.35) rotateY(0deg);
-  opacity: 1;
-  position: relative;
-  z-index: 10;
-}
-.screenshot-3d.is-far {
-  transform: scale(0.88) rotateY(0deg);
-  opacity: 0.4;
-}
-
-/* ── Stat counter ── */
-.stat-glow {
-  text-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
-}
-
 /* ── content-visibility utility for below-fold sections ── */
 .cv-auto {
   content-visibility: auto;
@@ -305,40 +221,6 @@ details:focus-visible > summary {
   pointer-events: none;
   z-index: 9999;
   display: none;
-}
-
-/* ── CTA radar pulse rings ── */
-.radar-rings {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: inherit;
-}
-.radar-ring {
-  position: absolute;
-  width: 100px; height: 100px;
-  border: 1px solid rgba(0,255,106,0.4);
-  border-radius: 50%;
-  animation: radar-pulse 12s var(--st-ease-out) infinite;
-}
-.radar-ring:nth-child(2) { animation-delay: 3s; }
-.radar-ring:nth-child(3) { animation-delay: 6s; }
-.radar-ring:nth-child(4) { animation-delay: 9s; }
-.radar-pin {
-  position: absolute; left: 50%; top: 50%;
-  width: 12px; height: 12px;
-  margin: -6px;
-  border-radius: 50%;
-  background: var(--st-accent);
-  box-shadow: 0 0 24px var(--st-accent), 0 0 0 2px rgba(0,255,106,0.25);
-}
-@keyframes radar-pulse {
-  0%   { transform: scale(0.6); opacity: 0.8; }
-  100% { transform: scale(8);   opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .radar-ring { animation: none; opacity: 0; }
 }
 
 /* ── FAQ (native <details>) styles ── */
@@ -383,67 +265,6 @@ details:focus-visible > summary {
 .legal-prose h2 { margin-top: 2.5rem; }
 .legal-prose p + p { margin-top: 0; }
 .legal-prose p.uppercase { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
-
-/* ── Screenshots carousel chrome (scrx-) ── */
-/* Active-slide benefit caption: fades + lifts in on each slide change. The
-   `key` prop in the component remounts this node so the animation re-fires. */
-.scrx-caption {
-  animation: scrx-cap-in 0.45s var(--st-ease-out) both;
-}
-@keyframes scrx-cap-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Prev / next arrow buttons — >=44px touch targets, hairline border, accent
-   on hover/focus. */
-.scrx-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.75);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition:
-    color 220ms var(--st-ease),
-    border-color 220ms var(--st-ease),
-    background 220ms var(--st-ease),
-    transform 220ms var(--st-ease);
-}
-.scrx-arrow:hover {
-  color: var(--st-accent);
-  border-color: var(--st-accent-edge, rgba(0, 255, 106, 0.4));
-  background: rgba(0, 255, 106, 0.06);
-}
-.scrx-arrow:focus-visible {
-  outline: none;
-  color: var(--st-accent);
-  border-color: var(--st-accent-edge, rgba(0, 255, 106, 0.4));
-  box-shadow: 0 0 0 3px rgba(0, 255, 106, 0.18);
-}
-.scrx-arrow:active {
-  transform: scale(0.94);
-}
-
-.scrx-counter {
-  min-width: 4.5ch;
-  text-align: center;
-  letter-spacing: 0.04em;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scrx-caption {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  .scrx-arrow {
-    transition: none;
-  }
-}
 
 /* ════════════════════════════════════════════════════════════════════
    Radar section (RadarSection.tsx) — rgx2- namespace.
@@ -1700,33 +1521,6 @@ details:focus-visible > summary {
   .rgx-float { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* accent-underline — subtle draw-in underline under accent heading words.
-   Previously referenced in Screenshots/RadarSection headings but undefined. */
-.accent-underline {
-  position: relative;
-  white-space: nowrap;
-}
-.accent-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.12em;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--st-accent), transparent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 700ms var(--st-ease-out) 150ms;
-}
-.reveal.visible .accent-underline::after,
-.visible .accent-underline::after {
-  transform: scaleX(1);
-}
-@media (prefers-reduced-motion: reduce) {
-  .accent-underline::after { transition: none; transform: scaleX(1); }
-}
-
 /* ════════════════════════════════════════════════════════════════════
    Pro 2.0 spotlights — SpotlightFindsIntel (sfi-) · SpotlightMapOverlay (smo-)
    Hot-zone scatter + own-map alignment demos.
@@ -2139,26 +1933,3 @@ details:focus-visible > summary {
   .spa-meter__fill { animation: none !important; transform: scaleX(1); }
   .spa-rms { animation: none !important; opacity: 1; }
 }
-
-/* ─────────────────── InfoCard / StepCard · ic- ─────────────────── */
-.ic-glow {
-  position: absolute;
-  top: -45px; right: -45px;
-  width: 130px; height: 130px;
-  border-radius: 50%;
-  background: var(--ic);
-  opacity: 0;
-  filter: blur(48px);
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-}
-.ic-card:hover .ic-glow { opacity: 0.16; }
-.ic-card:hover { border-color: color-mix(in srgb, var(--ic) 35%, transparent); }
-.ic-topline {
-  position: absolute; left: 0; right: 0; top: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--ic), transparent);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-.ic-card:hover .ic-topline { opacity: 0.85; }

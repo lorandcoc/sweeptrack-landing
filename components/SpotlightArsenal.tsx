@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useReveal } from "./useReveal";
+import SpotlightCopy from "./SpotlightCopy";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 /*
@@ -243,42 +244,11 @@ export default function SpotlightArsenal() {
 
       {/* Copy — first on mobile, right on desktop */}
       <div className="order-1 md:order-2">
-        <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-accent mb-3">
-          {t("spotlight.arsenal_kicker")}
-        </p>
-        <h3 className="font-display text-2xl md:text-[2rem] leading-tight mb-4 [text-wrap:balance]">
-          {t("spotlight.arsenal_title")}
-        </h3>
-        <p className="text-muted text-base leading-relaxed mb-6">
-          {t("spotlight.arsenal_desc")}
-        </p>
-        <ul className="space-y-3">
-          {([1, 2, 3, 4] as const).map((n) => (
-            <li key={n} className="flex items-start gap-3">
-              <span
-                className="mt-0.5 w-[18px] h-[18px] rounded-[5px] border border-accent/30 bg-accent/10 flex items-center justify-center shrink-0"
-                aria-hidden="true"
-              >
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--st-accent)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12l5 5L20 7" />
-                </svg>
-              </span>
-              <span className="text-sm md:text-[15px] text-foreground/90 leading-relaxed">
-                {t(`spotlight.arsenal_b${n}` as TranslationKey)}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <SpotlightCopy
+          title={t("spotlight.arsenal_title")}
+          desc={t("spotlight.arsenal_desc")}
+          bullets={([1, 2, 3, 4] as const).map((n) => t(`spotlight.arsenal_b${n}` as TranslationKey))}
+        />
       </div>
     </div>
   );

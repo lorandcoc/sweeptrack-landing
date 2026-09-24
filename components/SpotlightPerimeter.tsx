@@ -2,6 +2,7 @@
 
 import type { CSSProperties } from "react";
 import { useReveal } from "./useReveal";
+import SpotlightCopy from "./SpotlightCopy";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 /*
@@ -68,25 +69,11 @@ export default function SpotlightPerimeter() {
     >
       {/* ── Copy column ── */}
       <div className="order-1">
-        <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.22em] text-accent mb-3">
-          {t("spotlight.perim_kicker")}
-        </p>
-        <h3 className="font-display text-2xl md:text-3xl leading-tight mb-4 [text-wrap:balance]">
-          {t("spotlight.perim_title")}
-        </h3>
-        <p className="text-muted text-base leading-relaxed mb-6">{t("spotlight.perim_desc")}</p>
-        <ul className="space-y-3">
-          {BULLETS.map((k) => (
-            <li key={k} className="flex items-start gap-3">
-              <span className="w-5 h-5 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
-                <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3.5 8.5l3 3 6-7" stroke="var(--st-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <span className="text-sm md:text-[15px] text-muted leading-relaxed">{t(k)}</span>
-            </li>
-          ))}
-        </ul>
+        <SpotlightCopy
+          title={t("spotlight.perim_title")}
+          desc={t("spotlight.perim_desc")}
+          bullets={BULLETS.map((k) => t(k))}
+        />
       </div>
 
       {/* ── Demo column ── */}

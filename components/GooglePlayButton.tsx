@@ -1,14 +1,14 @@
 "use client";
 
 import { useI18n } from "@/lib/i18n";
+import { PLAY_URL } from "@/lib/playStore";
 
 /**
- * Canonical Play Store listing for the app (open testing as of launch).
- * Single source of truth — imported by every download CTA and the JSON-LD
- * downloadUrl so the link is never duplicated by hand.
+ * Re-exported for the client components that already import it from here.
+ * Server Components must import it from @/lib/playStore instead: from this
+ * "use client" module they get a client reference, not the string.
  */
-export const PLAY_URL =
-  "https://play.google.com/store/apps/details?id=com.sweeptrack.native";
+export { PLAY_URL };
 
 /**
  * Primary "Get it on Google Play" CTA. Replaced the pre-launch waitlist

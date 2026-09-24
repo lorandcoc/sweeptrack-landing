@@ -1,6 +1,7 @@
 "use client";
 
 import { useReveal } from "./useReveal";
+import SpotlightCopy from "./SpotlightCopy";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 /*
@@ -44,27 +45,11 @@ export default function SpotlightVault() {
     >
       {/* ── Copy — first in DOM (mobile first), right column on desktop ── */}
       <div className="md:order-2">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-3">
-          {t("spotlight.vault_kicker")}
-        </p>
-        <h3 className="font-display text-2xl md:text-3xl leading-tight mb-4 [text-wrap:balance]">
-          {t("spotlight.vault_title")}
-        </h3>
-        <p className="text-muted text-base leading-relaxed mb-7 max-w-prose">
-          {t("spotlight.vault_desc")}
-        </p>
-        <ul className="space-y-3.5">
-          {BULLET_KEYS.map((k) => (
-            <li key={k} className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-accent/30 bg-accent/10 text-accent">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-              </span>
-              <span className="text-sm md:text-[15px] leading-relaxed text-white/85">{t(k)}</span>
-            </li>
-          ))}
-        </ul>
+        <SpotlightCopy
+          title={t("spotlight.vault_title")}
+          desc={t("spotlight.vault_desc")}
+          bullets={BULLET_KEYS.map((k) => t(k))}
+        />
       </div>
 
       {/* ── Demo — left column on desktop ── */}

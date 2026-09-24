@@ -7,7 +7,7 @@ import { getDictionary, isLocale, type LocaleCode } from "@/lib/getDictionary";
 export const metadata: Metadata = {
   title: "Data Deletion Request",
   description:
-    "How to delete your SweepTrack Pro data — on-device, Google Drive backups, Firebase opt-in telemetry, RevenueCat subscription records, and waitlist email. Self-service steps plus an email-request path to support@sweeptrack.pro.",
+    "How to delete your SweepTrack Pro data: on-device, Google Drive backups, Firebase opt-in telemetry, RevenueCat subscription records, and waitlist email. Self-service steps plus an email-request path to support@sweeptrack.pro.",
 };
 
 async function detectLocale(): Promise<LocaleCode> {

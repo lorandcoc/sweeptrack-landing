@@ -7,7 +7,7 @@ import { getDictionary, isLocale, type LocaleCode } from "@/lib/getDictionary";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for SweepTrack Pro. Data stored locally on your device; the app's analytics and crash reporting are opt-in and off by default. Website uses privacy-respecting Vercel Analytics — no cookies, no personal IPs.",
+    "Privacy Policy for SweepTrack Pro. Data stored locally on your device; the app's analytics and crash reporting are opt-in and off by default. Website uses privacy-respecting Vercel Analytics, with no cookies and no personal IPs.",
 };
 
 async function detectLocale(): Promise<LocaleCode> {

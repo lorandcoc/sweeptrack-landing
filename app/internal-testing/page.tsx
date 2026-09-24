@@ -49,11 +49,11 @@ export default function InternalTestingPage() {
           </p>
 
           <h1 className="font-display text-4xl md:text-6xl leading-[1.05] mb-8 [text-wrap:balance]">
-            First boots <span className="text-accent">on the ground.</span>
+            First boots on the ground
           </h1>
 
           <p className="text-muted text-lg md:text-xl mb-5 leading-relaxed [text-wrap:pretty]">
-            Before SweepTrack Pro reaches Play Store search, it lands here — with the first detectorists to install it, walk it through real sites, and tell me what cracked.
+            Before SweepTrack Pro reaches Play Store search, it lands here, with the first detectorists to install it, walk it through real sites, and tell me what cracked.
           </p>
 
           <p className="text-muted text-base md:text-lg mb-10 leading-relaxed [text-wrap:pretty]">
@@ -64,7 +64,7 @@ export default function InternalTestingPage() {
             href={PLAY_INTERNAL_TEST_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-accent text-[#050510] font-semibold text-lg hover:bg-accent-dim transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-lg bg-accent text-[#050510] font-semibold text-lg hover:bg-accent-dim transition-colors"
           >
             Get the build
             <svg

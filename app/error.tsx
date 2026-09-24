@@ -16,7 +16,7 @@ export default function Error({ reset }: { error: Error & { digest?: string }; r
         <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Something went wrong</p>
         <h1 className="font-display text-4xl md:text-5xl mb-4">Unexpected error</h1>
         <p className="text-muted mb-8 leading-relaxed">
-          Something broke on our end. Try reloading — if it keeps happening, let us know.
+          Something broke on our end. Try reloading, and if it keeps happening, let us know.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
