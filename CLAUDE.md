@@ -19,6 +19,7 @@ Before writing ANY code, run `git log --oneline -10` and `git diff HEAD` to unde
 - `components/MapCompareSlider.tsx`: historical topo vs satellite comparison (real app screens)
 - `components/Spotlight*.tsx` + `SpotlightCopy.tsx`: animated feature diagrams sharing one copy column
 - `dictionaries/*.json`: 14 locales; every file must have the same key set
+- `lib/playStore.ts`: Google Play URLs. Links on the site use `useSitePlayUrl()` (client) or `sitePlayUrl("page")` (server) so Play Console attributes installs per page; only JSON-LD uses the bare `PLAY_URL`
 
 ## Design Rules (keep the site from looking generated)
 - Headings are left-aligned serif (`font-display`), one color, no trailing period. Never color the last words of a heading green.

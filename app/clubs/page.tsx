@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
-import { PLAY_URL } from "@/lib/playStore";
+import { sitePlayUrl } from "@/lib/playStore";
 import InfoCard, { StepCard } from "@/components/InfoCard";
 import { ButtonLink, ItemGrid, PageClosing, PageHero, PageSection, PlanCompare, TextLink } from "@/components/PageSection";
 
@@ -173,7 +173,7 @@ export default function ClubsPage() {
           actions={
             <>
               <ButtonLink href={CLUB_MAILTO}>Tell us about your club</ButtonLink>
-              <TextLink href={PLAY_URL}>Get SweepTrack Pro</TextLink>
+              <TextLink href={sitePlayUrl("clubs")}>Get SweepTrack Pro</TextLink>
             </>
           }
         >

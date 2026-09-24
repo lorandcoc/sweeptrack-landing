@@ -1,10 +1,11 @@
 "use client";
 
 import { useI18n } from "@/lib/i18n";
-import { PLAY_URL } from "./GooglePlayButton";
+import { useSitePlayUrl } from "./GooglePlayButton";
 
 export default function FounderNote() {
   const { t } = useI18n();
+  const playUrl = useSitePlayUrl();
 
   return (
     <section className="st-rule py-20 md:py-28">
@@ -28,7 +29,7 @@ export default function FounderNote() {
           </p>
           <p className="mt-8">
             <a
-              href={PLAY_URL}
+              href={playUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent transition-colors"

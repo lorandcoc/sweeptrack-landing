@@ -3,11 +3,34 @@
 // so it can be imported from Server Components, route handlers, and client
 // components alike.
 //
-// components/GooglePlayButton.tsx re-exports PLAY_URL from here for client
-// components; Server Components should import it from this file.
+// Links on this site use sitePlayUrl() so Play Console can attribute installs
+// to the page they came from. Only structured data (JSON-LD downloadUrl) keeps
+// the bare PLAY_URL. Client components get the current page's URL from
+// useSitePlayUrl() in components/GooglePlayButton.tsx.
 
 export const PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.sweeptrack.native";
+
+/**
+ * Play URL for a link on sweeptrack.pro, tagged with the page it sits on.
+ * Play Console -> Acquisition reports then show installs per utm_campaign
+ * (e.g. "home", "pricing", "blog-metal-detecting-permission-letter-template").
+ */
+export function sitePlayUrl(campaign: string): string {
+  const referrer = `utm_source=sweeptrack.pro&utm_medium=website&utm_campaign=${campaign}`;
+  return `${PLAY_URL}&referrer=${encodeURIComponent(referrer)}`;
+}
+
+/** Campaign name for a site path: "/" -> "home", "/ro" -> "ro", "/blog/a-post" -> "blog-a-post". */
+export function playCampaignForPath(pathname: string | null | undefined): string {
+  const slug = (pathname ?? "")
+    .toLowerCase()
+    .replace(/^\/+|\/+$/g, "")
+    .replace(/\//g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .slice(0, 80);
+  return slug || "home";
+}
 
 /**
  * Build a Google Play campaign-attribution URL for a SweepTrack Field Band (or

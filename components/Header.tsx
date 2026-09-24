@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle";
-import { PLAY_URL } from "./GooglePlayButton";
+import { useSitePlayUrl } from "./GooglePlayButton";
 
 /**
  * Smooth-scroll to the hash target without modifying window.location.hash.
@@ -23,6 +23,7 @@ function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
 
 export default function Header() {
   const { t } = useI18n();
+  const playUrl = useSitePlayUrl();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -103,7 +104,7 @@ export default function Header() {
           ))}
           <LanguageToggle />
           <a
-            href={PLAY_URL}
+            href={playUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold px-4 py-2 rounded-lg bg-accent text-[#050510] hover:bg-accent-dim transition-colors"
@@ -155,7 +156,7 @@ export default function Header() {
             <LanguageToggle />
           </div>
           <a
-            href={PLAY_URL}
+            href={playUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold px-4 py-2.5 rounded-lg bg-accent text-[#050510] text-center hover:bg-accent-dim transition-colors"

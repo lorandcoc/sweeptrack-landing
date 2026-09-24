@@ -4,9 +4,11 @@ import { LOCALES, NON_EN_LOCALES, localeUrl } from "@/lib/getDictionary";
 
 const BASE = "https://sweeptrack.pro";
 
-// Date the landing page itself was last meaningfully refreshed. Bump when the
-// homepage copy or sections change. Blog post dates come from POSTS.
-const SITE_LAST_MODIFIED = "2026-07-09";
+// Date the landing and feature pages were last meaningfully refreshed. Bump
+// when their copy or sections change. Blog post dates come from POSTS.
+const SITE_LAST_MODIFIED = "2026-09-24";
+// Legal pages move on their own schedule. Bump when their text changes.
+const LEGAL_LAST_MODIFIED = "2026-07-09";
 
 // hreflang alternates for the homepage across all 14 locales (English at /,
 // others at /<code>), plus x-default → English. The locale homepages are
@@ -43,9 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     { url: `${BASE}/trust`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${BASE}/privacy`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/privacy-radar`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/terms`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/data-deletion`, lastModified: SITE_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/privacy`, lastModified: LEGAL_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/privacy-radar`, lastModified: LEGAL_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/terms`, lastModified: LEGAL_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/data-deletion`, lastModified: LEGAL_LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

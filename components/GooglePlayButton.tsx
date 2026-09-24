@@ -1,14 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useI18n } from "@/lib/i18n";
-import { PLAY_URL } from "@/lib/playStore";
+import { playCampaignForPath, sitePlayUrl } from "@/lib/playStore";
 
 /**
- * Re-exported for the client components that already import it from here.
- * Server Components must import it from @/lib/playStore instead: from this
- * "use client" module they get a client reference, not the string.
+ * Play URL tagged with the current page, for client components. Server
+ * Components call sitePlayUrl("<page>") from @/lib/playStore instead.
  */
-export { PLAY_URL };
+export function useSitePlayUrl(): string {
+  return sitePlayUrl(playCampaignForPath(usePathname()));
+}
 
 /**
  * Primary "Get it on Google Play" CTA. Replaced the pre-launch waitlist
@@ -22,11 +24,12 @@ export default function GooglePlayButton({
   size?: "default" | "large";
 }) {
   const { t } = useI18n();
+  const href = useSitePlayUrl();
   const padClass = size === "large" ? "px-7 py-4 text-lg" : "px-6 py-3.5 text-base";
 
   return (
     <a
-      href={PLAY_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-2.5 ${padClass} rounded-lg bg-accent text-[#050510] font-semibold hover:bg-accent-dim transition-colors ${className}`}
