@@ -1,93 +1,41 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useReveal } from "./useReveal";
 import { useI18n } from "@/lib/i18n";
 import { PLAY_URL } from "./GooglePlayButton";
 
 export default function FounderNote() {
-  const { ref: revealRef, visible } = useReveal();
   const { t } = useI18n();
-  const quote = t("foundernote.quote");
-
-  const quoteRef = useRef<HTMLParagraphElement>(null);
-  const [typed, setTyped] = useState("");
-
-  useEffect(() => {
-    const el = quoteRef.current;
-    if (!el) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      setTyped(quote);
-      return;
-    }
-
-    let started = false;
-    let cancelled = false;
-    let timer: ReturnType<typeof setTimeout> | null = null;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting && !started) {
-            started = true;
-            let i = 0;
-            const step = () => {
-              if (cancelled) return;
-              setTyped(quote.slice(0, i));
-              i++;
-              if (i <= quote.length) {
-                timer = setTimeout(step, 12);
-              }
-            };
-            step();
-            io.disconnect();
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    io.observe(el);
-
-    return () => {
-      cancelled = true;
-      if (timer) clearTimeout(timer);
-      io.disconnect();
-    };
-  }, [quote]);
 
   return (
-    <section className="py-16 md:py-20 cv-auto">
-      <div ref={revealRef} className={`max-w-3xl mx-auto px-6 reveal ${visible ? "visible" : ""}`}>
-        <div className="founder-term">
-          <div className="founder-term__head">
-            <span className="founder-term__dot r" />
-            <span className="founder-term__dot y" />
-            <span className="founder-term__dot g" />
-            <span className="founder-term__title">~/sweeptrack/note-from-the-founder.txt</span>
-          </div>
-          <div className="founder-term__body">
-            <div className="founder-term__avatar" aria-hidden="true">L</div>
-            <div>
-              <p ref={quoteRef} className="founder-term__quote">
-                {typed}
-                <span className="founder-term__cursor" aria-hidden="true">▊</span>
-              </p>
-              <p
-                className="founder-term__quote transition-opacity duration-700"
-                style={{ opacity: typed.length >= quote.length ? 1 : 0 }}
-              >
-                <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                  {t("foundernote.cta")} →
-                </a>
-              </p>
-              <div className="founder-term__attr">
-                <strong>Lorand</strong>
-                <span>·</span>
-                <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">lorand.cc</a>
-              </div>
-            </div>
-          </div>
+    <section className="st-rule py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-6 md:gap-16">
+        <h2 className="font-display st-h2">{t("foundernote.heading")}</h2>
+        <div className="max-w-2xl">
+          <blockquote className="text-lg md:text-xl leading-relaxed text-foreground/90 [text-wrap:pretty]">
+            <p>{t("foundernote.quote")}</p>
+          </blockquote>
+          <p className="mt-6 text-muted">
+            <span className="text-foreground font-semibold">Lorand</span>
+            <span className="mx-2" aria-hidden="true">·</span>
+            <a
+              href="https://lorand.cc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/30 underline-offset-4 hover:text-foreground hover:decoration-foreground transition-colors"
+            >
+              lorand.cc
+            </a>
+          </p>
+          <p className="mt-8">
+            <a
+              href={PLAY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent transition-colors"
+            >
+              {t("foundernote.cta")}
+            </a>
+          </p>
         </div>
       </div>
     </section>

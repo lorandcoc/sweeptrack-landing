@@ -25,7 +25,6 @@ export default function Header() {
   const { t } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   const navLinks = [
     { label: t("header.nav_features"), href: "/features" },
@@ -36,14 +35,11 @@ export default function Header() {
   ];
 
   useEffect(() => {
-    let docHeight = document.documentElement.scrollHeight - window.innerHeight;
     let pending = false;
 
     const apply = () => {
       pending = false;
-      const y = window.scrollY;
-      setScrolled(y > 20);
-      setScrollProgress(docHeight > 0 ? (y / docHeight) * 100 : 0);
+      setScrolled(window.scrollY > 20);
     };
 
     const onScroll = () => {
@@ -52,17 +48,8 @@ export default function Header() {
       requestAnimationFrame(apply);
     };
 
-    const onResize = () => {
-      docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      onScroll();
-    };
-
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   // Close menu on scroll or Escape so the menu doesn't trap users who
@@ -85,8 +72,8 @@ export default function Header() {
     <header
       className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#050510]/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
-          : "bg-[#050510]/60 backdrop-blur-md border-b border-white/[0.04]"
+          ? "bg-[#050510]/95 backdrop-blur-md border-b border-white/[0.08]"
+          : "bg-[#050510] border-b border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -98,7 +85,7 @@ export default function Header() {
             width={378}
             height={95}
             priority
-            className="h-9 w-auto logo-pulse"
+            className="h-9 w-auto"
           />
         </a>
 
@@ -119,7 +106,7 @@ export default function Header() {
             href={PLAY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold px-5 py-2 rounded-xl bg-accent text-[#050510] hover:bg-accent-dim transition-all hover:scale-[1.03] active:scale-[0.97]"
+            className="text-sm font-semibold px-4 py-2 rounded-lg bg-accent text-[#050510] hover:bg-accent-dim transition-colors"
           >
             {t("cta.google_play")}
           </a>
@@ -171,7 +158,7 @@ export default function Header() {
             href={PLAY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold px-4 py-2.5 rounded-xl bg-accent text-[#050510] text-center hover:bg-accent-dim transition-colors"
+            className="font-semibold px-4 py-2.5 rounded-lg bg-accent text-[#050510] text-center hover:bg-accent-dim transition-colors"
             onClick={() => setMenuOpen(false)}
           >
             {t("cta.google_play")}
@@ -179,11 +166,6 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Scroll progress bar */}
-      <div
-        className="scroll-progress"
-        style={{ width: `${scrollProgress}%` }}
-      />
     </header>
   );
 }

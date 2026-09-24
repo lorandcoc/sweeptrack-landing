@@ -14,29 +14,35 @@ const guides = [
 
 export default function GuidesTeaser() {
   return (
-    <section id="guides" className="py-16 md:py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <p className="text-muted text-sm font-medium tracking-wider uppercase mb-3 text-center">Guides</p>
-        <h2 className="font-display text-3xl md:text-4xl mb-3 text-center">Metal detecting guides</h2>
-        <p className="text-muted text-lg max-w-2xl mx-auto text-center mb-10">
-          Field-tested advice on finding good spots and getting permission.
-        </p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {guides.map((g) => (
+    <section id="guides" className="st-rule py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-16">
+        <div>
+          <h2 className="font-display st-h2">Metal detecting guides</h2>
+          <p className="mt-5 text-muted leading-relaxed max-w-sm">
+            Articles on finding sites, asking for permission, and using the app.
+          </p>
+          <p className="mt-5">
             <Link
-              key={g.href}
-              href={g.href}
-              className="block h-full px-4 py-3.5 rounded-xl bg-surface/50 border border-white/[0.05] hover:border-accent/30 hover:bg-surface/80 transition-colors"
+              href="/blog"
+              className="text-foreground underline decoration-white/30 underline-offset-4 hover:decoration-foreground transition-colors"
             >
-              <span className="font-semibold text-sm text-white/90 hover:text-accent">{g.title} &rarr;</span>
+              All guides
             </Link>
-          ))}
+          </p>
         </div>
-        <p className="text-center mt-8">
-          <Link href="/blog" className="text-accent hover:underline text-sm">
-            See all metal detecting guides
-          </Link>
-        </p>
+        <ul className="grid sm:grid-cols-2 gap-x-10">
+          {guides.map((g) => (
+            <li key={g.href} className="border-t border-white/10">
+              <Link
+                href={g.href}
+                className="group flex items-baseline justify-between gap-4 py-4 text-foreground/90 hover:text-foreground"
+              >
+                <span className="group-hover:underline decoration-white/40 underline-offset-4">{g.title}</span>
+                <span className="text-muted group-hover:text-accent transition-colors" aria-hidden="true">&rarr;</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -1,16 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FieldLogTicker from "@/components/FieldLogTicker";
+import MapCompareSlider from "@/components/MapCompareSlider";
 import Outcomes from "@/components/Outcomes";
 import HowItWorks from "@/components/HowItWorks";
 import FounderNote from "@/components/FounderNote";
-import StatsBar from "@/components/StatsBar";
 import TrustStrip from "@/components/TrustStrip";
 import PricingTable from "@/components/PricingTable";
 import FAQ from "@/components/FAQ";
 import GuidesTeaser from "@/components/GuidesTeaser";
 import CTA from "@/components/CTA";
-import CommunityLinks from "@/components/CommunityLinks";
 import Footer from "@/components/Footer";
 
 const jsonLdGraph = [
@@ -198,21 +196,16 @@ export default function LandingPage() {
       />
       <Header />
       <main>
-        <h2 className="sr-only">
-          Metal Detecting GPS App for Android: track every sweep, log finds, and overlay historical maps.
-        </h2>
         <Hero />
-        <FieldLogTicker />
+        <MapCompareSlider />
         <Outcomes />
         <HowItWorks />
         <FounderNote />
-        <StatsBar />
         <TrustStrip />
         <PricingTable />
         <FAQ />
         <GuidesTeaser />
         <CTA />
-        <CommunityLinks />
       </main>
       <Footer />
     </>
