@@ -4,7 +4,7 @@ import BlogPostFrame from "@/components/BlogPostFrame";
 const SLUG = "best-metal-detectors-under-500";
 const TITLE = "Best Metal Detectors Under $500 in 2026";
 const DESCRIPTION = "The best metal detectors under $500 compared — Nokta Simplex+, Minelab Vanquish, Garrett Ace, and more. Strengths and weaknesses of each model.";
-const IMAGE = "/screenshots/presets.jpg";
+const IMAGE = "/screenshots/history.jpg";
 const PUBLISHED = "2026-01-17";
 
 export const metadata = blogMeta({ slug: SLUG, title: TITLE, description: DESCRIPTION, publishedDate: PUBLISHED });
@@ -23,7 +23,7 @@ export default function Post() {
         publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-for-beginners", title: "Metal Detecting for Beginners" },
-          { href: "/blog/organize-metal-detector-presets-settings", title: "Organize Metal Detector Presets &amp; Settings" },
+          { href: "/blog/finds-intelligence-dashboard", title: "Finds Intelligence: See What Your Data Tells You" },
         ]}
       >
           <p>You don&apos;t need to spend a thousand dollars to get a genuinely capable metal detector. The sub-$500 range has improved dramatically over the past few years, and several machines in this bracket can compete with detectors that cost twice as much. This isn&apos;t a ranking &mdash; the best detector depends on what you want to do with it.</p>

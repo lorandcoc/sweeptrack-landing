@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     template: "%s | SweepTrack Pro",
   },
   description:
-    "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Permission Vault, Detecting Forecast, 60+ detector presets, and Cloud Backup. Free download, ad-free.",
+    "Metal detecting app for Android. GPS tracking, USGS historical topographic overlays, offline maps, Permission Vault, Detecting Forecast, and Cloud Backup. Free download, ad-free.",
   keywords: [
     // Primary searches
     "metal detecting app",
@@ -102,9 +102,6 @@ export const metadata: Metadata = {
     "Nokta Legend app",
     "Nokta Simplex app",
     "Fisher F75 app",
-    "metal detector presets",
-    "metal detector settings app",
-    "metal detector preset import export",
     // Activity searches
     "metal detecting tips",
     "metal detecting for beginners",

@@ -39,7 +39,7 @@ export default function Post() {
           <p>Two charts read your history back to you. Value over time stacks your monthly totals as bars across the last twelve months, so a strong spring or a quiet winter shows at a glance. Time of day sorts your finds into all twenty four hours, which is how you learn whether your mornings really do beat your afternoons.</p>
 
           <h2 className="text-xl font-semibold text-accent mt-8">Three ways to break it down</h2>
-          <p>One card holds three views of the same finds. By Type splits them into your find categories. By Detector groups them by the preset you were running, so you can compare machines on your own ground rather than on a forum. By Site ranks your top eight session locations. Each view shows both a count and a total value, so the answer is never just how many, but how much.</p>
+          <p>One card holds three views of the same finds. By Type splits them into your find categories. By Detector groups them by the detector you were using, so you can compare machines on your own ground rather than on a forum. By Site ranks your top eight session locations. Each view shows both a count and a total value, so the answer is never just how many, but how much.</p>
       </BlogPostFrame>
     </>
   );

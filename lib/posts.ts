@@ -40,7 +40,6 @@ export const POSTS: readonly PostMeta[] = [
 
   // Tips
   { slug: "best-weather-conditions-for-metal-detecting", title: "Best Weather Conditions for Metal Detecting (And When to Stay Home)", publishedDate: "2026-02-04", category: "tips" },
-  { slug: "organize-metal-detector-presets-settings", title: "How to Organize Your Metal Detector Settings and Presets", publishedDate: "2026-03-24", category: "tips" },
 
   // Beach
   { slug: "beach-metal-detecting-tide-timing", title: "Beach Metal Detecting: Tide Timing & Where to Search", publishedDate: "2026-01-14", category: "beach" },

@@ -50,9 +50,9 @@ const CATEGORIES: {
     id: "polish",
     labelKey: "featuresall.cat_polish",
     keys: [
-      "languages", "colorthemes", "unitstoggle", "detectorlib",
-      "presetslots", "export", "onboarding", "greetings", "brandcolors",
-      "oemrationale", "atomicrestore", "about", "feedback",
+      "languages", "colorthemes", "unitstoggle", "export",
+      "onboarding", "greetings", "oemrationale", "atomicrestore",
+      "about", "feedback",
     ],
   },
 ];
@@ -62,7 +62,7 @@ const TOTAL_COUNT = CATEGORIES.reduce((n, c) => n + c.keys.length, 0);
 /* Collapsed default — the strongest tiles, leading with the two new Pro features */
 const TOP_PICKS = [
   "findsintel", "mapoverlay", "findlogger", "forecast", "heatmap",
-  "careerstats", "nightvision", "sessioncompare", "detectorlib",
+  "careerstats", "nightvision", "sessioncompare", "permissionletter",
 ];
 
 /* Tiles with a matching blog guide keep their link */
@@ -73,7 +73,6 @@ const GUIDES: Record<string, string> = {
   pindrop: "/blog/logging-finds-photo-video-audio",
   backtostart: "/blog/how-to-track-metal-detecting-sessions-gps",
   sessioncompare: "/blog/comparing-sessions-overlay-split",
-  presetslots: "/blog/organize-metal-detector-presets-settings",
   export: "/blog/exporting-sessions-gpx-kml-csv",
   nightvision: "/blog/night-vision-mode",
   forecast: "/blog/detecting-forecast-guide",

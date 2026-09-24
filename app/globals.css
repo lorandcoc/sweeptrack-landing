@@ -955,8 +955,8 @@ details:focus-visible > summary {
 }
 
 /* ════════════════════════════════════════════════════════════════════
-   SpotlightForecast (sfx-) · SpotlightArsenal (sax-) · SpotlightEngine (sex-)
-   Score-dial, preset-cycle and dual-track demos.
+   SpotlightForecast (sfx-) · SpotlightEngine (sex-)
+   Score-dial and dual-track demos.
    transform / opacity / stroke-dashoffset only · reduced-motion → end state.
    ════════════════════════════════════════════════════════════════════ */
 
@@ -1102,64 +1102,6 @@ details:focus-visible > summary {
     animation: none !important;
     transform: scaleX(1);
   }
-}
-
-/* ───────────────────── SpotlightArsenal · sax- ────────────────────── */
-
-/* QR scan line — a soft accent bar travelling top → bottom of the tile */
-.sax-scan {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 16px;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 255, 106, 0.55),
-    transparent
-  );
-  box-shadow: 0 0 12px rgba(0, 255, 106, 0.4);
-  opacity: 0.9;
-  will-change: transform;
-  animation: sax-scan 2.6s var(--st-ease) infinite;
-}
-@keyframes sax-scan {
-  0%   { transform: translateY(-16px); opacity: 0; }
-  12%  { opacity: 0.9; }
-  88%  { opacity: 0.9; }
-  100% { transform: translateY(88px); opacity: 0; }
-}
-
-/* Header / label swap-in — runs each time the active machine changes
-   (React remounts these nodes via keyed `head-${active}` / `label-...`) */
-.sax-swapin {
-  animation: sax-swapin 0.45s var(--st-ease-out) both;
-}
-@keyframes sax-swapin {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Slider fill — inline style sets transform: scaleX(fill); we just ease
-   between the per-machine values so the bars visibly re-tune on switch */
-.sax-fill {
-  transform-origin: left center;
-  box-shadow: 0 0 8px currentColor;
-  transition: transform 0.6s var(--st-ease);
-}
-/* Thumb rail — inline style sets transform: translateX(fill*100%);
-   ease it in lockstep with the fill */
-.sax-thumb-rail {
-  transition: transform 0.6s var(--st-ease);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sax-scan   { animation: none; opacity: 0; }
-  .sax-swapin { animation: none; opacity: 1; transform: none; }
-  .sax-fill,
-  .sax-thumb-rail { transition: none; }
 }
 
 /* ───────────────────── SpotlightEngine · sex- ─────────────────────── */

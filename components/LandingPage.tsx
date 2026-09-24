@@ -59,7 +59,7 @@ const jsonLdGraph = [
       "Metal Detector GPS App",
     ],
     description:
-      "Metal detecting GPS app with USGS historical topographic map overlay, custom import-your-own map overlays, Finds Intelligence dashboard, offline maps (4 sources), track overlay, perimeter guard, Waypoints, Radar live group positioning, permission vault, detecting forecast, NOAA tide tables, Google Drive backup, and preset templates for 60+ detectors from 12 brands including Minelab, Garrett, XP, Nokta, and Fisher.",
+      "Metal detecting GPS app with USGS historical topographic map overlay, custom import-your-own map overlays, Finds Intelligence dashboard, offline maps (4 sources), track overlay, perimeter guard, Waypoints, Radar live group positioning, permission vault, detecting forecast, NOAA tide tables, and Google Drive backup.",
     offers: [
       {
         "@type": "Offer",
@@ -69,7 +69,7 @@ const jsonLdGraph = [
         availability: "https://schema.org/InStock",
         priceValidUntil: "2027-12-31",
         description:
-          "Core GPS tracking, 10 sessions/month, basic find logging, 5 waypoints, 1 detector preset, 1 Permission Vault entry, 3 themes",
+          "Core GPS tracking, 10 sessions/month, basic find logging, 5 waypoints, 1 Permission Vault entry, 3 themes",
       },
       {
         "@type": "Offer",
@@ -99,8 +99,7 @@ const jsonLdGraph = [
       "Permission vault with 4 status colors, boundary drawing, expiry reminders, and a permission letter generator",
       "Detecting Forecast: 0-100 Detecting Score with 7-day outlook, soil moisture, wind, temperature, humidity, and tips",
       "NOAA tide table with 3, 7, or 14 day ranges from the nearest station",
-      "Google Drive backup and restore of sessions, presets, and settings",
-      "10 detector preset slots with JSON import/export and templates for 60+ detectors across 12 brands",
+      "Google Drive backup and restore of sessions, finds, permissions, and settings",
       "Find logging: free basic record (type, name, notes, 1 photo); Pro full record with value, 0-40 cm depth, weight, signal/VDI, soil type, video, audio notes, and multiple photos",
       "Finds Intelligence dashboard (Pro): finds-per-hour, best time of day, breakdowns by detector and site, total collection value over time, and a value-weighted hot-zone map of your most productive ground",
       "Custom map overlays (Pro): import your own scanned map, parcel sketch, or aerial photo and align it on the live satellite map by drag, pinch, and rotate; precision control-point alignment fits the image with an accuracy readout in meters (Pro feature, unlimited imports)",

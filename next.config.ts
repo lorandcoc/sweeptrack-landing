@@ -94,6 +94,13 @@ const nextConfig: NextConfig = {
         destination: "/blog/how-to-use-old-maps-for-metal-detecting",
         permanent: true,
       },
+      // Detector presets (the 60+ model library, preset slots, QR/JSON sharing) were
+      // removed from the app, so their guide was retired.
+      {
+        source: "/blog/organize-metal-detector-presets-settings",
+        destination: "/blog",
+        permanent: true,
+      },
     ];
   },
 };

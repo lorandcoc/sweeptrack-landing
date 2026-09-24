@@ -5,7 +5,6 @@ import GooglePlayButton from "@/components/GooglePlayButton";
 import FeaturesAll from "@/components/FeaturesAll";
 import Screenshots from "@/components/Screenshots";
 import SpotlightForecast from "@/components/SpotlightForecast";
-import SpotlightArsenal from "@/components/SpotlightArsenal";
 import { PageHero, PageSection } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
@@ -13,7 +12,7 @@ import { getDictionary } from "@/lib/getDictionary";
 const URL = "https://sweeptrack.pro/features";
 const TITLE = "Every Feature in the SweepTrack Pro Metal Detecting App | SweepTrack Pro";
 const DESCRIPTION =
-  "The full toolkit: GPS tracking, map overlays, Finds Intelligence, the Detecting Forecast, 60+ detector presets, offline maps, Radar, Permission Vault, and 45+ more tools in one Android app.";
+  "The full toolkit: GPS tracking, map overlays, Finds Intelligence, the Detecting Forecast, offline maps, Radar, Permission Vault, and 45+ more tools in one Android app.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -47,10 +46,6 @@ export default function FeaturesPage() {
 
         <PageSection>
           <SpotlightForecast />
-        </PageSection>
-
-        <PageSection>
-          <SpotlightArsenal />
         </PageSection>
 
         <FeaturesAll />

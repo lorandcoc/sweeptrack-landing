@@ -20,7 +20,7 @@ type FeatureGroup = {
 /**
  * Full comparison table, grouped for scanability.
  * Free/Pro splits come from:
- *  - SubscriptionService.kt constants: FREE_PRESET_LIMIT=1, FREE_VAULT_ENTRY_LIMIT=1
+ *  - SubscriptionService.kt constants: FREE_VAULT_ENTRY_LIMIT=1
  *  - PaywallScreen.kt features list (the in-app Premium highlight list)
  *  - HomeScreenLayers.kt `gate(...)` wrappers for map overlays
  *
@@ -81,7 +81,6 @@ const groups: FeatureGroup[] = [
       { key: "waypoints", free: "string", freeKey: "pricing.feat_waypoints_free", pro: "string", proKey: "pricing.feat_waypoints_pro" },
       // Map Overlays — import your own map/aerial and align it. Pro-only (SubscriptionService FREE_OVERLAY_LIMIT = 0); unlimited with Pro.
       { key: "mapoverlay", free: false, pro: true },
-      { key: "detectorlib", free: true, pro: true },
       { key: "locationsearch", free: true, pro: true },
     ],
   },
@@ -129,7 +128,6 @@ const groups: FeatureGroup[] = [
       { key: "languages", free: true, pro: true },
       { key: "onboarding", free: true, pro: true },
       { key: "aboutfeedback", free: true, pro: true },
-      { key: "presets", free: "string", freeKey: "pricing.feat_presets_free", pro: "string", proKey: "pricing.feat_presets_pro" },
     ],
   },
 ];
