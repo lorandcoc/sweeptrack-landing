@@ -31,8 +31,8 @@ export default function Post() {
             Getting landowner permission is the single most important thing in metal detecting. Without it, you&apos;re trespassing. With it, you&apos;re a welcome guest who might find something incredible. Here&apos;s how to ask, what to put in writing, and how to keep track of it all.
           </p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Why You Need Written Permission</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>Why You Need Written Permission</h2>
+          <ul>
             <li>Verbal permission can be forgotten or denied later</li>
             <li>If the property changes hands, you have no proof the previous owner said yes</li>
             <li>In the UK, Treasure Act finds require you to prove you had permission to detect</li>
@@ -40,9 +40,9 @@ export default function Post() {
             <li>It shows the landowner you&apos;re serious and responsible</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">What to Include in a Permission Letter</h2>
+          <h2>What to Include in a Permission Letter</h2>
           <p>A good detecting permission letter should cover:</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <ul>
             <li><strong>Date</strong> — when permission was granted</li>
             <li><strong>Your name and contact info</strong></li>
             <li><strong>Landowner&apos;s name and property address</strong></li>
@@ -52,8 +52,8 @@ export default function Post() {
             <li><strong>Signatures</strong> — both parties sign and date</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Free Template</h2>
-          <div className="bg-surface/80 border border-white/10 rounded-xl p-6 text-sm font-mono leading-relaxed">
+          <h2>Free Template</h2>
+          <div className="post-letter">
             <p className="mb-4"><strong>METAL DETECTING PERMISSION AGREEMENT</strong></p>
             <p className="mb-2">Date: _______________</p>
             <p className="mb-4">I, [LANDOWNER NAME], owner of the property located at [PROPERTY ADDRESS], hereby grant permission to [YOUR NAME] to conduct metal detecting activities on the above property.</p>
@@ -67,8 +67,8 @@ export default function Post() {
             <p className="mb-1">Detectorist signature: ___________________ Date: _________</p>
           </div>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">How to Approach a Landowner</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>How to Approach a Landowner</h2>
+          <ul>
             <li><strong>Knock on the door</strong> — in person is always better than a phone call or letter</li>
             <li><strong>Be honest</strong> — explain you&apos;re a hobbyist looking for old coins and relics</li>
             <li><strong>Show your detector</strong> — people are curious, not threatened, when they see the equipment</li>
@@ -77,12 +77,12 @@ export default function Post() {
             <li><strong>Accept &ldquo;no&rdquo; gracefully</strong> — some people will say no. Thank them and move on.</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Tracking Your Permissions</h2>
+          <h2>Tracking Your Permissions</h2>
           <p>
             Once you have a few permissions, keeping track of them becomes important. You need to know which sites are approved, which are expiring, and where the boundaries are. Some detectorists use spreadsheets. Others use sticky notes. Neither is great when you&apos;re standing in a field.
           </p>
           <p>
-            SweepTrack Pro&apos;s <Link href="/blog/using-the-permission-vault" className="text-accent hover:underline">Permission Vault</Link> is built for exactly this. It stores site names, landowner details, and expiry dates with reminders, draws each property boundary on a map that feeds Perimeter Guard, and generates two PDFs on demand: a Request letter to ask, and a Thank You letter to send after a good visit.
+            SweepTrack Pro&apos;s <Link href="/blog/using-the-permission-vault">Permission Vault</Link> is built for exactly this. It stores site names, landowner details, and expiry dates with reminders, draws each property boundary on a map that feeds Perimeter Guard, and generates two PDFs on demand: a Request letter to ask, and a Thank You letter to send after a good visit.
           </p>
       </BlogPostFrame>
     </>

@@ -28,11 +28,11 @@ export default function Post() {
       >
           <p>Every detectorist asks this question eventually. You&apos;ve got the machine, you know how to use it, but where do you actually go? The answer is closer than you think. Every town in every country has spots where people gathered, played, traded, and lost things. You just need to find them.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Think Like a Person, Not a Detectorist</h2>
+          <h2>Think Like a Person, Not a Detectorist</h2>
           <p>The best detecting spots are places where people spent time. Not walked through &mdash; spent time. Sitting, eating, playing, swimming, trading. When people relax, things fall out of pockets. When people play, jewelry comes off. When people gather in large numbers over long periods, the accumulation of lost items is substantial.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">High-Potential Spot Types</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>High-Potential Spot Types</h2>
+          <ul>
             <li><strong>School playgrounds</strong> (after hours, with permission) &mdash; decades of children dropping coins and toys</li>
             <li><strong>Church picnic grounds</strong> &mdash; congregations gathered here for generations</li>
             <li><strong>Fairgrounds and carnival sites</strong> &mdash; old and current, massive foot traffic</li>
@@ -45,9 +45,9 @@ export default function Post() {
             <li><strong>Campgrounds</strong> &mdash; people camping lose all kinds of things</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">How to Research Spots</h2>
+          <h2>How to Research Spots</h2>
           <p>Good detecting is 50% research and 50% swinging the coil. Here&apos;s how to find spots systematically:</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <ul>
             <li><strong>Old maps</strong> &mdash; USGS historical topographic maps show buildings, schools, churches, and roads that no longer exist. Compare old maps to current satellite imagery to find vanished structures.</li>
             <li><strong>Google Earth historical imagery</strong> &mdash; use the time slider to see how an area has changed over the decades</li>
             <li><strong>County records</strong> &mdash; deed records, old plat maps, and county histories often mention gathering spots, mills, post offices, and taverns</li>
@@ -56,13 +56,13 @@ export default function Post() {
             <li><strong>Aerial photography</strong> &mdash; crop marks and soil discoloration visible from above can reveal old foundations and paths</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Permission Is Everything</h2>
+          <h2>Permission Is Everything</h2>
           <p>The best spot in the world is worthless if you don&apos;t have permission. For private land, approach the owner respectfully, explain the hobby, offer to show them anything you find, and get written permission. For public land, check the rules with the relevant parks department or land manager. Carry proof of permission whenever you detect.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Start Close to Home</h2>
+          <h2>Start Close to Home</h2>
           <p>Your own yard is the single best place to learn your machine. After that, expand outward. The oldest parts of your town, the parks that have been there for 100 years, the beach your family has been going to for decades &mdash; these are all detecting spots. You don&apos;t need to travel to find good ground.</p>
 
-          <p className="text-xs text-muted mt-8 p-4 rounded-lg bg-white/[0.02] border border-white/5">
+          <p className="post-note">
             <strong>Disclaimer:</strong> Laws and regulations change. This article is for general information only and does not constitute legal advice. Always verify current rules with local authorities before detecting at any location.
           </p>
       </BlogPostFrame>

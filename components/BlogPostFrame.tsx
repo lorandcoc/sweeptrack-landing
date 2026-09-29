@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
+import GooglePlayButton from "./GooglePlayButton";
 
 type RelatedGuide = { href: string; title: string };
 
 type BlogCategory = "tutorials" | "guides" | "tips" | "location" | "beach" | "beginners" | "gear";
 
+/*
+ * Frame for every blog post, in the same editorial style as the rest of the
+ * site. Posts pass plain semantic HTML (p, h2, ul/ol, li, strong, em, links);
+ * the .post-body rules in globals.css style it. The only classes a post needs
+ * are .post-note (a small aside, e.g. a disclaimer) and .post-letter (a
+ * fill-in template).
+ */
 export default function BlogPostFrame({
   title,
   category,
@@ -34,54 +42,63 @@ export default function BlogPostFrame({
   });
 
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
-      <article className="max-w-2xl w-full">
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm"
-        >
-          &larr; {t("blog.back_to_guides")}
-        </Link>
-        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
-          {t(`blog.cat_${category}`)}
-        </p>
-        <h1 className="text-3xl font-bold mb-4">{title}</h1>
-        <p className="text-muted text-sm mb-10">
-          <time dateTime={publishedDate}>{formattedDate}</time> &middot; {readTime} {t("blog.read_suffix")}
-        </p>
+    <main className="px-6 pt-10 pb-24 md:pt-16">
+      <article className="mx-auto max-w-[42rem]">
+        <header>
+          <Link href="/blog" className="text-sm text-muted hover:text-foreground transition-colors">
+            &larr; {t("blog.back_to_guides")}
+          </Link>
+          <h1 className="mt-8 font-display text-[2rem] leading-[1.1] sm:text-[2.6rem] [text-wrap:balance]">{title}</h1>
+          <p className="mt-5 text-sm text-muted">
+            {t(`blog.cat_${category}`)}
+            <span className="mx-2" aria-hidden="true">·</span>
+            <time dateTime={publishedDate}>{formattedDate}</time>
+            <span className="mx-2" aria-hidden="true">·</span>
+            {readTime} {t("blog.read_suffix")}
+          </p>
+        </header>
 
-        <div className="space-y-6 text-foreground/90 leading-relaxed">
-          {children}
+        <div className="post-body mt-10">{children}</div>
 
-          <div className="mt-10 p-6 rounded-2xl bg-accent/5 border border-accent/20">
-            <p className="text-sm text-muted">
-              <strong className="text-foreground">SweepTrack Pro</strong> {t("blog.cta_card_text")}
-              {" "}
-              <Link href="/" className="text-accent hover:underline">
-                {t("blog.cta_card_link")}
-              </Link>
-            </p>
+        <aside className="mt-16 border-t border-white/10 pt-8">
+          <p className="text-lg leading-relaxed text-muted">
+            <strong className="font-semibold text-foreground">SweepTrack Pro</strong> {t("blog.cta_card_text")}{" "}
+            <Link
+              href="/"
+              className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent transition-colors"
+            >
+              {t("blog.cta_card_link")}
+            </Link>
+          </p>
+          <div className="mt-6">
+            <GooglePlayButton />
           </div>
+        </aside>
 
-          {relatedGuides && relatedGuides.length > 0 && (
-            <div className="mt-8 pt-8 border-t border-white/5">
-              <p className="text-xs text-muted uppercase tracking-widest font-semibold mb-4">
-                {t("blog.related_guides")}
-              </p>
-              <div className="space-y-3">
-                {relatedGuides.map((g) => (
+        {relatedGuides && relatedGuides.length > 0 && (
+          <nav aria-labelledby="related-guides" className="mt-16">
+            <h2 id="related-guides" className="font-display text-xl">
+              {t("blog.related_guides")}
+            </h2>
+            <ul className="mt-4 border-t border-white/10">
+              {relatedGuides.map((g) => (
+                <li key={g.href} className="border-b border-white/10">
                   <Link
-                    key={g.href}
                     href={g.href}
-                    className="block text-sm text-foreground/80 hover:text-accent transition-colors"
+                    className="group flex items-baseline justify-between gap-6 py-4 text-foreground/90 hover:text-foreground transition-colors"
                   >
-                    {g.title} &rarr;
+                    <span className="underline decoration-transparent underline-offset-4 group-hover:decoration-white/40 transition-colors">
+                      {g.title}
+                    </span>
+                    <span className="text-muted" aria-hidden="true">
+                      &rarr;
+                    </span>
                   </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </article>
     </main>
   );

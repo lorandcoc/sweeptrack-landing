@@ -115,11 +115,6 @@ body {
     inset 0 0 0 2px rgba(255, 255, 255, 0.04);
 }
 
-.screenshot-crop {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
 /* Smaller screenshots (the trip steps). */
 .phone-frame--small {
@@ -265,6 +260,98 @@ details:focus-visible > summary {
 .legal-prose h2 { margin-top: 2.5rem; }
 .legal-prose p + p { margin-top: 0; }
 .legal-prose p.uppercase { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+/* ── Blog post prose (BlogPostFrame) ──
+   Posts are plain semantic HTML; everything is styled here. Kept in the
+   components layer so a utility class on an element (e.g. mb-1 inside the
+   letter template) still wins over these defaults. */
+@layer components {
+  .post-body {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(232, 232, 240, 0.86);
+    overflow-wrap: break-word;
+  }
+  .post-body > * + * { margin-top: 1.25em; }
+
+  .post-body h2 {
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    text-rendering: geometricPrecision;
+    letter-spacing: -0.012em;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    color: var(--foreground);
+    text-wrap: balance;
+  }
+  .post-body > h2 { margin-top: 2.25em; }
+  .post-body > h2 + * { margin-top: 0.8em; }
+
+  .post-body strong { font-weight: 600; color: var(--foreground); }
+
+  .post-body a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 255, 106, 0.4);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.15s;
+  }
+  .post-body a:hover { text-decoration-color: var(--accent); }
+
+  /* Lists: hanging indent, square markers like the rest of the site */
+  .post-body ul,
+  .post-body ol { list-style: none; padding-left: 0; }
+  .post-body li { position: relative; padding-left: 1.5em; }
+  .post-body li + li { margin-top: 0.65em; }
+  .post-body ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0.2em;
+    top: 0.72em;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+  .post-body ol { counter-reset: post-ol; }
+  .post-body ol > li { counter-increment: post-ol; padding-left: 1.9em; }
+  .post-body ol > li::before {
+    content: counter(post-ol) ".";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Small aside: disclaimers and side notes */
+  .post-note {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--muted);
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+    padding-left: 1rem;
+  }
+  .post-body > .post-note:last-child { margin-top: 2.5em; }
+
+  /* Fill-in template, set like a typed sheet */
+  .post-letter {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--foreground);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 640px) {
+    .post-body { font-size: 1.125rem; }
+    .post-body h2 { font-size: 1.75rem; }
+    .post-letter { padding: 2rem; }
+  }
+}
 
 /* ════════════════════════════════════════════════════════════════════
    Radar section (RadarSection.tsx) — rgx2- namespace.

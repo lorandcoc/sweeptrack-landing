@@ -28,7 +28,7 @@ export default function Post() {
       >
           <p>Your detecting data isn&apos;t locked inside the app. You can export any session in four different formats depending on what you want to do with it &mdash; view tracks in Google Earth, import them into a Garmin, analyse finds in a spreadsheet, or share with a detecting partner.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">The Four Formats</h2>
+          <h2>The Four Formats</h2>
 
           <p><strong>SweepTrack JSON</strong> &mdash; the full-fidelity format. Includes everything: GPS track, finds with all metadata, timestamps, session stats, detector settings. Use this for backups or transferring data between devices running the app.</p>
 
@@ -38,8 +38,8 @@ export default function Post() {
 
           <p><strong>CSV (Comma-Separated Values)</strong> &mdash; a flat spreadsheet of your track points and finds. Each row is a data point with latitude, longitude, timestamp, and any find data. Open in Excel, Google Sheets, or any spreadsheet tool. Good for analysing patterns, calculating statistics, or creating custom charts.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">How to Export</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>How to Export</h2>
+          <ul>
             <li>Open any saved session from the History tab</li>
             <li>Tap the session summary to see its details</li>
             <li>Tap the export button</li>
@@ -48,8 +48,8 @@ export default function Post() {
           </ul>
           <p>The file is generated instantly and you can share it via email, messaging apps, cloud drives, or save it directly to your phone&apos;s Downloads folder.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Which Format Should You Use?</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>Which Format Should You Use?</h2>
+          <ul>
             <li>Backing up data or moving between phones &rarr; SweepTrack JSON</li>
             <li>Viewing in Google Earth or mapping software &rarr; GPX or KML</li>
             <li>Analysing in a spreadsheet &rarr; CSV</li>

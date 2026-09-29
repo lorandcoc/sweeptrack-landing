@@ -18,7 +18,7 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
   return (
     <I18nProvider initialLocale="en" initialDict={dict}>
       <Header />
-      <div className="pt-16">{children}</div>
+      {children}
       <Footer />
     </I18nProvider>
   );

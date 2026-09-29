@@ -28,9 +28,9 @@ export default function Post() {
       >
           <p>When a landowner gives you permission to detect on a specific field, you need to stay in that field. Walk too far and you&apos;re on someone else&apos;s land without permission. Perimeter Guard solves this by drawing a virtual fence on the map and buzzing your phone as you approach the edge.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Drawing a Boundary</h2>
+          <h2>Drawing a Boundary</h2>
           <p>Open the map and tap the Perimeter Guard icon. The map switches to boundary drawing mode:</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <ul>
             <li>Tap on the map to place corner points around your permitted area</li>
             <li>Each tap adds a point and connects it to the previous one</li>
             <li>Use the undo button if you misplace a point</li>
@@ -38,9 +38,9 @@ export default function Post() {
           </ul>
           <p>Zoom in on satellite view first so you can follow field boundaries, hedgerows, and fences accurately.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">How the Alerts Work</h2>
+          <h2>How the Alerts Work</h2>
           <p>Once you activate Perimeter Guard, it watches your GPS position and steps you through four stages as you approach the boundary:</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <ul>
             <li><strong>Approaching boundary</strong> &mdash; you&apos;re heading toward the edge but still safely inside</li>
             <li><strong>Near boundary</strong> &mdash; you&apos;re close, a vibration nudge tells you to ease up</li>
             <li><strong>At boundary edge</strong> &mdash; you&apos;re right on the line, stronger haptic warning</li>
@@ -48,10 +48,10 @@ export default function Post() {
           </ul>
           <p>You don&apos;t need to stare at the screen. The haptic and audio pattern tells you everything. Just swing your detector and let your phone do the watching.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Linking to the Permission Vault</h2>
+          <h2>Linking to the Permission Vault</h2>
           <p>If you&apos;ve already saved a permission entry in the Permission Vault for this site, you can link the boundary to it. This means the boundary is stored alongside your permission details &mdash; next time you visit the same site, load the permission and the boundary comes with it.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Clearing or Editing Boundaries</h2>
+          <h2>Clearing or Editing Boundaries</h2>
           <p>Tap the Perimeter Guard icon again while a boundary is active to see your options. You can clear the current boundary and draw a new one, or deactivate monitoring temporarily without deleting the shape. If your permission area changes, just redraw it.</p>
       </BlogPostFrame>
     </>

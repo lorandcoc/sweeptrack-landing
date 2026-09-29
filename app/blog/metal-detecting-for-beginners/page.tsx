@@ -29,9 +29,9 @@ export default function Post() {
       >
           <p>Metal detecting is one of those hobbies that looks simple until you try it. You wave a machine over the ground, it beeps, you dig. Except the first 50 beeps are pull tabs, bottle caps, and foil. This guide helps you skip the frustrating part.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Picking Your First Detector</h2>
+          <h2>Picking Your First Detector</h2>
           <p>You don&apos;t need a $2,000 machine to start. Some of the best beginner detectors cost $200-$400 and are genuinely capable machines. Look for:</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <ul>
             <li><strong>Multi-frequency or high frequency</strong> — better for coins and jewelry</li>
             <li><strong>Built-in pinpointer mode</strong> — saves buying a separate tool</li>
             <li><strong>Discrimination</strong> — lets you ignore iron and trash signals</li>
@@ -39,8 +39,8 @@ export default function Post() {
           </ul>
           <p>Popular starter machines: Nokta Simplex+, Minelab Vanquish 440, Garrett Ace 400, XP ORX.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Where to Detect</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>Where to Detect</h2>
+          <ul>
             <li><strong>Your own yard</strong> — start here. You can dig freely and learn your machine</li>
             <li><strong>Public parks</strong> (check local rules) — high traffic = lots of dropped coins</li>
             <li><strong>Beaches</strong> — coins, jewelry, and fewer permission hassles</li>
@@ -48,12 +48,12 @@ export default function Post() {
             <li><strong>Old footpaths and gathering spots</strong> — anywhere people congregated historically</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Understanding Signals</h2>
+          <h2>Understanding Signals</h2>
           <p>Every detector gives you two pieces of information: a tone and a number (VDI/target ID). Low numbers and grunty tones are usually iron. High numbers and clear tones are non-ferrous metals — coins, jewelry, copper, brass.</p>
           <p>As a beginner, dig everything above iron. You&apos;ll dig trash, but you&apos;ll also learn what different targets sound like. That experience is worth more than any setting adjustment.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">How to Dig Properly</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>How to Dig Properly</h2>
+          <ul>
             <li>Cut a horseshoe-shaped plug — leave one side attached so the turf flips back</li>
             <li>Put a cloth or towel down to catch loose soil</li>
             <li>Use a pinpointer to find the target in the hole or plug</li>
@@ -61,8 +61,8 @@ export default function Post() {
           </ul>
           <p>Leaving clean holes is how you keep permissions. One messy digger ruins it for everyone.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Common Beginner Mistakes</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>Common Beginner Mistakes</h2>
+          <ul>
             <li>Swinging too fast — slow down, overlap your sweeps</li>
             <li>Skipping iron signals — some of the best finds sound like iron at first</li>
             <li>Not ground balancing — if your machine has manual GB, learn to use it</li>

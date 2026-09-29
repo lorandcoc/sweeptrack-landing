@@ -28,20 +28,20 @@ export default function Post() {
       >
           <p>Dawn and dusk are prime detecting hours &mdash; the ground is cool, parks are empty, and beach targets surface as tides pull back. The problem is that glancing at a bright white screen kills your night vision for minutes. Night Vision mode fixes that.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">What It Does</h2>
+          <h2>What It Does</h2>
           <p>When you activate Night Vision, the entire interface switches to red-on-black. Every element &mdash; the map, HUD stats, buttons, text &mdash; shifts to a deep red colour scheme. It&apos;s not just a dimmed screen. The colour spectrum itself changes so that no blue or white light reaches your eyes.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Why Red Light Matters</h2>
+          <h2>Why Red Light Matters</h2>
           <p>Your eyes use rod cells to see in the dark. Bright white or blue light bleaches the rhodopsin in those cells, and it takes 20&ndash;30 minutes to rebuild. Red light doesn&apos;t break down rhodopsin, so you can check your screen and immediately go back to scanning the ground without losing your dark adaptation. Pilots and astronomers have used red lighting for decades for exactly this reason.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">When to Use It</h2>
-          <ul className="list-disc list-inside space-y-2 ml-2">
+          <h2>When to Use It</h2>
+          <ul>
             <li><strong>Pre-dawn beach sessions</strong> &mdash; get to the beach before sunrise, work the low tide line</li>
             <li><strong>Evening sessions</strong> &mdash; detecting after dinner when the light fades but you want to keep going</li>
             <li><strong>Camping trips</strong> &mdash; checking your session stats around the campfire without blinding yourself</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">How to Toggle It</h2>
+          <h2>How to Toggle It</h2>
           <p>Open Settings and tap the Night Vision toggle. The switch is instant &mdash; the entire UI shifts to red immediately. Toggle it off when daylight returns and you&apos;re back to your chosen colour theme.</p>
       </BlogPostFrame>
     </>

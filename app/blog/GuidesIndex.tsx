@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
+/* `tag` and `thumbnail` are kept for reference but not shown: the category
+ * already says what `tag` says, and the thumbnails were cropped app headers,
+ * several of them placeholder or retired screens. */
 const posts = [
   // ── GUIDES ──
   { slug: "how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps to Find Better Detecting Spots", excerpt: "Historical topographic maps from USGS reveal old homesteads, vanished roads, and forgotten settlements.", tag: "Guide", category: "guides", readTime: "5 min", thumbnail: "/screenshots/offline_maps.jpg", featured: true },
@@ -76,64 +78,96 @@ export default function GuidesIndex() {
 
   const featured = visiblePosts.find((p) => p.featured);
   const filtered = visiblePosts.filter((p) => filter === "all" || p.category === filter);
+  const list = filter === "all" ? filtered.filter((p) => !p.featured) : filtered;
+  const categoryLabel = (id: string) => t(`blog.cat_${id}` as TranslationKey);
+  const readLabel = (readTime: string) => `${readTime} ${t("blog.read_suffix")}`;
 
   return (
-    <main className="flex-1 flex justify-center px-4 py-12">
-      <div className="max-w-4xl w-full">
-        <Link href="/" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 text-sm">&larr; {t("blog.back")}</Link>
+    <main className="px-6 pt-10 pb-24 md:pt-16">
+      <div className="max-w-6xl mx-auto">
+        <Link href="/" className="text-sm text-muted hover:text-foreground transition-colors">
+          &larr; {t("blog.back")}
+        </Link>
 
-        <h1 className="text-3xl font-bold mb-2">{t("blog.title")}</h1>
-        <p className="text-muted mb-8">{t("blog.subtitle").replace("{count}", String(visiblePosts.length))}</p>
+        <h1 className="mt-8 font-display text-[2.1rem] leading-[1.08] sm:text-5xl lg:text-[3.1rem]">
+          {t("blog.title")}
+        </h1>
+        <p className="mt-4 text-lg text-muted">{t("blog.subtitle").replace("{count}", String(visiblePosts.length))}</p>
 
-        {/* Featured */}
+        {/* Featured: the first thing to read, set larger, no card */}
         {featured && filter === "all" && (
-          <Link href={`/blog/${featured.slug}`} className="block rounded-2xl border border-accent/20 bg-accent/5 overflow-hidden mb-8 group hover:border-accent/40 transition-all">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-48 md:h-auto overflow-hidden">
-                <Image src={featured.thumbnail} alt={featured.title} fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500 screenshot-crop" />
-              </div>
-              <div className="p-6 md:p-8 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/15 px-2 py-0.5 rounded-full">{t("blog.featured")}</span>
-                  <span className="text-xs text-muted">{featured.readTime} {t("blog.read_suffix")}</span>
-                </div>
-                <h2 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors mb-3">{featured.title}</h2>
-                <p className="text-sm text-muted leading-relaxed">{featured.excerpt}</p>
-              </div>
-            </div>
+          <Link href={`/blog/${featured.slug}`} className="group mt-12 block border-t border-white/10 pt-8 max-w-3xl">
+            <h2 className="font-display text-[1.75rem] leading-[1.15] sm:text-[2.1rem] [text-wrap:balance] underline decoration-transparent underline-offset-[6px] group-hover:decoration-white/40 transition-colors">
+              {featured.title}
+            </h2>
+            <p className="mt-3 text-lg text-muted leading-relaxed">{featured.excerpt}</p>
+            <p className="mt-4 text-sm text-muted">
+              <span className="text-foreground">{t("blog.featured")}</span>
+              <span className="mx-2" aria-hidden="true">·</span>
+              {categoryLabel(featured.category)}
+              <span className="mx-2" aria-hidden="true">·</span>
+              {readLabel(featured.readTime)}
+            </p>
           </Link>
         )}
 
-        {/* Filters */}
-        <div className="flex gap-2 mb-8 flex-wrap">
-          {categories.map((cat) => (
-            <button key={cat.id} onClick={() => setFilter(cat.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filter === cat.id ? "bg-accent text-[#0A0A1A]" : "text-muted bg-surface/50 border border-white/5 hover:text-white hover:bg-white/5"}`}>
-              {t(cat.labelKey)}
-              {filter === "all" && <span className="ml-1.5 text-xs opacity-60">({visiblePosts.filter(p => cat.id === "all" ? true : p.category === cat.id).length})</span>}
-            </button>
-          ))}
+        {/* Category filter */}
+        <div className="mt-14 flex flex-wrap gap-2">
+          {categories.map((cat) => {
+            const active = filter === cat.id;
+            const count = visiblePosts.filter((p) => cat.id === "all" || p.category === cat.id).length;
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setFilter(cat.id)}
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md text-sm border transition-colors ${
+                  active
+                    ? "bg-white/[0.08] border-white/25 text-foreground"
+                    : "border-white/10 text-muted hover:text-foreground hover:border-white/20"
+                }`}
+              >
+                {t(cat.labelKey)}
+                <span className="text-xs tabular-nums text-muted/70">{count}</span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filtered.filter((p) => !(filter === "all" && p.featured)).map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}
-              className="group rounded-2xl border border-white/5 bg-surface/50 overflow-hidden hover:border-accent/20 hover:bg-surface/80 transition-all">
-              <div className="relative h-32 overflow-hidden">
-                <Image src={post.thumbnail} alt={post.title} fill className="object-cover object-top opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500 screenshot-crop" />
-                <span className="absolute top-2 left-2 text-[10px] font-bold uppercase tracking-wider text-accent bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-full">{post.tag}</span>
-                <span className="absolute bottom-2 right-2 text-[10px] text-white/60 bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-full">{post.readTime}</span>
-              </div>
-              <div className="p-4">
-                <h2 className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1.5 leading-snug line-clamp-2">{post.title}</h2>
-                <p className="text-xs text-muted leading-relaxed line-clamp-2">{post.excerpt}</p>
-              </div>
-            </Link>
+        {/* Every guide, title and excerpt in full */}
+        <ul className="mt-10 grid md:grid-cols-2 gap-x-12 gap-y-10">
+          {list.map((post) => (
+            <li key={post.slug} className="border-t border-white/10 pt-5">
+              <Link href={`/blog/${post.slug}`} className="group block">
+                <h2 className="font-display text-xl leading-snug [text-wrap:balance] underline decoration-transparent underline-offset-4 group-hover:decoration-white/40 transition-colors">
+                  {post.title}
+                </h2>
+                <p className="mt-2 text-[15px] text-muted leading-relaxed">{post.excerpt}</p>
+                <p className="mt-3 text-sm text-muted/80">
+                  {filter === "all" && (
+                    <>
+                      {categoryLabel(post.category)}
+                      <span className="mx-2" aria-hidden="true">·</span>
+                    </>
+                  )}
+                  {readLabel(post.readTime)}
+                </p>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <p className="text-center text-muted text-sm mt-10">{t("blog.cta_beginners")} <Link href="/blog/metal-detecting-for-beginners" className="text-accent hover:underline">{t("blog.cta_link")}</Link>.</p>
+        <p className="mt-16 text-muted">
+          {t("blog.cta_beginners")}{" "}
+          <Link
+            href="/blog/metal-detecting-for-beginners"
+            className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent transition-colors"
+          >
+            {t("blog.cta_link")}
+          </Link>
+          .
+        </p>
       </div>
     </main>
   );

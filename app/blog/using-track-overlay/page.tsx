@@ -28,16 +28,16 @@ export default function Post() {
       >
           <p>Ever returned to a field and had no idea which parts you already covered? You end up detecting the same strip twice while missing a corner entirely. Track Overlay fixes this by layering your past sessions directly onto the live map.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Loading Past Sessions</h2>
+          <h2>Loading Past Sessions</h2>
           <p>Open the Map Features sheet and find the Overlay Paths dialog. It shows a list of your recent sessions. Tap any session to add its path to the live map. The track draws as a coloured line showing exactly where you walked. Loading past tracks onto the live map this way is a Pro feature.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Color-Coded Tracks</h2>
+          <h2>Color-Coded Tracks</h2>
           <p>Each overlay takes the next color from a palette of ten, including blue, orange, purple, yellow, teal, red, and green. Every new overlay you add steps to the next color, so neighboring tracks always stand out from each other, and you can load up to seven at once.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Remove Tracks Individually</h2>
+          <h2>Remove Tracks Individually</h2>
           <p>Loaded tracks appear in the overlay dialog with a remove action. Pull them off the map one by one, or clear all overlays at once. Your current session path stays untouched regardless.</p>
 
-          <h2 className="text-xl font-semibold text-accent mt-8">Spotting Coverage Gaps</h2>
+          <h2>Spotting Coverage Gaps</h2>
           <p>This is where it gets genuinely useful. With multiple sessions overlaid, you can see blank spaces between tracks. Those gaps are undetected ground. On your next visit, head straight for the gaps instead of guessing. Over time, you build complete coverage of a site without wasting time on areas you&apos;ve already cleared.</p>
       </BlogPostFrame>
     </>
