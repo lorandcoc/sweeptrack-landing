@@ -22,7 +22,7 @@ export default function Post() {
         readTime="5 min"
         publishedDate={PUBLISHED}
         relatedGuides={[
-          { href: "/blog/beach-metal-detecting-tide-timing", title: "Beach Metal Detecting &amp; Tide Timing" },
+          { href: "/blog/beach-metal-detecting-tide-timing", title: "Beach Metal Detecting & Tide Timing" },
           { href: "/blog/where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me" },
         ]}
       >

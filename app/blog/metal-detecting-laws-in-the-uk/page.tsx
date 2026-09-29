@@ -23,7 +23,7 @@ export default function Post() {
         publishedDate={PUBLISHED}
         relatedGuides={[
           { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
-          { href: "/blog/logging-finds-photo-video-audio", title: "Logging Finds with Photo, Video &amp; Audio" },
+          { href: "/blog/logging-finds-photo-video-audio", title: "Logging Finds with Photo, Video & Audio" },
         ]}
       >
           <p>The United Kingdom is widely considered one of the best countries in the world for metal detecting. The legal framework is clear, the reporting system is well-established, and the hobby is actively encouraged as a way to contribute to archaeological knowledge. But there are rules, and breaking them carries serious consequences.</p>
