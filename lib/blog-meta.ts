@@ -11,11 +11,13 @@ export function blogMeta({
   title,
   description,
   publishedDate = "2026-04-01",
+  updatedDate,
 }: {
   slug: string;
   title: string;
   description: string;
   publishedDate?: string;
+  updatedDate?: string;
 }): Metadata {
   const url = `${BASE}/blog/${slug}`;
   return {
@@ -30,6 +32,7 @@ export function blogMeta({
       type: "article",
       locale: "en_US",
       publishedTime: publishedDate,
+      ...(updatedDate ? { modifiedTime: updatedDate } : {}),
       authors: ["Lorand"],
     },
     twitter: {
@@ -50,12 +53,14 @@ export function articleJsonLd({
   description,
   image,
   publishedDate = "2026-04-01",
+  updatedDate,
 }: {
   slug: string;
   title: string;
   description: string;
   image?: string;
   publishedDate?: string;
+  updatedDate?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -64,7 +69,7 @@ export function articleJsonLd({
     description,
     url: `${BASE}/blog/${slug}`,
     datePublished: publishedDate,
-    dateModified: publishedDate,
+    dateModified: updatedDate ?? publishedDate,
     ...(image ? { image: image.startsWith("http") ? image : `${BASE}${image}` } : {}),
     author: {
       "@type": "Person",

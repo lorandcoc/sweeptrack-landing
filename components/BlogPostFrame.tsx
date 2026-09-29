@@ -20,6 +20,7 @@ export default function BlogPostFrame({
   category,
   readTime,
   publishedDate,
+  updatedDate,
   relatedGuides,
   children,
 }: {
@@ -27,6 +28,8 @@ export default function BlogPostFrame({
   category: BlogCategory;
   readTime: string;
   publishedDate: string;
+  /** Shown as "Updated <date>" in place of the publish date after a substantial rewrite. */
+  updatedDate?: string;
   relatedGuides?: RelatedGuide[];
   children: React.ReactNode;
 }) {
@@ -35,7 +38,8 @@ export default function BlogPostFrame({
   // Today that's always "en" because /blog stays English-only, but driving
   // this from the i18n context means localizing blog content later is one
   // fewer thing to remember to flip.
-  const formattedDate = new Date(publishedDate).toLocaleDateString(locale, {
+  const shownDate = updatedDate ?? publishedDate;
+  const formattedDate = new Date(shownDate).toLocaleDateString(locale, {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -52,7 +56,8 @@ export default function BlogPostFrame({
           <p className="mt-5 text-sm text-muted">
             {t(`blog.cat_${category}`)}
             <span className="mx-2" aria-hidden="true">·</span>
-            <time dateTime={publishedDate}>{formattedDate}</time>
+            {updatedDate && <>{t("blog.updated")} </>}
+            <time dateTime={shownDate}>{formattedDate}</time>
             <span className="mx-2" aria-hidden="true">·</span>
             {readTime} {t("blog.read_suffix")}
           </p>

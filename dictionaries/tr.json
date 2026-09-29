@@ -119,6 +119,7 @@
   "blog.subtitle": "Her özellik ve tekniği kapsayan {count} makale.",
   "blog.featured": "Öne Çıkan",
   "blog.read_suffix": "okuma",
+  "blog.updated": "Güncellendi",
   "blog.cta_beginners": "Düzenli olarak yeni rehberler eklenir. Yeni başlayanlar şuradan başlayabilir:",
   "blog.cta_link": "yeni başlayanlar rehberi",
   "blog.cat_all": "Tümü",

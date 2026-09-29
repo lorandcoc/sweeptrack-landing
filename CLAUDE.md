@@ -19,7 +19,7 @@ Before writing ANY code, run `git log --oneline -10` and `git diff HEAD` to unde
 - `components/MapCompareSlider.tsx`: historical topo vs satellite comparison (real app screens)
 - `components/Spotlight*.tsx` + `SpotlightCopy.tsx`: animated feature diagrams sharing one copy column
 - `dictionaries/*.json`: 14 locales; every file must have the same key set
-- `components/BlogPostFrame.tsx` + `.post-body` in `app/globals.css`: blog posts are plain semantic HTML (`h2`, `p`, `ul`/`ol`, `strong`, `em`, links) with no styling classes; only `.post-note` (asides) and `.post-letter` (fill-in templates)
+- `components/BlogPostFrame.tsx` + `.post-body` in `app/globals.css`: blog posts are plain semantic HTML (`h2`, `h3`, `p`, `ul`/`ol`, `blockquote`, `figure`, `strong`, `em`, links) with no styling classes; the only classes are `.post-note` (asides), `.post-letter` (fill-in templates), `.post-table` (a wrapper around a `table`) and `.post-shot` (a figure holding a phone screenshot). Pass `updatedDate` to the frame, `blogMeta`, `articleJsonLd` and `lib/posts.ts` after a substantial rewrite. `MapCompareStage` from `MapCompareSlider.tsx` embeds the old map vs satellite slider in a post
 - `lib/playStore.ts`: Google Play URLs. Links on the site use `useSitePlayUrl()` (client) or `sitePlayUrl("page")` (server) so Play Console attributes installs per page; only JSON-LD uses the bare `PLAY_URL`
 
 ## Design Rules (keep the site from looking generated)

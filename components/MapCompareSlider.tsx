@@ -11,7 +11,7 @@ import { useI18n, type TranslationKey } from "@/lib/i18n";
  * the handle in CSS. Drag, click or tap anywhere on the stage, or use the
  * arrow keys on the handle.
  */
-export default function MapCompareSlider() {
+export function MapCompareStage({ className = "aspect-[4/5] md:aspect-square" }: { className?: string }) {
   const [pos, setPos] = useState(50);
   const [dragging, setDragging] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -93,6 +93,62 @@ export default function MapCompareSlider() {
   };
 
   return (
+    <div
+      ref={stageRef}
+      className={`mcx-stage relative w-full ${className} rounded-xl overflow-hidden cursor-ew-resize select-none border border-white/10 bg-surface`}
+      style={{ "--mcx-pos": pos } as CSSProperties}
+      onMouseDown={(e) => {
+        setDragging(true);
+        moveTo(e.clientX);
+      }}
+    >
+      <Image
+        src="/maps/old_map.jpg"
+        alt={t("mapcompare.alt_historical")}
+        fill
+        sizes="(max-width: 768px) 100vw, 680px"
+        className="object-cover pointer-events-none"
+        loading="lazy"
+      />
+      <span className="mcx-label right-3">{t("mapcompare.label_old")}</span>
+
+      <div className="mcx-clip absolute inset-0">
+        <Image
+          src="/maps/satellite_map.jpg"
+          alt={t("mapcompare.alt_modern")}
+          fill
+          sizes="(max-width: 768px) 100vw, 680px"
+          className="object-cover pointer-events-none"
+          loading="lazy"
+        />
+        <span className="mcx-label left-3">{t("mapcompare.label_modern")}</span>
+      </div>
+
+      <div
+        role="slider"
+        tabIndex={0}
+        aria-label={t("mapcompare.slider_aria" as TranslationKey)}
+        aria-orientation="horizontal"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(pos)}
+        onKeyDown={onKeyDown}
+        className="mcx-handle absolute inset-y-0 z-10 cursor-ew-resize"
+      >
+        <span className="mcx-handle__grip" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 6l-6 6 6 6M15 6l6 6-6 6" />
+          </svg>
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* Homepage section: copy on the left, the comparison stage on the right. */
+export default function MapCompareSlider() {
+  const { t } = useI18n();
+  return (
     <section id="old-maps" className="st-rule py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-16 items-center">
         <div>
@@ -102,56 +158,7 @@ export default function MapCompareSlider() {
           </p>
           <p className="mt-5 text-sm text-muted/80 leading-relaxed">{t("mapcompare.closing")}</p>
         </div>
-
-        <div
-          ref={stageRef}
-          className="mcx-stage relative w-full aspect-[4/5] md:aspect-square rounded-xl overflow-hidden cursor-ew-resize select-none border border-white/10 bg-surface"
-          style={{ "--mcx-pos": pos } as CSSProperties}
-          onMouseDown={(e) => {
-            setDragging(true);
-            moveTo(e.clientX);
-          }}
-        >
-          <Image
-            src="/maps/old_map.jpg"
-            alt={t("mapcompare.alt_historical")}
-            fill
-            sizes="(max-width: 768px) 100vw, 680px"
-            className="object-cover pointer-events-none"
-            loading="lazy"
-          />
-          <span className="mcx-label right-3">{t("mapcompare.label_old")}</span>
-
-          <div className="mcx-clip absolute inset-0">
-            <Image
-              src="/maps/satellite_map.jpg"
-              alt={t("mapcompare.alt_modern")}
-              fill
-              sizes="(max-width: 768px) 100vw, 680px"
-              className="object-cover pointer-events-none"
-              loading="lazy"
-            />
-            <span className="mcx-label left-3">{t("mapcompare.label_modern")}</span>
-          </div>
-
-          <div
-            role="slider"
-            tabIndex={0}
-            aria-label={t("mapcompare.slider_aria" as TranslationKey)}
-            aria-orientation="horizontal"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(pos)}
-            onKeyDown={onKeyDown}
-            className="mcx-handle absolute inset-y-0 z-10 cursor-ew-resize"
-          >
-            <span className="mcx-handle__grip" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 6l-6 6 6 6M15 6l6 6-6 6" />
-              </svg>
-            </span>
-          </div>
-        </div>
+        <MapCompareStage />
       </div>
     </section>
   );

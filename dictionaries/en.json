@@ -159,6 +159,7 @@
   "blog.subtitle": "{count} articles covering every feature and technique.",
   "blog.featured": "Featured",
   "blog.read_suffix": "read",
+  "blog.updated": "Updated",
   "blog.cta_beginners": "Additional guides are added regularly. Beginners can start with",
   "blog.cta_link": "the beginner's guide",
   "blog.cat_all": "All",

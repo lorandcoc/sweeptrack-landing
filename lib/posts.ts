@@ -25,13 +25,15 @@ export interface PostMeta {
   slug: string;
   title: string;
   publishedDate: string;
+  /** Set when a post is substantially rewritten; drives sitemap lastmod and dateModified. */
+  updatedDate?: string;
   category: BlogCategory;
 }
 
 export const POSTS: readonly PostMeta[] = [
   // Guides
-  { slug: "how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps to Find Better Metal Detecting Spots", publishedDate: "2026-02-28", category: "guides" },
-  { slug: "metal-detecting-permission-letter-template", title: "Metal Detecting Permission Letter: Free Template + What to Include", publishedDate: "2026-03-18", category: "guides" },
+  { slug: "how-to-use-old-maps-for-metal-detecting", title: "Old Maps for Metal Detecting: Where to Find Them Free", publishedDate: "2026-02-28", updatedDate: "2026-09-29", category: "guides" },
+  { slug: "metal-detecting-permission-letter-template", title: "Metal Detecting Permission Letter: Free Printable Template (PDF)", publishedDate: "2026-03-18", updatedDate: "2026-09-29", category: "guides" },
   { slug: "how-to-track-metal-detecting-sessions-gps", title: "How to Track Your Metal Detecting Sessions with GPS", publishedDate: "2026-02-25", category: "guides" },
   { slug: "detecting-as-a-group-with-radar", title: "Detecting as a Group: Live Positions with Radar", publishedDate: "2026-06-24", category: "guides" },
 
@@ -42,7 +44,7 @@ export const POSTS: readonly PostMeta[] = [
   { slug: "best-weather-conditions-for-metal-detecting", title: "Best Weather Conditions for Metal Detecting (And When to Stay Home)", publishedDate: "2026-02-04", category: "tips" },
 
   // Beach
-  { slug: "beach-metal-detecting-tide-timing", title: "Beach Metal Detecting: Tide Timing & Where to Search", publishedDate: "2026-01-14", category: "beach" },
+  { slug: "beach-metal-detecting-tide-timing", title: "Beach Metal Detecting: The Best Tide Times and Where to Search", publishedDate: "2026-01-14", updatedDate: "2026-09-29", category: "beach" },
 
   // Tutorials
   { slug: "detecting-forecast-guide", title: "Detecting Forecast: Plan Every Session by the Numbers", publishedDate: "2026-02-13", category: "tutorials" },
@@ -76,7 +78,7 @@ export const POSTS: readonly PostMeta[] = [
   { slug: "where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me: Finding Good Spots Anywhere", publishedDate: "2026-04-14", category: "location" },
 
   // Gear
-  { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026", publishedDate: "2026-01-17", category: "gear" },
+  { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026: 9 Picks Compared", publishedDate: "2026-01-17", updatedDate: "2026-09-29", category: "gear" },
 ];
 
 export const POSTS_BY_SLUG: ReadonlyMap<string, PostMeta> = new Map(

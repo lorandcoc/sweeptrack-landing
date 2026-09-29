@@ -9,8 +9,8 @@ import { useI18n, type TranslationKey } from "@/lib/i18n";
  * several of them placeholder or retired screens. */
 const posts = [
   // ── GUIDES ──
-  { slug: "how-to-use-old-maps-for-metal-detecting", title: "How to Use Old Maps to Find Better Detecting Spots", excerpt: "Historical topographic maps from USGS reveal old homesteads, vanished roads, and forgotten settlements.", tag: "Guide", category: "guides", readTime: "5 min", thumbnail: "/screenshots/offline_maps.jpg", featured: true },
-  { slug: "metal-detecting-permission-letter-template", title: "Permission Letter Template + How to Approach Landowners", excerpt: "A free template that works, plus tips on what to say at the door and how to track your permissions.", tag: "Guide", category: "guides", readTime: "6 min", thumbnail: "/screenshots/permission_vault.jpg" },
+  { slug: "how-to-use-old-maps-for-metal-detecting", title: "Old Maps for Metal Detecting: Where to Find Them Free", excerpt: "Where to find old topo maps, fire insurance maps and aerial photos for free, and how to turn a vanished farmhouse into a detecting plan.", tag: "Guide", category: "guides", readTime: "5 min", thumbnail: "/screenshots/offline_maps.jpg", featured: true },
+  { slug: "metal-detecting-permission-letter-template", title: "Metal Detecting Permission Letter: Free Printable Template", excerpt: "A one-page permission form to print or copy, what it should cover, and how to ask a landowner so the answer is yes more often.", tag: "Guide", category: "guides", readTime: "6 min", thumbnail: "/screenshots/permission_vault.jpg" },
   { slug: "how-to-track-metal-detecting-sessions-gps", title: "How to Track Your Detecting Sessions with GPS", excerpt: "Stop wondering where you already walked. GPS tracking shows your path and lets you overlay past sessions.", tag: "Guide", category: "guides", readTime: "4 min", thumbnail: "/screenshots/home.jpg" },
   { slug: "detecting-as-a-group-with-radar", title: "Detecting as a Group: Live Positions with Radar", excerpt: "See your detecting buddies on one live map, with distance, shared waypoints, an SOS, and a shared base point.", tag: "Guide", category: "guides", readTime: "4 min", thumbnail: "/screenshots/radar.jpg" },
   { slug: "metal-detecting-for-beginners", title: "Metal Detecting for Beginners: What You Need to Know", excerpt: "From picking your first detector to digging your first target, without the overwhelm.", tag: "Beginners", category: "beginners", readTime: "7 min", thumbnail: "/screenshots/home.jpg" },
@@ -19,7 +19,7 @@ const posts = [
   { slug: "best-weather-conditions-for-metal-detecting", title: "Best Weather for Detecting (And When to Stay Home)", excerpt: "Soil moisture, temperature, wind, and pressure all affect your detector. Learn what conditions are ideal.", tag: "Tips", category: "tips", readTime: "4 min", thumbnail: "/screenshots/forecast.jpg" },
 
   // ── BEACH ──
-  { slug: "beach-metal-detecting-tide-timing", title: "Beach Detecting: Tide Timing & Where to Search", excerpt: "Low tide is when the gold comes out. Learn how to time your sessions and where to swing.", tag: "Beach", category: "beach", readTime: "5 min", thumbnail: "/screenshots/forecast.jpg" },
+  { slug: "beach-metal-detecting-tide-timing", title: "Beach Detecting: The Best Tide Times and Where to Search", excerpt: "Low tides, minus tides and storms, how to read a tide table, and where to swing on the sand.", tag: "Beach", category: "beach", readTime: "5 min", thumbnail: "/screenshots/forecast.jpg" },
 
   // ── APP TUTORIALS ──
   { slug: "detecting-forecast-guide", title: "Detecting Forecast: Plan Every Session by the Numbers", excerpt: "0-100 Detecting Score for any location, any day up to a week ahead. Soil moisture, wind, temp, humidity, and smart tips.", tag: "Tutorial", category: "tutorials", readTime: "4 min", thumbnail: "/screenshots/forecast.jpg" },
@@ -53,7 +53,7 @@ const posts = [
   { slug: "where-to-metal-detect-near-me", title: "Where to Metal Detect Near Me", excerpt: "How to find detecting spots anywhere: old maps, school yards, churches, fairgrounds, river access, and more.", tag: "Location", category: "location", readTime: "5 min", thumbnail: "/screenshots/offline_maps.jpg" },
 
   // ── GEAR ──
-  { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026", excerpt: "Nokta Simplex+, Minelab Vanquish, Garrett Ace 400, XP ORX, Fisher F44, and Nokta Legend compared.", tag: "Gear", category: "gear", readTime: "7 min", thumbnail: "/screenshots/history.jpg" },
+  { slug: "best-metal-detectors-under-500", title: "Best Metal Detectors Under $500 in 2026: 9 Picks Compared", excerpt: "Minelab Vanquish, Garrett Ace Apex, Nokta Simplex Ultra and more, compared on price, frequency and waterproofing.", tag: "Gear", category: "gear", readTime: "8 min", thumbnail: "/screenshots/history.jpg" },
 ];
 
 const categoryKeys: { id: string; labelKey: TranslationKey }[] = [
