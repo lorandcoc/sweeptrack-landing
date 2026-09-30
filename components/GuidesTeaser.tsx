@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 // Server-rendered hub -> spoke internal links. Sends homepage authority into
 // the central cluster posts with descriptive, keyword-bearing anchors, and
@@ -12,6 +13,8 @@ const guides = [
   { href: "/blog/metal-detecting-permission-letter-template", title: "Permission Letter Template" },
 ];
 
+const HOVER = { "--c-edge": "var(--st-accent-edge)", "--c-glow": "var(--accent)" } as CSSProperties;
+
 export default function GuidesTeaser() {
   return (
     <section id="guides" className="st-rule py-20 md:py-28">
@@ -21,24 +24,26 @@ export default function GuidesTeaser() {
           <p className="mt-5 text-muted leading-relaxed max-w-sm">
             Articles on finding sites, asking for permission, and using the app.
           </p>
-          <p className="mt-5">
+          <p className="mt-6">
             <Link
               href="/blog"
-              className="text-foreground underline decoration-white/30 underline-offset-4 hover:decoration-foreground transition-colors"
+              className="inline-flex items-center gap-2 rounded-xl border border-[var(--st-accent-edge)] bg-[var(--st-accent-faint)] px-5 py-2.5 text-sm font-semibold text-accent hover:bg-accent hover:text-[#050510] transition-colors"
             >
               All guides
+              <span aria-hidden="true">&rarr;</span>
             </Link>
           </p>
         </div>
-        <ul className="grid sm:grid-cols-2 gap-x-10">
+        <ul className="grid sm:grid-cols-2 gap-4">
           {guides.map((g) => (
-            <li key={g.href} className="border-t border-white/10">
+            <li key={g.href}>
               <Link
                 href={g.href}
-                className="group flex items-baseline justify-between gap-4 py-4 text-foreground/90 hover:text-foreground"
+                style={HOVER}
+                className="fcard group flex h-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#0a0a18] px-5 py-4 text-foreground/90 hover:text-foreground"
               >
-                <span className="group-hover:underline decoration-white/40 underline-offset-4">{g.title}</span>
-                <span className="text-muted group-hover:text-accent transition-colors" aria-hidden="true">&rarr;</span>
+                <span>{g.title}</span>
+                <span className="text-muted transition-all group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true">&rarr;</span>
               </Link>
             </li>
           ))}

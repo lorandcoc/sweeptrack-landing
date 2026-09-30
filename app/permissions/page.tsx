@@ -8,6 +8,8 @@ import InfoCard from "@/components/InfoCard";
 import { ItemGrid, PageClosing, PageHero, PageSection, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 
 const URL = "https://sweeptrack.pro/permissions";
 const TITLE = "Permissions & Boundaries for Metal Detecting | SweepTrack Pro";
@@ -40,8 +42,9 @@ export default function PermissionsPage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
+      <main style={accentStyle("orange")}>
         <PageHero
+          badges={<><Badge tone="free">1 permission free</Badge><Badge tone="premium">PDF letter and Guard: Pro</Badge></>}
           title="Permission in writing, and a warning before you cross the line"
           actions={<GooglePlayButton />}
           note="Android only."

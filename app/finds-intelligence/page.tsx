@@ -7,6 +7,8 @@ import InfoCard from "@/components/InfoCard";
 import { ItemGrid, PageClosing, PageHero, PageSection, PlanCompare, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 
 const URL = "https://sweeptrack.pro/finds-intelligence";
 const TITLE = "Finds Intelligence: Know Where to Dig Next | SweepTrack Pro";
@@ -39,8 +41,9 @@ export default function FindsIntelligencePage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
+      <main style={accentStyle("cyan")}>
         <PageHero
+          badges={<><Badge tone="premium">Pro</Badge><Badge tone="free">Find logging is free</Badge></>}
           title="What your find log says about where to dig"
           actions={<GooglePlayButton />}
           note="A Pro feature. Android only."

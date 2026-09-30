@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MapCompareSlider from "@/components/MapCompareSlider";
-import Outcomes from "@/components/Outcomes";
+import FeatureBento from "@/components/FeatureBento";
+import StatsBand from "@/components/StatsBand";
+import Reveal from "@/components/Reveal";
 import HowItWorks from "@/components/HowItWorks";
 import FounderNote from "@/components/FounderNote";
 import TrustStrip from "@/components/TrustStrip";
@@ -88,6 +90,14 @@ const jsonLdGraph = [
         availability: "https://schema.org/InStock",
         priceValidUntil: "2027-12-31",
         description: "$3.49/month, free trial when eligible",
+      },
+      {
+        "@type": "Offer",
+        price: "39.99",
+        priceCurrency: "USD",
+        name: "Founder's Lifetime",
+        availability: "https://schema.org/LimitedAvailability",
+        description: "One-time payment for lifetime Pro access, limited to the first 1,000 buyers.",
       },
     ],
     featureList: [
@@ -196,15 +206,30 @@ export default function LandingPage() {
       <Header />
       <main>
         <Hero />
+        <StatsBand />
         <MapCompareSlider />
-        <Outcomes />
-        <HowItWorks />
-        <FounderNote />
-        <TrustStrip />
-        <PricingTable />
-        <FAQ />
-        <GuidesTeaser />
-        <CTA />
+        <FeatureBento />
+        <Reveal>
+          <HowItWorks />
+        </Reveal>
+        <Reveal>
+          <PricingTable />
+        </Reveal>
+        <Reveal>
+          <TrustStrip />
+        </Reveal>
+        <Reveal>
+          <FounderNote />
+        </Reveal>
+        <Reveal>
+          <FAQ />
+        </Reveal>
+        <Reveal>
+          <GuidesTeaser />
+        </Reveal>
+        <Reveal>
+          <CTA />
+        </Reveal>
       </main>
       <Footer />
     </>

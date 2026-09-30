@@ -5,6 +5,8 @@ import PricingTable from "@/components/PricingTable";
 import { PageHero } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 
 const URL = "https://sweeptrack.pro/pricing";
 const TITLE = "Pricing: Free vs Pro | SweepTrack Pro Metal Detecting App";
@@ -36,8 +38,8 @@ export default function PricingPage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
-        <PageHero title="What SweepTrack Pro costs">
+      <main style={accentStyle("green")}>
+        <PageHero badges={<Badge tone="free">Tracking is free</Badge>} title="What SweepTrack Pro costs">
           <p>
             Tracking is free for good. Pro unlocks the map layers, the full find record, the forecast, and backups, and
             there is a one-time Founder&apos;s Lifetime option for the first 1,000 buyers.

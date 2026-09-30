@@ -17,6 +17,8 @@ const STEPS: { n: 1 | 2 | 3; shot: StaticImageData; alt: TranslationKey }[] = [
   { n: 3, shot: historyShot, alt: "screenshots.alt_history" },
 ];
 
+const STEP_COLOR: Record<1 | 2 | 3, string> = { 1: "var(--st-cyan)", 2: "var(--accent)", 3: "var(--st-gold)" };
+
 export default function HowItWorks() {
   const { t } = useI18n();
 
@@ -38,6 +40,13 @@ export default function HowItWorks() {
                 />
               </div>
               <div>
+                <span
+                  className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full font-mono text-sm font-bold text-[#050510]"
+                  style={{ background: STEP_COLOR[step.n] }}
+                  aria-hidden="true"
+                >
+                  {step.n}
+                </span>
                 <h3 className="font-display text-xl md:text-2xl leading-tight">
                   {t(`howitworks.step${step.n}_title` as TranslationKey)}
                 </h3>

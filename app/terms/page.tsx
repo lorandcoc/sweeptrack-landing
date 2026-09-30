@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import LegalPage from "@/components/LegalPage";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary, isLocale, type LocaleCode } from "@/lib/getDictionary";
@@ -21,7 +23,9 @@ export default async function TermsOfService() {
   const dict = getDictionary(locale);
   return (
     <I18nProvider initialLocale={locale} initialDict={dict}>
+      <Header />
       <LegalPage page="terms" />
+      <Footer />
     </I18nProvider>
   );
 }

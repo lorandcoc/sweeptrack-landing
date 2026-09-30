@@ -2,7 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
+import Badge from "./Badge";
+import Reveal from "./Reveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
+import { accentStyle } from "@/lib/accent";
 
 /*
  * Old map vs today. Both images are real screens from the app over the same
@@ -145,20 +148,31 @@ export function MapCompareStage({ className = "aspect-[4/5] md:aspect-square" }:
   );
 }
 
-/* Homepage section: copy on the left, the comparison stage on the right. */
+/* Homepage section: copy on the left, the comparison stage on the right.
+ * Gold is the maps colour across the site, so the section sets it as its
+ * accent wherever it is placed. */
 export default function MapCompareSlider() {
   const { t } = useI18n();
   return (
-    <section id="old-maps" className="st-rule py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-16 items-center">
-        <div>
-          <h2 className="font-display st-h2">{t("mapcompare.heading")}</h2>
+    <section id="old-maps" className="st-rule relative overflow-hidden py-20 md:py-28" style={accentStyle("gold")}>
+      <div className="wash-gold pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-16 items-center">
+        <Reveal>
+          <div className="flex flex-wrap gap-2">
+            <Badge tone="premium">{t("pricing.pro_label")}</Badge>
+            <Badge tone="accent">{t("mapcompare.label_old")}</Badge>
+          </div>
+          <h2 className="mt-5 font-display text-[2.1rem] leading-[1.08] sm:text-5xl sm:leading-[1.05] [text-wrap:balance]">
+            {t("mapcompare.heading")}
+          </h2>
           <p className="mt-5 text-muted text-lg leading-relaxed [text-wrap:pretty]">
             {t("mapcompare.description")}
           </p>
           <p className="mt-5 text-sm text-muted/80 leading-relaxed">{t("mapcompare.closing")}</p>
-        </div>
-        <MapCompareStage />
+        </Reveal>
+        <Reveal delay={150}>
+          <MapCompareStage />
+        </Reveal>
       </div>
     </section>
   );

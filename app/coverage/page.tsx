@@ -7,6 +7,8 @@ import InfoCard from "@/components/InfoCard";
 import { ItemGrid, PageClosing, PageHero, PageSection, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 
 const URL = "https://sweeptrack.pro/coverage";
 const TITLE = "GPS Track & Coverage for Metal Detecting | SweepTrack Pro";
@@ -39,8 +41,13 @@ export default function CoveragePage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
-        <PageHero title="Never search the same ground twice" actions={<GooglePlayButton />} note="Tracking is free. Android only.">
+      <main style={accentStyle("green")}>
+        <PageHero
+          badges={<Badge tone="free">Free · 10 sessions a month</Badge>}
+          title="Never search the same ground twice"
+          actions={<GooglePlayButton />}
+          note="Tracking is free. Android only."
+        >
           <p>
             Your GPS path draws on the map as you walk, so you sweep in lanes instead of circles. SweepTrack keeps a
             clean line from the first step and autosaves the whole time, so a reboot or a dead battery never costs you

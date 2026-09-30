@@ -5,6 +5,7 @@ import ComingSoonButton from "@/components/ComingSoonButton";
 import { PageHero, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
 
 const URL = "https://sweeptrack.pro/iphone";
 const TITLE = "iPhone Version: Join the Waitlist | SweepTrack Pro";
@@ -36,7 +37,7 @@ export default function IphonePage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
+      <main style={accentStyle("green")}>
         <PageHero
           title="An iPhone version? Tell us you want it"
           actions={<ComingSoonButton size="large" />}

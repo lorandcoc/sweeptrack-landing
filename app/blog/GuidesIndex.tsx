@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import Link from "next/link";
+import Badge from "@/components/Badge";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
+
+const HOVER = { "--c-edge": "var(--st-accent-edge)", "--c-glow": "var(--accent)" } as CSSProperties;
 
 /* `tag` and `thumbnail` are kept for reference but not shown: the category
  * already says what `tag` says, and the thumbnails were cropped app headers,
@@ -83,8 +86,15 @@ export default function GuidesIndex() {
   const readLabel = (readTime: string) => `${readTime} ${t("blog.read_suffix")}`;
 
   return (
-    <main className="px-6 pt-10 pb-24 md:pt-16">
-      <div className="max-w-6xl mx-auto">
+    <main className="relative overflow-hidden px-6 pt-10 pb-24 md:pt-16">
+      {/* Only the top-right glow of .pa-wash: this box ends mid-page, and the
+          lower-left one would show a hard edge there. */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[32rem]"
+        style={{ background: "radial-gradient(50% 70% at 88% 20%, color-mix(in srgb, var(--pa) 16%, transparent), transparent 70%)" }}
+        aria-hidden="true"
+      />
+      <div className="relative max-w-6xl mx-auto">
         <Link href="/" className="text-sm text-muted hover:text-foreground transition-colors">
           &larr; {t("blog.back")}
         </Link>
@@ -94,20 +104,22 @@ export default function GuidesIndex() {
         </h1>
         <p className="mt-4 text-lg text-muted">{t("blog.subtitle").replace("{count}", String(visiblePosts.length))}</p>
 
-        {/* Featured: the first thing to read, set larger, no card */}
+        {/* Featured: the first thing to read, set larger */}
         {featured && filter === "all" && (
-          <Link href={`/blog/${featured.slug}`} className="group mt-12 block border-t border-white/10 pt-8 max-w-3xl">
-            <h2 className="font-display text-[1.75rem] leading-[1.15] sm:text-[2.1rem] [text-wrap:balance] underline decoration-transparent underline-offset-[6px] group-hover:decoration-white/40 transition-colors">
+          <Link
+            href={`/blog/${featured.slug}`}
+            style={HOVER}
+            className="fcard group mt-12 block max-w-3xl rounded-3xl border border-[var(--st-accent-edge)] bg-gradient-to-br from-[#0b2016] via-[#0a0a18] to-[#0a0a18] p-7 md:p-9"
+          >
+            <span className="flex flex-wrap gap-2">
+              <Badge tone="free">{t("blog.featured")}</Badge>
+              <Badge tone="new">{categoryLabel(featured.category)}</Badge>
+            </span>
+            <h2 className="mt-5 font-display text-[1.75rem] leading-[1.15] sm:text-[2.1rem] [text-wrap:balance]">
               {featured.title}
             </h2>
             <p className="mt-3 text-lg text-muted leading-relaxed">{featured.excerpt}</p>
-            <p className="mt-4 text-sm text-muted">
-              <span className="text-foreground">{t("blog.featured")}</span>
-              <span className="mx-2" aria-hidden="true">·</span>
-              {categoryLabel(featured.category)}
-              <span className="mx-2" aria-hidden="true">·</span>
-              {readLabel(featured.readTime)}
-            </p>
+            <p className="mt-4 text-sm text-muted">{readLabel(featured.readTime)}</p>
           </Link>
         )}
 
@@ -122,35 +134,32 @@ export default function GuidesIndex() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => setFilter(cat.id)}
-                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md text-sm border transition-colors ${
+                className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
                   active
-                    ? "bg-white/[0.08] border-white/25 text-foreground"
-                    : "border-white/10 text-muted hover:text-foreground hover:border-white/20"
+                    ? "bg-[var(--st-accent-faint)] border-[var(--st-accent-edge)] text-accent"
+                    : "border-white/10 text-muted hover:text-foreground hover:border-[var(--st-accent-edge)]"
                 }`}
               >
                 {t(cat.labelKey)}
-                <span className="text-xs tabular-nums text-muted/70">{count}</span>
+                <span className="text-xs tabular-nums opacity-70">{count}</span>
               </button>
             );
           })}
         </div>
 
         {/* Every guide, title and excerpt in full */}
-        <ul className="mt-10 grid md:grid-cols-2 gap-x-12 gap-y-10">
+        <ul className="mt-10 grid md:grid-cols-2 gap-5">
           {list.map((post) => (
-            <li key={post.slug} className="border-t border-white/10 pt-5">
-              <Link href={`/blog/${post.slug}`} className="group block">
-                <h2 className="font-display text-xl leading-snug [text-wrap:balance] underline decoration-transparent underline-offset-4 group-hover:decoration-white/40 transition-colors">
-                  {post.title}
-                </h2>
+            <li key={post.slug}>
+              <Link
+                href={`/blog/${post.slug}`}
+                style={HOVER}
+                className="fcard group flex h-full flex-col rounded-2xl border border-white/10 bg-[#0a0a18] p-6"
+              >
+                <h2 className="font-display text-xl leading-snug [text-wrap:balance]">{post.title}</h2>
                 <p className="mt-2 text-[15px] text-muted leading-relaxed">{post.excerpt}</p>
-                <p className="mt-3 text-sm text-muted/80">
-                  {filter === "all" && (
-                    <>
-                      {categoryLabel(post.category)}
-                      <span className="mx-2" aria-hidden="true">·</span>
-                    </>
-                  )}
+                <p className="mt-auto flex flex-wrap items-center gap-3 pt-4 text-sm text-muted/80">
+                  {filter === "all" && <Badge tone="new">{categoryLabel(post.category)}</Badge>}
                   {readLabel(post.readTime)}
                 </p>
               </Link>

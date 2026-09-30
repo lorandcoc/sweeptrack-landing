@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, LOCALES } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle";
 import { useSitePlayUrl } from "./GooglePlayButton";
 
@@ -27,7 +28,14 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // The homepage lives at "/" in English and at "/<locale>" otherwise.
+  const pathname = usePathname() || "/";
+  const onHome = pathname === "/" || LOCALES.some((l) => pathname === `/${l.code}`);
+  const isActive = (href: string) => (href === "/" ? onHome : pathname.startsWith(href));
+
+  // "Home" is spelled out: many visitors don't know the logo leads home.
   const navLinks = [
+    { label: t("header.nav_home"), href: "/" },
     { label: t("header.nav_features"), href: "/features" },
     { label: t("header.nav_overlays"), href: "/overlays" },
     { label: t("header.nav_radar"), href: "/radar" },
@@ -91,23 +99,30 @@ export default function Header() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={scrollToHash}
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`rounded-lg px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                isActive(link.href)
+                  ? "bg-[var(--st-accent-faint)] text-accent"
+                  : "text-muted hover:bg-white/[0.05] hover:text-foreground"
+              }`}
             >
               {link.label}
             </a>
           ))}
-          <LanguageToggle />
+          <span className="ml-2">
+            <LanguageToggle />
+          </span>
           <a
             href={playUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold px-4 py-2 rounded-lg bg-accent text-[#050510] hover:bg-accent-dim transition-colors"
+            className="ml-3 text-sm font-semibold px-4 py-2 rounded-lg bg-accent text-[#050510] whitespace-nowrap hover:bg-accent-dim transition-colors"
           >
             {t("cta.google_play")}
           </a>
@@ -115,7 +130,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-muted hover:text-foreground transition-colors"
+          className="xl:hidden text-muted hover:text-foreground transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -134,16 +149,19 @@ export default function Header() {
       {/* Mobile Menu */}
       <div
         id="mobile-nav"
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-[400px] border-t border-white/5" : "max-h-0"
+        className={`xl:hidden overflow-hidden transition-all duration-300 ${
+          menuOpen ? "max-h-[520px] border-t border-white/5" : "max-h-0"
         } bg-[#050510]/95 backdrop-blur-xl`}
       >
-        <nav className="flex flex-col px-6 py-4 gap-4">
+        <nav className="flex flex-col px-6 py-4 gap-2">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-muted hover:text-foreground transition-colors"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`-mx-3 rounded-lg px-3 py-2 transition-colors ${
+                isActive(link.href) ? "bg-[var(--st-accent-faint)] text-accent" : "text-muted hover:text-foreground"
+              }`}
               onClick={(e) => {
                 setMenuOpen(false);
                 scrollToHash(e);

@@ -7,6 +7,8 @@ import InfoCard, { StepCard } from "@/components/InfoCard";
 import { ItemGrid, PageClosing, PageHero, PageSection, PlanCompare, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 
 const URL = "https://sweeptrack.pro/radar";
 const TITLE = "SweepTrack Radar: Free Real-Time Group Map for Metal Detecting";
@@ -74,8 +76,9 @@ export default function RadarPage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
+      <main style={accentStyle("sky")}>
         <PageHero
+          badges={<><Badge tone="free">Free to join</Badge><Badge tone="premium">Premium to host</Badge></>}
           title="See your whole group on one live map"
           actions={<ComingSoonButton />}
           note="Free to join, Premium to host. Launching soon on Google Play, Android only."

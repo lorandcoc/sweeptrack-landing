@@ -10,6 +10,8 @@ import InfoCard, { StepCard } from "@/components/InfoCard";
 import { ItemGrid, PageClosing, PageHero, PageSection, PlanCompare, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 
 const URL = "https://sweeptrack.pro/overlays";
 const TITLE = "Custom Map Overlays for Metal Detecting: Import & Align Your Own Maps | SweepTrack Pro";
@@ -53,23 +55,26 @@ export default function OverlaysPage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
+      <main style={accentStyle("gold")}>
         <PageHero
+          badges={<><Badge tone="premium">Pro</Badge><Badge tone="accent">Import your own maps</Badge></>}
           title="Detect with an old map lined up under your track"
           actions={<GooglePlayButton />}
           note="A Pro feature. Android only."
           aside={
             <div className="flex justify-center md:justify-end">
-              <div className="phone-frame w-[220px] sm:w-[250px] md:w-full">
-                <Image
-                  src="/maps/old_map.jpg"
-                  alt="The USGS historical topo layer in SweepTrack Pro, with its opacity slider"
-                  width={1280}
-                  height={2773}
-                  priority
-                  sizes="(max-width: 640px) 220px, 290px"
-                  className="block w-full h-auto"
-                />
+              <div className="phone-glow w-[220px] sm:w-[250px] md:w-full">
+                <div className="phone-frame">
+                  <Image
+                    src="/maps/old_map.jpg"
+                    alt="The USGS historical topo layer in SweepTrack Pro, with its opacity slider"
+                    width={1280}
+                    height={2773}
+                    priority
+                    sizes="(max-width: 640px) 220px, 290px"
+                    className="block w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           }

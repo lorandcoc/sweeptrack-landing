@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 import { sitePlayUrl } from "@/lib/playStore";
 import InfoCard, { StepCard } from "@/components/InfoCard";
 import { ButtonLink, ItemGrid, PageClosing, PageHero, PageSection, PlanCompare, TextLink } from "@/components/PageSection";
@@ -73,8 +75,9 @@ export default function ClubsPage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
+      <main style={accentStyle("sky")}>
         <PageHero
+          badges={<><Badge tone="free">Members join free</Badge><Badge tone="premium">The organizer hosts with Pro</Badge></>}
           title="Put your whole club on one live map"
           actions={<ButtonLink href={CLUB_MAILTO}>Tell us about your club</ButtonLink>}
           note="Members join free, the organizer hosts with Pro. Android only; the free member app is launching soon."

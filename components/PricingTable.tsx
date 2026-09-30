@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import GooglePlayButton from "./GooglePlayButton";
+import { useState, type ReactNode } from "react";
+import { Check, Crown } from "lucide-react";
+import { useSitePlayUrl } from "./GooglePlayButton";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 type FeatureRow = {
@@ -161,6 +162,142 @@ function Cell({ value }: { value: boolean | string }) {
   return <span className="text-xs text-muted">{value}</span>;
 }
 
+/* ── Plan cards ───────────────────────────────────────────────
+ * The three offers the app's paywall shows: a plain free card, the Pro
+ * subscription in green with an annual / monthly switch, and the Founder's
+ * Lifetime card with a turning gold border. The Free and Pro lists reuse the
+ * comparison rows below (label, plus the tier's value where the row has one),
+ * so a card can't drift from the table. Prices come from the dictionaries
+ * (pricing.pro_price, pricing.price_monthly, pricing.founder_price) and must
+ * match Google Play; the Founder price was confirmed by the owner on
+ * 2026-09-30. The annual plan is labelled "Recommended", never "Most
+ * popular", which the site cannot back up.
+ */
+type PlanItem = { label: TranslationKey; value?: TranslationKey };
+
+const FREE_ITEMS: PlanItem[] = [
+  { label: "pricing.feat_gps", value: "pricing.feat_gps_free" },
+  { label: "pricing.feat_sessions", value: "pricing.feat_sessions_free" },
+  { label: "pricing.feat_finds", value: "pricing.feat_finds_free" },
+  { label: "featuretag.waypoints", value: "pricing.feat_waypoints_free" },
+  { label: "pricing.feat_vault", value: "pricing.feat_vault_free" },
+  { label: "pricing.feat_livegroup_join" },
+];
+const PRO_ITEMS: PlanItem[] = [
+  { label: "pricing.feat_sessions", value: "pricing.feat_sessions_pro" },
+  { label: "pricing.feat_finds", value: "pricing.feat_finds_pro" },
+  { label: "pricing.feat_findsintel" },
+  { label: "pricing.feat_mapoverlay" },
+  { label: "pricing.feat_historicalmap" },
+  { label: "pricing.feat_offline" },
+  { label: "pricing.feat_perimeter" },
+  { label: "pricing.feat_cloudbackup" },
+  { label: "pricing.feat_livegroup_host" },
+];
+const FOUNDER_ITEMS: PlanItem[] = [
+  { label: "pricing.plan_founder_1" },
+  { label: "pricing.plan_founder_2" },
+  { label: "pricing.plan_founder_3" },
+];
+
+function PlanList({ items, color }: { items: PlanItem[]; color: string }) {
+  const { t } = useI18n();
+  return (
+    <ul className="mt-7 mb-8 space-y-3 text-[15px] text-foreground/90 leading-snug">
+      {items.map((item) => (
+        <li key={item.label} className="flex gap-3">
+          <Check size={18} className="mt-0.5 shrink-0" style={{ color }} aria-hidden="true" />
+          <span>
+            {t(item.label)}
+            {item.value && <span className="text-muted"> · {t(item.value)}</span>}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function Pill({ children, tone }: { children: ReactNode; tone: "green" | "gold" | "goldSolid" }) {
+  const cls = {
+    green: "bg-accent text-[#050510]",
+    gold: "border border-[var(--st-gold-edge)] bg-[var(--st-gold-faint)] text-[var(--st-gold)]",
+    goldSolid: "bg-[var(--st-gold)] text-[#1a1405]",
+  }[tone];
+  return <span className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${cls}`}>{children}</span>;
+}
+
+function PlanCards() {
+  const { t } = useI18n();
+  const playUrl = useSitePlayUrl();
+  const [annual, setAnnual] = useState(true);
+  const btn = "inline-flex w-full items-center justify-center rounded-xl px-6 py-3.5 font-semibold transition-colors";
+
+  return (
+    <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
+      {/* Free */}
+      <div className="flex flex-col rounded-2xl border border-white/10 bg-[#0a0a18] p-7 lg:mt-8">
+        <div className="text-sm font-semibold uppercase tracking-wider text-muted">{t("pricing.free_label")}</div>
+        <div className="mt-5 font-mono text-5xl font-semibold tracking-tight">{t("pricing.free_price")}</div>
+        <div className="mt-1.5 text-sm text-muted">{t("pricing.free_sublabel")}</div>
+        <PlanList items={FREE_ITEMS} color="var(--accent)" />
+        <a href={playUrl} target="_blank" rel="noopener noreferrer" className={`${btn} mt-auto border border-white/20 text-foreground hover:border-white/40`}>
+          {t("pricing.cta_free")}
+        </a>
+      </div>
+
+      {/* Pro */}
+      <div className="premium-card relative flex flex-col rounded-2xl bg-gradient-to-b from-[#0b2016] to-[#08120d] p-7">
+        <div className="flex flex-wrap items-center gap-2">
+          <Pill tone="green">{t("pricing.badge_recommended")}</Pill>
+          {annual && <Pill tone="gold">{t("pricing.badge_save")}</Pill>}
+        </div>
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-sm font-semibold uppercase tracking-wider text-accent">{t("pricing.pro_label")}</div>
+          <div className="inline-flex rounded-full border border-white/15 bg-black/30 p-1 text-xs font-semibold" role="group" aria-label={t("pricing.period_aria")}>
+            {[true, false].map((isAnnual) => (
+              <button
+                key={String(isAnnual)}
+                type="button"
+                onClick={() => setAnnual(isAnnual)}
+                aria-pressed={annual === isAnnual}
+                className={`rounded-full px-3 py-1.5 transition-colors ${annual === isAnnual ? "bg-accent text-[#050510]" : "text-muted hover:text-foreground"}`}
+              >
+                {t(isAnnual ? "pricing.period_annual" : "pricing.period_monthly")}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="mt-4 flex items-baseline gap-2">
+          <span className="font-mono text-5xl font-semibold tracking-tight">{t(annual ? "pricing.pro_price" : "pricing.price_monthly")}</span>
+          <span className="text-lg text-muted">{t(annual ? "pricing.pro_frequency" : "pricing.per_month")}</span>
+        </div>
+        <div className="mt-1.5 text-sm text-muted">{t(annual ? "pricing.pro_sublabel" : "pricing.note_monthly")}</div>
+        <PlanList items={PRO_ITEMS} color="var(--accent)" />
+        <a href={playUrl} target="_blank" rel="noopener noreferrer" className={`${btn} mt-auto bg-accent text-[#050510] hover:bg-accent-dim`}>
+          {t("pricing.cta_pro")}
+        </a>
+      </div>
+
+      {/* Founder's Lifetime */}
+      <div className="founder-card flex flex-col rounded-2xl bg-gradient-to-b from-[#1c1608] to-[#0f0c06] p-7 lg:mt-8">
+        <div>
+          <Pill tone="goldSolid">{t("pricing.badge_limited")}</Pill>
+        </div>
+        <div className="mt-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--st-gold)]">
+          <Crown size={16} aria-hidden="true" />
+          {t("pricing.founder_title")}
+        </div>
+        <div className="mt-4 font-mono text-5xl font-semibold tracking-tight">{t("pricing.founder_price")}</div>
+        <div className="mt-1.5 text-sm text-muted">{t("pricing.note_founder")}</div>
+        <PlanList items={FOUNDER_ITEMS} color="var(--st-gold)" />
+        <a href={playUrl} target="_blank" rel="noopener noreferrer" className={`${btn} mt-auto bg-[var(--st-gold)] text-[#1a1405] hover:brightness-110`}>
+          {t("pricing.cta_founder")}
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function PricingTable({ heading = true }: { heading?: boolean }) {
   const { t } = useI18n();
   const [expanded, setExpanded] = useState(false);
@@ -190,34 +327,12 @@ export default function PricingTable({ heading = true }: { heading?: boolean }) 
       <div className="max-w-6xl mx-auto px-6">
         {heading && <h2 className="font-display st-h2 mb-10 md:mb-14">{t("pricing.heading")}</h2>}
 
-        <div className="max-w-4xl">
-          {/* Plans */}
-          <div className="grid md:grid-cols-2 border border-white/10 rounded-xl overflow-hidden">
-            <div className="p-6 sm:p-8">
-              <div className="font-semibold text-muted">{t("pricing.free_label")}</div>
-              <div className="mt-2 text-4xl font-semibold tracking-tight">{t("pricing.free_price")}</div>
-              <div className="mt-2 text-sm text-muted">{t("pricing.free_sublabel")}</div>
-              <p className="mt-5 text-[15px] text-foreground/80 leading-relaxed">{t("pricing.free_description")}</p>
-            </div>
-            <div className="p-6 sm:p-8 border-t md:border-t-0 md:border-l border-white/10 bg-white/[0.02] shadow-[inset_0_2px_0_0_var(--accent)]">
-              <div className="font-semibold text-accent">{t("pricing.pro_label")}</div>
-              <div className="mt-2 text-4xl font-semibold tracking-tight">
-                {t("pricing.pro_price")}
-                <span className="text-lg font-normal text-muted">{t("pricing.pro_frequency")}</span>
-              </div>
-              <div className="mt-2 text-sm text-muted">{t("pricing.pro_sublabel")}</div>
-              <p className="mt-5 text-[15px] text-foreground/80 leading-relaxed">{t("pricing.pro_description")}</p>
-            </div>
-          </div>
+        <PlanCards />
 
-          {/* Founder's Lifetime: one quiet line, not a banner */}
-          <p className="mt-6 text-[15px] leading-relaxed text-muted max-w-3xl">
-            <span className="font-semibold text-amber-200">{t("pricing.founder_title")}.</span>{" "}
-            {t("pricing.founder_description")}
-          </p>
-
+        <div className="max-w-4xl mt-16 md:mt-20">
+          <h3 className="font-display text-2xl md:text-3xl mb-6">{t("pricing.compare_heading")}</h3>
           {/* Feature comparison */}
-          <div className="mt-12 rounded-xl border border-white/10 overflow-hidden">
+          <div className="rounded-xl border border-white/10 overflow-hidden">
             <div className="grid grid-cols-[1fr_76px_76px] sm:grid-cols-[1fr_120px_120px] px-4 sm:px-5 py-3 bg-white/[0.03] text-sm font-semibold">
               <div className="text-muted">{t("pricing.col_feature")}</div>
               <div className="text-center text-muted">{t("pricing.col_free")}</div>
@@ -256,10 +371,6 @@ export default function PricingTable({ heading = true }: { heading?: boolean }) 
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </button>
-          </div>
-
-          <div className="mt-10">
-            <GooglePlayButton />
           </div>
         </div>
       </div>

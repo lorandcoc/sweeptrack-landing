@@ -5,6 +5,8 @@ import InfoCard from "@/components/InfoCard";
 import { ItemGrid, PageHero, PageSection, TextLink } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
+import Badge from "@/components/Badge";
 
 const URL = "https://sweeptrack.pro/trust";
 const TITLE = "Trust Center: Your Data, in Plain English | SweepTrack Pro";
@@ -135,8 +137,8 @@ export default function TrustPage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
-        <PageHero title="What happens to your data">
+      <main style={accentStyle("green")}>
+        <PageHero badges={<Badge tone="accent">No account · no ads</Badge>} title="What happens to your data">
           <p>
             Detectorists guard their spots. So here is exactly what SweepTrack stores, what stays on your phone, what
             leaves it and why, and what you control.

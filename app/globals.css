@@ -99,9 +99,10 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Scroll reveals are intentionally inert: content is simply there. The
-   `reveal`/`visible` classes remain on some components only because their
-   `visible` flag also starts a demo animation when it scrolls into view. */
+/* The `reveal`/`visible` classes on the Spotlight demos carry no styles of
+   their own: their `visible` flag starts a demo animation when it scrolls
+   into view. The scroll reveal itself is `.rv` (components/Reveal.tsx), at
+   the end of this file. */
 
 /* ── Phone mockup frame ── */
 .phone-frame {
@@ -2027,4 +2028,117 @@ details:focus-visible > summary {
   .spa-locked { animation: none !important; opacity: 1; }
   .spa-meter__fill { animation: none !important; transform: scaleX(1); }
   .spa-rms { animation: none !important; opacity: 1; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Redesign (2026-09-30), carried over from ro.sweeptrack.pro: a colour per
+   feature, highlighted pricing, and motion that reveals content. Every
+   animation below stops under prefers-reduced-motion, and revealed content
+   stays visible when scripting is off.
+   ══════════════════════════════════════════════════════════════════════ */
+:root {
+  --st-red: #FF4D5E;
+  --st-red-faint: rgba(255, 77, 94, 0.10);
+  --st-red-edge: rgba(255, 77, 94, 0.35);
+  --st-gold: #FFC53D;
+  --st-gold-faint: rgba(255, 197, 61, 0.10);
+  --st-gold-edge: rgba(255, 197, 61, 0.40);
+  --st-sky: #5B8CFF;
+  --st-sky-faint: rgba(91, 140, 255, 0.10);
+  --st-sky-edge: rgba(91, 140, 255, 0.35);
+}
+
+/* Reveal on scroll (components/Reveal.tsx toggles .rv-in). */
+.rv {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s var(--st-ease-out), transform 0.8s var(--st-ease-out);
+}
+.rv.rv-in {
+  opacity: 1;
+  transform: none;
+}
+@media (scripting: none) {
+  .rv { opacity: 1; transform: none; }
+}
+
+/* Feature cards: lift and light up in their own colour on hover. */
+.fcard {
+  transition: transform 0.35s var(--st-ease-out), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.fcard:hover {
+  transform: translateY(-5px);
+  border-color: var(--c-edge, rgba(255, 255, 255, 0.2));
+  box-shadow: 0 22px 60px -24px var(--c-glow, rgba(0, 0, 0, 0.6));
+}
+.fcard .fcard-img {
+  transition: transform 0.6s var(--st-ease-out);
+}
+.fcard:hover .fcard-img {
+  transform: scale(1.04);
+}
+
+/* Soft colour wash behind a section. */
+.wash-green { background: radial-gradient(60% 70% at 15% 40%, rgba(0, 255, 106, 0.09), transparent 70%); }
+.wash-gold { background: radial-gradient(50% 60% at 80% 40%, rgba(255, 197, 61, 0.10), transparent 70%); }
+
+/* Founder card: a slowly turning gold border, like the app's paywall card. */
+@property --founder-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.founder-card {
+  position: relative;
+  isolation: isolate;
+}
+.founder-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--founder-angle), #FFC53D, #7A5A10 25%, #FFE7A3 50%, #7A5A10 75%, #FFC53D);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: founder-turn 7s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes founder-turn {
+  to { --founder-angle: 360deg; }
+}
+
+/* Pro card: a breathing green glow. */
+.premium-card {
+  box-shadow: 0 0 0 1px rgba(0, 255, 106, 0.55), 0 24px 70px -28px rgba(0, 255, 106, 0.45);
+  animation: premium-breathe 4s ease-in-out infinite;
+}
+@keyframes premium-breathe {
+  50% { box-shadow: 0 0 0 1px rgba(0, 255, 106, 0.75), 0 24px 80px -24px rgba(0, 255, 106, 0.6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; }
+  .fcard, .fcard .fcard-img { transition: none; }
+  .fcard:hover, .fcard:hover .fcard-img { transform: none; }
+  .founder-card::before, .premium-card { animation: none; }
+}
+
+/* Page accent (lib/accent.ts sets these per page or per section). */
+:root {
+  --pa: var(--accent);
+  --pa-faint: var(--st-accent-faint);
+  --pa-edge: var(--st-accent-edge);
+}
+.pa-wash {
+  background:
+    radial-gradient(50% 70% at 88% 20%, color-mix(in srgb, var(--pa) 16%, transparent), transparent 70%),
+    radial-gradient(40% 50% at 5% 90%, color-mix(in srgb, var(--pa) 7%, transparent), transparent 70%);
+}
+/* Coloured glow under a phone screenshot (the .phone-frame box-shadow wins
+   over utility shadows, so the glow is a drop-shadow on a wrapper). */
+.phone-glow {
+  filter: drop-shadow(0 30px 45px color-mix(in srgb, var(--pa) 38%, transparent));
 }

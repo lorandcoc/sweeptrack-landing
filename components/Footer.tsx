@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
+import BackToTop from "./BackToTop";
 
 function scrollToHash(e: React.MouseEvent<HTMLAnchorElement>) {
   const href = e.currentTarget.getAttribute("href") || "";
@@ -39,7 +40,8 @@ const socials = [
 export default function Footer() {
   const { t } = useI18n();
   return (
-    <footer className="border-t border-white/5 pt-14 pb-8 overflow-hidden">
+    <>
+    <footer className="border-t border-white/5 pt-14 pb-24 sm:pb-8 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-6 md:gap-10 mb-12">
           {/* Brand + Description */}
@@ -77,7 +79,7 @@ export default function Footer() {
           {/* Links */}
           <div>
             <h4 className="text-sm font-semibold mb-4 text-foreground">{t("footer.product")}</h4>
-            <div className="flex flex-col gap-2.5 text-sm text-muted">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 text-sm text-muted md:grid-cols-1">
               <a href="/features" className="hover:text-foreground transition-colors">{t("footer.features")}</a>
               <a href="/coverage" className="hover:text-foreground transition-colors">{t("footer.coverage")}</a>
               <a href="/overlays" className="hover:text-foreground transition-colors">{t("footer.overlays")}</a>
@@ -92,16 +94,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Links wrap as whole words (two rows on a phone), copyright under them on
+            small screens and to the left from sm up. */}
+        <div className="border-t border-white/5 pt-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted">&copy; {new Date().getFullYear()} SweepTrack Pro</p>
-          <div className="flex items-center gap-4 text-xs text-muted">
-            <a href="/trust" className="hover:text-foreground transition-colors">{t("footer.trust")}</a>
-            <a href="/privacy" className="hover:text-foreground transition-colors">{t("footer.privacy")}</a>
-            <a href="/terms" className="hover:text-foreground transition-colors">{t("footer.terms")}</a>
-            <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">by Loriba</a>
+          <div className="flex flex-wrap justify-center sm:justify-end gap-x-5 gap-y-2.5 text-xs text-muted">
+            <a href="/trust" className="whitespace-nowrap hover:text-foreground transition-colors">{t("footer.trust")}</a>
+            <a href="/privacy" className="whitespace-nowrap hover:text-foreground transition-colors">{t("footer.privacy")}</a>
+            <a href="/terms" className="whitespace-nowrap hover:text-foreground transition-colors">{t("footer.terms")}</a>
+            <a href="https://lorand.cc/" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap hover:text-foreground transition-colors">by Loriba</a>
           </div>
         </div>
       </div>
     </footer>
+    <BackToTop />
+    </>
   );
 }

@@ -8,6 +8,7 @@ import SpotlightForecast from "@/components/SpotlightForecast";
 import { PageHero, PageSection } from "@/components/PageSection";
 import { I18nProvider } from "@/lib/i18n";
 import { getDictionary } from "@/lib/getDictionary";
+import { accentStyle } from "@/lib/accent";
 
 const URL = "https://sweeptrack.pro/features";
 const TITLE = "Every Feature in the SweepTrack Pro Metal Detecting App | SweepTrack Pro";
@@ -39,7 +40,7 @@ export default function FeaturesPage() {
     <I18nProvider initialLocale="en" initialDict={dict}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
+      <main style={accentStyle("green")}>
         <PageHero title="Every tool in the metal detecting app" actions={<GooglePlayButton />} note="Android only.">
           <p>The big tools first, then the 45+ smaller ones that ship in the app today.</p>
         </PageHero>
