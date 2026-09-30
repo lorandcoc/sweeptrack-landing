@@ -35,7 +35,7 @@ const WELCOME_BODY = `Hey,
 
 Just a quick note to say thanks for being on the list. Means a lot.
 
-You will receive the link the moment SweepTrack Pro is live. Until then, good luck out there.
+SweepTrack Pro is live on Google Play. I'll email you the moment what you signed up for is ready. Until then, good luck out there.
 
 Lorand
 sweeptrack.pro
@@ -56,7 +56,7 @@ const WELCOME_BODY_HTML = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transiti
 <title>Thanks for signing up.</title>
 </head>
 <body style="margin:0;padding:0;background-color:#050510;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#E8E8F0;-webkit-font-smoothing:antialiased;">
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Welcome to the SweepTrack Pro launch list. You will receive the link when we go live.</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">You're on the list. SweepTrack Pro is already live on Google Play.</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#050510;min-width:100%;">
 <tr>
 <td align="center" style="padding:48px 16px;">
@@ -83,13 +83,13 @@ const WELCOME_BODY_HTML = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transiti
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:24px;">
 <tr>
 <td style="width:6px;background-color:#00FF6A;border-radius:3px;font-size:0;line-height:0;">&nbsp;</td>
-<td style="padding-left:12px;color:#00FF6A;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Launch list &middot; confirmed</td>
+<td style="padding-left:12px;color:#00FF6A;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Waitlist &middot; confirmed</td>
 </tr>
 </table>
 
 <p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">Hey,</p>
 <p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">Just a quick note to say thanks for being on the list. Means a lot.</p>
-<p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">You will receive the link the moment SweepTrack Pro is live. Until then, good luck out there.</p>
+<p style="margin:0 0 20px;color:#E8E8F0;font-size:16px;line-height:1.65;">SweepTrack Pro is live on Google Play. I'll email you the moment what you signed up for is ready. Until then, good luck out there.</p>
 
 <p style="margin:32px 0 4px;color:#E8E8F0;font-size:16px;line-height:1.5;">Lorand</p>
 <p style="margin:0;font-size:14px;"><a href="https://sweeptrack.pro" style="color:#00FF6A;text-decoration:none;font-weight:500;">sweeptrack.pro</a></p>

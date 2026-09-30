@@ -80,7 +80,7 @@ export default function ClubsPage() {
           badges={<><Badge tone="free">Members join free</Badge><Badge tone="premium">The organizer hosts with Pro</Badge></>}
           title="Put your whole club on one live map"
           actions={<ButtonLink href={CLUB_MAILTO}>Tell us about your club</ButtonLink>}
-          note="Members join free, the organizer hosts with Pro. Android only; the free member app is launching soon."
+          note="Members join free from SweepTrack Pro, the organizer hosts with Pro. Android only. A standalone member app is on the way."
         >
           <p>
             On a club dig or a weekend rally, Radar shows every member live on one shared map: who is where, which way

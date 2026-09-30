@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ComingSoonButton from "@/components/ComingSoonButton";
+import GooglePlayButton from "@/components/GooglePlayButton";
 import RadarGroupDemo from "@/components/RadarGroupDemo";
 import InfoCard, { StepCard } from "@/components/InfoCard";
 import { ItemGrid, PageClosing, PageHero, PageSection, PlanCompare, TextLink } from "@/components/PageSection";
@@ -78,19 +79,19 @@ export default function RadarPage() {
       <Header />
       <main style={accentStyle("sky")}>
         <PageHero
-          badges={<><Badge tone="free">Free to join</Badge><Badge tone="premium">Premium to host</Badge></>}
+          badges={<><Badge tone="free">Free to join</Badge><Badge tone="premium">Pro to host</Badge></>}
           title="See your whole group on one live map"
-          actions={<ComingSoonButton />}
-          note="Free to join, Premium to host. Launching soon on Google Play, Android only."
+          actions={<GooglePlayButton />}
+          note="Free to join, Pro to host. Live in SweepTrack Pro on Google Play. Android only."
         >
           <p>
-            SweepTrack Radar is a free companion app for detecting trips. One person starts a group, everyone else joins
+            Radar is the live group map built into <span className="text-foreground">SweepTrack Pro</span>: it&apos;s
+            the RADAR button, one of the four controls on the home map. One person starts a group, everyone else joins
             with a code or QR, and you watch each other move in real time. No account to set up.
           </p>
           <p className="text-base">
-            Radar is also built into <span className="text-foreground">SweepTrack Pro</span>: it&apos;s the RADAR button,
-            one of the four controls on the home map. The free app is how everyone else joins the same group. Already on
-            Pro? Radar Premium comes free.
+            SweepTrack Radar, a free standalone app, is on the way, so friends can join the same group without the full
+            app. Already on Pro? Radar Premium comes free.
           </p>
         </PageHero>
 
@@ -122,7 +123,7 @@ export default function RadarPage() {
         <PageSection title="Up and running in under a minute">
           <ItemGrid cols={3}>
             <StepCard n="1" title="Start a group" body="A Pro or Radar Premium host taps RADAR, starts a group, and gets an 8-character code, QR, and share link." />
-            <StepCard n="2" title="Share the code" body="Send the code or QR to your detecting buddies. They install the free Radar app, no account needed." />
+            <StepCard n="2" title="Share the code" body="Send the code or QR to your detecting buddies. They join free from SweepTrack Pro, or from the Radar app once it's out. No account needed." />
             <StepCard n="3" title="Everyone's on the map" body="Each phone shows up as a colored dot with a name and heading arrow, updating every 30 seconds or so." />
           </ItemGrid>
         </PageSection>
@@ -162,9 +163,17 @@ export default function RadarPage() {
           </p>
         </PageSection>
 
-        <PageClosing title="Get the link when it launches" actions={<ComingSoonButton size="large" />}>
-          SweepTrack Radar launches free on Google Play. Join the test with your email and you get the link first. No
-          account, and Android only for now.
+        <PageClosing
+          title="Radar is in the app today"
+          actions={
+            <>
+              <GooglePlayButton size="large" />
+              <ComingSoonButton />
+            </>
+          }
+        >
+          Install SweepTrack Pro, tap RADAR, and join a group free. The standalone SweepTrack Radar app is not on Google
+          Play yet: join the waitlist and you get the link when it is. Android only for now.
         </PageClosing>
       </main>
       <Footer />
